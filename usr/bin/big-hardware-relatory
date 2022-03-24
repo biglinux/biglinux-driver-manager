@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# BigLinux Store 
+# www.biglinux.com.br
+# By Bruno Gonçalves
+# 07/09/2020
+# License: GPL v2 or greater 
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=big-store
+
+
+cd /usr/share/bigbashview/bcc/apps/drivers/
+
+TITLE=$"Informações sobre o Hardware"
+
+QT_QPA_PLATFORM=xcb SDL_VIDEODRIVER=x11 WINIT_UNIX_BACKEND=x11 GDK_BACKEND=x11 bigbashview -n "$TITLE" -s 800x400 loading.sh.htm -i /usr/share/bigbashview/bcc/apps/drivers/hardware-info.svg

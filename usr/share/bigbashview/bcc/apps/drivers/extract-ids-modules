@@ -1,0 +1,19 @@
+#!/bin/bash
+
+##############
+# Extract ids from modules
+# By Bruno Goncalves < www.biglinux.com.br >
+# 2022/03/01
+# License GPL V2 or greater
+###############
+
+# Folder to save
+FOLDER="$HOME/device-ids"
+mkdir -p "${FOLDER}/$1"
+
+# USB
+modinfo "$1" | grep alias: | grep usb: | sed 's|.*usb:v||g;s|d\*.*||g;s|p|:|g' > "${FOLDER}/$1/usb.ids"
+
+# PCI
+modinfo "$1" | grep alias: | grep pci: | sed 's|.*pci:v0000||g;s|d0000|:|g;s|sv\*.*||g' > "${FOLDER}/$1/pci.ids"
+
