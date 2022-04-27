@@ -13,7 +13,7 @@
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=bigcontrolcenter
+export TEXTDOMAIN=biglinux-driver-manager
 
 #Only to debug
 #rm -R "$HOME/.config/bigcontrolcenter/"
@@ -45,6 +45,7 @@ CATEGORY_Sensors=$"Temperatura"
 CATEGORY_Printer=$"Impressora"
 CATEGORY_Audio=$"Áudio"
 CATEGORY_More=$"Mais informações" #Desativado
+CATEGORY_Hardware=$"Hardware"
 
 
 #OLD
@@ -59,13 +60,13 @@ WELCOME=$"Informações Sobre o Sistema e o Hardware"
 WELCOME_DESC=$""
 
 if [ "$toshow" = "show" ]; then
-  WELCOME_ICON="<img class=\"img-content img\" src=icon-drivers.png>"
+  WELCOME_ICON="<img class=\"img-content img\" src=hardware-info.png>"
 fi
 
 
 cat << EOF
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>$TITLE</title>
@@ -76,6 +77,12 @@ $(cat /usr/share/bigbashview/bcc/apps/bigcontrolcenter/style.css)
 .side-menu a {
     padding: 7px;
 }
+
+textarea {
+  background: rgb(0 0 0 / 40%);
+  color: aqua;
+}
+
 </style>
   
 
@@ -247,7 +254,7 @@ cat << EOF
               <div class="content-text Star">$WELCOME_DESC</div>
               <!-- <button class="content-button">Conheça</button> -->
             </div>
-            <img class="content-wrapper-img" src="bigdriver.png" alt="">
+            <img class="content-wrapper-img" src="biginfo.png" alt="">
           </div>
             <div class="apps-card">
 
@@ -328,8 +335,20 @@ echo '<style>
 }
 
 .ansi34 {
+    /*color: var(--ansi-bg-color);*/
+    /*text-transform: capitalize;*/
+    display: block;
+    text-align: left;
+    /*border-right: 1px solid;*/
     color: var(--ansi-bg-color);
     text-transform: capitalize;
+    width: 200px;
+    margin-right: 5px;
+    vertical-align: middle;
+    padding: 10px;
+    margin: 10px;
+    background: rgb(0 0 0 / 20%);
+    border-radius: 15px 0 0 15px;
 }
 
 .ansi2html-content {
@@ -382,7 +401,6 @@ span.hardwareTitle2 {
     margin-bottom: 30px;
 }
 
-
 </style>'
 
 
@@ -396,14 +414,14 @@ span.hardwareTitle2 {
 cat << EOF >> /tmp/hardwareinfo.html
 
 <div class="app-card Star" style="max-height: 100%;"><span>
-$(cat "${ICON}.svg")
-Hardware
+$CATEGORY_Hardware
 </span><div class="app-card__subtext">
 <div class=hardwareSpaceNull>
-
 <br><span class="ansi1 ansi34">
-CPU:</span> $(cat /proc/cpuinfo | grep 'model name' | uniq | cut -f2- -d:)
-
+CPU:</span> 
+<span class="ansi1">
+$(cat /proc/cpuinfo | grep 'model name' | uniq | cut -f2- -d:)
+</span>
 <br><span class="ansi1 ansi34">
 Memória RAM:</span> $(free -h |awk -F ' ' '{print $2}' | awk -F: 'NR==2 {print $1}')B
 
@@ -415,8 +433,7 @@ Vídeo:</span> $(lspci | grep VGA | cut -f3- -d:)
 
 
 <div class="app-card Star" style="max-height: 100%;"><span>
-$(cat "${ICON}.svg")
-Sistema
+$CATEGORY_System
 </span><div class="app-card__subtext">
 <div class=hardwareSpaceNull>
 
@@ -449,7 +466,8 @@ EOF
 ########################
 
 
-urxvt -geometry 1x1 -bl +sb -bg rgba:0000/0000/0000/ffff -fn xft:Mono:pixelsize=0 "xft:Bitstream Vera Sans Mono:pixelsize=0" -b 0 -e pkexec env BIGUSER=$USER BIGDISPLAY=$DISPLAY BIGXAUTHORITY=$XAUTHORITY /usr/share/bigbashview/bcc/apps/drivers/inxi.sh $toshow
+urxvt -geometry 1x1 -bl +sb -depth 32 -bg [0]#000000  -b 0 -ic +sk -e pkexec env BIGUSER=$USER BIGDISPLAY=$DISPLAY BIGXAUTHORITY=$XAUTHORITY /usr/share/bigbashview/bcc/apps/drivers/inxi.sh $toshow
+
 
 cat /tmp/hardwareinfo-inxi-*.html
 
@@ -490,25 +508,19 @@ td {
     padding-left: 8px;
     padding-right: 8px;
 };
-.color1 {
- background: white;
-}
-.color2 {
- background: red;
-}
 
 .color1 {
-    background: #505050;
+    background: rgb(16 18 27 / 40%);
     color: white;
 }
 
 .color2 {
-    background: #404244;
+    background: rgb(0 0 0 / 40%);
     color: #76f2ff;
 }
 a {
     font-weight: bold;
-    color: #afe1ff;
+    color: #00ffff;
 }
 td.search {
     text-align: center;
@@ -532,9 +544,9 @@ cat << EOF
 EOF
 
 echo '<table><tr><th>'
-echo $"Category"
+echo $"Categoria"
 echo '</th><th>'
-echo $"Name"
+echo $"Nome"
 echo '</th><th>'
 echo $"ID"
 echo '</th><th>'
@@ -586,7 +598,7 @@ cat << EOF
 EOF
 
 echo '<table><tr><th>'
-echo $"Name"
+echo $"Nome"
 echo '</th><th>'
 echo $"ID"
 echo '</th><th>'
@@ -864,8 +876,29 @@ cat << EOF
       </div>
   <div class="footer">
   </div>
+<style>
+.logo {
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.logo svg {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40;
+  filter: var(--logo-big);
+}
+</style>  
   <div class="logo">
-$(cat logo.svg)
+    $(cat logo.svg) 
   </div>
 EOF
 
