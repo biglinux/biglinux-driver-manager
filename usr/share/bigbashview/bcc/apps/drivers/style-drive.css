@@ -199,10 +199,6 @@ input[type=radio] + label {
  --search-color-over: #000;
 }
 
-.logo-biglinux {
-  filter: var(--logo-big);
-}
-
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -1278,13 +1274,17 @@ display: -webkit-box;
 }
 
 /* LOGO */
+.logo-biglinux {
+    filter: var(--logo-big);
+}
+
 .logo {
-  z-index: 2;
-  position: absolute;
-  top: 1.7%;
-  left: 20px;
-  width: 32px;
-  height: 32px;
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
 }
 
 .logo img {
@@ -1294,7 +1294,7 @@ display: -webkit-box;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 30px;
+  width: 40px;
 }
 
 .logo a {
@@ -1302,6 +1302,7 @@ display: -webkit-box;
   height: 100%;
   display: block;
 }
+
 
 /* LEGENDA BOX STATUS BAR */
 #box-status-bar {
