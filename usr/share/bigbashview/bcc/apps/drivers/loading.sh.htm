@@ -13,7 +13,7 @@
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=bigcontrolcenter
+export TEXTDOMAIN=biglinux-driver-manager
 
 #Only to debug
 #rm -R "$HOME/.config/bigcontrolcenter/"

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=biglinux-driver-manager
 
 DEVICE_INFO=$"Ver informações do dispositivo no Linux Hardware"
 PCI_IDS="$(lspci -n | cut -f3 -d" ")"
