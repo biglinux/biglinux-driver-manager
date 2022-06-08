@@ -54,10 +54,20 @@ SEARCH_Result=$"Resultado da pesquisa"
 
 TITLE=$"Informações de Hardware"
 CLOSE=$"Fechar"
-
+OPEN=$"Abrir"
 
 WELCOME=$"Informações Sobre o Sistema e o Hardware"
 WELCOME_DESC=$""
+
+desc_memoryram=$"Memória RAM:"
+desc_video=$"Vídeo:"
+desc_installpartition=$"Instalado na partição:"
+desc_sizepartition=$"Tamanho da partição:"
+desc_usespace=$"Espaço utilizado:"
+desc_freespace=$"Espaço livre:"
+desc_installdate=$"Data que o sistema foi instalado:"
+desc_usekernel=$"Kernel em uso:"
+
 
 if [ "$toshow" = "show" ]; then
   WELCOME_ICON="<img class=\"img-content img\" src=hardware-info.png>"
@@ -277,7 +287,7 @@ cat << EOF
                            $NAME </span>
                   <div class="app-card__subtext">$COMMENT</div>
                   <div class="app-card-buttons">
-                      <button class="content-button status-button">Abrir</button>
+                      <button class="content-button status-button">$OPEN</button>
                   </div>
               </div>
             
@@ -285,7 +295,7 @@ EOF
 
 EXEC="biglinux-config"
 NAME=$"Gerar Relatório"
-COMMENT="Cria um arquivo com informações que pode ser publicado na internet."
+COMMENT=$"Cria um arquivo com informações que pode ser publicado na internet."
 cat << EOF
               <div class="app-card Star" onclick="_run('big-hardware-relatory')">
                   <span>
@@ -294,7 +304,7 @@ cat << EOF
                            $NAME </span>
                 <div class="app-card__subtext">$COMMENT</div>
                 <div class="app-card-buttons">
-                  <button class="content-button status-button">Abrir</button>
+                  <button class="content-button status-button">$OPEN</button>
 
                 </div>
               </div>
@@ -404,9 +414,6 @@ span.hardwareTitle2 {
 
 </style>'
 
-
-
-
 ###########################
 # Star Page Open
 ###########################
@@ -424,13 +431,12 @@ CPU:</span>
 $(cat /proc/cpuinfo | grep 'model name' | uniq | cut -f2- -d:)
 </span>
 <br><span class="ansi1 ansi34">
-Memória RAM:</span> $(free -h |awk -F ' ' '{print $2}' | awk -F: 'NR==2 {print $1}')B
+$desc_memoryram</span> $(free -h |awk -F ' ' '{print $2}' | awk -F: 'NR==2 {print $1}')
 
 <br><span class="ansi1 ansi34">
-Vídeo:</span> $(lspci | grep VGA | cut -f3- -d:)
+$desc_video</span> $(lspci | grep VGA | cut -f3- -d:)
   
 </div></div></div>
-
 
 
 <div class="app-card Star" style="max-height: 100%;"><span>
@@ -440,23 +446,33 @@ $CATEGORY_System
 
 
 <br><span class="ansi1 ansi34">
-Instalado na partição:</span>
+$desc_installpartition</span>
 $(LANG=C df -h / | grep '/dev/' | awk '{print $1}')
 
 <br><span class="ansi1 ansi34">
-Tamanho da partição:</span> $(LANG=C df -h / | grep '/dev/' | awk '{print $2}')
+$desc_sizepartition</span> $(LANG=C df -h / | grep '/dev/' | awk '{print $2}')
 
 <br><span class="ansi1 ansi34">
-Espaço utilizado:</span> $(LANG=C df -h / | grep '/dev/' | awk '{print $3}')
+$desc_usespace</span> $(LANG=C df -h / | grep '/dev/' | awk '{print $3}')
 
 <br><span class="ansi1 ansi34">
-Espaço livre:</span> $(LANG=C df -h / | grep '/dev/' | awk '{print $4}')
+$desc_freespace</span> $(LANG=C df -h / | grep '/dev/' | awk '{print $4}')
+
+
+EOF
+if [ ! -e "/usr/share/bigbashview/bcc/apps/boot-livecd/index.sh.htm" ]; then
+cat << EOF >> /tmp/hardwareinfo.html
 
 <br><span class="ansi1 ansi34">
-Data que o sistema foi instalado:</span> $(ls -lct /etc | tail -1 | awk '{print $6, $7, $8}')
+$desc_installdate</span> $(ls -lct /etc | tail -1 | awk '{print $6, $7, $8}')
+
+EOF
+fi
+
+cat << EOF >> /tmp/hardwareinfo.html
 
 <br><span class="ansi1 ansi34">
-Kernel em uso:</span> $(uname -r)    
+$desc_usekernel</span> $(uname -r)    
 
 </div></div></div>
 
