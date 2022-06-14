@@ -27,7 +27,7 @@ echo "<div class=\"app-card $CATEGORY\" style=\"max-height: 100%;\">" >> /tmp/ha
 echo "<div class=\"app-card__title\">$NAME</div>" >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 echo '<div class="app-card__subtext">' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 
-$PKEXEC inxi ${PARAMETER_INXI}${CATEGORY_INXI} -y 100 --indents 5 | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
+$PKEXEC inxi ${PARAMETER_INXI}${CATEGORY_INXI} -y 100 --indents 5 | iconv -t UTF-8 2>- | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' | sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures:|g'| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM):|g' | sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage:|g' | sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM:|g' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 
 echo '</div></div>' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 
@@ -70,7 +70,7 @@ done
   CATEGORY="machine"
   ICON="machine"
   PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show  
 
   if [ "$show" = "show" ]; then
     PARAMETER_INXI="-c 2 -a -xx --"
