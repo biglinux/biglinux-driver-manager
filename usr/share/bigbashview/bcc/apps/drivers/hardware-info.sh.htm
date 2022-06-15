@@ -84,6 +84,9 @@ cat << EOF
 <style>
 $(cat /usr/share/bigbashview/bcc/apps/bigcontrolcenter/style.css)
 
+.app-card__subtext {
+    max-height: 96% !important;
+}
 .side-menu a {
     padding: 7px;
 }
@@ -344,13 +347,23 @@ echo '<style>
 .light-mode {
   --ansi-bg-color: #0043ff;
 }
+.ansi33 {
+    text-align: center;
+    color: var(--ansi-bg-color);
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    background: rgb(0 0 0 / 20%);
+    border-radius: 15px;
+    font-weight: bold;
+    justify-content: center;
+}
+
 
 .ansi34 {
-    /*color: var(--ansi-bg-color);*/
-    /*text-transform: capitalize;*/
     display: block;
     text-align: left;
-    /*border-right: 1px solid;*/
     color: var(--ansi-bg-color);
     text-transform: capitalize;
     width: 200px;
@@ -499,8 +512,8 @@ USB_IDS="$(lsusb | cut -f6 -d" ")"
 
 
 echo "<div class=\"app-card printer\" style=\"max-height: 100%;\"><div class=titlecard><span>"
-echo "Lpstat -p</div>"
-echo '</span><div class="app-card__subtext">'
+echo "Impressora</div>"
+echo '</span><div class="app-card__subtext">Lpstat -p'
 echo '<div class=hardwareSpaceNull>'
 
 cat << EOF
@@ -548,8 +561,8 @@ td.search {
 
 
 echo "<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>"
-echo "LSPCI</div>"
-echo '</span><div class="app-card__subtext">'
+echo "Mais informações</div>"
+echo '</span><div class="app-card__subtext">LSPCI'
 echo '<div class=hardwareSpaceNull>'
 
 
@@ -560,7 +573,7 @@ cat << EOF
 <div class="content">
 EOF
 
-echo '<table><tr><th>'
+echo '<table><tr style="background: darkcyan; color: cyan;"><th>'
 echo $"Categoria"
 echo '</th><th>'
 echo $"Nome"
@@ -586,10 +599,10 @@ fi
     echo '</td><td>'
     #Name
     echo "$i" | cut -f3 -d: | rev | cut -f2- -d[ | rev
-    echo '</td><td>'
+    echo '</td><td style="text-align:center">'
     #ID
     echo "$i" | rev | cut -f1 -d[ | rev | cut -f1 -d]
-    echo '</td><td>'
+    echo '</td><td style="text-align:center">'
     #Search
     ID_SEARCH="$(echo "$i" | rev | cut -f1 -d[ | rev | cut -f1 -d] | sed 's|:|-|g')"
     echo "<a href=\"https://linux-hardware.org/?id=pci:${ID_SEARCH}\" onclick=\"_run('./pci.run ${ID_SEARCH}')\" TARGET=_blank>"
@@ -614,7 +627,7 @@ cat << EOF
 <div class="content">
 EOF
 
-echo '<table><tr><th>'
+echo '<table><tr style="background: darkcyan; color: cyan;"><th>'
 echo $"Nome"
 echo '</th><th>'
 echo $"ID"
@@ -635,10 +648,10 @@ fi
     echo "<tr class=$line><td>"
     #Name
     echo "$i" | cut -f7- -d" "
-    echo '</td><td>'
+    echo '</td><td style="text-align:center">'
     #ID
     echo "$i" | cut -f6 -d" "
-    echo '</td><td>'
+    echo '</td><td style="text-align:center">'
     #Search
     ID_SEARCH="$(echo "$i" | cut -f6 -d" " | sed 's|:|-|g')"
     echo "<a href=\"https://linux-hardware.org/?id=usb:${ID_SEARCH}\" onclick=\"_run('./usb.run ${ID_SEARCH}')\" TARGET=_blank>"

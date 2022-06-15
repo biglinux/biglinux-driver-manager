@@ -23,11 +23,15 @@ SHOW_HARDINFO() {
 # $2 NAME
 # $3 ICON
 
+
+# inxi -c 2 -a -xx --machine -y 100 --indents 5 | iconv -t UTF-8 2>- | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' | sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g'| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' | sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' | sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' | sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' | sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g'  | sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g'  | sed 's|</span>|</span><span class="ansi35">|g' | sed 's|<br>|</span><br>|g'
+
+
 echo "<div class=\"app-card $CATEGORY\" style=\"max-height: 100%;\">" >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 echo "<div class=\"app-card__title\">$NAME</div>" >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 echo '<div class="app-card__subtext">' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 
-$PKEXEC inxi ${PARAMETER_INXI}${CATEGORY_INXI} -y 100 --indents 5 | iconv -t UTF-8 2>- | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' | sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures:|g'| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM):|g' | sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage:|g' | sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM:|g' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
+$PKEXEC inxi ${PARAMETER_INXI}${CATEGORY_INXI} -y 100 --indents 5 | iconv -t UTF-8 2>- | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' | sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g'| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' | sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' | sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' | sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' | sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g'  | sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 
 echo '</div></div>' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
 
@@ -63,7 +67,7 @@ done
   CATEGORY_INXI="machine"
   if [ "$show" = "show" ]; then
     PARAMETER_INXI="-c 2 -a -xx --"
-  else
+  elsehardwareSpace
     PARAMETER_INXI="-c 2 -x -z --"
   fi
   NAME=$"Placa mãe"
@@ -93,7 +97,7 @@ done
 
   CATEGORY_INXI="graphics"
   PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Gráficos"
+  NAME=$"Placa de vídeo"
   CATEGORY="gpu"
   ICON="graphics"
   PKEXEC="pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"
@@ -121,7 +125,7 @@ done
   else
     PARAMETER_INXI="-c 2 -x -z --"
   fi
-  NAME=$"Conexões de Internet"
+  NAME=$"Conexões de Rede"
   CATEGORY="network"
   ICON="ip"
   PKEXEC=""
@@ -156,7 +160,7 @@ done
   else
     PARAMETER_INXI="-c 2 -x -z --"
   fi
-  NAME=$"Dispositivos de armazenamento"
+  NAME=$"Dispositivos de Armazenamento"
   CATEGORY="disk"
   ICON="disk"
   PKEXEC=""
@@ -230,7 +234,7 @@ done
   SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
   PARAMETER_INXI="-c 2 -a -xx --"
   CATEGORY_INXI="info"
-  NAME=$"Informações"
+  NAME=$"Informações de Sistema"
   CATEGORY="system"
   ICON="disk"
   PKEXEC=""
