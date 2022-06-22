@@ -512,8 +512,8 @@ USB_IDS="$(lsusb | cut -f6 -d" ")"
 
 
 echo "<div class=\"app-card printer\" style=\"max-height: 100%;\"><div class=titlecard><span>"
-echo "Impressora</div>"
-echo '</span><div class="app-card__subtext">Lpstat -p'
+echo "$CATEGORY_Printer"
+echo '</span></div><div class="app-card__subtext">Lpstat -p'
 echo '<div class=hardwareSpaceNull>'
 
 cat << EOF
@@ -561,8 +561,8 @@ td.search {
 
 
 echo "<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>"
-echo "Mais informações</div>"
-echo '</span><div class="app-card__subtext">LSPCI'
+echo "$CATEGORY_More"
+echo '</span></div><div class="app-card__subtext">LSPCI'
 echo '<div class=hardwareSpaceNull>'
 
 
