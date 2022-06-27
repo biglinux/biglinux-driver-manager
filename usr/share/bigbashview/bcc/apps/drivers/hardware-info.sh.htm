@@ -425,6 +425,14 @@ span.hardwareTitle2 {
     margin-bottom: 30px;
 }
 
+.side-wrapper+.side-wrapper {
+    margin-top: 10px !important;
+}
+
+.side-menu a {
+    padding: 5px !important;
+}
+
 </style>'
 
 ###########################
@@ -877,7 +885,7 @@ cat << EOF
 <div class="text_area">
 <textarea style="width:100%;" rows="20">
 
-$(cat /tmp/hardwareinfo-dmesg.html)
+$(journalctl -p err -b)
 
 </textarea></div></div>
 
@@ -885,6 +893,27 @@ EOF
 
 echo '</div></div></div>'
 
+
+
+
+
+echo "<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>"
+echo "Journald error</div>"
+echo '</span><div class="app-card__subtext">'
+echo '<div class=hardwareSpaceNull>'
+
+cat << EOF
+<div class="content">
+<div class="text_area">
+<textarea style="width:100%;" rows="20">
+
+$(cat /tmp/hardwareinfo-dmesg.html)
+
+</textarea></div></div>
+
+EOF
+
+echo '</div></div></div>'
 
 
 
