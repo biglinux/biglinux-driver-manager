@@ -8,7 +8,7 @@
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=big-store
+export TEXTDOMAIN=biglinux-driver-manager
 
 
 cd /usr/share/bigbashview/bcc/apps/drivers/
@@ -16,3 +16,4 @@ cd /usr/share/bigbashview/bcc/apps/drivers/
 TITLE=$"Informações sobre o Hardware"
 
 QT_QPA_PLATFORM=xcb SDL_VIDEODRIVER=x11 WINIT_UNIX_BACKEND=x11 GDK_BACKEND=x11 bigbashview -n "$TITLE" -s 800x400 loading.sh.htm -i /usr/share/bigbashview/bcc/apps/drivers/hardware-info.svg
+
