@@ -88,3 +88,14 @@ $(function () {
   }); 
 });
 
+var bigcount = 1;
+$('#btn-big').click(function(){
+    if (bigcount >= 3 && bigcount <= 3) {
+      $('#welcome').css('display','flex');
+    } else if (bigcount >= 6 && bigcount <= 6) {
+      $('body').css('background-image', 'url("/usr/share/bigbashview/bcc/apps/big-store/img/body-bg.jpg")');
+    } else if (bigcount >= 9) {
+      window.location = "/usr/share/bigbashview/bcc/apps/big-store/.javascript-racer-master/racer.sh.htm";
+    }
+    ++bigcount;
+});

@@ -614,11 +614,10 @@ body.light-mode .video-bg:before {
 }
 
 .main-header {
-  display: flex;
-  align-items: center;
-  /* border-bottom: 1px solid var(--border-color); */
-  height: 58px;
-  flex-shrink: 0;
+    align-items: center;
+    height: 58px;
+    flex-shrink: 0;
+    display: none;
 }
 .main-header .header-menu {
   margin-left: 150px;
@@ -633,32 +632,29 @@ body.light-mode .video-bg:before {
 }
 
 .main-container {
-  display: block;
-  width: 100%;
-  height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .menu-link-main {
-  text-decoration: none;
-  color: var(--theme-color);
-  padding: 0 30px;
-}
-@media screen and (max-width: 1055px) {
-  .menu-link-main {
-    /* display: none; */
-  }
+    text-decoration: none;
+    color: var(--theme-color);
+    padding: 0 30px;
 }
 
 .content-wrapper {
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  color: var(--theme-color);
-  padding: 20px;
-  height: 100%;
-  overflow: auto;
-  background-color: var(--theme-bg-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    color: var(--theme-color);
+    padding: 20px;
+    padding-right: 4px;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--theme-bg-color);
 }
+
 @media screen and (max-width: 510px) {
   .content-wrapper {
     padding: 20px;
@@ -1054,12 +1050,6 @@ body.light-mode .video-bg:before {
   margin-right: 8px;
 }
 
-/*.apps-card {
-  align-items: center;
-  flex-wrap: wrap;
-  width: calc(100% + 14px);
-}*/
-
 .apps-card {
     width: calc(100% + 14px);
     display: grid;
@@ -1198,38 +1188,41 @@ display: -webkit-box;
   height: 150px;
 }  
 .box-geral-button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 16px;
-  width: 220px;
-  height: 150px;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 16px;
+    width: 220px;
+    height: 150px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
-/* rafael */
 .box-items .box-geral-icons:hover {
-  background: #e0e0e0;
-  text-decoration: none;
-  flex-direction: column;
-  width: calc(110% - 20px);
-  background-color: var(--content-bg);
-  border-radius: 14px;
-  box-shadow: 0px 0px 1px 1px var(--border-box);
-  cursor: pointer;
-  transition: 0.3s ease;
-  padding: 16px;
-  width: 220px;
-  height: 150px;
+    background: #e0e0e0;
+    text-decoration: none;
+    flex-direction: column;
+    width: calc(110% - 20px);
+    background-color: var(--content-bg);
+    border-radius: 14px;
+    box-shadow: 0px 0px 1px 1px var(--border-box);
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 16px;
+    width: 220px;
+    height: 150px;
 }
-
-
 
 .box-items .box-geral-icons:hover:hover {
-  transform: scale(1.02);
-  background-color: var(--theme-bg-color);
+    transform: scale(1.02);
+    background-color: var(--theme-bg-color);
+}
+
+.box-items .box-geral-icons:active:active {
+    transform: scale(1.02);
+    background-color: var(--popup-bg);
+    border: 2px solid var(--search-color);
 }
 
 .box-imagem-icon {
@@ -1433,14 +1426,26 @@ display: -webkit-box;
   color: var(--theme-color);
 }
 
+  /* ------------------------ */
+ /*     OPEN WELCOME DIV     */
+/* ------------------------ */
+#welcome {
+    display: none;
+}
+
 .welcome-close {
-  position:absolute; 
-  top:10px; 
-  right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
-.content-wrapper-header{
-  position: relative; 
+
+.content-wrapper-header {
+    position: relative;
+    margin-bottom: 14px;
 }
+  /* ------------------------ */
+ /*     CLOSE WELCOME DIV    */
+/* ------------------------ */
 
 a.linkLinuxHardware {
   color: cyan;
