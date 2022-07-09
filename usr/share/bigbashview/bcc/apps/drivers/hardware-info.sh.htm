@@ -256,10 +256,10 @@ cat << EOF
     <div class="main-container" style="overflow: auto;">
 
       <!-- PRINCIPAIS -->
-
-        <div class="content-wrapper" style="overflow-x: hidden;">
         <a name="topo"></a>
-          <div id="welcome" class="content-wrapper-header Star Staritem">
+        <div class="content-wrapper" style="overflow-x: hidden;">
+        
+          <div id="welcome" class="content-wrapper-header Staritem">
             <div class="content-wrapper-context">
               <h3 class="img-content">
                 $WELCOME_ICON
@@ -956,7 +956,7 @@ cat << EOF
   filter: var(--logo-big);
 }
 </style>  
-  <div class="logo">
+  <div id="btn-big" class="logo" onclick="biglinux();">
     $(cat logo.svg) 
   </div>
 EOF
