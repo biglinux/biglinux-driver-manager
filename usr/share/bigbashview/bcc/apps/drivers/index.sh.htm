@@ -200,7 +200,13 @@ cat << EOF
       <!-- <button class="custom-search-botton" type="submit">← Enter </button> -->
     </div>
   </div>
-  <div class="wrapper">
+EOF
+if [ "$(echo $LANG | grep ^he)" != "" ]; then
+    echo '<div class="wrapper" style="flex-direction: row-reverse;">'
+else
+    echo '<div class="wrapper">'
+fi
+cat << EOF
     <div class="left-side">
       <div class="side-wrapper">
 
