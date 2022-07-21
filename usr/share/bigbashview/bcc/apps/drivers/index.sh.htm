@@ -569,14 +569,14 @@ USB_LIST_MODULES="$(echo "$USB_LIST" | cut -f2 -d/ | sort -u)"
 
 for MODULE  in  $USB_LIST_MODULES; do
 
-  ID_LIST="$(echo "$USB_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  ID_USB_LIST="$(echo "$USB_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
   CATEGORY="$(cat device-ids/$MODULE/category)"
   PKG="$(cat device-ids/$MODULE/pkg)"
   DESC="$(cat device-ids/$MODULE/description)"
 
   MODULE_COMPATIBLE="false"
 
-  for i in  $ID_LIST; do
+  for i in  $ID_USB_LIST; do
   
     if [ "$(echo "$USB_IN_PC" | grep "$i")" != "" ]; then
   
