@@ -204,7 +204,7 @@ done
 # done
 
   # Save dmesg
-  dmesg | grep -i -e erro > /tmp/hardwareinfo-dmesg.html
+  dmesg -t --level=alert,crit,err,warn > /tmp/hardwareinfo-dmesg.html
   
   
   

@@ -913,7 +913,7 @@ cat << EOF
 <div class="text_area">
 <textarea style="width:100%;" rows="20">
 
-$(cat /tmp/hardwareinfo-dmesg.html)
+$(dmesg -t --level=alert,crit,err,warn)
 
 </textarea></div></div>
 
