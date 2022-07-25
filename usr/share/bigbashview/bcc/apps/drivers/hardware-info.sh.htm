@@ -679,7 +679,33 @@ echo '</table></div></div></div></div>'
 
 
 
+echo "<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>"
+echo "SDIO</div>"
+echo '</span><div class="app-card__subtext">'
+echo '<div class=hardwareSpaceNull>'
 
+cat << EOF
+<div class="content">
+<div class="text_area">
+<textarea style="width:100%;" rows="20">
+EOF
+
+for i in $(ls /sys/bus/sdio/devices/)
+do
+  Vendor="$(cat /sys/bus/sdio/devices/$i/vendor | cut -f2 -dx)"
+  Device="$(cat /sys/bus/sdio/devices/$i/device | cut -f2 -dx)"
+  Info="$(cat /sys/bus/sdio/devices/$i/uevent | cut -f2 -dx)"
+
+    echo  "$Vendor:$Device"
+    echo "$Info"
+done 
+
+
+$(lspci -nvv)
+
+echo '</textarea></div></div>'
+
+echo '</div></div></div>'
 
 
 

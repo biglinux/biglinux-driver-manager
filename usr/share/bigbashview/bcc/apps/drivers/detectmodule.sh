@@ -68,4 +68,34 @@ IFS=$'\n'
     done
 
 
+    # SDIO
+    SDIO_LIST="$(grep -R : device-ids/ | grep 'sdio.ids')"
+    # Result example from list
+    # device-ids/8723bu/sdio.ids:20F4:108A
+
+
+
+    for i  in  $(ls /sys/bus/sdio/devices/ 2>/dev/null); do
+
+        Vendor="$(cat /sys/bus/sdio/devices/$i/vendor | cut -f2 -dx)"
+        Device="$(cat /sys/bus/sdio/devices/$i/device | cut -f2 -dx)"
+
+        ID="$Vendor:$Device"
+        #NAME="$(echo "$i" | cut -f7- -d" ")"
+
+        if [ "$(echo "$SDIO_LIST" | grep "$ID")" != "" ]; then
+
+            ADDR="$(grep -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
+            MODULE="$(echo "$ADDR" | cut -f2 -d/)"
+            PKG="$(cat device-ids/$MODULE/pkg)"
+
+            #echo "Device: $NAME"
+            echo "ID: $ID"
+            echo "MODULE: $MODULE"
+            echo "PKG: $PKG"
+        fi
+
+    done
+
+
 IFS=$OIFS

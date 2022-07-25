@@ -614,6 +614,77 @@ done
 
 
 
+###################################
+#
+# Other modules from BigLinux Scripts, using SDIO
+# OPEN
+#
+###################################
+
+
+
+# SDIO
+SDIO_LIST="$(grep -Ri : device-ids/ | grep 'sdio.ids')"
+# Result example from list
+# device-ids/r8188eu/sdio.ids:2001:331B
+
+rm -f /tmp/sdio_devices.txt
+
+for Sdio in $(ls /sys/bus/sdio/devices/ 2>/dev/null)
+do
+  Vendor="$(cat /sys/bus/sdio/devices/$Sdio/vendor | cut -f2 -dx)"
+  Device="$(cat /sys/bus/sdio/devices/$Sdio/device | cut -f2 -dx)"
+  echo "$Vendor:$Device" >> /tmp/sdio_devices.txt
+done
+
+
+SDIO_IN_PC="$(cat /tmp/sdio_devices.txt)"
+SDIO_LIST_MODULES="$(echo "$SDIO_LIST" | cut -f2 -d/ | sort -u)"
+
+for MODULE  in  $SDIO_LIST_MODULES; do
+
+  ID_SDIO_LIST="$(echo "$SDIO_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  CATEGORY="$(cat device-ids/$MODULE/category)"
+  PKG="$(cat device-ids/$MODULE/pkg)"
+  DESC="$(cat device-ids/$MODULE/description)"
+
+  MODULE_COMPATIBLE="false"
+
+  for i in  $ID_SDIO_LIST; do
+  
+    if [ "$(echo "$SDIO_IN_PC" | grep "$i")" != "" ]; then
+  
+      NAME="$(echo "$SDIO_IN_PC" | grep "$ID" | cut -f2- -d" ")"
+      MODULE_COMPATIBLE="true"
+      CATEGORY="$CATEGORY Star"
+    fi
+  done
+
+  if [ "$(lsmod | cut -f1 -d" " | grep "^$MODULE$")" != "" ]; then
+    MODULE_LOADED="true"
+  else
+    MODULE_LOADED="false"
+  fi
+
+  if [ "$(grep ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
+    PKG_INSTALLED="true"
+  else
+    PKG_INSTALLED="false"
+  fi
+
+
+
+  SHOW_MODULE "$PKG" "$MODULE" "$NAME" "$ID" "$CATEGORY" "$MODULE_COMPATIBLE" "$MODULE_LOADED" "$PKG_INSTALLED" "$DESC" &
+done
+
+
+###################################
+#
+# Other modules from BigLinux Scripts, using SDIO
+# CLOSE
+#
+###################################
+
 
 
 SHOW_FIRMWARE() {

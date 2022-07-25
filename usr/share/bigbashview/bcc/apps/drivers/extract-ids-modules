@@ -17,3 +17,5 @@ modinfo "$1" | grep alias: | grep usb: | sed 's|.*usb:v||g;s|d\*.*||g;s|p|:|g' >
 # PCI
 modinfo "$1" | grep alias: | grep pci: | sed 's|.*pci:v0000||g;s|d0000|:|g;s|sv\*.*||g' > "${FOLDER}/$1/pci.ids"
 
+# SDIO
+modinfo "$1" | grep alias: | grep sdio: | sed 's|.*sdio:c\*v||g;s|\*||g;s/./:/5' > "${FOLDER}/$1/sdio.ids"
