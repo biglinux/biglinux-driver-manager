@@ -16,7 +16,7 @@ IFS=$'\n'
 
 
     # PCI
-    PCI_LIST="$(grep -R : device-ids/ | grep 'pci.ids')"
+    PCI_LIST="$(grep -Ri : device-ids/ | grep -i 'pci.ids')"
     # Result example from list
     # device-ids/r8101/pci.ids:10EC:8136
 
@@ -26,9 +26,9 @@ IFS=$'\n'
         TYPE="$(echo "$i" | cut -f1 -d[)"
         NAME="$(echo "$i" | cut -f2- -d: | rev | cut -f2- -d[ | rev)"
 
-        if [ "$(echo "$PCI_LIST" | grep "$ID")" != "" ]; then
+        if [ "$(echo "$PCI_LIST" | grep -i "$ID")" != "" ]; then
 
-            ADDR="$(grep -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
+            ADDR="$(grep -i -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
             MODULE="$(echo "$ADDR" | cut -f2 -d/)"
             PKG="$(cat device-ids/$MODULE/pkg)"
 
@@ -44,7 +44,7 @@ IFS=$'\n'
 
 
     # USB
-    USB_LIST="$(grep -R : device-ids/ | grep 'usb.ids')"
+    USB_LIST="$(grep -Ri : device-ids/ | grep -i 'usb.ids')"
     # Result example from list
     # device-ids/8723bu/usb.ids:20F4:108A
 
@@ -53,9 +53,9 @@ IFS=$'\n'
         ID="$(echo "$i" | cut -f6 -d" ")"
         NAME="$(echo "$i" | cut -f7- -d" ")"
 
-        if [ "$(echo "$USB_LIST" | grep "$ID")" != "" ]; then
+        if [ "$(echo "$USB_LIST" | grep -i "$ID")" != "" ]; then
 
-            ADDR="$(grep -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
+            ADDR="$(grep -i -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
             MODULE="$(echo "$ADDR" | cut -f2 -d/)"
             PKG="$(cat device-ids/$MODULE/pkg)"
 
@@ -69,7 +69,7 @@ IFS=$'\n'
 
 
     # SDIO
-    SDIO_LIST="$(grep -R : device-ids/ | grep 'sdio.ids')"
+    SDIO_LIST="$(grep -Ri : device-ids/ | grep -i 'sdio.ids')"
     # Result example from list
     # device-ids/8723bu/sdio.ids:20F4:108A
 
@@ -83,9 +83,9 @@ IFS=$'\n'
         ID="$Vendor:$Device"
         #NAME="$(echo "$i" | cut -f7- -d" ")"
 
-        if [ "$(echo "$SDIO_LIST" | grep "$ID")" != "" ]; then
+        if [ "$(echo "$SDIO_LIST" | grep -i "$ID")" != "" ]; then
 
-            ADDR="$(grep -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
+            ADDR="$(grep -i -m1 -R $ID)"  # Example: device-ids/r8101/pci.ids:10EC:8136
             MODULE="$(echo "$ADDR" | cut -f2 -d/)"
             PKG="$(cat device-ids/$MODULE/pkg)"
 

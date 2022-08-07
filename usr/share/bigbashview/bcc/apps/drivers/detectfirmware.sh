@@ -42,7 +42,7 @@ if [ "$VIDEO_DRIVER_ENABLED" = "true" ]; then
 else
   DRIVER_ENABLE_OR_DISABLE=$"Instalar"
   INSTALL_OR_REMOVE_VIDEO="install_video_now"
-  if [ "$VIDEO_DRIVER_NVIDIA_ENABLED" = "true" ] && [ "$(echo "$VIDEO_DRIVER_NAME" | grep nvidia)" != "" ]; then
+  if [ "$VIDEO_DRIVER_NVIDIA_ENABLED" = "true" ] && [ "$(echo "$VIDEO_DRIVER_NAME" | grep -i nvidia)" != "" ]; then
     DISABLE_BUTTON="true"
     DRIVER_ENABLE_OR_DISABLE=$"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver instalado."
   else
@@ -116,14 +116,14 @@ for i  in  $VIDEO_DRIVER_SHOW_ALL_AND_IF_IS_FREE; do
     VIDEO_DRIVER_NAME="$(echo "$i" | cut -f1 -d" ")"
     VIDEO_DRIVER_OPEN="$(echo "$i" | cut -f2 -d" ")"
 
-    if [ "$(echo "$VIDEO_DRIVER_ENABLED_LIST" | grep "^$VIDEO_DRIVER_NAME$" )" != "" ]
+    if [ "$(echo "$VIDEO_DRIVER_ENABLED_LIST" | grep -i "^$VIDEO_DRIVER_NAME$" )" != "" ]
     then
         VIDEO_DRIVER_ENABLED="true"
     else
         VIDEO_DRIVER_ENABLED="false"
     fi
 
-    if [ "$(echo "$VIDEO_DRIVER_COMPATIBLE_WITH_THIS_HARDWARE" | grep -ve video-linux -ve video-modesetting -ve video-vesa | grep "^$VIDEO_DRIVER_NAME$" )" != "" ]
+    if [ "$(echo "$VIDEO_DRIVER_COMPATIBLE_WITH_THIS_HARDWARE" | grep -ve video-linux -ve video-modesetting -ve video-vesa | grep -i "^$VIDEO_DRIVER_NAME$" )" != "" ]
     then
         VIDEO_DRIVER_COMPATIBLE="true"
         CATEGORY="Gpu Star"
@@ -267,7 +267,7 @@ EOF
 
 
 # PCI
-PCI_LIST="$(grep -Ri : device-ids/ | grep 'pci.ids')"
+PCI_LIST="$(grep -Ri : device-ids/ | grep -i 'pci.ids')"
 # Result example from list
 # device-ids/r8101/pci.ids:10EC:8136
 PCI_IN_PC="$(lspci -nn | cut -f2- -d" ")"
@@ -275,7 +275,7 @@ PCI_LIST_MODULES="$(echo "$PCI_LIST" | cut -f2 -d/ | sort -u)"
 
 for MODULE  in  $PCI_LIST_MODULES; do
 
-  ID_LIST="$(echo "$PCI_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  ID_LIST="$(echo "$PCI_LIST" | grep -i "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
   CATEGORY="$(cat device-ids/$MODULE/category)"
   PKG="$(cat device-ids/$MODULE/pkg)"
   DESC="$(cat device-ids/$MODULE/description)"
@@ -284,21 +284,21 @@ for MODULE  in  $PCI_LIST_MODULES; do
 
   for i in  $ID_LIST; do
   
-    if [ "$(echo "$PCI_IN_PC" | grep "$i")" != "" ]; then
+    if [ "$(echo "$PCI_IN_PC" | grep -i "$i")" != "" ]; then
   
-      NAME="$(echo "$PCI_IN_PC" | grep "$ID" | cut -f2- -d" ")"
+      NAME="$(echo "$PCI_IN_PC" | grep -i "$ID" | cut -f2- -d" ")"
       MODULE_COMPATIBLE="true"
       CATEGORY="$CATEGORY Star"
     fi
   done
 
-  if [ "$(lsmod | cut -f1 -d" " | grep "^$MODULE$")" != "" ]; then
+  if [ "$(lsmod | cut -f1 -d" " | grep -i "^$MODULE$")" != "" ]; then
     MODULE_LOADED="true"
   else
     MODULE_LOADED="false"
   fi
 
-  if [ "$(echo "$INSTALLED_PKGS" | grep ^$PKG$)" != "" ]; then
+  if [ "$(echo "$INSTALLED_PKGS" | grep -i ^$PKG$)" != "" ]; then
     PKG_INSTALLED="true"
   else
     PKG_INSTALLED="false"
@@ -316,7 +316,7 @@ done
 
 
 # PCI
-PCI_LIST="$(grep -Ri : device-ids/ | grep 'pci.ids')"
+PCI_LIST="$(grep -Ri : device-ids/ | grep -i 'pci.ids')"
 # Result example from list
 # device-ids/r8101/pci.ids:10EC:8136
 PCI_IN_PC="$(lspci -nn | cut -f2- -d" ")"
@@ -324,7 +324,7 @@ PCI_LIST_MODULES="$(echo "$PCI_LIST" | cut -f2 -d/ | sort -u)"
 
 for MODULE  in  $PCI_LIST_MODULES; do
 
-  ID_LIST="$(echo "$PCI_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  ID_LIST="$(echo "$PCI_LIST" | grep -i "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
   CATEGORY="$(cat device-ids/$MODULE/category)"
   PKG="$(cat device-ids/$MODULE/pkg)"
   DESC="$(cat device-ids/$MODULE/description)"
@@ -333,21 +333,21 @@ for MODULE  in  $PCI_LIST_MODULES; do
 
   for i in  $ID_LIST; do
   
-    if [ "$(echo "$PCI_IN_PC" | grep "$i")" != "" ]; then
+    if [ "$(echo "$PCI_IN_PC" | grep -i "$i")" != "" ]; then
   
-      NAME="$(echo "$PCI_IN_PC" | grep "$ID" | cut -f2- -d" ")"
+      NAME="$(echo "$PCI_IN_PC" | grep -i "$ID" | cut -f2- -d" ")"
       MODULE_COMPATIBLE="true"
       CATEGORY="$CATEGORY Star"
     fi
   done
 
-  if [ "$(lsmod | cut -f1 -d" " | grep "^$MODULE$")" != "" ]; then
+  if [ "$(lsmod | cut -f1 -d" " | grep -i "^$MODULE$")" != "" ]; then
     MODULE_LOADED="true"
   else
     MODULE_LOADED="false"
   fi
 
-  if [ "$(echo "$INSTALLED_PKGS" | grep ^$PKG$)" != "" ]; then
+  if [ "$(echo "$INSTALLED_PKGS" | grep -i ^$PKG$)" != "" ]; then
     PKG_INSTALLED="true"
   else
     PKG_INSTALLED="false"
