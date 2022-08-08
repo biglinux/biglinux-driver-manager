@@ -494,7 +494,7 @@ EOF
 
 
 # PCI
-PCI_LIST="$(grep -Ri : device-ids/ | grep 'pci.ids')"
+PCI_LIST="$(grep -Ri : device-ids/ | grep -i 'pci.ids')"
 # Result example from list
 # device-ids/r8101/pci.ids:10EC:8136
 PCI_IN_PC="$(lspci -nn | cut -f2- -d" ")"
@@ -502,7 +502,7 @@ PCI_LIST_MODULES="$(echo "$PCI_LIST" | cut -f2 -d/ | sort -u)"
 
 for MODULE  in  $PCI_LIST_MODULES; do
 
-  ID_LIST="$(echo "$PCI_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  ID_LIST="$(echo "$PCI_LIST" | grep -i "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
   CATEGORY="$(cat device-ids/$MODULE/category)"
   PKG="$(cat device-ids/$MODULE/pkg)"
   DESC="$(cat device-ids/$MODULE/description)"
@@ -511,21 +511,21 @@ for MODULE  in  $PCI_LIST_MODULES; do
 
   for i in  $ID_LIST; do
   
-    if [ "$(echo "$PCI_IN_PC" | grep "$i")" != "" ]; then
+    if [ "$(echo "$PCI_IN_PC" | grep -i "$i")" != "" ]; then
   
-      NAME="$(echo "$PCI_IN_PC" | grep "$ID" | cut -f2- -d" ")"
+      NAME="$(echo "$PCI_IN_PC" | grep -i "$ID" | cut -f2- -d" ")"
       MODULE_COMPATIBLE="true"
       CATEGORY="$CATEGORY Star"
     fi
   done
 
-  if [ "$(lsmod | cut -f1 -d" " | grep "^$MODULE$")" != "" ]; then
+  if [ "$(lsmod | cut -f1 -d" " | grep -i "^$MODULE$")" != "" ]; then
     MODULE_LOADED="true"
   else
     MODULE_LOADED="false"
   fi
 
-  if [ "$(grep ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
+  if [ "$(grep -i ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
     PKG_INSTALLED="true"
   else
     PKG_INSTALLED="false"
@@ -561,7 +561,7 @@ done
 
 
 # USB
-USB_LIST="$(grep -Ri : device-ids/ | grep 'usb.ids')"
+USB_LIST="$(grep -Ri : device-ids/ | grep -i 'usb.ids')"
 # Result example from list
 # device-ids/r8188eu/usb.ids:2001:331B
 USB_IN_PC="$(lsusb | cut -f6- -d" ")"
@@ -569,7 +569,7 @@ USB_LIST_MODULES="$(echo "$USB_LIST" | cut -f2 -d/ | sort -u)"
 
 for MODULE  in  $USB_LIST_MODULES; do
 
-  ID_USB_LIST="$(echo "$USB_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  ID_USB_LIST="$(echo "$USB_LIST" | grep -i "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
   CATEGORY="$(cat device-ids/$MODULE/category)"
   PKG="$(cat device-ids/$MODULE/pkg)"
   DESC="$(cat device-ids/$MODULE/description)"
@@ -578,21 +578,21 @@ for MODULE  in  $USB_LIST_MODULES; do
 
   for i in  $ID_USB_LIST; do
   
-    if [ "$(echo "$USB_IN_PC" | grep "$i")" != "" ]; then
+    if [ "$(echo "$USB_IN_PC" | grep -i "$i")" != "" ]; then
   
-      NAME="$(echo "$USB_IN_PC" | grep "$ID" | cut -f2- -d" ")"
+      NAME="$(echo "$USB_IN_PC" | grep -i "$ID" | cut -f2- -d" ")"
       MODULE_COMPATIBLE="true"
       CATEGORY="$CATEGORY Star"
     fi
   done
 
-  if [ "$(lsmod | cut -f1 -d" " | grep "^$MODULE$")" != "" ]; then
+  if [ "$(lsmod | cut -f1 -d" " | grep -i "^$MODULE$")" != "" ]; then
     MODULE_LOADED="true"
   else
     MODULE_LOADED="false"
   fi
 
-  if [ "$(grep ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
+  if [ "$(grep -i ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
     PKG_INSTALLED="true"
   else
     PKG_INSTALLED="false"
@@ -624,7 +624,7 @@ done
 
 
 # SDIO
-SDIO_LIST="$(grep -Ri : device-ids/ | grep 'sdio.ids')"
+SDIO_LIST="$(grep -Ri : device-ids/ | grep -i 'sdio.ids')"
 # Result example from list
 # device-ids/r8188eu/sdio.ids:2001:331B
 
@@ -643,7 +643,7 @@ SDIO_LIST_MODULES="$(echo "$SDIO_LIST" | cut -f2 -d/ | sort -u)"
 
 for MODULE  in  $SDIO_LIST_MODULES; do
 
-  ID_SDIO_LIST="$(echo "$SDIO_LIST" | grep "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
+  ID_SDIO_LIST="$(echo "$SDIO_LIST" | grep -i "/$MODULE/" | rev | cut -f1,2 -d: | rev)"
   CATEGORY="$(cat device-ids/$MODULE/category)"
   PKG="$(cat device-ids/$MODULE/pkg)"
   DESC="$(cat device-ids/$MODULE/description)"
@@ -652,21 +652,21 @@ for MODULE  in  $SDIO_LIST_MODULES; do
 
   for i in  $ID_SDIO_LIST; do
   
-    if [ "$(echo "$SDIO_IN_PC" | grep "$i")" != "" ]; then
+    if [ "$(echo "$SDIO_IN_PC" | grep -i "$i")" != "" ]; then
   
-      NAME="$(echo "$SDIO_IN_PC" | grep "$ID" | cut -f2- -d" ")"
+      NAME="$(echo "$SDIO_IN_PC" | grep -i "$ID" | cut -f2- -d" ")"
       MODULE_COMPATIBLE="true"
       CATEGORY="$CATEGORY Star"
     fi
   done
 
-  if [ "$(lsmod | cut -f1 -d" " | grep "^$MODULE$")" != "" ]; then
+  if [ "$(lsmod | cut -f1 -d" " | grep -i "^$MODULE$")" != "" ]; then
     MODULE_LOADED="true"
   else
     MODULE_LOADED="false"
   fi
 
-  if [ "$(grep ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
+  if [ "$(grep -i ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
     PKG_INSTALLED="true"
   else
     PKG_INSTALLED="false"
@@ -748,7 +748,7 @@ EOF
 # Firmware
 # Result example from list
 # firmware/zd1211-firmware/zd1211-firmware:/usr/lib/firmware/zd1211/zd1211_uph
-FIRMWARE_MISSING="$(dmesg | grep firmware | grep error | grep loading | cut -f2 -d] | cut -f2,5 -d" ")"
+FIRMWARE_MISSING="$(dmesg | grep -i firmware | grep -i error | grep -i loading | cut -f2 -d] | cut -f2,5 -d" ")"
 FIRMWARE_LIST_PKGS="$(ls firmware)"
 
 for PKG  in $FIRMWARE_LIST_PKGS; do
@@ -760,7 +760,7 @@ for PKG  in $FIRMWARE_LIST_PKGS; do
 
   for i in  $FIRMWARE_MISSING; do
   
-    if [ "$(grep "$i" firmware/$PKG/$PKG)" != "" ]; then
+    if [ "$(grep -i "$i" firmware/$PKG/$PKG)" != "" ]; then
   
       MODULE_NEED_FIRMWARE="$(echo "$FIRMWARE_MISSING" | cut -f1 -d" ")"
       FIRMWARE_COMPATIBLE="true"
@@ -768,7 +768,7 @@ for PKG  in $FIRMWARE_LIST_PKGS; do
     fi
   done
 
-  if [ "$(grep ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
+  if [ "$(grep -i ^$PKG$ $HOME/.config/bigcontrolcenter-drivers/total_pkgs)" != "" ]; then
     PKG_INSTALLED="true"
   else
     PKG_INSTALLED="false"
