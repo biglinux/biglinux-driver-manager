@@ -903,6 +903,23 @@ echo '</div></div></div>'
 
 
 
+echo "<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>"
+echo "ACPI interrupts</div>"
+echo '</span><div class="app-card__subtext">'
+echo '<div class=hardwareSpaceNull>'
+
+cat << EOF
+<div class="content">
+<div class="text_area">
+<textarea style="width:100%;" rows="20">
+
+$(egrep 'disabled|enabled' /sys/firmware/acpi/interrupts/*)
+
+</textarea></div></div>
+
+EOF
+
+echo '</div></div></div>'
 
 
 
