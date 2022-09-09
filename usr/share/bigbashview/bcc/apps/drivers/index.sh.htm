@@ -721,6 +721,8 @@ cat << EOF >> "$HOME/.config/bigcontrolcenter-drivers/cache_firmware_$PKG.html"
 
                   $DESC
                   $FIRMWARE_COMPATIBLE_MSG
+                  
+                  $LIST_FIRMWARES
                   </div>
                 <div class="app-card-buttons">
                   <a class="content-button status-button $BUTTON_COLOR" onclick="disableBodyConfigSimple();" href="index.sh.htm?${INSTALL_OR_REMOVE_PKG}=${PKG}">$PKG_INSTALLED_OR_NOT</a>
@@ -755,6 +757,7 @@ for PKG  in $FIRMWARE_LIST_PKGS; do
 
   CATEGORY="$(cat firmware/$PKG/category)"
   DESC="$(cat firmware/$PKG/description)"
+  LIST_FIRMWARES="$(sed 's|.*/|<br><br>|g' firmware/$PKG/$PKG)"
 
   FIRMWARE_COMPATIBLE="false"
 
@@ -774,7 +777,7 @@ for PKG  in $FIRMWARE_LIST_PKGS; do
     PKG_INSTALLED="false"
   fi
   
-  SHOW_FIRMWARE "$PKG" "$MODULE_NEED_FIRMWARE" "$ID" "$CATEGORY" "$FIRMWARE_COMPATIBLE" "$PKG_INSTALLED" "$DESC" &
+  SHOW_FIRMWARE "$PKG" "$MODULE_NEED_FIRMWARE" "$ID" "$CATEGORY" "$FIRMWARE_COMPATIBLE" "$PKG_INSTALLED" "$DESC" "$LIST_FIRMWARES" &
 done
 
 ###################################
