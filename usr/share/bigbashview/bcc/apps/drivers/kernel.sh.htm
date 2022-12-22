@@ -1,0 +1,505 @@
+#!/bin/bash
+
+
+##################################
+#  Author1: Bruno Goncalves (www.biglinux.com.br) 
+#  Author2: Rafael Ruscher (rruscher@gmail.com)  
+#  Date:    2022/02/28 
+#  
+#  Description: Control Center to help usage of BigLinux 
+#  
+# Licensed by GPL V2 or greater
+##################################
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=biglinux-driver-manager
+
+mkdir -p "$HOME/.config/bigcontrolcenter-drivers"
+# Don't group windows
+xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
+
+CATEGORY=$"Categorias"
+CATEGORY_Star=$"Principais"
+CATEGORY_Star_Tit=$"Driver detectado:"
+Kernel_Text=$"O kernel Linux é o componente do sistema operacional que controla todos os outros componentes e permite que os aplicativos funcionem. Alterar a versão do kernel pode trazer novas funcionalidades ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a diferença entre as versões:
+<br><br>
+<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é a melhor opção.
+<br><br>
+<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar instabilidades no sistema.
+<br><br>
+<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise disso, é melhor usar um kernel sem a sigla 'rt'."
+Need_Help=$"Precisa de ajuda?"
+Kernel_Title=$"Versões de kernel:"
+
+Mesa_Text=$"Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença entre as versões:
+<br><br>
+<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e estabilidade.
+<br><br>
+<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, mas também pode trazer mais desempenho para jogos.
+<br><br>
+<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.
+<br><br>
+* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver proprietário da Nvidia"
+
+KernelMesaText=$"Alterar Kernel e Mesa, utilize com cuidado."
+
+#OLD
+SEARCH=$"Pesquisar Kernel"
+SEARCH_Result=$"Resultado da pesquisa"
+
+TITLE=$"Big-Kernel-Manager"
+CLOSE=$"Fechar"
+OPEN=$"Abrir"
+
+WELCOME=$"Instalar ou Remover Versões de Kernel"
+#WELCOME_DESC=$"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário instalar mais alguns."
+
+
+#################
+# Open terminal and install driver
+#################
+
+if [ "$install_kernel_now" != "" ]; then
+  ./installpkgkernel.sh install $install_kernel_now
+fi
+
+if [ "$remove_kernel_now" != "" ]; then
+  ./installpkgkernel.sh remove $remove_kernel_now
+fi
+
+
+if [ "$mesa" = "mesa" ]; then
+  ./installpkgmesa.sh install "lib32-libva-mesa-driver  libva-mesa-driver  lib32-mesa mesa"
+fi
+
+
+if [ "$mesa" = "amber" ]; then
+  ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber"
+fi
+
+
+if [ "$mesa" = "tkg" ]; then
+  ./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
+fi
+
+
+cat << EOF
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>$TITLE</title>
+  <link rel="stylesheet" href="/usr/share/bigbashview/bcc/apps/bigcontrolcenter/style.css">
+  <script src="/usr/share/bigbashview/bcc/materialize/js/jquery.js"></script>
+  <script src="./filter.js"></script>
+</head>
+EOF
+
+##########################
+#
+# Change background when open terminal
+#
+##########################
+
+echo "<script>
+function disableBodyConfig() {
+  \$('#box_progress_config').css({
+    'display':'inline-flex'
+  });
+}
+</script>"
+
+echo "<script>
+function disableBodyConfigSimple() {
+  \$('#box_progress_config_simple').css({
+    'display':'inline-flex'
+  });
+}
+</script>"
+
+
+echo '<style>
+div#box_progress_config_simple{
+    position: fixed;
+    background-color: #000000aa;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+
+div#box_progress_config{
+    position: fixed;
+    background-color: #000000aa;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+
+div#box_progress_config_bar {
+    position: absolute;
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    color: #ccc;    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 300px;
+    width: 75%;
+    padding: 10px;
+    text-align: left;
+    background: #002240;
+    border-radius: 15px;
+}
+
+.loadingtxt {
+ animation:extend 3s steps(3, end) infinite;
+ display: inline-block;
+ overflow: hidden;
+ vertical-align: bottom;
+ color: #fff;
+ &:before {
+  content:"...";
+  }
+}
+@keyframes extend {
+  0% {
+    width:.25em;
+  }
+  100% {
+    width:1em;
+  }
+}
+</style>'
+
+
+# Loading
+echo '<div id=box_progress_config>'
+echo '<div id=box_progress_config_bar>'
+cat << EOF
+<svg viewBox="0 0 576 512" style="width: 17px; margin-right: 3px; margin-top: 2px;"><path fill="currentColor" d="M480 80C480 53.49 458.5 32 432 32h-288C117.5 32 96 53.49 96 80V384h384V80zM378.9 166.8l-88 112c-4.031 5.156-10 8.438-16.53 9.062C273.6 287.1 272.7 287.1 271.1 287.1c-5.719 0-11.21-2.019-15.58-5.769l-56-48C190.3 225.6 189.2 210.4 197.8 200.4c8.656-10.06 23.81-11.19 33.84-2.594l36.97 31.69l72.53-92.28c8.188-10.41 23.31-12.22 33.69-4.062C385.3 141.3 387.1 156.4 378.9 166.8zM528 288H512v112c0 8.836-7.164 16-16 16h-416C71.16 416 64 408.8 64 400V288H48C21.49 288 0 309.5 0 336v96C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48v-96C576 309.5 554.5 288 528 288z"/></svg>
+EOF
+echo $"Aplicando - Aguarde"
+echo $'<span class=loadingtxt>...</span>'
+echo '</div>'
+echo '</div>'
+
+echo '<div id=box_progress_config_simple></div>'
+
+# Get body tag with color light or not
+/usr/share/bigbashview/bcc/shell/getbgcolor.sh
+
+cat << EOF
+<div class="dark-light">
+  <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+  </svg>
+</div>
+<div class="app">
+  <div class="header">
+    <div class="title">
+      $KernelMesaText
+    </div>
+  </div>
+EOF
+if [ "$(echo $LANG | grep ^he)" != "" ]; then
+    echo '<div class="wrapper" style="flex-direction: row-reverse;">'
+else
+    echo '<div class="wrapper">'
+fi
+cat << EOF
+    <div class="left-side" style="display: none;">
+      <div class="side-wrapper">
+        <div class="side-menu">
+          <a href="#topo" id="Star" class="btn">
+            <svg viewBox="0 0 512 512">
+              <g fill="currentColor">
+                <path d="M0 0h128v128H0zm0 0M192 0h128v128H192zm0 0M384 0h128v128H384zm0 0M0 192h128v128H0zm0 0" data-original="#bfc9d1" />
+              </g>
+              <path d="M192 192h128v128H192zm0 0" fill="currentColor" data-original="#82b1ff" />
+              <path d="M384 192h128v128H384zm0 0M0 384h128v128H0zm0 0M192 384h128v128H192zm0 0M384 384h128v128H384zm0 0" fill="currentColor" data-original="#bfc9d1" />
+            </svg>
+            <span>$CATEGORY_Star</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="main-container" style="overflow: auto;">
+
+      <!-- PRINCIPAIS -->
+        <div class="content-wrapper" style="overflow-x: hidden;">
+          <div class="main-header Star Staritem Staritem-margin">
+        <div class="content-section-title Star" style="margin-top: -35px; margin-bottom: 0px;"><h4>$CATEGORY_Star_Desc</h4></div></div>
+EOF
+
+
+OIFS=$IFS
+IFS=$'\n'
+
+Mesa_Title=$"Drivers de vídeo:"
+
+cat << EOF
+    <div class="title-position-mesa">
+      <div class="left">$Mesa_Title</div>
+      <div class="right"><a href=# onclick="openModal('modalB')">$Need_Help</a></div>
+    </div>
+<div id="modalB" class="modal">
+    <div class="modalContent">
+        <div class="pop-up__subtitle">
+        $Mesa_Text
+        </div>
+
+        <div class="content-button-wrapper" style="text-align: right;">
+            <button class="modalClose">$CLOSE</button>
+        </div>
+    </div>
+    </div>
+
+EOF
+
+Mesa_Version=$"Versão do Mesa"
+
+if [ "$(LANG=C pacman -Qi 'mesa' | grep ^Name | grep mesa$)" != "" ]; then
+  mesaChecked=checked
+  mesaInstall=y
+elif [ "$(LANG=C pacman -Qi 'mesa-amber' | grep ^Name | grep mesa-amber$)" != "" ]; then
+  mesaAmberChecked=checked
+  mesaAmberInstall=y
+elif [ "$(LANG=C pacman -Qi 'mesa-tkg-git' | grep ^Name | grep mesa-tkg-git$)" != "" ]; then
+  mesaAmberInstall=y
+  mesaTkgChecked=checked
+fi
+
+
+cat << EOF
+
+    <div class="apps-card-mesa">
+    <div class="app-card-kernel Star">
+
+$Mesa_Version<br><br>
+    
+      <label>
+        <input name="group1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
+        <div class="mesa_name">Amber
+        <div class="version-mesa">$(LANG=C pacman -Si mesa-amber  | grep -i "^Version" | cut -f2 -d:)</div></div>
+      </label>
+      <label>
+        <input name="group1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
+        <div class="mesa_name">Stable
+        <div class="version-mesa">$(LANG=C pacman -Si mesa  | grep -i "^Version" | cut -f2 -d:)</div></div>
+      </label>
+      <label>
+        <input name="group1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
+        <div class="mesa_name">Tkg-git
+        <div class="version-mesa">$(LANG=C pacman -Si mesa-tkg-git  | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</div></div>
+      </label>
+  </div>
+    </div>
+EOF
+
+cat << EOF
+    <div class="title-position">
+      <div class="left">$Kernel_Title</div>
+      <div class="right"><a href=# onclick="openModal('modalA')">$Need_Help</a></div>
+    </div>
+<div id="modalA" class="modal">
+    <div class="modalContent">
+        <div class="pop-up__subtitle">
+        $Kernel_Text
+        </div>
+
+        <div class="content-button-wrapper" style="text-align: right;">
+            <button class="modalClose">$CLOSE</button>
+        </div>
+    </div>
+    </div>
+    <div class="apps-card-kernel">
+EOF
+
+echo "<script>
+\$(function() {
+   \$(\"#Star\").trigger(\"click\");});
+</script>"
+
+rm -f /tmp/kernel-mhwd-*.html
+./kernel-mhwd.sh
+cat /tmp/kernel-mhwd-*.html
+
+###################################
+#
+# Other modules from BigLinux Scripts, using PCI
+# CLOSE
+#
+###################################
+
+cat << EOF
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="footer">
+  </div>
+  <div class="logo">
+      <img id="btn-big" src="logo.png" class="logo-biglinux" onclick="biglinux();">
+  </div>
+  
+  <style>
+.apps-card-kernel {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-left: 80px;
+    max-width: 1100;
+    align-self: center;
+    margin-right: 80px;
+    width: 90%;
+    min-width: 400px;
+}
+
+.app-card-kernel {
+    display: block;
+    max-height: 40vh;
+    font-size: var(--text-size-big);
+    background-color: var(--content-bg);
+    padding: 20px;
+    transition: 0.3s ease;
+    position: relative;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    fill: var(--text-a-color);
+    border-radius: 14px;
+    border: 1px solid var(--border-card-color);
+    min-width: 500px;
+}
+
+
+.apps-card-mesa {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-left: 80px;
+    max-width: 1100;
+    align-self: center;
+    margin-right: 80px;
+    min-width: 600px;
+    text-align: center;
+}
+
+.kernel_desc {
+    display: contents;
+}
+
+.kernel-button {
+    display: inline;
+    float: right;
+}
+
+.version {
+    display: -webkit-inline-box;
+    margin-left: 20px;
+    color: var(--border-box);
+}
+
+
+.version-mesa {
+    display: -webkit-inline-box;
+    color: var(--border-box);
+    overflow: hidden;
+    max-width: 14ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mesa_name {
+    display: inline-grid;
+    max-width: max-content;
+}
+
+.title-position {
+    display: flex;
+    margin-left: 30px;
+    max-width: 1027px;
+    align-self: center;
+    margin-bottom: 9px;
+    margin-right: 46px;
+    width: 90%;
+    min-width: 400px;
+    display: inline-flex;
+    color: var(--search-color);
+}
+
+.title-position-mesa {
+    display: flex;
+    margin-left: 30px;
+    max-width: 591px;
+    align-self: center;
+    margin-bottom: 9px;
+    margin-right: 46px;
+    width: 90%;
+    min-width: 400px;
+    display: inline-flex;
+    color: var(--search-color);
+}
+
+.right {
+    flex: auto;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: var(--search-color);
+}
+
+.modalContent {
+    position: fixed;
+    padding: 30px 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    box-shadow: 0px 6px 30px rgb(0 0 0 / 40%);
+    transition: all 0.3s;
+    z-index: 10;
+    background-color: var(--popup-bg);
+    max-width: 1000px;
+    width: 90%;
+    border-radius: 6px;
+    flex-direction: column;
+    white-space: normal;
+}
+
+.pop-up__subtitle {
+    font-size: var(--text-size-medium);
+}
+
+label {
+    margin: 20px;
+}
+
+
+.mesa_name {
+    cursor: pointer;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+  </style>
+
+  <script src="./script.js"></script>
+</body>
+</html>
+EOF
+IFS=$OIFS
+
