@@ -70,12 +70,12 @@ fi
 
 
 if [ "$mesa" = "mesa" ]; then
-  ./installpkgmesa.sh install "lib32-libva-mesa-driver  libva-mesa-driver  lib32-mesa mesa"
+  ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
 fi
 
 
 if [ "$mesa" = "amber" ]; then
-  ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber"
+  ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
 fi
 
 
