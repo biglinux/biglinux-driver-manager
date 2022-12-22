@@ -18,7 +18,7 @@ export TEXTDOMAIN=biglinux-driver-manager
 OIFS=$IFS
 # kernel current version like mhwd
 IFS=. read -r major minor _ <<< "$(uname -r)"
-if uname -r | grep xanmod > /dev/null; then current="linux-xanmod"; else current="linux$major$minor"; fi
+if uname -r | grep xanmod.*lts >/dev/null; then current="linux-xanmod-lts"; elif grep xanmod >/dev/null; then current="linux-xanmod";  else current="linux$major$minor"; fi
 IFS=$'\n'
 
 
