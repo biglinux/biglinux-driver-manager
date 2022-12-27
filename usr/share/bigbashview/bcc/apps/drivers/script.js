@@ -99,3 +99,57 @@ $('#btn-big').click(function(){
     }
     ++bigcount;
 });
+
+// Open or close Modal
+$(function () {
+  $(".status-button:not(.open)").on("click", function (e) {
+    $(".overlay-app").addClass("is-active");
+  });
+  $(".pop-up .close").click(function () {
+    $(".overlay-app").removeClass("is-active");
+  });
+});
+
+$(".status-button:not(.open)").click(function () {
+  $(".pop-up").addClass("visible");
+});
+
+$(".pop-up .close").click(function () {
+  $(".pop-up").removeClass("visible");
+});
+
+$(function () {
+  $(".status-button2:not(.open)").on("click", function (e) {
+    $(".overlay-app").addClass("is-active");
+  });
+  $(".pop-up2 .close").click(function () {
+    $(".overlay-app").removeClass("is-active");
+  });
+});
+
+$(".status-button2:not(.open)").click(function () {
+  $(".pop-up2").addClass("visible");
+});
+
+$(".pop-up2 .close").click(function () {
+  $(".pop-up2").removeClass("visible");
+});
+
+
+$(function () {
+  $(".status-button3:not(.open)").on("click", function (e) {
+    $(".overlay-app").addClass("is-active");
+  });
+  $(".pop-up3 .close").click(function () {
+    $(".overlay-app").removeClass("is-active");
+  });
+});
+
+$(".status-button3:not(.open)").click(function () {
+  $(".pop-up3").addClass("visible");
+});
+
+$(".pop-up3 .close").click(function () {
+  $(".pop-up3").removeClass("visible");
+});
+
