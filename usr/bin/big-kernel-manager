@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=bigcontrolcenter
+
+
+if [[ $(ps -aux | grep Big-Kernel-Manager | grep bigbashview) ]]; then
+
+    kdialog --passivepopup $"O Big-Kernel-Manager já está em uso."
+    exit
+fi
+
+cd /usr/share/bigbashview/bcc/apps/drivers/
+
+bigbashview -s 1000x660 kernel.sh.htm -n $"Big-Kernel-Manager" -i icon-kernel.svg
