@@ -153,7 +153,7 @@ $(".pop-up3 .close").click(function () {
   $(".pop-up3").removeClass("visible");
 });
 
-
+// Sort List <ul> <li>
 sortList(document.getElementsByClassName('list')[0]);
 
 function sortList(ul){

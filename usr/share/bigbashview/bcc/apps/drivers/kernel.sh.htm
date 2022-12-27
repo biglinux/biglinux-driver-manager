@@ -2,7 +2,7 @@
 ##################################
 #  Author1: Bruno Goncalves (www.biglinux.com.br) 
 #  Author2: Rafael Ruscher (rruscher@gmail.com)  
-#  Date:    2022/02/28 
+#  Date:    2022/12/26 
 #  
 #  Description: Control Center to help usage of BigLinux 
 #  
@@ -48,11 +48,9 @@ Mesa_Text=$"Mesa inclui os drivers de vídeo do sistema que funcionam em conjunt
 #OLD
 SEARCH=$"Pesquisar Kernel"
 SEARCH_Result=$"Resultado da pesquisa"
-
 TITLE=$"Big-Kernel-Manager"
 CLOSE=$"Fechar"
 OPEN=$"Abrir"
-
 WELCOME=$"Instalar ou Remover Versões de Kernel"
 
 #WELCOME_DESC=$"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário instalar mais alguns."
@@ -69,21 +67,17 @@ if [ "$remove_kernel_now" != "" ]; then
   ./installpkgkernel.sh remove $remove_kernel_now
 fi
 
-
 if [ "$mesa" = "mesa" ]; then
   ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
 fi
-
 
 if [ "$mesa" = "amber" ]; then
   ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
 fi
 
-
 if [ "$mesa" = "tkg" ]; then
   ./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
 fi
-
 
 cat << EOF
 <html>
@@ -93,7 +87,6 @@ cat << EOF
   <link rel="stylesheet" href="./style.css">
   <script src="/usr/share/bigbashview/bcc/materialize/js/jquery.js"></script>
 EOF
-
 ##########################
 #
 # Change background when open terminal
@@ -107,7 +100,6 @@ function disableBodyConfig() {
   });
 }
 </script>"
-
 echo "<script>
 function disableBodyConfigSimple() {
   \$('#box_progress_config_simple').css({
@@ -115,8 +107,6 @@ function disableBodyConfigSimple() {
   });
 }
 </script>"
-
-
 echo '<style>
 div#box_progress_config_simple{
     position: fixed;
@@ -127,7 +117,6 @@ div#box_progress_config_simple{
     display: none;
 }
 
-
 div#box_progress_config{
     position: fixed;
     background-color: #000000aa;
@@ -136,7 +125,6 @@ div#box_progress_config{
     z-index: 10;
     display: none;
 }
-
 
 div#box_progress_config_bar {
     position: absolute;
@@ -157,25 +145,24 @@ div#box_progress_config_bar {
 }
 
 .loadingtxt {
- animation:extend 3s steps(3, end) infinite;
- display: inline-block;
- overflow: hidden;
- vertical-align: bottom;
- color: #fff;
- &:before {
-  content:"...";
-  }
+    animation:extend 3s steps(3, end) infinite;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    color: #fff;
+    &:before {
+      content:"...";
+    }
 }
 @keyframes extend {
-  0% {
-    width:.25em;
-  }
-  100% {
-    width:1em;
-  }
+    0% {
+      width:.25em;
+    }
+    100% {
+      width:1em;
+    }
 }
 </style>'
-
 
 # Loading
 echo '<div id=box_progress_config>'
@@ -187,14 +174,13 @@ echo $"Aplicando - Aguarde"
 echo $'<span class=loadingtxt>...</span>'
 echo '</div>'
 echo '</div>'
-
 echo '<div id=box_progress_config_simple></div>'
 
 # Get body tag with color light or not
 /usr/share/bigbashview/bcc/shell/getbgcolor.sh
 
 cat << EOF
-<!-- partial:index.partial.html -->
+
 <div class="dark-light">
   <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
@@ -203,11 +189,9 @@ cat << EOF
 <div class="login">
   <div class="wrap">
     <div class="user">
-    
       <div class="logo">
           <img id="btn-big" src="logo.svg" class="logo-biglinux" onclick="biglinux();">
       </div>      
-      
       <div class="user">
         <div class="form-wrap"> 
           <div class="form-wrap tabs-content">
@@ -227,8 +211,6 @@ cat << EOF
                   <a class="status-button3"><svg style="margin-left:-10px; width: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#3a6df0" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
                   </a>
                 </li>
-  
-  
                 <div class="pop-up3">
                   <div class="pop-up__title">$Mesa_Title
                     <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
@@ -237,7 +219,6 @@ cat << EOF
                     </svg>
                   </div>
                   <div class="pop-up__subtitle">$Mesa_Text</div>
-                  
                   <div class="content-button-wrapper">
                     <button class="content-button status-button3 open close">$CLOSE</button>
                   </div>
@@ -257,57 +238,50 @@ elif [ "$(LANG=C pacman -Qi 'mesa-tkg-git' | grep ^Name | grep mesa-tkg-git$)" !
 fi
 
 cat << EOF              
-              
               <div class="content-section" style="margin-top: 0px;">
                 <ul>
                   <li class="product">
                     <div class="products">
-                    <input id="r1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
-                    <label for="r1">
-<span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=C pacman -Si mesa-amber  | grep -i "^Version" | cut -f2 -d:)</font></span></label>
+                      <input id="r1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
+                      <label for="r1">
+                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=C pacman -Si mesa-amber  | grep -i "^Version" | cut -f2 -d:)</font></span>
+                      </label>
                     </div>
                     <div class="products">
-                    <input id="r2" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
-                    <label for="r2">
-<span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=C pacman -Si mesa  | grep -i "^Version" | cut -f2 -d:)</font></span></label>
+                      <input id="r2" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
+                      <label for="r2">
+                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=C pacman -Si mesa  | grep -i "^Version" | cut -f2 -d:)</font></span>
+                      </label>
                     </div>
                     <div class="products">
-                    <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
-                    <label for="r3">
-<span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=C pacman -Si mesa-tkg-git  | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span></label>
+                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
+                      <label for="r3">
+                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=C pacman -Si mesa-tkg-git  | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
+                      </label>
                     </div>
                   </li>
                 </ul>
               </div>              
               <br><br>
-              
-              
-
-              
               <ul style="vertical-align: middle; list-style-type: none; margin: 0; width: 100%;">
                 <li style="margin-top:auto; margin-bottom:auto;"><div class="content-section-title">$Kernel_Title</div><li>
                 <li style="text-align: right;">
                   <a class="status-button2"><svg style="margin-left:-10px; width: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#3a6df0" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
                   </a>   
                 </li>
-                
                 <div class="pop-up2">
-                  <div class="pop-up__title">Versões de kernel
+                  <div class="pop-up__title">$Kernel_Title
                     <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
                       <circle cx="12" cy="12" r="10" />
                       <path d="M15 9l-6 6M9 9l6 6" />
                     </svg>
                   </div>
                   <div class="pop-up__subtitle">$Kernel_Text</div>
-                  
                   <div class="content-button-wrapper">
-                    <button class="content-button status-button2 open close">Fechar</button>
-                    
+                    <button class="content-button status-button2 open close">$CLOSE</button>
                   </div>
                 </div>                
               </ul>              
-              
-
               <div class="content-section" style="margin-top: 0px;">
                 <ul style="margin-top: 0px;" class="list">
               
@@ -320,20 +294,14 @@ cat /tmp/kernel-mhwd-*.html
 
 cat << EOF
                 </ul>
-              </div>
-
-
-
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- partial -->
- <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
   <script  src="./script.js"></script>
-
 </body>
 </html>
 EOF
