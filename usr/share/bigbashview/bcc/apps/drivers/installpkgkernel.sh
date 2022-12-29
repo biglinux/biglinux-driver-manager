@@ -18,14 +18,14 @@ done
 # pacman --noconfirm --overwrite \* -S "${pkginstall[@]}"
 
 
-
-
 if [ "$Package" = "install" ]; then
     pamac-installer ${pkginstall[@]} &
 fi
 
+
 if [ "$Package" = "remove" ]; then
-    pamac-installer --remove ${pkginstall[@]} &
+#     pamac-installer --remove $(pacman -Qqs "$Kernel_version") &
+    pamac-installer --remove $Kernel_version $(LC_ALL=C timeout 10s pamac remove -odc $Kernel_version | grep "^  " | cut -f3 -d" ") &
 fi
 
 
