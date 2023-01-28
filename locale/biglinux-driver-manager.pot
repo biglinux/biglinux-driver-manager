@@ -14,14 +14,12 @@ msgstr  "Project-Id-Version: biglinux-driver-manager\n"
         "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-msgid   "Concluído, reinicie o computador para ativar a configuração do "
-        "driver."
+msgid   "Digite sua senha para gerar um relatório removendo dados sensíveis, "
+        "por exemplo, endereço de IP, ou cancele para utilizar as informações "
+        "da tela anterior."
 msgstr  ""
 
-msgid   "Driver"
-msgstr  ""
-
-msgid   "Ocorreu um erro e o driver não pode ser aplicado."
+msgid   "Digite sua senha para gerar um relatório mais completo."
 msgstr  ""
 
 msgid   "Categorias"
@@ -30,55 +28,64 @@ msgstr  ""
 msgid   "Principais"
 msgstr  ""
 
-msgid   "Driver detectado:"
+msgid   "Resumo"
 msgstr  ""
 
-msgid   "<small>* A detecção não inclui impressoras e scanners</small>"
+msgid   "Processador"
 msgstr  ""
 
 msgid   "Placa de vídeo"
 msgstr  ""
 
-msgid   "Wifi"
+msgid   "Placa mãe"
 msgstr  ""
 
-msgid   "Rede Cabeada"
+msgid   "Memória"
+msgstr  ""
+
+msgid   "Rede"
+msgstr  ""
+
+msgid   "Usb"
+msgstr  ""
+
+msgid   "Pci"
+msgstr  ""
+
+msgid   "Bateria"
+msgstr  ""
+
+msgid   "Armazenamento"
+msgstr  ""
+
+msgid   "Sistema"
 msgstr  ""
 
 msgid   "Bluetooth"
 msgstr  ""
 
+msgid   "Temperatura"
+msgstr  ""
+
 msgid   "Impressora"
 msgstr  ""
 
-msgid   "Impressora 3D"
+msgid   "Áudio"
 msgstr  ""
 
-msgid   "Scanner"
+msgid   "Mais informações"
 msgstr  ""
 
-msgid   "TV Digital"
+msgid   "Hardware"
 msgstr  ""
 
-msgid   "Webcam"
-msgstr  ""
-
-msgid   "Touchscreen"
-msgstr  ""
-
-msgid   "Som"
-msgstr  ""
-
-msgid   "Outros"
-msgstr  ""
-
-msgid   "Pesquisar Driver ou Firmware"
+msgid   "Pesquisar"
 msgstr  ""
 
 msgid   "Resultado da pesquisa"
 msgstr  ""
 
-msgid   "Big-Driver-Manager"
+msgid   "Informações de Hardware"
 msgstr  ""
 
 msgid   "Fechar"
@@ -87,29 +94,87 @@ msgstr  ""
 msgid   "Abrir"
 msgstr  ""
 
-msgid   "Instalar ou Remover Drivers e Firmwares"
+msgid   "Informações Sobre o Sistema e o Hardware"
 msgstr  ""
 
-msgid   "Geralmente é preciso reiniciar o computador para o driver ou "
-        "firmware ser aplicado."
+msgid   "Memória RAM:"
 msgstr  ""
 
-msgid   "Driver ou firmware"
+msgid   "Vídeo:"
 msgstr  ""
 
-msgid   "Aplicando - Aguarde"
+msgid   "Instalado na partição:"
 msgstr  ""
 
-msgid   "Este driver parece compatível com este computador."
+msgid   "Tamanho da partição:"
+msgstr  ""
+
+msgid   "Espaço utilizado:"
+msgstr  ""
+
+msgid   "Espaço livre:"
+msgstr  ""
+
+msgid   "Data que o sistema foi instalado:"
+msgstr  ""
+
+msgid   "Kernel em uso:"
+msgstr  ""
+
+msgid   "Instalar ou Remover Drivers"
+msgstr  ""
+
+msgid   "O BigLinux inclui milhares de drivers e firmwares por padrão, porém "
+        "ainda pode ser necessário instalar mais alguns."
+msgstr  ""
+
+msgid   "Gerar Relatório"
+msgstr  ""
+
+msgid   "Cria um arquivo com informações que pode ser publicado na internet."
+msgstr  ""
+
+msgid   "Ver informações do dispositivo no Linux Hardware"
+msgstr  ""
+
+msgid   "Categoria"
+msgstr  ""
+
+msgid   "Nome"
+msgstr  ""
+
+msgid   "ID"
+msgstr  ""
+
+msgid   "Info"
+msgstr  ""
+
+msgid   "Enviando, aguarde..."
 msgstr  ""
 
 msgid   "Remover"
 msgstr  ""
 
+msgid   "Em uso"
+msgstr  ""
+
 msgid   "Instalar"
 msgstr  ""
 
-msgid   "Este pacote fornece arquivos compatíveis com este computador."
+msgid   "Este driver é software livre."
+msgstr  ""
+
+msgid   "Este driver é proprietário."
+msgstr  ""
+
+msgid   "Este driver parece compatível com este computador."
+msgstr  ""
+
+msgid   "Já existe outro driver nVidia instalado, para instalar este driver, "
+        "remova primeiro o driver instalado."
+msgstr  ""
+
+msgid   "Driver detectado:"
 msgstr  ""
 
 msgid   "Mesa e Kernel"
@@ -172,48 +237,37 @@ msgstr  ""
 msgid   "Instalar ou Remover Versões de Kernel"
 msgstr  ""
 
-msgid   "Digite sua senha para gerar um relatório removendo dados sensíveis, "
-        "por exemplo, endereço de IP, ou cancele para utilizar as informações "
-        "da tela anterior."
-msgstr  ""
-
-msgid   "Digite sua senha para gerar um relatório mais completo."
-msgstr  ""
-
-msgid   "Enviando, aguarde..."
-msgstr  ""
-
-msgid   "Em uso"
-msgstr  ""
-
-msgid   "Este driver é software livre."
-msgstr  ""
-
-msgid   "Este driver é proprietário."
+msgid   "Aplicando - Aguarde"
 msgstr  ""
 
 msgid   "Desativado"
 msgstr  ""
 
-msgid   "Ver informações do dispositivo no Linux Hardware"
+msgid   "Concluído, reinicie o computador para ativar a configuração do "
+        "driver."
 msgstr  ""
 
-msgid   "Processador"
+msgid   "Driver"
 msgstr  ""
 
-msgid   "Placa mãe"
+msgid   "Ocorreu um erro e o driver não pode ser aplicado."
 msgstr  ""
 
-msgid   "Memória"
+msgid   "Enviar para transfer.sh"
+msgstr  ""
+
+msgid   "Visualizar"
+msgstr  ""
+
+msgid   "O relatório foi salvo no arquivo:"
+msgstr  ""
+
+msgid   "Deseja visualizar o arquivo ou envia-lo ao site transfer.sh, para "
+        "ter uma URL com os dados do seu computador de forma fácil de "
+        "compartilhar?"
 msgstr  ""
 
 msgid   "Swap (Memória Virtual)"
-msgstr  ""
-
-msgid   "Áudio"
-msgstr  ""
-
-msgid   "Rede"
 msgstr  ""
 
 msgid   "Conexões de Rede"
@@ -223,9 +277,6 @@ msgid   "Dispositivos e conexões USB"
 msgstr  ""
 
 msgid   "Portas PCI"
-msgstr  ""
-
-msgid   "Bateria"
 msgstr  ""
 
 msgid   "Dispositivos de Armazenamento"
@@ -243,117 +294,66 @@ msgstr  ""
 msgid   "Raid"
 msgstr  ""
 
-msgid   "Sistema"
-msgstr  ""
-
 msgid   "Informações de Sistema"
 msgstr  ""
 
 msgid   "Repositórios"
 msgstr  ""
 
-msgid   "Temperatura"
+msgid   "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr  ""
 
-msgid   "Resumo"
+msgid   "Wifi"
 msgstr  ""
 
-msgid   "Usb"
+msgid   "Rede Cabeada"
 msgstr  ""
 
-msgid   "Pci"
+msgid   "Impressora 3D"
 msgstr  ""
 
-msgid   "Armazenamento"
+msgid   "Scanner"
 msgstr  ""
 
-msgid   "Mais informações"
+msgid   "TV Digital"
 msgstr  ""
 
-msgid   "Hardware"
+msgid   "Webcam"
 msgstr  ""
 
-msgid   "Pesquisar"
+msgid   "Touchscreen"
 msgstr  ""
 
-msgid   "Informações de Hardware"
+msgid   "Som"
 msgstr  ""
 
-msgid   "Informações Sobre o Sistema e o Hardware"
+msgid   "Outros"
 msgstr  ""
 
-msgid   "Memória RAM:"
+msgid   "Pesquisar Driver ou Firmware"
 msgstr  ""
 
-msgid   "Vídeo:"
+msgid   "Big-Driver-Manager"
 msgstr  ""
 
-msgid   "Instalado na partição:"
+msgid   "Instalar ou Remover Drivers e Firmwares"
 msgstr  ""
 
-msgid   "Tamanho da partição:"
+msgid   "Geralmente é preciso reiniciar o computador para o driver ou "
+        "firmware ser aplicado."
 msgstr  ""
 
-msgid   "Espaço utilizado:"
+msgid   "Driver ou firmware"
 msgstr  ""
 
-msgid   "Espaço livre:"
-msgstr  ""
-
-msgid   "Data que o sistema foi instalado:"
-msgstr  ""
-
-msgid   "Kernel em uso:"
-msgstr  ""
-
-msgid   "Instalar ou Remover Drivers"
-msgstr  ""
-
-msgid   "O BigLinux inclui milhares de drivers e firmwares por padrão, porém "
-        "ainda pode ser necessário instalar mais alguns."
-msgstr  ""
-
-msgid   "Gerar Relatório"
-msgstr  ""
-
-msgid   "Cria um arquivo com informações que pode ser publicado na internet."
-msgstr  ""
-
-msgid   "Categoria"
-msgstr  ""
-
-msgid   "Nome"
-msgstr  ""
-
-msgid   "ID"
-msgstr  ""
-
-msgid   "Info"
-msgstr  ""
-
-msgid   "Enviar para transfer.sh"
-msgstr  ""
-
-msgid   "Visualizar"
-msgstr  ""
-
-msgid   "O relatório foi salvo no arquivo:"
-msgstr  ""
-
-msgid   "Deseja visualizar o arquivo ou envia-lo ao site transfer.sh, para "
-        "ter uma URL com os dados do seu computador de forma fácil de "
-        "compartilhar?"
-msgstr  ""
-
-msgid   "Já existe outro driver nVidia instalado, para instalar este driver, "
-        "remova primeiro o driver instalado."
+msgid   "Este pacote fornece arquivos compatíveis com este computador."
 msgstr  ""
 
 msgid   "O Big-Hardware-Relatory já está em uso."
 msgstr  ""
 
-msgid   "O Big-Kernel-Manager já está em uso."
+msgid   "Informações sobre o Hardware"
 msgstr  ""
 
-msgid   "Informações sobre o Hardware"
+msgid   "O Big-Kernel-Manager já está em uso."
 msgstr  ""
