@@ -88,7 +88,7 @@ cat << EOF >> /tmp/kernel-mhwd-$Kernel_version.html
 EOF
 }
 
-VIDEO_DRIVER_SHOW_ALL_AND_IF_IS_FREE="$(mhwd-kernel -l | grep -vi kernels: | sed 's|.* ||g' | tac)"
+VIDEO_DRIVER_SHOW_ALL_AND_IF_IS_FREE="$(mhwd-kernel -l | grep -vi kernels: | sed 's|.* ||g' | tac | sort -ru)"
 # Show if installed
 VIDEO_DRIVER_ENABLED_LIST="$(mhwd-kernel -li | grep -vi running | grep -vi kernels | sed 's|.* ||g')"
 
