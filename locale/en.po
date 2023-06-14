@@ -16,6 +16,175 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "View device information in Linux Hardware"
+
+msgid "Processador"
+msgstr "Processor"
+
+msgid "Placa mãe"
+msgstr "Motherboard"
+
+msgid "Memória"
+msgstr "Memory"
+
+msgid "Swap (Memória Virtual)"
+msgstr "Swap (Virtual Memory)"
+
+msgid "Placa de vídeo"
+msgstr "Video Card"
+
+msgid "Áudio"
+msgstr "Audio"
+
+msgid "Rede"
+msgstr "Network"
+
+msgid "Conexões de Rede"
+msgstr "Network Connections"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB devices and connections"
+
+msgid "Portas PCI"
+msgstr "PCI ports"
+
+msgid "Bateria"
+msgstr "Battery"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Storage Devices"
+
+msgid "Partições montadas"
+msgstr "Mounted partitions"
+
+msgid "Partições desmontadas"
+msgstr "Disassembled partitions"
+
+msgid "Dispositivos lógicos"
+msgstr "Logic devices"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Sistema"
+msgstr "System"
+
+msgid "Informações de Sistema"
+msgstr "System Information"
+
+msgid "Repositórios"
+msgstr "Repositories"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Temperature"
+
+msgid "Categorias"
+msgstr "Categories"
+
+msgid "Principais"
+msgstr "Main"
+
+msgid "Resumo"
+msgstr "Summary"
+
+msgid "Usb"
+msgstr "Usb"
+
+msgid "Pci"
+msgstr "Pci"
+
+msgid "Armazenamento"
+msgstr "Storage"
+
+msgid "Impressora"
+msgstr "Printer"
+
+msgid "Mais informações"
+msgstr "More information"
+
+msgid "Hardware"
+msgstr "Hardware"
+
+msgid "Pesquisar"
+msgstr "Search"
+
+msgid "Resultado da pesquisa"
+msgstr "Search result"
+
+msgid "Informações de Hardware"
+msgstr "Hardware Information"
+
+msgid "Fechar"
+msgstr "Close"
+
+msgid "Abrir"
+msgstr "Open"
+
+msgid "Informações Sobre o Sistema e o Hardware"
+msgstr "System and Hardware Information"
+
+msgid "Memória RAM:"
+msgstr "RAM memory:"
+
+msgid "Vídeo:"
+msgstr "Video:"
+
+msgid "Instalado na partição:"
+msgstr "Installed on the partition:"
+
+msgid "Tamanho da partição:"
+msgstr "Partition size:"
+
+msgid "Espaço utilizado:"
+msgstr "Space used:"
+
+msgid "Espaço livre:"
+msgstr "Clear space:"
+
+msgid "Data que o sistema foi instalado:"
+msgstr "Date the system was installed:"
+
+msgid "Kernel em uso:"
+msgstr "Kernel in use:"
+
+msgid "Instalar ou Remover Drivers"
+msgstr "Install or Remove Drivers"
+
+msgid ""
+"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário "
+"instalar mais alguns."
+msgstr ""
+"BigLinux includes thousands of drivers and firmware by default, but you may still need to install "
+"some more."
+
+msgid "Gerar Relatório"
+msgstr "Generate Report"
+
+msgid "Cria um arquivo com informações que pode ser publicado na internet."
+msgstr "Creates a file with information that can be published on the internet."
+
+msgid "Categoria"
+msgstr "Category"
+
+msgid "Nome"
+msgstr "Name"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Remover"
+msgstr "Remove"
+
+msgid "Instalar"
+msgstr "Install"
+
 msgid "Concluído, reinicie o computador para ativar a configuração do driver."
 msgstr "When finished, restart your computer to activate the driver configuration."
 
@@ -25,32 +194,17 @@ msgstr "Driver"
 msgid "Ocorreu um erro e o driver não pode ser aplicado."
 msgstr "An error has occurred and the driver cannot be applied."
 
-msgid "Categorias"
-msgstr "Categories"
-
-msgid "Principais"
-msgstr "Main"
-
 msgid "Driver detectado:"
 msgstr "Driver detected:"
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Detection does not include printers and scanners</small>"
 
-msgid "Placa de vídeo"
-msgstr "Video Card"
-
 msgid "Wifi"
 msgstr "Wifi"
 
 msgid "Rede Cabeada"
 msgstr "Wired Network"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Impressora"
-msgstr "Printer"
 
 msgid "Impressora 3D"
 msgstr "3D Printer"
@@ -76,17 +230,8 @@ msgstr "Other"
 msgid "Pesquisar Driver ou Firmware"
 msgstr "Search Driver or Firmware"
 
-msgid "Resultado da pesquisa"
-msgstr "Search result"
-
 msgid "Big-Driver-Manager"
 msgstr "Big-Driver-Manager"
-
-msgid "Fechar"
-msgstr "Close"
-
-msgid "Abrir"
-msgstr "Open"
 
 msgid "Instalar ou Remover Drivers e Firmwares"
 msgstr "Install or Remove Drivers and Firmware"
@@ -103,14 +248,20 @@ msgstr "Applying - Please wait"
 msgid "Este driver parece compatível com este computador."
 msgstr "This driver seems to be compatible with this computer."
 
-msgid "Remover"
-msgstr "Remove"
-
-msgid "Instalar"
-msgstr "Install"
-
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "This package provides files that are compatible with this computer."
+
+msgid "Este driver é software livre."
+msgstr "This driver is free software."
+
+msgid "Este driver é proprietário."
+msgstr "This driver is proprietary."
+
+msgid "Desativado"
+msgstr "Disabled"
+
+msgid "Em uso"
+msgstr "In use"
 
 msgid "Mesa e Kernel"
 msgstr "Table and Kernel"
@@ -189,6 +340,16 @@ msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Install or Remove Kernel Versions"
 
 msgid ""
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr ""
+"There is already another nVidia driver installed, to install this driver, remove the installed "
+"driver first."
+
+msgid "Enviando, aguarde..."
+msgstr "Sending, please wait..."
+
+msgid ""
 "Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
 "cancele para utilizar as informações da tela anterior."
 msgstr ""
@@ -198,188 +359,11 @@ msgstr ""
 msgid "Digite sua senha para gerar um relatório mais completo."
 msgstr "Enter your password to generate a more complete report."
 
-msgid "Enviando, aguarde..."
-msgstr "Sending, please wait..."
-
-msgid "Em uso"
-msgstr "In use"
-
-msgid "Este driver é software livre."
-msgstr "This driver is free software."
-
-msgid "Este driver é proprietário."
-msgstr "This driver is proprietary."
-
-msgid "Desativado"
-msgstr "Disabled"
-
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "View device information in Linux Hardware"
-
-msgid "Processador"
-msgstr "Processor"
-
-msgid "Placa mãe"
-msgstr "Motherboard"
-
-msgid "Memória"
-msgstr "Memory"
-
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (Virtual Memory)"
-
-msgid "Áudio"
-msgstr "Audio"
-
-msgid "Rede"
-msgstr "Network"
-
-msgid "Conexões de Rede"
-msgstr "Network Connections"
-
-msgid "Dispositivos e conexões USB"
-msgstr "USB devices and connections"
-
-msgid "Portas PCI"
-msgstr "PCI ports"
-
-msgid "Bateria"
-msgstr "Battery"
-
-msgid "Dispositivos de Armazenamento"
-msgstr "Storage Devices"
-
-msgid "Partições montadas"
-msgstr "Mounted partitions"
-
-msgid "Partições desmontadas"
-msgstr "Disassembled partitions"
-
-msgid "Dispositivos lógicos"
-msgstr "Logic devices"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Sistema"
-msgstr "System"
-
-msgid "Informações de Sistema"
-msgstr "System Information"
-
-msgid "Repositórios"
-msgstr "Repositories"
-
-msgid "Temperatura"
-msgstr "Temperature"
-
-msgid "Resumo"
-msgstr "Summary"
-
-msgid "Usb"
-msgstr "Usb"
-
-msgid "Pci"
-msgstr "Pci"
-
-msgid "Armazenamento"
-msgstr "Storage"
-
-msgid "Mais informações"
-msgstr "More information"
-
-msgid "Hardware"
-msgstr "Hardware"
-
-msgid "Pesquisar"
-msgstr "Search"
-
-msgid "Informações de Hardware"
-msgstr "Hardware Information"
-
-msgid "Informações Sobre o Sistema e o Hardware"
-msgstr "System and Hardware Information"
-
-msgid "Memória RAM:"
-msgstr "RAM memory:"
-
-msgid "Vídeo:"
-msgstr "Video:"
-
-msgid "Instalado na partição:"
-msgstr "Installed on the partition:"
-
-msgid "Tamanho da partição:"
-msgstr "Partition size:"
-
-msgid "Espaço utilizado:"
-msgstr "Space used:"
-
-msgid "Espaço livre:"
-msgstr "Clear space:"
-
-msgid "Data que o sistema foi instalado:"
-msgstr "Date the system was installed:"
-
-msgid "Kernel em uso:"
-msgstr "Kernel in use:"
-
-msgid "Instalar ou Remover Drivers"
-msgstr "Install or Remove Drivers"
-
-msgid ""
-"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário "
-"instalar mais alguns."
-msgstr ""
-"BigLinux includes thousands of drivers and firmware by default, but you may still need to install "
-"some more."
-
-msgid "Gerar Relatório"
-msgstr "Generate Report"
-
-msgid "Cria um arquivo com informações que pode ser publicado na internet."
-msgstr "Creates a file with information that can be published on the internet."
-
-msgid "Categoria"
-msgstr "Category"
-
-msgid "Nome"
-msgstr "Name"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Info"
-msgstr "Info"
-
-msgid "Enviar para transfer.sh"
-msgstr "Send to transfer.sh"
-
-msgid "Visualizar"
-msgstr "View"
-
-msgid "O relatório foi salvo no arquivo:"
-msgstr "The report is saved in the archive:"
-
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site transfer.sh, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Do you want to view the file or send it to transfer.sh, to have a URL with the data from your "
-"computer in an easy to share way?"
-
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"There is already another nVidia driver installed, to install this driver, remove the installed "
-"driver first."
-
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "The Big-Hardware-Relatory is already in use."
-
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager is already in use."
 
 msgid "Informações sobre o Hardware"
 msgstr "Hardware Information"
+
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "The Big-Hardware-Relatory is already in use."
