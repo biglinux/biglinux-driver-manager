@@ -18,7 +18,11 @@ export TEXTDOMAIN=biglinux-driver-manager
 #Only to debug
 #rm -R "$HOME/.config/bigcontrolcenter/"
 
-curl --upload-file "$1" https://transfer.sh | tee "$HOME/.config/bigcontrolcenter-drivers/transfer.url"  | zenity --modal --progress --pulsate --no-cancel --auto-close --text $"Enviando, aguarde...";
+# transfet.net
+# curl --upload-file "$1" https://transfer.sh | tee "$HOME/.config/bigcontrolcenter-drivers/transfer.url"  | zenity --modal --progress --pulsate --no-cancel --auto-close --text $"Enviando, aguarde...";
 
-xdg-open "$(cat "$HOME/.config/bigcontrolcenter-drivers/transfer.url")"
+# filebin.net
+curl --data-binary "@/$1" -H "filename: $(basename "$1")" https://filebin.net | tee "$HOME/.config/bigcontrolcenter-drivers/transfer.url"  | zenity --modal --progress --pulsate --no-cancel --auto-close --text $"Enviando, aguarde...";
+
+xdg-open "https://filebin.net/$(cat "$HOME/.config/bigcontrolcenter-drivers/transfer.url" | grep '"id": "' | cut -f4 -d'"')"
 
