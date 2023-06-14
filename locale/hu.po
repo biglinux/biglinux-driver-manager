@@ -16,71 +16,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Eszközinformációk megtekintése a Linux Hardveren"
+msgid "Informações sobre o Hardware"
+msgstr "Hardveres információk"
 
-msgid "Processador"
-msgstr "Processzor"
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "A Big-Hardware-Relatory már használatban van."
 
-msgid "Placa mãe"
-msgstr "Alaplap"
+msgid "O Big-Kernel-Manager já está em uso."
+msgstr "A Big-Kernel-Manager már használatban van."
 
-msgid "Memória"
-msgstr "Memória"
+msgid "Big-Kernel-Manager"
+msgstr "Big-Kernel-kezelő"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (virtuális memória)"
+msgid "Enviando, aguarde..."
+msgstr "Küldés, kérem várjon..."
 
-msgid "Placa de vídeo"
-msgstr "Videokártya"
+msgid "Informações de Hardware"
+msgstr "Hardveres információk"
 
-msgid "Áudio"
-msgstr "Audio"
+msgid "Fechar"
+msgstr "Zárja be a"
 
-msgid "Rede"
-msgstr "Hálózat"
+msgid "Enviar para filebin.net"
+msgstr "Küldés filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Hálózati kapcsolatok"
+msgid "Visualizar"
+msgstr "Képzelni"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB eszközök és csatlakozások"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "A jelentést a fájlba mentették:"
 
-msgid "Portas PCI"
-msgstr "PCI portok"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Szeretné megtekinteni a fájlt, vagy feltölteni a filebin.net webhelyre, hogy könnyen megoszthassa a "
+"számítógép adatait tartalmazó URL-t?"
 
-msgid "Bateria"
-msgstr "Akkumulátor"
+msgid "Remover"
+msgstr "Távolítsa el a"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Tárolóeszközök"
-
-msgid "Partições montadas"
-msgstr "Szerelt partíciók"
-
-msgid "Partições desmontadas"
-msgstr "Szétszerelt válaszfalak"
-
-msgid "Dispositivos lógicos"
-msgstr "Logikai eszközök"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Sistema"
-msgstr "Rendszer"
-
-msgid "Informações de Sistema"
-msgstr "Rendszerinformáció"
-
-msgid "Repositórios"
-msgstr "Tárházak"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Hőmérséklet"
+msgid "Instalar"
+msgstr "Telepítse a"
 
 msgid "Categorias"
 msgstr "Kategóriák"
@@ -91,17 +68,47 @@ msgstr "Főoldal"
 msgid "Resumo"
 msgstr "Összefoglaló"
 
+msgid "Processador"
+msgstr "Processzor"
+
+msgid "Placa de vídeo"
+msgstr "Videokártya"
+
+msgid "Placa mãe"
+msgstr "Alaplap"
+
+msgid "Memória"
+msgstr "Memória"
+
+msgid "Rede"
+msgstr "Hálózat"
+
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
+msgid "Bateria"
+msgstr "Akkumulátor"
+
 msgid "Armazenamento"
 msgstr "Tárolás"
 
+msgid "Sistema"
+msgstr "Rendszer"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Hőmérséklet"
+
 msgid "Impressora"
 msgstr "Nyomtató"
+
+msgid "Áudio"
+msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "További információ"
@@ -114,12 +121,6 @@ msgstr "Keresés"
 
 msgid "Resultado da pesquisa"
 msgstr "Keresés eredménye"
-
-msgid "Informações de Hardware"
-msgstr "Hardveres információk"
-
-msgid "Fechar"
-msgstr "Zárja be a"
 
 msgid "Abrir"
 msgstr "Nyissa meg a  címet"
@@ -167,6 +168,9 @@ msgstr "Jelentés létrehozása"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Olyan fájlt hoz létre, amely az interneten közzétehető információkat tartalmaz."
 
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Eszközinformációk megtekintése a Linux Hardveren"
+
 msgid "Categoria"
 msgstr "Kategória"
 
@@ -179,11 +183,60 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Remover"
-msgstr "Távolítsa el a"
+msgid "Swap (Memória Virtual)"
+msgstr "Swap (virtuális memória)"
 
-msgid "Instalar"
-msgstr "Telepítse a"
+msgid "Conexões de Rede"
+msgstr "Hálózati kapcsolatok"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB eszközök és csatlakozások"
+
+msgid "Portas PCI"
+msgstr "PCI portok"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Tárolóeszközök"
+
+msgid "Partições montadas"
+msgstr "Szerelt partíciók"
+
+msgid "Partições desmontadas"
+msgstr "Szétszerelt válaszfalak"
+
+msgid "Dispositivos lógicos"
+msgstr "Logikai eszközök"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Informações de Sistema"
+msgstr "Rendszerinformáció"
+
+msgid "Repositórios"
+msgstr "Tárházak"
+
+msgid "Em uso"
+msgstr "Használatban"
+
+msgid "Este driver é software livre."
+msgstr "Ez az illesztőprogram ingyenes szoftver."
+
+msgid "Este driver é proprietário."
+msgstr "Ez az illesztőprogram szabadalmaztatott."
+
+msgid "Este driver parece compatível com este computador."
+msgstr "Úgy tűnik, hogy ez az illesztőprogram kompatibilis ezzel a számítógéppel."
+
+msgid ""
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr ""
+"Már van egy másik nVidia illesztőprogram telepítve, ennek az illesztőprogramnak a telepítéséhez "
+"először távolítsa el a telepített illesztőprogramot."
+
+msgid "Desativado"
+msgstr "Mozgáskorlátozottak"
 
 msgid "Concluído, reinicie o computador para ativar a configuração do driver."
 msgstr "Miután befejezte, indítsa újra a számítógépet az illesztőprogram-konfiguráció aktiválásához."
@@ -196,72 +249,6 @@ msgstr "Hiba történt, és az illesztőprogram nem alkalmazható."
 
 msgid "Driver detectado:"
 msgstr "A sofőr észlelte:"
-
-msgid "<small>* A detecção não inclui impressoras e scanners</small>"
-msgstr "<small>* Az érzékelés nem terjed ki a nyomtatókra és a szkennerekre</small>"
-
-msgid "Wifi"
-msgstr "Wifi"
-
-msgid "Rede Cabeada"
-msgstr "Vezetékes hálózat"
-
-msgid "Impressora 3D"
-msgstr "3D nyomtató"
-
-msgid "Scanner"
-msgstr "Szkenner"
-
-msgid "TV Digital"
-msgstr "Digitális TV"
-
-msgid "Webcam"
-msgstr "Webkamera"
-
-msgid "Touchscreen"
-msgstr "Érintőképernyő"
-
-msgid "Som"
-msgstr "Hang"
-
-msgid "Outros"
-msgstr "Egyéb"
-
-msgid "Pesquisar Driver ou Firmware"
-msgstr "Illesztőprogram vagy firmware keresése"
-
-msgid "Big-Driver-Manager"
-msgstr "Big-Driver-Manager"
-
-msgid "Instalar ou Remover Drivers e Firmwares"
-msgstr "Illesztőprogramok és firmware telepítése vagy eltávolítása"
-
-msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
-msgstr "Az illesztőprogram vagy firmware alkalmazásához általában újra kell indítani a számítógépet."
-
-msgid "Driver ou firmware"
-msgstr "Illesztőprogram vagy firmware"
-
-msgid "Aplicando - Aguarde"
-msgstr "Jelentkezés - Kérjük, várjon"
-
-msgid "Este driver parece compatível com este computador."
-msgstr "Úgy tűnik, hogy ez az illesztőprogram kompatibilis ezzel a számítógéppel."
-
-msgid "Este pacote fornece arquivos compatíveis com este computador."
-msgstr "Ez a csomag az adott számítógéppel kompatibilis fájlokat tartalmaz."
-
-msgid "Este driver é software livre."
-msgstr "Ez az illesztőprogram ingyenes szoftver."
-
-msgid "Este driver é proprietário."
-msgstr "Ez az illesztőprogram szabadalmaztatott."
-
-msgid "Desativado"
-msgstr "Mozgáskorlátozottak"
-
-msgid "Em uso"
-msgstr "Használatban"
 
 msgid "Mesa e Kernel"
 msgstr "Táblázat és kernel"
@@ -334,21 +321,11 @@ msgstr ""
 msgid "Pesquisar Kernel"
 msgstr "Kernel keresése"
 
-msgid "Big-Kernel-Manager"
-msgstr "Big-Kernel-kezelő"
-
 msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Kernelverziók telepítése vagy eltávolítása"
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Már van egy másik nVidia illesztőprogram telepítve, ennek az illesztőprogramnak a telepítéséhez "
-"először távolítsa el a telepített illesztőprogramot."
-
-msgid "Enviando, aguarde..."
-msgstr "Küldés, kérem várjon..."
+msgid "Aplicando - Aguarde"
+msgstr "Jelentkezés - Kérjük, várjon"
 
 msgid ""
 "Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
@@ -360,11 +337,50 @@ msgstr ""
 msgid "Digite sua senha para gerar um relatório mais completo."
 msgstr "A teljesebb jelentés létrehozásához adja meg jelszavát."
 
-msgid "O Big-Kernel-Manager já está em uso."
-msgstr "A Big-Kernel-Manager már használatban van."
+msgid "<small>* A detecção não inclui impressoras e scanners</small>"
+msgstr "<small>* Az érzékelés nem terjed ki a nyomtatókra és a szkennerekre</small>"
 
-msgid "Informações sobre o Hardware"
-msgstr "Hardveres információk"
+msgid "Wifi"
+msgstr "Wifi"
 
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "A Big-Hardware-Relatory már használatban van."
+msgid "Rede Cabeada"
+msgstr "Vezetékes hálózat"
+
+msgid "Impressora 3D"
+msgstr "3D nyomtató"
+
+msgid "Scanner"
+msgstr "Szkenner"
+
+msgid "TV Digital"
+msgstr "Digitális TV"
+
+msgid "Webcam"
+msgstr "Webkamera"
+
+msgid "Touchscreen"
+msgstr "Érintőképernyő"
+
+msgid "Som"
+msgstr "Hang"
+
+msgid "Outros"
+msgstr "Egyéb"
+
+msgid "Pesquisar Driver ou Firmware"
+msgstr "Illesztőprogram vagy firmware keresése"
+
+msgid "Big-Driver-Manager"
+msgstr "Big-Driver-Manager"
+
+msgid "Instalar ou Remover Drivers e Firmwares"
+msgstr "Illesztőprogramok és firmware telepítése vagy eltávolítása"
+
+msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
+msgstr "Az illesztőprogram vagy firmware alkalmazásához általában újra kell indítani a számítógépet."
+
+msgid "Driver ou firmware"
+msgstr "Illesztőprogram vagy firmware"
+
+msgid "Este pacote fornece arquivos compatíveis com este computador."
+msgstr "Ez a csomag az adott számítógéppel kompatibilis fájlokat tartalmaz."

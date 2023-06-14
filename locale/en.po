@@ -16,71 +16,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "View device information in Linux Hardware"
+msgid "Informações sobre o Hardware"
+msgstr "Hardware Information"
 
-msgid "Processador"
-msgstr "Processor"
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "The Big-Hardware-Relatory is already in use."
 
-msgid "Placa mãe"
-msgstr "Motherboard"
+msgid "O Big-Kernel-Manager já está em uso."
+msgstr "Big-Kernel-Manager is already in use."
 
-msgid "Memória"
-msgstr "Memory"
+msgid "Big-Kernel-Manager"
+msgstr "Big-Kernel-Manager"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (Virtual Memory)"
+msgid "Enviando, aguarde..."
+msgstr "Sending, please wait..."
 
-msgid "Placa de vídeo"
-msgstr "Video Card"
+msgid "Informações de Hardware"
+msgstr "Hardware Information"
 
-msgid "Áudio"
-msgstr "Audio"
+msgid "Fechar"
+msgstr "Close"
 
-msgid "Rede"
-msgstr "Network"
+msgid "Enviar para filebin.net"
+msgstr "Send to filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Network Connections"
+msgid "Visualizar"
+msgstr "Visualize"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB devices and connections"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "The report was saved to the file:"
 
-msgid "Portas PCI"
-msgstr "PCI ports"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Do you want to view the file or upload it to the filebin.net site, to have a URL with your computer "
+"data in an easy way to share?"
 
-msgid "Bateria"
-msgstr "Battery"
+msgid "Remover"
+msgstr "Remove"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Storage Devices"
-
-msgid "Partições montadas"
-msgstr "Mounted partitions"
-
-msgid "Partições desmontadas"
-msgstr "Disassembled partitions"
-
-msgid "Dispositivos lógicos"
-msgstr "Logic devices"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Sistema"
-msgstr "System"
-
-msgid "Informações de Sistema"
-msgstr "System Information"
-
-msgid "Repositórios"
-msgstr "Repositories"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Temperature"
+msgid "Instalar"
+msgstr "Install"
 
 msgid "Categorias"
 msgstr "Categories"
@@ -91,17 +68,47 @@ msgstr "Main"
 msgid "Resumo"
 msgstr "Summary"
 
+msgid "Processador"
+msgstr "Processor"
+
+msgid "Placa de vídeo"
+msgstr "Video Card"
+
+msgid "Placa mãe"
+msgstr "Motherboard"
+
+msgid "Memória"
+msgstr "Memory"
+
+msgid "Rede"
+msgstr "Network"
+
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
+msgid "Bateria"
+msgstr "Battery"
+
 msgid "Armazenamento"
 msgstr "Storage"
 
+msgid "Sistema"
+msgstr "System"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Temperature"
+
 msgid "Impressora"
 msgstr "Printer"
+
+msgid "Áudio"
+msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "More information"
@@ -114,12 +121,6 @@ msgstr "Search"
 
 msgid "Resultado da pesquisa"
 msgstr "Search result"
-
-msgid "Informações de Hardware"
-msgstr "Hardware Information"
-
-msgid "Fechar"
-msgstr "Close"
 
 msgid "Abrir"
 msgstr "Open"
@@ -167,6 +168,9 @@ msgstr "Generate Report"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Creates a file with information that can be published on the internet."
 
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "View device information in Linux Hardware"
+
 msgid "Categoria"
 msgstr "Category"
 
@@ -179,11 +183,60 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Remover"
-msgstr "Remove"
+msgid "Swap (Memória Virtual)"
+msgstr "Swap (Virtual Memory)"
 
-msgid "Instalar"
-msgstr "Install"
+msgid "Conexões de Rede"
+msgstr "Network Connections"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB devices and connections"
+
+msgid "Portas PCI"
+msgstr "PCI ports"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Storage Devices"
+
+msgid "Partições montadas"
+msgstr "Mounted partitions"
+
+msgid "Partições desmontadas"
+msgstr "Disassembled partitions"
+
+msgid "Dispositivos lógicos"
+msgstr "Logic devices"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Informações de Sistema"
+msgstr "System Information"
+
+msgid "Repositórios"
+msgstr "Repositories"
+
+msgid "Em uso"
+msgstr "In use"
+
+msgid "Este driver é software livre."
+msgstr "This driver is free software."
+
+msgid "Este driver é proprietário."
+msgstr "This driver is proprietary."
+
+msgid "Este driver parece compatível com este computador."
+msgstr "This driver seems to be compatible with this computer."
+
+msgid ""
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr ""
+"There is already another nVidia driver installed, to install this driver, remove the installed "
+"driver first."
+
+msgid "Desativado"
+msgstr "Disabled"
 
 msgid "Concluído, reinicie o computador para ativar a configuração do driver."
 msgstr "When finished, restart your computer to activate the driver configuration."
@@ -196,72 +249,6 @@ msgstr "An error has occurred and the driver cannot be applied."
 
 msgid "Driver detectado:"
 msgstr "Driver detected:"
-
-msgid "<small>* A detecção não inclui impressoras e scanners</small>"
-msgstr "<small>* Detection does not include printers and scanners</small>"
-
-msgid "Wifi"
-msgstr "Wifi"
-
-msgid "Rede Cabeada"
-msgstr "Wired Network"
-
-msgid "Impressora 3D"
-msgstr "3D Printer"
-
-msgid "Scanner"
-msgstr "Scanner"
-
-msgid "TV Digital"
-msgstr "Digital TV"
-
-msgid "Webcam"
-msgstr "Webcam"
-
-msgid "Touchscreen"
-msgstr "Touchscreen"
-
-msgid "Som"
-msgstr "Sound"
-
-msgid "Outros"
-msgstr "Other"
-
-msgid "Pesquisar Driver ou Firmware"
-msgstr "Search Driver or Firmware"
-
-msgid "Big-Driver-Manager"
-msgstr "Big-Driver-Manager"
-
-msgid "Instalar ou Remover Drivers e Firmwares"
-msgstr "Install or Remove Drivers and Firmware"
-
-msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
-msgstr "It is usually necessary to restart the computer for the driver or firmware to be applied."
-
-msgid "Driver ou firmware"
-msgstr "Driver or firmware"
-
-msgid "Aplicando - Aguarde"
-msgstr "Applying - Please wait"
-
-msgid "Este driver parece compatível com este computador."
-msgstr "This driver seems to be compatible with this computer."
-
-msgid "Este pacote fornece arquivos compatíveis com este computador."
-msgstr "This package provides files that are compatible with this computer."
-
-msgid "Este driver é software livre."
-msgstr "This driver is free software."
-
-msgid "Este driver é proprietário."
-msgstr "This driver is proprietary."
-
-msgid "Desativado"
-msgstr "Disabled"
-
-msgid "Em uso"
-msgstr "In use"
 
 msgid "Mesa e Kernel"
 msgstr "Table and Kernel"
@@ -333,21 +320,11 @@ msgstr ""
 msgid "Pesquisar Kernel"
 msgstr "Search Kernel"
 
-msgid "Big-Kernel-Manager"
-msgstr "Big-Kernel-Manager"
-
 msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Install or Remove Kernel Versions"
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"There is already another nVidia driver installed, to install this driver, remove the installed "
-"driver first."
-
-msgid "Enviando, aguarde..."
-msgstr "Sending, please wait..."
+msgid "Aplicando - Aguarde"
+msgstr "Applying - Please wait"
 
 msgid ""
 "Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
@@ -359,11 +336,50 @@ msgstr ""
 msgid "Digite sua senha para gerar um relatório mais completo."
 msgstr "Enter your password to generate a more complete report."
 
-msgid "O Big-Kernel-Manager já está em uso."
-msgstr "Big-Kernel-Manager is already in use."
+msgid "<small>* A detecção não inclui impressoras e scanners</small>"
+msgstr "<small>* Detection does not include printers and scanners</small>"
 
-msgid "Informações sobre o Hardware"
-msgstr "Hardware Information"
+msgid "Wifi"
+msgstr "Wifi"
 
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "The Big-Hardware-Relatory is already in use."
+msgid "Rede Cabeada"
+msgstr "Wired Network"
+
+msgid "Impressora 3D"
+msgstr "3D Printer"
+
+msgid "Scanner"
+msgstr "Scanner"
+
+msgid "TV Digital"
+msgstr "Digital TV"
+
+msgid "Webcam"
+msgstr "Webcam"
+
+msgid "Touchscreen"
+msgstr "Touchscreen"
+
+msgid "Som"
+msgstr "Sound"
+
+msgid "Outros"
+msgstr "Other"
+
+msgid "Pesquisar Driver ou Firmware"
+msgstr "Search Driver or Firmware"
+
+msgid "Big-Driver-Manager"
+msgstr "Big-Driver-Manager"
+
+msgid "Instalar ou Remover Drivers e Firmwares"
+msgstr "Install or Remove Drivers and Firmware"
+
+msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
+msgstr "It is usually necessary to restart the computer for the driver or firmware to be applied."
+
+msgid "Driver ou firmware"
+msgstr "Driver or firmware"
+
+msgid "Este pacote fornece arquivos compatíveis com este computador."
+msgstr "This package provides files that are compatible with this computer."

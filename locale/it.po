@@ -16,71 +16,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Visualizza le informazioni sul dispositivo su Linux Hardware"
+msgid "Informações sobre o Hardware"
+msgstr "Informazioni sull'hardware"
 
-msgid "Processador"
-msgstr "Processore"
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "Il Big-Hardware-Relativo è già in uso."
 
-msgid "Placa mãe"
-msgstr "Scheda madre"
+msgid "O Big-Kernel-Manager já está em uso."
+msgstr "Big-Kernel-Manager è già in uso."
 
-msgid "Memória"
-msgstr "Memoria"
+msgid "Big-Kernel-Manager"
+msgstr "Big-Kernel-Manager"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (memoria virtuale)"
+msgid "Enviando, aguarde..."
+msgstr "Invio, attendere prego..."
 
-msgid "Placa de vídeo"
-msgstr "Scheda video"
+msgid "Informações de Hardware"
+msgstr "Informazioni sull'hardware"
 
-msgid "Áudio"
-msgstr "Audio"
+msgid "Fechar"
+msgstr "Chiudere"
 
-msgid "Rede"
-msgstr "Rete"
+msgid "Enviar para filebin.net"
+msgstr "Invia a filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Connessioni di rete"
+msgid "Visualizar"
+msgstr "Visualizzare"
 
-msgid "Dispositivos e conexões USB"
-msgstr "Dispositivi e connessioni USB"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Il report è stato salvato nel file:"
 
-msgid "Portas PCI"
-msgstr "Porte PCI"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Vuoi visualizzare il file o caricarlo sul sito filebin.net, per avere un URL con i dati del tuo "
+"computer in modo semplice da condividere?"
 
-msgid "Bateria"
-msgstr "Batteria"
+msgid "Remover"
+msgstr "Rimuovere"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Dispositivi di archiviazione"
-
-msgid "Partições montadas"
-msgstr "Partizioni montate"
-
-msgid "Partições desmontadas"
-msgstr "Partizioni smontate"
-
-msgid "Dispositivos lógicos"
-msgstr "Dispositivi logici"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Sistema"
-msgstr "Sistema"
-
-msgid "Informações de Sistema"
-msgstr "Informazioni sul sistema"
-
-msgid "Repositórios"
-msgstr "Repository"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Temperatura"
+msgid "Instalar"
+msgstr "Installare"
 
 msgid "Categorias"
 msgstr "Categorie"
@@ -91,17 +68,47 @@ msgstr "Principale"
 msgid "Resumo"
 msgstr "Sommario"
 
+msgid "Processador"
+msgstr "Processore"
+
+msgid "Placa de vídeo"
+msgstr "Scheda video"
+
+msgid "Placa mãe"
+msgstr "Scheda madre"
+
+msgid "Memória"
+msgstr "Memoria"
+
+msgid "Rede"
+msgstr "Rete"
+
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
+msgid "Bateria"
+msgstr "Batteria"
+
 msgid "Armazenamento"
 msgstr "Conservazione"
 
+msgid "Sistema"
+msgstr "Sistema"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Temperatura"
+
 msgid "Impressora"
 msgstr "Stampante"
+
+msgid "Áudio"
+msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "Maggiori informazioni"
@@ -114,12 +121,6 @@ msgstr "Ricerca"
 
 msgid "Resultado da pesquisa"
 msgstr "Risultato della ricerca"
-
-msgid "Informações de Hardware"
-msgstr "Informazioni sull'hardware"
-
-msgid "Fechar"
-msgstr "Chiudere"
 
 msgid "Abrir"
 msgstr "Aperto"
@@ -167,6 +168,9 @@ msgstr "Genera rapporto"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Crea un file con informazioni che possono essere pubblicate su Internet."
 
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Visualizza le informazioni sul dispositivo su Linux Hardware"
+
 msgid "Categoria"
 msgstr "Categoria"
 
@@ -179,11 +183,60 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Remover"
-msgstr "Rimuovere"
+msgid "Swap (Memória Virtual)"
+msgstr "Swap (memoria virtuale)"
 
-msgid "Instalar"
-msgstr "Installare"
+msgid "Conexões de Rede"
+msgstr "Connessioni di rete"
+
+msgid "Dispositivos e conexões USB"
+msgstr "Dispositivi e connessioni USB"
+
+msgid "Portas PCI"
+msgstr "Porte PCI"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Dispositivi di archiviazione"
+
+msgid "Partições montadas"
+msgstr "Partizioni montate"
+
+msgid "Partições desmontadas"
+msgstr "Partizioni smontate"
+
+msgid "Dispositivos lógicos"
+msgstr "Dispositivi logici"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Informações de Sistema"
+msgstr "Informazioni sul sistema"
+
+msgid "Repositórios"
+msgstr "Repository"
+
+msgid "Em uso"
+msgstr "In uso"
+
+msgid "Este driver é software livre."
+msgstr "Questo driver è un software gratuito."
+
+msgid "Este driver é proprietário."
+msgstr "Questo driver è proprietario."
+
+msgid "Este driver parece compatível com este computador."
+msgstr "Questo driver sembra essere compatibile con questo computer."
+
+msgid ""
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr ""
+"C'è già un altro driver nVidia installato, per installare questo driver, rimuovere prima il driver "
+"installato."
+
+msgid "Desativado"
+msgstr "Disabilitato"
 
 msgid "Concluído, reinicie o computador para ativar a configuração do driver."
 msgstr "Una volta completato, riavvii il computer per attivare la configurazione del driver."
@@ -196,72 +249,6 @@ msgstr "Si è verificato un errore e non è possibile applicare il driver."
 
 msgid "Driver detectado:"
 msgstr "Driver rilevato:"
-
-msgid "<small>* A detecção não inclui impressoras e scanners</small>"
-msgstr "<small>* Il rilevamento non include le stampanti e gli scanner</small>"
-
-msgid "Wifi"
-msgstr "Wifi"
-
-msgid "Rede Cabeada"
-msgstr "Rete cablata"
-
-msgid "Impressora 3D"
-msgstr "Stampante 3D"
-
-msgid "Scanner"
-msgstr "Scanner"
-
-msgid "TV Digital"
-msgstr "TV digitale"
-
-msgid "Webcam"
-msgstr "Webcam"
-
-msgid "Touchscreen"
-msgstr "Touchscreen"
-
-msgid "Som"
-msgstr "Suono"
-
-msgid "Outros"
-msgstr "Altro"
-
-msgid "Pesquisar Driver ou Firmware"
-msgstr "Cerca il driver o il firmware"
-
-msgid "Big-Driver-Manager"
-msgstr "Manager del Big-Driver"
-
-msgid "Instalar ou Remover Drivers e Firmwares"
-msgstr "Installare o rimuovere driver e firmware"
-
-msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
-msgstr "Di solito è necessario riavviare il computer per applicare il driver o il firmware."
-
-msgid "Driver ou firmware"
-msgstr "Driver o firmware"
-
-msgid "Aplicando - Aguarde"
-msgstr "Candidatura - Attendere prego"
-
-msgid "Este driver parece compatível com este computador."
-msgstr "Questo driver sembra essere compatibile con questo computer."
-
-msgid "Este pacote fornece arquivos compatíveis com este computador."
-msgstr "Questo pacchetto fornisce i file compatibili con questo computer."
-
-msgid "Este driver é software livre."
-msgstr "Questo driver è un software gratuito."
-
-msgid "Este driver é proprietário."
-msgstr "Questo driver è proprietario."
-
-msgid "Desativado"
-msgstr "Disabilitato"
-
-msgid "Em uso"
-msgstr "In uso"
 
 msgid "Mesa e Kernel"
 msgstr "Tabella e kernel"
@@ -334,21 +321,11 @@ msgstr ""
 msgid "Pesquisar Kernel"
 msgstr "Kernel di ricerca"
 
-msgid "Big-Kernel-Manager"
-msgstr "Big-Kernel-Manager"
-
 msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Installare o rimuovere le versioni del kernel"
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"C'è già un altro driver nVidia installato, per installare questo driver, rimuovere prima il driver "
-"installato."
-
-msgid "Enviando, aguarde..."
-msgstr "Invio, attendere prego..."
+msgid "Aplicando - Aguarde"
+msgstr "Candidatura - Attendere prego"
 
 msgid ""
 "Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
@@ -360,11 +337,50 @@ msgstr ""
 msgid "Digite sua senha para gerar um relatório mais completo."
 msgstr "Inserisca la sua password per generare un rapporto più completo."
 
-msgid "O Big-Kernel-Manager já está em uso."
-msgstr "Big-Kernel-Manager è già in uso."
+msgid "<small>* A detecção não inclui impressoras e scanners</small>"
+msgstr "<small>* Il rilevamento non include le stampanti e gli scanner</small>"
 
-msgid "Informações sobre o Hardware"
-msgstr "Informazioni sull'hardware"
+msgid "Wifi"
+msgstr "Wifi"
 
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "Il Big-Hardware-Relativo è già in uso."
+msgid "Rede Cabeada"
+msgstr "Rete cablata"
+
+msgid "Impressora 3D"
+msgstr "Stampante 3D"
+
+msgid "Scanner"
+msgstr "Scanner"
+
+msgid "TV Digital"
+msgstr "TV digitale"
+
+msgid "Webcam"
+msgstr "Webcam"
+
+msgid "Touchscreen"
+msgstr "Touchscreen"
+
+msgid "Som"
+msgstr "Suono"
+
+msgid "Outros"
+msgstr "Altro"
+
+msgid "Pesquisar Driver ou Firmware"
+msgstr "Cerca il driver o il firmware"
+
+msgid "Big-Driver-Manager"
+msgstr "Manager del Big-Driver"
+
+msgid "Instalar ou Remover Drivers e Firmwares"
+msgstr "Installare o rimuovere driver e firmware"
+
+msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
+msgstr "Di solito è necessario riavviare il computer per applicare il driver o il firmware."
+
+msgid "Driver ou firmware"
+msgstr "Driver o firmware"
+
+msgid "Este pacote fornece arquivos compatíveis com este computador."
+msgstr "Questo pacchetto fornisce i file compatibili con questo computer."
