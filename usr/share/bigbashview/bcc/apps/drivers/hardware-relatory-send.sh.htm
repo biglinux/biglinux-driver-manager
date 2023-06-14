@@ -1,182 +1,238 @@
-#!/bin/bash ################################## # Author1: Bruno Goncalves
-(www.biglinux.com.br) # Author2: Rafael Ruscher (rruscher@gmail.com) # Date:
-2022/02/28 # # Description: Control Center to help usage of BigLinux # #
-Licensed by GPL V2 or greater ################################## #Translation
-export TEXTDOMAINDIR="/usr/share/locale" export
-TEXTDOMAIN=biglinux-driver-manager #Only to debug #rm -R
-"$HOME/.config/bigcontrolcenter/"
-FILE_TO_SAVE="$HOME/BigLinux-Hardware-Info-$(date +%Y-%m-%d_%Hh-%Mm).html" mkdir
--p "$HOME/.config/bigcontrolcenter-drivers" # Don't group windows #xprop -id
-"$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set
-WM_CLASS "$$" TITLE=$"Informações de Hardware" CLOSE=$"Fechar" if [ "$toshow" =
-"show" ]; then WELCOME_ICON="<img class=\"img-content img\"
-src=icon-drivers.png>" fi cat << EOF
+#!/bin/bash
+
+
+##################################
+#  Author1: Bruno Goncalves (www.biglinux.com.br) 
+#  Author2: Rafael Ruscher (rruscher@gmail.com)  
+#  Date:    2022/02/28 
+#  
+#  Description: Control Center to help usage of BigLinux 
+#  
+# Licensed by GPL V2 or greater
+##################################
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=biglinux-driver-manager
+
+#Only to debug
+#rm -R "$HOME/.config/bigcontrolcenter/"
+
+
+
+FILE_TO_SAVE="$HOME/BigLinux-Hardware-Info-$(date +%Y-%m-%d_%Hh-%Mm).html"
+
+mkdir -p "$HOME/.config/bigcontrolcenter-drivers"
+# Don't group windows
+#xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
+
+
+TITLE=$"Informações de Hardware"
+CLOSE=$"Fechar"
+
+
+
+
+if [ "$toshow" = "show" ]; then
+  WELCOME_ICON="<img class=\"img-content img\" src=icon-drivers.png>"
+fi
+
+
+cat << EOF
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>$TITLE</title>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>$TITLE</title>
 
-    <style>
-      $(cat stylebcc.css)
-    </style>
+<style>
+$(cat stylebcc.css)
+</style>
+  
 
-    <script>
-      $(cat / usr / share / bigbashview / bcc / materialize / js / jquery.js);
-    </script>
+<script>
+$(cat /usr/share/bigbashview/bcc/materialize/js/jquery.js)
+</script>
 
-    <script>
-      $(cat filter.js)
-    </script>
-  </head>
-  <body>
-    EOF echo '
-    <div id="box_progress_config_simple"></div>
-    ' # Get body tag with color light or not
-    /usr/share/bigbashview/bcc/shell/getbgcolor.sh cat << EOF
-    <div class="dark-light">
-      <svg
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="1.5"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-      </svg>
+
+<script>
+$(cat filter.js)
+</script>
+  
+</head>
+<body>
+EOF
+
+echo '<div id=box_progress_config_simple></div>'
+
+# Get body tag with color light or not
+/usr/share/bigbashview/bcc/shell/getbgcolor.sh
+
+cat << EOF
+<div class="dark-light">
+  <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+  </svg>
+</div>
+<div class="app">
+  <div class="header">
+    <div class="search-bar">
     </div>
-    <div class="app">
-      <div class="header">
-        <div class="search-bar"></div>
-      </div>
-      <div class="content-wrapper" style="overflow-x: hidden">
-        <a name="topo"></a>
-        <div class="wrapper">
-          <div class="main-container" style="overflow: auto">
-            <!-- PRINCIPAIS -->
+  </div>
+  <div class="content-wrapper" style="overflow-x: hidden;">
+  <a name="topo"></a>
+  <div class="wrapper">
 
-            <div class="apps-card" style="display: grid">
-              EOF bash hardware-info.sh.htm > "$FILE_TO_SAVE" SEND=$"Enviar para
-              filebin.net" VIEW=$"Visualizar" NAME=$"O relatório foi salvo no
-              arquivo:" COMMENT=$"Deseja visualizar o arquivo ou envia-lo ao
-              site filebin.net, para ter uma URL que permanecerá online durante
-              6 dias com os dados do seu computador de forma fácil de
-              compartilhar?" cat << EOF
-              <div
-                class="app-card Star"
-                style="display: unset; margin-top: 10vh; place-self: center"
-              >
-                <span> $NAME $FILE_TO_SAVE</span>
-                <div class="app-card__subtext">$COMMENT</div>
-                <div class="app-card-buttons">
-                  <button
-                    class="content-button status-button"
-                    onclick="_run('xdg-open $FILE_TO_SAVE')"
-                  >
-                    $VIEW
-                  </button>
-                  <button
-                    class="content-button status-button"
-                    onclick="_run('/usr/share/bigbashview/bcc/apps/drivers/send-to-transfer.sh $FILE_TO_SAVE')"
-                  >
-                    $SEND
-                  </button>
-                </div>
+
+
+    <div class="main-container" style="overflow: auto;">
+
+      <!-- PRINCIPAIS -->
+
+
+            <div class="apps-card" style="display: grid;">
+
+          
+EOF
+
+bash hardware-info.sh.htm > "$FILE_TO_SAVE"
+
+
+    SEND=$"Enviar para filebin.net"
+    VIEW=$"Visualizar"
+    NAME=$"O relatório foi salvo no arquivo:"
+    COMMENT=$"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu computador de forma fácil de compartilhar?"
+cat << EOF
+              <div class="app-card Star" style="display: unset; margin-top: 10vh; place-self: center;">
+                  <span>
+                   $NAME $FILE_TO_SAVE</span>
+                  <div class="app-card__subtext">$COMMENT</div>
+                  <div class="app-card-buttons">
+                      <button class="content-button status-button" onclick="_run('xdg-open $FILE_TO_SAVE')">$VIEW</button>
+                      <button class="content-button status-button" onclick="_run('/usr/share/bigbashview/bcc/apps/drivers/send-to-transfer.sh $FILE_TO_SAVE')">$SEND</button>
+                  </div>
               </div>
+            
+EOF
 
-              EOF echo '
-            </div>
-            <div class="content-section-title Star"></div>
-            <div class="apps-card apps-card-uniq">
-              ' OIFS=$IFS IFS=$'\n' ######################### # # Change to
-              "Principais" in start # ######################### echo "
-              <script>
-                \$(function() {
-                   \$(\"#Star\").trigger(\"click\");});
-              </script>
-              " echo '<style>
-                .app-card svg {
-                  filter: invert(100%);
-                }
 
-                :root {
-                  --ansi-bg-color: #00ffff;
-                }
 
-                .light-mode {
-                  --ansi-bg-color: #0043ff;
-                }
+echo '</div><div class="content-section-title Star"></div><div class="apps-card apps-card-uniq">'
 
-                .ansi34 {
-                  color: var(--ansi-bg-color);
-                  text-transform: capitalize;
-                }
+OIFS=$IFS
+IFS=$'\n'
 
-                .ansi2html-content {
-                  display: inline-grid !important;
-                  white-space: pre-wrap;
-                  word-wrap: break-word;
-                }
 
-                .app-card span {
-                  display: inline-flex;
-                  align-items: center;
-                }
+#########################
+#
+# Change to "Principais" in start
+#
+#########################
+echo "<script>
+\$(function() {
+   \$(\"#Star\").trigger(\"click\");});
+</script>"
 
-                span.hardwareTitle2 {
-                  margin-top: 24px;
-                  font-weight: bold;
-                  font-size: 14px;
-                  color: #ffed95;
-                  text-transform: capitalize;
-                }
 
-                .hardwareSpace {
-                  margin-top: 20px;
-                  background-color: #ffffff17;
-                  border-radius: 6px;
-                  padding-left: 20px;
-                  padding-right: 20px;
-                  padding-bottom: 20px;
-                  overflow-wrap: break-word;
-                }
 
-                .divLinuxHardware {
-                  margin-top: 18px;
-                  text-align-last: center;
-                  font-weight: bold;
-                  color: #00dcff;
-                }
 
-                .app-card:hover {
-                  transform: none;
-                  cursor: initial;
-                }
+echo '<style>.app-card svg {filter: invert(100%);}
 
-                .apps-card-uniq {
-                  grid-template-columns: auto;
-                }
+:root {
+  --ansi-bg-color: #00ffff;
+}
 
-                .content-wrapper-header {
-                  position: relative;
-                  margin-bottom: 30px;
-                }</style
-              >' cat << EOF
+.light-mode {
+  --ansi-bg-color: #0043ff;
+}
+
+.ansi34 {
+    color: var(--ansi-bg-color);
+    text-transform: capitalize;
+}
+
+.ansi2html-content {
+    display: inline-grid !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.app-card span {
+display: inline-flex;
+    align-items: center;
+}
+
+span.hardwareTitle2 {
+    margin-top: 24px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffed95;
+    text-transform: capitalize;
+}
+
+.hardwareSpace {
+    margin-top: 20px;
+    background-color: #ffffff17;
+    border-radius: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    overflow-wrap: break-word;
+}
+
+.divLinuxHardware {
+    margin-top: 18px;
+    text-align-last: center;
+    font-weight: bold;
+    color: #00dcff;
+}
+
+.app-card:hover {
+    transform: none;
+    cursor: initial;
+}
+
+.apps-card-uniq {
+    grid-template-columns: auto;
+}
+
+.content-wrapper-header {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+</style>'
+
+
+
+
+
+
+
+
+cat << EOF
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer"></div>
-    <div class="logo">
-      <img src="logo.png" class="logo-biglinux" />
-    </div>
-    EOF cat << EOF
+  <div class="footer">
+  </div>
+  <div class="logo">
+    <img src="logo.png" class="logo-biglinux">
+  </div>
+EOF
 
-    <script>
-      $(cat script.js)
-    </script>
-  </body>
+
+
+cat << EOF
+
+<script>
+$(cat script.js)
+</script>
+</body>
 </html>
-EOF IFS=$OIFS
+EOF
+IFS=$OIFS
