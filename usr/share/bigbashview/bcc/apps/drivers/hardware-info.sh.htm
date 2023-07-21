@@ -173,9 +173,8 @@ function sh_hardware_info_starthtml {
 }
 
 function sh_hardware_info_div {
-	local html
-
-	html="<div class="left-side">
+	cat << EOF
+	<div class="left-side">
       <div class="side-wrapper">
         <div class="side-menu">
           <a href="#topo" id="Star" class="btn">
@@ -292,8 +291,8 @@ function sh_hardware_info_div {
             </div>
             <img class="content-wrapper-img" src="biginfo.png" alt="">
           </div>
-            <div class="apps-card">"
-	echo "$html"
+			<div class="apps-card">
+EOF
 }
 
 function sh_hardware_info_script {
@@ -468,8 +467,8 @@ function sh_hardware_info_bodyhtml {
 	PCI_IDS="$(lspci -n | cut -f3 -d" ")"
 	USB_IDS="$(lsusb | cut -f6 -d" ")"
 
-	echo '<div class=\"app-card printer\" style=\"max-height: 100%;\">'
-	echo '<div class=titlecard><span>'
+	echo "<div class=\"app-card printer\" style=\"max-height: 100%;\">"
+	echo "<div class=titlecard><span>"
 	echo "$CATEGORY_Printer"
 	echo '</span></div>'
 	echo '<div class="app-card__subtext">'
