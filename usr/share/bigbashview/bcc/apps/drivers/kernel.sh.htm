@@ -1,19 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##################################
-#  Author1: Bruno Goncalves (www.biglinux.com.br) 
-#  Author2: Rafael Ruscher (rruscher@gmail.com)  
-#  Date:    2022/12/26 
-#  
-#  Description: Control Center to help usage of BigLinux 
-#  
-# Licensed by GPL V2 or greater
+#	Author1: Bruno Goncalves (www.biglinux.com.br)
+#	Author2: Rafael Ruscher (rruscher@gmail.com)
+#	Date:    2022/12/26
+#
+#	Description: Control Center to help usage of BigLinux
+#
+#	Licensed by GPL V2 or greater
 ##################################
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-driver-manager
+declare user_drivers="$HOME/.config/bigcontrolcenter-drivers"
 
-mkdir -p "$HOME/.config/bigcontrolcenter-drivers"
+[[ ! -d "$user_drivers" ]] && mkdir -p "$user_drivers"
+
 # Don't group windows
 xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
 
@@ -60,26 +62,26 @@ WELCOME=$"Instalar ou Remover Versões de Kernel"
 #################
 
 if [ "$install_kernel_now" != "" ]; then
-  ./installpkgkernel.sh install $install_kernel_now
+	./installpkgkernel.sh install $install_kernel_now
 fi
 
 if [ "$remove_kernel_now" != "" ]; then
-  ./installpkgkernel.sh remove $remove_kernel_now
+	./installpkgkernel.sh remove $remove_kernel_now
 fi
 
 if [ "$mesa" = "mesa" ]; then
-  ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
+	./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
 fi
 
 if [ "$mesa" = "amber" ]; then
-  ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
+	./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
 fi
 
 if [ "$mesa" = "tkg" ]; then
-  ./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
+	./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
 fi
 
-cat << EOF
+cat <<EOF
 <html>
 <head>
   <meta charset="UTF-8">
@@ -167,7 +169,7 @@ div#box_progress_config_bar {
 # Loading
 echo '<div id=box_progress_config>'
 echo '<div id=box_progress_config_bar>'
-cat << EOF
+cat <<EOF
 <svg viewBox="0 0 576 512" style="width: 17px; margin-right: 3px; margin-top: 2px;"><path fill="currentColor" d="M480 80C480 53.49 458.5 32 432 32h-288C117.5 32 96 53.49 96 80V384h384V80zM378.9 166.8l-88 112c-4.031 5.156-10 8.438-16.53 9.062C273.6 287.1 272.7 287.1 271.1 287.1c-5.719 0-11.21-2.019-15.58-5.769l-56-48C190.3 225.6 189.2 210.4 197.8 200.4c8.656-10.06 23.81-11.19 33.84-2.594l36.97 31.69l72.53-92.28c8.188-10.41 23.31-12.22 33.69-4.062C385.3 141.3 387.1 156.4 378.9 166.8zM528 288H512v112c0 8.836-7.164 16-16 16h-416C71.16 416 64 408.8 64 400V288H48C21.49 288 0 309.5 0 336v96C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48v-96C576 309.5 554.5 288 528 288z"/></svg>
 EOF
 echo $"Aplicando - Aguarde"
@@ -179,7 +181,7 @@ echo '<div id=box_progress_config_simple></div>'
 # Get body tag with color light or not
 /usr/share/bigbashview/bcc/shell/getbgcolor.sh
 
-cat << EOF
+cat <<EOF
 
 <div class="dark-light">
   <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -227,36 +229,36 @@ cat << EOF
 EOF
 
 if [ "$(LANG=en pacman -Qi 'mesa' | grep ^Name | grep mesa$)" != "" ]; then
-  mesaChecked=checked
-  mesaInstall=y
+	mesaChecked=checked
+	mesaInstall=y
 elif [ "$(LANG=en pacman -Qi 'mesa-amber' | grep ^Name | grep mesa-amber$)" != "" ]; then
-  mesaAmberChecked=checked
-  mesaAmberInstall=y
+	mesaAmberChecked=checked
+	mesaAmberInstall=y
 elif [ "$(LANG=en pacman -Qi 'mesa-tkg-git' | grep ^Name | grep mesa-tkg-git$)" != "" ]; then
-  mesaAmberInstall=y
-  mesaTkgChecked=checked
+	mesaAmberInstall=y
+	mesaTkgChecked=checked
 fi
 
-cat << EOF              
+cat <<EOF
               <div class="content-section" style="margin-top: 0px;">
                 <ul>
                   <li class="product">
                     <div class="products">
                       <input id="r1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
                       <label for="r1">
-                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-amber  | grep -i "^Version" | cut -f2 -d:)</font></span>
+                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-amber | grep -i "^Version" | cut -f2 -d:)</font></span>
                       </label>
                     </div>
                     <div class="products">
                       <input id="r2" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
                       <label for="r2">
-                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa  | grep -i "^Version" | cut -f2 -d:)</font></span>
+                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa | grep -i "^Version" | cut -f2 -d:)</font></span>
                       </label>
                     </div>
                     <div class="products">
                       <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
                       <label for="r3">
-                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git  | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
+                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
                       </label>
                     </div>
                   </li>
@@ -292,7 +294,7 @@ rm -f /tmp/kernel-mhwd-*.html
 
 cat /tmp/kernel-mhwd-*.html
 
-cat << EOF
+cat <<EOF
                 </ul>
             </div>
           </div>
@@ -306,4 +308,3 @@ cat << EOF
 </html>
 EOF
 IFS=$OIFS
-

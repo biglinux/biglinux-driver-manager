@@ -1,265 +1,200 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#shellcheck disable=SC2155
+#shellcheck source=/dev/null
 
-#Translation
-export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=biglinux-driver-manager
+#  inxi.sh
+#  Created: 0000/00/00
+#  Altered: 2023/07/20
+#
+#  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
+#                0000-2023, bigbruno Bruno Gonçalves <bruno@biglinux.com.br>
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+#  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+#  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+#  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+#  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+#  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-DEVICE_INFO=$"Ver informações do dispositivo no Linux Hardware"
-PCI_IDS="$(lspci -n | cut -f3 -d" ")"
-USB_IDS="$(lsusb | cut -f6 -d" ")"
+readonly red=$(tput setaf 124)
+readonly green=$(tput setaf 2)
+readonly pink=$(tput setaf 129)
+readonly reset=$(tput sgr0)
+readonly APP="${0##*/}"
+readonly _VERSION_="1.0.0-20230720"
 
-
-rm -f /tmp/hardwareinfo-inxi-*.html
-rm -f /tmp/hardwareinfo-dmesg.html
-
-if [ "$1" = "show" ]; then
-  show="show"
-fi
-
-
-SHOW_HARDINFO() {
-
-# $1 CATEGORY_INXI
-# $2 NAME
-# $3 ICON
-
-
-# inxi -c 2 -a -xx --machine -y 100 --indents 5 | iconv -t UTF-8 2>- | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' | sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g'| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' | sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' | sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' | sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' | sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g'  | sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g'  | sed 's|</span>|</span><span class="ansi35">|g' | sed 's|<br>|</span><br>|g'
-
-
-echo "<div class=\"app-card $CATEGORY\" style=\"max-height: 100%;\">" >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-echo "<div class=\"app-card__title\">$NAME</div>" >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-echo '<div class="app-card__subtext">' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-
-$PKEXEC inxi ${PARAMETER_INXI}${CATEGORY_INXI} -y 100 --indents 5 | iconv -t UTF-8 2>- | grep '     ' | sed 's|          ||g' | tr '\n ' ' ' | sed 's|      |\n     |g' | ansi2html -f 18px -l | sed 's|           <span class="|<span class="subcategory1 |g' | grep -A 9999 '<pre class="ansi2html-content">' | grep -v '</html>' | grep -v '</body>' | sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' | sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g'| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' | sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' | sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' | sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' | sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g'  | sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-
-echo '</div></div>' >> /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-
-
-for i  in  $(grep -i Chip-ID /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html | sed 's| <br><span class="ansi1 ansi34">class-ID.*||g' | rev | cut -f1 -d" " | rev | sort -u); do
-  if [ "$(echo "$PCI_IDS" | grep "$i")" != "" ]; then
-
-      sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run pci:$(echo $i | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-
-  elif [ "$(echo "$USB_IDS" | grep "$i")" != "" ]; then
-
-      sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run usb:$(echo $i | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" /tmp/hardwareinfo-inxi-${CATEGORY_INXI}.html
-  fi
-
-done
-
-
+function sh_debug {
+	export PS4='${red}${0##*/}${green}[$FUNCNAME]${pink}[$LINENO]${reset} '
+	set -x
+#	set -e
+	shopt -s extglob
 }
 
-  CATEGORY_INXI="cpu"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  CATEGORY="cpu"
-  NAME=$"Processador"
-  ICON="cpu"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+function sh_config {
+	#Translation
+	export TEXTDOMAINDIR="/usr/share/locale"
+	export TEXTDOMAIN=biglinux-driver-manager
+	declare -g DEVICE_INFO=$"Ver informações do dispositivo no Linux Hardware"
+	declare -g PCI_IDS="$(lspci -n | cut -f3 -d" ")"
+	declare -g USB_IDS="$(lsusb | cut -f6 -d" ")"
+	declare -gA AHardInfo
+	declare -i lshow=0
+}
 
-  #Clean CPU
-  grep -ve 'Vulnerabilities:' -ve 'Type:' /tmp/hardwareinfo-inxi-cpu.html > /tmp/hardwareinfo-inxi-cpu2.html
-  mv -f /tmp/hardwareinfo-inxi-cpu2.html /tmp/hardwareinfo-inxi-cpu.html
+function sh_remove_tmp_files {
+	rm -f /tmp/hardwareinfo-inxi-*.html >/dev/null 2>&-
+	rm -f /tmp/hardwareinfo-dmesg.html >/dev/null 2>&-
+}
 
+function sh_splitarray {
+	local str=("$1")
+	local pos="$2"
+	local sep="${3:-'|'}"
+	local array
 
-  CATEGORY_INXI="machine"
-  if [ "$show" = "show" ]; then
-    PARAMETER_INXI="-c 2 -a -xx --"
-  elsehardwareSpace
-    PARAMETER_INXI="-c 2 -x -z --"
-  fi
-  NAME=$"Placa mãe"
-  CATEGORY="machine"
-  ICON="machine"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show  
+	[[ $# -eq 3 && "$pos" = "|" && "$sep" =~ ^[0-9]+$ ]] && { sep="$2"; pos="$3";}
+	[[ $# -eq 2 && "$pos" = "$sep"                    ]] && { sep="$pos"; pos=1;}
+	[[ $# -eq 1 || ! "$pos" =~ ^[0-9]+$               ]] && { pos=1; }
 
-  if [ "$show" = "show" ]; then
-    PARAMETER_INXI="-c 2 -a -xx --"
-  else
-    PARAMETER_INXI="-c 2 -x -z --"
-  fi
-  CATEGORY_INXI="memory"
-  NAME=$"Memória"
-  CATEGORY="memory"
-  ICON="memory"
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	IFS="$sep" read -r -a array <<< "${str[@]}"
+	echo "${array[pos-1]}"
+}
 
-  CATEGORY_INXI="swap"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Swap (Memória Virtual)"
-  CATEGORY="memory"
-  ICON="swap"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+function SHOW_HARDINFO {
+	local category_inxi="$1"
+	local parameter_inxi="$2"
+	local category="$3"
+	local name="$4"
+	local icon="$5"
+	local pkexec="$6"
+	local show="$7"
+	local cfile="/tmp/hardwareinfo-inxi-$category_inxi.html"
 
-  CATEGORY_INXI="graphics"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Placa de vídeo"
-  CATEGORY="gpu"
-  ICON="graphics"
-  PKEXEC="pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	{
+		echo "<div class=\"app-card $category\" style=\"max-height: 100%;\">"
+		echo "<div class=\"app-card__title\">$name</div>"
+		echo '<div class="app-card__subtext">'
+	} >>"$cfile"
 
-  CATEGORY_INXI="audio"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Áudio"
-  CATEGORY="audio"
-  ICON="audio"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	exec $pkexec inxi "$parameter_inxi" "$category_inxi" -y 100 --indents 5 \
+		| iconv -t UTF-8 2>- \
+		| grep '     ' \
+		| sed 's|          ||g' \
+		| tr '\n ' ' ' \
+		| sed 's|      |\n     |g' \
+		| ansi2html -f 18px -l \
+		| sed 's|           <span class="|<span class="subcategory1 |g' \
+		| grep -A 9999 '<pre class="ansi2html-content">' \
+		| grep -v '</html>' \
+		| grep -v '</body>' \
+		| sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' \
+		| sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g'\
+		| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' \
+		| sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' \
+		| sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' \
+		| sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' \
+		| sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g' \
+		| sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g' \
+		>> "$cfile"
 
-  CATEGORY_INXI="network-advanced"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Rede"
-  CATEGORY="Network"
-  ICON="network"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	echo '</div></div>' >>"$cfile"
 
-  CATEGORY_INXI="ip"
-  if [ "$show" = "show" ]; then
-    PARAMETER_INXI="-c 2 -a -xx --"
-  else
-    PARAMETER_INXI="-c 2 -x -z --"
-  fi
-  NAME=$"Conexões de Rede"
-  CATEGORY="network"
-  ICON="ip"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	for i in $(grep -i Chip-ID "$cfile" | sed 's| <br><span class="ansi1 ansi34">class-ID.*||g' | rev | cut -f1 -d" " | rev | sort -u); do
+		if [ "$(echo "$PCI_IDS" | grep "$i")" != "" ]; then
+			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run pci:$(echo $i | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
+		elif [ "$(echo "$USB_IDS" | grep "$i")" != "" ]; then
+			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run usb:$(echo $i | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
+		fi
+	done
+}
 
-  CATEGORY_INXI="usb"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Dispositivos e conexões USB"
-  CATEGORY="usb"
-  ICON="usb"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+function sh_set_show {
+	[[ "$1" = "show" ]] && lshow=1
+}
 
-  CATEGORY_INXI="slots"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Portas PCI"
-  CATEGORY="pci"
-  ICON="usb"
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+function sh_get_parameters {
+	if (( lshow )); then
+		echo '-c 2 -a -xx --'
+	else
+		echo '-c 2 -x -z --'
+	fi
+}
 
-  CATEGORY_INXI="battery"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Bateria"
-  CATEGORY="battery"
-  ICON="battery"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+function sh_set_hardinfo {
+	AHardInfo=()
+	AHardInfo+=(['cpu']="$(sh_get_parameters)|cpu|$'Processador'|cpu|''|$lshow")
 
-  CATEGORY_INXI="disk-full"
-  if [ "$show" = "show" ]; then
-    PARAMETER_INXI="-c 2 -a -xx --"
-  else
-    PARAMETER_INXI="-c 2 -x -z --"
-  fi
-  NAME=$"Dispositivos de Armazenamento"
-  CATEGORY="disk"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	#Clean CPU
+	grep -ve 'Vulnerabilities:' -ve 'Type:' /tmp/hardwareinfo-inxi-cpu.html >/tmp/hardwareinfo-inxi-cpu2.html
+	mv -f /tmp/hardwareinfo-inxi-cpu2.html /tmp/hardwareinfo-inxi-cpu.html
 
-  CATEGORY_INXI="partitions-full"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Partições montadas"
-  CATEGORY="disk"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	AHardInfo+=(['machine']="$(sh_get_parameters)|machine|$'Placa mãe'|machine|''|$lshow")
+	AHardInfo+=(['memory']="$(sh_get_parameters)|memory|$'Memória'|memory|''|$lshow")
+	AHardInfo+=(['swap']="$(sh_get_parameters)|memory|$'Swap Memória Virtual'|swap|''|$lshow")
+:<<'comment'
+	AHardInfo+=(['graphics']="$(sh_get_parameters)|gpu|$'Placa de vídeo'|graphics|"pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"|$lshow")
+	AHardInfo+=(['audio']="$(sh_get_parameters)|audio|\$'Áudio'|audio|''|$lshow")
+	AHardInfo+=(['network-advanced']="$(sh_get_parameters)|Network|\$'Rede'|network|''|$lshow")
+	AHardInfo+=(['ip']="$(sh_get_parameters)|network|\$'Conexões de Rede'|ip|''|$lshow")
+	AHardInfo+=(['usb']="$(sh_get_parameters)|usb|\$'Dispositivos e conexões USB"|usb|''|$lshow")
+	AHardInfo+=(['slots']="$(sh_get_parameters)|pci|\$'Portas PCI'|usb|''|$lshow")
+	AHardInfo+=(['battery']="$(sh_get_parameters)|battery|\$'Bateria'|battery|''|$lshow")
+	AHardInfo+=(['disk-full']="$(sh_get_parameters)|disk|\$'Dispositivos de Armazenamento'|'disk'|''|$lshow")
+	AHardInfo+=(['partitions-full']="$(sh_get_parameters)|disk|$'Partições montadas'|disk|''|$lshow")
+	AHardInfo+=(['unmounted']="$(sh_get_parameters)|disk|$'Partições desmontadas'|disk|"pkexec -u $BIGUSER"|$lshow")
 
-  CATEGORY_INXI="unmounted"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Partições desmontadas"
-  CATEGORY="disk"
-  ICON="disk"
-  PKEXEC="pkexec -u $BIGUSER"
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	# Save dmesg
+	dmesg -t --level=alert,crit,err,warn >/tmp/hardwareinfo-dmesg.html
 
-  
-  
-#   
-# for i  in  $(smartctl --scan | cut -f1 -d" "); do
-# 
-# 
-# echo "<div class=\"app-card disk\" style=\"max-height: 100%;\">" >> /tmp/hardwareinfo-inxi-SMART.html
-# echo "<div class=\"app-card__title\">SMART $i</div>" >> /tmp/hardwareinfo-inxi-SMART.html
-# echo '<div class="app-card__subtext">' >> /tmp/hardwareinfo-inxi-SMART.html
-# 
-# 
-# 
-# cat << EOF >> /tmp/hardwareinfo-inxi-SMART.html
-# $(sudo smartctl -i --all $i | grep -e "Model Family" -e "Device Model" -e "Serial Number" -e "Firmware Version" -e "User Capacity" -e "Sector Size" -e "Rotation Rate" -e "ATA Version is" -e "SMART support is" -e "Power_On_Hours" -e "Power_Cycle_Count" -e "Airflow_Temperature_Cel" -e "Temperature_Celsius" | sed 's|0x00.*  -  ||g;s|.*Power_On_Hours|Power_On_Hours:</span>|g;s|.*Power_Cycle_Count|Power_Cycle_Count:</span>|g;s|.*Airflow_Temperature_Cel|Airflow_Temperature_Cel:</span>|g;s|.*Temperature_Celsius|Temperature_Celsius:</span>|g;s|^|<br><span class="ansi1 ansi34">|g;s|: |: </span>|g')
-# 
-# </textarea></div></div>
-# EOF
-# 
-# 
-# done
+	AHardInfo+=(['logical']="$(sh_get_parameters)|disk|$'Dispositivos lógicos'|disk|''|$lshow")
+	AHardInfo+=(['raid']="$(sh_get_parameters)|disk|\$'Raid'|disk|''|$lshow")
+	AHardInfo+=(['system']="$(sh_get_parameters)|system|\$'Sistema'|disk|''|$lshow")
+	AHardInfo+=(['info']="$(sh_get_parameters)|system|\$'Informações de Sistema|disk|''|$lshow")
+	AHardInfo+=(['repos']="$(sh_get_parameters)|system|$'Repositórios'|disk|''|$lshow")
+	AHardInfo+=(['bluetooth']="$(sh_get_parameters)|bluetooth|$'Bluetooth'|disk|''|$lshow")
+	AHardInfo+=(['sensors']="$(sh_get_parameters)|sensors|\$'Temperatura'|disk|"pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"|$lshow")
+comment
+}
 
-  # Save dmesg
-  dmesg -t --level=alert,crit,err,warn > /tmp/hardwareinfo-dmesg.html
-  
-  
-  
-  CATEGORY_INXI="logical"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Dispositivos lógicos"
-  CATEGORY="disk"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+function sh_process_hardinfo {
+	local category_inxi
+	local parameter_inxi
+	local category
+	local name
+	local icon
+	local pkexec
+	local show
 
-  CATEGORY_INXI="raid"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Raid"
-  CATEGORY="disk"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
+	for i in "${!AHardInfo[@]}"; {
+		category_inxi="$i"
+		parameter_inxi="$(sh_splitarray "${AHardInfo[$i]}" 1)"
+		category="$(sh_splitarray "${AHardInfo[$i]}" 2)"
+		name="$(sh_splitarray "${AHardInfo[$i]}" 3)"
+		icon="$(sh_splitarray "${AHardInfo[$i]}" 4)"
+		pkexec="$(sh_splitarray "${AHardInfo[$i]}" 5)"
+		show="$(sh_splitarray "${AHardInfo[$i]}" 6)"
+		SHOW_HARDINFO "$category_inxi" "$parameter_inxi" "$category" "$name" "$icon" "$pkexec" "$show"
+	}
+}
 
-  CATEGORY_INXI="system"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Sistema"
-  CATEGORY="system"
-  ICON="disk"
-  PKEXEC=""
+sh_debug
+sh_config
+sh_remove_tmp_files
+sh_set_show "$1"
+sh_set_hardinfo
+sh_process_hardinfo
 
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
-  PARAMETER_INXI="-c 2 -a -xx --"
-  CATEGORY_INXI="info"
-  NAME=$"Informações de Sistema"
-  CATEGORY="system"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
-
-  CATEGORY_INXI="repos"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Repositórios"
-  CATEGORY="system"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
-
-  CATEGORY_INXI="bluetooth"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Bluetooth"
-  CATEGORY="bluetooth"
-  ICON="disk"
-  PKEXEC=""
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 
-
-  CATEGORY_INXI="sensors"
-  PARAMETER_INXI="-c 2 -a -xx --"
-  NAME=$"Temperatura"
-  CATEGORY="sensors"
-  ICON="disk"
-  PKEXEC="pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"
-  SHOW_HARDINFO "$PARAMETER_INXI" "$CATEGORY_INXI" "$NAME" "$ICON" "$CATEGORY" $show 

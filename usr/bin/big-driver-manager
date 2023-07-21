@@ -1,26 +1,30 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
-# BigLinux Store 
-# www.biglinux.com.br
-# By Bruno Gonçalves
-# 07/09/2020
-# License: GPL v2 or greater 
+#	BigLinux Store
+#	www.biglinux.com.br
+#	By Bruno Gonçalves
+#	07/09/2020
+#	License: GPL v2 or greater
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=big-store
-
+declare drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
 
 if [[ $(ps -aux | grep Big-Hardware-Relatory | grep bigbashview) ]]; then
-
-    kdialog --passivepopup $"O Big-Hardware-Relatory já está em uso."
-    exit
+	kdialog --passivepopup $"O Big-Hardware-Relatory já está em uso."
+	exit
 fi
 
-cd /usr/share/bigbashview/bcc/apps/drivers/
-
-
+if [[ ! -d "$drivers_path" ]]; then
+	if ! mkdir "$drivers_path"; then
+		kdialog --passivepopup $"O diretório $drivers_path não existe e não foi possível criar."
+		exit
+	fi
+fi
+cd "$drivers_path"
 TITLE="Big-Driver-Manager"
-
-QT_QPA_PLATFORM=xcb SDL_VIDEODRIVER=x11 WINIT_UNIX_BACKEND=x11 GDK_BACKEND=x11 bigbashview  -n "$TITLE" -w maximized index.sh.htm -i /usr/share/bigbashview/bcc/apps/drivers/icon-drivers.svg
-
+QT_QPA_PLATFORM=xcb \
+	SDL_VIDEODRIVER=x11 \
+	WINIT_UNIX_BACKEND=x11 \
+	GDK_BACKEND=x11 bigbashview -n "$TITLE" -w maximized index.sh.htm -i /usr/share/bigbashview/bcc/apps/drivers/icon-drivers.svg

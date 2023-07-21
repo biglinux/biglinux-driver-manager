@@ -1,148 +1,152 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#shellcheck disable=SC2155
+#shellcheck source=/dev/null
 
+#  loading.sh.htm
+#	Description: Control Center to help usage of BigLinux
+#  Created: 2022/02/28
+#  Altered: 2023/07/17
+#
+#  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
+#                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
+#                2022-2023, Rafael Ruscher <rruscher@gmail.com>
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+#  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+#  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+#  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+#  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+#  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-##################################
-#  Author1: Bruno Goncalves (www.biglinux.com.br) 
-#  Author2: Rafael Ruscher (rruscher@gmail.com)  
-#  Date:    2022/02/28 
-#  
-#  Description: Control Center to help usage of BigLinux 
-#  
-# Licensed by GPL V2 or greater
-##################################
+readonly red=$(tput setaf 124)
+readonly green=$(tput setaf 2)
+readonly pink=$(tput setaf 129)
+readonly reset=$(tput sgr0)
+readonly APP="${0##*/}"
+readonly _VERSION_="1.0.0-20230717"
+LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+[[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
-#Translation
-export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=biglinux-driver-manager
-
-#Only to debug
-#rm -R "$HOME/.config/bigcontrolcenter/"
-
-mkdir -p "$HOME/.config/bigcontrolcenter-drivers"
-# Don't group windows
-#xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
-
-PASSWORD=$"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou cancele para utilizar as informações da tela anterior."
-
-PASSWORD2=$"Digite sua senha para gerar um relatório mais completo."
-
-
-cat << EOF
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style-drive.css">
-  
-</head>
-EOF
-
-# Get body tag with color light or not
-/usr/share/bigbashview/bcc/shell/getbgcolor.sh
-
-echo '<style>
-.lds-ring {
-    display: inline-flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  margin: 8px;
-  border: 8px solid rgba(0, 255, 255, .1);
-  border-top-color: #00a8e8;
-  border-radius: 50%;
-  animation: lds-ring 1.2s infinite steps(24);
-  /*border-color: #fff transparent transparent transparent;*/
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+function sh_debug {
+	export PS4='${red}${0##*/}${green}[$FUNCNAME]${pink}[$LINENO]${reset} '
+	set -x
+	#set -e
+	shopt -s extglob
+	#Only to debug
+	#rm -R "$HOME/.config/bigcontrolcenter/"
 }
 
-.footer-message {
-    z-index: 10;
-    position: absolute;
-    bottom: 0;
-    color: var(--theme-color);
-    width: 90%;
-    text-align: center;
-    margin: 50px;
+function sh_config {
+	#Translation
+	export TEXTDOMAINDIR="/usr/share/locale"
+	export TEXTDOMAIN=biglinux-driver-manager
+	[[ ! -d "$HOME/.config/bigcontrolcenter-drivers" ]] && mkdir -p "$HOME/.config/bigcontrolcenter-drivers"
+	# Don't group windows
+	#xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
+	declare -g PASSWORD=$"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou cancele para utilizar as informações da tela anterior."
+	declare -g PASSWORD2=$"Digite sua senha para gerar um relatório mais completo."
 }
-</style>'
 
+function sh_loading_info_starthtml {
+	echo '
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style-drive.css">
+	</head>
+	'
+	echo "$(sh_getbgcolor)"
+	echo '
+	<style>
+		.lds-ring {
+			display: inline-flex;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+		}
+		.lds-ring div {
+			box-sizing: border-box;
+			display: block;
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			margin: 8px;
+			border: 8px solid rgba(0, 255, 255, .1);
+			border-top-color: #00a8e8;
+			border-radius: 50%;
+			animation: lds-ring 1.2s infinite steps(24);
+			/*border-color: #fff transparent transparent transparent;*/
+		}
+		.lds-ring div:nth-child(1) {
+			animation-delay: -0.45s;
+		}
+		.lds-ring div:nth-child(2) {
+			animation-delay: -0.3s;
+		}
+		.lds-ring div:nth-child(3) {
+			animation-delay: -0.15s;
+		}
+		@keyframes lds-ring {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		.footer-message {
+			z-index: 10;
+			position: absolute;
+			bottom: 0;
+			color: var(--theme-color);
+			width: 90%;
+			text-align: center;
+			margin: 50px;
+		}
+	</style>
+	<div class="app">
+	<div class="header">
+	</div>
+	<div class="lds-ring">
+	<div></div><div></div><div></div><div></div></div>
+	'
+	if [[ "$toshow" = "show" ]]; then
+		echo "<div class=footer-message>$PASSWORD2</div>"
+		echo '<meta http-equiv="refresh" content="0; URL='hardware-info.sh.htm?toshow=show'"/>'
+	else
+		echo "<div class=footer-message>$PASSWORD</div>"
+		echo '<meta http-equiv="refresh" content="0; URL='hardware-relatory-send.sh.htm'"/>'
+	fi
+	echo '</div></div>
+		<div class="footer">
+	  	</div>
+	  	<div class="logo">
+		<img src="logo.png" class="logo-biglinux">
+		</div>
+		<script src="./script.js"></script>
+	</body>
+	</html>
+	'
+	IFS=$OIFS
+}
 
-
-cat << EOF
-
-<div class="app">
-  <div class="header">
-  </div>
-EOF
-
-echo '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>'
-
-if [ "$toshow" = "show" ]; then
-
-cat << EOF
-
-  <div class=footer-message>$PASSWORD2</div>
-
-  <meta http-equiv="refresh" content="0; URL='hardware-info.sh.htm?toshow=show'"/>'
-EOF
-
-
-else
-
-cat << EOF
-
-  <div class=footer-message>$PASSWORD</div>
-
-  <meta http-equiv="refresh" content="0; URL='hardware-relatory-send.sh.htm'"/>'
-EOF
-
-
-fi
-
-
-cat << EOF
-
-          
-        </div>
-      </div>
-  <div class="footer">
-  </div>
-  <div class="logo">
-    <img src="logo.png" class="logo-biglinux">
-  </div>
-EOF
-
-
-
-cat << EOF
-  <script src="./script.js"></script>
-</body>
-</html>
-EOF
-IFS=$OIFS
-
+sh_debug
+sh_config
+sh_loading_info_starthtml
