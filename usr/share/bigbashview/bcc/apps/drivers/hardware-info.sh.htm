@@ -85,71 +85,67 @@ function sh_config {
 	declare -g desc_usekernel=$"Kernel em uso:"
 
 	if [[ "$toshow" = "show" ]]; then
-		declare -g WELCOME_ICON="<img class=\"img-content img\" src=hardware-info.png>"
+		declare -g WELCOME_ICON='<img class="img-content img" src=hardware-info.png>'
 	fi
 }
 
 function sh_html {
 	local ctitle="$1"
 	local cjob="$2"
-	{
-		echo '<div class=\"app-card more\" style=\"max-height: 100%;\">'
-		echo '<div class=titlecard><span>'
-		echo "$ctitle"
-		echo '</div></span>'
-		echo '<div class="app-card__subtext">'
-		echo '<div class=hardwareSpaceNull>'
-		echo '<div class="content">'
-		echo '<div class="text_area">'
-		echo '<textarea style="width:100%;" rows="20">'
-		eval "$cjob"
-		echo '</textarea></div></div></div></div></div>'
-   }
+
+cat <<-EOF
+	<div class="app-card more" style="max-height: 100%;">
+	<div class="titlecard"><span>
+	"$ctitle"
+	</div></span>
+	<div class="app-card__subtext">
+	<div class="hardwareSpaceNull">
+	<div class="content">
+	<div class="text_area">
+	<textarea style="width:100%;" rows="20">
+	"$cjob"
+	</textarea></div></div></div></div></div>
+EOF
 }
 
 function sh_hardware_info_starthtml {
-	echo '<!DOCTYPE html>'
-	echo '<html>'
-	echo '<head>'
-	echo '<meta charset="UTF-8">'
-	echo '<title>'
-	echo "$TITLE"
-	echo '</title>'
-	echo '<style>'
-	echo "$(cat stylebcc.css)"
-	echo '.app-card__subtext {
-	         max-height: 96% !important;
-	      }
-	      .side-menu a {
-	         padding: 7px;
-	      }
-	      textarea {
-	         background: rgb(0 0 0 / 40%);
-	         color: aqua;
-	      }
-	   </style>
-	   <script>
-	'
-	echo "$(cat /usr/share/bigbashview/bcc/materialize/js/jquery.js)"
-	echo '</script>'
-	echo '<script>'
-	echo "$(cat filter.js)"
-	echo '</script></head><body><div id=box_progress_config_simple></div>'
-	sh_getbgcolor 
-
-	echo '<div class="dark-light">
-			<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-	    	<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-			</svg>
-			</div>
-			<div class="app">
-			<div class="header">
-	    	<div class="search-bar">'
-	echo "<input type="text" id="search" class="custom-search-input form-control" placeholder="$SEARCH" autofocus>"
-	echo '<!-- <button class="custom-search-botton" type="submit">← Enter </button> -->
-			</div>
-			</div>'
-
+cat <<-EOF
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>
+	"$TITLE"
+	</title>
+	<style>
+	"$(cat /usr/share/bigbashview/bcc/apps/drivers/stylebcc.css)"
+	.app-card__subtext	{ max-height: 96% !important; }
+	.side-menu a			{ padding: 7px; }
+	textarea					{ background: rgb(0 0 0 / 40%); color: aqua; }
+	</style>
+	<script>
+	"$(cat /usr/share/bigbashview/bcc/materialize/js/jquery.js)"
+	</script>
+	<script>
+	"$(cat /usr/share/bigbashview/bcc/apps/drivers/filter.js)"
+	</script>
+	</head>
+	<body>
+	<div id="box_progress_config_simple"></div>
+	"$(sh_getbgcolor)"
+	<div class="dark-light">
+	<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+	<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+	</svg>
+	</div>
+	<div class="app">
+	<div class="header">
+	<div class="search-bar">
+	<input type="text" id="search" class="custom-search-input form-control" placeholder="$SEARCH" autofocus>
+	<!-- <button class="custom-search-botton" type="submit">← Enter </button> -->
+	</div>
+	</div>
+EOF
 	if sh_lang_he; then
 		echo '<div class="wrapper" style="flex-direction: row-reverse;">'
 	else
@@ -158,7 +154,7 @@ function sh_hardware_info_starthtml {
 }
 
 function sh_hardware_info_div {
-	cat << EOF
+	cat <<-EOF
 	<div class="left-side">
       <div class="side-wrapper">
         <div class="side-menu">
@@ -170,7 +166,9 @@ function sh_hardware_info_div {
               <path d="M192 192h128v128H192zm0 0" fill="currentColor" data-original="#82b1ff" />
               <path d="M384 192h128v128H384zm0 0M0 384h128v128H0zm0 0M192 384h128v128H192zm0 0M384 384h128v128H384zm0 0" fill="currentColor" data-original="#bfc9d1" />
             </svg>
-            <span>$CATEGORY_Star</span>
+            <span>
+            "$CATEGORY_Star"
+            </span>
           </a>
         </div>
       </div>
@@ -181,7 +179,9 @@ function sh_hardware_info_div {
             <svg viewBox="0 0 512 512">
               <path fill="currentColor" d="M160 352h192V160H160V352zM448 176h48C504.8 176 512 168.8 512 160s-7.162-16-16-16H448V128c0-35.35-28.65-64-64-64h-16V16C368 7.164 360.8 0 352 0c-8.836 0-16 7.164-16 16V64h-64V16C272 7.164 264.8 0 256 0C247.2 0 240 7.164 240 16V64h-64V16C176 7.164 168.8 0 160 0C151.2 0 144 7.164 144 16V64H128C92.65 64 64 92.65 64 128v16H16C7.164 144 0 151.2 0 160s7.164 16 16 16H64v64H16C7.164 240 0 247.2 0 256s7.164 16 16 16H64v64H16C7.164 336 0 343.2 0 352s7.164 16 16 16H64V384c0 35.35 28.65 64 64 64h16v48C144 504.8 151.2 512 160 512c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448H384c35.35 0 64-28.65 64-64v-16h48c8.838 0 16-7.164 16-16s-7.162-16-16-16H448v-64h48C504.8 272 512 264.8 512 256s-7.162-16-16-16H448V176zM384 368c0 8.836-7.162 16-16 16h-224C135.2 384 128 376.8 128 368v-224C128 135.2 135.2 128 144 128h224C376.8 128 384 135.2 384 144V368z"/>
               </svg>
-            <span>$CATEGORY_Cpu</span>
+            <span>
+            "$CATEGORY_Cpu"
+            </span>
           </a>
           <a href="#topo" id="gpu" class="btn">
             <svg viewBox="0 0 512 512">
@@ -281,11 +281,14 @@ EOF
 }
 
 function sh_hardware_info_script {
-	echo "<script>\$(function() { \$(\"#Star\").trigger(\"click\");});</script>"
+cat <<-EOF
+	<script>\$(function() { \$(\"#Star\").trigger(\"click\");});</script>
+EOF
 }
 
 function sh_hardware_info_style {
-	echo '<style>
+cat <<-EOF
+	<style>
 	:root 		{ --ansi-bg-color: #00ffff; }
 	.light-mode { --ansi-bg-color: #0043ff; }
 	.ansi33 		{
@@ -340,7 +343,7 @@ function sh_hardware_info_style {
 	.logo 								{ z-index: 2; position: absolute; top: 10px; left: 15px; width: 40px; height: 40px; }
 	.logo svg							{ position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0; width: 40; filter: var(--logo-big); }
 	</style>
-	'
+EOF
 }
 
 function sh_hardware_info_bodyhtml {
@@ -348,34 +351,40 @@ function sh_hardware_info_bodyhtml {
 		EXEC="big-driver-manager"
 		NAME=$"Instalar ou Remover Drivers"
 		COMMENT=$"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário instalar mais alguns."
-		echo '<div class="app-card Star" onclick="_run('$EXEC')">'
-		echo '<span>'
-		echo '<svg viewBox="0 0 496 512">'
-		echo '<path fill="currentColor" d="M160 352h192V160H160V352zM448 176h48C504.8 176 512 168.8 512 160s-7.162-16-16-16H448V128c0-35.35-28.65-64-64-64h-16V16C368 7.164 360.8 0 352 0c-8.836 0-16 7.164-16 16V64h-64V16C272 7.164 264.8 0 256 0C247.2 0 240 7.164 240 16V64h-64V16C176 7.164 168.8 0 160 0C151.2 0 144 7.164 144 16V64H128C92.65 64 64 92.65 64 128v16H16C7.164 144 0 151.2 0 160s7.164 16 16 16H64v64H16C7.164 240 0 247.2 0 256s7.164 16 16 16H64v64H16C7.164 336 0 343.2 0 352s7.164 16 16 16H64V384c0 35.35 28.65 64 64 64h16v48C144 504.8 151.2 512 160 512c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448H384c35.35 0 64-28.65 64-64v-16h48c8.838 0 16-7.164 16-16s-7.162-16-16-16H448v-64h48C504.8 272 512 264.8 512 256s-7.162-16-16-16H448V176zM384 368c0 8.836-7.162 16-16 16h-224C135.2 384 128 376.8 128 368v-224C128 135.2 135.2 128 144 128h224C376.8 128 384 135.2 384 144V368z"/></svg>'
-		echo "$NAME"
-		echo '</span><div class="app-card__subtext">'
-		echo "$COMMENT"
-		echo '</div><div class="app-card-buttons">'
-		echo '<button class="content-button status-button">'
-		echo "$OPEN"
-		echo '</button></div></div>'
-
+cat <<-EOF
+		<div class="app-card Star" onclick="_run('$EXEC')">
+		<span>
+		<svg viewBox="0 0 496 512">
+		<path fill="currentColor" d="M160 352h192V160H160V352zM448 176h48C504.8 176 512 168.8 512 160s-7.162-16-16-16H448V128c0-35.35-28.65-64-64-64h-16V16C368 7.164 360.8 0 352 0c-8.836 0-16 7.164-16 16V64h-64V16C272 7.164 264.8 0 256 0C247.2 0 240 7.164 240 16V64h-64V16C176 7.164 168.8 0 160 0C151.2 0 144 7.164 144 16V64H128C92.65 64 64 92.65 64 128v16H16C7.164 144 0 151.2 0 160s7.164 16 16 16H64v64H16C7.164 240 0 247.2 0 256s7.164 16 16 16H64v64H16C7.164 336 0 343.2 0 352s7.164 16 16 16H64V384c0 35.35 28.65 64 64 64h16v48C144 504.8 151.2 512 160 512c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448H384c35.35 0 64-28.65 64-64v-16h48c8.838 0 16-7.164 16-16s-7.162-16-16-16H448v-64h48C504.8 272 512 264.8 512 256s-7.162-16-16-16H448V176zM384 368c0 8.836-7.162 16-16 16h-224C135.2 384 128 376.8 128 368v-224C128 135.2 135.2 128 144 128h224C376.8 128 384 135.2 384 144V368z"/>
+		</svg>
+		"$NAME"
+		</span><div class="app-card__subtext">
+		"$COMMENT"
+		</div><div class="app-card-buttons">
+		<button class="content-button status-button">
+		"$OPEN"
+		</button></div></div>
+EOF
+cat <<-EOF
 		EXEC="biglinux-config"
 		NAME=$"Gerar Relatório"
 		COMMENT=$"Cria um arquivo com informações que pode ser publicado na internet."
-		echo '<div class="app-card Star" onclick="_run('big-hardware-relatory')">'
-		echo '<span><svg viewBox="0 0 496 512">'
-		echo '<path fill="currentColor" d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S160 113.7 160 96C160 78.33 174.3 64 192 64zM272 224h-160C103.2 224 96 216.8 96 208C96 199.2 103.2 192 112 192h160C280.8 192 288 199.2 288 208S280.8 224 272 224z"/></svg>'
-		echo "$NAME"
-		echo '</span><div class="app-card__subtext">'
-		echo "$COMMENT"
-		echo '</div><div class="app-card-buttons">'
-		echo '<button class="content-button status-button">'
-		echo "$OPEN"
-		echo '</button></div></div>'
+		<div class="app-card Star" onclick="_run('big-hardware-relatory')">
+		<span><svg viewBox="0 0 496 512">
+		<path fill="currentColor" d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S160 113.7 160 96C160 78.33 174.3 64 192 64zM272 224h-160C103.2 224 96 216.8 96 208C96 199.2 103.2 192 112 192h160C280.8 192 288 199.2 288 208S280.8 224 272 224z"/></svg>
+		"$NAME"
+		</span><div class="app-card__subtext">
+		"$COMMENT"
+		</div><div class="app-card-buttons">
+		<button class="content-button status-button">
+		"$OPEN"
+		</button></div></div>
+EOF
 	fi
-	echo '</div><div class="content-section-title Star">'
-	echo '</div><div class="apps-card apps-card-uniq">'
+cat <<-EOF
+	</div><div class="content-section-title Star">
+	</div><div class="apps-card apps-card-uniq">
+EOF
 	OIFS=$IFS
 	IFS=$'\n'
 
@@ -384,62 +393,62 @@ function sh_hardware_info_bodyhtml {
 	sh_hardware_info_script
 	sh_hardware_info_style
 
-	###########################
 	# Star Page Open
-	###########################
-	{
-		echo '<div class="app-card Star" style="max-height: 100%;"><span>'
-		echo "$CATEGORY_Hardware"
-		echo '</span><div class="app-card__subtext">'
-		echo '<div class=hardwareSpaceNull>'
-		echo '<br><span class="ansi1 ansi34">'
-		echo 'CPU:'
-		echo '</span><span class="ansi1">'
-		echo "$(sh_getcpu)"
-		echo '</span><br><span class="ansi1 ansi34">'
-		echo "$desc_memoryram"
-		echo '</span>'
-		echo "$(sh_getmemory)"
-		echo '<br><span class="ansi1 ansi34">'
-		echo "$desc_video"
-		echo '</span>'
-		echo "$(sh_getvga)"
-		echo '</div></div></div>'
-
-		echo '<div class="app-card Star" style="max-height: 100%;"><span>'
-		echo "$CATEGORY_System"
-		echo '</span><div class="app-card__subtext">'
-		echo '<div class=hardwareSpaceNull>'
-		echo '<br><span class="ansi1 ansi34">'
-		echo "$desc_installpartition"
-		echo '</span>'
-		echo "$(LANG=C df -h / | grep '/dev/' | awk '{print $1}')"
-		echo '<br><span class="ansi1 ansi34">'
-		echo "$desc_sizepartition"
-		echo '</span>'
-		echo "$(LANG=C df -h / | grep '/dev/' | awk '{print $2}')"
-		echo '<br><span class="ansi1 ansi34">'
-		echo "$desc_usespace"
-		echo '</span>'
-		echo "$(LANG=C df -h / | grep '/dev/' | awk '{print $3}')"
-		echo '<br><span class="ansi1 ansi34">'
-		echo "$desc_freespace"
-		echo '</span>'
-		echo "$(LANG=C df -h / | grep '/dev/' | awk '{print $4}')"
-
-		if [[ ! -e "/usr/share/bigbashview/bcc/apps/boot-livecd/index.sh.htm" ]]; then
-			echo '<br><span class="ansi1 ansi34">'
-			echo "$desc_installdate"
-			echo '</span>'
-			echo "$(ls -lct /etc | tail -1 | awk '{print $6, $7, $8}')"
-		fi
-
-		echo '<br><span class="ansi1 ansi34">'
-		echo "$desc_usekernel"
-		echo '</span>'
-		echo "$(uname -r)"
-		echo '</div></div></div>'
-	} >>/tmp/hardwareinfo.html
+	################
+cat <<-EOF >>/tmp/hardwareinfo.html
+	<div class="app-card Star" style="max-height: 100%;"><span>
+	"$CATEGORY_Hardware"
+	</span><div class="app-card__subtext">
+	<div class="hardwareSpaceNull">
+	<br><span class="ansi1 ansi34">
+	CPU:
+	</span><span class="ansi1">
+	"$(sh_getcpu)"
+	</span><br><span class="ansi1 ansi34">
+	"$desc_memoryram"
+	</span>
+	"$(sh_getmemory)"
+	<br><span class="ansi1 ansi34">
+	"$desc_video"
+	</span>
+	"$(sh_getvga)"
+	</div></div></div>
+	<div class="app-card Star" style="max-height: 100%;"><span>
+	"$CATEGORY_System"
+	</span><div class="app-card__subtext">
+	<div class="hardwareSpaceNull">
+	<br><span class="ansi1 ansi34">
+	"$desc_installpartition"
+	</span>
+	"$(LANG=C df -h / | grep '/dev/' | awk '{print $1}')"
+	<br><span class="ansi1 ansi34">
+	"$desc_sizepartition"
+	</span>
+	"$(LANG=C df -h / | grep '/dev/' | awk '{print $2}')"
+	<br><span class="ansi1 ansi34">
+	"$desc_usespace"
+	</span>
+	"$(LANG=C df -h / | grep '/dev/' | awk '{print $3}')"
+	<br><span class="ansi1 ansi34">
+	"$desc_freespace"
+	</span>
+	"$(LANG=C df -h / | grep '/dev/' | awk '{print $4}')"
+EOF
+	if [[ ! -e "/usr/share/bigbashview/bcc/apps/boot-livecd/index.sh.htm" ]]; then
+cat <<-EOF >>/tmp/hardwareinfo.html
+		<br><span class="ansi1 ansi34">
+		"$desc_installdate"
+		</span>
+		"$(ls -lct /etc | tail -1 | awk '{print $6, $7, $8}')"
+EOF
+	fi
+cat <<-EOF >>/tmp/hardwareinfo.html
+	<br><span class="ansi1 ansi34">
+	"$desc_usekernel"
+	</span>
+	"$(uname -r)"
+	</div></div></div>
+EOF
 
 	# Star Page Close
 	#################
@@ -452,38 +461,39 @@ function sh_hardware_info_bodyhtml {
 	PCI_IDS="$(lspci -n | cut -f3 -d" ")"
 	USB_IDS="$(lsusb | cut -f6 -d" ")"
 
-	echo "<div class=\"app-card printer\" style=\"max-height: 100%;\">"
-	echo "<div class=titlecard><span>"
-	echo "$CATEGORY_Printer"
-	echo '</span></div>'
-	echo '<div class="app-card__subtext">'
-	echo 'Lpstat -p'
-	echo '<div class=hardwareSpaceNull>'
-	echo '<div class="content">'
-	echo '<div class="text_area">'
-	echo '<textarea style="width:100%;" rows="20">'
-	echo "$(lpstat -p)"
-	echo '</textarea></div></div></div></div></div>'
-
-	echo '<div class=\"app-card more\" style=\"max-height: 100%;\">'
-	echo '<div class=titlecard><span>'
-	echo "$CATEGORY_More"
-	echo '</span></div><div class="app-card__subtext">'
-	echo 'LSPCI'
-	echo '<div class=hardwareSpaceNull>'
+cat <<-EOF
+	<div class="app-card printer" style="max-height: 100%;">
+	<div class="titlecard"><span>
+	$CATEGORY_Printer
+	</span></div>
+	<div class="app-card__subtext">
+	Lpstat -p
+	<div class="hardwareSpaceNull">
+	<div class="content">
+	<div class="text_area">
+	<textarea style="width:100%;" rows="20">
+	"$(lpstat -p 2>/dev/null)"
+	</textarea></div></div></div></div></div>
+	<div class="app-card more" style="max-height: 100%;">
+	<div class="titlecard"><span>
+	"$CATEGORY_More"
+	</span></div><div class="app-card__subtext">
+	LSPCI
+	<div class="hardwareSpaceNull">
 
 	# PCI DEVICES
 	#############
-	echo '<div class="content">'
-	echo '<table><tr style="background: darkcyan; color: cyan;"><th>'
-	echo $"Categoria"
-	echo '</th><th>'
-	echo $"Nome"
-	echo '</th><th>'
-	echo $"ID"
-	echo '</th><th>'
-	echo $"Info"
-	echo '</th></tr>'
+	<div class="content">
+	<table><tr style="background: darkcyan; color: cyan;"><th>
+	$"Categoria"
+	</th><th>
+	$"Nome"
+	</th><th>
+	$"ID"
+	</th><th>
+	$"Info"
+	</th></tr>
+EOF
 
 	line=color1
 	for i in $(lspci -nn); do
@@ -508,18 +518,21 @@ function sh_hardware_info_bodyhtml {
 
 	# USB DEVICES
 	#############
-	echo '<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>'
-	echo 'LSUSB'
-	echo '</div></span><div class="app-card__subtext">'
-	echo '<div class=hardwareSpaceNull>'
-	echo '<div class="content">'
-	echo '<table><tr style="background: darkcyan; color: cyan;"><th>'
-	echo $"Nome"
-	echo '</th><th>'
-	echo $"ID"
-	echo '</th><th>'
-	echo $"Info"
-	echo '</th></tr>'
+cat <<-EOF
+	<div class="app-card more" style="max-height: 100%;">
+	<div class="titlecard"><span>
+	LSUSB
+	</div></span><div class="app-card__subtext">
+	<div class="hardwareSpaceNull">
+	<div class="content">
+	<table><tr style="background: darkcyan; color: cyan;"><th>
+	$"Nome"
+	</th><th>
+	$"ID"
+	</th><th>
+	$"Info"
+	</th></tr>
+EOF
 
 	line=color1
 	for i in $(lsusb); do
@@ -541,14 +554,17 @@ function sh_hardware_info_bodyhtml {
 
 	# SDIO DEVICES
 	##############
-	echo '<div class=\"app-card more\" style=\"max-height: 100%;\"><div class=titlecard><span>'
-	echo 'SDIO'
-	echo '</div></span><div class="app-card__subtext">'
-	echo '<div class=hardwareSpaceNull>'
-	echo '<div class="content">'
-	echo '<div class="text_area">'
-	echo '<textarea style="width:100%;" rows="20">'
-
+cat <<-EOF
+	<div class="app-card more" style="max-height: 100%;">
+	<div class="titlecard"><span>
+	SDIO
+	</div></span>
+	<div class="app-card__subtext">
+	<div class="hardwareSpaceNull">
+	<div class="content">
+	<div class="text_area">
+	<textarea style="width:100%;" rows="20">
+EOF
 	if test -d '/sys/bus/sdio/devices'; then
 		for i in $(ls /sys/bus/sdio/devices/); do
 			Vendor="$(cat /sys/bus/sdio/devices/$i/vendor | cut -f2 -dx)"
@@ -558,10 +574,11 @@ function sh_hardware_info_bodyhtml {
 			echo "$Info"
 		done
 	fi
-	$(lspci -nvv)
-	echo '</textarea></div></div>'
-	echo '</div></div></div>'
-
+cat <<-EOF
+	"$(lspci -nvv)"
+	</textarea></div></div>
+	</div></div></div>
+EOF
 	sh_html 'LSPCI -nvv' "lspci -nvv"
 	sh_html 'LSUSB -v' "lsusb -v"
 	sh_html 'RFkill' "rfkill list"
@@ -579,17 +596,18 @@ function sh_hardware_info_bodyhtml {
 		cat /tmp/hardwareinfo.html
 		rm -f /tmp/hardwareinfo.html
 	fi
-
-	echo '</div></div></div></div></div>'
-	echo '<div class="footer"></div>'
-	echo '<div id="btn-big" class="logo" onclick="biglinux();">'
-	echo "$(cat logo.svg)"
-	echo '</div>'
-	echo '<script>'
-	echo "$(cat script.js)"
-	echo '</script>'
-	echo '</body>'
-	echo '</html>'
+cat <<-EOF
+	</div></div></div></div></div>
+	<div class="footer"></div>
+	<div id="btn-big" class="logo" onclick="biglinux();">
+	"$(cat /usr/share/bigbashview/bcc/apps/drivers/logo.svg)"
+	</div>
+	<script>
+	"$(cat /usr/share/bigbashview/bcc/apps/drivers/script.js)"
+	</script>
+	</body>
+	</html>
+EOF
 	IFS=$OIFS
 }
 
