@@ -33,7 +33,7 @@
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 readonly APP="${0##*/}"
-readonly _VERSION_="1.0.0-20230721"
+readonly _VERSION_="1.0.0-20230722"
 readonly LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
@@ -234,6 +234,6 @@ function sh_init {
 	IFS=$OIFS
 }
 
-sh_debug
+#sh_debug
 sh_config
 sh_init

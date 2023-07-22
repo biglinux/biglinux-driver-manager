@@ -5,7 +5,7 @@
 #  hardware-info.sh.htm
 #  Description: Control Center to help usage of BigLinux
 #  Created: 2022/02/28
-#  Altered: 2023/07/17
+#  Altered: 2023/07/22
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
@@ -32,25 +32,10 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-readonly red=$(tput setaf 124)
-readonly green=$(tput setaf 2)
-readonly pink=$(tput setaf 129)
-readonly reset=$(tput sgr0)
 readonly APP="${0##*/}"
-readonly _VERSION_="1.0.0-20230717"
-LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+readonly _VERSION_="1.0.0-20230722"
+readonly LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
-
-function sh_debug {
-	export PS4='${red}${0##*/}${green}[$FUNCNAME]${pink}[$LINENO]${reset} '
-	set -x
-	#set -e
-	shopt -s extglob
-	#Only to debug
-	#rm -R "$HOME/.config/bigcontrolcenter/"
-	# Don't group windows
-	#xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
-}
 
 function sh_clean {
 	[[ -e /tmp/hardwareinfo.html ]] && rm -f /tmp/hardwareinfo.html
@@ -150,7 +135,7 @@ function sh_hardware_info_starthtml {
 	echo '<script>'
 	echo "$(cat filter.js)"
 	echo '</script></head><body><div id=box_progress_config_simple></div>'
-	sh_getbgcolor # Get body tag with color light or not
+	sh_getbgcolor 
 
 	echo '<div class="dark-light">
 			<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -165,7 +150,7 @@ function sh_hardware_info_starthtml {
 			</div>
 			</div>'
 
-	if sh_language_hebraico; then
+	if sh_lang_he; then
 		echo '<div class="wrapper" style="flex-direction: row-reverse;">'
 	else
 		echo '<div class="wrapper">'
@@ -608,7 +593,7 @@ function sh_hardware_info_bodyhtml {
 	IFS=$OIFS
 }
 
-sh_debug
+#sh_debug
 sh_config
 sh_clean
 sh_hardware_info_starthtml

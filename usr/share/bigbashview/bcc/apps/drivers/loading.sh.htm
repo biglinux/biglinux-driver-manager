@@ -32,23 +32,10 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-readonly red=$(tput setaf 124)
-readonly green=$(tput setaf 2)
-readonly pink=$(tput setaf 129)
-readonly reset=$(tput sgr0)
 readonly APP="${0##*/}"
-readonly _VERSION_="1.0.0-20230717"
-LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+readonly _VERSION_="1.0.0-20230722"
+readonly LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
-
-function sh_debug {
-	export PS4='${red}${0##*/}${green}[$FUNCNAME]${pink}[$LINENO]${reset} '
-	set -x
-	#set -e
-	shopt -s extglob
-	#Only to debug
-	#rm -R "$HOME/.config/bigcontrolcenter/"
-}
 
 function sh_config {
 	#Translation
@@ -147,6 +134,6 @@ function sh_loading_info_starthtml {
 	IFS=$OIFS
 }
 
-sh_debug
+#sh_debug
 sh_config
 sh_loading_info_starthtml

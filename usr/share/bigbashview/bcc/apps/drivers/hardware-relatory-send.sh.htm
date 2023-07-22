@@ -64,9 +64,7 @@ $(cat filter.js)
 EOF
 
 echo '<div id=box_progress_config_simple></div>'
-
-# Get body tag with color light or not
-/usr/share/bigbashview/bcc/shell/getbgcolor.sh
+sh_getbgcolor
 
 cat << EOF
 <div class="dark-light">
