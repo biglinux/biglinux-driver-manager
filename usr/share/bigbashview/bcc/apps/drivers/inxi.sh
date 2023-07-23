@@ -40,10 +40,16 @@ function sh_config {
 	export TEXTDOMAINDIR="/usr/share/locale"
 	export TEXTDOMAIN=biglinux-driver-manager
 	declare -g DEVICE_INFO=$"Ver informações do dispositivo no Linux Hardware"
-	declare -g PCI_IDS="$(lspci -n | cut -f3 -d" ")"
-	declare -g USB_IDS="$(lsusb | cut -f6 -d" ")"
+	declare -g PCI_IDS
+	declare -g USB_IDS
 	declare -gA AHardInfo
+	declare -ga a
 	declare -i lshow=0
+}
+
+function sh_get_ids {
+	PCI_IDS="$(lspci -n | awk '{print $3}')"
+	USB_IDS="$(lsusb | awk '{print $6}')"
 }
 
 function sh_set_show {
@@ -64,42 +70,55 @@ function SHOW_HARDINFO {
 	local cfile="/tmp/hardwareinfo-inxi-$category_inxi.html"
 	local parameter_inxi
 
-{
-	echo "<div class=\"app-card $category\" style=\"max-height: 100%;\">"
-	echo "<div class=\"app-card__title\">"
-	echo $name
-	echo "</div>"
-	echo '<div class="app-card__subtext">'
-} >>"$cfile"
+	# Início do bloco HTML
+	{
+		echo "<div class=\"app-card $category\" style=\"max-height: 100%;\">"
+		echo "<div class=\"app-card__title\">"
+		echo $name
+		echo "</div>"
+		echo '<div class="app-card__subtext">'
+	} >>"$cfile"
 
-
+	# Comando inxi e formatação HTML
 	parameter_inxi=$(sh_get_parameters)
-	$pkexec inxi "$parameter_inxi" "--color" "--$category_inxi" -y 100 --indents 5 \
-		| iconv -t UTF-8 2>- \
-		| grep '     ' \
-		| sed 's|          ||g' \
-		| tr '\n ' ' ' \
-		| sed 's|      |\n     |g' \
-		| ansi2html -f 18px -l \
-		| sed 's|           <span class="|<span class="subcategory1 |g' \
-		| grep -A 9999 '<pre class="ansi2html-content">' \
-		| grep -v '</html>' \
-		| grep -v '</body>' \
-		| sed 's|<pre class="ansi2html-content">||g;s|</pre>||g;s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g;s|     |</div><div class=hardwareSpace>|g;s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' \
-		| sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g'\
-		| sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' \
-		| sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' \
-		| sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' \
-		| sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' \
-		| sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g' \
-		| sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g' \
-		>> "$cfile"
-	echo '</div></div>' >>"$cfile"
+	$pkexec inxi "$parameter_inxi" "--color" "--$category_inxi" -y 100 --indents 5 | # Executa o comando 'inxi' com alguns parâmetros
+	iconv -t UTF-8 2>- |                                                # Converte a saída para codificação UTF-8
+	grep '     ' |                                                     # Filtra as linhas que contêm seis espaços (delimitador/formato)
+	sed 's|          ||g' |                                            # Remove os seis espaços iniciais de cada linha
+	tr '\n ' ' ' |                                                     # Substitui as quebras de linha por espaços (unifica em uma linha)
+	sed 's|      |\n     |g' |                                         # Insere quebras de linha antes de sequências de seis espaços (volta ao formato multi-linha)
+	ansi2html -f 18px -l |                                             # Converte escape sequences ANSI para HTML com fonte de tamanho 18px e cor
+	sed 's|           <span class="|<span class="subcategory1 |g' |   # Adiciona a classe "subcategory1" para estilizar os elementos HTML
+	grep -A 9999 '<pre class="ansi2html-content">' |                   # Extrai linhas contendo '<pre class="ansi2html-content">' e as próximas 9999 linhas
+	grep -v '</html>' | grep -v '</body>' |                            # Remove linhas contendo '</html>' e '</body>'
+	sed 's|<pre class="ansi2html-content">||g; s|</pre>||g; s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g; s|     |</div><div class=hardwareSpace>|g; s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' |   # Formata a saída removendo algumas tags e adicionando outras
+	sed 's|<span class="ansi1 ansi34">System Temperatures:|<span class="ansi1 ansi33">System Temperatures|g' |             # Substitui etiquetas de texto ANSI por tags coloridas correspondentes
+	sed 's|<span class="ansi1 ansi34">Fan Speeds (RPM):|<span class="ansi1 ansi33">Fan Speeds (RPM)|g' |
+	sed 's|<span class="ansi1 ansi34">Local Storage:|<span class="ansi1 ansi33">Local Storage|g' |
+	sed 's|<span class="ansi1 ansi34">RAM:|<span class="ansi1 ansi33">RAM|g' |
+	sed 's|<span class="ansi1 ansi34">Info:|<span class="ansi1 ansi33">Info|g' |
+	sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g' |
+	sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g' >> "$cfile"
 
+	# Fim do bloco HTML
+	echo '</div></div>' >> "$cfile"
+
+   # Manipulação de botões relacionados a dispositivos PCI e USB
+	# Loop otimizado usando 'grep', 'sed', 'rev' e 'cut'
+	# Para cada valor 'i' extraído de 'Chip-ID' em "$cfile":
+
+	# Procura linhas contendo "Chip-ID" (ignorando diferenças de maiúsculas e minúsculas) no arquivo especificado por "$cfile"
+	# Remove todo o texto após o trecho "<br><span class="ansi1 ansi34">class-ID" nas linhas selecionadas pelo 'grep'
+	# Inverte cada linha para facilitar a extração da primeira coluna
+	# Extrai a primeira coluna (delimitada por espaços) de cada linha após a inversão
+	# Inverte novamente cada linha para restaurar a ordem original
+	# Ordena os valores extraídos em ordem alfabética e remove quaisquer linhas duplicadas, deixando apenas os valores únicos
 	for i in $(grep -i Chip-ID "$cfile" | sed 's| <br><span class="ansi1 ansi34">class-ID.*||g' | rev | cut -f1 -d" " | rev | sort -u); do
-		if [ "$(echo "$PCI_IDS" | grep "$i")" != "" ]; then
+		# Verifica se o valor 'i' está presente em '$PCI_IDS', Se presente substitui
+		if grep -q "$i" <<< "$PCI_IDS"; then
 			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run pci:$(echo "$i" | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
-		elif [ "$(echo "$USB_IDS" | grep "$i")" != "" ]; then
+		elif grep -q "$i" <<< "$USB_IDS"; then
+			# Verifica se o valor 'i' está presente em '$USB_IDS', Se presente, substitui
 			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run usb:$(echo "$i" | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
 		fi
 	done
@@ -116,7 +135,7 @@ function sh_get_parameters {
 function sh_set_hardinfo {
 	#Clean CPU
 	if test -e '/tmp/hardwareinfo-inxi-cpu.html'; then
-		grep -ve 'Vulnerabilities:' -ve 'Type:' /tmp/hardwareinfo-inxi-cpu.html >/tmp/hardwareinfo-inxi-cpu2.html
+		grep -E -v 'Vulnerabilities:|Type:' /tmp/hardwareinfo-inxi-cpu.html > /tmp/hardwareinfo-inxi-cpu2.html
 		mv -f /tmp/hardwareinfo-inxi-cpu2.html /tmp/hardwareinfo-inxi-cpu.html
 	fi
 
@@ -172,6 +191,20 @@ function sh_set_hardinfo {
 }
 
 function sh_process_hardinfo {
+   local category_inxi
+   local category
+   local name
+   local icon
+   local pkexec
+
+   for category_inxi in "${!AHardInfo[@]}"; do
+		IFS='|' read -r category name icon pkexec <<< "${AHardInfo[$category_inxi]}"
+      SHOW_HARDINFO "$category_inxi" "$category" "$name" "$icon" "$pkexec"
+   done
+}
+
+:<<'comment'
+function sh_process_hardinfo {
 	local category_inxi
 	local parameter_inxi
 	local category
@@ -188,6 +221,7 @@ function sh_process_hardinfo {
 		SHOW_HARDINFO "$category_inxi" "$category" "$name" "$icon" "$pkexec"
 	}
 }
+comment
 
 #sh_debug
 sh_config
