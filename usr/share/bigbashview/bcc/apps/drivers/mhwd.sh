@@ -36,5 +36,5 @@ function sh_mhwd_html {
 
 sh_config "$@"
 sh_remove_hardinfo_file
-sh_mhwd_html 'Mhwd driver' "mhwd -li"
-sh_mhwd_html 'Mhwd kernel' "mhwd-kernel -li"
+sh_mhwd_html 'Mhwd driver' "mhwd -li | sed 's/\x1B\[[0-9;]*[mG]//g'"
+sh_mhwd_html 'Mhwd kernel' "mhwd-kernel -li | sed 's/\x1B\[[0-9;]*[mG]//g'"

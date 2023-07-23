@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#shellcheck disable=SC2155
+#shellcheck disable=SC2155,SC2034
 #shellcheck source=/dev/null
 
 #  inxi.sh
@@ -46,42 +46,35 @@ function sh_config {
 	declare -i lshow=0
 }
 
+function sh_set_show {
+	[[ "$1" = "show" ]] && lshow=1
+}
+
 function sh_remove_tmp_files {
 	rm -f /tmp/hardwareinfo-inxi-*.html >/dev/null 2>&-
 	rm -f /tmp/hardwareinfo-dmesg.html >/dev/null 2>&-
 }
 
-function sh_splitarray {
-	local str=("$1")
-	local pos="$2"
-	local sep="${3:-'|'}"
-	local array
-
-	[[ $# -eq 3 && "$pos" = "|" && "$sep" =~ ^[0-9]+$ ]] && { sep="$2"; pos="$3";}
-	[[ $# -eq 2 && "$pos" = "$sep"                    ]] && { sep="$pos"; pos=1;}
-	[[ $# -eq 1 || ! "$pos" =~ ^[0-9]+$               ]] && { pos=1; }
-
-	IFS="$sep" read -r -a array <<< "${str[@]}"
-	echo "${array[pos-1]}"
-}
-
 function SHOW_HARDINFO {
 	local category_inxi="$1"
-	local parameter_inxi="$2"
-	local category="$3"
-	local name="$4"
-	local icon="$5"
-	local pkexec="$6"
-	local show="$7"
+	local category="$2"
+	local name="$3"
+	local icon="$4"
+	local pkexec="$5"
 	local cfile="/tmp/hardwareinfo-inxi-$category_inxi.html"
+	local parameter_inxi
 
-	{
-		echo "<div class=\"app-card $category\" style=\"max-height: 100%;\">"
-		echo "<div class=\"app-card__title\">$name</div>"
-		echo '<div class="app-card__subtext">'
-	} >>"$cfile"
+{
+	echo "<div class=\"app-card $category\" style=\"max-height: 100%;\">"
+	echo "<div class=\"app-card__title\">"
+	echo $name
+	echo "</div>"
+	echo '<div class="app-card__subtext">'
+} >>"$cfile"
 
-	exec $pkexec inxi "$parameter_inxi" "$category_inxi" -y 100 --indents 5 \
+
+	parameter_inxi=$(sh_get_parameters)
+	$pkexec inxi "$parameter_inxi" "--color" "--$category_inxi" -y 100 --indents 5 \
 		| iconv -t UTF-8 2>- \
 		| grep '     ' \
 		| sed 's|          ||g' \
@@ -101,64 +94,81 @@ function SHOW_HARDINFO {
 		| sed 's|<span class="ansi1 ansi34">Topology:|<span class="ansi1 ansi33">Topology|g' \
 		| sed 's|<span class="ansi1 ansi34">Speed (MHz):|<span class="ansi1 ansi33">Speed (MHz)|g' \
 		>> "$cfile"
-
 	echo '</div></div>' >>"$cfile"
 
 	for i in $(grep -i Chip-ID "$cfile" | sed 's| <br><span class="ansi1 ansi34">class-ID.*||g' | rev | cut -f1 -d" " | rev | sort -u); do
 		if [ "$(echo "$PCI_IDS" | grep "$i")" != "" ]; then
-			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run pci:$(echo $i | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
+			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run pci:$(echo "$i" | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
 		elif [ "$(echo "$USB_IDS" | grep "$i")" != "" ]; then
-			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run usb:$(echo $i | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
+			sed -i "s|$i|$i<div><button class=\"content-button\" onclick=\"_run('./linuxHardware.run usb:$(echo "$i" | sed 's|:|-|g')')\">$DEVICE_INFO</a></div>|g" "$cfile"
 		fi
 	done
 }
 
-function sh_set_show {
-	[[ "$1" = "show" ]] && lshow=1
-}
-
 function sh_get_parameters {
 	if (( lshow )); then
-		echo '-c 2 -a -xx --'
+		echo '-axx'
 	else
-		echo '-c 2 -x -z --'
+		echo '-xz'
 	fi
 }
 
 function sh_set_hardinfo {
-	AHardInfo=()
-	AHardInfo+=(['cpu']="$(sh_get_parameters)|cpu|$'Processador'|cpu|''|$lshow")
-
 	#Clean CPU
-	grep -ve 'Vulnerabilities:' -ve 'Type:' /tmp/hardwareinfo-inxi-cpu.html >/tmp/hardwareinfo-inxi-cpu2.html
-	mv -f /tmp/hardwareinfo-inxi-cpu2.html /tmp/hardwareinfo-inxi-cpu.html
-
-	AHardInfo+=(['machine']="$(sh_get_parameters)|machine|$'Placa mãe'|machine|''|$lshow")
-	AHardInfo+=(['memory']="$(sh_get_parameters)|memory|$'Memória'|memory|''|$lshow")
-	AHardInfo+=(['swap']="$(sh_get_parameters)|memory|$'Swap Memória Virtual'|swap|''|$lshow")
-:<<'comment'
-	AHardInfo+=(['graphics']="$(sh_get_parameters)|gpu|$'Placa de vídeo'|graphics|"pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"|$lshow")
-	AHardInfo+=(['audio']="$(sh_get_parameters)|audio|\$'Áudio'|audio|''|$lshow")
-	AHardInfo+=(['network-advanced']="$(sh_get_parameters)|Network|\$'Rede'|network|''|$lshow")
-	AHardInfo+=(['ip']="$(sh_get_parameters)|network|\$'Conexões de Rede'|ip|''|$lshow")
-	AHardInfo+=(['usb']="$(sh_get_parameters)|usb|\$'Dispositivos e conexões USB"|usb|''|$lshow")
-	AHardInfo+=(['slots']="$(sh_get_parameters)|pci|\$'Portas PCI'|usb|''|$lshow")
-	AHardInfo+=(['battery']="$(sh_get_parameters)|battery|\$'Bateria'|battery|''|$lshow")
-	AHardInfo+=(['disk-full']="$(sh_get_parameters)|disk|\$'Dispositivos de Armazenamento'|'disk'|''|$lshow")
-	AHardInfo+=(['partitions-full']="$(sh_get_parameters)|disk|$'Partições montadas'|disk|''|$lshow")
-	AHardInfo+=(['unmounted']="$(sh_get_parameters)|disk|$'Partições desmontadas'|disk|"pkexec -u $BIGUSER"|$lshow")
+	if test -e '/tmp/hardwareinfo-inxi-cpu.html'; then
+		grep -ve 'Vulnerabilities:' -ve 'Type:' /tmp/hardwareinfo-inxi-cpu.html >/tmp/hardwareinfo-inxi-cpu2.html
+		mv -f /tmp/hardwareinfo-inxi-cpu2.html /tmp/hardwareinfo-inxi-cpu.html
+	fi
 
 	# Save dmesg
 	dmesg -t --level=alert,crit,err,warn >/tmp/hardwareinfo-dmesg.html
 
-	AHardInfo+=(['logical']="$(sh_get_parameters)|disk|$'Dispositivos lógicos'|disk|''|$lshow")
-	AHardInfo+=(['raid']="$(sh_get_parameters)|disk|\$'Raid'|disk|''|$lshow")
-	AHardInfo+=(['system']="$(sh_get_parameters)|system|\$'Sistema'|disk|''|$lshow")
-	AHardInfo+=(['info']="$(sh_get_parameters)|system|\$'Informações de Sistema|disk|''|$lshow")
-	AHardInfo+=(['repos']="$(sh_get_parameters)|system|$'Repositórios'|disk|''|$lshow")
-	AHardInfo+=(['bluetooth']="$(sh_get_parameters)|bluetooth|$'Bluetooth'|disk|''|$lshow")
-	AHardInfo+=(['sensors']="$(sh_get_parameters)|sensors|\$'Temperatura'|disk|"pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY"|$lshow")
-comment
+	# Inicializar o array "a" com os dados em linhas separadas, com um $ na frente de cada string
+	a=($"Processador"
+	   $"Placa mãe"
+	   $"Memória"
+	   $"Swap Memória Virtual"
+	   $"Placa de vídeo"
+	   $"Áudio"
+	   $"Rede"
+	   $"Conexões de Rede"
+	   $"Dispositivos e conexões USB"
+	   $"Portas PCI"
+	   $"Bateria"
+	   $"Dispositivos de Armazenamento"
+	   $"Partições montadas"
+	   $"Partições desmontadas"
+	   $"Dispositivos lógicos"
+	   $"Raid"
+	   $"Sistema"
+	   $"Informações de Sistema"
+	   $"Repositórios"
+	   $"Bluetooth"
+	   $"Temperatura"
+	)
+
+	# Inicializar o array associativo "AHardInfo" com os dados do array "a"
+	AHardInfo+=(['cpu']="cpu|${a[0]}|cpu|")
+	AHardInfo+=(['machine']="machine|${a[1]}|machine|")
+	AHardInfo+=(['memory']="memory|${a[2]}|memory|")
+	AHardInfo+=(['swap']="memory|${a[3]}|swap|")
+	AHardInfo+=(['graphics']="gpu|${a[4]}|graphics|pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY")
+	AHardInfo+=(['audio']="audio|${a[5]}|audio|")
+	AHardInfo+=(['network-advanced']="Network|${a[6]}|network|")
+	AHardInfo+=(['ip']="network|${a[7]}|ip|")
+	AHardInfo+=(['usb']="usb|${a[8]}|usb|")
+	AHardInfo+=(['slots']="pci|${a[9]}|usb|")
+	AHardInfo+=(['battery']="battery|${a[10]}|battery|")
+	AHardInfo+=(['disk-full']="disk|${a[11]}|disk|")
+	AHardInfo+=(['partitions-full']="disk|${a[12]}|disk|")
+	AHardInfo+=(['unmounted']="disk|${a[13]}|disk|pkexec -u $BIGUSER")
+	AHardInfo+=(['logical']="disk|${a[14]}|disk|")
+	AHardInfo+=(['raid']="disk|${a[15]}|disk|")
+	AHardInfo+=(['system']="system|${a[16]}|disk|")
+	AHardInfo+=(['info']="system|${a[17]}|disk|")
+	AHardInfo+=(['repos']="system|${a[18]}|disk|")
+	AHardInfo+=(['bluetooth']="bluetooth|${a[19]}|disk|")
+	AHardInfo+=(['sensors']="sensors|${a[20]}|disk|pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY")
 }
 
 function sh_process_hardinfo {
@@ -168,17 +178,14 @@ function sh_process_hardinfo {
 	local name
 	local icon
 	local pkexec
-	local show
 
 	for i in "${!AHardInfo[@]}"; {
 		category_inxi="$i"
-		parameter_inxi="$(sh_splitarray "${AHardInfo[$i]}" 1)"
-		category="$(sh_splitarray "${AHardInfo[$i]}" 2)"
-		name="$(sh_splitarray "${AHardInfo[$i]}" 3)"
-		icon="$(sh_splitarray "${AHardInfo[$i]}" 4)"
-		pkexec="$(sh_splitarray "${AHardInfo[$i]}" 5)"
-		show="$(sh_splitarray "${AHardInfo[$i]}" 6)"
-		SHOW_HARDINFO "$category_inxi" "$parameter_inxi" "$category" "$name" "$icon" "$pkexec" "$show"
+		category="$(sh_splitarray "${AHardInfo[$i]}" 1)"
+		name="$(sh_splitarray "${AHardInfo[$i]}" 2)"
+		icon="$(sh_splitarray "${AHardInfo[$i]}" 3)"
+		pkexec="$(sh_splitarray "${AHardInfo[$i]}" 4)"
+		SHOW_HARDINFO "$category_inxi" "$category" "$name" "$icon" "$pkexec"
 	}
 }
 
