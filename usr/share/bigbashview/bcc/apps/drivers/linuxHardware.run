@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-xdg-open https://linux-hardware.org/?id=$*
+if [ $# -gt 0 ]; then
+	xdg-open https://linux-hardware.org/?id=$*
+fi
 
 
