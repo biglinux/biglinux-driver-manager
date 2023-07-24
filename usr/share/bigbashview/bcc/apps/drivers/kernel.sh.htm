@@ -1,309 +1,295 @@
-#!/bin/bash
-##################################
-#  Author1: Bruno Goncalves (www.biglinux.com.br) 
-#  Author2: Rafael Ruscher (rruscher@gmail.com)  
-#  Date:    2022/12/26 
-#  
-#  Description: Control Center to help usage of BigLinux 
-#  
-# Licensed by GPL V2 or greater
-##################################
+#!/usr/bin/env bash
+#shellcheck disable=SC2155,SC2034,SC2154
+#shellcheck source=/dev/null
 
-#Translation
-export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=biglinux-driver-manager
-
-mkdir -p "$HOME/.config/bigcontrolcenter-drivers"
-# Don't group windows
-xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
-
-CATEGORY=$"Categorias"
-CATEGORY_Star=$"Principais"
-CATEGORY_Star_Tit=$"Driver detectado:"
-
-KernelMesaTitle=$"Mesa e Kernel"
-KernelMesaText=$"As alterações do kernel e mesa devem ser feita com cuidado."
-
-Kernel_Title=$"Versões de kernel"
-Kernel_Text=$"O kernel Linux é o componente do sistema operacional que controla todos os outros componentes e permite que os aplicativos funcionem. Alterar a versão do kernel pode trazer novas funcionalidades ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a diferença entre as versões:
-<br><br>
-<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é a melhor opção.
-<br><br>
-<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar instabilidades no sistema.
-<br><br>
-<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise disso, é melhor usar um kernel sem a sigla 'rt'."
-Need_Help=$"Precisa de ajuda?"
-
-Mesa_Title=$"Drivers de vídeo"
-Mesa_Text=$"Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença entre as versões:
-<br><br>
-<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e estabilidade.
-<br><br>
-<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, mas também pode trazer mais desempenho para jogos.
-<br><br>
-<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.
-<br><br>
-* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver proprietário da Nvidia"
-
-#OLD
-SEARCH=$"Pesquisar Kernel"
-SEARCH_Result=$"Resultado da pesquisa"
-TITLE=$"Big-Kernel-Manager"
-CLOSE=$"Fechar"
-OPEN=$"Abrir"
-WELCOME=$"Instalar ou Remover Versões de Kernel"
-
-#WELCOME_DESC=$"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário instalar mais alguns."
-
-#################
-# Open terminal and install driver
-#################
-
-if [ "$install_kernel_now" != "" ]; then
-  ./installpkgkernel.sh install $install_kernel_now
-fi
-
-if [ "$remove_kernel_now" != "" ]; then
-  ./installpkgkernel.sh remove $remove_kernel_now
-fi
-
-if [ "$mesa" = "mesa" ]; then
-  ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
-fi
-
-if [ "$mesa" = "amber" ]; then
-  ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
-fi
-
-if [ "$mesa" = "tkg" ]; then
-  ./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
-fi
-
-cat << EOF
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>$TITLE</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="/usr/share/bigbashview/bcc/materialize/js/jquery.js"></script>
-EOF
-##########################
+#  usr/share/bigbashview/bcc/apps/drivers/kernel.sh.htm
+#	Description: Control Center to help usage of BigLinux
+#  Created: 2022/12/26
+#  Altered: 2023/07/22
 #
-# Change background when open terminal
+#  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
+#                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
+#                2022-2023, Rafael Ruscher <rruscher@gmail.com>
+#  All rights reserved.
 #
-##########################
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+#  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+#  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+#  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+#  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+#  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-echo "<script>
+readonly APP="${0##*/}"
+readonly _VERSION_="1.0.0-20230722"
+readonly LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+[[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
+
+function sh_config {
+	#Translation
+	export TEXTDOMAINDIR="/usr/share/locale"
+	export TEXTDOMAIN=biglinux-driver-manager
+	declare -g user_drivers="$HOME/.config/bigcontrolcenter-drivers"
+	[[ ! -d "$user_drivers" ]] && mkdir -p "$user_drivers"
+	# Don't group windows
+	xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
+	declare -g CATEGORY=$"Categorias"
+	declare -g CATEGORY_Star=$"Principais"
+	declare -g CATEGORY_Star_Tit=$"Driver detectado:"
+	declare -g KernelMesaTitle=$"Mesa e Kernel"
+	declare -g KernelMesaText=$"As alterações do kernel e mesa devem ser feita com cuidado."
+	declare -g Kernel_Title=$"Versões de kernel"
+	declare -g Kernel_Text=$"O kernel Linux é o componente do sistema operacional que controla todos os outros componentes e permite que os aplicativos funcionem. Alterar a versão do kernel pode trazer novas funcionalidades ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a diferença entre as versões:
+	<br><br>
+	<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é a melhor opção.
+	<br><br>
+	<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar instabilidades no sistema.
+	<br><br>
+	<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise disso, é melhor usar um kernel sem a sigla 'rt'."
+	declare -g Need_Help=$"Precisa de ajuda?"
+	declare -g Mesa_Title=$"Drivers de vídeo"
+	declare -g Mesa_Text=$"Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença entre as versões:
+<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e estabilidade.
+<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, mas também pode trazer mais desempenho para jogos.
+<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.
+<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver proprietário da Nvidia"
+	#OLD
+	declare -g SEARCH=$"Pesquisar Kernel"
+	declare -g SEARCH_Result=$"Resultado da pesquisa"
+	declare -g TITLE=$"Big-Kernel-Manager"
+	declare -g CLOSE=$"Fechar"
+	declare -g OPEN=$"Abrir"
+	declare -g WELCOME=$"Instalar ou Remover Versões de Kernel"
+	#declare -g WELCOME_DESC=$"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário instalar mais alguns."
+}
+
+function sh_init {
+	# Open terminal and install driver
+	##################################
+	[[ -n "$install_kernel_now"	]] && ./installpkgkernel.sh install "$install_kernel_now"
+	[[ -n "$remove_kernel_now"		]] && ./installpkgkernel.sh remove "$remove_kernel_now"
+	[[ "$mesa" = "mesa"				]] && ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
+	[[ "$mesa" = "amber"				]] && ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
+	[[ "$mesa" = "tkg" 				]] &&	./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
+
+	cat <<-EOF
+		<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>
+		$TITLE
+		</title>
+		<link rel="stylesheet" href="./style.css">
+		<script src="/usr/share/bigbashview/bcc/materialize/js/jquery.js"></script>
+	EOF
+
+	# Change background when open terminal
+	######################################
+	echo "<script>
 function disableBodyConfig() {
   \$('#box_progress_config').css({
     'display':'inline-flex'
   });
 }
 </script>"
-echo "<script>
+	echo "<script>
 function disableBodyConfigSimple() {
   \$('#box_progress_config_simple').css({
     'display':'inline-flex'
   });
 }
 </script>"
-echo '<style>
-div#box_progress_config_simple{
-    position: fixed;
-    background-color: #000000aa;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    display: none;
+	echo '<style>
+		div#box_progress_config_simple{
+		    position: fixed;
+		    background-color: #000000aa;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 10;
+		    display: none;
+		}
+		div#box_progress_config{
+		    position: fixed;
+		    background-color: #000000aa;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 10;
+		    display: none;
+		}
+		div#box_progress_config_bar {
+		    position: absolute;
+		    font-family: "Lato", sans-serif;
+		    font-size: 13px;
+		    color: #ccc;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    margin: auto;
+		    height: 300px;
+		    width: 75%;
+		    padding: 10px;
+		    text-align: left;
+		    background: #002240;
+		    border-radius: 15px;
+		}
+		.loadingtxt {
+		    animation:extend 3s steps(3, end) infinite;
+		    display: inline-block;
+		    overflow: hidden;
+		    vertical-align: bottom;
+		    color: #fff;
+		    &:before {
+		      content:"...";
+		    }
+		}
+		@keyframes extend { 0% { width:.25em; }
+		    					100% { width:1em; }}
+	</style>'
+
+	# Loading
+	echo '<div id=box_progress_config>'
+	echo '<div id=box_progress_config_bar>'
+	cat <<-EOF
+		<svg viewBox="0 0 576 512" style="width: 17px; margin-right: 3px; margin-top: 2px;"><path fill="currentColor" d="M480 80C480 53.49 458.5 32 432 32h-288C117.5 32 96 53.49 96 80V384h384V80zM378.9 166.8l-88 112c-4.031 5.156-10 8.438-16.53 9.062C273.6 287.1 272.7 287.1 271.1 287.1c-5.719 0-11.21-2.019-15.58-5.769l-56-48C190.3 225.6 189.2 210.4 197.8 200.4c8.656-10.06 23.81-11.19 33.84-2.594l36.97 31.69l72.53-92.28c8.188-10.41 23.31-12.22 33.69-4.062C385.3 141.3 387.1 156.4 378.9 166.8zM528 288H512v112c0 8.836-7.164 16-16 16h-416C71.16 416 64 408.8 64 400V288H48C21.49 288 0 309.5 0 336v96C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48v-96C576 309.5 554.5 288 528 288z"/></svg>
+	EOF
+	echo $"Aplicando - Aguarde"
+	echo $'<span class=loadingtxt>...</span>'
+	echo '</div>'
+	echo '</div>'
+	echo '<div id=box_progress_config_simple></div>'
+
+	sh_getbgcolor
+
+	cat <<-EOF
+		<div class="dark-light">
+		  <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+		    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+		  </svg>
+		</div>
+		<div class="login">
+		  <div class="wrap">
+		    <div class="user">
+		      <div class="logo">
+		          <img id="btn-big" src="logo.svg" class="logo-biglinux" onclick="biglinux();">
+		      </div>
+		      <div class="user">
+		        <div class="form-wrap"> 
+		          <div class="form-wrap tabs-content">
+		            <h2>$KernelMesaTitle</h2>
+		          </div>
+		            <div id="list-tab-content" class="fc-card active">
+		              <div class="centretext" style="margin-bottom: 30px;">
+		                <div id="desc">
+		                  <h3>$KernelMesaText</h3>
+		                </div>
+		              </div>
+		              <ul style="vertical-align: middle; list-style-type: none; margin: 0; width: 100%;">
+		                <li style="margin-top:auto; margin-bottom:auto;"><div class="content-section-title">
+		                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.4666665 6.3500002" style="width: 30px; margin-left: 10px; margin-bottom: -4px;"><path fill="currentColor" d="M 0.10268847,0.10530257 V 0.40605486 H 0.75696929 V 1.7044951 H 0.51477701 V 2.8041205 H 0.75696929 V 3.7953021 H 0.51477701 v 1.0996253 h 0.24219228 v 1.34977 H 1.0577216 V 5.5361945 h 6.3823108 c 0.5117865,0 0.9239458,-0.4121584 0.9239458,-0.9239455 V 1.9980177 c 0,-0.5117863 -0.4121593,-0.9232227 -0.9239458,-0.9232227 H 1.0577216 V 0.40605486 0.10530257 H 0.75696929 Z M 6.0801404,2.0529628 C 6.7836612,2.0529877 7.3539753,2.6233015 7.354,3.3268223 7.3539751,4.0303433 6.7836612,4.6006567 6.0801404,4.6006816 5.3766197,4.6006567 4.8063058,4.0303433 4.806281,3.3268223 4.8063057,2.6233015 5.3766197,2.0529876 6.0801404,2.0529628 Z M 5.4128463,2.4824024 c -0.044499,0.00214 -0.088774,0.020816 -0.1229036,0.054945 -0.072808,0.072809 -0.072808,0.1896268 0,0.2624352 l 0.1836324,0.1836325 c 0.072809,0.072809 0.19035,0.072809 0.2631583,0 0.072809,-0.072809 0.072809,-0.19035 0,-0.2631583 L 5.5531011,2.5373476 C 5.5144216,2.4986681 5.4632789,2.4799849 5.4128463,2.4824024 Z m 1.3165143,0 c -0.0445,0.00214 -0.088052,0.020816 -0.1221807,0.054945 L 6.4235476,2.720257 c -0.072809,0.072808 -0.072809,0.1903499 0,0.2631583 0.072809,0.072809 0.189627,0.072809 0.2624352,0 L 6.8696153,2.7997828 c 0.072809,-0.072809 0.072809,-0.1896269 0,-0.2624352 -0.03868,-0.03868 -0.089822,-0.057363 -0.1402547,-0.054945 z M 6.0801404,2.9602804 A 0.36681981,0.36681981 0 0 0 5.7135986,3.3268223 0.36681981,0.36681981 0 0 0 6.0801404,3.6933641 0.36681981,0.36681981 0 0 0 6.4466824,3.3268223 0.36681981,0.36681981 0 0 0 6.0801404,2.9602804 Z M 5.6051543,3.6152842 c -0.047509,0 -0.095175,0.018541 -0.1315792,0.054945 l -0.1836324,0.183632 c -0.072808,0.072811 -0.072808,0.1896276 0,0.2624354 0.072809,0.072811 0.19035,0.072811 0.2631584,0 l 0.1836323,-0.182909 c 0.072809,-0.072811 0.072809,-0.1903498 0,-0.2631586 -0.036404,-0.036404 -0.08407,-0.054945 -0.1315791,-0.054945 z m 0.9499724,0 c -0.047509,0 -0.095175,0.018541 -0.1315791,0.054945 -0.072809,0.072811 -0.072809,0.1903499 0,0.2631586 l 0.1836323,0.182909 c 0.072809,0.072811 0.1896271,0.072811 0.2624354,0 0.072809,-0.072811 0.072809,-0.1896266 0,-0.2624354 L 6.6859828,3.6702292 C 6.6495787,3.6338252 6.6026361,3.6152842 6.5551267,3.6152842 Z M 1.2601511,5.6301802 V 6.0292549 H 5.2682539 V 5.6301802 Z m 4.5380342,0 V 6.0292549 H 7.469674 V 5.6301802 Z"/></svg>                
+		                $Mesa_Title</div><li>
+		                <li style="text-align: right;">
+		                  <a class="status-button3"><svg style="margin-left:-10px; width: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#3a6df0" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+		                  </a>
+		                </li>
+		                <div class="pop-up3">
+		                  <div class="pop-up__title">$Mesa_Title
+		                    <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+		                      <circle cx="12" cy="12" r="10" />
+		                      <path d="M15 9l-6 6M9 9l6 6" />
+		                    </svg>
+		                  </div>
+		                  <div class="pop-up__subtitle">$Mesa_Text</div>
+		                  <div class="content-button-wrapper">
+		                    <button class="content-button status-button3 open close">$CLOSE</button>
+		                  </div>
+		                </div>
+		              </ul>
+	EOF
+
+	if pacman -Qq 'mesa' &>/dev/null; then
+		mesaChecked=checked
+		mesaInstall=y
+	elif pacman -Qq 'mesa-amber' &>/dev/null; then
+		mesaAmberChecked=checked
+		mesaAmberInstall=y
+	elif pacman -Qq 'mesa-tkg-git' &>/dev/null; then
+		mesaAmberInstall=y
+		mesaTkgChecked=checked
+	fi
+
+	cat <<-EOF
+		              <div class="content-section" style="margin-top: 0px;">
+		                <ul>
+		                  <li class="product">
+		                    <div class="products">
+		                      <input id="r1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
+		                      <label for="r1">
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-amber | grep -i "^Version" | cut -f2 -d:)</font></span>
+		                      </label>
+		                    </div>
+		                    <div class="products">
+		                      <input id="r2" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
+		                      <label for="r2">
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa | grep -i "^Version" | cut -f2 -d:)</font></span>
+		                      </label>
+		                    </div>
+		                    <div class="products">
+		                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
+		                      <label for="r3">
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
+		                      </label>
+		                    </div>
+		                  </li>
+		                </ul>
+		              </div>
+		              <br><br>
+		              <ul style="vertical-align: middle; list-style-type: none; margin: 0; width: 100%;">
+		                <li style="margin-top:auto; margin-bottom:auto;"><div class="content-section-title">$Kernel_Title</div><li>
+		                <li style="text-align: right;">
+		                  <a class="status-button2"><svg style="margin-left:-10px; width: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#3a6df0" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+		                  </a>
+		                </li>
+		                <div class="pop-up2">
+		                  <div class="pop-up__title">$Kernel_Title
+		                    <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+		                      <circle cx="12" cy="12" r="10" />
+		                      <path d="M15 9l-6 6M9 9l6 6" />
+		                    </svg>
+		                  </div>
+		                  <div class="pop-up__subtitle">$Kernel_Text</div>
+		                  <div class="content-button-wrapper">
+		                    <button class="content-button status-button2 open close">$CLOSE</button>
+		                  </div>
+		                </div>
+		              </ul>
+		              <div class="content-section" style="margin-top: 0px;">
+		                <ul style="margin-top: 0px;" class="list">
+	EOF
+	rm -f /tmp/kernel-mhwd-*.html >/dev/null 2>&-
+	./kernel-mhwd.sh
+	cat /tmp/kernel-mhwd-*.html
+	cat <<-EOF
+		</ul></div></div></div></div></div></div></div>
+		<script  src="./script.js"></script>
+		</body>
+		</html>
+	EOF
+	IFS=$OIFS
 }
 
-div#box_progress_config{
-    position: fixed;
-    background-color: #000000aa;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    display: none;
-}
-
-div#box_progress_config_bar {
-    position: absolute;
-    font-family: "Lato", sans-serif;
-    font-size: 13px;
-    color: #ccc;    
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 300px;
-    width: 75%;
-    padding: 10px;
-    text-align: left;
-    background: #002240;
-    border-radius: 15px;
-}
-
-.loadingtxt {
-    animation:extend 3s steps(3, end) infinite;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-    color: #fff;
-    &:before {
-      content:"...";
-    }
-}
-@keyframes extend {
-    0% {
-      width:.25em;
-    }
-    100% {
-      width:1em;
-    }
-}
-</style>'
-
-# Loading
-echo '<div id=box_progress_config>'
-echo '<div id=box_progress_config_bar>'
-cat << EOF
-<svg viewBox="0 0 576 512" style="width: 17px; margin-right: 3px; margin-top: 2px;"><path fill="currentColor" d="M480 80C480 53.49 458.5 32 432 32h-288C117.5 32 96 53.49 96 80V384h384V80zM378.9 166.8l-88 112c-4.031 5.156-10 8.438-16.53 9.062C273.6 287.1 272.7 287.1 271.1 287.1c-5.719 0-11.21-2.019-15.58-5.769l-56-48C190.3 225.6 189.2 210.4 197.8 200.4c8.656-10.06 23.81-11.19 33.84-2.594l36.97 31.69l72.53-92.28c8.188-10.41 23.31-12.22 33.69-4.062C385.3 141.3 387.1 156.4 378.9 166.8zM528 288H512v112c0 8.836-7.164 16-16 16h-416C71.16 416 64 408.8 64 400V288H48C21.49 288 0 309.5 0 336v96C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48v-96C576 309.5 554.5 288 528 288z"/></svg>
-EOF
-echo $"Aplicando - Aguarde"
-echo $'<span class=loadingtxt>...</span>'
-echo '</div>'
-echo '</div>'
-echo '<div id=box_progress_config_simple></div>'
-
-# Get body tag with color light or not
-/usr/share/bigbashview/bcc/shell/getbgcolor.sh
-
-cat << EOF
-
-<div class="dark-light">
-  <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-  </svg>
-</div>
-<div class="login">
-  <div class="wrap">
-    <div class="user">
-      <div class="logo">
-          <img id="btn-big" src="logo.svg" class="logo-biglinux" onclick="biglinux();">
-      </div>      
-      <div class="user">
-        <div class="form-wrap"> 
-          <div class="form-wrap tabs-content">
-            <h2>$KernelMesaTitle</h2>
-          </div>
-            <div id="list-tab-content" class="fc-card active">
-              <div class="centretext" style="margin-bottom: 30px;">
-                <div id="desc">
-                  <h3>$KernelMesaText</h3>
-                </div>
-              </div>
-              <ul style="vertical-align: middle; list-style-type: none; margin: 0; width: 100%;">
-                <li style="margin-top:auto; margin-bottom:auto;"><div class="content-section-title">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.4666665 6.3500002" style="width: 30px; margin-left: 10px; margin-bottom: -4px;"><path fill="currentColor" d="M 0.10268847,0.10530257 V 0.40605486 H 0.75696929 V 1.7044951 H 0.51477701 V 2.8041205 H 0.75696929 V 3.7953021 H 0.51477701 v 1.0996253 h 0.24219228 v 1.34977 H 1.0577216 V 5.5361945 h 6.3823108 c 0.5117865,0 0.9239458,-0.4121584 0.9239458,-0.9239455 V 1.9980177 c 0,-0.5117863 -0.4121593,-0.9232227 -0.9239458,-0.9232227 H 1.0577216 V 0.40605486 0.10530257 H 0.75696929 Z M 6.0801404,2.0529628 C 6.7836612,2.0529877 7.3539753,2.6233015 7.354,3.3268223 7.3539751,4.0303433 6.7836612,4.6006567 6.0801404,4.6006816 5.3766197,4.6006567 4.8063058,4.0303433 4.806281,3.3268223 4.8063057,2.6233015 5.3766197,2.0529876 6.0801404,2.0529628 Z M 5.4128463,2.4824024 c -0.044499,0.00214 -0.088774,0.020816 -0.1229036,0.054945 -0.072808,0.072809 -0.072808,0.1896268 0,0.2624352 l 0.1836324,0.1836325 c 0.072809,0.072809 0.19035,0.072809 0.2631583,0 0.072809,-0.072809 0.072809,-0.19035 0,-0.2631583 L 5.5531011,2.5373476 C 5.5144216,2.4986681 5.4632789,2.4799849 5.4128463,2.4824024 Z m 1.3165143,0 c -0.0445,0.00214 -0.088052,0.020816 -0.1221807,0.054945 L 6.4235476,2.720257 c -0.072809,0.072808 -0.072809,0.1903499 0,0.2631583 0.072809,0.072809 0.189627,0.072809 0.2624352,0 L 6.8696153,2.7997828 c 0.072809,-0.072809 0.072809,-0.1896269 0,-0.2624352 -0.03868,-0.03868 -0.089822,-0.057363 -0.1402547,-0.054945 z M 6.0801404,2.9602804 A 0.36681981,0.36681981 0 0 0 5.7135986,3.3268223 0.36681981,0.36681981 0 0 0 6.0801404,3.6933641 0.36681981,0.36681981 0 0 0 6.4466824,3.3268223 0.36681981,0.36681981 0 0 0 6.0801404,2.9602804 Z M 5.6051543,3.6152842 c -0.047509,0 -0.095175,0.018541 -0.1315792,0.054945 l -0.1836324,0.183632 c -0.072808,0.072811 -0.072808,0.1896276 0,0.2624354 0.072809,0.072811 0.19035,0.072811 0.2631584,0 l 0.1836323,-0.182909 c 0.072809,-0.072811 0.072809,-0.1903498 0,-0.2631586 -0.036404,-0.036404 -0.08407,-0.054945 -0.1315791,-0.054945 z m 0.9499724,0 c -0.047509,0 -0.095175,0.018541 -0.1315791,0.054945 -0.072809,0.072811 -0.072809,0.1903499 0,0.2631586 l 0.1836323,0.182909 c 0.072809,0.072811 0.1896271,0.072811 0.2624354,0 0.072809,-0.072811 0.072809,-0.1896266 0,-0.2624354 L 6.6859828,3.6702292 C 6.6495787,3.6338252 6.6026361,3.6152842 6.5551267,3.6152842 Z M 1.2601511,5.6301802 V 6.0292549 H 5.2682539 V 5.6301802 Z m 4.5380342,0 V 6.0292549 H 7.469674 V 5.6301802 Z"/></svg>                
-                $Mesa_Title</div><li>
-                <li style="text-align: right;">
-                  <a class="status-button3"><svg style="margin-left:-10px; width: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#3a6df0" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
-                  </a>
-                </li>
-                <div class="pop-up3">
-                  <div class="pop-up__title">$Mesa_Title
-                    <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M15 9l-6 6M9 9l6 6" />
-                    </svg>
-                  </div>
-                  <div class="pop-up__subtitle">$Mesa_Text</div>
-                  <div class="content-button-wrapper">
-                    <button class="content-button status-button3 open close">$CLOSE</button>
-                  </div>
-                </div>    
-              </ul>
-EOF
-
-if [ "$(LANG=en pacman -Qi 'mesa' | grep ^Name | grep mesa$)" != "" ]; then
-  mesaChecked=checked
-  mesaInstall=y
-elif [ "$(LANG=en pacman -Qi 'mesa-amber' | grep ^Name | grep mesa-amber$)" != "" ]; then
-  mesaAmberChecked=checked
-  mesaAmberInstall=y
-elif [ "$(LANG=en pacman -Qi 'mesa-tkg-git' | grep ^Name | grep mesa-tkg-git$)" != "" ]; then
-  mesaAmberInstall=y
-  mesaTkgChecked=checked
-fi
-
-cat << EOF              
-              <div class="content-section" style="margin-top: 0px;">
-                <ul>
-                  <li class="product">
-                    <div class="products">
-                      <input id="r1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
-                      <label for="r1">
-                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-amber  | grep -i "^Version" | cut -f2 -d:)</font></span>
-                      </label>
-                    </div>
-                    <div class="products">
-                      <input id="r2" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
-                      <label for="r2">
-                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa  | grep -i "^Version" | cut -f2 -d:)</font></span>
-                      </label>
-                    </div>
-                    <div class="products">
-                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
-                      <label for="r3">
-                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git  | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
-                      </label>
-                    </div>
-                  </li>
-                </ul>
-              </div>              
-              <br><br>
-              <ul style="vertical-align: middle; list-style-type: none; margin: 0; width: 100%;">
-                <li style="margin-top:auto; margin-bottom:auto;"><div class="content-section-title">$Kernel_Title</div><li>
-                <li style="text-align: right;">
-                  <a class="status-button2"><svg style="margin-left:-10px; width: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#3a6df0" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
-                  </a>   
-                </li>
-                <div class="pop-up2">
-                  <div class="pop-up__title">$Kernel_Title
-                    <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M15 9l-6 6M9 9l6 6" />
-                    </svg>
-                  </div>
-                  <div class="pop-up__subtitle">$Kernel_Text</div>
-                  <div class="content-button-wrapper">
-                    <button class="content-button status-button2 open close">$CLOSE</button>
-                  </div>
-                </div>                
-              </ul>              
-              <div class="content-section" style="margin-top: 0px;">
-                <ul style="margin-top: 0px;" class="list">
-              
-EOF
-rm -f /tmp/kernel-mhwd-*.html
-
-./kernel-mhwd.sh
-
-cat /tmp/kernel-mhwd-*.html
-
-cat << EOF
-                </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <script  src="./script.js"></script>
-</body>
-</html>
-EOF
-IFS=$OIFS
-
+#sh_debug
+sh_config
+sh_init

@@ -1,19 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
-# BigLinux Store 
-# www.biglinux.com.br
-# By Bruno Gonçalves
-# 07/09/2020
-# License: GPL v2 or greater 
+#	BigLinux Store
+#	www.biglinux.com.br
+#	By Bruno Gonçalves
+#	07/09/2020
+#	License: GPL v2 or greater
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-driver-manager
+declare TITLE=$"Informações sobre o Hardware"
+declare drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
 
-
-cd /usr/share/bigbashview/bcc/apps/drivers/
-
-TITLE=$"Informações sobre o Hardware"
-
-QT_QPA_PLATFORM=xcb SDL_VIDEODRIVER=x11 WINIT_UNIX_BACKEND=x11 GDK_BACKEND=x11 bigbashview -n "$TITLE" -s 800x400 loading.sh.htm -i /usr/share/bigbashview/bcc/apps/drivers/hardware-info.svg
-
+if [[ ! -d "$drivers_path" ]]; then
+   if ! mkdir "$drivers_path"; then
+      kdialog --passivepopup $"O diretório $drivers_path não existe e não foi possível criar."
+      exit
+   fi
+fi
+cd "$drivers_path"
+QT_QPA_PLATFORM=xcb \
+	SDL_VIDEODRIVER=x11 \
+	WINIT_UNIX_BACKEND=x11 \
+	GDK_BACKEND=x11 bigbashview -n "$TITLE" -s 800x400 loading.sh.htm -i /usr/share/bigbashview/bcc/apps/drivers/hardware-info.svg

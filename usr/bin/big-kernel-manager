@@ -1,16 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=bigcontrolcenter
-
+declare drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
 
 if [[ $(ps -aux | grep Big-Kernel-Manager | grep bigbashview) ]]; then
-
-    kdialog --passivepopup $"O Big-Kernel-Manager já está em uso."
-    exit
+	kdialog --passivepopup $"O Big-Kernel-Manager já está em uso."
+	exit
 fi
 
-cd /usr/share/bigbashview/bcc/apps/drivers/
-
+if [[ ! -d "$drivers_path" ]]; then
+   if ! mkdir "$drivers_path"; then
+      kdialog --passivepopup $"O diretório $drivers_path não existe e não foi possível criar."
+      exit
+   fi
+fi
+cd "$drivers_path"
 bigbashview -s 1000x660 kernel.sh.htm -n $"Big-Kernel-Manager" -i icon-kernel.svg
