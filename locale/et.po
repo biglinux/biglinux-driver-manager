@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Riistvara teave"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatory on juba kasutusel."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "Kataloogi $drivers_path pole olemas ja seda ei saa luua."
+
+msgid "Informações sobre o Hardware"
+msgstr "Riistvara teave"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager on juba kasutusel."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager on juba kasutusel."
 msgid "Big-Kernel-Manager"
 msgstr "Suur-Kernel-Manager"
 
-msgid "Enviando, aguarde..."
-msgstr "Saatmine, palun oodake..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Kui olete lõpetanud, käivitage arvuti uuesti, et aktiveerida draiveri konfiguratsioon."
 
-msgid "Informações de Hardware"
-msgstr "Riistvara teave"
+msgid "Driver"
+msgstr "Juht"
 
-msgid "Fechar"
-msgstr "Sulge"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Tekkis viga ja draiverit ei saa rakendada."
 
-msgid "Enviar para filebin.net"
-msgstr "Saada filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Seadme teabe vaatamine Linuxi riistvara kohta"
 
-msgid "Visualizar"
-msgstr "Visualiseerida"
+msgid "Processador"
+msgstr "Protsessor"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Aruanne salvestati faili:"
+msgid "Placa mãe"
+msgstr "Emaplaat"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Kas soovite faili vaadata või filebin.net saidile üles laadida, et teil oleks arvutiandmetega URL-i "
-"lihtne ühiskasutusse anda?"
+msgid "Memória"
+msgstr "Mälu"
 
-msgid "Remover"
-msgstr "Eemaldage"
+msgid "Swap Memória Virtual"
+msgstr "Virtuaalne mäluvahetus"
 
-msgid "Instalar"
-msgstr "Paigaldage"
+msgid "Placa de vídeo"
+msgstr "Videokaart"
+
+msgid "Áudio"
+msgstr "Audio"
+
+msgid "Rede"
+msgstr "Võrk"
+
+msgid "Conexões de Rede"
+msgstr "Võrguühendused"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB-seadmed ja ühendused"
+
+msgid "Portas PCI"
+msgstr "PCI-pordid"
+
+msgid "Bateria"
+msgstr "Aku"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Salvestusseadmed"
+
+msgid "Partições montadas"
+msgstr "Paigaldatud vaheseinad"
+
+msgid "Partições desmontadas"
+msgstr "Demonteeritud vaheseinad"
+
+msgid "Dispositivos lógicos"
+msgstr "Loogikaseadmed"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Sistema"
+msgstr "Süsteem"
+
+msgid "Informações de Sistema"
+msgstr "Süsteemi teave"
+
+msgid "Repositórios"
+msgstr "Repositooriumid"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Temperatuur"
 
 msgid "Categorias"
 msgstr "Kategooriad"
@@ -68,47 +115,17 @@ msgstr "Main"
 msgid "Resumo"
 msgstr "Kokkuvõte"
 
-msgid "Processador"
-msgstr "Protsessor"
-
-msgid "Placa de vídeo"
-msgstr "Videokaart"
-
-msgid "Placa mãe"
-msgstr "Emaplaat"
-
-msgid "Memória"
-msgstr "Mälu"
-
-msgid "Rede"
-msgstr "Võrk"
-
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "Aku"
-
 msgid "Armazenamento"
 msgstr "Ladustamine"
 
-msgid "Sistema"
-msgstr "Süsteem"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Temperatuur"
-
 msgid "Impressora"
 msgstr "Printer"
-
-msgid "Áudio"
-msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "Lisateave"
@@ -121,6 +138,12 @@ msgstr "Otsi"
 
 msgid "Resultado da pesquisa"
 msgstr "Otsingu tulemus"
+
+msgid "Informações de Hardware"
+msgstr "Riistvara teave"
+
+msgid "Fechar"
+msgstr "Sulge"
 
 msgid "Abrir"
 msgstr "Avatud"
@@ -168,9 +191,6 @@ msgstr "Aruande koostamine"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "See loob faili teabega, mida saab Internetis avaldada."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Seadme teabe vaatamine Linuxi riistvara kohta"
-
 msgid "Categoria"
 msgstr "Kategooria"
 
@@ -183,41 +203,33 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Vahetus (virtuaalne mälu)"
+msgid "Enviar para filebin.net"
+msgstr "Saada filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Võrguühendused"
+msgid "Visualizar"
+msgstr "Visualiseerida"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB-seadmed ja ühendused"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Aruanne salvestati faili:"
 
-msgid "Portas PCI"
-msgstr "PCI-pordid"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Kas soovite faili vaadata või filebin.net saidile üles laadida, et teil oleks arvutiandmetega URL-i "
+"lihtne ühiskasutusse anda?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Salvestusseadmed"
+msgid "Enviando, aguarde..."
+msgstr "Saatmine, palun oodake..."
 
-msgid "Partições montadas"
-msgstr "Paigaldatud vaheseinad"
-
-msgid "Partições desmontadas"
-msgstr "Demonteeritud vaheseinad"
-
-msgid "Dispositivos lógicos"
-msgstr "Loogikaseadmed"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Informações de Sistema"
-msgstr "Süsteemi teave"
-
-msgid "Repositórios"
-msgstr "Repositooriumid"
+msgid "Remover"
+msgstr "Eemaldage"
 
 msgid "Em uso"
 msgstr "Kasutusel"
+
+msgid "Instalar"
+msgstr "Paigaldage"
 
 msgid "Este driver é software livre."
 msgstr "See draiver on tasuta tarkvara."
@@ -228,24 +240,8 @@ msgstr "See draiver on patenteeritud."
 msgid "Este driver parece compatível com este computador."
 msgstr "See draiver näib olevat selle arvutiga ühilduv."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"On juba paigaldatud teine nVidia draiver, selle draiveri paigaldamiseks eemaldage esmalt "
-"paigaldatud draiver."
-
 msgid "Desativado"
 msgstr "Puudega inimesed"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Kui olete lõpetanud, käivitage arvuti uuesti, et aktiveerida draiveri konfiguratsioon."
-
-msgid "Driver"
-msgstr "Juht"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Tekkis viga ja draiverit ei saa rakendada."
 
 msgid "Driver detectado:"
 msgstr "Juhi tuvastamine:"
@@ -265,26 +261,26 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
 "Linuxi kernel on operatsioonisüsteemi komponent, mis kontrollib kõiki teisi komponente ja võimaldab "
-"rakendustel töötada. Kerneli versiooni muutmine võib tuua uusi funktsioone või parandada jõudlust, "
-"kuid see võib põhjustada probleeme ka mõne draiveri ja rakendusega. Kui süsteem töötab hästi, ei "
-"pruugi teil olla eelist teisele kerneli versioonile üleminekuks. Versioonide erinevus on "
+"rakendustel toimida. Kerneli versiooni muutmine võib tuua uusi funktsioone või parandada jõudlust, "
+"kuid see võib põhjustada probleeme ka mõnede draiverite ja rakendustega. Kui süsteem töötab hästi, "
+"ei pruugi olla kasulik minna üle teisele kerneli versioonile. Versioonide erinevus on "
 "järgmine.<br><br>\n"
-"<b>LTS,</b> saate turvavärskendusi kauem. Üldiselt on uusim LTS-versioon parim valik.<br><br>\n"
-"<b>Xanmodil</b> on parema jõudluse tagamiseks muudatusi, kuid see võib põhjustada süsteemi "
+"\t<b>LTS,</b> saate turbevärskendusi kauem. Üldiselt on uusim LTS-versioon parim valik.<br><br>\n"
+"\t<b>Xanmodil</b> on parema jõudluse saavutamiseks muudatusi, kuid see võib põhjustada süsteemi "
 "ebastabiilsust.<br><br>\n"
-"<b>RT</b>, on kohandatud konkreetseks kasutuseks. Kui te ei kasuta ühtegi programmi, mis seda "
-"vajab, on kõige parem kasutada kernelit ilma akronüümita \"rt\"."
+"\t<b>RT,</b> on muudetud konkreetseteks kasutusteks. Kui te ei kasuta ühtegi programmi, mis seda "
+"vajab, on kõige parem kasutada tuuma ilma akronüümita \"rt\"."
 
 msgid "Precisa de ajuda?"
 msgstr "Kas vajate abi?"
@@ -295,27 +291,20 @@ msgstr "Video draiverid"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
 "Mesa sisaldab süsteemi videodraivereid, mis töötavad koos kerneliga. Versioonide erinevus on "
-"järgmine.<br><br>\n"
-"<b>Stabiilne</b>, soovitatav enamikus olukordades, tasakaal uute funktsioonide ja stabiilsuse "
-"vahel.<br><br>\n"
-"<b>Tkg</b>, arendusversioon, millel on uuendusi, kuid vähe teste, võib tekitada ebastabiilsust, "
-"kuid võib ka mängudele rohkem jõudlust tuua.<br><br>\n"
-"<b>Merevaik,</b> kasulik vanades arvutites üldiselt, toodetud enne 2010. aastat.<br><br>* AMD, "
-"Inteli ja teiste videodraiverid on lisatud töölauale ja Linuxi tuumale, välja arvatud Nvidia "
-"patenteeritud draiver"
+"järgmine.<br><br><b>Stabiilne</b>, soovitatav enamikus olukordades, tasakaal uute funktsioonide ja "
+"stabiilsuse vahel.<br><br><b>Tkg</b>, arendusversioon, millel on uudiseid, kuid vähe teste, võib "
+"tekitada ebastabiilsust, kuid võib ka mängudesse rohkem jõudlust tuua.<br><br><b>Merevaik,</b> mis "
+"on kasulik vanematele arvutitele üldiselt, toodetud enne 2010. aastat.<br><br>* AMD, Inteli ja "
+"teiste videodraiverid sisalduvad Mesas ja Linuxi tuumas, välja arvatud Nvidia patenteeritud draiver"
 
 msgid "Pesquisar Kernel"
 msgstr "Otsi kernelit"
@@ -327,14 +316,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Taotlemine - Palun oodake"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Sisestage oma parool, et luua aruanne, millest on eemaldatud tundlikud andmed, nt IP-aadress, või "
-"tühistage, et kasutada eelmise ekraani teavet."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Täielikuma aruande koostamiseks sisestage oma parool."
+"On juba paigaldatud teine nVidia draiver, selle draiveri paigaldamiseks eemaldage esmalt "
+"paigaldatud draiver."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Tuvastus ei hõlma printereid ja skannereid</small>"
@@ -383,3 +369,13 @@ msgstr "Juhi või püsivara"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "See pakett sisaldab selle arvutiga ühilduvaid faile."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Sisestage oma parool, et luua aruanne, millest on eemaldatud tundlikud andmed, nt IP-aadress, või "
+"tühistage, et kasutada eelmise ekraani teavet."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Täielikuma aruande koostamiseks sisestage oma parool."

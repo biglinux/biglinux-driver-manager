@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Інформація про обладнання"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatory вже використовується."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "Каталог $drivers_path не існує і не може бути створений."
+
+msgid "Informações sobre o Hardware"
+msgstr "Інформація про обладнання"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager вже використовується."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager вже використовується."
 msgid "Big-Kernel-Manager"
 msgstr "Біг-Кернел-Менеджер"
 
-msgid "Enviando, aguarde..."
-msgstr "Відправка, будь ласка, зачекайте"
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Готово, перезавантажте комп'ютер, щоб активувати конфігурацію драйверів."
 
-msgid "Informações de Hardware"
-msgstr "Інформація про обладнання"
+msgid "Driver"
+msgstr "Водій"
 
-msgid "Fechar"
-msgstr " Закрити"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Сталася помилка, і драйвер не може бути застосований."
 
-msgid "Enviar para filebin.net"
-msgstr "Надіслати filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Перегляд інформації про пристрій на обладнанні Linux"
 
-msgid "Visualizar"
-msgstr "Візуалізувати"
+msgid "Processador"
+msgstr "Процесор"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Звіт збережено у файл:"
+msgid "Placa mãe"
+msgstr "материнська плата"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Ви хочете переглянути файл або завантажити його на filebin.net сайт, щоб мати URL-адресу з даними "
-"вашого комп'ютера простим способом для обміну?"
+msgid "Memória"
+msgstr "Пам'ять"
 
-msgid "Remover"
-msgstr "Вилучити:"
+msgid "Swap Memória Virtual"
+msgstr "Віртуальна заміна пам'яті"
 
-msgid "Instalar"
-msgstr "Встановити"
+msgid "Placa de vídeo"
+msgstr "Відеокарта"
+
+msgid "Áudio"
+msgstr "Аудіо"
+
+msgid "Rede"
+msgstr "мережа"
+
+msgid "Conexões de Rede"
+msgstr "Мережеві підключення"
+
+msgid "Dispositivos e conexões USB"
+msgstr "Пристрої та підключення USB"
+
+msgid "Portas PCI"
+msgstr "Порти PCI"
+
+msgid "Bateria"
+msgstr "Барабани"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Пристрої зберігання даних"
+
+msgid "Partições montadas"
+msgstr "навісні перегородки"
+
+msgid "Partições desmontadas"
+msgstr "Демонтовані перегородки"
+
+msgid "Dispositivos lógicos"
+msgstr "Логічні пристрої"
+
+msgid "Raid"
+msgstr "Рейд"
+
+msgid "Sistema"
+msgstr "система"
+
+msgid "Informações de Sistema"
+msgstr "Інформація про систему"
+
+msgid "Repositórios"
+msgstr "сховища"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Температура"
 
 msgid "Categorias"
 msgstr "Категорії"
@@ -68,47 +115,17 @@ msgstr "Головна"
 msgid "Resumo"
 msgstr "Резюме"
 
-msgid "Processador"
-msgstr "Процесор"
-
-msgid "Placa de vídeo"
-msgstr "Відеокарта"
-
-msgid "Placa mãe"
-msgstr "материнська плата"
-
-msgid "Memória"
-msgstr "Пам'ять"
-
-msgid "Rede"
-msgstr "мережа"
-
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "Барабани"
-
 msgid "Armazenamento"
 msgstr "Зберігання"
 
-msgid "Sistema"
-msgstr "система"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Температура"
-
 msgid "Impressora"
 msgstr "Принтер"
-
-msgid "Áudio"
-msgstr "Аудіо"
 
 msgid "Mais informações"
 msgstr "Більше інформації"
@@ -121,6 +138,12 @@ msgstr "Шукати..."
 
 msgid "Resultado da pesquisa"
 msgstr "Результат пошуку"
+
+msgid "Informações de Hardware"
+msgstr "Інформація про обладнання"
+
+msgid "Fechar"
+msgstr " Закрити"
 
 msgid "Abrir"
 msgstr "ВІДЧИНЕНО"
@@ -168,9 +191,6 @@ msgstr "Згенерувати звіт"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Створює файл з інформацією, яку можна опублікувати в Інтернеті."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Перегляд інформації про пристрій на обладнанні Linux"
-
 msgid "Categoria"
 msgstr "Категорія"
 
@@ -183,41 +203,33 @@ msgstr "ІД"
 msgid "Info"
 msgstr "Інфо"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (віртуальна пам'ять)"
+msgid "Enviar para filebin.net"
+msgstr "Надіслати filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Мережеві підключення"
+msgid "Visualizar"
+msgstr "Візуалізувати"
 
-msgid "Dispositivos e conexões USB"
-msgstr "Пристрої та підключення USB"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Звіт збережено у файл:"
 
-msgid "Portas PCI"
-msgstr "Порти PCI"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Ви хочете переглянути файл або завантажити його на filebin.net сайт, щоб мати URL-адресу з даними "
+"вашого комп'ютера простим способом для обміну?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Пристрої зберігання даних"
+msgid "Enviando, aguarde..."
+msgstr "Відправка, будь ласка, зачекайте"
 
-msgid "Partições montadas"
-msgstr "навісні перегородки"
-
-msgid "Partições desmontadas"
-msgstr "Демонтовані перегородки"
-
-msgid "Dispositivos lógicos"
-msgstr "Логічні пристрої"
-
-msgid "Raid"
-msgstr "Рейд"
-
-msgid "Informações de Sistema"
-msgstr "Інформація про систему"
-
-msgid "Repositórios"
-msgstr "сховища"
+msgid "Remover"
+msgstr "Вилучити:"
 
 msgid "Em uso"
 msgstr "У використанні"
+
+msgid "Instalar"
+msgstr "Встановити"
 
 msgid "Este driver é software livre."
 msgstr "Цей драйвер є вільним програмним забезпеченням."
@@ -228,24 +240,8 @@ msgstr "Цей драйвер є пропрієтарним."
 msgid "Este driver parece compatível com este computador."
 msgstr "Цей драйвер здається сумісним з цим комп'ютером."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Вже встановлено інший драйвер nVidia, щоб встановити цей драйвер, спочатку видаліть встановлений "
-"драйвер."
-
 msgid "Desativado"
 msgstr "інвалід"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Готово, перезавантажте комп'ютер, щоб активувати конфігурацію драйверів."
-
-msgid "Driver"
-msgstr "Водій"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Сталася помилка, і драйвер не може бути застосований."
 
 msgid "Driver detectado:"
 msgstr "Виявлено драйвер:"
@@ -265,27 +261,27 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
 "Ядро Linux - це компонент операційної системи, який контролює всі інші компоненти і дозволяє "
-"додаткам працювати. Зміна версії ядра може принести нову функціональність або підвищити "
+"додаткам функціонувати. Зміна версії ядра може принести нову функціональність або підвищити "
 "продуктивність, але це також може викликати проблеми з деякими драйверами та додатками. Якщо "
-"система працює добре, у вас може не бути переваги переходу на іншу версію ядра. Ось у чому різниця "
-"між версіями:<br><br>\n"
-"<b>LTS,</b> отримувати оновлення системи безпеки довше. Загалом, остання версія LTS є оптимальним "
-"варіантом.<br><br>\n"
-"<b>Xanmod</b> має модифікації для кращої продуктивності, але це може викликати нестабільність "
-"системи.<br><br>\n"
-"<b>rt</b>, модифіковані для конкретних цілей. Якщо ви не використовуєте жодних програм, які цього "
-"потребують, краще використовувати ядро без абревіатури \"rt\"."
+"система працює добре, може бути невигідно перейти на іншу версію ядра. Ось різниця між "
+"версіями:<br><br>\n"
+"\t<b>LTS,</b> отримуйте оновлення безпеки довше. Загалом, остання версія LTS - оптимальний "
+"варіант.<br><br>\n"
+"\t<b>Xanmod</b>, має модифікації для отримання кращої продуктивності, але це може викликати "
+"нестабільність в системі.<br><br>\n"
+"\t<b>RT</b>, модифікуються для конкретних цілей. Якщо ви не використовуєте програми, яким це "
+"потрібно, краще використовувати ядро без абревіатури 'rt'."
 
 msgid "Precisa de ajuda?"
 msgstr "Вам потрібна допомога?"
@@ -296,27 +292,21 @@ msgstr "Відеодрайвери"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa включає системні відеодрайвери, які працюють спільно з ядром. Ось у чому різниця між "
-"версіями:<br><br>\n"
-"<b>Стабільний</b>, рекомендований для більшості ситуацій, баланс між новими функціями та "
-"стабільністю.<br><br>\n"
-"<b>Tkg</b>, версія для розробки, з новинками, але невеликою кількістю тестів, може генерувати "
-"нестабільність, але також може принести більше продуктивності в ігри.<br><br>\n"
-"<b>Бурштин</b>, корисний в старих комп'ютерах взагалі, виготовлявся до 2010 року.<br><br>* "
-"Відеодрайвери від AMD, Intel та інших включені в Робочий стіл і ядро Linux, за винятком фірмового "
-"драйвера nvidia"
+"Mesa включає в себе системні відеодрайвери, які працюють спільно з ядром. Ось різниця між "
+"версіями:<br><br><b>Стабільний</b>, рекомендований для більшості ситуацій, баланс між новими "
+"функціями та стабільністю.<br><br><b>Tkg</b>, версія для розробки, з новинами, але невеликою "
+"кількістю тестів, може генерувати нестабільність, але також може принести більшу продуктивність "
+"іграм.<br><br><b>Бурштин</b>, корисний на старих комп'ютерах, в основному, випускався до 2010 "
+"року.<br><br>* Відеодрайвери від AMD, Intel та інших включені в Mesa і ядро Linux, за винятком "
+"фірмового драйвера Nvidia"
 
 msgid "Pesquisar Kernel"
 msgstr "Пошук в ядрі"
@@ -328,14 +318,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Застосування - будь ласка, зачекайте"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Введіть пароль, щоб створити звіт про видалення конфіденційних даних, наприклад, IP-адреси, або "
-"скасувати використання інформації з попереднього екрана."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Введіть свій пароль, щоб згенерувати більш повний звіт."
+"Вже встановлено інший драйвер nVidia, щоб встановити цей драйвер, спочатку видаліть встановлений "
+"драйвер."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small> * Виявлення не включає принтери та сканери </small>"
@@ -384,3 +371,13 @@ msgstr "Драйвер або прошивка"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Цей пакет надає файли, сумісні з цим комп'ютером."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Введіть пароль, щоб створити звіт про видалення конфіденційних даних, наприклад, IP-адреси, або "
+"скасувати використання інформації з попереднього екрана."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Введіть свій пароль, щоб згенерувати більш повний звіт."

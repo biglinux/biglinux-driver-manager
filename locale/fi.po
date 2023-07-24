@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Laitteistoa koskevat tiedot"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatory on jo käytössä."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "$drivers_path-hakemistoa ei ole olemassa, eikä sitä voitu luoda."
+
+msgid "Informações sobre o Hardware"
+msgstr "Laitteistoa koskevat tiedot"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager on jo käytössä."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager on jo käytössä."
 msgid "Big-Kernel-Manager"
 msgstr "Big-Kernel-Manager"
 
-msgid "Enviando, aguarde..."
-msgstr "Lähetys, odota..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Kun olet valmis, käynnistä tietokone uudelleen aktivoidaksesi ajurikokoonpanon."
 
-msgid "Informações de Hardware"
-msgstr "Laitteistoa koskevat tiedot"
+msgid "Driver"
+msgstr "Kuljettaja"
 
-msgid "Fechar"
-msgstr "Sulje"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Tapahtui virhe, eikä ohjainta voida käyttää."
 
-msgid "Enviar para filebin.net"
-msgstr "Lähetä osoitteeseen filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Linux-laitteiston laitetietojen tarkasteleminen"
 
-msgid "Visualizar"
-msgstr "Kuvitella"
+msgid "Processador"
+msgstr "Prosessori"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Raportti tallennettiin tiedostoon:"
+msgid "Placa mãe"
+msgstr "Emolevy"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Haluatko tarkastella tiedostoa tai ladata sen filebin.net sivustoon, jotta sinulla on URL-osoite "
-"tietokoneesi tiedoilla helposti jaettavaksi?"
+msgid "Memória"
+msgstr "Muisti"
 
-msgid "Remover"
-msgstr "Poista"
+msgid "Swap Memória Virtual"
+msgstr "Virtuaalimuistin vaihto"
 
-msgid "Instalar"
-msgstr "Asenna"
+msgid "Placa de vídeo"
+msgstr "Videokortti"
+
+msgid "Áudio"
+msgstr "Audio"
+
+msgid "Rede"
+msgstr "Verkko"
+
+msgid "Conexões de Rede"
+msgstr "Verkkoyhteydet"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB-laitteet ja -liitännät"
+
+msgid "Portas PCI"
+msgstr "PCI-portit"
+
+msgid "Bateria"
+msgstr "Akku"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Tallennuslaitteet"
+
+msgid "Partições montadas"
+msgstr "Asennetut väliseinät"
+
+msgid "Partições desmontadas"
+msgstr "Puretut väliseinät"
+
+msgid "Dispositivos lógicos"
+msgstr "Logiikkalaitteet"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Sistema"
+msgstr "Järjestelmä"
+
+msgid "Informações de Sistema"
+msgstr "Järjestelmätiedot"
+
+msgid "Repositórios"
+msgstr "Tietovarastot"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Lämpötila"
 
 msgid "Categorias"
 msgstr "Kategoriat"
@@ -68,47 +115,17 @@ msgstr "Main"
 msgid "Resumo"
 msgstr "Yhteenveto"
 
-msgid "Processador"
-msgstr "Prosessori"
-
-msgid "Placa de vídeo"
-msgstr "Videokortti"
-
-msgid "Placa mãe"
-msgstr "Emolevy"
-
-msgid "Memória"
-msgstr "Muisti"
-
-msgid "Rede"
-msgstr "Verkko"
-
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "Akku"
-
 msgid "Armazenamento"
 msgstr "Varastointi"
 
-msgid "Sistema"
-msgstr "Järjestelmä"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Lämpötila"
-
 msgid "Impressora"
 msgstr "Tulostin"
-
-msgid "Áudio"
-msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "Lisätietoja"
@@ -121,6 +138,12 @@ msgstr "Etsi"
 
 msgid "Resultado da pesquisa"
 msgstr "Hakutulos"
+
+msgid "Informações de Hardware"
+msgstr "Laitteistoa koskevat tiedot"
+
+msgid "Fechar"
+msgstr "Sulje"
 
 msgid "Abrir"
 msgstr "Avaa"
@@ -168,9 +191,6 @@ msgstr "Luo raportti"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Se luo tiedoston, jossa on tietoja, jotka voidaan julkaista Internetissä."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Linux-laitteiston laitetietojen tarkasteleminen"
-
 msgid "Categoria"
 msgstr "Luokka"
 
@@ -183,41 +203,33 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (virtuaalimuisti)"
+msgid "Enviar para filebin.net"
+msgstr "Lähetä osoitteeseen filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Verkkoyhteydet"
+msgid "Visualizar"
+msgstr "Kuvitella"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB-laitteet ja -liitännät"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Raportti tallennettiin tiedostoon:"
 
-msgid "Portas PCI"
-msgstr "PCI-portit"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Haluatko tarkastella tiedostoa tai ladata sen filebin.net sivustoon, jotta sinulla on URL-osoite "
+"tietokoneesi tiedoilla helposti jaettavaksi?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Tallennuslaitteet"
+msgid "Enviando, aguarde..."
+msgstr "Lähetys, odota..."
 
-msgid "Partições montadas"
-msgstr "Asennetut väliseinät"
-
-msgid "Partições desmontadas"
-msgstr "Puretut väliseinät"
-
-msgid "Dispositivos lógicos"
-msgstr "Logiikkalaitteet"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Informações de Sistema"
-msgstr "Järjestelmätiedot"
-
-msgid "Repositórios"
-msgstr "Tietovarastot"
+msgid "Remover"
+msgstr "Poista"
 
 msgid "Em uso"
 msgstr "Käytössä"
+
+msgid "Instalar"
+msgstr "Asenna"
 
 msgid "Este driver é software livre."
 msgstr "Tämä ohjain on ilmainen ohjelmisto."
@@ -228,24 +240,8 @@ msgstr "Tämä ohjain on patentoitu."
 msgid "Este driver parece compatível com este computador."
 msgstr "Tämä ohjain näyttää olevan yhteensopiva tämän tietokoneen kanssa."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Toinen nVidia-ohjain on jo asennettu, joten jos haluat asentaa tämän ohjaimen, poista ensin "
-"asennettu ohjain."
-
 msgid "Desativado"
 msgstr "Vammaiset"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Kun olet valmis, käynnistä tietokone uudelleen aktivoidaksesi ajurikokoonpanon."
-
-msgid "Driver"
-msgstr "Kuljettaja"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Tapahtui virhe, eikä ohjainta voida käyttää."
 
 msgid "Driver detectado:"
 msgstr "Kuljettaja havaittu:"
@@ -265,27 +261,27 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
 "Linux-ydin on käyttöjärjestelmän komponentti, joka ohjaa kaikkia muita komponentteja ja "
 "mahdollistaa sovellusten toiminnan. Ytimen version muuttaminen voi tuoda uusia toimintoja tai "
 "parantaa suorituskykyä, mutta se voi myös aiheuttaa ongelmia joidenkin ohjainten ja sovellusten "
-"kanssa. Jos järjestelmä toimii hyvin, sinulla ei ehkä ole etua vaihtaa toiseen ytimen versioon. "
-"Tässä on ero versioiden välillä:<br><br>\n"
-"<b>LTS,</b> vastaanota tietoturvapäivityksiä pidempään. Yleensä uusin LTS-versio on paras "
+"kanssa. Jos järjestelmä toimii hyvin, ei ehkä ole edullista vaihtaa toiseen ytimen versioon. Tässä "
+"on versioiden välinen ero:<br><br>\n"
+"\t<b>LTS,</b> vastaanota tietoturvapäivityksiä pidempään. Yleensä uusin LTS-versio on paras "
 "vaihtoehto.<br><br>\n"
-"<b>Xanmodilla</b> on muutoksia parempaan suorituskykyyn, mutta tämä voi aiheuttaa järjestelmän "
-"epävakautta.<br><br>\n"
-"<b>rt</b>, muokataan tiettyihin käyttötarkoituksiin. Jos et käytä mitään ohjelmia, jotka "
-"tarvitsevat tätä, on parasta käyttää ydintä ilman lyhennettä \"rt\"."
+"\t<b>Xanmodilla</b> on muutoksia paremman suorituskyvyn saavuttamiseksi, mutta tämä voi aiheuttaa "
+"järjestelmän epävakautta.<br><br>\n"
+"\t<b>RT</b>, muutetaan tiettyihin käyttötarkoituksiin. Jos et käytä mitään ohjelmia jotka "
+"tarvitsevat tätä, on parasta käyttää ydintä ilman lyhennettä 'rt'."
 
 msgid "Precisa de ajuda?"
 msgstr "Tarvitsetko apua?"
@@ -296,27 +292,21 @@ msgstr "Video-ohjaimet"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa sisältää järjestelmän video-ohjaimet, jotka toimivat yhdessä ytimen kanssa. Tässä on ero "
-"versioiden välillä:<br><br>\n"
-"<b>Vakaa</b>, suositeltava useimpiin tilanteisiin, tasapaino uusien ominaisuuksien ja vakauden "
-"välillä.<br><br>\n"
-"<b>Tkg</b>, kehitysversio, jossa on uutuuksia, mutta vähän testejä, voi tuottaa epävakautta, mutta "
-"voi myös tuoda lisää suorituskykyä peleihin.<br><br>\n"
-"<b>Keltainen</b>, hyödyllinen vanhoissa tietokoneissa yleensä, valmistettu ennen vuotta "
-"2010.<br><br>* AMD:n, Intelin ja muiden VIDEO-ajurit sisältyvät työpöydälle ja Linux-ytimeen, "
-"lukuun ottamatta nvidian omaa ohjainta"
+"Mesa sisältää järjestelmän näytönohjaimet, jotka toimivat yhdessä ytimen kanssa. Tässä on "
+"versioiden välinen ero:<br><br><b>Vakaa</b>, suositellaan useimpiin tilanteisiin, tasapaino uusien "
+"ominaisuuksien ja vakauden välillä.<br><br><b>Tkg</b>, kehitysversio, jossa on uutisia, mutta vähän "
+"testejä, voi aiheuttaa epävakautta, mutta voi myös tuoda peleihin enemmän "
+"suorituskykyä.<br><br><b>Meripihka</b>, hyödyllinen vanhemmissa tietokoneissa, yleensä valmistettu "
+"ennen vuotta 2010.<br><br>* AMD:n, Intelin ja muiden näytönohjaimet sisältyvät Mesaan ja "
+"Linux-ytimeen, paitsi Nvidian oma ohjain"
 
 msgid "Pesquisar Kernel"
 msgstr "Etsi ydintä"
@@ -328,14 +318,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Hakemuksen tekeminen - Odota"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Syötä salasanasi, jos haluat luoda raportin, josta poistetaan arkaluonteiset tiedot, kuten "
-"IP-osoite, tai peruuta, jos haluat käyttää edellisen näytön tietoja."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Syötä salasanasi luodaksesi täydellisemmän raportin."
+"Toinen nVidia-ohjain on jo asennettu, joten jos haluat asentaa tämän ohjaimen, poista ensin "
+"asennettu ohjain."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Havaitseminen ei sisällä tulostimia ja skannereita</small>"
@@ -384,3 +371,13 @@ msgstr "Ajuri tai laiteohjelma"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Tämä paketti sisältää tämän tietokoneen kanssa yhteensopivat tiedostot."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Syötä salasanasi, jos haluat luoda raportin, josta poistetaan arkaluonteiset tiedot, kuten "
+"IP-osoite, tai peruuta, jos haluat käyttää edellisen näytön tietoja."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Syötä salasanasi luodaksesi täydellisemmän raportin."

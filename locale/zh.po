@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "硬件信息"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatory已经在使用。"
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "$drivers_path 目录不存在，无法创建。"
+
+msgid "Informações sobre o Hardware"
+msgstr "硬件信息"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager 已在使用中。"
@@ -28,34 +31,80 @@ msgstr "Big-Kernel-Manager 已在使用中。"
 msgid "Big-Kernel-Manager"
 msgstr "大内核管理器"
 
-msgid "Enviando, aguarde..."
-msgstr "正在发送，请等待..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "完成后，重新启动计算机以激活驱动配置。"
 
-msgid "Informações de Hardware"
-msgstr "硬件信息"
+msgid "Driver"
+msgstr "驱动程序"
 
-msgid "Fechar"
-msgstr "关闭"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "发生了一个错误，无法应用该驱动程序。"
 
-msgid "Enviar para filebin.net"
-msgstr "发送到 filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "查看Linux硬件上的设备信息"
 
-msgid "Visualizar"
-msgstr "可视 化"
+msgid "Processador"
+msgstr "处理器"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "报告已保存到文件中："
+msgid "Placa mãe"
+msgstr "母板"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr "您想查看文件或将其上传到 filebin.net 站点，以便以简单的方式共享包含计算机数据的 URL？"
+msgid "Memória"
+msgstr "记忆"
 
-msgid "Remover"
-msgstr "移除"
+msgid "Swap Memória Virtual"
+msgstr "虚拟内存交换"
 
-msgid "Instalar"
-msgstr "安装"
+msgid "Placa de vídeo"
+msgstr "视频卡"
+
+msgid "Áudio"
+msgstr "音频"
+
+msgid "Rede"
+msgstr "网络"
+
+msgid "Conexões de Rede"
+msgstr "网络连接"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB设备和连接"
+
+msgid "Portas PCI"
+msgstr "PCI端口"
+
+msgid "Bateria"
+msgstr "电池"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "存储设备"
+
+msgid "Partições montadas"
+msgstr "安装的隔断"
+
+msgid "Partições desmontadas"
+msgstr "拆除的隔断"
+
+msgid "Dispositivos lógicos"
+msgstr "逻辑装置"
+
+msgid "Raid"
+msgstr "袭击"
+
+msgid "Sistema"
+msgstr "系统"
+
+msgid "Informações de Sistema"
+msgstr "系统信息"
+
+msgid "Repositórios"
+msgstr "储存库"
+
+msgid "Bluetooth"
+msgstr "蓝牙"
+
+msgid "Temperatura"
+msgstr "温度"
 
 msgid "Categorias"
 msgstr "类别"
@@ -66,47 +115,17 @@ msgstr "主要内容"
 msgid "Resumo"
 msgstr "摘要"
 
-msgid "Processador"
-msgstr "处理器"
-
-msgid "Placa de vídeo"
-msgstr "视频卡"
-
-msgid "Placa mãe"
-msgstr "母板"
-
-msgid "Memória"
-msgstr "记忆"
-
-msgid "Rede"
-msgstr "网络"
-
 msgid "Usb"
 msgstr "笔记本电脑"
 
 msgid "Pci"
 msgstr "芯片"
 
-msgid "Bateria"
-msgstr "电池"
-
 msgid "Armazenamento"
 msgstr "储存"
 
-msgid "Sistema"
-msgstr "系统"
-
-msgid "Bluetooth"
-msgstr "蓝牙"
-
-msgid "Temperatura"
-msgstr "温度"
-
 msgid "Impressora"
 msgstr "打印机"
-
-msgid "Áudio"
-msgstr "音频"
 
 msgid "Mais informações"
 msgstr "更多信息"
@@ -119,6 +138,12 @@ msgstr "搜索"
 
 msgid "Resultado da pesquisa"
 msgstr "搜索结果"
+
+msgid "Informações de Hardware"
+msgstr "硬件信息"
+
+msgid "Fechar"
+msgstr "关闭"
 
 msgid "Abrir"
 msgstr "打開"
@@ -164,9 +189,6 @@ msgstr "生成报告"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "創建包含可在 Internet 上發布的信息的文件。"
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "查看Linux硬件上的设备信息"
-
 msgid "Categoria"
 msgstr "类别"
 
@@ -179,41 +201,31 @@ msgstr "身份证"
 msgid "Info"
 msgstr "信息"
 
-msgid "Swap (Memória Virtual)"
-msgstr "交换（虚拟内存）"
+msgid "Enviar para filebin.net"
+msgstr "发送到 filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "网络连接"
+msgid "Visualizar"
+msgstr "可视 化"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB设备和连接"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "报告已保存到文件中："
 
-msgid "Portas PCI"
-msgstr "PCI端口"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr "您想查看文件或将其上传到 filebin.net 站点，以便以简单的方式共享包含计算机数据的 URL？"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "存储设备"
+msgid "Enviando, aguarde..."
+msgstr "正在发送，请等待..."
 
-msgid "Partições montadas"
-msgstr "安装的隔断"
-
-msgid "Partições desmontadas"
-msgstr "拆除的隔断"
-
-msgid "Dispositivos lógicos"
-msgstr "逻辑装置"
-
-msgid "Raid"
-msgstr "袭击"
-
-msgid "Informações de Sistema"
-msgstr "系统信息"
-
-msgid "Repositórios"
-msgstr "储存库"
+msgid "Remover"
+msgstr "移除"
 
 msgid "Em uso"
 msgstr "使用中"
+
+msgid "Instalar"
+msgstr "安装"
 
 msgid "Este driver é software livre."
 msgstr "这个驱动程序是免费软件。"
@@ -224,22 +236,8 @@ msgstr "这个驱动程序是专有的。"
 msgid "Este driver parece compatível com este computador."
 msgstr "这个驱动程序似乎与这台计算机兼容。"
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr "已经安装了另一个nVidia驱动，要安装这个驱动，请先删除已安装的驱动。"
-
 msgid "Desativado"
 msgstr "失能"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "完成后，重新启动计算机以激活驱动配置。"
-
-msgid "Driver"
-msgstr "驱动程序"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "发生了一个错误，无法应用该驱动程序。"
 
 msgid "Driver detectado:"
 msgstr "检测到的驱动程序。"
@@ -259,22 +257,22 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
 "Linux "
-"内核是控制所有其他组件并允许应用程序工作的操作系统组件。更改内核版本可以带来新功能或提高性能，但也可能导致某些驱动程序和应用程序出现问题。如果系统运行良好，您可能没有切换到另一个内核版本的优势。以下是"
+"内核是操作系统的组件，它控制所有其他组件并允许应用程序运行。更改内核版本可以带来新功能或提高性能，但也可能导致某些驱动程序和应用程序出现问题。如果系统运行良好，切换到另一个内核版本可能没有优势。以下是"
 "版本之间的区别：<br><br>\n"
-"<b>LTS</b>，接收安全更新的时间更长。通常，最新的 LTS 版本是最佳选择。<br><br>\n"
-"<b>Xanmod</b> 进行了修改以获得更好的性能，但这可能会导致系统不稳定。<br><br>\n"
-"<b>RT</b>，针对特定用途进行了修改。如果您不使用任何需要此功能的程序，最好使用不带首字母缩略词“rt”的内核。"
+"\t<b>LTS，</b>接收安全更新的时间更长。通常，最新的 LTS 版本是最佳选择。<br><br>\n"
+"\t<b>Xanmod</b>进行了修改以获得更好的性能，但这可能会导致系统不稳定。<br><br>\n"
+"\t<b>RT，</b>针对特定用途进行了修改。如果您不使用任何需要此功能的程序，最好使用不带首字母缩略词“rt”的内核。"
 
 msgid "Precisa de ajuda?"
 msgstr "您需要任何帮助吗？"
@@ -285,23 +283,17 @@ msgstr "视频驱动程序"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa包括与内核配合使用的系统视频驱动程序。以下是版本之间的区别：<br><br>\n"
-"<b>稳定</b>，建议在大多数情况下使用，在新功能和稳定性之间取得平衡。<br><br>\n"
-"<b>Tkg</b>，开发版，新颖但测试少，可以产生不稳定，但也可以为游戏带来更多的性能。<br><br>\n"
-"<b>琥珀</b>色，一般在旧电脑中很有用，在 2010 年之前制造。<br><br>* "
-"来自AMD，Intel和其他公司的VIDEO驱动程序包含在桌面和Linux内核中，但nvidia的专有驱动程序除外"
+"Mesa包括与内核配合使用的系统视频驱动程序。以下是版本之间的区别：<br><br><b>稳定</b>，建议在大多数情况下使用，在新功能和稳定性之间取得平衡。<br><br><b>Tkg</"
+"b>，开发版，有新闻但测试很少，可以产生不稳定，但也可以为游戏带来更多的性能。<br><br><b>琥珀</b>色，在旧计算机上很有用，一般来说，在 2010 年之前制造。<br><br>* "
+"来自AMD，Intel和其他公司的视频驱动程序包含在Mesa和Linux内核中，除了Nvidia的专有驱动程序。"
 
 msgid "Pesquisar Kernel"
 msgstr "搜索内核"
@@ -313,12 +305,9 @@ msgid "Aplicando - Aguarde"
 msgstr "申请 - 请等待"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr "输入你的密码，生成一份删除敏感数据（如IP地址）的报告，或者取消，使用前一屏幕的信息。"
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "输入你的密码，以生成更完整的报告。"
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr "已经安装了另一个nVidia驱动，要安装这个驱动，请先删除已安装的驱动。"
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* 检测不包括打印机和扫描仪</small>"
@@ -367,3 +356,11 @@ msgstr "驱动程序或固件"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "该软件包提供与该计算机兼容的文件。"
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr "输入你的密码，生成一份删除敏感数据（如IP地址）的报告，或者取消，使用前一屏幕的信息。"
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "输入你的密码，以生成更完整的报告。"
