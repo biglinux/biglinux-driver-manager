@@ -81,14 +81,14 @@ function SHOW_HARDINFO {
 
 	# Comando inxi e formatação HTML
 	parameter_inxi=$(sh_get_parameters)
-	$pkexec inxi "$parameter_inxi" "--color" "--$category_inxi" -y 100 --indents 5 | # Executa o comando 'inxi' com alguns parâmetros
-	iconv -t UTF-8 2>- |                                                # Converte a saída para codificação UTF-8
+	$pkexec inxi "$parameter_inxi" "-c2" "--$category_inxi" -y 100 --indents 5 |
+	iconv -t UTF-8 2>- |                                               # Converte a saída para codificação UTF-8
 	grep '     ' |                                                     # Filtra as linhas que contêm seis espaços (delimitador/formato)
 	sed 's|          ||g' |                                            # Remove os seis espaços iniciais de cada linha
 	tr '\n ' ' ' |                                                     # Substitui as quebras de linha por espaços (unifica em uma linha)
 	sed 's|      |\n     |g' |                                         # Insere quebras de linha antes de sequências de seis espaços (volta ao formato multi-linha)
 	ansi2html -f 18px -l |                                             # Converte escape sequences ANSI para HTML com fonte de tamanho 18px e cor
-	sed 's|           <span class="|<span class="subcategory1 |g' |   # Adiciona a classe "subcategory1" para estilizar os elementos HTML
+	sed 's|           <span class="|<span class="subcategory1 |g' |    # Adiciona a classe "subcategory1" para estilizar os elementos HTML
 	grep -A 9999 '<pre class="ansi2html-content">' |                   # Extrai linhas contendo '<pre class="ansi2html-content">' e as próximas 9999 linhas
 	grep -v '</html>' | grep -v '</body>' |                            # Remove linhas contendo '</html>' e '</body>'
 	sed 's|<pre class="ansi2html-content">||g; s|</pre>||g; s|<span class="ansi1 ansi34">|<br><span class="ansi1 ansi34">|g; s|     |</div><div class=hardwareSpace>|g; s|</div><br><span class="ansi1 ansi34">|</div><span class="hardwareTitle2">|g' |   # Formata a saída removendo algumas tags e adicionando outras
@@ -113,6 +113,8 @@ function SHOW_HARDINFO {
 	# Extrai a primeira coluna (delimitada por espaços) de cada linha após a inversão
 	# Inverte novamente cada linha para restaurar a ordem original
 	# Ordena os valores extraídos em ordem alfabética e remove quaisquer linhas duplicadas, deixando apenas os valores únicos
+
+	sh_get_ids 
 	for i in $(grep -i Chip-ID "$cfile" | sed 's| <br><span class="ansi1 ansi34">class-ID.*||g' | rev | cut -f1 -d" " | rev | sort -u); do
 		# Verifica se o valor 'i' está presente em '$PCI_IDS', Se presente substitui
 		if grep -q "$i" <<< "$PCI_IDS"; then
