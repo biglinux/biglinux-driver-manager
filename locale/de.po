@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Hardware-Informationen"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Das Big-Hardware-Relatory ist bereits im Einsatz."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "Das Verzeichnis $drivers_path ist nicht vorhanden und konnte nicht erstellt werden."
+
+msgid "Informações sobre o Hardware"
+msgstr "Hardware-Informationen"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Der Big-Kernel-Manager ist bereits im Einsatz."
@@ -28,36 +31,80 @@ msgstr "Der Big-Kernel-Manager ist bereits im Einsatz."
 msgid "Big-Kernel-Manager"
 msgstr "Big-Kernel-Manager"
 
-msgid "Enviando, aguarde..."
-msgstr "Senden, bitte warten..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Starten Sie anschließend Ihren Computer neu, um die Treiberkonfiguration zu aktivieren."
 
-msgid "Informações de Hardware"
-msgstr "Hardware-Informationen"
+msgid "Driver"
+msgstr "Treiber"
 
-msgid "Fechar"
-msgstr "Schließen Sie"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Es ist ein Fehler aufgetreten und der Treiber kann nicht angewendet werden."
 
-msgid "Enviar para filebin.net"
-msgstr "An filebin.net senden"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Geräteinformationen auf Linux-Hardware anzeigen"
 
-msgid "Visualizar"
-msgstr "Visualisieren"
+msgid "Processador"
+msgstr "Prozessor"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Der Bericht wurde in der Datei gespeichert:"
+msgid "Placa mãe"
+msgstr "Hauptplatine"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Möchten Sie die Datei anzeigen oder auf die filebin.net Website hochladen, um eine URL mit Ihren "
-"Computerdaten auf einfache Weise zu teilen?"
+msgid "Memória"
+msgstr "Speicher"
 
-msgid "Remover"
-msgstr "Entfernen"
+msgid "Swap Memória Virtual"
+msgstr "Virtueller Speicher-Swap"
 
-msgid "Instalar"
-msgstr "Installieren Sie"
+msgid "Placa de vídeo"
+msgstr "Grafikkarte"
+
+msgid "Áudio"
+msgstr "Audio"
+
+msgid "Rede"
+msgstr "Netzwerk"
+
+msgid "Conexões de Rede"
+msgstr "Netzwerk-Verbindungen"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB-Geräte und Verbindungen"
+
+msgid "Portas PCI"
+msgstr "PCI-Anschlüsse"
+
+msgid "Bateria"
+msgstr "Batterie"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Speichergeräte"
+
+msgid "Partições montadas"
+msgstr "Montierte Trennwände"
+
+msgid "Partições desmontadas"
+msgstr "Abgebaute Trennwände"
+
+msgid "Dispositivos lógicos"
+msgstr "Logische Geräte"
+
+msgid "Raid"
+msgstr "Überfall"
+
+msgid "Sistema"
+msgstr "System"
+
+msgid "Informações de Sistema"
+msgstr "System-Informationen"
+
+msgid "Repositórios"
+msgstr "Repositories"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Temperatur"
 
 msgid "Categorias"
 msgstr "Kategorien"
@@ -68,47 +115,17 @@ msgstr "Hauptseite"
 msgid "Resumo"
 msgstr "Zusammenfassung"
 
-msgid "Processador"
-msgstr "Prozessor"
-
-msgid "Placa de vídeo"
-msgstr "Grafikkarte"
-
-msgid "Placa mãe"
-msgstr "Hauptplatine"
-
-msgid "Memória"
-msgstr "Speicher"
-
-msgid "Rede"
-msgstr "Netzwerk"
-
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "Batterie"
-
 msgid "Armazenamento"
 msgstr "Lagerung"
 
-msgid "Sistema"
-msgstr "System"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Temperatur"
-
 msgid "Impressora"
 msgstr "Drucker"
-
-msgid "Áudio"
-msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "Weitere Informationen"
@@ -121,6 +138,12 @@ msgstr "Suche"
 
 msgid "Resultado da pesquisa"
 msgstr "Suchergebnis"
+
+msgid "Informações de Hardware"
+msgstr "Hardware-Informationen"
+
+msgid "Fechar"
+msgstr "Schließen Sie"
 
 msgid "Abrir"
 msgstr "Offen"
@@ -168,9 +191,6 @@ msgstr "Bericht generieren"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Erstellt eine Datei mit Informationen, die im Internet veröffentlicht werden können."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Geräteinformationen auf Linux-Hardware anzeigen"
-
 msgid "Categoria"
 msgstr "Kategorie"
 
@@ -183,41 +203,33 @@ msgstr "ID"
 msgid "Info"
 msgstr "Infos"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (Virtueller Speicher)"
+msgid "Enviar para filebin.net"
+msgstr "An filebin.net senden"
 
-msgid "Conexões de Rede"
-msgstr "Netzwerk-Verbindungen"
+msgid "Visualizar"
+msgstr "Visualisieren"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB-Geräte und Verbindungen"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Der Bericht wurde in der Datei gespeichert:"
 
-msgid "Portas PCI"
-msgstr "PCI-Anschlüsse"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Möchten Sie die Datei anzeigen oder auf die filebin.net Website hochladen, um eine URL mit Ihren "
+"Computerdaten auf einfache Weise zu teilen?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Speichergeräte"
+msgid "Enviando, aguarde..."
+msgstr "Senden, bitte warten..."
 
-msgid "Partições montadas"
-msgstr "Montierte Trennwände"
-
-msgid "Partições desmontadas"
-msgstr "Abgebaute Trennwände"
-
-msgid "Dispositivos lógicos"
-msgstr "Logische Geräte"
-
-msgid "Raid"
-msgstr "Überfall"
-
-msgid "Informações de Sistema"
-msgstr "System-Informationen"
-
-msgid "Repositórios"
-msgstr "Repositories"
+msgid "Remover"
+msgstr "Entfernen"
 
 msgid "Em uso"
 msgstr "Gebräuchlich"
+
+msgid "Instalar"
+msgstr "Installieren Sie"
 
 msgid "Este driver é software livre."
 msgstr "Dieser Treiber ist freie Software."
@@ -228,24 +240,8 @@ msgstr "Dieser Treiber ist proprietär."
 msgid "Este driver parece compatível com este computador."
 msgstr "Dieser Treiber scheint mit diesem Computer kompatibel zu sein."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Es ist bereits ein anderer nVidia-Treiber installiert. Um diesen Treiber zu installieren, entfernen "
-"Sie zuerst den installierten Treiber."
-
 msgid "Desativado"
 msgstr "Behinderte"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Starten Sie anschließend Ihren Computer neu, um die Treiberkonfiguration zu aktivieren."
-
-msgid "Driver"
-msgstr "Treiber"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Es ist ein Fehler aufgetreten und der Treiber kann nicht angewendet werden."
 
 msgid "Driver detectado:"
 msgstr "Treiber erkannt:"
@@ -265,27 +261,28 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
-"Der Linux-Kernel ist die Betriebssystemkomponente, die alle anderen Komponenten steuert und "
-"Anwendungen die Arbeit ermöglicht. Das Ändern der Kernel-Version kann neue Funktionen bringen oder "
-"die Leistung verbessern, aber es kann auch Probleme mit einigen Treibern und Anwendungen "
-"verursachen. Wenn das System gut funktioniert, haben Sie möglicherweise nicht den Vorteil, zu einer "
-"anderen Kernel-Version zu wechseln. Hier ist der Unterschied zwischen den Versionen:<br><br>\n"
-"<b>LTS</b>, erhalten Sie Sicherheitsupdates länger. Im Allgemeinen ist die neueste LTS-Version die "
-"beste Option.<br><br>\n"
-"<b>Xanmod</b> hat Modifikationen für eine bessere Leistung, aber dies kann zu Systeminstabilität "
-"führen.<br><br>\n"
-"<b>rt</b>, werden für bestimmte Verwendungszwecke modifiziert. Wenn Sie keine Programme verwenden, "
-"die dies benötigen, ist es am besten, einen Kernel ohne das Akronym 'rt' zu verwenden."
+"Der Linux-Kernel ist die Komponente des Betriebssystems, die alle anderen Komponenten steuert und "
+"das Funktionieren von Anwendungen ermöglicht. Das Ändern der Kernel-Version kann neue Funktionen "
+"bringen oder die Leistung verbessern, aber es kann auch Probleme mit einigen Treibern und "
+"Anwendungen verursachen. Wenn das System gut funktioniert, ist es möglicherweise nicht vorteilhaft, "
+"auf eine andere Kernel-Version umzusteigen. Hier ist der Unterschied zwischen den "
+"Versionen:<br><br>\n"
+"\t<b>LTS,</b> erhalten Sie Sicherheitsupdates länger. Im Allgemeinen ist die neueste LTS-Version "
+"die beste Option.<br><br>\n"
+"\t<b>Xanmod</b> hat Modifikationen, um eine bessere Leistung zu erzielen, aber dies kann zu "
+"Instabilitäten im System führen.<br><br>\n"
+"\t<b>RT,</b> werden für bestimmte Verwendungszwecke modifiziert. Wenn Sie keine Programme "
+"verwenden, die dies benötigen, verwenden Sie am besten einen Kernel ohne das Akronym 'rt'."
 
 msgid "Precisa de ajuda?"
 msgstr "Brauchen Sie Hilfe?"
@@ -296,27 +293,21 @@ msgstr "Grafiktreiber"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa enthält Systemgrafiktreiber, die in Verbindung mit dem Kernel arbeiten. Hier ist der "
-"Unterschied zwischen den Versionen:<br><br>\n"
-"<b>Stabil</b>, empfohlen für die meisten Situationen, Balance zwischen neuen Funktionen und "
-"Stabilität.<br><br>\n"
-"<b>Tkg</b>, Entwicklungsversion, mit Neuheiten, aber wenigen Tests, kann Instabilitäten erzeugen, "
-"aber auch mehr Leistung in Spiele bringen.<br><br>\n"
-"<b>Bernstein</b>, nützlich in alten Computern im Allgemeinen, hergestellt vor 2010.<br><br>* "
-"VIDEO-Treiber von AMD, Intel und anderen sind im Desktop- und Linux-Kernel enthalten, mit Ausnahme "
-"des proprietären Treibers von nvidia"
+"Mesa enthält die System-Videotreiber, die in Verbindung mit dem Kernel arbeiten. Hier ist der "
+"Unterschied zwischen den Versionen:<br><br><b>Stabil</b>, empfohlen für die meisten Situationen, "
+"Balance zwischen neuen Funktionen und Stabilität.<br><br><b>Tkg</b>, Entwicklungsversion, mit "
+"Neuigkeiten, aber wenigen Tests, kann Instabilitäten erzeugen, aber auch mehr Leistung in Spiele "
+"bringen.<br><br><b>Gelb</b>, nützlich auf älteren Computern, im Allgemeinen, die vor 2010 "
+"hergestellt wurden.<br><br>* Grafiktreiber von AMD, Intel und anderen sind in Mesa und dem "
+"Linux-Kernel enthalten, mit Ausnahme von Nvidias proprietärem Treiber"
 
 msgid "Pesquisar Kernel"
 msgstr "Kernel durchsuchen"
@@ -328,15 +319,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Antragstellung - Bitte warten"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Geben Sie Ihr Passwort ein, um einen Bericht zu erstellen, in dem sensible Daten, z. B. die "
-"IP-Adresse, entfernt werden, oder brechen Sie den Vorgang ab, um die Informationen aus dem "
-"vorherigen Bildschirm zu verwenden."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Geben Sie Ihr Passwort ein, um einen ausführlicheren Bericht zu erstellen."
+"Es ist bereits ein anderer nVidia-Treiber installiert. Um diesen Treiber zu installieren, entfernen "
+"Sie zuerst den installierten Treiber."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Die Erkennung umfasst keine Drucker und Scanner</small>"
@@ -387,3 +374,14 @@ msgstr "Treiber oder Firmware"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Dieses Paket enthält Dateien, die mit diesem Computer kompatibel sind."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Geben Sie Ihr Passwort ein, um einen Bericht zu erstellen, in dem sensible Daten, z. B. die "
+"IP-Adresse, entfernt werden, oder brechen Sie den Vorgang ab, um die Informationen aus dem "
+"vorherigen Bildschirm zu verwenden."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Geben Sie Ihr Passwort ein, um einen ausführlicheren Bericht zu erstellen."

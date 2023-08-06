@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "מידע על חומרה"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "החומרה הגדולה של החומרה כבר בשימוש."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "ספריית $drivers_path אינה קיימת ולא היתה אפשרות ליצור אותה."
+
+msgid "Informações sobre o Hardware"
+msgstr "מידע על חומרה"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "ביג-ליב-מנג'ר כבר נמצא בשימוש."
@@ -28,36 +31,80 @@ msgstr "ביג-ליב-מנג'ר כבר נמצא בשימוש."
 msgid "Big-Kernel-Manager"
 msgstr "ביג-ליב-מנג'ר"
 
-msgid "Enviando, aguarde..."
-msgstr "שולח, אנא המתן..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "בוצע, הפעל מחדש את המחשב כדי להפעיל את תצורת מנהל ההתקן."
 
-msgid "Informações de Hardware"
-msgstr "מידע על חומרה"
+msgid "Driver"
+msgstr "מנהל התקן"
 
-msgid "Fechar"
-msgstr "סגור"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "אירעה שגיאה ולא ניתן להחיל את מנהל ההתקן."
 
-msgid "Enviar para filebin.net"
-msgstr "שלח אל filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "הצגת פרטי מכשיר על חומרת Linux"
 
-msgid "Visualizar"
-msgstr "לדמיין"
+msgid "Processador"
+msgstr "מעבד"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "הדוח נשמר בקובץ:"
+msgid "Placa mãe"
+msgstr "לוח אם"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"האם ברצונך להציג את הקובץ או להעלות אותו לאתר filebin.net, כדי לקבל כתובת URL עם נתוני המחשב שלך "
-"בצורה קלה לשיתוף?"
+msgid "Memória"
+msgstr "סיפור חיים"
 
-msgid "Remover"
-msgstr "הסר"
+msgid "Swap Memória Virtual"
+msgstr "החלפת זיכרון וירטואלי"
 
-msgid "Instalar"
-msgstr "התקן"
+msgid "Placa de vídeo"
+msgstr "כרטיס מסך"
+
+msgid "Áudio"
+msgstr "אודיו"
+
+msgid "Rede"
+msgstr "נטו"
+
+msgid "Conexões de Rede"
+msgstr "חיבורי רשת"
+
+msgid "Dispositivos e conexões USB"
+msgstr "התקני USB וחיבורים"
+
+msgid "Portas PCI"
+msgstr "יציאות PCI"
+
+msgid "Bateria"
+msgstr "תופים"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "התקני אחסון"
+
+msgid "Partições montadas"
+msgstr "מחיצות רכובות"
+
+msgid "Partições desmontadas"
+msgstr "מחיצות מפורקות"
+
+msgid "Dispositivos lógicos"
+msgstr "התקנים לוגיים"
+
+msgid "Raid"
+msgstr "פשיטה"
+
+msgid "Sistema"
+msgstr "מערכת"
+
+msgid "Informações de Sistema"
+msgstr "מידע על המערכת"
+
+msgid "Repositórios"
+msgstr "מאגרים"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "טמפ"
 
 msgid "Categorias"
 msgstr "קטגוריות"
@@ -68,47 +115,17 @@ msgstr "ראשי"
 msgid "Resumo"
 msgstr "סיכום"
 
-msgid "Processador"
-msgstr "מעבד"
-
-msgid "Placa de vídeo"
-msgstr "כרטיס מסך"
-
-msgid "Placa mãe"
-msgstr "לוח אם"
-
-msgid "Memória"
-msgstr "סיפור חיים"
-
-msgid "Rede"
-msgstr "נטו"
-
 msgid "Usb"
 msgstr "USB"
 
 msgid "Pci"
 msgstr "PCI"
 
-msgid "Bateria"
-msgstr "תופים"
-
 msgid "Armazenamento"
 msgstr "אחסון"
 
-msgid "Sistema"
-msgstr "מערכת"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "טמפ"
-
 msgid "Impressora"
 msgstr "דפס"
-
-msgid "Áudio"
-msgstr "אודיו"
 
 msgid "Mais informações"
 msgstr "מידע נוסף"
@@ -121,6 +138,12 @@ msgstr "חיפוש"
 
 msgid "Resultado da pesquisa"
 msgstr "תוצאת חיפוש"
+
+msgid "Informações de Hardware"
+msgstr "מידע על חומרה"
+
+msgid "Fechar"
+msgstr "סגור"
 
 msgid "Abrir"
 msgstr "פתוח"
@@ -166,9 +189,6 @@ msgstr "להפיק דוח"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "יוצר קובץ עם מידע שניתן לפרסם באינטרנט."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "הצגת פרטי מכשיר על חומרת Linux"
-
 msgid "Categoria"
 msgstr "קטגוריה"
 
@@ -181,41 +201,33 @@ msgstr "תעודת זהות"
 msgid "Info"
 msgstr "מידע"
 
-msgid "Swap (Memória Virtual)"
-msgstr "החלפה (זיכרון וירטואלי)"
+msgid "Enviar para filebin.net"
+msgstr "שלח אל filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "חיבורי רשת"
+msgid "Visualizar"
+msgstr "לדמיין"
 
-msgid "Dispositivos e conexões USB"
-msgstr "התקני USB וחיבורים"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "הדוח נשמר בקובץ:"
 
-msgid "Portas PCI"
-msgstr "יציאות PCI"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"האם ברצונך להציג את הקובץ או להעלות אותו לאתר filebin.net, כדי לקבל כתובת URL עם נתוני המחשב שלך "
+"בצורה קלה לשיתוף?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "התקני אחסון"
+msgid "Enviando, aguarde..."
+msgstr "שולח, אנא המתן..."
 
-msgid "Partições montadas"
-msgstr "מחיצות רכובות"
-
-msgid "Partições desmontadas"
-msgstr "מחיצות מפורקות"
-
-msgid "Dispositivos lógicos"
-msgstr "התקנים לוגיים"
-
-msgid "Raid"
-msgstr "פשיטה"
-
-msgid "Informações de Sistema"
-msgstr "מידע על המערכת"
-
-msgid "Repositórios"
-msgstr "מאגרים"
+msgid "Remover"
+msgstr "הסר"
 
 msgid "Em uso"
 msgstr "בשימוש"
+
+msgid "Instalar"
+msgstr "התקן"
 
 msgid "Este driver é software livre."
 msgstr "מנהל התקן זה הוא תוכנה חופשית."
@@ -226,22 +238,8 @@ msgstr "הנהג הזה הוא קנייני."
 msgid "Este driver parece compatível com este computador."
 msgstr "מנהל התקן זה נראה תואם למחשב זה."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr "יש כבר מנהל התקן נוסף של nVidia מותקן, כדי להתקין את מנהל ההתקן, הסר תחילה את מנהל ההתקן המותקן."
-
 msgid "Desativado"
 msgstr "מושבת"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "בוצע, הפעל מחדש את המחשב כדי להפעיל את תצורת מנהל ההתקן."
-
-msgid "Driver"
-msgstr "מנהל התקן"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "אירעה שגיאה ולא ניתן להחיל את מנהל ההתקן."
 
 msgid "Driver detectado:"
 msgstr "זוהה מנהל התקן:"
@@ -261,24 +259,25 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
-"ליבת לינוקס היא רכיב מערכת ההפעלה השולט בכל הרכיבים האחרים ומאפשר ליישומים לעבוד. שינוי גירסת הליבה "
-"יכול להביא פונקציונליות חדשה או לשפר את הביצועים, אך הוא גם יכול לגרום לבעיות במנהלי התקנים "
-"ויישומים מסוימים. אם המערכת פועלת היטב, ייתכן שאין לך את היתרון של מעבר לגרסת ליבה אחרת. הנה ההבדל "
-"בין הגרסאות:<br><br>\n"
-"<b>LTS</b>, קבל עדכוני אבטחה למשך זמן רב יותר. באופן כללי, גרסת LTS העדכנית ביותר היא האפשרות הטובה "
+"ליבת לינוקס היא רכיב במערכת ההפעלה השולט בכל שאר הרכיבים ומאפשר ליישומים לתפקד. שינוי גירסת הליבה "
+"יכול להביא פונקציונליות חדשה או לשפר את הביצועים, אך הוא יכול גם לגרום לבעיות במנהלי התקנים "
+"וביישומים מסוימים. אם המערכת פועלת היטב, ייתכן שלא יהיה יתרון לעבור לגרסת ליבה אחרת. הנה ההבדל בין "
+"הגרסאות:<br><br>\n"
+"\t<b>LTS,</b> קבל עדכוני אבטחה למשך זמן רב יותר. באופן כללי, גרסת LTS האחרונה היא האפשרות הטובה "
 "ביותר.<br><br>\n"
-"<b>Xanmod</b> יש שינויים לביצועים טובים יותר, אבל זה יכול לגרום לחוסר יציבות המערכת.<br><br>\n"
-"<b>RT</b>, משתנים לשימושים ספציפיים. אם אינך משתמש בתוכניות הזקוקות לכך, מומלץ להשתמש בליבה ללא "
+"\t<b>Xanmod</b>, יש שינויים כדי להשיג ביצועים טובים יותר, אבל זה יכול לגרום חוסר יציבות "
+"במערכת.<br><br>\n"
+"\t<b>RT</b>, משתנים לשימושים ספציפיים. אם אינך משתמש בתוכניות הזקוקות לכך, מומלץ להשתמש בליבה ללא "
 "ראשי התיבות 'rt'."
 
 msgid "Precisa de ajuda?"
@@ -290,24 +289,19 @@ msgstr "מנהלי התקנים של וידאו"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa כוללת מנהלי התקן של וידאו מערכת הפועלים בשילוב עם הליבה. הנה ההבדל בין הגרסאות:<br><br>\n"
-"<b>יציב</b>, מומלץ ברוב המצבים, מאזן בין תכונות חדשות ליציבות.<br><br>\n"
-"<b>Tkg</b>, גרסת פיתוח, עם חידושים אך מעט בדיקות, יכולה ליצור חוסר יציבות, אך יכולה גם להביא יותר "
-"ביצועים למשחקים.<br><br>\n"
-"<b>ענבר</b>, שימושי במחשבים ישנים בכלל, מיוצר לפני 2010.<br><br>* מנהלי התקן וידאו של AMD, אינטל "
-"ואחרים כלולים בשולחן העבודה ובליבת לינוקס, למעט מנהל ההתקן הקנייני של nvidia"
+"Mesa כולל את מנהלי ההתקן של וידאו המערכת הפועלים בשילוב עם הליבה. הנה ההבדל בין "
+"הגרסאות:<br><br><b>יציב</b>, מומלץ ברוב המצבים, איזון בין תכונות חדשות ויציבות.<br><br><b>Tkg</b>, "
+"גרסת פיתוח, עם חדשות אבל מעט בדיקות, יכול ליצור חוסר יציבות, אבל יכול גם להביא יותר ביצועים "
+"למשחקים.<br><br><b>ענבר</b>, שימושי במחשבים ישנים, באופן כללי, מיוצר לפני 2010.<br><br>* מנהלי התקן "
+"וידאו של AMD, אינטל ואחרים כלולים ב-Mesa ובליבת לינוקס, למעט מנהל ההתקן הקנייני של Nvidia"
 
 msgid "Pesquisar Kernel"
 msgstr "חפש ליבה"
@@ -319,14 +313,9 @@ msgid "Aplicando - Aguarde"
 msgstr "הגשת בקשה - אנא המתן"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr ""
-"הזן את הסיסמה שלך כדי להפיק דוח שמסיר נתונים רגישים, לדוגמה, כתובת IP, או בטל כדי להשתמש במידע "
-"מהמסך הקודם."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "הזן את הסיסמה שלך כדי להפיק דוח מלא יותר."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr "יש כבר מנהל התקן נוסף של nVidia מותקן, כדי להתקין את מנהל ההתקן, הסר תחילה את מנהל ההתקן המותקן."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>*איתור אינו כולל מדפסות וסורקים</small>"
@@ -375,3 +364,13 @@ msgstr "מנהל התקן או קושחה"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "חבילה זו מספקת קבצים התואמים למחשב זה."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"הזן את הסיסמה שלך כדי להפיק דוח שמסיר נתונים רגישים, לדוגמה, כתובת IP, או בטל כדי להשתמש במידע "
+"מהמסך הקודם."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "הזן את הסיסמה שלך כדי להפיק דוח מלא יותר."

@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Donanım Bilgileri"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatory zaten kullanımda."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "$drivers_path dizini yok ve oluşturulamadı."
+
+msgid "Informações sobre o Hardware"
+msgstr "Donanım Bilgileri"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager zaten kullanımda."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager zaten kullanımda."
 msgid "Big-Kernel-Manager"
 msgstr "Büyük Çekirdek Yöneticisi"
 
-msgid "Enviando, aguarde..."
-msgstr "Gönderiliyor, lütfen bekleyin..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Tamamlandığında, sürücü yapılandırmasını etkinleştirmek için bilgisayarınızı yeniden başlatın."
 
-msgid "Informações de Hardware"
-msgstr "Donanım Bilgileri"
+msgid "Driver"
+msgstr "Sürücü"
 
-msgid "Fechar"
-msgstr "Kapat"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Bir hata oluştu ve sürücü uygulanamıyor."
 
-msgid "Enviar para filebin.net"
-msgstr "filebin.net'e gönder"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Linux Donanımında cihaz bilgilerini görüntüleme"
 
-msgid "Visualizar"
-msgstr "Görselleştirmek"
+msgid "Processador"
+msgstr "İşlemci"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Rapor dosyaya kaydedildi:"
+msgid "Placa mãe"
+msgstr "Anakart"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Dosyayı görüntülemek mi yoksa filebin.net sitesine yüklemek mi istiyorsunuz, bilgisayar "
-"verilerinizi kolay bir şekilde paylaşabileceğiniz bir URL'ye sahip olmak için mi?"
+msgid "Memória"
+msgstr "Hafıza"
 
-msgid "Remover"
-msgstr "Kaldırmak"
+msgid "Swap Memória Virtual"
+msgstr "Sanal Bellek Takası"
 
-msgid "Instalar"
-msgstr "Kurulum"
+msgid "Placa de vídeo"
+msgstr "Ekran kartı"
+
+msgid "Áudio"
+msgstr "Ses"
+
+msgid "Rede"
+msgstr "Şebeke"
+
+msgid "Conexões de Rede"
+msgstr "Ağ Bağlantıları"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB aygıtları ve bağlantıları"
+
+msgid "Portas PCI"
+msgstr "PCI bağlantı noktaları"
+
+msgid "Bateria"
+msgstr "Akü"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Depolama Cihazları"
+
+msgid "Partições montadas"
+msgstr "Monte edilmiş bölmeler"
+
+msgid "Partições desmontadas"
+msgstr "Sökülmüş bölmeler"
+
+msgid "Dispositivos lógicos"
+msgstr "Mantıksal cihazlar"
+
+msgid "Raid"
+msgstr "Baskın"
+
+msgid "Sistema"
+msgstr "Sistem"
+
+msgid "Informações de Sistema"
+msgstr "Sistem Bilgileri"
+
+msgid "Repositórios"
+msgstr "Depolar"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Sıcaklık"
 
 msgid "Categorias"
 msgstr "Kategoriler"
@@ -68,47 +115,17 @@ msgstr "Ana"
 msgid "Resumo"
 msgstr "Özet"
 
-msgid "Processador"
-msgstr "İşlemci"
-
-msgid "Placa de vídeo"
-msgstr "Ekran kartı"
-
-msgid "Placa mãe"
-msgstr "Anakart"
-
-msgid "Memória"
-msgstr "Hafıza"
-
-msgid "Rede"
-msgstr "Şebeke"
-
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "Akü"
-
 msgid "Armazenamento"
 msgstr "Depolama"
 
-msgid "Sistema"
-msgstr "Sistem"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Sıcaklık"
-
 msgid "Impressora"
 msgstr "Yazıcı"
-
-msgid "Áudio"
-msgstr "Ses"
 
 msgid "Mais informações"
 msgstr "Daha fazla bilgi"
@@ -121,6 +138,12 @@ msgstr "Arama"
 
 msgid "Resultado da pesquisa"
 msgstr "Arama sonucu"
+
+msgid "Informações de Hardware"
+msgstr "Donanım Bilgileri"
+
+msgid "Fechar"
+msgstr "Kapat"
 
 msgid "Abrir"
 msgstr "Açık"
@@ -168,9 +191,6 @@ msgstr "Rapor Oluştur"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "İnternette yayınlanabilecek bilgileri içeren bir dosya oluşturur."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Linux Donanımında cihaz bilgilerini görüntüleme"
-
 msgid "Categoria"
 msgstr "Kategori"
 
@@ -183,41 +203,33 @@ msgstr "KIMLIK"
 msgid "Info"
 msgstr "Bilgi"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (Sanal Bellek)"
+msgid "Enviar para filebin.net"
+msgstr "filebin.net'e gönder"
 
-msgid "Conexões de Rede"
-msgstr "Ağ Bağlantıları"
+msgid "Visualizar"
+msgstr "Görselleştirmek"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB aygıtları ve bağlantıları"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Rapor dosyaya kaydedildi:"
 
-msgid "Portas PCI"
-msgstr "PCI bağlantı noktaları"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Dosyayı görüntülemek mi yoksa filebin.net sitesine yüklemek mi istiyorsunuz, bilgisayar "
+"verilerinizi kolay bir şekilde paylaşabileceğiniz bir URL'ye sahip olmak için mi?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Depolama Cihazları"
+msgid "Enviando, aguarde..."
+msgstr "Gönderiliyor, lütfen bekleyin..."
 
-msgid "Partições montadas"
-msgstr "Monte edilmiş bölmeler"
-
-msgid "Partições desmontadas"
-msgstr "Sökülmüş bölmeler"
-
-msgid "Dispositivos lógicos"
-msgstr "Mantıksal cihazlar"
-
-msgid "Raid"
-msgstr "Baskın"
-
-msgid "Informações de Sistema"
-msgstr "Sistem Bilgileri"
-
-msgid "Repositórios"
-msgstr "Depolar"
+msgid "Remover"
+msgstr "Kaldırmak"
 
 msgid "Em uso"
 msgstr "Kullanımda"
+
+msgid "Instalar"
+msgstr "Kurulum"
 
 msgid "Este driver é software livre."
 msgstr "Bu sürücü ücretsiz bir yazılımdır."
@@ -228,22 +240,8 @@ msgstr "Bu sürücü tescillidir."
 msgid "Este driver parece compatível com este computador."
 msgstr "Bu sürücü bu bilgisayarla uyumlu görünüyor."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr "Zaten yüklü başka bir nVidia sürücüsü var, bu sürücüyü yüklemek için önce yüklü sürücüyü kaldırın."
-
 msgid "Desativado"
 msgstr "Engelli"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Tamamlandığında, sürücü yapılandırmasını etkinleştirmek için bilgisayarınızı yeniden başlatın."
-
-msgid "Driver"
-msgstr "Sürücü"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Bir hata oluştu ve sürücü uygulanamıyor."
 
 msgid "Driver detectado:"
 msgstr "Sürücü tespit edildi:"
@@ -263,26 +261,26 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
-"Linux çekirdeği, diğer tüm bileşenleri kontrol eden ve uygulamaların çalışmasına izin veren işletim "
-"sistemi bileşenidir. Çekirdek sürümünü değiştirmek yeni işlevler getirebilir veya performansı "
+"Linux çekirdeği, işletim sisteminin diğer tüm bileşenleri kontrol eden ve uygulamaların çalışmasına "
+"izin veren bileşenidir. Çekirdek sürümünü değiştirmek yeni işlevler getirebilir veya performansı "
 "artırabilir, ancak bazı sürücüler ve uygulamalarla ilgili sorunlara da neden olabilir. Sistem iyi "
-"çalışıyorsa, başka bir çekirdek sürümüne geçme avantajına sahip olmayabilirsiniz. Sürümler "
-"arasındaki fark aşağıda açıklanmıştır:<br><br>\n"
-"<b>LTS</b>, güvenlik güncelleştirmelerini daha uzun süre alır. Genel olarak, en son LTS sürümü en "
+"çalışıyorsa, başka bir çekirdek sürümüne geçmek avantajlı olmayabilir. Sürümler arasındaki fark "
+"aşağıda açıklanmıştır:<br><br>\n"
+"\t<b>LTS,</b> güvenlik güncelleştirmelerini daha uzun süre alır. Genel olarak, en son LTS sürümü en "
 "iyi seçenektir.<br><br>\n"
-"<b>Xanmod'un</b> daha iyi performans için modifikasyonları vardır, ancak bu sistem kararsızlığına "
-"neden olabilir.<br><br>\n"
-"<b>rt</b>, belirli kullanımlar için modifiye edilmiştir. Buna ihtiyaç duyan herhangi bir program "
+"\t<b>Xanmod</b>, daha iyi performans elde etmek için değişikliklere sahiptir, ancak bu sistemde "
+"kararsızlıklara neden olabilir.<br><br>\n"
+"\t<b>RT,</b> belirli kullanımlar için modifiye edilmiştir. Buna ihtiyaç duyan herhangi bir program "
 "kullanmıyorsanız, 'rt' kısaltması olmayan bir çekirdek kullanmak en iyisidir."
 
 msgid "Precisa de ajuda?"
@@ -294,26 +292,21 @@ msgstr "Video sürücüleri"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa, çekirdekle birlikte çalışan sistem video sürücülerini içerir. Sürümler arasındaki fark "
-"aşağıda açıklanmıştır:<br><br>\n"
-"<b>Kararlı</b>, çoğu durumda önerilir, yeni özellikler ve kararlılık arasındaki denge.<br><br>\n"
-"<b>Tkg</b>, geliştirme versiyonu, yenilikler ancak birkaç test ile, istikrarsızlıklar yaratabilir, "
-"ancak oyunlara daha fazla performans getirebilir.<br><br>\n"
-"Genel olarak eski bilgisayarlarda kullanışlı olan <b>amber</b>, 2010'dan önce "
-"üretilmiştir.<br><br>* AMD, Intel ve diğerlerinin VİDEO sürücüleri, nvidia'nın tescilli sürücüsü "
-"hariç, Masaüstü ve Linux çekirdeğine dahil edilmiştir"
+"Mesa, çekirdek ile birlikte çalışan sistem video sürücülerini içerir. Sürümler arasındaki fark "
+"aşağıda açıklanmıştır:<br><br><b>Kararlı</b>, çoğu durum için önerilen, yeni özellikler ve "
+"kararlılık arasında denge.<br><br><b>Tkg</b>, geliştirme sürümü, haberler ancak az sayıda testle, "
+"istikrarsızlıklar yaratabilir, ancak oyunlara daha fazla performans "
+"getirebilir.<br><br><b>Kehribar</b>, eski bilgisayarlarda kullanışlıdır, genel olarak, 2010'dan "
+"önce üretilmiştir.<br><br>* AMD, Intel ve diğerlerinin video sürücüleri, Nvidia'nın tescilli "
+"sürücüsü hariç, Mesa ve Linux çekirdeğine dahil edilmiştir"
 
 msgid "Pesquisar Kernel"
 msgstr "Arama Çekirdeği"
@@ -325,14 +318,9 @@ msgid "Aplicando - Aguarde"
 msgstr "Başvuru - Lütfen bekleyin"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr ""
-"IP adresi gibi hassas verileri kaldıran bir rapor oluşturmak için şifrenizi girin veya önceki "
-"ekrandaki bilgileri kullanmak için iptal edin."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Daha eksiksiz bir rapor oluşturmak için şifrenizi girin."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr "Zaten yüklü başka bir nVidia sürücüsü var, bu sürücüyü yüklemek için önce yüklü sürücüyü kaldırın."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Algılama yazıcıları ve tarayıcıları içermez</small>"
@@ -381,3 +369,13 @@ msgstr "Sürücü veya ürün yazılımı"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Bu paket, bu bilgisayarla uyumlu dosyalar sağlar."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"IP adresi gibi hassas verileri kaldıran bir rapor oluşturmak için şifrenizi girin veya önceki "
+"ekrandaki bilgileri kullanmak için iptal edin."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Daha eksiksiz bir rapor oluşturmak için şifrenizi girin."

@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Upplýsingar um vélbúnað"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "The Big-Hardware-Relatory er þegar í notkun."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "$drivers_path mappan er ekki til og ekki var hægt að búa hana til."
+
+msgid "Informações sobre o Hardware"
+msgstr "Upplýsingar um vélbúnað"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager er þegar í notkun."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager er þegar í notkun."
 msgid "Big-Kernel-Manager"
 msgstr "Stór-kjarni-Manager"
 
-msgid "Enviando, aguarde..."
-msgstr "Senda, vinsamlegast bíðið..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Lokið, endurræstu tölvuna til að virkja bílstjóri stillingar."
 
-msgid "Informações de Hardware"
-msgstr "Upplýsingar um vélbúnað"
+msgid "Driver"
+msgstr "bílstjóri"
 
-msgid "Fechar"
-msgstr "Loka"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Villa kom upp og ekki er hægt að beita ökumanninum."
 
-msgid "Enviar para filebin.net"
-msgstr "Senda til filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Skoða upplýsingar um tækið á Linux Vélbúnaður"
 
-msgid "Visualizar"
-msgstr "Sjón"
+msgid "Processador"
+msgstr "örgjörvi"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Skýrslan var vistuð í skrána:"
+msgid "Placa mãe"
+msgstr "Móðurborð"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Viltu skoða skrána eða hlaða henni upp á filebin.net síðuna, til að hafa vefslóð með tölvugögnum "
-"þínum á auðveldan hátt til að deila?"
+msgid "Memória"
+msgstr "Ævisaga"
 
-msgid "Remover"
-msgstr "fjarlægja"
+msgid "Swap Memória Virtual"
+msgstr "Skipti á sýndarminni"
 
-msgid "Instalar"
-msgstr "Setja upp"
+msgid "Placa de vídeo"
+msgstr "Skjákort"
+
+msgid "Áudio"
+msgstr "Audio"
+
+msgid "Rede"
+msgstr "Net"
+
+msgid "Conexões de Rede"
+msgstr "Nettengingar"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB tæki og tengingar"
+
+msgid "Portas PCI"
+msgstr "PCI hafnir"
+
+msgid "Bateria"
+msgstr "Trommur"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Geymsla tæki"
+
+msgid "Partições montadas"
+msgstr "Ríðandi skipting"
+
+msgid "Partições desmontadas"
+msgstr "Sundurhlutað skipting"
+
+msgid "Dispositivos lógicos"
+msgstr "Rökrétt tæki"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Sistema"
+msgstr "Kerfi"
+
+msgid "Informações de Sistema"
+msgstr "Upplýsingar um kerfi"
+
+msgid "Repositórios"
+msgstr "Geymslur"
+
+msgid "Bluetooth"
+msgstr "blátönn"
+
+msgid "Temperatura"
+msgstr "Temps"
 
 msgid "Categorias"
 msgstr "Flokkar"
@@ -68,47 +115,17 @@ msgstr "Aðal"
 msgid "Resumo"
 msgstr "Samantekt"
 
-msgid "Processador"
-msgstr "örgjörvi"
-
-msgid "Placa de vídeo"
-msgstr "Skjákort"
-
-msgid "Placa mãe"
-msgstr "Móðurborð"
-
-msgid "Memória"
-msgstr "Ævisaga"
-
-msgid "Rede"
-msgstr "Net"
-
 msgid "Usb"
 msgstr "USB"
 
 msgid "Pci"
 msgstr "PCI"
 
-msgid "Bateria"
-msgstr "Trommur"
-
 msgid "Armazenamento"
 msgstr "geymsla"
 
-msgid "Sistema"
-msgstr "Kerfi"
-
-msgid "Bluetooth"
-msgstr "blátönn"
-
-msgid "Temperatura"
-msgstr "Temps"
-
 msgid "Impressora"
 msgstr "prentara"
-
-msgid "Áudio"
-msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "Nánari upplýsingar"
@@ -121,6 +138,12 @@ msgstr "Leita"
 
 msgid "Resultado da pesquisa"
 msgstr "Leitarniðurstöður"
+
+msgid "Informações de Hardware"
+msgstr "Upplýsingar um vélbúnað"
+
+msgid "Fechar"
+msgstr "Loka"
 
 msgid "Abrir"
 msgstr "Opna"
@@ -168,9 +191,6 @@ msgstr "Búa til skýrslu"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Býr til skrá með upplýsingum sem hægt er að birta á internetinu."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Skoða upplýsingar um tækið á Linux Vélbúnaður"
-
 msgid "Categoria"
 msgstr "Flokkur"
 
@@ -183,41 +203,33 @@ msgstr "AUÐKENNI"
 msgid "Info"
 msgstr "Upplýsingar"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Víxla (Virtual Memory)"
+msgid "Enviar para filebin.net"
+msgstr "Senda til filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Nettengingar"
+msgid "Visualizar"
+msgstr "Sjón"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB tæki og tengingar"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Skýrslan var vistuð í skrána:"
 
-msgid "Portas PCI"
-msgstr "PCI hafnir"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Viltu skoða skrána eða hlaða henni upp á filebin.net síðuna, til að hafa vefslóð með tölvugögnum "
+"þínum á auðveldan hátt til að deila?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Geymsla tæki"
+msgid "Enviando, aguarde..."
+msgstr "Senda, vinsamlegast bíðið..."
 
-msgid "Partições montadas"
-msgstr "Ríðandi skipting"
-
-msgid "Partições desmontadas"
-msgstr "Sundurhlutað skipting"
-
-msgid "Dispositivos lógicos"
-msgstr "Rökrétt tæki"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Informações de Sistema"
-msgstr "Upplýsingar um kerfi"
-
-msgid "Repositórios"
-msgstr "Geymslur"
+msgid "Remover"
+msgstr "fjarlægja"
 
 msgid "Em uso"
 msgstr "Í notkun"
+
+msgid "Instalar"
+msgstr "Setja upp"
 
 msgid "Este driver é software livre."
 msgstr "Þessi bílstjóri er ókeypis hugbúnaður."
@@ -228,24 +240,8 @@ msgstr "Þessi bílstjóri er sér."
 msgid "Este driver parece compatível com este computador."
 msgstr "Þessi bílstjóri virðist samhæft við þessa tölvu."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Það er nú þegar annar nVidia bílstjóri uppsettur, til að setja upp þennan bílstjóri, fjarlægðu "
-"uppsettan bílstjóri fyrst."
-
 msgid "Desativado"
 msgstr "fatlaður"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Lokið, endurræstu tölvuna til að virkja bílstjóri stillingar."
-
-msgid "Driver"
-msgstr "bílstjóri"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Villa kom upp og ekki er hægt að beita ökumanninum."
 
 msgid "Driver detectado:"
 msgstr "Ökumaður uppgötvað:"
@@ -265,25 +261,26 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
-"Linux kjarninn er stýrikerfishlutinn sem stjórnar öllum öðrum íhlutum og gerir forritum kleift að "
-"vinna. Breyting á kjarnaútgáfunni getur haft í för með sér nýja virkni eða bætt afköst, en það "
-"getur einnig valdið vandræðum með suma ökumenn og forrit. Ef kerfið virkar vel getur verið að þú "
-"hafir ekki þann kost að skipta yfir í aðra kjarnaútgáfu. Hér er munurinn á útgáfum:<br><br>\n"
-"<b>LTS</b>, fáðu öryggisuppfærslur lengur. Almennt er nýjasta LTS útgáfan besti kosturinn.<br><br>\n"
-"<b>Xanmod</b> hefur breytingar til að bæta afköst, en þetta getur valdið óstöðugleika "
-"kerfisins.<br><br>\n"
-"<b>rt</b>, er breytt til sérstakrar notkunar. Ef þú notar engin forrit sem þurfa á þessu að halda "
-"er best að nota kjarna án skammstöfunarinnar 'rt'."
+"Linux kjarninn er sá hluti stýrikerfisins sem stjórnar öllum öðrum íhlutum og gerir forritum kleift "
+"að virka. Breyting the hnetukjarni útgáfa geta koma með nýr virkni eða bæta flutningur, en það geta "
+"einnig orsök vandamál með sumir bílstjóri og umsókn. Ef kerfið virkar vel getur verið að það sé "
+"ekki hagkvæmt að skipta yfir í aðra kjarnaútgáfu. Hér er munurinn á útgáfunum:<br><br>\n"
+"\t<b>LTS,</b> fáðu öryggisuppfærslur lengur. Almennt séð er nýjasta LTS útgáfan besti "
+"kosturinn.<br><br>\n"
+"\t<b>Xanmod</b>, hefur breytingar til að ná betri árangri, en þetta getur valdið óstöðugleika í "
+"kerfinu.<br><br>\n"
+"\t<b>RT,</b> er breytt til sérstakra nota. Ef þú notar engin forrit sem þurfa á þessu að halda er "
+"best að nota kjarna án skammstöfunarinnar 'rt'."
 
 msgid "Precisa de ajuda?"
 msgstr "Þarftu einhverja hjálp?"
@@ -294,25 +291,20 @@ msgstr "Vídeó reklar"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa inniheldur kerfisvídeórekla sem vinna í tengslum við kjarnann. Hér er munurinn á "
-"útgáfum:<br><br>\n"
-"<b>Stöðugt</b>, mælt með flestum aðstæðum, jafnvægi milli nýrra eiginleika og stöðugleika.<br><br>\n"
-"<b>Tkg</b>, þróunarútgáfa, með nýjungum en fáum prófum, getur skapað óstöðugleika, en getur einnig "
-"fært meiri árangur í leiki.<br><br>\n"
-"<b>Amber</b>, gagnlegt í gömlum tölvum almennt, framleidd fyrir 2010.<br><br>* VIDEO reklar frá "
-"AMD, Intel og aðrir eru innifalin í Desktop og Linux kjarna, nema fyrir sér bílstjóri NVIDIA"
+"Mesa inniheldur vídeó kerfi bílstjóri sem vinna í tengslum við kjarna. Hér er munurinn á "
+"útgáfunum:<br><br><b>Stöðugt</b>, mælt með fyrir flestar aðstæður, jafnvægi milli nýrra eiginleika "
+"og stöðugleika.<br><br><b>Tkg</b>, þróunarútgáfa, með fréttum en fáum prófum, getur valdið "
+"óstöðugleika, en getur einnig skilað meiri árangri í leikjum.<br><br><b>Amber</b>, gagnlegt á eldri "
+"tölvum, almennt, framleitt fyrir 2010.<br><br>* Vídeó bílstjóri frá AMD, Vitsmunir, og annar ert "
+"innifalinn í Mesa og the Linux hnetukjarni, að frátöldum Nvidiaâ€™s sér- bílstjóri"
 
 msgid "Pesquisar Kernel"
 msgstr "Leita í kjarna"
@@ -324,14 +316,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Sækja um - Vinsamlegast bíddu"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Sláðu inn lykilorðið þitt til að búa til skýrslu sem fjarlægir viðkvæm gögn, til dæmis IP-tölu, eða "
-"hætta við að nota upplýsingarnar frá fyrri skjá."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Sláðu inn lykilorðið þitt til að búa til fullkomnari skýrslu."
+"Það er nú þegar annar nVidia bílstjóri uppsettur, til að setja upp þennan bílstjóri, fjarlægðu "
+"uppsettan bílstjóri fyrst."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>*Uppgötvun felur ekki í sér prentara og skanna</small>"
@@ -380,3 +369,13 @@ msgstr "Ökumaður eða vélbúnaðar"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Þessi pakki býður upp á skrár sem eru samhæfar þessari tölvu."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Sláðu inn lykilorðið þitt til að búa til skýrslu sem fjarlægir viðkvæm gögn, til dæmis IP-tölu, eða "
+"hætta við að nota upplýsingarnar frá fyrri skjá."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Sláðu inn lykilorðið þitt til að búa til fullkomnari skýrslu."
