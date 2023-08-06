@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Informasjon om maskinvare"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatory er allerede i bruk."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "$drivers_path-katalogen finnes ikke og kan ikke opprettes."
+
+msgid "Informações sobre o Hardware"
+msgstr "Informasjon om maskinvare"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager er allerede i bruk."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager er allerede i bruk."
 msgid "Big-Kernel-Manager"
 msgstr "Big-Kernel-Manager"
 
-msgid "Enviando, aguarde..."
-msgstr "Sender, vennligst vent..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Ferdig, start datamaskinen på nytt for å aktivere driverkonfigurasjonen."
 
-msgid "Informações de Hardware"
-msgstr "Informasjon om maskinvare"
+msgid "Driver"
+msgstr "Driver"
 
-msgid "Fechar"
-msgstr "Lukk"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Det oppstod en feil, og driveren kan ikke brukes."
 
-msgid "Enviar para filebin.net"
-msgstr "Send til filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Vis enhetsinformasjon på Linux-maskinvare"
 
-msgid "Visualizar"
-msgstr "Visualisere"
+msgid "Processador"
+msgstr "prosessor"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Rapporten ble lagret i filen:"
+msgid "Placa mãe"
+msgstr "Hovedkort"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Vil du vise filen eller laste den opp til det filebin.net nettstedet, for å ha en URL med "
-"datamaskindataene dine på en enkel måte å dele?"
+msgid "Memória"
+msgstr "minner"
 
-msgid "Remover"
-msgstr "Fjern"
+msgid "Swap Memória Virtual"
+msgstr "Bytte av virtuelt minne"
 
-msgid "Instalar"
-msgstr "Installer"
+msgid "Placa de vídeo"
+msgstr "Skjermkort"
+
+msgid "Áudio"
+msgstr "Lyd"
+
+msgid "Rede"
+msgstr "Netto"
+
+msgid "Conexões de Rede"
+msgstr "Nettverkstilkoblinger"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB-enheter og tilkoblinger"
+
+msgid "Portas PCI"
+msgstr "PCI-porter"
+
+msgid "Bateria"
+msgstr "Trommer"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "lagringsenheter"
+
+msgid "Partições montadas"
+msgstr "Monterte partisjoner"
+
+msgid "Partições desmontadas"
+msgstr "Demonterte partisjoner"
+
+msgid "Dispositivos lógicos"
+msgstr "Logiske enheter"
+
+msgid "Raid"
+msgstr "Raid"
+
+msgid "Sistema"
+msgstr "Systemet"
+
+msgid "Informações de Sistema"
+msgstr "Informasjon om systemet"
+
+msgid "Repositórios"
+msgstr "Repositorier"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "praktikanter"
 
 msgid "Categorias"
 msgstr "Kategorier"
@@ -68,47 +115,17 @@ msgstr "Hoved"
 msgid "Resumo"
 msgstr "Sammendrag"
 
-msgid "Processador"
-msgstr "prosessor"
-
-msgid "Placa de vídeo"
-msgstr "Skjermkort"
-
-msgid "Placa mãe"
-msgstr "Hovedkort"
-
-msgid "Memória"
-msgstr "minner"
-
-msgid "Rede"
-msgstr "Netto"
-
 msgid "Usb"
 msgstr "USB"
 
 msgid "Pci"
 msgstr "PCI"
 
-msgid "Bateria"
-msgstr "Trommer"
-
 msgid "Armazenamento"
 msgstr "Lagring"
 
-msgid "Sistema"
-msgstr "Systemet"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "praktikanter"
-
 msgid "Impressora"
 msgstr "skriver"
-
-msgid "Áudio"
-msgstr "Lyd"
 
 msgid "Mais informações"
 msgstr "Mer informasjon"
@@ -121,6 +138,12 @@ msgstr "Søke"
 
 msgid "Resultado da pesquisa"
 msgstr "Søk resultat"
+
+msgid "Informações de Hardware"
+msgstr "Informasjon om maskinvare"
+
+msgid "Fechar"
+msgstr "Lukk"
 
 msgid "Abrir"
 msgstr "Åpen"
@@ -168,9 +191,6 @@ msgstr "Generer rapport"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Oppretter en fil med informasjon som kan publiseres på internett."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Vis enhetsinformasjon på Linux-maskinvare"
-
 msgid "Categoria"
 msgstr "Kategori"
 
@@ -183,41 +203,33 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Bytte (virtuelt minne)"
+msgid "Enviar para filebin.net"
+msgstr "Send til filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Nettverkstilkoblinger"
+msgid "Visualizar"
+msgstr "Visualisere"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB-enheter og tilkoblinger"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Rapporten ble lagret i filen:"
 
-msgid "Portas PCI"
-msgstr "PCI-porter"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Vil du vise filen eller laste den opp til det filebin.net nettstedet, for å ha en URL med "
+"datamaskindataene dine på en enkel måte å dele?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "lagringsenheter"
+msgid "Enviando, aguarde..."
+msgstr "Sender, vennligst vent..."
 
-msgid "Partições montadas"
-msgstr "Monterte partisjoner"
-
-msgid "Partições desmontadas"
-msgstr "Demonterte partisjoner"
-
-msgid "Dispositivos lógicos"
-msgstr "Logiske enheter"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Informações de Sistema"
-msgstr "Informasjon om systemet"
-
-msgid "Repositórios"
-msgstr "Repositorier"
+msgid "Remover"
+msgstr "Fjern"
 
 msgid "Em uso"
 msgstr "I bruk"
+
+msgid "Instalar"
+msgstr "Installer"
 
 msgid "Este driver é software livre."
 msgstr "Denne driveren er gratis programvare."
@@ -228,24 +240,8 @@ msgstr "Denne driveren er proprietær."
 msgid "Este driver parece compatível com este computador."
 msgstr "Denne driveren virker kompatibel med denne datamaskinen."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Det er allerede en annen nVidia-driver installert, for å installere denne driveren, fjern den "
-"installerte driveren først."
-
 msgid "Desativado"
 msgstr "deaktivert"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Ferdig, start datamaskinen på nytt for å aktivere driverkonfigurasjonen."
-
-msgid "Driver"
-msgstr "Driver"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Det oppstod en feil, og driveren kan ikke brukes."
 
 msgid "Driver detectado:"
 msgstr "Driver oppdaget:"
@@ -265,27 +261,27 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
-"Linux-kjernen er operativsystemkomponenten som styrer alle andre komponenter og lar applikasjoner "
-"fungere. Endring av kjerneversjonen kan gi ny funksjonalitet eller forbedre ytelsen, men det kan "
-"også føre til problemer med noen drivere og applikasjoner. Hvis systemet fungerer bra, har du "
-"kanskje ikke fordelen av å bytte til en annen kjerneversjon. Her er forskjellen mellom "
-"versjoner:<br><br>\n"
-"<b>LTS,</b> motta sikkerhetsoppdateringer lenger. Generelt er den nyeste LTS-versjonen det beste "
+"Linux-kjernen er komponenten i operativsystemet som styrer alle andre komponenter og lar "
+"applikasjoner fungere. Endring av kjerneversjonen kan gi ny funksjonalitet eller forbedre ytelsen, "
+"men det kan også forårsake problemer med enkelte drivere og programmer. Hvis systemet fungerer bra, "
+"er det kanskje ikke fordelaktig å bytte til en annen kjerneversjon. Her er forskjellen mellom "
+"versjonene:<br><br>\n"
+"\t<b>LTS,</b> motta sikkerhetsoppdateringer lenger. Generelt er den nyeste LTS-versjonen det beste "
 "alternativet.<br><br>\n"
-"<b>Xanmod</b> har modifikasjoner for bedre ytelse, men dette kan føre til ustabilitet i "
-"systemet.<br><br>\n"
-"<b>rt</b>, er modifisert for spesifikke bruksområder. Hvis du ikke bruker noen programmer som "
-"trenger dette, er det best å bruke en kjerne uten akronymet 'rt'."
+"\t<b>Xanmod</b>, har modifikasjoner for å oppnå bedre ytelse, men dette kan forårsake ustabiliteter "
+"i systemet.<br><br>\n"
+"\t<b>RT,</b> er modifisert for spesifikk bruk. Hvis du ikke bruker noen programmer som trenger "
+"dette, er det best å bruke en kjerne uten akronymet 'rt'."
 
 msgid "Precisa de ajuda?"
 msgstr "Trenger du hjelp?"
@@ -296,27 +292,20 @@ msgstr "Video drivere"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa inkluderer systemvideodrivere som fungerer sammen med kjernen. Her er forskjellen mellom "
-"versjoner:<br><br>\n"
-"<b>Stabil</b>, anbefales for de fleste situasjoner, balanse mellom nye funksjoner og "
-"stabilitet.<br><br>\n"
-"<b>Tkg</b>, utviklingsversjon, med nyheter, men få tester, kan generere ustabilitet, men kan også "
-"gi mer ytelse til spill.<br><br>\n"
-"<b>Amber</b>, nyttig i gamle datamaskiner generelt, produsert før 2010.<br><br>* VIDEO-drivere fra "
-"AMD, Intel og andre er inkludert i skrivebordet og Linux-kjernen, bortsett fra nvidias proprietære "
-"driver"
+"Mesa inkluderer systemskjermdriverne som fungerer sammen med kjernen. Her er forskjellen mellom "
+"versjonene:<br><br><b>Stabil</b>, anbefales for de fleste situasjoner, balanse mellom nye "
+"funksjoner og stabilitet.<br><br><b>Tkg</b>, utviklingsversjon, med nyheter, men få tester, kan "
+"generere ustabiliteter, men kan også gi mer ytelse til spill.<br><br><b>Amber</b>, nyttig på eldre "
+"datamaskiner, generelt, produsert før 2010.<br><br>* Videodrivere fra AMD, Intel og andre er "
+"inkludert i Mesa og Linux-kjernen, bortsett fra Nvidias proprietære driver"
 
 msgid "Pesquisar Kernel"
 msgstr "Søk i kjernen"
@@ -328,14 +317,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Påføring - Vennligst vent"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Skriv inn passordet ditt for å generere en rapport som fjerner sensitive data, for eksempel "
-"IP-adresse, eller avbryt for å bruke informasjonen fra forrige skjermbilde."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Skriv inn passordet ditt for å generere en mer fullstendig rapport."
+"Det er allerede en annen nVidia-driver installert, for å installere denne driveren, fjern den "
+"installerte driveren først."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>*Deteksjon inkluderer ikke skrivere og skannere</small>"
@@ -384,3 +370,13 @@ msgstr "Driver eller fastvare"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Denne pakken inneholder filer som er kompatible med denne datamaskinen."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Skriv inn passordet ditt for å generere en rapport som fjerner sensitive data, for eksempel "
+"IP-adresse, eller avbryt for å bruke informasjonen fra forrige skjermbilde."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Skriv inn passordet ditt for å generere en mer fullstendig rapport."

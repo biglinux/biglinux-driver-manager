@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "ハードウェア情報"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "Big-Hardware-Relatoryはすでに使用されています。"
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "$drivers_path ディレクトリが存在しないため、作成できませんでした。"
+
+msgid "Informações sobre o Hardware"
+msgstr "ハードウェア情報"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "ビッグカーネルマネージャーはすでに使用されています。"
@@ -28,34 +31,80 @@ msgstr "ビッグカーネルマネージャーはすでに使用されていま
 msgid "Big-Kernel-Manager"
 msgstr "ビッグカーネルマネージャー"
 
-msgid "Enviando, aguarde..."
-msgstr "送信中です、お待ちください..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "完了したら、コンピュータを再起動し、ドライバーの設定を有効にします。"
 
-msgid "Informações de Hardware"
-msgstr "ハードウェア情報"
+msgid "Driver"
+msgstr "ドライバー"
 
-msgid "Fechar"
-msgstr "閉じる"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "エラーが発生したため、ドライバを適用できません。"
 
-msgid "Enviar para filebin.net"
-msgstr "filebin.net に送る"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Linux Hardwareのデバイス情報を表示する"
 
-msgid "Visualizar"
-msgstr "視覚化"
+msgid "Processador"
+msgstr "プロセッサー"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "レポートはファイルに保存されました。"
+msgid "Placa mãe"
+msgstr "マザーボード"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr "ファイルを表示するか、filebin.net サイトにアップロードして、コンピューターデータを含むURLを簡単に共有しますか?"
+msgid "Memória"
+msgstr "メモリ"
 
-msgid "Remover"
-msgstr "削除"
+msgid "Swap Memória Virtual"
+msgstr "仮想メモリスワップ"
 
-msgid "Instalar"
-msgstr "インストール"
+msgid "Placa de vídeo"
+msgstr "ビデオカード"
+
+msgid "Áudio"
+msgstr "オーディオ"
+
+msgid "Rede"
+msgstr "ネットワーク"
+
+msgid "Conexões de Rede"
+msgstr "ネットワーク接続"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USBデバイスと接続"
+
+msgid "Portas PCI"
+msgstr "PCIポート"
+
+msgid "Bateria"
+msgstr "バッテリー"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "ストレージデバイス"
+
+msgid "Partições montadas"
+msgstr "マウントパーティション"
+
+msgid "Partições desmontadas"
+msgstr "解体されたパーティション"
+
+msgid "Dispositivos lógicos"
+msgstr "ロジックデバイス"
+
+msgid "Raid"
+msgstr "レイド"
+
+msgid "Sistema"
+msgstr "システム"
+
+msgid "Informações de Sistema"
+msgstr "システム情報"
+
+msgid "Repositórios"
+msgstr "レポジトリー"
+
+msgid "Bluetooth"
+msgstr "ブルートゥース"
+
+msgid "Temperatura"
+msgstr "温度"
 
 msgid "Categorias"
 msgstr "カテゴリー"
@@ -66,47 +115,17 @@ msgstr "メイン"
 msgid "Resumo"
 msgstr "概要"
 
-msgid "Processador"
-msgstr "プロセッサー"
-
-msgid "Placa de vídeo"
-msgstr "ビデオカード"
-
-msgid "Placa mãe"
-msgstr "マザーボード"
-
-msgid "Memória"
-msgstr "メモリ"
-
-msgid "Rede"
-msgstr "ネットワーク"
-
 msgid "Usb"
 msgstr "ユーエスビー"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "バッテリー"
-
 msgid "Armazenamento"
 msgstr "ストレージ"
 
-msgid "Sistema"
-msgstr "システム"
-
-msgid "Bluetooth"
-msgstr "ブルートゥース"
-
-msgid "Temperatura"
-msgstr "温度"
-
 msgid "Impressora"
 msgstr "プリンター"
-
-msgid "Áudio"
-msgstr "オーディオ"
 
 msgid "Mais informações"
 msgstr "詳細はこちら"
@@ -119,6 +138,12 @@ msgstr "検索"
 
 msgid "Resultado da pesquisa"
 msgstr "検索結果"
+
+msgid "Informações de Hardware"
+msgstr "ハードウェア情報"
+
+msgid "Fechar"
+msgstr "閉じる"
 
 msgid "Abrir"
 msgstr "開ける"
@@ -164,9 +189,6 @@ msgstr "レポート作成"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "インターネット上で公開できる情報を含むファイルを作成します。"
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Linux Hardwareのデバイス情報を表示する"
-
 msgid "Categoria"
 msgstr "カテゴリー"
 
@@ -179,41 +201,31 @@ msgstr "ID"
 msgid "Info"
 msgstr "情報"
 
-msgid "Swap (Memória Virtual)"
-msgstr "スワップ(仮想メモリ)"
+msgid "Enviar para filebin.net"
+msgstr "filebin.net に送る"
 
-msgid "Conexões de Rede"
-msgstr "ネットワーク接続"
+msgid "Visualizar"
+msgstr "視覚化"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USBデバイスと接続"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "レポートはファイルに保存されました。"
 
-msgid "Portas PCI"
-msgstr "PCIポート"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr "ファイルを表示するか、filebin.net サイトにアップロードして、コンピューターデータを含むURLを簡単に共有しますか?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "ストレージデバイス"
+msgid "Enviando, aguarde..."
+msgstr "送信中です、お待ちください..."
 
-msgid "Partições montadas"
-msgstr "マウントパーティション"
-
-msgid "Partições desmontadas"
-msgstr "解体されたパーティション"
-
-msgid "Dispositivos lógicos"
-msgstr "ロジックデバイス"
-
-msgid "Raid"
-msgstr "レイド"
-
-msgid "Informações de Sistema"
-msgstr "システム情報"
-
-msgid "Repositórios"
-msgstr "レポジトリー"
+msgid "Remover"
+msgstr "削除"
 
 msgid "Em uso"
 msgstr "使用中"
+
+msgid "Instalar"
+msgstr "インストール"
 
 msgid "Este driver é software livre."
 msgstr "本ドライバーはフリーソフトです。"
@@ -224,22 +236,8 @@ msgstr "このドライバはプロプライエタリです。"
 msgid "Este driver parece compatível com este computador."
 msgstr "このドライバはこのコンピュータと互換性があるようです。"
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr "すでに別のnVidiaドライバがインストールされていますので、このドライバをインストールするには、まずインストールされているドライバを削除してください。"
-
 msgid "Desativado"
 msgstr "使用不可"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "完了したら、コンピュータを再起動し、ドライバーの設定を有効にします。"
-
-msgid "Driver"
-msgstr "ドライバー"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "エラーが発生したため、ドライバを適用できません。"
 
 msgid "Driver detectado:"
 msgstr "ドライバーを検出しました。"
@@ -259,22 +257,22 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
-"Linuxカーネルは、他のすべてのコンポーネントを制御し、アプリケーションが機能できるようにするオペレーティングシステムコンポーネントです。カーネルバージョンを変更すると、新しい機能やパフォーマンスの"
-"向上が可能になりますが、一部のドライバーやアプリケーションで問題が発生する可能性もあります。システムが正常に動作している場合は、別のカーネルバージョンに切り替える利点がない可能性があります。バージョン"
-"間の違いは次のとおりです。<br><br>\n"
-"<b>LTS</b>、セキュリティ更新プログラムをより長く受け取ります。一般に、最新のLTSバージョンが最適なオプションです。<br><br>\n"
-"<b>Xanmod</b>にはパフォーマンスを向上させるための変更がありますが、これによりシステムが不安定になる可能性があります。<br><br>\n"
-"<b>rt</b>は、特定の用途に合わせて変更されています。これを必要とするプログラムを使用しない場合は、頭字語「rt」のないカーネルを使用するのが最善です。"
+"Linuxカーネルは、他のすべてのコンポーネントを制御し、アプリケーションが機能できるようにするオペレーティングシステムのコンポーネントです。カーネルバージョンを変更すると、新しい機能やパフォーマンス"
+"の向上が可能になりますが、一部のドライバーやアプリケーションで問題が発生する可能性もあります。システムが正常に動作している場合は、別のカーネルバージョンに切り替えるのは有利ではないかもしれません。バー"
+"ジョン間の違いは次のとおりです。<br><br>\n"
+"\t<b>LTS、</b>セキュリティ更新プログラムをより長く受け取ります。一般に、最新のLTSバージョンが最適なオプションです。<br><br>\n"
+"\t<b>Xanmod</b>には、より良いパフォーマンスを得るために変更が加えられていますが、これによりシステムが不安定になる可能性があります。<br><br>\n"
+"\t<b>RT</b>は、特定の用途に合わせて変更されています。これを必要とするプログラムを使用しない場合は、頭字語「rt」のないカーネルを使用するのが最善です。"
 
 msgid "Precisa de ajuda?"
 msgstr "何か助けが必要ですか?"
@@ -285,23 +283,19 @@ msgstr "ビデオ ドライバー"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesaには、カーネルと連携して動作するシステムビデオドライバが含まれています。バージョン間の違いは次のとおりです。<br><br>\n"
-"<b>安定しており</b>、ほとんどの状況で推奨され、新機能と安定性のバランスが取れています。<br><br>\n"
-"<b>Tkg</b>、開発バージョンは、目新しさはあるがテストが少ないため、不安定になる可能性がありますが、ゲームのパフォーマンスを向上させることもできます。<br><br>\n"
-"<b>琥珀色は</b>、2010年以前に製造された、一般的に古いコンピューターで役立ちます。<br><br>* "
-"AMD、Intelなどのビデオドライバは、nvidiaのプロプライエタリドライバを除き、デスクトップとLinuxカーネルに含まれています。"
+"Mesaには、カーネルと連携して動作するシステムビデオドライバーが含まれています。バージョン間の違いは次のとおりです。<br><br><b>安定しており</"
+"b>、ほとんどの状況で推奨され、新機能と安定性のバランスが取れています。<br><br><b>Tkg</"
+"b>、開発バージョンは、ニュースはあるがテストはほとんどないため、不安定になる可能性がありますが、ゲームのパフォーマンスを向上させることもできます。<br><br><b>琥珀色</"
+"b>、一般的に古いコンピューターで有用で、2010年より前に製造されています。<br><br>* "
+"AMD、Intel、およびその他のビデオドライバは、Nvidiaのプロプライエタリドライバを除き、MesaおよびLinuxカーネルに含まれています。"
 
 msgid "Pesquisar Kernel"
 msgstr "検索カーネル"
@@ -313,12 +307,9 @@ msgid "Aplicando - Aguarde"
 msgstr "応募中 - しばらくお待ちください"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr "IPアドレスなどの機密データを削除してレポートを作成する場合はパスワードを入力し、前の画面の情報を使用する場合はキャンセルしてください。"
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "パスワードを入力すると、より詳細なレポートが作成されます。"
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
+msgstr "すでに別のnVidiaドライバがインストールされていますので、このドライバをインストールするには、まずインストールされているドライバを削除してください。"
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* プリンター、スキャナーは検出対象に含まれません</small>"
@@ -367,3 +358,11 @@ msgstr "ドライバまたはファームウェア"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "このパッケージは、このコンピューターに対応したファイルを提供します。"
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr "IPアドレスなどの機密データを削除してレポートを作成する場合はパスワードを入力し、前の画面の情報を使用する場合はキャンセルしてください。"
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "パスワードを入力すると、より詳細なレポートが作成されます。"

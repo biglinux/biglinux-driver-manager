@@ -16,11 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Informações sobre o Hardware"
-msgstr "Hardware-informatie"
-
 msgid "O Big-Hardware-Relatory já está em uso."
 msgstr "De Big-Hardware-Relatory is al in gebruik."
+
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "De map $drivers_path bestaat niet en kan niet worden gemaakt."
+
+msgid "Informações sobre o Hardware"
+msgstr "Hardware-informatie"
 
 msgid "O Big-Kernel-Manager já está em uso."
 msgstr "Big-Kernel-Manager is al in gebruik."
@@ -28,36 +31,80 @@ msgstr "Big-Kernel-Manager is al in gebruik."
 msgid "Big-Kernel-Manager"
 msgstr "Big-Kernel-Manager"
 
-msgid "Enviando, aguarde..."
-msgstr "Zenden, even geduld..."
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Zodra u klaar bent, herstart u uw computer om de driverconfiguratie te activeren."
 
-msgid "Informações de Hardware"
-msgstr "Hardware-informatie"
+msgid "Driver"
+msgstr "Bestuurder"
 
-msgid "Fechar"
-msgstr "Sluiten"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Er is een fout opgetreden en het stuurprogramma kan niet worden toegepast."
 
-msgid "Enviar para filebin.net"
-msgstr "Verzenden naar filebin.net"
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Apparaatinformatie bekijken op Linux Hardware"
 
-msgid "Visualizar"
-msgstr "Visualiseren"
+msgid "Processador"
+msgstr "Processor"
 
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Het rapport is opgeslagen in het bestand:"
+msgid "Placa mãe"
+msgstr "Moederbord"
 
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Wilt u het bestand bekijken of uploaden naar de filebin.net site, om een URL met uw "
-"computergegevens op een eenvoudige manier te delen?"
+msgid "Memória"
+msgstr "Geheugen"
 
-msgid "Remover"
-msgstr "Verwijder"
+msgid "Swap Memória Virtual"
+msgstr "Virtuele geheugenwissel"
 
-msgid "Instalar"
-msgstr "Installeer"
+msgid "Placa de vídeo"
+msgstr "Videokaart"
+
+msgid "Áudio"
+msgstr "Audio"
+
+msgid "Rede"
+msgstr "Netwerk"
+
+msgid "Conexões de Rede"
+msgstr "Netwerkverbindingen"
+
+msgid "Dispositivos e conexões USB"
+msgstr "USB-apparaten en aansluitingen"
+
+msgid "Portas PCI"
+msgstr "PCI-poorten"
+
+msgid "Bateria"
+msgstr "Batterij"
+
+msgid "Dispositivos de Armazenamento"
+msgstr "Opslagapparaten"
+
+msgid "Partições montadas"
+msgstr "Gemonteerde scheidingswanden"
+
+msgid "Partições desmontadas"
+msgstr "Ontmantelde scheidingswanden"
+
+msgid "Dispositivos lógicos"
+msgstr "Logische apparaten"
+
+msgid "Raid"
+msgstr "Overval"
+
+msgid "Sistema"
+msgstr "Systeem"
+
+msgid "Informações de Sistema"
+msgstr "Systeeminformatie"
+
+msgid "Repositórios"
+msgstr "Repositories"
+
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+msgid "Temperatura"
+msgstr "Temperatuur"
 
 msgid "Categorias"
 msgstr "Categorieën"
@@ -68,47 +115,17 @@ msgstr "Hoofd"
 msgid "Resumo"
 msgstr "Samenvatting"
 
-msgid "Processador"
-msgstr "Processor"
-
-msgid "Placa de vídeo"
-msgstr "Videokaart"
-
-msgid "Placa mãe"
-msgstr "Moederbord"
-
-msgid "Memória"
-msgstr "Geheugen"
-
-msgid "Rede"
-msgstr "Netwerk"
-
 msgid "Usb"
 msgstr "Usb"
 
 msgid "Pci"
 msgstr "Pci"
 
-msgid "Bateria"
-msgstr "Batterij"
-
 msgid "Armazenamento"
 msgstr "Opslag"
 
-msgid "Sistema"
-msgstr "Systeem"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-msgid "Temperatura"
-msgstr "Temperatuur"
-
 msgid "Impressora"
 msgstr "Printer"
-
-msgid "Áudio"
-msgstr "Audio"
 
 msgid "Mais informações"
 msgstr "Meer informatie"
@@ -121,6 +138,12 @@ msgstr "Zoeken"
 
 msgid "Resultado da pesquisa"
 msgstr "Zoekresultaat"
+
+msgid "Informações de Hardware"
+msgstr "Hardware-informatie"
+
+msgid "Fechar"
+msgstr "Sluiten"
 
 msgid "Abrir"
 msgstr "Open"
@@ -168,9 +191,6 @@ msgstr "Genereer verslag"
 msgid "Cria um arquivo com informações que pode ser publicado na internet."
 msgstr "Maakt een bestand met informatie die op het internet gepubliceerd kan worden."
 
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Apparaatinformatie bekijken op Linux Hardware"
-
 msgid "Categoria"
 msgstr "Categorie"
 
@@ -183,41 +203,33 @@ msgstr "ID"
 msgid "Info"
 msgstr "Info"
 
-msgid "Swap (Memória Virtual)"
-msgstr "Swap (virtueel geheugen)"
+msgid "Enviar para filebin.net"
+msgstr "Verzenden naar filebin.net"
 
-msgid "Conexões de Rede"
-msgstr "Netwerkverbindingen"
+msgid "Visualizar"
+msgstr "Visualiseren"
 
-msgid "Dispositivos e conexões USB"
-msgstr "USB-apparaten en aansluitingen"
+msgid "O relatório foi salvo no arquivo:"
+msgstr "Het rapport is opgeslagen in het bestand:"
 
-msgid "Portas PCI"
-msgstr "PCI-poorten"
+msgid ""
+"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
+"computador de forma fácil de compartilhar?"
+msgstr ""
+"Wilt u het bestand bekijken of uploaden naar de filebin.net site, om een URL met uw "
+"computergegevens op een eenvoudige manier te delen?"
 
-msgid "Dispositivos de Armazenamento"
-msgstr "Opslagapparaten"
+msgid "Enviando, aguarde..."
+msgstr "Zenden, even geduld..."
 
-msgid "Partições montadas"
-msgstr "Gemonteerde scheidingswanden"
-
-msgid "Partições desmontadas"
-msgstr "Ontmantelde scheidingswanden"
-
-msgid "Dispositivos lógicos"
-msgstr "Logische apparaten"
-
-msgid "Raid"
-msgstr "Overval"
-
-msgid "Informações de Sistema"
-msgstr "Systeeminformatie"
-
-msgid "Repositórios"
-msgstr "Repositories"
+msgid "Remover"
+msgstr "Verwijder"
 
 msgid "Em uso"
 msgstr "In gebruik"
+
+msgid "Instalar"
+msgstr "Installeer"
 
 msgid "Este driver é software livre."
 msgstr "Dit stuurprogramma is gratis software."
@@ -228,24 +240,8 @@ msgstr "Dit stuurprogramma is gepatenteerd."
 msgid "Este driver parece compatível com este computador."
 msgstr "Dit stuurprogramma lijkt compatibel te zijn met deze computer."
 
-msgid ""
-"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
-"instalado."
-msgstr ""
-"Er is al een ander nVidia stuurprogramma geïnstalleerd, om dit stuurprogramma te installeren moet u "
-"eerst het geïnstalleerde stuurprogramma verwijderen."
-
 msgid "Desativado"
 msgstr "Uitgeschakeld"
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Zodra u klaar bent, herstart u uw computer om de driverconfiguratie te activeren."
-
-msgid "Driver"
-msgstr "Bestuurder"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Er is een fout opgetreden en het stuurprogramma kan niet worden toegepast."
 
 msgid "Driver detectado:"
 msgstr "Gedetecteerd stuurprogramma:"
@@ -265,27 +261,27 @@ msgid ""
 "ou melhorar o desempenho, mas também pode causar problemas com alguns drivers e aplicativos. Se o "
 "sistema está funcionando bem, pode não ter vantagem mudar para outra versão do kernel. Veja a "
 "diferença entre as versões:\n"
-"<br><br>\n"
-"<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente é "
-"a melhor opção.\n"
-"<br><br>\n"
-"<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
+"\t<br><br>\n"
+"\t<b>LTS</b>, recebem atualizações de segurança por mais tempo. Em geral, a versão LTS mais recente "
+"é a melhor opção.\n"
+"\t<br><br>\n"
+"\t<b>Xanmod</b>, possui modificações para obter melhor desempenho, mas isso pode causar "
 "instabilidades no sistema.\n"
-"<br><br>\n"
-"<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
+"\t<br><br>\n"
+"\t<b>RT</b>, são modificadas para usos específicos. Se você não usa nenhum programa que precise "
 "disso, é melhor usar um kernel sem a sigla 'rt'."
 msgstr ""
 "De Linux-kernel is het onderdeel van het besturingssysteem dat alle andere componenten bestuurt en "
-"toepassingen laat werken. Het wijzigen van de kernelversie kan nieuwe functionaliteit bieden of de "
-"prestaties verbeteren, maar het kan ook problemen veroorzaken met sommige stuurprogramma's en "
-"toepassingen. Als het systeem goed werkt, hebt u mogelijk niet het voordeel om over te schakelen "
-"naar een andere kernelversie. Dit is het verschil tussen versies:<br><br>\n"
-"<b>LTS</b>, ontvang beveiligingsupdates langer. Over het algemeen is de nieuwste LTS-versie de "
-"beste optie.<br><br>\n"
-"<b>Xanmod</b> heeft wijzigingen voor betere prestaties, maar dit kan systeeminstabiliteit "
-"veroorzaken.<br><br>\n"
-"<b>rt</b>, worden aangepast voor specifieke toepassingen. Als je geen programma's gebruikt die dit "
-"nodig hebben, kun je het beste een kernel gebruiken zonder het acroniem 'rt'."
+"toepassingen laat functioneren. Het wijzigen van de kernelversie kan nieuwe functionaliteit brengen "
+"of de prestaties verbeteren, maar het kan ook problemen veroorzaken met sommige stuurprogramma's en "
+"toepassingen. Als het systeem goed werkt, is het misschien niet voordelig om over te schakelen naar "
+"een andere kernelversie. Dit is het verschil tussen de versies:<br><br>\n"
+"\t<b>LTS,</b> ontvang beveiligingsupdates voor langer. Over het algemeen is de nieuwste LTS-versie "
+"de beste optie.<br><br>\n"
+"\t<b>Xanmod</b>, heeft aanpassingen om betere prestaties te verkrijgen, maar dit kan "
+"instabiliteiten in het systeem veroorzaken.<br><br>\n"
+"\t<b>RT,</b> zijn aangepast voor specifieke toepassingen. Als u geen programma's gebruikt die dit "
+"nodig hebben, kunt u het beste een kernel gebruiken zonder het acroniem 'rt'."
 
 msgid "Precisa de ajuda?"
 msgstr "Heb je hulp nodig?"
@@ -296,27 +292,21 @@ msgstr "Videostuurprogramma's"
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
-"<br><br>\n"
-"<b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
+"<br><br><b>Stable</b>, recomendada para a maioria das situações, equilíbrio entre novos recursos e "
 "estabilidade.\n"
-"<br><br>\n"
-"<b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar instabilidades, "
-"mas também pode trazer mais desempenho para jogos.\n"
-"<br><br>\n"
-"<b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
-"<br><br>\n"
-"* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto o driver "
-"proprietário da Nvidia"
+"<br><br><b>Tkg</b>, versão de desenvolvimento, com novidades mas poucos testes, pode gerar "
+"instabilidades, mas também pode trazer mais desempenho para jogos.\n"
+"<br><br><b>Amber</b>, útil em computadores antigos, em geral, fabricados antes de 2010.\n"
+"<br><br>* Drivers de vídeo da AMD, Intel e outros estão inclusos no Mesa e no kernel Linux, exceto "
+"o driver proprietário da Nvidia"
 msgstr ""
-"Mesa bevat systeemvideostuurprogramma's die samenwerken met de kernel. Dit is het verschil tussen "
-"versies:<br><br>\n"
-"<b>Stabiel</b>, aanbevolen voor de meeste situaties, balans tussen nieuwe functies en "
-"stabiliteit.<br><br>\n"
-"<b>Tkg</b>, ontwikkelingsversie, met nieuwigheden maar weinig tests, kan instabiliteiten genereren, "
-"maar kan ook meer prestaties aan games toevoegen.<br><br>\n"
-"<b>Amber</b>, handig in oude computers in het algemeen, vervaardigd vóór 2010.<br><br>* "
-"VIDEO-stuurprogramma's van AMD, Intel en anderen zijn opgenomen in de desktop en de Linux-kernel, "
-"behalve de eigen driver van NVIDIA"
+"Mesa bevat de systeemvideostuurprogramma's die samenwerken met de kernel. Dit is het verschil "
+"tussen de versies:<br><br><b>Stabiel</b>, aanbevolen voor de meeste situaties, balans tussen nieuwe "
+"functies en stabiliteit.<br><br><b>Tkg</b>, ontwikkelingsversie, met nieuws maar weinig tests, kan "
+"instabiliteiten genereren, maar kan ook meer prestaties in games brengen.<br><br><b>Amber</b>, "
+"handig op oudere computers, in het algemeen, vervaardigd vóór 2010.<br><br>* Videostuurprogramma's "
+"van AMD, Intel en anderen zijn opgenomen in Mesa en de Linux-kernel, behalve nvidia's eigen "
+"stuurprogramma"
 
 msgid "Pesquisar Kernel"
 msgstr "Zoek kernel"
@@ -328,14 +318,11 @@ msgid "Aplicando - Aguarde"
 msgstr "Aanvragen - Even geduld a.u.b"
 
 msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
+"Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
+"instalado."
 msgstr ""
-"Voer uw wachtwoord in om een rapport te genereren waarin gevoelige gegevens, b.v. IP-adres, worden "
-"verwijderd, of annuleer om de informatie van het vorige scherm te gebruiken."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Voer uw wachtwoord in om een vollediger rapport te genereren."
+"Er is al een ander nVidia stuurprogramma geïnstalleerd, om dit stuurprogramma te installeren moet u "
+"eerst het geïnstalleerde stuurprogramma verwijderen."
 
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Detectie omvat geen printers en scanners</small>"
@@ -386,3 +373,13 @@ msgstr "Stuurprogramma of firmware"
 
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Dit pakket bevat bestanden die compatibel zijn met deze computer."
+
+msgid ""
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
+msgstr ""
+"Voer uw wachtwoord in om een rapport te genereren waarin gevoelige gegevens, b.v. IP-adres, worden "
+"verwijderd, of annuleer om de informatie van het vorige scherm te gebruiken."
+
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Voer uw wachtwoord in om een vollediger rapport te genereren."
