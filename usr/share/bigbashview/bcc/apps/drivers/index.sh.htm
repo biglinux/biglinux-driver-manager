@@ -5,7 +5,7 @@
 #	usr/share/bigbashview/bcc/apps/drivers/index.sh.htm
 #  Description: Detect firmware needed
 #  Created: 2022/02/28
-#  Altered: 2023/07/21
+#  Altered: 2023/07/26
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
@@ -32,9 +32,9 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-readonly APP="${0##*/}"
-readonly _VERSION_="1.0.0-20230722"
-readonly LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+APP="${0##*/}"
+_VERSION_="1.0.0-20230726"
+LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
 function sh_config {
@@ -106,7 +106,7 @@ function sh_init {
 		ACTION="remove_pkg_pamac" DRIVER="$remove_pkg_pamac" WINDOW_ID="$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" ./installpkg.sh
 	fi
 
-cat <<EOF
+cat <<-EOF
 	<html>
 	<head>
 	  <meta charset="UTF-8">
@@ -195,7 +195,7 @@ EOF
 	# Loading
 	echo '<div id=box_progress_config>'
 	echo '<div id=box_progress_config_bar>'
-cat <<EOF
+cat <<-EOF
 	<svg viewBox="0 0 576 512" style="width: 17px; margin-right: 3px; margin-top: 2px;"><path fill="currentColor" d="M480 80C480 53.49 458.5 32 432 32h-288C117.5 32 96 53.49 96 80V384h384V80zM378.9 166.8l-88 112c-4.031 5.156-10 8.438-16.53 9.062C273.6 287.1 272.7 287.1 271.1 287.1c-5.719 0-11.21-2.019-15.58-5.769l-56-48C190.3 225.6 189.2 210.4 197.8 200.4c8.656-10.06 23.81-11.19 33.84-2.594l36.97 31.69l72.53-92.28c8.188-10.41 23.31-12.22 33.69-4.062C385.3 141.3 387.1 156.4 378.9 166.8zM528 288H512v112c0 8.836-7.164 16-16 16h-416C71.16 416 64 408.8 64 400V288H48C21.49 288 0 309.5 0 336v96C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48v-96C576 309.5 554.5 288 528 288z"/></svg>
 EOF
 	echo $"Aplicando - Aguarde"
@@ -205,7 +205,7 @@ EOF
 	echo '<div id=box_progress_config_simple></div>'
 	sh_getbgcolor
 
-cat <<EOF
+cat <<-EOF
 	<div class="dark-light">
 	  <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
 	    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
@@ -224,7 +224,7 @@ EOF
 	else
 		echo '<div class="wrapper">'
 	fi
-cat <<EOF
+cat <<-EOF
 	    <div class="left-side">
 	      <div class="side-wrapper">
 
@@ -442,7 +442,7 @@ SHOW_MODULE() {
 		fi
 	fi
 
-cat <<EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_module_$PKG.html"
+cat <<-EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_module_$PKG.html"
               <div class="app-card $CATEGORY">
                 <span class="icon-cat icon-category-$CATEGORY" style="display:table-cell;"></span><span class="titlespan" style="display:table-cell;">
                   $MODULE
@@ -651,7 +651,7 @@ SHOW_FIRMWARE() {
 		BUTTON_COLOR=""
 	fi
 
-	cat <<EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_firmware_$PKG.html"
+	cat <<-EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_firmware_$PKG.html"
               <div class="app-card $CATEGORY">
                 <span class="icon-cat icon-category-$CATEGORY" style="display:table-cell;"></span><span class="titlespan" style="display:table-cell;">
                   $PKG
@@ -719,7 +719,7 @@ cat $HOME/.config/bigcontrolcenter-drivers/cache_module_*.html
 cat $HOME/.config/bigcontrolcenter-drivers/cache_firmware_*.html
 cat $HOME/.config/bigcontrolcenter-drivers/cache_without_verify_installed_*.html
 cat $HOME/.config/bigcontrolcenter-drivers/cache_without_verify_not_installed_*.html
-cat <<EOF
+cat <<-EOF
 
               </div>
             </div>

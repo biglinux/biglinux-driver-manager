@@ -1,25 +1,70 @@
 #!/usr/bin/env bash
+#shellcheck disable=SC2155,SC2034
+#shellcheck source=/dev/null
+
+#  /usr/bin/big-hardware-info
+#  Description: Control Center to help usage of BigLinux
 #
-#	BigLinux Store
-#	www.biglinux.com.br
-#	By Bruno Gonçalves
-#	07/09/2020
-#	License: GPL v2 or greater
+#  Created: 2020/09/07
+#  Altered: 2023/07/26
+#
+#  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
+#                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
+#                2022-2023, Rafael Ruscher <rruscher@gmail.com>
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+#  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+#  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+#  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+#  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+#  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Translation
-export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=biglinux-driver-manager
-declare TITLE=$"Informações sobre o Hardware"
-declare drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
+APP="${0##*/}"
+_VERSION_="1.0.0-20230726"
+LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+[[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
-if [[ ! -d "$drivers_path" ]]; then
-   if ! mkdir "$drivers_path"; then
-      kdialog --passivepopup $"O diretório $drivers_path não existe e não foi possível criar."
-      exit
-   fi
-fi
-cd "$drivers_path"
-(QT_QPA_PLATFORM=xcb \
-	SDL_VIDEODRIVER=x11 \
-	WINIT_UNIX_BACKEND=x11 \
-	GDK_BACKEND=x11 bash bigbashview -n "$TITLE" -s 1020x620 loading.sh.htm?toshow=show -i hardware-info.svg)
+function sh_config {
+	#Translation
+	export TEXTDOMAINDIR="/usr/share/locale"
+	export TEXTDOMAIN=biglinux-driver-manager
+	declare -g TITLE=$"Informações sobre o Hardware"
+	declare -g drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
+}
+
+function sh_init {
+	if [[ ! -d "$drivers_path" ]]; then
+		if ! mkdir -p "$drivers_path"; then
+			kdialog --passivepopup $"O diretório $drivers_path não existe e não foi possível criar."
+			exit 1
+		fi
+	fi
+
+	cd "$drivers_path" || exit 1
+
+	# env para definir as variáveis de ambiente apenas para a execução do comando
+	# eliminado a necessidade de um subshell e definindo as variáveis de ambiente somente para a execução do comando específico
+	env QT_QPA_PLATFORM=xcb \
+		SDL_VIDEODRIVER=x11 \
+		WINIT_UNIX_BACKEND=x11 \
+		GDK_BACKEND=x11 \
+		bash bigbashview -n "$TITLE" -s 1020x620 loading.sh.htm?toshow=show -i hardware-info.svg
+}
+
+#sh_debug
+sh_config
+sh_init

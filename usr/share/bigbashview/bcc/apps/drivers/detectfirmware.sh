@@ -5,7 +5,7 @@
 #  usr/share/bigbashview/bcc/apps/drivers/detectfirmware.sh
 #	Description: Detect firmware needed
 #  Created: 2022/03/01
-#  Altered: 2023/07/21
+#  Altered: 2023/07/26
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
@@ -32,9 +32,9 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-readonly APP="${0##*/}"
-readonly _VERSION_="1.0.0-20230722"
-readonly LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
+APP="${0##*/}"
+_VERSION_="1.0.0-20230726"
+LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
 function sh_config {
@@ -68,7 +68,7 @@ function SHOW_DRIVER {
 	fi
 	VIDEO_DRIVER_NAME_CLEAN="${VIDEO_DRIVER_NAME//-/ }"
 
-cat <<EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NAME.html"
+cat <<-EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NAME.html"
 	<div class="app-card $CATEGORY">
 	<span>
 	$VIDEO_DRIVER_NAME_CLEAN
@@ -82,14 +82,14 @@ cat <<EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NA
 EOF
 
 	if [ "$DISABLE_BUTTON" = "false" ]; then
-cat <<EOF >> "$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NAME.html"
+cat <<-EOF >> "$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NAME.html"
 		<div class="app-card-buttons">
 		<a class="content-button status-button" onclick="disableBodyConfig();" href="index.sh.htm?${INSTALL_OR_REMOVE_VIDEO}=${VIDEO_DRIVER_NAME}">$DRIVER_ENABLE_OR_DISABLE</a>
 		</div>
 		</div>
 EOF
 	else
-cat <<EOF >> "$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NAME.html"
+cat <<-EOF >> "$HOME/.config/bigcontrolcenter-drivers/cache_video_$VIDEO_DRIVER_NAME.html"
 		<div class="app-card-buttons">
 		$DRIVER_ENABLE_OR_DISABLE
 		</div>
@@ -112,7 +112,7 @@ function SHOW_MODULE {
 	PKG_INSTALLED_OR_NOT=$([ "$PKG_INSTALLED" = "true" ] && echo $"Remover" || echo $"Instalar")
 	INSTALL_OR_REMOVE_PKG=$([ "$PKG_INSTALLED" = "true" ] && echo "remove_video_now" || echo "install_video_now")
 
-cat <<EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_module_$PKG.html"
+cat <<-EOF >>"$HOME/.config/bigcontrolcenter-drivers/cache_module_$PKG.html"
 	<div class="app-card $CATEGORY">
 	<span><svg viewBox="0 0 512 512">
 	<path fill="currentColor" d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z" />
