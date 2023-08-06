@@ -4,7 +4,7 @@
 
 #  inxi.sh
 #  Created: 0000/00/00
-#  Altered: 2023/07/20
+#  Altered: 2023/08/05
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                0000-2023, bigbruno Bruno Gonçalves <bruno@biglinux.com.br>
@@ -31,7 +31,9 @@
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 APP="${0##*/}"
-_VERSION_="1.0.0-20230722"
+_VERSION_="1.0.0-20230805"
+BOOTLOG="/tmp/bigcontrolcenter-$(date +"%d%m%Y").log"
+LOGGER='/dev/tty8'
 LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
@@ -81,7 +83,7 @@ function SHOW_HARDINFO {
 
 	# Comando inxi e formatação HTML
 	parameter_inxi=$(sh_get_parameters)
-	$pkexec inxi "$parameter_inxi" "-c2" "--$category_inxi" -y 100 --indents 5 | # Executa o comando 'inxi' com alguns parâmetros
+	$pkexec inxi "$parameter_inxi" "-c2" "--$category_inxi" -y 100 --indents 5 |   # Executa o comando 'inxi' com alguns parâmetros
 		iconv -t UTF-8 2>- |                                                        # Converte a saída para codificação UTF-8
 		grep '     ' |                                                              # Filtra as linhas que contêm seis espaços (delimitador/formato)
 		sed 's|          ||g' |                                                     # Remove os seis espaços iniciais de cada linha
@@ -134,79 +136,7 @@ function sh_get_parameters {
 	fi
 }
 
-#function sh_set_hardinfo {
-#	#Clean CPU
-#	if test -e '/tmp/hardwareinfo-inxi-cpu.html'; then
-#		grep -E -v 'Vulnerabilities:|Type:' /tmp/hardwareinfo-inxi-cpu.html > /tmp/hardwareinfo-inxi-cpu2.html
-#		mv -f /tmp/hardwareinfo-inxi-cpu2.html /tmp/hardwareinfo-inxi-cpu.html
-#	fi
-#
-#	# Save dmesg
-#	dmesg -t --level=alert,crit,err,warn >/tmp/hardwareinfo-dmesg.html
-#
-#	# Inicializar o array "a" com os dados em linhas separadas, com um $ na frente de cada string
-#	a=($"Processador"
-#	   $"Placa mãe"
-#	   $"Memória"
-#	   $"Swap Memória Virtual"
-#	   $"Placa de vídeo"
-#	   $"Áudio"
-#	   $"Rede"
-#	   $"Conexões de Rede"
-#	   $"Dispositivos e conexões USB"
-#	   $"Portas PCI"
-#	   $"Bateria"
-#	   $"Dispositivos de Armazenamento"
-#	   $"Partições montadas"
-#	   $"Partições desmontadas"
-#	   $"Dispositivos lógicos"
-#	   $"Raid"
-#	   $"Sistema"
-#	   $"Informações de Sistema"
-#	   $"Repositórios"
-#	   $"Bluetooth"
-#	   $"Temperatura"
-#	)
-#
-#	# Inicializar o array associativo "AHardInfo" com os dados do array "a"
-#	AHardInfo+=(['cpu']="cpu|${a[0]}|cpu|")
-#	AHardInfo+=(['machine']="machine|${a[1]}|machine|")
-#	AHardInfo+=(['memory']="memory|${a[2]}|memory|")
-#	AHardInfo+=(['swap']="memory|${a[3]}|swap|")
-#	AHardInfo+=(['graphics']="gpu|${a[4]}|graphics|pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY")
-#	AHardInfo+=(['audio']="audio|${a[5]}|audio|")
-#	AHardInfo+=(['network-advanced']="Network|${a[6]}|network|")
-#	AHardInfo+=(['ip']="network|${a[7]}|ip|")
-#	AHardInfo+=(['usb']="usb|${a[8]}|usb|")
-#	AHardInfo+=(['slots']="pci|${a[9]}|usb|")
-#	AHardInfo+=(['battery']="battery|${a[10]}|battery|")
-#	AHardInfo+=(['disk-full']="disk|${a[11]}|disk|")
-#	AHardInfo+=(['partitions-full']="disk|${a[12]}|disk|")
-#	AHardInfo+=(['unmounted']="disk|${a[13]}|disk|pkexec -u $BIGUSER")
-#	AHardInfo+=(['logical']="disk|${a[14]}|disk|")
-#	AHardInfo+=(['raid']="disk|${a[15]}|disk|")
-#	AHardInfo+=(['system']="system|${a[16]}|disk|")
-#	AHardInfo+=(['info']="system|${a[17]}|disk|")
-#	AHardInfo+=(['repos']="system|${a[18]}|disk|")
-#	AHardInfo+=(['bluetooth']="bluetooth|${a[19]}|disk|")
-#	AHardInfo+=(['sensors']="sensors|${a[20]}|disk|pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY")
-#}
-#
-#function sh_process_hardinfo {
-#   local category_inxi
-#   local category
-#   local name
-#   local icon
-#   local pkexec
-#
-#	sh_set_hardinfo
-#   for category_inxi in "${!AHardInfo[@]}"; do
-#		IFS='|' read -r category name icon pkexec <<< "${AHardInfo[$category_inxi]}"
-#      SHOW_HARDINFO "$category_inxi" "$category" "$name" "$icon" "$pkexec"
-#   done
-#}
-
-function sh_process_hardinfo() {
+function sh_process_hardinfo {
 	#Clean CPU
 	if test -e '/tmp/hardwareinfo-inxi-cpu.html'; then
 		grep -E -v 'Vulnerabilities:|Type:' /tmp/hardwareinfo-inxi-cpu.html >/tmp/hardwareinfo-inxi-cpu2.html
@@ -216,27 +146,27 @@ function sh_process_hardinfo() {
 	# Save dmesg
 	dmesg -t --level=alert,crit,err,warn >/tmp/hardwareinfo-dmesg.html
 	SHOW_HARDINFO & # the first call shows the messed up information, then it is blank to show nothing
-	SHOW_HARDINFO "cpu" "cpu" $"Processador" "cpu" &
-	SHOW_HARDINFO "machine" "machine" $"Placa mãe" "machine" &
-	SHOW_HARDINFO "memory" "memory" $"Memória" "memory" &
-	SHOW_HARDINFO "swap" "memory" $"Swap Memória Virtual" "swap" &
-	SHOW_HARDINFO "graphics" "gpu" $"Placa de vídeo" "graphics" "pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY" &
-	SHOW_HARDINFO "audio" "audio" $"Áudio" "audio" &
-	SHOW_HARDINFO "network-advanced" "Network" $"Rede" "network" &
-	SHOW_HARDINFO "ip" "network" $"Conexões de Rede" "ip" &
-	SHOW_HARDINFO "usb" "usb" $"Dispositivos e conexões USB" "usb" &
-	SHOW_HARDINFO "slots" "pci" $"Portas PCI" "usb" &
-	SHOW_HARDINFO "battery" "battery" $"Bateria" "battery" &
-	SHOW_HARDINFO "disk-full" "disk" $"Dispositivos de Armazenamento" "disk" &
-	SHOW_HARDINFO "partitions-full" "disk" $"Partições montadas" "disk" &
-	SHOW_HARDINFO "unmounted" "disk" $"Partições desmontadas" "disk" "pkexec -u $BIGUSER" &
-	SHOW_HARDINFO "logical" "disk" $"Dispositivos lógicos" "disk" &
-	SHOW_HARDINFO "raid" "disk" $"Raid" "disk" &
-	SHOW_HARDINFO "system" "system" $"Sistema" "disk" &
-	SHOW_HARDINFO "info" "system" $"Informações de Sistema" "disk" &
-	SHOW_HARDINFO "repos" "system" $"Repositórios" "disk" &
-	SHOW_HARDINFO "bluetooth" "bluetooth" $"Bluetooth" "disk" &
-	SHOW_HARDINFO "sensors" "sensors" $"Temperatura" "disk" "pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY" &
+	SHOW_HARDINFO "cpu"              "cpu"       $"Processador"                   "cpu" &
+	SHOW_HARDINFO "machine"          "machine"   $"Placa mãe"                     "machine" &
+	SHOW_HARDINFO "memory"           "memory"    $"Memória"                       "memory" &
+	SHOW_HARDINFO "swap"             "memory"    $"Swap Memória Virtual"          "swap" &
+	SHOW_HARDINFO "graphics"         "gpu"       $"Placa de vídeo"                "graphics" "pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY" &
+	SHOW_HARDINFO "audio"            "audio"     $"Áudio"                         "audio" &
+	SHOW_HARDINFO "network-advanced" "Network"   $"Rede"                          "network" &
+	SHOW_HARDINFO "ip"               "network"   $"Conexões de Rede"              "ip" &
+	SHOW_HARDINFO "usb"              "usb"       $"Dispositivos e conexões USB"   "usb" &
+	SHOW_HARDINFO "slots"            "pci"       $"Portas PCI"                    "usb" &
+	SHOW_HARDINFO "battery"          "battery"   $"Bateria"                       "battery" &
+	SHOW_HARDINFO "disk-full"        "disk"      $"Dispositivos de Armazenamento" "disk" &
+	SHOW_HARDINFO "partitions-full"  "disk"      $"Partições montadas"            "disk" &
+	SHOW_HARDINFO "unmounted"        "disk"      $"Partições desmontadas"         "disk" "pkexec -u $BIGUSER" &
+	SHOW_HARDINFO "logical"          "disk"      $"Dispositivos lógicos"          "disk" &
+	SHOW_HARDINFO "raid"             "disk"      $"Raid"                          "disk" &
+	SHOW_HARDINFO "system"           "system"    $"Sistema"                       "disk" &
+	SHOW_HARDINFO "info"             "system"    $"Informações de Sistema"        "disk" &
+	SHOW_HARDINFO "repos"            "system"    $"Repositórios"                  "disk" &
+	SHOW_HARDINFO "bluetooth"        "bluetooth" $"Bluetooth"                     "disk" &
+	SHOW_HARDINFO "sensors"          "sensors"   $"Temperatura"                   "disk" "pkexec -u $BIGUSER env DISPLAY=$BIGDISPLAY XAUTHORITY=$BIGXAUTHORITY" &
 	wait
 }
 
