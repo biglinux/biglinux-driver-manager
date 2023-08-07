@@ -4,7 +4,7 @@
 
 #  inxi.sh
 #  Created: 0000/00/00
-#  Altered: 2023/08/05
+#  Altered: 2023/08/07
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                0000-2023, bigbruno Bruno Gonçalves <bruno@biglinux.com.br>
@@ -31,8 +31,8 @@
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 APP="${0##*/}"
-_VERSION_="1.0.0-20230805"
-BOOTLOG="/tmp/bigcontrolcenter-$(date +"%d%m%Y").log"
+_VERSION_="1.0.0-20230807"
+BOOTLOG="/tmp/bigcontrolcenter-$USER-$(date +"%d%m%Y").log"
 LOGGER='/dev/tty8'
 LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
