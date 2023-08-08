@@ -467,14 +467,20 @@ cat <<-EOF
 	<div class="titlecard"><span>
 	$CATEGORY_Printer
 	</span></div>
+
 	<div class="app-card__subtext">
-	lpstat -p
+	lpstat -p | lpstat -s | lpq
 	<div class="hardwareSpaceNull">
 	<div class="content">
 	<div class="text_area">
 	<textarea style="width:100%;" rows="20">
 	$(lpstat -p 2>/dev/null)
-	</textarea></div></div></div></div></div>
+
+	$(lpstat -s 2>/dev/null)
+
+	$(lpq 2>/dev/null)
+	</textarea>
+	</div></div></div></div></div>
 	<div class="app-card more" style="max-height: 100%;">
 	<div class="titlecard"><span>
 	$CATEGORY_More
