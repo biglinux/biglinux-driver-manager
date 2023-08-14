@@ -37,10 +37,11 @@ _VERSION_="1.0.0-20230722"
 LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=biglinux-driver-manager
+
 function sh_config {
 	#Translation
-	export TEXTDOMAINDIR="/usr/share/locale"
-	export TEXTDOMAIN=biglinux-driver-manager
 	declare -g user_drivers="$HOME/.config/bigcontrolcenter-drivers"
 	[[ ! -d "$user_drivers" ]] && mkdir -p "$user_drivers"
 	# Don't group windows
