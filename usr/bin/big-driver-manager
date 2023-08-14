@@ -8,7 +8,7 @@
 
 #Translation
 export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=big-store
+export TEXTDOMAIN=biglinux-driver-manager
 declare drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
 
 if [[ $(ps -aux | grep Big-Hardware-Relatory | grep bigbashview) ]]; then
