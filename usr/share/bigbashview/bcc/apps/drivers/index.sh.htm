@@ -5,7 +5,7 @@
 #	usr/share/bigbashview/bcc/apps/drivers/index.sh.htm
 #  Description: Detect firmware needed
 #  Created: 2022/02/28
-#  Altered: 2023/08/13
+#  Altered: 2023/08/16
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
@@ -33,7 +33,7 @@
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 APP="${0##*/}"
-_VERSION_="1.0.0-20230813"
+_VERSION_="1.0.0-20230816"
 LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
@@ -82,13 +82,15 @@ function sh_init {
 	# Open terminal and install driver
 	#################################
 	if [ "$install_video_now" != "" ]; then
-		ACTION="install_video_now" DRIVER="$install_video_now" WINDOW_ID="$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" urxvt +sb -internalBorder 1 -borderColor rgb:00/22/40 -depth 32 -fg rgb:00/ff/ff -bg rgb:00/22/40 -fn "xft:Ubuntu Mono:pixelsize=18" -embed $(xprop -root '\t$0' _NET_ACTIVE_WINDOW |
-			cut -f 2) -sr -bc -e "${LIBRARY}/bstrlib.sh" sh_install_terminal "$ACTION" "$WINDOW_ID"
+		ACTION="install_video_now"
+		DRIVER="$install_video_now"
+		sh_run_action "$ACTION"
 	fi
 
 	if [ "$remove_video_now" != "" ]; then
-		ACTION="remove_video_now" DRIVER="$remove_video_now" WINDOW_ID="$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" urxvt +sb -internalBorder 1 -borderColor rgb:00/22/40 -depth 32 -fg rgb:00/ff/ff -bg rgb:00/22/40 -fn "xft:Ubuntu Mono:pixelsize=18" -embed $(xprop -root '\t$0' _NET_ACTIVE_WINDOW |
-			cut -f 2) -sr -bc -e "${LIBRARY}/bstrlib.sh" sh_install_terminal "$ACTION" "$WINDOW_ID"
+		ACTION="remove_video_now"
+		DRIVER="$remove_video_now"
+		sh_run_action "$ACTION"
 	fi
 
 	if [ "$install_pkg_pamac" != "" ]; then
