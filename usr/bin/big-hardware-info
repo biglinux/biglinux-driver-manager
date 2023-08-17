@@ -6,7 +6,7 @@
 #  Description: Control Center to help usage of BigLinux
 #
 #  Created: 2020/09/07
-#  Altered: 2023/07/26
+#  Altered: 2023/08/17
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
@@ -34,7 +34,7 @@
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 APP="${0##*/}"
-_VERSION_="1.0.0-20230726"
+_VERSION_="1.0.0-20230817"
 LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
@@ -42,7 +42,7 @@ function sh_config {
 	#Translation
 	export TEXTDOMAINDIR="/usr/share/locale"
 	export TEXTDOMAIN=biglinux-driver-manager
-	declare -g TITLE=$"Informações sobre o Hardware"
+	declare -g TITLE=$(gettext "Informações sobre o Hardware")
 	declare -g drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
 }
 
