@@ -2,10 +2,10 @@
 #shellcheck disable=SC2155,SC2034
 #shellcheck source=/dev/null
 
-#  hardware-info.sh.htm
+#  /usr/share/bigbashview/bcc/apps/drivers/hardware-info.sh.htm
 #  Description: Control Center to help usage of BigLinux
 #  Created: 2022/02/28
-#  Altered: 2023/07/22
+#  Altered: 2023/08/18
 #
 #  Copyright (c) 2023-2023, Vilmar Catafesta <vcatafesta@gmail.com>
 #                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
@@ -33,7 +33,7 @@
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 APP="${0##*/}"
-_VERSION_="1.0.0-20230722"
+_VERSION_="1.0.0-20230818"
 LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 [[ -f "${LIBRARY}/bcclib.sh" ]] && source "${LIBRARY}/bcclib.sh"
 
@@ -421,19 +421,19 @@ cat <<-EOF >>/tmp/hardwareinfo.html
 	<br><span class="ansi1 ansi34">
 	$desc_installpartition
 	</span>
-	$(LANG=C df -h / | grep '/dev/' | awk '{print $1}')
+	$(LC_ALL=C df -h / | grep '/dev/' | awk '{print $1}')
 	<br><span class="ansi1 ansi34">
 	$desc_sizepartition
 	</span>
-	$(LANG=C df -h / | grep '/dev/' | awk '{print $2}')
+	$(LC_ALL=C df -h / | grep '/dev/' | awk '{print $2}')
 	<br><span class="ansi1 ansi34">
 	$desc_usespace
 	</span>
-	$(LANG=C df -h / | grep '/dev/' | awk '{print $3}')
+	$(LC_ALL=C df -h / | grep '/dev/' | awk '{print $3}')
 	<br><span class="ansi1 ansi34">
 	$desc_freespace
 	</span>
-	$(LANG=C df -h / | grep '/dev/' | awk '{print $4}')
+	$(LC_ALL=C df -h / | grep '/dev/' | awk '{print $4}')
 EOF
 	if [[ ! -e "/usr/share/bigbashview/bcc/apps/boot-livecd/index.sh.htm" ]]; then
 cat <<-EOF >>/tmp/hardwareinfo.html

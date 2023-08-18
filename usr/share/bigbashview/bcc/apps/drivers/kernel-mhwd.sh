@@ -73,7 +73,7 @@ cat << EOF >> /tmp/kernel-mhwd-$Kernel_version.html
 <li>
   <div class="products">
   $iconkernel
-    <font><b>$Kernel_version</b> <br><span style="font-weight: 300">$(LANG=C pacman -Si $Kernel_version  | grep -i "^Version" | cut -f2 -d: | head -n1)</span></font>
+    <font><b>$Kernel_version</b> <br><span style="font-weight: 300">$(LC_ALL=C pacman -Si $Kernel_version  | grep -i "^Version" | cut -f2 -d: | head -n1)</span></font>
   </div>
   <span class="status">
     <span class="status-circle $dotcolor"></span>
