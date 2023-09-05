@@ -84,6 +84,7 @@ function sh_init {
 	[[ "$mesa" = "mesa"				]] && ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
 	[[ "$mesa" = "amber"				]] && ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
 	[[ "$mesa" = "tkg" 				]] &&	./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
+	[[ "$mesa" = "tkgStable" 				]] &&	./installpkgmesa.sh install "lib32-mesa-tkg-stable mesa-tkg-stable"
 
 	cat <<-EOF
 		<html>
@@ -220,15 +221,18 @@ function disableBodyConfigSimple() {
 		              </ul>
 	EOF
 
-	if pacman -Qq 'mesa' &>/dev/null; then
-		mesaChecked=checked
-		mesaInstall=y
-	elif pacman -Qq 'mesa-amber' &>/dev/null; then
+	if pacman -Qq 'mesa-amber' &>/dev/null; then
 		mesaAmberChecked=checked
-		mesaAmberInstall=y
+# 		mesaAmberInstall=y
+	elif pacman -Qq 'mesa-tkg-stable' &>/dev/null; then
+		mesaTkgStableChecked=checked
+# 		mesaAmberInstall=y
 	elif pacman -Qq 'mesa-tkg-git' &>/dev/null; then
-		mesaAmberInstall=y
-		mesaTkgChecked=checked
+		mesaTkgGitChecked=checked
+# 		mesaAmberInstall=y
+	elif pacman -Qq 'mesa' &>/dev/null; then
+		mesaChecked=checked
+# 		mesaInstall=y
 	fi
 
 	cat <<-EOF
@@ -248,7 +252,13 @@ function disableBodyConfigSimple() {
 		                      </label>
 		                    </div>
 		                    <div class="products">
-		                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgChecked>
+		                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkgStable'" $mesaTkgStableChecked>
+		                      <label for="r3">
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-stable | grep -i "^Version" | cut -f2 -d: | head -n1)</font></span>
+		                      </label>
+		                    </div>
+		                    <div class="products">
+		                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgGitChecked>
 		                      <label for="r3">
 		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
 		                      </label>
