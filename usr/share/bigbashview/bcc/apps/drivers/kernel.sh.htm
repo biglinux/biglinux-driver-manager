@@ -81,7 +81,7 @@ function sh_init {
 	##################################
 	[[ -n "$install_kernel_now"	]] && ./installpkgkernel.sh install "$install_kernel_now"
 	[[ -n "$remove_kernel_now"		]] && ./installpkgkernel.sh remove "$remove_kernel_now"
-	[[ "$mesa" = "mesa"				]] && ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa"
+	[[ "$mesa" = "mesa"				]] && ./installpkgmesa.sh install "lib32-libva-mesa-driver libva-mesa-driver lib32-mesa mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel"
 	[[ "$mesa" = "amber"				]] && ./installpkgmesa.sh install "lib32-mesa-amber mesa-amber libva-mesa-driver lib32-libva-mesa-driver"
 	[[ "$mesa" = "tkg" 				]] &&	./installpkgmesa.sh install "lib32-mesa-tkg-git mesa-tkg-git"
 	[[ "$mesa" = "tkgStable" 				]] &&	./installpkgmesa.sh install "lib32-mesa-tkg-stable mesa-tkg-stable"
