@@ -43,6 +43,20 @@ if [ "$VIDEO_DRIVER_ENABLED" = "true" ]; then
     dotcolor="green"
   fi
 
+elif [ "$VIDEO_DRIVER_ENABLED" = "obsolete" ]; then
+  DRIVER_ENABLE_OR_DISABLE=$"Obsoleto, Clique para Remover!"
+  INSTALL_OR_REMOVE_KERNEL="remove_kernel_now"
+
+  if [ "$Kernel_version" = "$current" ]; then
+    DISABLED_BUTTON="disabled"
+    DRIVER_ENABLE_OR_DISABLE=$"Em uso"
+    dotcolor="red"
+  else
+    DISABLED_BUTTON="remove-button"
+    DISABLED_MESSAGE=""
+    dotcolor="red"
+  fi
+  
 else
   DRIVER_ENABLE_OR_DISABLE=$"Instalar"
   INSTALL_OR_REMOVE_KERNEL="install_kernel_now"
@@ -104,6 +118,17 @@ for i  in  $VIDEO_DRIVER_SHOW_ALL_AND_IF_IS_FREE; do
 
 SHOW_DRIVER "$Kernel_version" "$VIDEO_DRIVER_ENABLED" "$VIDEO_DRIVER_COMPATIBLE" "$VIDEO_DRIVER_OPEN" &
 done
+
+
+OBSOLETE_KERNEL_INSTALLED="$(echo "$VIDEO_DRIVER_ENABLED_LIST" | grep -v -f <(echo "$VIDEO_DRIVER_SHOW_ALL_AND_IF_IS_FREE"))"
+for i  in  $OBSOLETE_KERNEL_INSTALLED; do
+    Kernel_version="$(echo "$i" | cut -f1 -d" ")"
+    VIDEO_DRIVER_OPEN="$(echo "$i" | cut -f2 -d" ")"
+    VIDEO_DRIVER_ENABLED="obsolete"
+SHOW_DRIVER "$Kernel_version" "$VIDEO_DRIVER_ENABLED" "$VIDEO_DRIVER_COMPATIBLE" "$VIDEO_DRIVER_OPEN" &
+done
+
+
 
 wait
 
