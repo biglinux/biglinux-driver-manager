@@ -62,6 +62,7 @@ function sh_main {
 		SDL_VIDEODRIVER=x11 \
 		WINIT_UNIX_BACKEND=x11 \
 		GDK_BACKEND=x11 \
+	    GSK_RENDERER=cairo \
 		bash bigbashview -n "$TITLE" -s 1020x620 loading.sh.htm?toshow=show -i hardware-info.svg
 }
 

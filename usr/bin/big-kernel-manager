@@ -17,4 +17,9 @@ if [[ ! -d "$drivers_path" ]]; then
    fi
 fi
 cd "$drivers_path"
-bigbashview -s 1000x660 kernel.sh.htm -n $"Big-Kernel-Manager" -i icon-kernel.svg
+	env QT_QPA_PLATFORM=xcb \
+		SDL_VIDEODRIVER=x11 \
+		WINIT_UNIX_BACKEND=x11 \
+		GDK_BACKEND=x11 \
+	    GSK_RENDERER=cairo \
+		bash bigbashview -s 1000x660 kernel.sh.htm -n $"Big-Kernel-Manager" -i icon-kernel.svg
