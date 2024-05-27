@@ -41,9 +41,18 @@ LIBRARY=${LIBRARY:-'/usr/share/bigbashview/bcc/shell'}
 function sh_config {
 	#Translation
 	export TEXTDOMAINDIR="/usr/share/locale"
-	export TEXTDOMAIN=biglinux-driver-manager
-	declare -g TITLE=$(gettext "Informações sobre o Hardware")
 	declare -g drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
+
+# Verifica o ambiente de área de trabalho
+desktop_environment=$(echo $XDG_CURRENT_DESKTOP)
+
+# Comandos específicos para cada ambiente
+if [[ "$desktop_environment" == "GNOME" ]]; then
+    declare -g TITLE=big-hardware-info
+else
+    declare -g TITLE=$(gettext "Informações sobre o Hardware")
+fi
+
 }
 
 function sh_main {
