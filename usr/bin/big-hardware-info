@@ -42,17 +42,6 @@ function sh_config {
 	#Translation
 	export TEXTDOMAINDIR="/usr/share/locale"
 	declare -g drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
-
-# Verifica o ambiente de área de trabalho
-desktop_environment=$(echo $XDG_CURRENT_DESKTOP)
-
-# Comandos específicos para cada ambiente
-if [[ "$desktop_environment" == "GNOME" ]]; then
-    declare -g TITLE=big-hardware-info
-else
-    declare -g TITLE=$(gettext "Informações sobre o Hardware")
-fi
-
 }
 
 function sh_main {
@@ -64,6 +53,13 @@ function sh_main {
 	fi
 
 	cd "$drivers_path" || exit 1
+
+	# Comandos específicos para cada ambiente
+	if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+    		TITLE=big-hardware-info
+	else
+    		TITLE="Informações sobre o Hardware"
+	fi
 
 	# env para definir as variáveis de ambiente apenas para a execução do comando
 	# eliminado a necessidade de um subshell e definindo as variáveis de ambiente somente para a execução do comando específico
