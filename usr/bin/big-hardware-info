@@ -55,11 +55,7 @@ function sh_main {
 	cd "$drivers_path" || exit 1
 
 	# Comandos específicos para cada ambiente
-	if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
-    		TITLE=big-hardware-info
-	else
-    		TITLE="Informações sobre o Hardware"
-	fi
+	declare -g TITLE="$([[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]] && echo "big-hardware-info" || echo "Informações sobre o Hardware")"
 
 	# env para definir as variáveis de ambiente apenas para a execução do comando
 	# eliminado a necessidade de um subshell e definindo as variáveis de ambiente somente para a execução do comando específico
