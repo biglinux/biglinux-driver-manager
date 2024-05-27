@@ -43,14 +43,11 @@ function sh_config {
 	export TEXTDOMAINDIR="/usr/share/locale"
 	declare -g drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
 
-# Verifica o ambiente de área de trabalho
-desktop_environment=$(echo $XDG_CURRENT_DESKTOP)
-
 # Comandos específicos para cada ambiente
-if [[ "$desktop_environment" == "GNOME" ]]; then
+if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
     declare -g TITLE=big-hardware-info
 else
-    declare -g TITLE=$(gettext "Informações sobre o Hardware")
+    declare -g TITLE="Informações sobre o Hardware"
 fi
 
 }
