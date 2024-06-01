@@ -242,25 +242,25 @@ function disableBodyConfigSimple() {
 		                    <div class="products">
 		                      <input id="r1" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=amber'" $mesaAmberChecked>
 		                      <label for="r1">
-		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-amber | grep -i "^Version" | cut -f2 -d:)</font></span>
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Amber</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-amber | grep -i "^Version" | awk '{print $3}' | sed 's/^.*://')</font></span>
 		                      </label>
 		                    </div>
 		                    <div class="products">
 		                      <input id="r2" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=mesa'" $mesaChecked>
 		                      <label for="r2">
-		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa | grep -i "^Version" | cut -f2 -d:)</font></span>
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa | grep -i "^Version" | awk '{print $3}' | sed 's/^.*://')</font></span>
 		                      </label>
 		                    </div>
 		                    <div class="products">
 		                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkgStable'" $mesaTkgStableChecked>
 		                      <label for="r3">
-		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-stable | grep -i "^Version" | cut -f2 -d: | head -n1)</font></span>
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-Stable</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-stable | grep -i "^Version" | awk '{print $3}' | sed 's/^.*://' | head -n1)</font></span>
 		                      </label>
 		                    </div>
 		                    <div class="products">
 		                      <input id="r3" type="radio" onclick="disableBodyConfigSimple(); location.href='kernel.sh.htm?mesa=tkg'" $mesaTkgGitChecked>
 		                      <label for="r3">
-		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git | grep -i "^Version" | cut -f2 -d: | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
+		                        <span style="display: inline-block; position: relative; margin-top: 5px; margin-left: 10px;"><font style="font-weight: 700;">Tkg-git</font><br><font style="font-weight: 300;">$(LANG=en pacman -Si mesa-tkg-git | grep -i "^Version" | awk '{print $3}' | sed 's/^.*://' | sed 's|_devel||g' | rev | cut -d"." -f 2- | rev)</font></span>
 		                      </label>
 		                    </div>
 		                  </li>
