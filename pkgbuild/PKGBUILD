@@ -7,7 +7,7 @@ arch=('any')
 license=('GPL')
 url="https://github.com/biglinux/biglinux-driver-manager"
 pkgdesc="Complete driver manager and hardware info"
-depends=('bigbashview' 'kdialog' 'inxi' 'zenity' 'python-ansi2html' 'mhwd-biglinux')
+depends=('bigbashview' 'kdialog' 'inxi' 'zenity' 'python-ansi2html' 'mhwd-biglinux' 'big-hardware-info')
 source=("git+https://github.com/biglinux/biglinux-driver-manager.git")
 md5sums=(SKIP)
 
