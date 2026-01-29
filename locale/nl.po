@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-driver-manager\n"
@@ -15,66 +14,102 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
-msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr ""
-"Voer uw wachtwoord in om een rapport te genereren waarin gevoelige gegevens, b.v. IP-adres, worden "
-"verwijderd, of annuleer om de informatie van het vorige scherm te gebruiken."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Voer uw wachtwoord in om een vollediger rapport te genereren."
-
-msgid "Enviando, aguarde..."
-msgstr "Zenden, even geduld..."
-
-msgid "Este driver é software livre."
-msgstr "Dit stuurprogramma is gratis software."
-
-msgid "Este driver é proprietário."
-msgstr "Dit stuurprogramma is gepatenteerd."
-
-msgid "Este driver parece compatível com este computador."
-msgstr "Dit stuurprogramma lijkt compatibel te zijn met deze computer."
-
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "De Big-Hardware-Relatory is al in gebruik."
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "De map $drivers_path bestaat niet en kan niet worden gemaakt."
+msgid "O Big-Kernel-Manager já está em uso."
+msgstr "Big-Kernel-Manager is al in gebruik."
+msgid "Big-Kernel-Manager"
+msgstr "Big-Kernel-Manager"
 msgid "Remover"
 msgstr "Verwijder"
-
 msgid "Instalar"
 msgstr "Installeer"
-
+msgid "Este driver é software livre."
+msgstr "Dit stuurprogramma is gratis software."
+msgid "Este driver é proprietário."
+msgstr "Dit stuurprogramma is gepatenteerd."
+msgid "Este driver parece compatível com este computador."
+msgstr "Dit stuurprogramma lijkt compatibel te zijn met deze computer."
+msgid "Desativado"
+msgstr "Uitgeschakeld"
+msgid "Antes de instalar este driver, remova o outro driver Nvidia."
+msgstr "Voordat u dit stuurprogramma installeert, verwijdert u het andere Nvidia-stuurprogramma."
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Apparaatinformatie bekijken op Linux Hardware"
+msgid "Processador"
+msgstr "Processor"
+msgid "Placa mãe"
+msgstr "Moederbord"
+msgid "Memória"
+msgstr "Geheugen"
+msgid "Swap Memória Virtual"
+msgstr "Virtuele geheugenwissel"
+msgid "Placa de vídeo"
+msgstr "Videokaart"
+msgid "Áudio"
+msgstr "Audio"
+msgid "Rede"
+msgstr "Netwerk"
+msgid "Conexões de Rede"
+msgstr "Netwerkverbindingen"
+msgid "Dispositivos e conexões USB"
+msgstr "USB-apparaten en aansluitingen"
+msgid "Portas PCI"
+msgstr "PCI-poorten"
+msgid "Bateria"
+msgstr "Batterij"
+msgid "Dispositivos de Armazenamento"
+msgstr "Opslagapparaten"
+msgid "Partições montadas"
+msgstr "Gemonteerde scheidingswanden"
+msgid "Partições desmontadas"
+msgstr "Ontmantelde scheidingswanden"
+msgid "Dispositivos lógicos"
+msgstr "Logische apparaten"
+msgid "Raid"
+msgstr "Overval"
+msgid "Sistema"
+msgstr "Systeem"
+msgid "Informações de Sistema"
+msgstr "Systeeminformatie"
+msgid "Repositórios"
+msgstr "Repositories"
+msgid "Bluetooth"
+msgstr "Bluetooth"
+msgid "Temperatura"
+msgstr "Temperatuur"
 msgid ""
 "Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
 "instalado."
 msgstr ""
 "Er is al een ander nVidia stuurprogramma geïnstalleerd, om dit stuurprogramma te installeren moet u "
 "eerst het geïnstalleerde stuurprogramma verwijderen."
-
 msgid "Em uso"
 msgstr "In gebruik"
-
 msgid "Obsoleto, Clique para Remover!"
 msgstr "Verouderd, klik om te verwijderen!"
-
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Zodra u klaar bent, herstart u uw computer om de driverconfiguratie te activeren."
+msgid "Driver"
+msgstr "Bestuurder"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Er is een fout opgetreden en het stuurprogramma kan niet worden toegepast."
+msgid "Enviando, aguarde..."
+msgstr "Zenden, even geduld..."
 msgid "Categorias"
 msgstr "Categorieën"
-
 msgid "Principais"
 msgstr "Hoofd"
-
 msgid "Driver detectado:"
 msgstr "Gedetecteerd stuurprogramma:"
-
 msgid "Mesa e Kernel"
 msgstr "Tabel en kernel"
-
 msgid "As alterações do kernel e mesa devem ser feita com cuidado."
 msgstr "Kernel- en desktopwijzigingen moeten zorgvuldig worden uitgevoerd."
-
 msgid "Versões de kernel"
 msgstr "Kernel versies"
-
 msgid ""
 "O kernel Linux é o componente do sistema operacional que controla todos os outros componentes e "
 "permite que os aplicativos funcionem. Alterar a versão do kernel pode trazer novas funcionalidades "
@@ -102,13 +137,10 @@ msgstr ""
 "instabiliteiten in het systeem veroorzaken.<br><br>\n"
 "\t<b>RT,</b> zijn aangepast voor specifieke toepassingen. Als u geen programma's gebruikt die dit "
 "nodig hebben, kunt u het beste een kernel gebruiken zonder het acroniem 'rt'."
-
 msgid "Precisa de ajuda?"
 msgstr "Heb je hulp nodig?"
-
 msgid "Drivers de vídeo"
 msgstr "Videostuurprogramma's"
-
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
@@ -127,262 +159,59 @@ msgstr ""
 "handig op oudere computers, in het algemeen, vervaardigd vóór 2010.<br><br>* Videostuurprogramma's "
 "van AMD, Intel en anderen zijn opgenomen in Mesa en de Linux-kernel, behalve nvidia's eigen "
 "stuurprogramma"
-
 msgid "Pesquisar Kernel"
 msgstr "Zoek kernel"
-
 msgid "Resultado da pesquisa"
 msgstr "Zoekresultaat"
-
-msgid "Big-Kernel-Manager"
-msgstr "Big-Kernel-Manager"
-
 msgid "Fechar"
 msgstr "Sluiten"
-
 msgid "Abrir"
 msgstr "Open"
-
 msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Kernelversies installeren of verwijderen"
-
 msgid "Aplicando - Aguarde"
 msgstr "Aanvragen - Even geduld a.u.b"
-
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Detectie omvat geen printers en scanners</small>"
-
-msgid "Placa de vídeo"
-msgstr "Videokaart"
-
 msgid "Wifi"
 msgstr "Wifi"
-
 msgid "Rede Cabeada"
 msgstr "Bekabeld Netwerk"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
 msgid "Impressora"
 msgstr "Printer"
-
 msgid "Impressora 3D"
 msgstr "3D-printer"
-
 msgid "Scanner"
 msgstr "Scanner"
-
 msgid "TV Digital"
 msgstr "Digitale TV"
-
 msgid "Webcam"
 msgstr "Webcam"
-
 msgid "Touchscreen"
 msgstr "Touchscreen"
-
 msgid "Som"
 msgstr "Geluid"
-
 msgid "Outros"
 msgstr "Andere"
-
 msgid "Pesquisar Driver ou Firmware"
 msgstr "Stuurprogramma of firmware zoeken"
-
 msgid "Big-Driver-Manager"
 msgstr "Grote-Driver-Manager"
-
 msgid "Instalar ou Remover Drivers e Firmwares"
 msgstr "Stuurprogramma's en firmware installeren of verwijderen"
-
 msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
 msgstr ""
 "Meestal moet de computer opnieuw opgestart worden om het stuurprogramma of de firmware te kunnen "
 "toepassen."
-
 msgid "Driver ou firmware"
 msgstr "Stuurprogramma of firmware"
-
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Dit pakket bevat bestanden die compatibel zijn met deze computer."
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Zodra u klaar bent, herstart u uw computer om de driverconfiguratie te activeren."
-
-msgid "Driver"
-msgstr "Bestuurder"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Er is een fout opgetreden en het stuurprogramma kan niet worden toegepast."
-
-msgid "Resumo"
-msgstr "Samenvatting"
-
-msgid "Processador"
-msgstr "Processor"
-
-msgid "Placa mãe"
-msgstr "Moederbord"
-
-msgid "Memória"
-msgstr "Geheugen"
-
-msgid "Rede"
-msgstr "Netwerk"
-
-msgid "Usb"
-msgstr "Usb"
-
-msgid "Pci"
-msgstr "Pci"
-
-msgid "Bateria"
-msgstr "Batterij"
-
-msgid "Armazenamento"
-msgstr "Opslag"
-
-msgid "Sistema"
-msgstr "Systeem"
-
-msgid "Temperatura"
-msgstr "Temperatuur"
-
-msgid "Áudio"
-msgstr "Audio"
-
-msgid "Mais informações"
-msgstr "Meer informatie"
-
-msgid "Hardware"
-msgstr "Hardware"
-
-msgid "Pesquisar"
-msgstr "Zoeken"
-
-msgid "Informações de Hardware"
-msgstr "Hardware-informatie"
-
-msgid "Informações Sobre o Sistema e o Hardware"
-msgstr "Systeem en Hardware Informatie"
-
-msgid "Memória RAM:"
-msgstr "RAM geheugen:"
-
-msgid "Vídeo:"
-msgstr "Video:"
-
-msgid "Instalado na partição:"
-msgstr "Geïnstalleerd op de partitie:"
-
-msgid "Tamanho da partição:"
-msgstr "Partitiegrootte:"
-
-msgid "Espaço utilizado:"
-msgstr "Gebruikte ruimte:"
-
-msgid "Espaço livre:"
-msgstr "Vrije ruimte:"
-
-msgid "Data que o sistema foi instalado:"
-msgstr "Datum waarop het systeem werd geïnstalleerd:"
-
-msgid "Kernel em uso:"
-msgstr "Kernel in gebruik:"
-
-msgid "Instalar ou Remover Drivers"
-msgstr "Stuurprogramma's installeren of verwijderen"
-
 msgid ""
-"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário "
-"instalar mais alguns."
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
 msgstr ""
-"BigLinux bevat standaard duizenden stuurprogramma's en firmware, maar het kan zijn dat u er nog een "
-"paar moet installeren."
-
-msgid "Gerar Relatório"
-msgstr "Genereer verslag"
-
-msgid "Cria um arquivo com informações que pode ser publicado na internet."
-msgstr "Maakt een bestand met informatie die op het internet gepubliceerd kan worden."
-
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Apparaatinformatie bekijken op Linux Hardware"
-
-msgid "Categoria"
-msgstr "Categorie"
-
-msgid "Nome"
-msgstr "Naam"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Info"
-msgstr "Info"
-
-msgid "Desativado"
-msgstr "Uitgeschakeld"
-
-msgid "Antes de instalar este driver, remova o outro driver Nvidia."
-msgstr "Voordat u dit stuurprogramma installeert, verwijdert u het andere Nvidia-stuurprogramma."
-
-msgid "Swap Memória Virtual"
-msgstr "Virtuele geheugenwissel"
-
-msgid "Conexões de Rede"
-msgstr "Netwerkverbindingen"
-
-msgid "Dispositivos e conexões USB"
-msgstr "USB-apparaten en aansluitingen"
-
-msgid "Portas PCI"
-msgstr "PCI-poorten"
-
-msgid "Dispositivos de Armazenamento"
-msgstr "Opslagapparaten"
-
-msgid "Partições montadas"
-msgstr "Gemonteerde scheidingswanden"
-
-msgid "Partições desmontadas"
-msgstr "Ontmantelde scheidingswanden"
-
-msgid "Dispositivos lógicos"
-msgstr "Logische apparaten"
-
-msgid "Raid"
-msgstr "Overval"
-
-msgid "Informações de Sistema"
-msgstr "Systeeminformatie"
-
-msgid "Repositórios"
-msgstr "Repositories"
-
-msgid "Enviar para filebin.net"
-msgstr "Verzenden naar filebin.net"
-
-msgid "Visualizar"
-msgstr "Visualiseren"
-
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Het rapport is opgeslagen in het bestand:"
-
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Wilt u het bestand bekijken of uploaden naar de filebin.net site, om een URL met uw "
-"computergegevens op een eenvoudige manier te delen?"
-
-msgid "O diretório $drivers_path não existe e não foi possível criar."
-msgstr "De map $drivers_path bestaat niet en kan niet worden gemaakt."
-
-msgid "O Big-Kernel-Manager já está em uso."
-msgstr "Big-Kernel-Manager is al in gebruik."
-
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "De Big-Hardware-Relatory is al in gebruik."
+"Voer uw wachtwoord in om een rapport te genereren waarin gevoelige gegevens, b.v. IP-adres, worden "
+"verwijderd, of annuleer om de informatie van het vorige scherm te gebruiken."
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Voer uw wachtwoord in om een vollediger rapport te genereren."
