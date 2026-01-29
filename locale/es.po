@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-driver-manager\n"
@@ -15,66 +14,102 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
-msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr ""
-"Introduzca su contraseña para generar un informe eliminando los datos sensibles, por ejemplo, la "
-"dirección IP, o cancele para utilizar la información de la pantalla anterior."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Introduzca su contraseña para generar un informe más completo."
-
-msgid "Enviando, aguarde..."
-msgstr "Enviando, por favor espere..."
-
-msgid "Este driver é software livre."
-msgstr "Este controlador es software libre."
-
-msgid "Este driver é proprietário."
-msgstr "Este controlador es propietario."
-
-msgid "Este driver parece compatível com este computador."
-msgstr "Este controlador parece ser compatible con este ordenador."
-
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "El gran hardware-relativo ya está en uso."
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "El directorio $drivers_path no existe y no se pudo crear."
+msgid "O Big-Kernel-Manager já está em uso."
+msgstr "Big-Kernel-Manager ya está en uso."
+msgid "Big-Kernel-Manager"
+msgstr "Big-Kernel-Manager"
 msgid "Remover"
 msgstr "Eliminar"
-
 msgid "Instalar"
 msgstr "Instalar"
-
+msgid "Este driver é software livre."
+msgstr "Este controlador es software libre."
+msgid "Este driver é proprietário."
+msgstr "Este controlador es propietario."
+msgid "Este driver parece compatível com este computador."
+msgstr "Este controlador parece ser compatible con este ordenador."
+msgid "Desativado"
+msgstr "Discapacitados"
+msgid "Antes de instalar este driver, remova o outro driver Nvidia."
+msgstr "Antes de instalar este controlador, elimine el otro controlador Nvidia."
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Ver la información del dispositivo en el hardware de Linux"
+msgid "Processador"
+msgstr "Procesador"
+msgid "Placa mãe"
+msgstr "Placa base"
+msgid "Memória"
+msgstr "Memoria"
+msgid "Swap Memória Virtual"
+msgstr "Intercambio de memoria virtual"
+msgid "Placa de vídeo"
+msgstr "Tarjeta de vídeo"
+msgid "Áudio"
+msgstr "Audio"
+msgid "Rede"
+msgstr "Red"
+msgid "Conexões de Rede"
+msgstr "Conexiones de red"
+msgid "Dispositivos e conexões USB"
+msgstr "Dispositivos y conexiones USB"
+msgid "Portas PCI"
+msgstr "Puertos PCI"
+msgid "Bateria"
+msgstr "Batería"
+msgid "Dispositivos de Armazenamento"
+msgstr "Dispositivos de almacenamiento"
+msgid "Partições montadas"
+msgstr "Tabiques montados"
+msgid "Partições desmontadas"
+msgstr "Tabiques desmontados"
+msgid "Dispositivos lógicos"
+msgstr "Dispositivos lógicos"
+msgid "Raid"
+msgstr "Raid"
+msgid "Sistema"
+msgstr "Sistema"
+msgid "Informações de Sistema"
+msgstr "Información del sistema"
+msgid "Repositórios"
+msgstr "Repositorios"
+msgid "Bluetooth"
+msgstr "Bluetooth"
+msgid "Temperatura"
+msgstr "Temperatura"
 msgid ""
 "Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
 "instalado."
 msgstr ""
 "Ya hay otro controlador de nVidia instalado, para instalar este controlador, elimine primero el "
 "controlador instalado."
-
 msgid "Em uso"
 msgstr "En uso"
-
 msgid "Obsoleto, Clique para Remover!"
 msgstr "Obsoleto, haga clic para eliminar!"
-
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Una vez completado, reinicie su ordenador para activar la configuración del controlador."
+msgid "Driver"
+msgstr "Conductor"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Se ha producido un error y no se puede aplicar el controlador."
+msgid "Enviando, aguarde..."
+msgstr "Enviando, por favor espere..."
 msgid "Categorias"
 msgstr "Categorías"
-
 msgid "Principais"
 msgstr "Principal"
-
 msgid "Driver detectado:"
 msgstr "Conductor detectado:"
-
 msgid "Mesa e Kernel"
 msgstr "Tabla y kernel"
-
 msgid "As alterações do kernel e mesa devem ser feita com cuidado."
 msgstr "Los cambios en el kernel y el escritorio deben hacerse con cuidado."
-
 msgid "Versões de kernel"
 msgstr "Versiones del kernel"
-
 msgid ""
 "O kernel Linux é o componente do sistema operacional que controla todos os outros componentes e "
 "permite que os aplicativos funcionem. Alterar a versão do kernel pode trazer novas funcionalidades "
@@ -102,13 +137,10 @@ msgstr ""
 "inestabilidades en el sistema.<br><br>\n"
 "\t<b>RT,</b> se modifican para usos específicos. Si no usas ningún programa que necesite esto, es "
 "mejor usar un kernel sin el acrónimo 'rt'."
-
 msgid "Precisa de ajuda?"
 msgstr "¿Necesitas ayuda?"
-
 msgid "Drivers de vídeo"
 msgstr "Controladores de vídeo"
-
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
@@ -127,260 +159,57 @@ msgstr ""
 "aportar más rendimiento a los juegos.<br><br><b>Ámbar</b>, útil en ordenadores antiguos, en "
 "general, fabricados antes de 2010.<br><br>* Los controladores de video de AMD, Intel y otros están "
 "incluidos en Mesa y el kernel de Linux, excepto el controlador propietario de Nvidia"
-
 msgid "Pesquisar Kernel"
 msgstr "Kernel de búsqueda"
-
 msgid "Resultado da pesquisa"
 msgstr "Resultado de la búsqueda"
-
-msgid "Big-Kernel-Manager"
-msgstr "Big-Kernel-Manager"
-
 msgid "Fechar"
 msgstr "Cerrar"
-
 msgid "Abrir"
 msgstr "Abrir"
-
 msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Instalar o quitar versiones del kernel"
-
 msgid "Aplicando - Aguarde"
 msgstr "Solicitud - Por favor, espere"
-
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* La detección no incluye impresoras ni escáneres</small>"
-
-msgid "Placa de vídeo"
-msgstr "Tarjeta de vídeo"
-
 msgid "Wifi"
 msgstr "Wifi"
-
 msgid "Rede Cabeada"
 msgstr "Red cableada"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
 msgid "Impressora"
 msgstr "Impresora"
-
 msgid "Impressora 3D"
 msgstr "Impresora 3D"
-
 msgid "Scanner"
 msgstr "Escáner"
-
 msgid "TV Digital"
 msgstr "Televisión digital"
-
 msgid "Webcam"
 msgstr "Cámara web"
-
 msgid "Touchscreen"
 msgstr "Pantalla táctil"
-
 msgid "Som"
 msgstr "Sonido"
-
 msgid "Outros"
 msgstr "Otros"
-
 msgid "Pesquisar Driver ou Firmware"
 msgstr "Buscar controlador o firmware"
-
 msgid "Big-Driver-Manager"
 msgstr "Big-Driver-Manager"
-
 msgid "Instalar ou Remover Drivers e Firmwares"
 msgstr "Instalar o eliminar controladores y firmware"
-
 msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
 msgstr "Normalmente es necesario reiniciar el ordenador para que se aplique el controlador o el firmware."
-
 msgid "Driver ou firmware"
 msgstr "Controlador o firmware"
-
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Este paquete proporciona archivos compatibles con este ordenador."
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Una vez completado, reinicie su ordenador para activar la configuración del controlador."
-
-msgid "Driver"
-msgstr "Conductor"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Se ha producido un error y no se puede aplicar el controlador."
-
-msgid "Resumo"
-msgstr "Resumen"
-
-msgid "Processador"
-msgstr "Procesador"
-
-msgid "Placa mãe"
-msgstr "Placa base"
-
-msgid "Memória"
-msgstr "Memoria"
-
-msgid "Rede"
-msgstr "Red"
-
-msgid "Usb"
-msgstr "Usb"
-
-msgid "Pci"
-msgstr "Pci"
-
-msgid "Bateria"
-msgstr "Batería"
-
-msgid "Armazenamento"
-msgstr "Almacenamiento"
-
-msgid "Sistema"
-msgstr "Sistema"
-
-msgid "Temperatura"
-msgstr "Temperatura"
-
-msgid "Áudio"
-msgstr "Audio"
-
-msgid "Mais informações"
-msgstr "Más información"
-
-msgid "Hardware"
-msgstr "Hardware"
-
-msgid "Pesquisar"
-msgstr "Busque en"
-
-msgid "Informações de Hardware"
-msgstr "Información sobre el hardware"
-
-msgid "Informações Sobre o Sistema e o Hardware"
-msgstr "Información sobre el sistema y el hardware"
-
-msgid "Memória RAM:"
-msgstr "Memoria RAM:"
-
-msgid "Vídeo:"
-msgstr "Video:"
-
-msgid "Instalado na partição:"
-msgstr "Instalado en la partición:"
-
-msgid "Tamanho da partição:"
-msgstr "Tamaño de la partición:"
-
-msgid "Espaço utilizado:"
-msgstr "Espacio utilizado:"
-
-msgid "Espaço livre:"
-msgstr "Espacio libre:"
-
-msgid "Data que o sistema foi instalado:"
-msgstr "Fecha de instalación del sistema:"
-
-msgid "Kernel em uso:"
-msgstr "Kernel en uso:"
-
-msgid "Instalar ou Remover Drivers"
-msgstr "Instalar o quitar controladores"
-
 msgid ""
-"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário "
-"instalar mais alguns."
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
 msgstr ""
-"BigLinux incluye miles de controladores y firmware por defecto, pero es posible que tenga que "
-"instalar algunos más."
-
-msgid "Gerar Relatório"
-msgstr "Generar informe"
-
-msgid "Cria um arquivo com informações que pode ser publicado na internet."
-msgstr "Crea un archivo con información que se puede publicar en Internet."
-
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Ver la información del dispositivo en el hardware de Linux"
-
-msgid "Categoria"
-msgstr "Categoría"
-
-msgid "Nome"
-msgstr "Nombre"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Info"
-msgstr "Información"
-
-msgid "Desativado"
-msgstr "Discapacitados"
-
-msgid "Antes de instalar este driver, remova o outro driver Nvidia."
-msgstr "Antes de instalar este controlador, elimine el otro controlador Nvidia."
-
-msgid "Swap Memória Virtual"
-msgstr "Intercambio de memoria virtual"
-
-msgid "Conexões de Rede"
-msgstr "Conexiones de red"
-
-msgid "Dispositivos e conexões USB"
-msgstr "Dispositivos y conexiones USB"
-
-msgid "Portas PCI"
-msgstr "Puertos PCI"
-
-msgid "Dispositivos de Armazenamento"
-msgstr "Dispositivos de almacenamiento"
-
-msgid "Partições montadas"
-msgstr "Tabiques montados"
-
-msgid "Partições desmontadas"
-msgstr "Tabiques desmontados"
-
-msgid "Dispositivos lógicos"
-msgstr "Dispositivos lógicos"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Informações de Sistema"
-msgstr "Información del sistema"
-
-msgid "Repositórios"
-msgstr "Repositorios"
-
-msgid "Enviar para filebin.net"
-msgstr "Enviar a filebin.net"
-
-msgid "Visualizar"
-msgstr "Visualizar"
-
-msgid "O relatório foi salvo no arquivo:"
-msgstr "El informe se guardó en el archivo:"
-
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"¿Desea ver el archivo o subirlo al sitio filebin.net, para tener una URL con los datos de su "
-"computadora de una manera fácil de compartir?"
-
-msgid "O diretório $drivers_path não existe e não foi possível criar."
-msgstr "El directorio $drivers_path no existe y no se pudo crear."
-
-msgid "O Big-Kernel-Manager já está em uso."
-msgstr "Big-Kernel-Manager ya está en uso."
-
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "El gran hardware-relativo ya está en uso."
+"Introduzca su contraseña para generar un informe eliminando los datos sensibles, por ejemplo, la "
+"dirección IP, o cancele para utilizar la información de la pantalla anterior."
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Introduzca su contraseña para generar un informe más completo."

@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-driver-manager\n"
@@ -15,66 +14,102 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
-msgid ""
-"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
-"cancele para utilizar as informações da tela anterior."
-msgstr ""
-"Indtast din adgangskode for at generere en rapport, der fjerner følsomme data, f.eks. IP-adresse, "
-"eller annullér for at bruge oplysningerne fra det foregående skærmbillede."
-
-msgid "Digite sua senha para gerar um relatório mais completo."
-msgstr "Indtast din adgangskode for at generere en mere komplet rapport."
-
-msgid "Enviando, aguarde..."
-msgstr "Afsendelse, vent venligst..."
-
-msgid "Este driver é software livre."
-msgstr "Denne driver er gratis software."
-
-msgid "Este driver é proprietário."
-msgstr "Denne driver er proprietær."
-
-msgid "Este driver parece compatível com este computador."
-msgstr "Denne driver ser ud til at være kompatibel med denne computer."
-
+msgid "O Big-Hardware-Relatory já está em uso."
+msgstr "Big-Hardware-Relatory er allerede i brug."
+msgid "O diretório $drivers_path não existe e não foi possível criar."
+msgstr "Mappen $drivers_path findes ikke og kunne ikke oprettes."
+msgid "O Big-Kernel-Manager já está em uso."
+msgstr "Big-Kernel-Manager er allerede i brug."
+msgid "Big-Kernel-Manager"
+msgstr "Stor-kerne-manager"
 msgid "Remover"
 msgstr "Fjern"
-
 msgid "Instalar"
 msgstr "Installer"
-
+msgid "Este driver é software livre."
+msgstr "Denne driver er gratis software."
+msgid "Este driver é proprietário."
+msgstr "Denne driver er proprietær."
+msgid "Este driver parece compatível com este computador."
+msgstr "Denne driver ser ud til at være kompatibel med denne computer."
+msgid "Desativado"
+msgstr "Handicappede"
+msgid "Antes de instalar este driver, remova o outro driver Nvidia."
+msgstr "Før du installerer denne driver, skal du fjerne den anden Nvidia-driver."
+msgid "Ver informações do dispositivo no Linux Hardware"
+msgstr "Se oplysninger om enheden på Linux Hardware"
+msgid "Processador"
+msgstr "Processor"
+msgid "Placa mãe"
+msgstr "Bundkort"
+msgid "Memória"
+msgstr "Hukommelse"
+msgid "Swap Memória Virtual"
+msgstr "Virtuel hukommelsesudskiftning"
+msgid "Placa de vídeo"
+msgstr "Grafikkort"
+msgid "Áudio"
+msgstr "Lyd"
+msgid "Rede"
+msgstr "Netværk"
+msgid "Conexões de Rede"
+msgstr "Netværksforbindelser"
+msgid "Dispositivos e conexões USB"
+msgstr "USB-enheder og -tilslutninger"
+msgid "Portas PCI"
+msgstr "PCI-porte"
+msgid "Bateria"
+msgstr "Batteri"
+msgid "Dispositivos de Armazenamento"
+msgstr "Lagringsenheder"
+msgid "Partições montadas"
+msgstr "Monterede skillevægge"
+msgid "Partições desmontadas"
+msgstr "Afmonterede skillevægge"
+msgid "Dispositivos lógicos"
+msgstr "Logiske enheder"
+msgid "Raid"
+msgstr "Raid"
+msgid "Sistema"
+msgstr "System"
+msgid "Informações de Sistema"
+msgstr "Systemoplysninger"
+msgid "Repositórios"
+msgstr "Opbevaringssteder"
+msgid "Bluetooth"
+msgstr "Bluetooth"
+msgid "Temperatura"
+msgstr "Temperatur"
 msgid ""
 "Já existe outro driver nVidia instalado, para instalar este driver, remova primeiro o driver "
 "instalado."
 msgstr ""
 "Der er allerede installeret en anden nVidia-driver, for at installere denne driver skal du først "
 "fjerne den installerede driver."
-
 msgid "Em uso"
 msgstr "I brug"
-
 msgid "Obsoleto, Clique para Remover!"
 msgstr "Forældet, klik for at fjerne!"
-
+msgid "Concluído, reinicie o computador para ativar a configuração do driver."
+msgstr "Genstart computeren for at aktivere driverkonfigurationen, når den er færdig, og start den igen."
+msgid "Driver"
+msgstr "Driver"
+msgid "Ocorreu um erro e o driver não pode ser aplicado."
+msgstr "Der er opstået en fejl, og driveren kan ikke anvendes."
+msgid "Enviando, aguarde..."
+msgstr "Afsendelse, vent venligst..."
 msgid "Categorias"
 msgstr "Kategorier"
-
 msgid "Principais"
 msgstr "Vigtigste"
-
 msgid "Driver detectado:"
 msgstr "Driver opdaget:"
-
 msgid "Mesa e Kernel"
 msgstr "Tabel og kerne"
-
 msgid "As alterações do kernel e mesa devem ser feita com cuidado."
 msgstr "Kerne- og skrivebordsændringer skal udføres omhyggeligt."
-
 msgid "Versões de kernel"
 msgstr "Kerneversioner"
-
 msgid ""
 "O kernel Linux é o componente do sistema operacional que controla todos os outros componentes e "
 "permite que os aplicativos funcionem. Alterar a versão do kernel pode trazer novas funcionalidades "
@@ -102,13 +137,10 @@ msgstr ""
 "systemet.<br><br>\n"
 "\t<b>RT,</b> er modificeret til specifikke anvendelser. Hvis du ikke bruger nogen programmer, der "
 "har brug for dette, er det bedst at bruge en kerne uden akronymet 'rt'."
-
 msgid "Precisa de ajuda?"
 msgstr "Har du brug for hjælp?"
-
 msgid "Drivers de vídeo"
 msgstr "Video drivere"
-
 msgid ""
 "Mesa inclui os drivers de vídeo do sistema que funcionam em conjunto com o kernel. Veja a diferença "
 "entre as versões:\n"
@@ -126,262 +158,59 @@ msgstr ""
 "generere ustabilitet, men kan også bringe mere ydeevne til spil.<br><br><b>Amber</b>, nyttig på "
 "ældre computere, generelt, fremstillet før 2010.<br><br>* Videodrivere fra AMD, Intel og andre er "
 "inkluderet i Mesa og Linux-kernen, undtagen Nvidias proprietære driver"
-
 msgid "Pesquisar Kernel"
 msgstr "Søg kerne"
-
 msgid "Resultado da pesquisa"
 msgstr "Søgeresultat"
-
-msgid "Big-Kernel-Manager"
-msgstr "Stor-kerne-manager"
-
 msgid "Fechar"
 msgstr "Luk"
-
 msgid "Abrir"
 msgstr "Åbn"
-
 msgid "Instalar ou Remover Versões de Kernel"
 msgstr "Installer eller fjern kerneversioner"
-
 msgid "Aplicando - Aguarde"
 msgstr "Ansøgning - Vent venligst"
-
 msgid "<small>* A detecção não inclui impressoras e scanners</small>"
 msgstr "<small>* Detektion omfatter ikke printere og scannere</small>"
-
-msgid "Placa de vídeo"
-msgstr "Grafikkort"
-
 msgid "Wifi"
 msgstr "Wifi"
-
 msgid "Rede Cabeada"
 msgstr "Kablet netværk"
-
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
 msgid "Impressora"
 msgstr "Printer"
-
 msgid "Impressora 3D"
 msgstr "3D-printer"
-
 msgid "Scanner"
 msgstr "Scanner"
-
 msgid "TV Digital"
 msgstr "Digitalt tv"
-
 msgid "Webcam"
 msgstr "Webcam"
-
 msgid "Touchscreen"
 msgstr "Touchscreen"
-
 msgid "Som"
 msgstr "Lyd"
-
 msgid "Outros"
 msgstr "Andre"
-
 msgid "Pesquisar Driver ou Firmware"
 msgstr "Søg driver eller firmware"
-
 msgid "Big-Driver-Manager"
 msgstr "Big-Driver-Manager"
-
 msgid "Instalar ou Remover Drivers e Firmwares"
 msgstr "Installer eller fjern drivere og firmware"
-
 msgid "Geralmente é preciso reiniciar o computador para o driver ou firmware ser aplicado."
 msgstr ""
 "Det er normalt nødvendigt at genstarte computeren, for at driveren eller firmwaren kan blive "
 "anvendt."
-
 msgid "Driver ou firmware"
 msgstr "Driver eller firmware"
-
 msgid "Este pacote fornece arquivos compatíveis com este computador."
 msgstr "Denne pakke indeholder filer, der er kompatible med denne computer."
-
-msgid "Concluído, reinicie o computador para ativar a configuração do driver."
-msgstr "Genstart computeren for at aktivere driverkonfigurationen, når den er færdig, og start den igen."
-
-msgid "Driver"
-msgstr "Driver"
-
-msgid "Ocorreu um erro e o driver não pode ser aplicado."
-msgstr "Der er opstået en fejl, og driveren kan ikke anvendes."
-
-msgid "Resumo"
-msgstr "Resumé"
-
-msgid "Processador"
-msgstr "Processor"
-
-msgid "Placa mãe"
-msgstr "Bundkort"
-
-msgid "Memória"
-msgstr "Hukommelse"
-
-msgid "Rede"
-msgstr "Netværk"
-
-msgid "Usb"
-msgstr "Usb"
-
-msgid "Pci"
-msgstr "Pci"
-
-msgid "Bateria"
-msgstr "Batteri"
-
-msgid "Armazenamento"
-msgstr "Opbevaring"
-
-msgid "Sistema"
-msgstr "System"
-
-msgid "Temperatura"
-msgstr "Temperatur"
-
-msgid "Áudio"
-msgstr "Lyd"
-
-msgid "Mais informações"
-msgstr "Flere oplysninger"
-
-msgid "Hardware"
-msgstr "Hardware"
-
-msgid "Pesquisar"
-msgstr "Søg på"
-
-msgid "Informações de Hardware"
-msgstr "Oplysninger om hardware"
-
-msgid "Informações Sobre o Sistema e o Hardware"
-msgstr "Oplysninger om system og hardware"
-
-msgid "Memória RAM:"
-msgstr "RAM-hukommelse:"
-
-msgid "Vídeo:"
-msgstr "Video:"
-
-msgid "Instalado na partição:"
-msgstr "Installeret på partitionen:"
-
-msgid "Tamanho da partição:"
-msgstr "Partitionsstørrelse:"
-
-msgid "Espaço utilizado:"
-msgstr "Anvendt plads:"
-
-msgid "Espaço livre:"
-msgstr "Rydde plads:"
-
-msgid "Data que o sistema foi instalado:"
-msgstr "Dato, hvor systemet blev installeret:"
-
-msgid "Kernel em uso:"
-msgstr "Kernel i brug:"
-
-msgid "Instalar ou Remover Drivers"
-msgstr "Installer eller fjern drivere"
-
 msgid ""
-"O BigLinux inclui milhares de drivers e firmwares por padrão, porém ainda pode ser necessário "
-"instalar mais alguns."
+"Digite sua senha para gerar um relatório removendo dados sensíveis, por exemplo, endereço de IP, ou "
+"cancele para utilizar as informações da tela anterior."
 msgstr ""
-"BigLinux indeholder tusindvis af drivere og firmware som standard, men du kan stadig have brug for "
-"at installere nogle flere."
-
-msgid "Gerar Relatório"
-msgstr "Generere rapport"
-
-msgid "Cria um arquivo com informações que pode ser publicado na internet."
-msgstr "Opretter en fil med oplysninger, der kan offentliggøres på internettet."
-
-msgid "Ver informações do dispositivo no Linux Hardware"
-msgstr "Se oplysninger om enheden på Linux Hardware"
-
-msgid "Categoria"
-msgstr "Kategori"
-
-msgid "Nome"
-msgstr "Navn"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Info"
-msgstr "Info"
-
-msgid "Desativado"
-msgstr "Handicappede"
-
-msgid "Antes de instalar este driver, remova o outro driver Nvidia."
-msgstr "Før du installerer denne driver, skal du fjerne den anden Nvidia-driver."
-
-msgid "Swap Memória Virtual"
-msgstr "Virtuel hukommelsesudskiftning"
-
-msgid "Conexões de Rede"
-msgstr "Netværksforbindelser"
-
-msgid "Dispositivos e conexões USB"
-msgstr "USB-enheder og -tilslutninger"
-
-msgid "Portas PCI"
-msgstr "PCI-porte"
-
-msgid "Dispositivos de Armazenamento"
-msgstr "Lagringsenheder"
-
-msgid "Partições montadas"
-msgstr "Monterede skillevægge"
-
-msgid "Partições desmontadas"
-msgstr "Afmonterede skillevægge"
-
-msgid "Dispositivos lógicos"
-msgstr "Logiske enheder"
-
-msgid "Raid"
-msgstr "Raid"
-
-msgid "Informações de Sistema"
-msgstr "Systemoplysninger"
-
-msgid "Repositórios"
-msgstr "Opbevaringssteder"
-
-msgid "Enviar para filebin.net"
-msgstr "Send til filebin.net"
-
-msgid "Visualizar"
-msgstr "Visualisere"
-
-msgid "O relatório foi salvo no arquivo:"
-msgstr "Rapporten blev gemt i filen:"
-
-msgid ""
-"Deseja visualizar o arquivo ou envia-lo ao site filebin.net, para ter uma URL com os dados do seu "
-"computador de forma fácil de compartilhar?"
-msgstr ""
-"Vil du se filen eller uploade den til det filebin.net websted for at have en URL med dine "
-"computerdata på en nem måde at dele?"
-
-msgid "O diretório $drivers_path não existe e não foi possível criar."
-msgstr "Mappen $drivers_path findes ikke og kunne ikke oprettes."
-
-msgid "O Big-Kernel-Manager já está em uso."
-msgstr "Big-Kernel-Manager er allerede i brug."
-
-msgid "O Big-Hardware-Relatory já está em uso."
-msgstr "Big-Hardware-Relatory er allerede i brug."
+"Indtast din adgangskode for at generere en rapport, der fjerner følsomme data, f.eks. IP-adresse, "
+"eller annullér for at bruge oplysningerne fra det foregående skærmbillede."
+msgid "Digite sua senha para gerar um relatório mais completo."
+msgstr "Indtast din adgangskode for at generere en mere komplet rapport."
