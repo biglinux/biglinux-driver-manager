@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if [ $# -gt 0 ]; then
-	xdg-open https://linux-hardware.org/?id=$*
-fi
-
-
