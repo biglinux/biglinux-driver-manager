@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- Outer glow ring -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="#3584e4" stroke-width="1" opacity="0.15"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#3584e4" opacity="0.08"/>
+  <!-- GPU card outline (subtle) -->
+  <rect x="10" y="14" width="24" height="16" rx="2.5"
+        fill="#3584e4" fill-opacity="0.10" stroke="#3584e4" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- PCIe baseline (subtle) -->
+  <rect x="16" y="32" width="12" height="2" rx="0.5" fill="#3584e4" opacity="0.15"/>
+  <!-- SHARP: Shield body (stable) -->
+  <path d="M24 16 L31 19.5 L31 25 C31 29 28 32 24 33.5 C20 32 17 29 17 25 L17 19.5 Z"
+        fill="#3584e4" opacity="0.85" stroke="#1a5fb4" stroke-width="0.8"/>
+  <!-- SHARP: Checkmark inside shield -->
+  <polyline points="20.5,24 23,26.5 27.5,21"
+            fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Accent dot -->
+  <circle cx="36" cy="12" r="2.5" fill="#3584e4" opacity="0.35"/>
+  <circle cx="36" cy="12" r="1" fill="#62a0ea" opacity="0.8"/>
+</svg>

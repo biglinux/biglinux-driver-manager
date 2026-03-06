@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <!-- Glow ring -->
+  <circle cx="24" cy="24" r="22" fill="#3584e4" opacity="0.08"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#3584e4" opacity="0.10"/>
+  <!-- Container card -->
+  <rect x="8" y="10" width="32" height="28" rx="4"
+        fill="#3584e4" fill-opacity="0.08"
+        stroke="#3584e4" stroke-opacity="0.18" stroke-width="1"/>
+  <!-- Monitor frame -->
+  <rect x="13" y="14" width="22" height="15" rx="2"
+        fill="none" stroke="#3584e4" stroke-width="1.5" opacity="0.8"/>
+  <!-- Screen -->
+  <rect x="15" y="16" width="18" height="11" rx="1" fill="#3584e4" opacity="0.15"/>
+  <!-- Play/3D triangle on screen -->
+  <polygon points="21,18 21,25 28,21.5" fill="#3584e4" opacity="0.7"/>
+  <!-- Stand -->
+  <line x1="24" y1="29" x2="24" y2="33" stroke="#3584e4" stroke-width="1.5" opacity="0.6"/>
+  <line x1="19" y1="33" x2="29" y2="33" stroke="#3584e4" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <!-- GPU pins hint -->
+  <rect x="33" y="19" width="4" height="3" rx="0.5" fill="#3584e4" opacity="0.4"/>
+  <rect x="34" y="16" width="1" height="3" rx="0.5" fill="#3584e4" opacity="0.3"/>
+  <rect x="36" y="16" width="1" height="3" rx="0.5" fill="#3584e4" opacity="0.3"/>
+  <!-- Accent dot -->
+  <circle cx="37" cy="35" r="2" fill="#3584e4" opacity="0.5"/>
+</svg>

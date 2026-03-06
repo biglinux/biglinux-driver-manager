@@ -1,0 +1,11 @@
+[Unit]
+Description=Big Driver Manager — periodic driver check
+
+[Timer]
+# First check ~90 seconds after login
+OnStartupSec=90
+# Then every 24 hours (in case the user never logs out)
+OnUnitActiveSec=24h
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,287 @@
+/* Big Kernel Manager — Minimal Adwaita-native CSS */
+/* Adwaita named colours by default; brand hex where visual accuracy requires it. */
+
+/* --- Accessibility ------------------------------------------------ */
+button:focus-visible, switch:focus-visible, entry:focus-visible,
+searchentry:focus-visible, expander:focus-visible {
+    outline: 2px solid @accent_color;
+    outline-offset: 2px;
+}
+
+/* --- Cards (generic) ---------------------------------------------- */
+.card {
+    border-radius: 12px;
+    border: 1px solid alpha(@borders, 0.18);
+    background-color: alpha(@card_bg_color, 0.60);
+    box-shadow: 0 1px 3px alpha(black, 0.04);
+    transition: box-shadow 200ms ease;
+}
+.card:hover { box-shadow: 0 2px 6px alpha(black, 0.06); }
+
+/* --- Intro cards (home page) -------------------------------------- */
+.intro-card {
+    padding: 0;
+    border-radius: 18px;
+    transition: box-shadow 250ms ease-in-out, border-color 250ms ease-in-out;
+}
+.intro-kernel {
+    background-image: linear-gradient(
+        to bottom right,
+        alpha(#3584e4, 0.14),
+        alpha(#1c71d8, 0.04)
+    );
+    border: 1.5px solid alpha(#3584e4, 0.20);
+    box-shadow:
+        0 0 0 1px alpha(#3584e4, 0.06),
+        0 4px 16px alpha(#3584e4, 0.12),
+        0 1px 3px alpha(black, 0.06);
+}
+.intro-kernel:hover {
+    border-color: alpha(#3584e4, 0.35);
+    box-shadow:
+        0 0 0 1px alpha(#3584e4, 0.10),
+        0 8px 28px alpha(#3584e4, 0.18),
+        0 2px 6px alpha(black, 0.08);
+}
+.intro-drivers {
+    background-image: linear-gradient(
+        to bottom right,
+        alpha(#26a269, 0.14),
+        alpha(#1a8a55, 0.04)
+    );
+    border: 1.5px solid alpha(#26a269, 0.20);
+    box-shadow:
+        0 0 0 1px alpha(#26a269, 0.06),
+        0 4px 16px alpha(#26a269, 0.12),
+        0 1px 3px alpha(black, 0.06);
+}
+.intro-drivers:hover {
+    border-color: alpha(#26a269, 0.35);
+    box-shadow:
+        0 0 0 1px alpha(#26a269, 0.10),
+        0 8px 28px alpha(#26a269, 0.18),
+        0 2px 6px alpha(black, 0.08);
+}
+/* Separator accent line */
+.intro-sep { border-radius: 2px; }
+.intro-kernel .intro-sep {
+    background-image: linear-gradient(to right, alpha(#3584e4, 0.1), #3584e4, alpha(#3584e4, 0.1));
+}
+.intro-drivers .intro-sep {
+    background-image: linear-gradient(to right, alpha(#26a269, 0.1), #26a269, alpha(#26a269, 0.1));
+}
+
+/* --- Alert card (inline recommendations) -------------------------- */
+.alert-card {
+    padding: 16px; border-radius: 8px;
+    border: 1px solid alpha(@warning_color, 0.3);
+    border-left: 4px solid @warning_color;
+    background: alpha(@warning_color, 0.06);
+}
+.alert-card.info {
+    border-color: alpha(@accent_color, 0.3);
+    border-left: 4px solid @accent_color;
+    background: alpha(@accent_color, 0.06);
+}
+
+/* --- In-use pill -------------------------------------------------- */
+.badge-box {
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+.badge-box.success { background: alpha(@success_color, 0.18); }
+.badge-box.warning { background: alpha(@warning_color, 0.18); }
+.badge-box.accent  { background: alpha(@accent_color, 0.18); }
+.badge-box.purple  { background: alpha(#9141ac, 0.22); }
+.badge-box.danger  { background: alpha(@error_color, 0.18); }
+
+.badge {
+    font-size: 0.8em;
+    font-weight: 600;
+}
+.badge-box.success .badge { color: @success_color; }
+.badge-box.warning .badge { color: @warning_color; }
+.badge-box.accent  .badge { color: @accent_color; }
+.badge-box.purple  .badge { color: #c061cb; }
+.badge-box.danger  .badge { color: @error_color; }
+
+/* --- Active pill -------------------------------------------------- */
+.active-pill {
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, alpha(@success_color, 0.22), alpha(@success_color, 0.08));
+}
+
+/* --- Active button (green suggested-action override) -------------- */
+.active-status-btn {
+    --accent-bg-color: var(--success-bg-color);
+    --accent-fg-color: var(--success-fg-color);
+    --accent-color: var(--success-color);
+}
+
+/* --- Purpose section cards ---------------------------------------- */
+.purpose-card-gaming {
+    background: linear-gradient(160deg, alpha(@accent_color, 0.06), @card_bg_color);
+    border-left: 3px solid alpha(@accent_color, 0.40);
+}
+.purpose-card-video {
+    background: linear-gradient(160deg, alpha(@success_color, 0.06), @card_bg_color);
+    border-left: 3px solid alpha(@success_color, 0.40);
+}
+.purpose-card-compute {
+    background: linear-gradient(160deg, alpha(@warning_color, 0.06), @card_bg_color);
+    border-left: 3px solid alpha(@warning_color, 0.40);
+}
+.purpose-card-nvidia {
+    background: linear-gradient(160deg, alpha(#76b900, 0.06), @card_bg_color);
+    border-left: 3px solid alpha(#76b900, 0.40);
+}
+.purpose-card-mesa {
+    background: linear-gradient(160deg, alpha(@accent_color, 0.04), @card_bg_color);
+    border-left: 3px solid alpha(@accent_color, 0.30);
+}
+
+/* Package row inside purpose card */
+.purpose-pkg-row {
+    padding: 10px 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: alpha(@window_fg_color, 0.05);
+    border: 1px solid alpha(@borders, 0.08);
+}
+
+/* --- Recommendations card ----------------------------------------- */
+.purpose-card-recommend {
+    padding: 0;
+    background: linear-gradient(160deg, alpha(@accent_color, 0.06), alpha(@warning_color, 0.03), @card_bg_color);
+    border-left: 3px solid alpha(@accent_color, 0.40);
+}
+
+.purpose-card-suggest {
+    padding: 0;
+    background: linear-gradient(160deg, alpha(@accent_color, 0.04), @card_bg_color);
+    border-left: 3px solid alpha(@accent_color, 0.25);
+}
+
+/* --- Kernel page -------------------------------------------------- */
+
+/* Running kernel hero card */
+.kernel-running-card {
+    padding: 0;
+    border-radius: 16px;
+    background-image: linear-gradient(
+        to bottom right,
+        alpha(#3584e4, 0.12),
+        alpha(#1c71d8, 0.03)
+    );
+    border: 1.5px solid alpha(#3584e4, 0.18);
+    box-shadow:
+        0 0 0 1px alpha(#3584e4, 0.05),
+        0 4px 14px alpha(#3584e4, 0.10),
+        0 1px 3px alpha(black, 0.05);
+    transition: box-shadow 250ms ease-in-out, border-color 250ms ease-in-out;
+}
+.kernel-running-card:hover {
+    border-color: alpha(#3584e4, 0.30);
+    box-shadow:
+        0 0 0 1px alpha(#3584e4, 0.08),
+        0 6px 22px alpha(#3584e4, 0.14),
+        0 2px 6px alpha(black, 0.06);
+}
+
+/* In-use pill badge */
+.in-use-pill {
+    padding: 3px 12px;
+    border-radius: 99px;
+    background: linear-gradient(135deg, alpha(@success_color, 0.22), alpha(@success_color, 0.10));
+    border: 1px solid alpha(@success_color, 0.25);
+    color: @success_color;
+    font-weight: 700;
+    font-size: 0.85em;
+}
+
+/* Installed section card */
+.kernel-installed-card {
+    padding: 0;
+    border-radius: 14px;
+    background: linear-gradient(160deg, alpha(@success_color, 0.04), alpha(@card_bg_color, 0.85));
+    border-left: 3px solid alpha(@success_color, 0.28);
+}
+
+/* Available group cards — by type */
+.kernel-group-lts {
+    padding: 0;
+    border-radius: 14px;
+    background: linear-gradient(160deg, alpha(@success_color, 0.03), alpha(@card_bg_color, 0.85));
+    border-left: 3px solid alpha(@success_color, 0.25);
+}
+.kernel-group-standard {
+    padding: 0;
+    border-radius: 14px;
+    background: linear-gradient(160deg, alpha(@accent_color, 0.03), alpha(@card_bg_color, 0.85));
+    border-left: 3px solid alpha(@accent_color, 0.22);
+}
+.kernel-group-xanmod {
+    padding: 0;
+    border-radius: 14px;
+    background: linear-gradient(160deg, alpha(#9141ac, 0.04), alpha(@card_bg_color, 0.85));
+    border-left: 3px solid alpha(#9141ac, 0.30);
+}
+.kernel-group-rt {
+    padding: 0;
+    border-radius: 14px;
+    background: linear-gradient(160deg, alpha(@warning_color, 0.04), alpha(@card_bg_color, 0.85));
+    border-left: 3px solid alpha(@warning_color, 0.30);
+}
+
+/* Group header inside kernel group cards */
+.kernel-group-header {
+    font-weight: 700;
+    font-size: 1em;
+}
+
+/* Kernel row styling (inside boxed-list within group cards) */
+
+/* --- Terminal (progress dialog) ----------------------------------- */
+.terminal {
+    background-color: alpha(@window_bg_color, 0.95);
+    color: @window_fg_color;
+    padding: 12px; border-radius: 8px;
+    font-family: "Monospace", monospace; font-size: 0.75rem;
+}
+
+/* --- Success / error icons ---------------------------------------- */
+.success-icon { color: @success_color; }
+.error-icon   { color: @error_color; }
+
+/* --- Misc helpers ------------------------------------------------- */
+.dim-label { opacity: 0.75; }
+
+/* --- Disabled state ----------------------------------------------- */
+button.suggested-action:disabled,
+button.destructive-action:disabled {
+    opacity: 0.5;
+}
+
+/* --- Smooth transitions ------------------------------------------- */
+row, button { transition: background 200ms ease; }
+
+/* --- Tooltip popover ---------------------------------------------- */
+.tooltip-popover > contents {
+    border-radius: 12px;
+    border: 1px solid alpha(@borders, 0.22);
+    background: alpha(@popover_bg_color, 0.97);
+    box-shadow:
+        0 4px 16px alpha(black, 0.10),
+        0 1px 4px alpha(black, 0.06);
+    padding: 0;
+}
+
+/* --- Reduced motion ----------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0ms !important;
+        animation-duration: 0ms !important;
+    }
+}

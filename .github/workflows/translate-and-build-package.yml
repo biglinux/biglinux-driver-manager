@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - name: If Template exit
         shell: bash
         run: |
@@ -58,7 +58,6 @@ jobs:
           mv big-auto-translator/gettext_po_generator_github.sh .
           sudo cp -f big-auto-translator/openai-translate.js /usr/local/lib/node_modules/attranslate/dist/services/openai-translate.js
           gitfolder=$(echo ${{ github.repository }} | rev | cut -d "/" -f1 | rev)
-          export OriginalLang=pt-BR
           bash gettext_po_generator_github.sh $gitfolder
 
       - name: Update github

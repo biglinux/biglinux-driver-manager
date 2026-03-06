@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Outer glow ring -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="#3584e4" stroke-width="1" opacity="0.15"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#3584e4" opacity="0.10"/>
+  <!-- Shield body -->
+  <path d="M24 8 L36 14 L36 26 C36 33 30 38 24 40 C18 38 12 33 12 26 L12 14 Z"
+        fill="#3584e4" opacity="0.18" stroke="#3584e4" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Inner shield highlight -->
+  <path d="M24 12 L33 16.5 L33 26 C33 31 28.5 35 24 36.5 C19.5 35 15 31 15 26 L15 16.5 Z"
+        fill="#62a0ea" opacity="0.12"/>
+  <!-- Checkmark -->
+  <polyline points="18,24 22,29 30,19" fill="none" stroke="#3584e4" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Star accent top-right -->
+  <circle cx="35" cy="13" r="2.5" fill="#3584e4" opacity="0.35"/>
+  <circle cx="35" cy="13" r="1" fill="#62a0ea" opacity="0.7"/>
+</svg>

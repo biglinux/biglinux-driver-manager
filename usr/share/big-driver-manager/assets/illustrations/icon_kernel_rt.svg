@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#e66100" opacity="0.10"/>
+  <!-- Stopwatch body -->
+  <circle cx="24" cy="26" r="10" fill="#e66100" opacity="0.18" stroke="#e66100" stroke-width="1.2"/>
+  <!-- Inner ring -->
+  <circle cx="24" cy="26" r="7" fill="#ff7800" opacity="0.08"/>
+  <!-- Stopwatch top button -->
+  <rect x="22.5" y="14" width="3" height="3" rx="1" fill="#e66100" opacity="0.5"/>
+  <!-- Stopwatch crown -->
+  <line x1="24" y1="14" x2="24" y2="12" stroke="#e66100" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Clock hands (precise timing) -->
+  <line x1="24" y1="26" x2="24" y2="21" stroke="#e66100" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="24" y1="26" x2="28" y2="28" stroke="#e66100" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="24" cy="26" r="1.2" fill="#e66100"/>
+  <!-- Tick marks -->
+  <line x1="24" y1="17" x2="24" y2="18.5" stroke="#e66100" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="33" y1="26" x2="31.5" y2="26" stroke="#e66100" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="24" y1="35" x2="24" y2="33.5" stroke="#e66100" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="15" y1="26" x2="16.5" y2="26" stroke="#e66100" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+</svg>

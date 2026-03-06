@@ -1,0 +1,2692 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the big-kernel-manager package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: big-kernel-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"Language-Team: Chinese <zh@li.org>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 137
+#: usr/share/big-kernel-manager/core/base_manager.py:137
+#, python-brace-format
+msgid "Database locked. Retrying in {} seconds..."
+msgstr "数据库已锁定。 {} 秒后重试..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 142
+#: usr/share/big-kernel-manager/core/base_manager.py:142
+#, python-brace-format
+msgid "Waiting {} s before retry..."
+msgstr "重试前等待 {} 秒..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 147
+#: usr/share/big-kernel-manager/core/base_manager.py:147
+#, python-brace-format
+msgid "Retry attempt {} of {}..."
+msgstr ""
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 105
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 108
+#: usr/share/big-kernel-manager/core/base_manager.py:177
+#: usr/share/big-kernel-manager/core/base_manager.py:180
+#: usr/share/big-kernel-manager/core/mhwd_manager.py:312
+#, python-brace-format
+msgid "Starting {}..."
+msgstr "正在启动 {}..."
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 106
+#: usr/share/big-kernel-manager/core/base_manager.py:178
+#: usr/share/big-kernel-manager/core/mhwd_manager.py:310
+#, python-brace-format
+msgid "Command: {}"
+msgstr "命令: {}"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 206
+#: usr/share/big-kernel-manager/core/base_manager.py:202
+#: usr/share/big-kernel-manager/core/mesa_manager.py:302
+#, python-brace-format
+msgid "Error: {}"
+msgstr "错误：{}"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-kernel-manager/core/base_manager.py:230
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:407
+msgid "Operation cancelled by user."
+msgstr "操作被用户取消。"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 160
+#: usr/share/big-kernel-manager/core/base_manager.py:253
+#, python-brace-format
+msgid "Still working... ({:.0%} complete)"
+msgstr "仍在工作中...（{:.0%} 完成）"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 177
+#: usr/share/big-kernel-manager/core/base_manager.py:279
+msgid "Operation cancelled"
+msgstr "操作已取消"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 178
+#: usr/share/big-kernel-manager/core/base_manager.py:280
+msgid "Operation was cancelled."
+msgstr "{} 已成功完成。"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 183
+#: usr/share/big-kernel-manager/core/base_manager.py:285
+#, python-brace-format
+msgid "{}  complete!"
+msgstr ""
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 187
+#: usr/share/big-kernel-manager/core/base_manager.py:289
+#, python-brace-format
+msgid "{}  completed successfully."
+msgstr "{} 已成功完成。"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 193
+#: usr/share/big-kernel-manager/core/base_manager.py:295
+#, python-brace-format
+msgid "{}  failed."
+msgstr "{} 失败。"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 197
+#: usr/share/big-kernel-manager/core/base_manager.py:299
+#, python-brace-format
+msgid "{}  failed (exit code: {})"
+msgstr "{} 失败（退出代码：{}）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 310
+#: usr/share/big-kernel-manager/core/base_manager.py:310
+msgid ""
+"Package not found in repositories. The package name may have changed or been "
+"removed.\n"
+"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
+"for the correct name."
+msgstr ""
+"在存储库中找不到包。包名称可能已更改或已删除。\n"
+"建议：尝试使用“sudo pacman -Sy”刷新数据库并搜索正确的名称。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 319
+#: usr/share/big-kernel-manager/core/base_manager.py:319
+msgid ""
+"A conflict prevented the operation from completing.\n"
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
+"'sudo pacman -Syyu'."
+msgstr ""
+"冲突导致操作无法完成。\n"
+"建议：清理缓存并使用“sudo pacman -Scc”更新，然后使用“sudo pacman -Syyu”。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 327
+#: usr/share/big-kernel-manager/core/base_manager.py:327
+msgid ""
+"Some files from this package already exist on the system.\n"
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
+"and resolve the conflict."
+msgstr ""
+"该软件包中的某些文件已存在于系统中。\n"
+"建议：使用“pacman -Qo <file_path>”检查哪个包拥有该文件并解决冲突。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 335
+#: usr/share/big-kernel-manager/core/base_manager.py:335
+msgid ""
+"Required dependencies could not be resolved.\n"
+"Suggestion: Update the full system first with 'sudo pacman -Syu'."
+msgstr ""
+"无法解决所需的依赖关系。\n"
+"建议：首先使用“sudo pacman -Syu”更新整个系统。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 342
+#: usr/share/big-kernel-manager/core/base_manager.py:342
+msgid ""
+"Package signature could not be verified.\n"
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
+"manjaro-keyring'."
+msgstr ""
+"无法验证包签名。\n"
+"建议：使用“sudo pacman -S archlinux-keyring manjaro-keyring”更新您的密钥环。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 350
+#: usr/share/big-kernel-manager/core/base_manager.py:350
+msgid ""
+"The package database is locked by another process.\n"
+"If no other package manager is running, remove the lock with 'sudo rm /var/"
+"lib/pacman/db.lck'."
+msgstr ""
+"包数据库被另一个进程锁定。\n"
+"如果没有其他包管理器正在运行，请使用“sudo rm /var/lib/pacman/db.lck”删除锁"
+"定。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 358
+#: usr/share/big-kernel-manager/core/base_manager.py:358
+msgid ""
+"Not enough disk space to complete the operation.\n"
+"Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
+msgstr ""
+"磁盘空间不足，无法完成操作。\n"
+"建议：通过使用“sudo pacman -Scc”清除包缓存来释放空间。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 366
+#: usr/share/big-kernel-manager/core/base_manager.py:366
+msgid ""
+"Could not download required files.\n"
+"Suggestion: Check your internet connection. If the problem persists, try "
+"updating your mirror list."
+msgstr ""
+"无法下载所需的文件。\n"
+"建议：检查您的互联网连接。如果问题仍然存在，请尝试更新您的镜像列表。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 374
+#: usr/share/big-kernel-manager/core/base_manager.py:374
+msgid ""
+"A downloaded package is corrupted.\n"
+"Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
+msgstr ""
+"下载的包已损坏。\n"
+"建议：使用“sudo pacman -Scc”清除缓存，然后重试。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 391
+#: usr/share/big-kernel-manager/core/base_manager.py:391
+msgid "Generating GRUB configuration..."
+msgstr "运行交易后挂钩..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 392
+#: usr/share/big-kernel-manager/core/base_manager.py:392
+msgid "Running post-transaction hooks..."
+msgstr "运行交易后挂钩..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-kernel-manager/core/base_manager.py:393
+msgid "Installing packages..."
+msgstr "正在安装软件包..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 394
+#: usr/share/big-kernel-manager/core/base_manager.py:394
+msgid "Removing packages..."
+msgstr "正在删除包..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 395
+#: usr/share/big-kernel-manager/core/base_manager.py:395
+msgid "Checking for file conflicts..."
+msgstr "正在检查文件冲突..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 396
+#: usr/share/big-kernel-manager/core/base_manager.py:396
+msgid "Checking dependencies..."
+msgstr "检查依赖关系..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 400
+#: usr/share/big-kernel-manager/core/base_manager.py:400
+msgid "Synchronizing package databases..."
+msgstr "正在同步包数据库..."
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 643
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/base_manager.py, line: 423
+#: usr/share/big-kernel-manager/core/base_manager.py:423
+#: usr/share/big-kernel-manager/ui/home_page.py:644
+msgid "Downloading packages..."
+msgstr "正在下载包..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-kernel-manager/core/driver_installer.py:57
+#: usr/share/big-kernel-manager/ui/category_page.py:598
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:384
+#: usr/share/big-kernel-manager/ui/home_page.py:713
+#: usr/share/big-kernel-manager/ui/home_page.py:724
+#: usr/share/big-kernel-manager/ui/kernel_page.py:688
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1127
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1353
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1364
+#, python-brace-format
+msgid "Installing {}"
+msgstr "正在安装 {}"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-kernel-manager/core/driver_installer.py:85
+#: usr/share/big-kernel-manager/ui/category_page.py:636
+#: usr/share/big-kernel-manager/ui/kernel_page.py:777
+#: usr/share/big-kernel-manager/ui/kernel_page.py:847
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1205
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1391
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1402
+#, python-brace-format
+msgid "Removing {}"
+msgstr "正在移除 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/driver_installer.py, line: 99
+#: usr/share/big-kernel-manager/core/driver_installer.py:99
+#, python-brace-format
+msgid "pamac-installer not found. Cannot install AUR package {}."
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/driver_installer.py, line: 113
+#: usr/share/big-kernel-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "在打开的 pamac 窗口中继续安装。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 116
+#: usr/share/big-kernel-manager/core/mesa_manager.py:116
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "未找到驱动程序：{}"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-kernel-manager/core/mesa_manager.py:151
+#, python-brace-format
+msgid "Applying {} driver..."
+msgstr "正在加载{}驱动程序..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 335
+#: usr/share/big-kernel-manager/core/mesa_manager.py:153
+#, python-brace-format
+msgid "Starting {} driver installation..."
+msgstr "开始安装 {} 驱动程序..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 161
+#: usr/share/big-kernel-manager/core/mesa_manager.py:161
+msgid "Checking for conflicting packages..."
+msgstr "检查冲突的包..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-kernel-manager/core/mesa_manager.py:173
+#, python-brace-format
+msgid "Removing conflicts: {}"
+msgstr "删除冲突：{}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 178
+#: usr/share/big-kernel-manager/core/mesa_manager.py:178
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "正在检查 {} 个包..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 187
+#: usr/share/big-kernel-manager/core/mesa_manager.py:187
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ 套餐 {} 不可用，正在跳过..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 191
+#: usr/share/big-kernel-manager/core/mesa_manager.py:191
+msgid "❌ No packages available to install."
+msgstr "❌ 没有可供安装的软件包。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-kernel-manager/core/mesa_manager.py:197
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "安装：{}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 205
+#: usr/share/big-kernel-manager/core/mesa_manager.py:205
+msgid "Removing conflicting packages..."
+msgstr "删除冲突的包..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mesa_manager.py, line: 237
+#: usr/share/big-kernel-manager/core/mesa_manager.py:237
+msgid "Failed to remove conflicting packages."
+msgstr "无法删除冲突的包。"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 197
+#: usr/share/big-kernel-manager/core/mesa_manager.py:241
+#, python-brace-format
+msgid "❌ Failed to remove conflicts (exit code: {})"
+msgstr "❌ 无法消除冲突（退出代码：{}）"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-kernel-manager/core/mesa_manager.py:249
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "正在安装 {} 驱动程序..."
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 414
+#: usr/share/big-kernel-manager/core/mesa_manager.py:282
+msgid "Failed to apply driver."
+msgstr "申请驱动程序失败。"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 197
+#: usr/share/big-kernel-manager/core/mesa_manager.py:285
+#, python-brace-format
+msgid "❌ Operation failed (exit code: {})"
+msgstr ""
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-kernel-manager/core/mesa_manager.py:292
+msgid "Driver applied successfully!"
+msgstr "司机申请成功！"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 187
+#: usr/share/big-kernel-manager/core/mesa_manager.py:294
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} 驱动程序应用成功！"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 206
+#: usr/share/big-kernel-manager/core/mesa_manager.py:303
+#, python-brace-format
+msgid "❌ Error: {}"
+msgstr "❌ 错误：{}"
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 951
+# File: big-kernel-manager/usr/share/big-kernel-manager/core/mhwd_manager.py, line: 213
+#: usr/share/big-kernel-manager/core/mhwd_manager.py:213
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1093
+#, python-brace-format
+msgid "Remove the installed NVIDIA driver ({}) first."
+msgstr "首先删除已安装的 NVIDIA 驱动程序 ({})。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-kernel-manager/core/mhwd_manager.py:335
+msgid "Completed"
+msgstr "完全的"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 308
+#: usr/share/big-kernel-manager/core/mhwd_manager.py:335
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:367
+msgid "Failed"
+msgstr "失败"
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 206
+#: usr/share/big-kernel-manager/ui/application.py:143
+#: usr/share/big-kernel-manager/ui/kernel_page.py:165
+#: usr/share/big-kernel-manager/ui/mesa_page.py:414
+msgid "Error"
+msgstr "错误"
+
+# File: usr/share/big-kernel-manager/ui/base_page.py, line: 56
+#: usr/share/big-kernel-manager/ui/base_page.py:39
+#: usr/share/big-kernel-manager/ui/base_page.py:44
+msgid "Loading..."
+msgstr "加载中..."
+
+# File: usr/share/big-kernel-manager/ui/base_page.py, line: 56
+#: usr/share/big-kernel-manager/ui/base_page.py:40
+msgid "Loading"
+msgstr "加载中"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/base_page.py, line: 55
+#: usr/share/big-kernel-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "仍在加载...检查您的网络连接。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 67
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 277
+#: usr/share/big-kernel-manager/ui/category_page.py:68
+#: usr/share/big-kernel-manager/ui/category_page.py:279
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:47
+#: usr/share/big-kernel-manager/ui/window.py:110
+msgid "Other"
+msgstr "其他"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 128
+#: usr/share/big-kernel-manager/ui/category_page.py:129
+msgid "Search drivers..."
+msgstr "搜索驱动程序..."
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 184
+#: usr/share/big-kernel-manager/ui/category_page.py:133
+msgid "Search drivers"
+msgstr "搜索驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 162
+#: usr/share/big-kernel-manager/ui/category_page.py:163
+msgid "No more automatically detected compatible drivers in this category."
+msgstr "不再自动检测此类别中的兼容驱动程序。"
+
+#: usr/share/big-kernel-manager/ui/category_page.py:174
+#: usr/share/big-kernel-manager/ui/category_page.py:202
+msgid "Show drivers without detected compatibility"
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 187
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 260
+#: usr/share/big-kernel-manager/ui/category_page.py:189
+#: usr/share/big-kernel-manager/ui/category_page.py:262
+msgid "No drivers needed for this category"
+msgstr "此类别不需要驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 191
+#: usr/share/big-kernel-manager/ui/category_page.py:193
+msgid ""
+"No drivers in this category were automatically detected as compatible with "
+"your hardware."
+msgstr "此类别中没有任何驱动程序被自动检测为与您的硬件兼容。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 238
+#: usr/share/big-kernel-manager/ui/category_page.py:240
+msgid "Detection Error"
+msgstr "检测错误"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 264
+#: usr/share/big-kernel-manager/ui/category_page.py:266
+msgid ""
+"No drivers in this category were detected as necessary for your hardware."
+msgstr "未检测到此类别中的任何驱动程序是您的硬件所必需的。"
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 339
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 283
+#: usr/share/big-kernel-manager/ui/category_page.py:341
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:283
+msgid "1 driver"
+msgstr "1 个驱动程序"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-kernel-manager/ui/category_page.py:341
+#, python-brace-format
+msgid "{} drivers"
+msgstr "{} 个驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 341
+#: usr/share/big-kernel-manager/ui/category_page.py:343
+#, python-brace-format
+msgid "{} detected"
+msgstr "检测到 {}"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/category_page.py:345
+#, python-brace-format
+msgid "{} installed"
+msgstr "已安装 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 405
+#: usr/share/big-kernel-manager/ui/category_page.py:407
+msgid "Detected"
+msgstr "已检测"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/category_page.py:409
+#: usr/share/big-kernel-manager/ui/home_page.py:488
+#: usr/share/big-kernel-manager/ui/home_page.py:504
+#: usr/share/big-kernel-manager/ui/home_page.py:735
+msgid "Installed"
+msgstr "已安装"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/category_page.py:411
+msgid "Not installed"
+msgstr "未安装"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-kernel-manager/ui/category_page.py:434
+#: usr/share/big-kernel-manager/ui/category_page.py:618
+#: usr/share/big-kernel-manager/ui/kernel_page.py:367
+#: usr/share/big-kernel-manager/ui/kernel_page.py:425
+#: usr/share/big-kernel-manager/ui/kernel_page.py:757
+#: usr/share/big-kernel-manager/ui/mesa_page.py:898
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1052
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1192
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1312
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1377
+msgid "Remove"
+msgstr "移除"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/category_page.py:438
+#: usr/share/big-kernel-manager/ui/category_page.py:580
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-kernel-manager/ui/home_page.py:333
+#: usr/share/big-kernel-manager/ui/home_page.py:432
+#: usr/share/big-kernel-manager/ui/home_page.py:695
+#: usr/share/big-kernel-manager/ui/kernel_page.py:636
+#: usr/share/big-kernel-manager/ui/kernel_page.py:669
+#: usr/share/big-kernel-manager/ui/mesa_page.py:903
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1071
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1114
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1318
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1339
+msgid "Install"
+msgstr "安装"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-kernel-manager/ui/category_page.py:446
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:250
+#: usr/share/big-kernel-manager/ui/home_page.py:336
+#: usr/share/big-kernel-manager/ui/home_page.py:435
+#: usr/share/big-kernel-manager/ui/kernel_page.py:660
+#: usr/share/big-kernel-manager/ui/mesa_page.py:905
+#, python-brace-format
+msgid "Install {}"
+msgstr "安装 {}"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-kernel-manager/ui/category_page.py:448
+#: usr/share/big-kernel-manager/ui/kernel_page.py:748
+#: usr/share/big-kernel-manager/ui/mesa_page.py:900
+#, python-brace-format
+msgid "Remove {}"
+msgstr "移除 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 503
+#: usr/share/big-kernel-manager/ui/category_page.py:509
+#, python-brace-format
+msgid "{total} drivers · {detected} detected · {installed} installed"
+msgstr "{total} 个驱动程序 · {detected} 已检测 · {installed} 已安装"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 299
+#: usr/share/big-kernel-manager/ui/category_page.py:577
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:363
+#: usr/share/big-kernel-manager/ui/home_page.py:692
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1105
+msgid "Install Driver"
+msgstr "安装驱动程序"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-kernel-manager/ui/category_page.py:578
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:364
+#: usr/share/big-kernel-manager/ui/home_page.py:693
+#, python-brace-format
+msgid "Install {}?"
+msgstr "安装 {}？"
+
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-kernel-manager/ui/category_page.py:579
+#: usr/share/big-kernel-manager/ui/category_page.py:617
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-kernel-manager/ui/home_page.py:629
+#: usr/share/big-kernel-manager/ui/home_page.py:694
+#: usr/share/big-kernel-manager/ui/kernel_page.py:668
+#: usr/share/big-kernel-manager/ui/kernel_page.py:756
+#: usr/share/big-kernel-manager/ui/kernel_page.py:824
+#: usr/share/big-kernel-manager/ui/mesa_page.py:567
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1113
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1155
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1191
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1338
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1376
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "取消"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 200
+#: usr/share/big-kernel-manager/ui/category_page.py:599
+#: usr/share/big-kernel-manager/ui/category_page.py:637
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:384
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:207
+msgid "Please wait..."
+msgstr "请稍候..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 367
+#: usr/share/big-kernel-manager/ui/category_page.py:615
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1184
+msgid "Remove Driver"
+msgstr "删除驱动程序"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-kernel-manager/ui/category_page.py:616
+#, python-brace-format
+msgid "Remove {}?"
+msgstr "移除 {}？"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-kernel-manager/ui/category_page.py:664
+msgid "Operation completed successfully."
+msgstr "操作成功完成。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-kernel-manager/ui/category_page.py:668
+msgid "Operation failed. Check logs for details."
+msgstr "操作失败。检查日志以获取详细信息。"
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 44
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 36
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:36
+#: usr/share/big-kernel-manager/ui/window.py:44
+msgid "Video / GPU"
+msgstr "视频/GPU"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 37
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:37
+#: usr/share/big-kernel-manager/ui/window.py:50
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 38
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:38
+#: usr/share/big-kernel-manager/ui/window.py:56
+msgid "Ethernet"
+msgstr "以太网"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 39
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:39
+#: usr/share/big-kernel-manager/ui/window.py:62
+msgid "Bluetooth"
+msgstr "蓝牙"
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 68
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 40
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:40
+#: usr/share/big-kernel-manager/ui/window.py:68
+msgid "DVB / TV"
+msgstr "DVB / 电视"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 41
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:41
+#: usr/share/big-kernel-manager/ui/window.py:74
+msgid "Audio"
+msgstr "音频"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 42
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:42
+#: usr/share/big-kernel-manager/ui/window.py:80
+msgid "Webcam"
+msgstr "网络摄像头"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 43
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:43
+#: usr/share/big-kernel-manager/ui/window.py:86
+msgid "Touchscreen"
+msgstr "触摸屏"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 44
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:44
+#: usr/share/big-kernel-manager/ui/window.py:92
+msgid "Printers"
+msgstr "打印机"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 45
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:45
+#: usr/share/big-kernel-manager/ui/window.py:98
+msgid "3D Printers"
+msgstr "3D打印机"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 46
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:46
+#: usr/share/big-kernel-manager/ui/window.py:104
+msgid "Scanners"
+msgstr "扫描仪"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 93
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 329
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:93
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:329
+msgid "All drivers are installed"
+msgstr "所有驱动程序均已安装"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 95
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 331
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:95
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:331
+msgid "All necessary drivers are already installed on your system."
+msgstr "所有必需的驱动程序均已安装在您的系统上。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:105
+#: usr/share/big-kernel-manager/ui/mesa_data.py:282
+msgid "Recommended"
+msgstr "推荐"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 218
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-kernel-manager/ui/window.py:218
+msgid "Categories"
+msgstr "类别"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 152
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:152
+msgid "Detecting hardware"
+msgstr "检测硬件"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 155
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:155
+msgid "Detecting hardware..."
+msgstr "检测硬件..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 285
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:285
+#, python-brace-format
+msgid "{n} drivers"
+msgstr "{n} 个驱动程序"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:288
+msgid "1 installed"
+msgstr "已安装 1 个"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "已安装 {n}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 320
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:320
+#, python-brace-format
+msgid "{n} drivers available to install"
+msgstr "有 {n} 个驱动程序可供安装"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/drivers_hub_page.py, line: 323
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:323
+msgid "Install recommended drivers for better hardware support."
+msgstr "安装推荐的驱动程序以获得更好的硬件支持。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:411
+msgid "Driver installed successfully."
+msgstr "驱动安装成功。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-kernel-manager/ui/drivers_hub_page.py:415
+msgid "Installation failed. Check logs for details."
+msgstr "安装失败。检查日志以获取详细信息。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 70
+#: usr/share/big-kernel-manager/ui/home_page.py:70
+msgid "What is Kernel?"
+msgstr "什么是内核？"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 72
+#: usr/share/big-kernel-manager/ui/home_page.py:72
+msgid ""
+"The kernel is the heart of your operating system. It controls your "
+"processor, memory, and all hardware. Most drivers already come built-in with "
+"the kernel."
+msgstr ""
+"内核是操作系统的核心。它控制您的处理器、内存和所有硬件。大多数驱动程序已内置"
+"于内核中。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 259
+#: usr/share/big-kernel-manager/ui/home_page.py:83
+msgid "What are Drivers?"
+msgstr "什么是驱动程序？"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 85
+#: usr/share/big-kernel-manager/ui/home_page.py:85
+msgid ""
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
+"communicate with the system. If everything is already working, you probably "
+"don't need to change anything."
+msgstr ""
+"驱动程序允许每个设备（例如视频卡、Wi-Fi 或声音）与系统进行通信。如果一切都已"
+"正常工作，您可能不需要更改任何内容。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 113
+#: usr/share/big-kernel-manager/ui/home_page.py:113
+msgid "Checking your system…"
+msgstr "正在检查您的系统..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 119
+#: usr/share/big-kernel-manager/ui/home_page.py:119
+msgid "Detecting hardware and installed drivers."
+msgstr "正在检测硬件和已安装的驱动程序。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 149
+#: usr/share/big-kernel-manager/ui/home_page.py:149
+msgid "Recommended for your hardware"
+msgstr "推荐适合您的硬件"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-kernel-manager/ui/home_page.py:197
+msgid "Install recommended"
+msgstr "安装推荐"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 227
+#: usr/share/big-kernel-manager/ui/home_page.py:227
+msgid "Compatible drivers available"
+msgstr "可用的兼容驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 273
+#: usr/share/big-kernel-manager/ui/home_page.py:273
+#, python-brace-format
+msgid "{} — no driver loaded, install {} for this device"
+msgstr "{} — 未加载驱动程序，为此设备安装 {}"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-kernel-manager/ui/home_page.py:277
+msgid "Go to drivers"
+msgstr "前往驱动程序"
+
+#: usr/share/big-kernel-manager/ui/home_page.py:287
+msgid ""
+"Your devices are already working with the built-in driver, which is usually "
+"the most stable and recommended option. If you experience issues, you can "
+"try a driver detected as compatible that may improve performance or add "
+"features."
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 376
+#: usr/share/big-kernel-manager/ui/home_page.py:377
+#, python-brace-format
+msgid "All {} recommended video packages for your {} hardware are installed."
+msgstr "您的 {} 硬件的所有 {} 推荐视频包均已安装。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 386
+#: usr/share/big-kernel-manager/ui/home_page.py:387
+#, python-brace-format
+msgid "{} of {} recommended packages are not installed."
+msgstr "未安装 {} 个推荐软件包（共 {} 个）。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 396
+#: usr/share/big-kernel-manager/ui/home_page.py:397
+#, python-brace-format
+msgid "Install all {} recommended"
+msgstr "安装所有推荐的 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 457
+#: usr/share/big-kernel-manager/ui/home_page.py:458
+#, python-brace-format
+msgid "Already installed ({})"
+msgstr "已安装 ({})"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 469
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 472
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 608
+#: usr/share/big-kernel-manager/ui/home_page.py:470
+#: usr/share/big-kernel-manager/ui/home_page.py:473
+#: usr/share/big-kernel-manager/ui/home_page.py:609
+msgid "Show installed packages"
+msgstr "显示已安装的软件包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 605
+#: usr/share/big-kernel-manager/ui/home_page.py:606
+msgid "Hide installed packages"
+msgstr "隐藏已安装的软件包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 620
+#: usr/share/big-kernel-manager/ui/home_page.py:621
+msgid "Install Recommended Packages"
+msgstr "安装推荐的软件包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 623
+#: usr/share/big-kernel-manager/ui/home_page.py:624
+#, python-brace-format
+msgid ""
+"Install <b>{}</b> packages?\n"
+"\n"
+"{}"
+msgstr ""
+"安装 <b>{}</b> 软件包？\n"
+"\n"
+"{}"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/home_page.py:630
+msgid "Install All"
+msgstr "安装全部"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-kernel-manager/ui/home_page.py:643
+#, python-brace-format
+msgid "Installing {} packages"
+msgstr "正在安装 {} 软件包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 653
+#: usr/share/big-kernel-manager/ui/home_page.py:654
+msgid "Installing recommended packages"
+msgstr "正在安装推荐的软件包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 670
+#: usr/share/big-kernel-manager/ui/home_page.py:671
+msgid "All recommended packages installed successfully!"
+msgstr "所有推荐的软件包均已成功安装！"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 437
+#: usr/share/big-kernel-manager/ui/home_page.py:681
+msgid ""
+"Package installation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"软件包安装失败。\n"
+"检查终端输出以获取详细信息。"
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1212
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 713
+#: usr/share/big-kernel-manager/ui/home_page.py:714
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1354
+msgid "Downloading package..."
+msgstr "正在下载包..."
+
+# File: usr/share/big-kernel-manager/core/base_manager.py, line: 187
+#: usr/share/big-kernel-manager/ui/home_page.py:733
+#, python-brace-format
+msgid "{} installed successfully!"
+msgstr "{} 安装成功！"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 335
+#: usr/share/big-kernel-manager/ui/home_page.py:741
+#, python-brace-format
+msgid "Installation of {} failed."
+msgstr "{} 的安装失败。"
+
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 770
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 347
+#: usr/share/big-kernel-manager/ui/home_page.py:771
+#: usr/share/big-kernel-manager/ui/kernel_page.py:347
+msgid "Warning"
+msgstr "警告"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 770
+#: usr/share/big-kernel-manager/ui/home_page.py:771
+msgid "Information"
+msgstr "信息"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 40
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:40
+msgid "Stable, long-term support"
+msgstr "稳定、长期支持"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 43
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:43
+msgid ""
+"Receives security updates for years. Best choice for most users — reliable "
+"and well-tested."
+msgstr "多年来一直收到安全更新。大多数用户的最佳选择——可靠且经过充分测试。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 49
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:49
+msgid "Low-latency, real-time"
+msgstr "低延迟、实时"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 52
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:52
+msgid ""
+"Designed for audio/video production and tasks needing precise timing. May be "
+"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
+"users."
+msgstr ""
+"专为音频/视频制作和需要精确计时的任务而设计。可能与某些驱动程序（例如 "
+"NVIDIA）不兼容。仅推荐给高级用户。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 59
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:59
+msgid "Gaming & performance optimized"
+msgstr "游戏和性能优化"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 62
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:62
+msgid ""
+"Tuned for faster gaming and a more responsive desktop. Great for daily use "
+"if you want extra performance."
+msgstr ""
+"经过调整，可实现更快的游戏速度和响应更快的桌面。如果您想要额外的性能，非常适"
+"合日常使用。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 68
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:68
+msgid "Latest features & drivers"
+msgstr "最新功能和驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_card_builder.py, line: 72
+#: usr/share/big-kernel-manager/ui/kernel_card_builder.py:72
+msgid "Always up to date with the newest features and hardware support."
+msgstr "始终了解最新的功能和硬件支持。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 146
+#: usr/share/big-kernel-manager/ui/kernel_page.py:107
+msgid "Installed Kernels"
+msgstr "已安装内核"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-kernel-manager/ui/kernel_page.py:119
+msgid "Remove all obsolete kernels"
+msgstr "删除所有过时的内核"
+
+# File: usr/share/big-kernel-manager/ui/window.py, line: 89
+#: usr/share/big-kernel-manager/ui/kernel_page.py:261
+msgid "Kernel in use"
+msgstr "使用中的内核"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 240
+#: usr/share/big-kernel-manager/ui/kernel_page.py:267
+msgid "In Use"
+msgstr "使用中"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 331
+#: usr/share/big-kernel-manager/ui/kernel_page.py:331
+msgid "Obsolete Kernels — Removal Recommended"
+msgstr "过时的内核 - 建议删除"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 360
+#: usr/share/big-kernel-manager/ui/kernel_page.py:360
+msgid "No longer receives security updates"
+msgstr "不再接收安全更新"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-kernel-manager/ui/kernel_page.py:372
+#: usr/share/big-kernel-manager/ui/kernel_page.py:430
+#, python-brace-format
+msgid "Remove kernel {}"
+msgstr "移除内核 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 416
+#: usr/share/big-kernel-manager/ui/kernel_page.py:416
+msgid "Last backup"
+msgstr "上次备份"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 420
+#: usr/share/big-kernel-manager/ui/kernel_page.py:420
+msgid "At least one backup kernel must remain installed"
+msgstr "必须至少保留安装一个备份内核"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 439
+#: usr/share/big-kernel-manager/ui/kernel_page.py:439
+msgid ""
+"Recommended for most users. These kernels receive security updates for years "
+"and are thoroughly tested."
+msgstr "推荐给大多数用户。这些内核多年来一直接受安全更新并经过彻底测试。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 443
+#: usr/share/big-kernel-manager/ui/kernel_page.py:443
+msgid ""
+"Always up to date with the latest features and hardware support. Good if you "
+"need the newest drivers."
+msgstr "始终了解最新的功能和硬件支持。如果您需要最新的驱动程序，那就太好了。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 447
+#: usr/share/big-kernel-manager/ui/kernel_page.py:447
+msgid ""
+"Tuned for gaming and desktop responsiveness. A good option for daily use "
+"with extra performance."
+msgstr "针对游戏和桌面响应能力进行了调整。具有额外性能的日常使用的不错选择。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-kernel-manager/ui/kernel_page.py:451
+msgid ""
+"Built for audio/video production needing precise timing. May be incompatible "
+"with some drivers (e.g. NVIDIA). Only for advanced users."
+msgstr ""
+"专为需要精确计时的音频/视频制作而设计。可能与某些驱动程序（例如 NVIDIA）不兼"
+"容。仅适用于高级用户。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 492
+#: usr/share/big-kernel-manager/ui/kernel_page.py:492
+msgid "LTS — Long Term Support (Recommended)"
+msgstr "LTS — 长期支持（推荐）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 493
+#: usr/share/big-kernel-manager/ui/kernel_page.py:493
+msgid "Standard"
+msgstr "标准"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 295
+#: usr/share/big-kernel-manager/ui/kernel_page.py:494
+msgid "Xanmod (Performance)"
+msgstr "Xanmod（性能）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 495
+#: usr/share/big-kernel-manager/ui/kernel_page.py:495
+msgid "Real-Time (Advanced)"
+msgstr "实时（高级）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 566
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 591
+#: usr/share/big-kernel-manager/ui/kernel_page.py:566
+#: usr/share/big-kernel-manager/ui/kernel_page.py:591
+#, python-brace-format
+msgid "Show {} available"
+msgstr "显示可用的 {}"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 155
+#: usr/share/big-kernel-manager/ui/kernel_page.py:594
+msgid "Hide available kernels"
+msgstr "隐藏可用内核"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 295
+#: usr/share/big-kernel-manager/ui/kernel_page.py:639
+#: usr/share/big-kernel-manager/ui/kernel_page.py:642
+#, python-brace-format
+msgid "Install kernel {}"
+msgstr "安装内核 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 661
+#: usr/share/big-kernel-manager/ui/kernel_page.py:661
+msgid "The following packages will be installed:"
+msgstr "将安装以下软件包："
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 327
+#: usr/share/big-kernel-manager/ui/kernel_page.py:689
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1128
+msgid "Preparing installation..."
+msgstr "正在准备安装..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 433
+#: usr/share/big-kernel-manager/ui/kernel_page.py:713
+msgid ""
+"Kernel installed successfully.\n"
+"You may need to reboot to use it."
+msgstr ""
+"内核安装成功。\n"
+"您可能需要重新启动才能使用它。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 437
+#: usr/share/big-kernel-manager/ui/kernel_page.py:720
+msgid ""
+"Kernel installation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"内核安装失败。\n"
+"检查终端输出以获取详细信息。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 359
+#: usr/share/big-kernel-manager/ui/kernel_page.py:734
+msgid "Cannot Remove Running Kernel"
+msgstr "无法移除正在运行的内核"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 360
+#: usr/share/big-kernel-manager/ui/kernel_page.py:736
+msgid "This kernel is currently in use. Boot into a different kernel first."
+msgstr "该内核当前正在使用中。首先引导到不同的内核。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 749
+#: usr/share/big-kernel-manager/ui/kernel_page.py:749
+msgid "The following packages will be removed:"
+msgstr "以下软件包将被删除："
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 395
+#: usr/share/big-kernel-manager/ui/kernel_page.py:778
+msgid "Preparing removal…"
+msgstr "准备移除..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-kernel-manager/ui/kernel_page.py:799
+msgid "Kernel removed successfully."
+msgstr "内核删除成功。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 455
+#: usr/share/big-kernel-manager/ui/kernel_page.py:802
+msgid ""
+"Kernel removal failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"内核删除失败。\n"
+"检查终端输出以获取详细信息。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 367
+#: usr/share/big-kernel-manager/ui/kernel_page.py:816
+msgid "Remove Obsolete Kernels"
+msgstr "全部删除"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 820
+#: usr/share/big-kernel-manager/ui/kernel_page.py:820
+#, python-brace-format
+msgid ""
+"Remove all obsolete kernels?\n"
+"\n"
+"<b>{}</b>\n"
+"\n"
+"These kernels no longer receive security updates."
+msgstr ""
+"删除所有过时的内核？\n"
+"\n"
+"<b>{}</b>\n"
+"\n"
+"这些内核不再接收安全更新。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-kernel-manager/ui/kernel_page.py:825
+msgid "Remove All"
+msgstr "全部删除"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-kernel-manager/ui/kernel_page.py:848
+#, python-brace-format
+msgid "Removing kernel {} ({}/{})..."
+msgstr "正在删除内核 {} ({}/{})..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 866
+#: usr/share/big-kernel-manager/ui/kernel_page.py:866
+#, python-brace-format
+msgid "Failed to remove {}. Stopping."
+msgstr "无法删除 {}。停下来。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-kernel-manager/ui/kernel_page.py:877
+msgid "All obsolete kernels removed successfully."
+msgstr "所有过时的内核均已成功删除。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 916
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/kernel_page.py, line: 919
+#: usr/share/big-kernel-manager/ui/kernel_page.py:916
+#: usr/share/big-kernel-manager/ui/kernel_page.py:919
+#, python-brace-format
+msgid "What's new in Linux {}"
+msgstr "Linux 的新功能{}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 37
+#: usr/share/big-kernel-manager/ui/mesa_data.py:37
+msgid "Latest NVIDIA driver — best performance and newest features"
+msgstr "最新的 NVIDIA 驱动程序 — 最佳性能和最新功能"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 40
+#: usr/share/big-kernel-manager/ui/mesa_data.py:40
+msgid "NVIDIA 575 series — use if the latest driver causes issues"
+msgstr "NVIDIA 575 系列 — 如果最新驱动程序导致问题，请使用"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 43
+#: usr/share/big-kernel-manager/ui/mesa_data.py:43
+msgid "NVIDIA 570 series — use if the latest driver causes issues"
+msgstr "NVIDIA 570 系列 — 如果最新驱动程序导致问题，请使用"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 47
+#: usr/share/big-kernel-manager/ui/mesa_data.py:47
+msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
+msgstr "对于 Intel + NVIDIA 笔记本电脑 — 在 GPU 之间切换以节省电池"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 50
+#: usr/share/big-kernel-manager/ui/mesa_data.py:50
+msgid "For Intel + NVIDIA laptops — NVIDIA 575 series"
+msgstr "适用于 Intel + NVIDIA 笔记本电脑 — NVIDIA 575 系列"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 53
+#: usr/share/big-kernel-manager/ui/mesa_data.py:53
+msgid "For Intel + NVIDIA laptops — NVIDIA 570 series"
+msgstr "适用于 Intel + NVIDIA 笔记本电脑 — NVIDIA 570 系列"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 56
+#: usr/share/big-kernel-manager/ui/mesa_data.py:56
+msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
+msgstr "适用于 Intel + NVIDIA 笔记本电脑 — NVIDIA 470（旧版，无 Wayland）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 59
+#: usr/share/big-kernel-manager/ui/mesa_data.py:59
+msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
+msgstr "适用于 Intel + NVIDIA 笔记本电脑 — NVIDIA 390（仅限非常旧的 GPU）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 63
+#: usr/share/big-kernel-manager/ui/mesa_data.py:63
+msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
+msgstr "对于 AMD + NVIDIA 笔记本电脑 — 在 GPU 之间切换以节省电池"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 66
+#: usr/share/big-kernel-manager/ui/mesa_data.py:66
+msgid "For AMD + NVIDIA laptops — NVIDIA 575 series"
+msgstr "适用于 AMD + NVIDIA 笔记本电脑 — NVIDIA 575 系列"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 69
+#: usr/share/big-kernel-manager/ui/mesa_data.py:69
+msgid "For AMD + NVIDIA laptops — NVIDIA 570 series"
+msgstr "适用于 AMD + NVIDIA 笔记本电脑 — NVIDIA 570 系列"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 72
+#: usr/share/big-kernel-manager/ui/mesa_data.py:72
+msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
+msgstr "适用于 AMD + NVIDIA 笔记本电脑 — NVIDIA 470（旧版，无 Wayland）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 76
+#: usr/share/big-kernel-manager/ui/mesa_data.py:76
+msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
+msgstr "优化虚拟机显示（VirtualBox、VMware、QEMU/KVM）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 90
+#: usr/share/big-kernel-manager/ui/mesa_data.py:90
+msgid "Gaming & 3D Graphics"
+msgstr "游戏和 3D 图形"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 93
+#: usr/share/big-kernel-manager/ui/mesa_data.py:93
+msgid ""
+"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
+"applications."
+msgstr ""
+"Vulkan 和 OpenGL 库对于游戏、Steam、Wine/Proton 和 3D 应用程序至关重要。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 99
+#: usr/share/big-kernel-manager/ui/mesa_data.py:99
+msgid "Vulkan for AMD Radeon GPUs"
+msgstr "适用于 AMD Radeon GPU 的 Vulkan"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 106
+#: usr/share/big-kernel-manager/ui/mesa_data.py:106
+msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
+msgstr "32 位 Vulkan (AMD) — Steam、Wine/Proton 和较旧的游戏需要"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 114
+#: usr/share/big-kernel-manager/ui/mesa_data.py:114
+msgid "Vulkan for Intel GPUs"
+msgstr "适用于 Intel GPU 的 Vulkan"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 121
+#: usr/share/big-kernel-manager/ui/mesa_data.py:121
+msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
+msgstr "32 位 Vulkan (Intel) — Steam、Wine/Proton 和较旧的游戏需要"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 130
+#: usr/share/big-kernel-manager/ui/mesa_data.py:130
+msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
+msgstr "适用于 NVIDIA (Nouveau) 的开源 Vulkan — 无需专有驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 139
+#: usr/share/big-kernel-manager/ui/mesa_data.py:139
+msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
+msgstr "32 位 OpenGL — Steam、Wine/Proton 和较旧的 32 位游戏需要"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 149
+#: usr/share/big-kernel-manager/ui/mesa_data.py:149
+msgid "Video Playback"
+msgstr "视频播放"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 152
+#: usr/share/big-kernel-manager/ui/mesa_data.py:152
+msgid ""
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
+"and video calls smoother while reducing CPU and power usage."
+msgstr ""
+"硬件加速视频解码 (VAAPI/VDPAU)。使视频、流媒体和视频通话更加流畅，同时减少 "
+"CPU 和功耗。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 159
+#: usr/share/big-kernel-manager/ui/mesa_data.py:159
+msgid "VAAPI for NVIDIA proprietary driver"
+msgstr "NVIDIA 专有驱动程序的 VAAPI"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 165
+#: usr/share/big-kernel-manager/ui/mesa_data.py:165
+msgid "VAAPI for Intel (Broadwell / Gen 8 and newer)"
+msgstr "适用于 Intel 的 VAAPI（Broadwell/Gen 8 及更新版本）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 172
+#: usr/share/big-kernel-manager/ui/mesa_data.py:172
+msgid "VAAPI for older Intel (Haswell to Coffee Lake / Gen 4–9)"
+msgstr "适用于旧版英特尔的 VAAPI（Haswell 到 Coffee Lake / Gen 4–9）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 179
+#: usr/share/big-kernel-manager/ui/mesa_data.py:179
+msgid "VAAPI for AMD and NVIDIA open-source (Nouveau)"
+msgstr "适用于 AMD 和 NVIDIA 开源的 VAAPI (Nouveau)"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 186
+#: usr/share/big-kernel-manager/ui/mesa_data.py:186
+msgid ""
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
+"Vulkan. Probably not needed."
+msgstr "AMD/NVIDIA 开源的 VDPAU — 正在被 VAAPI 和 Vulkan 取代。可能不需要。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 197
+#: usr/share/big-kernel-manager/ui/mesa_data.py:197
+msgid "GPU Compute (AI / ML)"
+msgstr ""
+"用于人工智能、机器学习、Blender、DaVinci Resolve 和其他 GPU 加速工作负载的 "
+"CUDA 和 OpenCL 库。"
+
+#: usr/share/big-kernel-manager/ui/mesa_data.py:200
+msgid ""
+"Your graphics card can do more than display images — it can also help with "
+"heavy processing tasks. These libraries allow programs to use the GPU for "
+"things like artificial intelligence, video editing, 3D rendering, image "
+"processing and scientific simulations. Examples: running local AI assistants "
+"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
+"Blender, applying filters in GIMP or Darktable, generating images with "
+"Stable Diffusion, and running physics simulations."
+msgstr ""
+
+#: usr/share/big-kernel-manager/ui/mesa_data.py:214
+msgid "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
+msgstr ""
+
+#: usr/share/big-kernel-manager/ui/mesa_data.py:220
+msgid "OpenCL for NVIDIA — Blender, GIMP, Darktable"
+msgstr ""
+
+#: usr/share/big-kernel-manager/ui/mesa_data.py:226
+msgid "OpenCL for AMD — Blender, GIMP, Darktable"
+msgstr ""
+
+#: usr/share/big-kernel-manager/ui/mesa_data.py:232
+msgid "OpenCL for Intel — Blender, GIMP, Darktable"
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 270
+#: usr/share/big-kernel-manager/ui/mesa_data.py:277
+msgid "Stable"
+msgstr "稳定的"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 272
+#: usr/share/big-kernel-manager/ui/mesa_data.py:279
+msgid ""
+"Officially tested by the Mesa team. The safest and most reliable choice for "
+"everyday use, gaming, and video playback."
+msgstr "由Mesa团队正式测试。日常使用、游戏和视频播放最安全、最可靠的选择。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 295
+#: usr/share/big-kernel-manager/ui/mesa_data.py:286
+#: usr/share/big-kernel-manager/ui/mesa_data.py:292
+msgid "Performance"
+msgstr "性能"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 281
+#: usr/share/big-kernel-manager/ui/mesa_data.py:288
+msgid ""
+"Modified version with gaming optimizations for extra performance. Reliable "
+"for most users but may rarely cause instabilities."
+msgstr ""
+"经过游戏优化的修改版本可提供额外的性能。对于大多数用户来说是可靠的，但很少会"
+"导致不稳定。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 289
+#: usr/share/big-kernel-manager/ui/mesa_data.py:296
+msgid "Development"
+msgstr "发展"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 291
+#: usr/share/big-kernel-manager/ui/mesa_data.py:298
+msgid ""
+"Built from the very latest source code with cutting-edge features. Offers "
+"the best gaming performance but is the least tested — only for advanced "
+"users."
+msgstr ""
+"基于最新的源代码构建，具有最前沿的功能。提供最佳的游戏性能，但测试最少 — 仅供"
+"高级用户使用。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 276
+#: usr/share/big-kernel-manager/ui/mesa_data.py:306
+#: usr/share/big-kernel-manager/ui/mesa_data.py:312
+msgid "Legacy"
+msgstr "遗留"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 301
+#: usr/share/big-kernel-manager/ui/mesa_data.py:308
+msgid ""
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
+"install this if newer Mesa versions don't work with your hardware."
+msgstr ""
+"适用于仅支持 OpenGL 2.1 或更早版本的非常旧的显卡。仅当较新的 Mesa 版本无法与"
+"您的硬件配合使用时才安装此版本。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-kernel-manager/ui/mesa_page.py:117
+msgid "Video Drivers"
+msgstr "视频驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 127
+#: usr/share/big-kernel-manager/ui/mesa_page.py:129
+msgid ""
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
+"are built into a single project called <b>Mesa</b>. Below you can choose a "
+"Mesa variant and manage extra packages for gaming, video playback, compute "
+"and AI."
+msgstr ""
+"在 Linux 上，AMD、Intel 和 NVIDIA（自由软件 Nouveau）的视频驱动程序内置在名"
+"为 <b>Mesa</b> 的单个项目中。您可以在下面选择 Mesa 变体并管理游戏、视频播放、"
+"计算和 AI 的额外包。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 150
+#: usr/share/big-kernel-manager/ui/mesa_page.py:152
+msgid ""
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
+"official proprietary driver for the best performance in gaming, AI and "
+"professional applications."
+msgstr ""
+"您的计算机配有 <b>NVIDIA</b> 显卡。您可以安装官方专有驱动程序，以获得游戏、人"
+"工智能和专业应用程序的最佳性能。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 183
+#: usr/share/big-kernel-manager/ui/mesa_page.py:185
+msgid "Mesa Variant"
+msgstr "Mesa 变体"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 194
+#: usr/share/big-kernel-manager/ui/mesa_page.py:196
+msgid ""
+"Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "选择要使用的 Mesa 版本。一次只能有一个变体处于活动状态。"
+
+#: usr/share/big-kernel-manager/ui/mesa_page.py:208
+msgid ""
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
+"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
+"— other versions will not improve performance and may cause instabilities."
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 282
+#: usr/share/big-kernel-manager/ui/mesa_page.py:379
+msgid "Detected graphics cards:"
+msgstr "检测到的显卡："
+
+#: usr/share/big-kernel-manager/ui/mesa_page.py:384
+msgid "NVIDIA proprietary driver (not Mesa)"
+msgstr ""
+
+#: usr/share/big-kernel-manager/ui/mesa_page.py:389
+msgid "Mesa driver"
+msgstr ""
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 190
+#: usr/share/big-kernel-manager/ui/mesa_page.py:518
+#: usr/share/big-kernel-manager/ui/mesa_page.py:525
+msgid "Active"
+msgstr "活动"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 427
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 916
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1014
+#: usr/share/big-kernel-manager/ui/mesa_page.py:530
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1058
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1156
+msgid "Switch"
+msgstr "切换"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 431
+#: usr/share/big-kernel-manager/ui/mesa_page.py:534
+#, python-brace-format
+msgid "Switch to {}"
+msgstr "切换到 {}"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 259
+#: usr/share/big-kernel-manager/ui/mesa_page.py:559
+msgid "Change Video Driver"
+msgstr "更改视频驱动程序"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 267
+#: usr/share/big-kernel-manager/ui/mesa_page.py:563
+#, python-brace-format
+msgid ""
+"Switch to <b>{}</b>?\n"
+"\n"
+"A system reboot will be required for the change to take effect."
+msgstr ""
+"切换到<b>{}</b>？\n"
+"\n"
+"需要重新启动系统才能使更改生效。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 267
+#: usr/share/big-kernel-manager/ui/mesa_page.py:568
+msgid "Apply"
+msgstr "应用"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 413
+#: usr/share/big-kernel-manager/ui/mesa_page.py:584
+#, python-brace-format
+msgid "Applying {}"
+msgstr "正在应用 {}"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 414
+#: usr/share/big-kernel-manager/ui/mesa_page.py:585
+msgid "Preparing to apply driver..."
+msgstr "正在准备应用驱动程序..."
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 337
+#: usr/share/big-kernel-manager/ui/mesa_page.py:606
+msgid ""
+"Video driver changed successfully!\n"
+"\n"
+"You must reboot your system for the new driver to become active."
+msgstr ""
+"视频驱动更改成功！\n"
+"\n"
+"您必须重新启动系统才能使新驱动程序生效。"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 451
+#: usr/share/big-kernel-manager/ui/mesa_page.py:612
+msgid ""
+"Driver change failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"驱动程序更改失败。\n"
+"检查终端输出以获取详细信息。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 589
+#: usr/share/big-kernel-manager/ui/mesa_page.py:692
+msgid "NVIDIA Proprietary Driver"
+msgstr "NVIDIA 专有驱动程序"
+
+#: usr/share/big-kernel-manager/ui/mesa_page.py:704
+msgid ""
+"Official closed-source driver with the best performance for gaming, AI, and "
+"professional workloads."
+msgstr ""
+
+#: usr/share/big-kernel-manager/ui/mesa_page.py:716
+msgid "Only one version can be active at a time."
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 677
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 680
+#: usr/share/big-kernel-manager/ui/mesa_page.py:813
+#: usr/share/big-kernel-manager/ui/mesa_page.py:816
+msgid "All recommended packages installed"
+msgstr "所有推荐的软件包均已安装"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 686
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 689
+#: usr/share/big-kernel-manager/ui/mesa_page.py:822
+#: usr/share/big-kernel-manager/ui/mesa_page.py:825
+msgid "Some packages not installed"
+msgstr "部分软件包未安装"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 747
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1163
+#: usr/share/big-kernel-manager/ui/mesa_page.py:883
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1305
+msgid "Included"
+msgstr "包括"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 754
+#: usr/share/big-kernel-manager/ui/mesa_page.py:890
+#, python-brace-format
+msgid "Already included in your Mesa version ({})"
+msgstr "已包含在您的 Mesa 版本 ({}) 中"
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-kernel-manager/ui/mesa_page.py:932
+msgid "Other Drivers"
+msgstr "其他驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 808
+#: usr/share/big-kernel-manager/ui/mesa_page.py:944
+msgid ""
+"Additional drivers for special hardware configurations like virtual machines."
+msgstr "用于虚拟机等特殊硬件配置的附加驱动程序。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1029
+msgid "Compatible"
+msgstr "兼容"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 888
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1030
+msgid "Open Source"
+msgstr "开源"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 888
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1030
+msgid "Proprietary"
+msgstr "专有"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 895
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1037
+msgid "⚠ No Wayland support · No longer maintained"
+msgstr "⚠ 没有 Wayland 支持 · 不再维护"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 920
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1062
+#, python-brace-format
+msgid "Switch from {} to {}"
+msgstr "从 {} 切换到 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 961
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1103
+msgid "open-source"
+msgstr "开源"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 961
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1103
+msgid "proprietary"
+msgstr "专有"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 967
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1109
+#, python-brace-format
+msgid ""
+"Install <b>{}</b> ({} driver)?\n"
+"\n"
+"A system reboot may be required after installation."
+msgstr ""
+"安装<b>{}</b>（{}驱动程序）？\n"
+"\n"
+"安装后可能需要重新启动系统。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1001
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1143
+msgid "Switch NVIDIA Driver"
+msgstr "切换 NVIDIA 驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1005
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1147
+#, python-brace-format
+msgid ""
+"Switch from <b>{}</b> to <b>{}</b>?\n"
+"\n"
+"The current driver will be replaced automatically.\n"
+"A system reboot will be required."
+msgstr ""
+"从 <b>{}</b> 切换到 <b>{}</b>？\n"
+"\n"
+"当前驱动程序将被自动替换。\n"
+"需要重新启动系统。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1027
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1169
+#, python-brace-format
+msgid "Switching to {}"
+msgstr "正在切换到 {}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1028
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1170
+msgid "Replacing current NVIDIA driver..."
+msgstr "正在替换当前的 NVIDIA 驱动程序..."
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1046
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1188
+#, python-brace-format
+msgid ""
+"Remove <b>{}</b>?\n"
+"\n"
+"A system reboot may be required after removal."
+msgstr ""
+"删除<b>{}</b>？\n"
+"\n"
+"删除后可能需要重新启动系统。"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 395
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1206
+msgid "Preparing removal..."
+msgstr "正在准备移除..."
+
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 190
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1226
+msgid "activated"
+msgstr "已激活"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1228
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1412
+msgid "installed"
+msgstr "已安装"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1230
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1412
+msgid "removed"
+msgstr "已移除"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1091
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1233
+#, python-brace-format
+msgid ""
+"{} was {} successfully!\n"
+"\n"
+"A system reboot may be required."
+msgstr ""
+"{} 已成功 {}！\n"
+"\n"
+"可能需要重新启动系统。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1239
+msgid ""
+"Driver operation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"驱动程序操作失败。\n"
+"检查终端输出以获取详细信息。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1146
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1288
+msgid "Already included in your Mesa version"
+msgstr "已经包含在您的 Mesa 版本中"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1330
+msgid "Install Package"
+msgstr "安装包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1191
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1333
+#, python-brace-format
+msgid ""
+"Install <b>{}</b>?\n"
+"\n"
+"{}"
+msgstr ""
+"安装<b>{}</b>？\n"
+"\n"
+"{}"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1371
+msgid "Remove Package"
+msgstr "删除包"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 1232
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1374
+#, python-brace-format
+msgid "Remove <b>{}</b>?"
+msgstr "删除<b>{}</b>？"
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1392
+msgid "Removing package..."
+msgstr "正在删除包..."
+
+# File: usr/share/big-kernel-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1414
+#, python-brace-format
+msgid "{} was {} successfully!"
+msgstr "{} 已成功 {}！"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-kernel-manager/ui/mesa_page.py:1419
+msgid ""
+"Package operation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"包操作失败。\n"
+"检查终端输出以获取详细信息。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/progress_dialog.py, line: 117
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:117
+msgid "Technical details"
+msgstr "技术细节"
+
+# File: usr/share/big-kernel-manager/ui/base_page.py, line: 67
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:131
+msgid "Terminal output"
+msgstr "终端输出"
+
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# #-#-#-#-#  big-kernel-manager.pot (big-kernel-manager)  #-#-#-#-#
+#
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-kernel-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-kernel-manager/ui/window.py, line: 463
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "关闭"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/progress_dialog.py, line: 229
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:229
+#, python-brace-format
+msgid "Step {} of {}: {}"
+msgstr "第 {} 步（共 {}）：{}"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/progress_dialog.py, line: 231
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:231
+#, python-brace-format
+msgid "Step {} of {}"
+msgstr "第 {} 步（共 {}）"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:333
+msgid "Operation completed successfully!"
+msgstr "操作已成功完成！"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:338
+msgid "Operation failed. Check terminal output for details."
+msgstr "操作失败。请查看终端输出以获取详细信息。"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:364
+msgid "Completed!"
+msgstr "完成！"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-kernel-manager/ui/progress_dialog.py:408
+msgid "Cancelled"
+msgstr "取消"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 45
+#: usr/share/big-kernel-manager/ui/window.py:45
+msgid "Mesa, NVIDIA, and GPU drivers."
+msgstr "Mesa、NVIDIA 和 GPU 驱动程序。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 51
+#: usr/share/big-kernel-manager/ui/window.py:51
+msgid "Wireless network adapter drivers."
+msgstr "无线网络适配器驱动程序。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 57
+#: usr/share/big-kernel-manager/ui/window.py:57
+msgid "Wired network adapter drivers."
+msgstr "有线网络适配器驱动程序。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 63
+#: usr/share/big-kernel-manager/ui/window.py:63
+msgid "Bluetooth adapter drivers."
+msgstr "蓝牙适配器驱动程序。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 69
+#: usr/share/big-kernel-manager/ui/window.py:69
+msgid "Digital TV tuner firmware."
+msgstr "数字电视调谐器固件。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 75
+#: usr/share/big-kernel-manager/ui/window.py:75
+msgid "Audio device firmware."
+msgstr "音频设备固件。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 81
+#: usr/share/big-kernel-manager/ui/window.py:81
+msgid "Webcam device firmware."
+msgstr "网络摄像头设备固件。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 87
+#: usr/share/big-kernel-manager/ui/window.py:87
+msgid "Touchscreen device firmware."
+msgstr "触摸屏设备固件。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 93
+#: usr/share/big-kernel-manager/ui/window.py:93
+msgid "Printer drivers and support packages."
+msgstr "打印机驱动程序和支持包。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 99
+#: usr/share/big-kernel-manager/ui/window.py:99
+msgid "3D printer firmware."
+msgstr "3D 打印机固件。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 105
+#: usr/share/big-kernel-manager/ui/window.py:105
+msgid "Scanner drivers and SANE backends."
+msgstr "扫描仪驱动程序和 SANE 后端。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 111
+#: usr/share/big-kernel-manager/ui/window.py:111
+msgid "Additional firmware packages."
+msgstr "附加固件包。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 189
+#: usr/share/big-kernel-manager/ui/window.py:189
+msgid "Home"
+msgstr "首页"
+
+# File: usr/share/big-kernel-manager/ui/window.py, line: 89
+#: usr/share/big-kernel-manager/ui/window.py:190
+msgid "Kernel"
+msgstr "内核"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 191
+#: usr/share/big-kernel-manager/ui/window.py:191
+msgid "Video"
+msgstr "视频"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 231
+#: usr/share/big-kernel-manager/ui/window.py:231
+msgid "A system reboot is recommended to apply changes."
+msgstr "建议重新启动系统以应用更改。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 269
+#: usr/share/big-kernel-manager/ui/window.py:269
+msgid "Content"
+msgstr "内容"
+
+#: usr/share/big-kernel-manager/ui/window.py:320
+#: usr/share/big-kernel-manager/ui/window.py:578
+msgid "Showing drivers detected as compatible with your computer"
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 327
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 329
+#: usr/share/big-kernel-manager/ui/window.py:328
+#: usr/share/big-kernel-manager/ui/window.py:330
+msgid "Show all drivers"
+msgstr "显示所有驱动程序"
+
+# File: usr/share/big-kernel-manager/ui/window.py, line: 129
+#: usr/share/big-kernel-manager/ui/window.py:342
+msgid "Menu"
+msgstr "菜单"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 318
+#: usr/share/big-kernel-manager/ui/window.py:344
+msgid "Application menu"
+msgstr "应用菜单"
+
+# File: usr/share/big-kernel-manager/ui/window.py, line: 134
+#: usr/share/big-kernel-manager/ui/window.py:347
+msgid "About"
+msgstr "关于"
+
+# File: usr/share/big-kernel-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-kernel-manager/ui/window.py:469
+msgid "Hardware detection failed. Check system logs for details."
+msgstr "硬件检测失败。检查系统日志以获取详细信息。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 534
+#: usr/share/big-kernel-manager/ui/window.py:549
+#, python-brace-format
+msgid "Obsolete kernel: {} — no longer receives security updates"
+msgstr "过时的内核：{} — 不再接收安全更新"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 538
+#: usr/share/big-kernel-manager/ui/window.py:553
+msgid "Manage"
+msgstr "管理"
+
+#: usr/share/big-kernel-manager/ui/window.py:574
+msgid "Showing all drivers, including incompatible ones"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:165
+msgid "Printing driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:166
+msgid "Printer driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:167
+msgid "Driver for the"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:168
+msgid "Driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:169
+msgid "Driver set (printing and scanning) for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:170
+msgid "Complete stand-alone driver set (printing and scanning) for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:171
+msgid "LPR and CUPS driver for the"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:172
+msgid "LPR and CUPS driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:173
+msgid "LPR driver and CUPS wrapper for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:174
+msgid "LPR driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:175
+msgid "CUPS wrapper for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:176
+msgid "CUPS driver for the"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:177
+msgid "CUPS driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:178
+msgid "CUPS and LPR drivers for the"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:179
+msgid "CUPS printer driver"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:180
+msgid "CUPS driver"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:181
+msgid "color multifunction printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:182
+msgid "multifunction printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:183
+msgid "ink tank multifunction printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:184
+msgid "Wi-Fi multifunction printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:185
+msgid "color laser printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:186
+msgid "laser printer driver"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:187
+msgid "laser printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:188
+msgid "inkjet printer driver"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:189
+msgid "inkjet printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:190
+msgid "inkjet printers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:191
+msgid "label and receipt printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:192
+msgid "label printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:193
+msgid "laser printers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:194
+msgid "printer communication"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:195
+msgid "print system integration"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:196
+msgid "series inkjet printer"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:197
+msgid "multifunction inkjet"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:198
+msgid "(printer communication)"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:199
+msgid "(print system integration)"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:200
+msgid "Wi-Fi driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:201
+msgid "DKMS driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:202
+msgid "Wired network driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:203
+msgid "Bluetooth driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:204
+msgid "Kernel driver module for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:205
+msgid "wireless driver"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:206
+msgid "wireless adapters"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:207
+msgid "USB wireless adapters"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:208
+msgid "USB dual-band wireless adapters"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:209
+msgid "USB tri-band wireless adapters"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:210
+msgid "Ethernet driver"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:211
+msgid "monitor mode & frame injection support"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:212
+msgid "Firmware for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:213
+msgid "Bluetooth firmware for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:214
+msgid "Firmware files for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:215
+msgid "digital TV (DVB) receivers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:216
+msgid "digital TV (DVB) tuners"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:217
+msgid "digital TV tuner"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:218
+msgid "wireless networking chips"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:219
+msgid "Wi-Fi chips"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:220
+msgid "wireless cards"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:221
+msgid "network adapters"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:222
+msgid "touchscreen controllers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:223
+msgid "USB audio interfaces"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:224
+msgid "USB logic analyzers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:225
+msgid "USB MIDI interfaces"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:226
+msgid "controller cards"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:227
+msgid "controller chips"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:228
+msgid "SCSI controllers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:229
+msgid "legacy devices only"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:230
+msgid "stable tested version"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:231
+msgid "latest release"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:232
+msgid "Scanner software for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:233
+msgid "Scanner driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:234
+msgid "SANE scanner driver for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:235
+msgid "scanner plugin for Image Scan!"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:236
+msgid "Image Scan! plugin for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:237
+msgid "Image Scan! frontend for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:238
+msgid "Data files required by"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:239
+msgid "scanners and multifunction printers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:240
+msgid "multifunction printers"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:241
+msgid "flatbed and all-in-one scanners"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:242
+msgid "USB and network scanners"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:243
+msgid "network and USB scanners"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:244
+msgid "portable document scanner"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:245
+msgid "one-touch scanning"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:246
+msgid "scanner panel button"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:247
+msgid "printers, supplied by"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:248
+msgid "PPD files for"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:249
+msgid "Administration tool for managing"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:250
+msgid "printers on your network"
+msgstr ""
+
+#: usr/share/big-kernel-manager/utils/desc_translate.py:251
+msgid "(proprietary)"
+msgstr ""
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 200
+#~ msgid ""
+#~ "CUDA and OpenCL libraries for artificial intelligence, machine learning, "
+#~ "Blender, DaVinci Resolve and other GPU-accelerated workloads."
+#~ msgstr ""
+#~ "用于人工智能、机器学习、Blender、DaVinci Resolve 和其他 GPU 加速工作负载"
+#~ "的 CUDA 和 OpenCL 库。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 207
+#~ msgid "NVIDIA CUDA — TensorFlow, PyTorch, AI/ML"
+#~ msgstr "NVIDIA CUDA — TensorFlow、PyTorch、AI/ML"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 213
+#~ msgid "OpenCL for NVIDIA — Blender, DaVinci, Darktable"
+#~ msgstr "适用于 NVIDIA 的 OpenCL — Blender、DaVinci、Darktable"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 219
+#~ msgid "OpenCL for AMD — Blender, GIMP, DaVinci"
+#~ msgstr "适用于 AMD 的 OpenCL — Blender、GIMP、达芬奇"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_data.py, line: 225
+#~ msgid "OpenCL for Intel — Blender, DaVinci"
+#~ msgstr "英特尔的 OpenCL — Blender、达芬奇"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 289
+#~ msgid "\\u2022 <b>{}</b> \\u2014 NVIDIA proprietary driver (not Mesa)"
+#~ msgstr "\\u2022 <b>{}</b> \\u2014 NVIDIA 专有驱动程序（非 Mesa）"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 294
+#~ msgid "\\u2022 <b>{}</b> \\u2014 Mesa driver"
+#~ msgstr "• <b>{}</b> — Mesa 驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/mesa_page.py, line: 601
+#~ msgid ""
+#~ "Official closed-source driver with the best performance for gaming, AI, "
+#~ "and professional workloads. Only one version can be active at a time."
+#~ msgstr ""
+#~ "官方闭源驱动程序，可为游戏、人工智能和专业工作负载提供最佳性能。一次只能有"
+#~ "一个版本处于活动状态。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 173
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/category_page.py, line: 200
+#~ msgid "Show drivers without confirmed compatibility"
+#~ msgstr "显示未确认兼容性的驱动程序"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/home_page.py, line: 287
+#~ msgid ""
+#~ "These drivers are compatible with your hardware. Your devices are "
+#~ "working, but these may improve performance or add features."
+#~ msgstr ""
+#~ "这些驱动程序与您的硬件兼容。您的设备正在运行，但它们可能会提高性能或添加功"
+#~ "能。"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 326
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 558
+#~ msgid "Show all"
+#~ msgstr "显示全部"
+
+#
+# File: big-kernel-manager/usr/share/big-kernel-manager/ui/window.py, line: 558
+#~ msgid "Show detected"
+#~ msgstr "显示已检测"

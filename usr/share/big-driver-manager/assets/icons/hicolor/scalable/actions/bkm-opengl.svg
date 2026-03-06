@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 3D isometric cube representing OpenGL/3D graphics -->
+  <!-- Top face (light blue) -->
+  <path d="M16 3L4 10v0l12 7 12-7z" fill="#62a0ea"/>
+  <!-- Left face (medium blue) -->
+  <path d="M4 10l12 7v12L4 22z" fill="#3584e4"/>
+  <!-- Right face (dark blue) -->
+  <path d="M28 10l-12 7v12l12-7z" fill="#1a5fb4"/>
+  <!-- Edge highlights -->
+  <path d="M16 3L4 10l12 7 12-7z" fill="none" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+  <path d="M16 17v12" stroke="#99c1f1" stroke-width="0.5" opacity="0.5"/>
+</svg>

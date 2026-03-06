@@ -1,0 +1,8 @@
+# Big Driver Manager — udev rules for driver availability notifications
+# When a USB device is added, check if we have a driver available.
+# Uses systemd-run to avoid blocking the udev event queue.
+
+# USB devices: trigger on device add (not interfaces)
+ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", \
+  ATTR{idVendor}!="", ATTR{idProduct}!="", \
+  RUN+="/usr/bin/systemd-run --no-block /usr/share/big-driver-manager/udev-notify.sh usb $attr{idVendor} $attr{idProduct}"

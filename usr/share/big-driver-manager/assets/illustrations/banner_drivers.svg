@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <!-- Orbital rings -->
+  <ellipse cx="60" cy="60" rx="52" ry="25" transform="rotate(30 60 60)"
+           stroke="#33d17a" stroke-width="0.8" opacity="0.2" fill="none"/>
+  <ellipse cx="60" cy="60" rx="52" ry="25" transform="rotate(-30 60 60)"
+           stroke="#33d17a" stroke-width="0.8" opacity="0.2" fill="none"/>
+
+  <!-- Central hub -->
+  <circle cx="60" cy="60" r="18" fill="#26a269" opacity="0.15"/>
+  <circle cx="60" cy="60" r="18" stroke="#26a269" stroke-width="2.5" fill="none"/>
+  <circle cx="60" cy="60" r="8" fill="#26a269" opacity="0.5"/>
+  <circle cx="60" cy="60" r="3" fill="#33d17a"/>
+
+  <!-- Video card (top-left) -->
+  <g transform="translate(12, 16)">
+    <rect width="28" height="20" rx="5" fill="#26a269" opacity="0.15"/>
+    <rect width="28" height="20" rx="5" stroke="#26a269" stroke-width="2" fill="none"/>
+    <rect x="4" y="4" width="11" height="11" rx="2" fill="#33d17a" opacity="0.4"/>
+    <rect x="18" y="5" width="6" height="4" rx="1" fill="#26a269" opacity="0.3"/>
+    <rect x="18" y="11" width="6" height="4" rx="1" fill="#26a269" opacity="0.3"/>
+  </g>
+  <line x1="40" y1="30" x2="47" y2="47" stroke="#33d17a" stroke-width="1.8"
+        stroke-linecap="round" stroke-dasharray="4 3" opacity="0.5"/>
+  <circle cx="47" cy="47" r="3" fill="#33d17a" opacity="0.6"/>
+
+  <!-- Wi-Fi (top-right) -->
+  <g transform="translate(82, 14)">
+    <circle cx="12" cy="18" r="3" fill="#33d17a" opacity="0.8"/>
+    <path d="M6 12 Q12 4, 18 12" stroke="#26a269" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M2 8 Q12 -2, 22 8" stroke="#26a269" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    <path d="M-1 4 Q12 -8, 25 4" stroke="#26a269" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+  </g>
+  <line x1="80" y1="35" x2="73" y2="47" stroke="#33d17a" stroke-width="1.8"
+        stroke-linecap="round" stroke-dasharray="4 3" opacity="0.5"/>
+  <circle cx="73" cy="47" r="3" fill="#33d17a" opacity="0.6"/>
+
+  <!-- Speaker (bottom-left) -->
+  <g transform="translate(12, 80)">
+    <rect width="28" height="22" rx="5" fill="#26a269" opacity="0.15"/>
+    <rect width="28" height="22" rx="5" stroke="#26a269" stroke-width="2" fill="none"/>
+    <path d="M8 7 L8 15 L13 18 L13 4 Z" fill="#33d17a" opacity="0.5"/>
+    <path d="M16 6 Q21 11, 16 16" stroke="#26a269" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M19 3 Q26 11, 19 19" stroke="#26a269" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+  </g>
+  <line x1="40" y1="88" x2="47" y2="73" stroke="#33d17a" stroke-width="1.8"
+        stroke-linecap="round" stroke-dasharray="4 3" opacity="0.5"/>
+  <circle cx="47" cy="73" r="3" fill="#33d17a" opacity="0.6"/>
+
+  <!-- Monitor (bottom-right) -->
+  <g transform="translate(80, 78)">
+    <rect width="28" height="22" rx="4" fill="#26a269" opacity="0.15"/>
+    <rect width="28" height="22" rx="4" stroke="#26a269" stroke-width="2" fill="none"/>
+    <rect x="3" y="3" width="22" height="13" rx="2" fill="#33d17a" opacity="0.25"/>
+    <line x1="14" y1="16" x2="14" y2="26" stroke="#26a269" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="26" x2="20" y2="26" stroke="#26a269" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <line x1="80" y1="86" x2="73" y2="73" stroke="#33d17a" stroke-width="1.8"
+        stroke-linecap="round" stroke-dasharray="4 3" opacity="0.5"/>
+  <circle cx="73" cy="73" r="3" fill="#33d17a" opacity="0.6"/>
+
+  <!-- Pulse rings -->
+  <circle cx="60" cy="60" r="24" stroke="#33d17a" stroke-width="1" opacity="0.15" fill="none"/>
+  <circle cx="60" cy="60" r="32" stroke="#33d17a" stroke-width="0.6" opacity="0.1" fill="none"/>
+</svg>

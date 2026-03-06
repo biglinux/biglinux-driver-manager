@@ -1,31 +1,21 @@
-#!/usr/bin/env bash
-#
-#	BigLinux Store
-#	www.biglinux.com.br
-#	By Bruno Gonçalves
-#	07/09/2020
-#	License: GPL v2 or greater
+#!/bin/bash
+# Wrapper to execute Big Driver Manager GUI
 
-#Translation
-export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=biglinux-driver-manager
-declare drivers_path='/usr/share/bigbashview/bcc/apps/drivers'
+# Detect the installation directory
+# Search first in Python site-packages (newest to oldest version)
+# Then fallback to /usr/share/big-driver-manager or local directory
+for i in /usr/lib/python3.{25..6}/site-packages/big-driver-manager /usr/share/big-driver-manager; do
+    if [[ -e "$i" ]]; then
+        BIG_DRIVER_MANAGER_DIR="$i"
+        break
+    fi
+done
 
-if [[ $(ps -aux | grep Big-Hardware-Relatory | grep bigbashview) ]]; then
-	kdialog --passivepopup $"O Big-Hardware-Relatory já está em uso."
-	exit
+# If not found, try the local directory (development)
+if [[ -z "$BIG_DRIVER_MANAGER_DIR" ]]; then
+    SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+    BIG_DRIVER_MANAGER_DIR="$SCRIPT_DIR/../share/big-driver-manager"
 fi
 
-if [[ ! -d "$drivers_path" ]]; then
-	if ! mkdir "$drivers_path"; then
-		kdialog --passivepopup $"O diretório $drivers_path não existe e não foi possível criar."
-		exit
-	fi
-fi
-cd "$drivers_path"
-TITLE="Big-Driver-Manager"
-QT_QPA_PLATFORM=xcb \
-	SDL_VIDEODRIVER=x11 \
-	WINIT_UNIX_BACKEND=x11 \
-	GSK_RENDERER=cairo \
-	GDK_BACKEND=x11 bigbashview -n "$TITLE" -w maximized index.sh.htm -i /usr/share/icons/hicolor/scalable/apps/big-driver-manager.svg
+# Execute main.py
+exec python3 "$BIG_DRIVER_MANAGER_DIR/main.py" "$@"
