@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- Outer glow ring -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="#2ec27e" stroke-width="1" opacity="0.15"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#2ec27e" opacity="0.08"/>
+  <!-- Container card (subtle) -->
+  <rect x="10" y="10" width="28" height="28" rx="3.5"
+        fill="#2ec27e" fill-opacity="0.08" stroke="#2ec27e" stroke-width="1" stroke-opacity="0.18"/>
+  <!-- SHARP: Grid frame -->
+  <rect x="14" y="14" width="20" height="20" rx="2"
+        fill="#2ec27e" fill-opacity="0.15" stroke="#2ec27e" stroke-width="0.8" stroke-opacity="0.2"/>
+  <!-- SHARP: Processing cores (2x2) -->
+  <rect x="16" y="16" width="7" height="7" rx="1.2" fill="#2ec27e" opacity="0.8"/>
+  <rect x="25" y="16" width="7" height="7" rx="1.2" fill="#2ec27e" opacity="0.65"/>
+  <rect x="16" y="25" width="7" height="7" rx="1.2" fill="#2ec27e" opacity="0.65"/>
+  <rect x="25" y="25" width="7" height="7" rx="1.2" fill="#2ec27e" opacity="0.8"/>
+  <!-- Connection dots -->
+  <circle cx="24" cy="18" r="0.8" fill="#33d17a" opacity="0.6"/>
+  <circle cx="24" cy="27" r="0.8" fill="#33d17a" opacity="0.6"/>
+  <circle cx="18" cy="24" r="0.8" fill="#33d17a" opacity="0.6"/>
+  <circle cx="27" cy="24" r="0.8" fill="#33d17a" opacity="0.6"/>
+  <!-- Accent dot -->
+  <circle cx="38" cy="12" r="2.5" fill="#2ec27e" opacity="0.35"/>
+  <circle cx="38" cy="12" r="1" fill="#33d17a" opacity="0.8"/>
+</svg>

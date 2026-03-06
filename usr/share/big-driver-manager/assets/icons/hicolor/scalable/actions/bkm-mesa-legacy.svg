@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- Outer glow ring -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="#865e3c" stroke-width="1" opacity="0.15"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#865e3c" opacity="0.08"/>
+  <!-- GPU card outline (subtle) -->
+  <rect x="10" y="14" width="24" height="16" rx="2.5"
+        fill="#865e3c" fill-opacity="0.10" stroke="#865e3c" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- PCIe baseline (subtle) -->
+  <rect x="16" y="32" width="12" height="2" rx="0.5" fill="#865e3c" opacity="0.15"/>
+  <!-- SHARP: Hourglass frame top -->
+  <rect x="17" y="14" width="14" height="2.5" rx="1" fill="#865e3c" opacity="0.85"/>
+  <!-- SHARP: Hourglass frame bottom -->
+  <rect x="17" y="31.5" width="14" height="2.5" rx="1" fill="#865e3c" opacity="0.85"/>
+  <!-- SHARP: Hourglass glass body -->
+  <path d="M19 16.5 L29 16.5 L25.5 23.5 L29 31.5 L19 31.5 L22.5 23.5 Z"
+        fill="#f6d5a8" opacity="0.5" stroke="#865e3c" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- SHARP: Sand falling -->
+  <path d="M21.5 17 L26.5 17 L24.5 21 L24 21 L23.5 21 Z" fill="#e5a50a" opacity="0.8"/>
+  <path d="M22 31 L26 31 L24.5 27 L23.5 27 Z" fill="#e5a50a" opacity="0.6"/>
+  <line x1="24" y1="22" x2="24" y2="26" stroke="#e5a50a" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  <!-- Accent dot -->
+  <circle cx="36" cy="12" r="2.5" fill="#865e3c" opacity="0.35"/>
+  <circle cx="36" cy="12" r="1" fill="#f6d5a8" opacity="0.8"/>
+</svg>

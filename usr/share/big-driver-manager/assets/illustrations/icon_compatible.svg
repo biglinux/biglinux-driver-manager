@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Outer glow ring -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="#26a269" stroke-width="1" opacity="0.15"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#26a269" opacity="0.08"/>
+  <!-- Puzzle piece body -->
+  <path d="M14 18 L20 18 C20 16 21 14.5 23 14.5 C25 14.5 26 16 26 18 L32 18
+           L32 22 C34 22 35.5 23 35.5 25 C35.5 27 34 28 32 28 L32 34
+           L26 34 C26 32 25 30.5 23 30.5 C21 30.5 20 32 20 34 L14 34 Z"
+        fill="#26a269" opacity="0.18" stroke="#26a269" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Inner highlight -->
+  <path d="M16 20 L20 20 C20 17.5 21.5 16 23 16 C24.5 16 26 17.5 26 20 L30 20
+           L30 23 C32.5 23 34 24 34 25 C34 26 32.5 27 30 27 L30 32
+           L26 32 C26 30 24.5 28.5 23 28.5 C21.5 28.5 20 30 20 32 L16 32 Z"
+        fill="#33d17a" opacity="0.10"/>
+  <!-- Plus sign in center -->
+  <line x1="21" y1="24" x2="27" y2="24" stroke="#26a269" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="21" x2="24" y2="27" stroke="#26a269" stroke-width="2" stroke-linecap="round"/>
+  <!-- Connection dot bottom-left -->
+  <circle cx="13" cy="35" r="2.5" fill="#26a269" opacity="0.35"/>
+  <circle cx="13" cy="35" r="1" fill="#33d17a" opacity="0.7"/>
+</svg>
