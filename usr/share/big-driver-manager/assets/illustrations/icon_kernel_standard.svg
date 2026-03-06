@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#3584e4" opacity="0.10"/>
+  <!-- Chip/CPU outline (standard kernel) -->
+  <rect x="16" y="16" width="16" height="16" rx="2.5" ry="2.5"
+        fill="#3584e4" opacity="0.18" stroke="#3584e4" stroke-width="1.2"/>
+  <!-- Inner core -->
+  <rect x="20" y="20" width="8" height="8" rx="1.5" ry="1.5"
+        fill="#62a0ea" opacity="0.12"/>
+  <!-- Pins -->
+  <line x1="21" y1="13" x2="21" y2="16" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="27" y1="13" x2="27" y2="16" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="21" y1="32" x2="21" y2="35" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="27" y1="32" x2="27" y2="35" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="13" y1="21" x2="16" y2="21" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="13" y1="27" x2="16" y2="27" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="32" y1="21" x2="35" y2="21" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="32" y1="27" x2="35" y2="27" stroke="#3584e4" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Up arrow (latest/newest) -->
+  <polyline points="22,26 24,22 26,26" fill="none" stroke="#3584e4" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

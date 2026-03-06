@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#9141ac" opacity="0.10"/>
+  <!-- Gamepad body -->
+  <path d="M14 20 C14 17.5 15.5 16 18 16 L30 16 C32.5 16 34 17.5 34 20
+           L34 26 C34 28.5 32.5 30 30 30 L27 30 L25 34 L23 34 L21 30 L18 30
+           C15.5 30 14 28.5 14 26 Z"
+        fill="#9141ac" opacity="0.18" stroke="#9141ac" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Inner highlight -->
+  <path d="M16 20 C16 18.5 17 17.5 18.5 17.5 L29.5 17.5 C31 17.5 32 18.5 32 20
+           L32 25 C32 26.5 31 27.5 29.5 27.5 L18.5 27.5 C17 27.5 16 26.5 16 25 Z"
+        fill="#c061cb" opacity="0.10"/>
+  <!-- D-pad left -->
+  <line x1="18" y1="23" x2="22" y2="23" stroke="#9141ac" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="20" y1="21" x2="20" y2="25" stroke="#9141ac" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Action buttons right -->
+  <circle cx="28" cy="21.5" r="1.3" fill="#9141ac" opacity="0.6"/>
+  <circle cx="30.5" cy="23.5" r="1.3" fill="#c061cb" opacity="0.5"/>
+  <!-- Speed lines (performance) -->
+  <line x1="10" y1="15" x2="13" y2="17" stroke="#9141ac" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+  <line x1="10" y1="18" x2="12" y2="19" stroke="#9141ac" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+</svg>

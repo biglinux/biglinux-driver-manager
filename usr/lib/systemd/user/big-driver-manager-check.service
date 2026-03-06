@@ -1,0 +1,8 @@
+[Unit]
+Description=Big Driver Manager — check for available drivers at login
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/big-driver-manager/login-check-drivers.sh
+# Give the desktop environment time to fully start
+ExecStartPre=/usr/bin/sleep 5

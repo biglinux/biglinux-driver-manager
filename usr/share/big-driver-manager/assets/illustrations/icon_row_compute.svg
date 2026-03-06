@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="14" fill="#2ec27e" opacity="0.08"/>
+  <!-- Container card (subtle) -->
+  <rect x="4" y="5" width="24" height="22" rx="3"
+        fill="#2ec27e" fill-opacity="0.08" stroke="#2ec27e" stroke-width="0.6" stroke-opacity="0.15"/>
+  <!-- SHARP: Grid frame -->
+  <rect x="7" y="7" width="18" height="18" rx="2"
+        fill="#2ec27e" fill-opacity="0.12" stroke="#2ec27e" stroke-width="0.8" stroke-opacity="0.18"/>
+  <!-- SHARP: Processing cores (2x2) -->
+  <rect x="9" y="9" width="5.5" height="5.5" rx="1" fill="#2ec27e" opacity="0.8"/>
+  <rect x="17.5" y="9" width="5.5" height="5.5" rx="1" fill="#2ec27e" opacity="0.65"/>
+  <rect x="9" y="17.5" width="5.5" height="5.5" rx="1" fill="#2ec27e" opacity="0.65"/>
+  <rect x="17.5" y="17.5" width="5.5" height="5.5" rx="1" fill="#2ec27e" opacity="0.8"/>
+  <!-- Connection dots -->
+  <circle cx="16" cy="11" r="0.6" fill="#33d17a" opacity="0.6"/>
+  <circle cx="16" cy="19.5" r="0.6" fill="#33d17a" opacity="0.6"/>
+  <circle cx="11" cy="16" r="0.6" fill="#33d17a" opacity="0.6"/>
+  <circle cx="19.5" cy="16" r="0.6" fill="#33d17a" opacity="0.6"/>
+</svg>

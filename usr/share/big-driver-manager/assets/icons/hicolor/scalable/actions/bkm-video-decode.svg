@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- Outer glow ring -->
+  <circle cx="24" cy="24" r="22" fill="none" stroke="#1c71d8" stroke-width="1" opacity="0.15"/>
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="18" fill="#1c71d8" opacity="0.08"/>
+  <!-- Film strip container (subtle) -->
+  <rect x="10" y="12" width="28" height="24" rx="3.5"
+        fill="#241f31" fill-opacity="0.10" stroke="#1c71d8" stroke-width="1" stroke-opacity="0.18"/>
+  <!-- SHARP: Monitor frame -->
+  <rect x="13" y="14" width="22" height="16" rx="2"
+        fill="#1c71d8" opacity="0.75" stroke="#1a5fb4" stroke-width="0.6"/>
+  <!-- SHARP: Screen -->
+  <rect x="15" y="16" width="18" height="12" rx="1" fill="#62a0ea" opacity="0.4"/>
+  <!-- SHARP: Play triangle -->
+  <polygon points="21,18.5 29,22 21,25.5" fill="white" opacity="0.9"/>
+  <!-- SHARP: Stand -->
+  <line x1="24" y1="30" x2="24" y2="34" stroke="#1c71d8" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="18" y1="34" x2="30" y2="34" stroke="#1c71d8" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- Accent dot -->
+  <circle cx="38" cy="14" r="2.5" fill="#1c71d8" opacity="0.35"/>
+  <circle cx="38" cy="14" r="1" fill="#62a0ea" opacity="0.8"/>
+</svg>

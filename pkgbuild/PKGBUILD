@@ -1,35 +1,80 @@
 # Maintainer: Bruno Goncalves <bigbruno@gmail.com>
+# Maintainer: Tales A. Mendonça <talesam@gmail.com>
 
 pkgname=biglinux-driver-manager
-pkgver=$(date +%Y_%m_%d)
+pkgdesc="Application to manage kernel and mesa drivers for BigLinux"
+# Uncomment and edit the following lines as needed
+depends=(
+  'python>=3.6'
+  'python-gobject'
+  'gtk4'
+  'libadwaita'
+  'polkit'
+  'hicolor-icon-theme'
+  'avahi'
+  'nss-mdns'
+)
+#conflicts=('')
+#provides=('')
+#replaces=('')
+pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
 arch=('any')
 license=('GPL')
-url="https://github.com/biglinux/biglinux-driver-manager"
-pkgdesc="Complete driver manager and hardware info"
-depends=('bigbashview' 'kdialog' 'inxi' 'zenity' 'python-ansi2html' 'mhwd-biglinux' 'big-hardware-info')
-source=("git+https://github.com/biglinux/biglinux-driver-manager.git")
-md5sums=(SKIP)
+url="https://github.com/biglinux/${pkgname}"
+source=("git+${url}.git")
+md5sums=('SKIP')
+
+# Automatically detect and use the correct install file
+if [ -e "${pkgname}.install" ]; then
+    install=${pkgname}.install
+elif [ -e "pkgbuild.install" ]; then
+    install=pkgbuild.install
+fi
+
+prepare() {
+    cd "${srcdir}/${pkgname}"
+    # Add any preparation steps here, if needed
+    # For example: patch -p1 < "${srcdir}/patch-file.patch"
+}
+
+build() {
+    cd "${srcdir}/${pkgname}"
+    # Add build steps here, if needed
+    # For example: make
+}
+
+check() {
+    cd "${srcdir}/${pkgname}"
+    # Add check/test steps here, if needed
+    # For example: make check
+}
 
 package() {
-    # Verify default folder
-    if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
-        InternalDir="${srcdir}/${pkgname}/${pkgname}"
+    cd "${srcdir}/${pkgname}"
+
+    # Determine the correct source directory
+    if [ -d "${pkgname}" ]; then
+        srcdir="${srcdir}/${pkgname}/${pkgname}"
     else
-        InternalDir="${srcdir}/${pkgname}"
+        srcdir="${srcdir}/${pkgname}"
     fi
 
+    # Install files
+    local dirs=("usr" "etc" "opt")
+    for dir in "${dirs[@]}"; do
+        if [ -d "${srcdir}/${dir}" ]; then
+            cp -a "${srcdir}/${dir}" "${pkgdir}/"
+        fi
+    done
 
-    # Copy files
-    if [ -d "${InternalDir}/usr" ]; then
-        cp -r "${InternalDir}/usr" "${pkgdir}/"
+    # Install license file if present
+    if [ -f "LICENSE" ]; then
+        install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     fi
 
-    if [ -d "${InternalDir}/etc" ]; then
-        cp -r "${InternalDir}/etc" "${pkgdir}/"
-    fi
-
-    if [ -d "${InternalDir}/opt" ]; then
-        cp -r "${InternalDir}/opt" "${pkgdir}/"
+    # Install documentation if present
+    if [ -f "README.md" ]; then
+        install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
     fi
 }
