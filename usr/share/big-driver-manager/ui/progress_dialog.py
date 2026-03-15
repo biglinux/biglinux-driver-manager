@@ -307,6 +307,13 @@ class ProgressDialog(Adw.Dialog):
 
     def _append_terminal_idle(self, text: str) -> bool:
         try:
+            # Limit terminal buffer to prevent unbounded memory growth
+            line_count = self._terminal_buffer.get_line_count()
+            if line_count > 2000:
+                start = self._terminal_buffer.get_start_iter()
+                trim_end = self._terminal_buffer.get_iter_at_line(line_count - 1500)
+                self._terminal_buffer.delete(start, trim_end)
+
             end_iter = self._terminal_buffer.get_end_iter()
             tag_name = self._get_line_tag(text)
             if tag_name:

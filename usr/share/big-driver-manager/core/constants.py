@@ -45,6 +45,14 @@ KERNEL_PATTERNS = [
     r"^linux\d*-rt$",  # Real-time kernels
     r"^linux-xanmod-x64v\d$",  # Xanmod optimized builds
     r"^linux-xanmod-lts-x64v\d$",  # Xanmod LTS optimized builds
+    r"^linux-cachyos$",  # CachyOS kernel
+    r"^linux-cachyos-lts$",  # CachyOS LTS kernel
+]
+
+# CachyOS kernels — detected when installed but NOT shown as installable
+CACHYOS_PATTERNS = [
+    r"^linux-cachyos$",
+    r"^linux-cachyos-lts$",
 ]
 
 # Excluded patterns (modules and other non-kernel packages)

@@ -198,7 +198,8 @@ class KernelSection(BaseSection):
             reverse=True,
         )
         available = sorted(
-            [k for k in self._all_kernels if not k.get("installed")],
+            [k for k in self._all_kernels
+             if not k.get("installed") and not k.get("cachyos")],
             key=version_sort_key,
             reverse=True,
         )
@@ -426,16 +427,16 @@ class KernelSection(BaseSection):
             )
             safe_lbl.set_valign(Gtk.Align.CENTER)
             row.append(safe_lbl)
-        else:
-            btn = Gtk.Button(label=_("Remove"))
-            btn.add_css_class("destructive-action")
-            btn.set_valign(Gtk.Align.CENTER)
-            btn.update_property(
-                [Gtk.AccessibleProperty.LABEL],
-                [_("Remove kernel {}").format(kernel["name"])],
-            )
-            btn.connect("clicked", self._on_remove_clicked, kernel)
-            row.append(btn)
+
+        btn = Gtk.Button(label=_("Remove"))
+        btn.add_css_class("destructive-action")
+        btn.set_valign(Gtk.Align.CENTER)
+        btn.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Remove kernel {}").format(kernel["name"])],
+        )
+        btn.connect("clicked", self._on_remove_clicked, kernel)
+        row.append(btn)
 
         return row
 
@@ -753,10 +754,25 @@ class KernelSection(BaseSection):
         modules = self.kernel_manager._get_installed_kernel_modules(kernel_name)
         packages = [kernel_name] + modules
 
+        # Check if this is the last backup kernel
+        installed_others = [
+            k for k in self._all_kernels
+            if k.get("installed") and k["name"] != self._running_kernel_package
+        ]
+        is_last_backup = len(installed_others) <= 1
+
         pkg_list = "\n".join(f"  • {p}" for p in packages)
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Remove {}").format(kernel_name))
-        dialog.set_body(_("The following packages will be removed:"))
+
+        if is_last_backup:
+            dialog.set_body(
+                _("⚠ This is your last backup kernel. "
+                  "If the running kernel fails, you will have no fallback.\n\n"
+                  "The following packages will be removed:")
+            )
+        else:
+            dialog.set_body(_("The following packages will be removed:"))
 
         pkg_label = Gtk.Label(label=pkg_list)
         pkg_label.set_halign(Gtk.Align.START)
@@ -945,7 +961,7 @@ class KernelSection(BaseSection):
     @staticmethod
     def _row_type_icon(ktype: KernelTypeInfo) -> Gtk.Image:
         """Return an SVG icon matching the kernel type."""
-        if ktype.is_xanmod:
+        if ktype.is_xanmod or ktype.is_cachyos:
             key = "xanmod"
         elif ktype.is_lts:
             key = "lts"

@@ -22,6 +22,7 @@ from core.constants import (
     EXCLUDED_PATTERNS,
     KERNEL_ORG_FEED_URL,
     DEFAULT_LTS_VERSIONS,
+    CACHYOS_PATTERNS,
 )
 from core.logging_config import get_logger
 
@@ -36,6 +37,7 @@ class KernelInfo(TypedDict, total=False):
     rt: bool
     lts: bool
     xanmod: bool
+    cachyos: bool
     x64v: int
     obsolete: bool
 
@@ -126,8 +128,8 @@ class KernelManager(BaseManager):
 
             self._logger.debug(f"Fetched LTS versions: {lts_versions}")
             return lts_versions
-        except Exception as e:
-            self._logger.warning(f"Failed to get LTS kernel versions: {e}")
+        except (OSError, ValueError, ElementTree.ParseError) as e:
+            self._logger.warning("Failed to get LTS kernel versions: %s", e)
             return DEFAULT_LTS_VERSIONS.copy()
 
     def get_installed_kernels(self) -> list[KernelInfo]:
@@ -269,6 +271,10 @@ class KernelManager(BaseManager):
         if "xanmod" in kernel_name:
             kernel["xanmod"] = True
 
+        # CachyOS flag
+        if any(re.match(p, kernel_name) for p in CACHYOS_PATTERNS):
+            kernel["cachyos"] = True
+
         # Optimized build flags
         match = re.search(r"-x64v(\d)", kernel_name)
         if match:
@@ -323,7 +329,14 @@ class KernelManager(BaseManager):
         verified_modules = self._filter_existing_in_repos(modules, kernel_name)
 
         if not verified_modules:
-            verified_modules = [headers_pkg]
+            # Only include headers if they actually exist in repos
+            if self._package_available_in_repos(headers_pkg):
+                verified_modules = [headers_pkg]
+            else:
+                self._logger.warning(
+                    "No modules found in repos for %s (not even headers)", kernel_name
+                )
+                verified_modules = []
 
         self._logger.info(f"Modules to install for {kernel_name}: {verified_modules}")
         return verified_modules
@@ -345,6 +358,12 @@ class KernelManager(BaseManager):
             return []
         available = set(result.stdout.strip().splitlines())
         return [p for p in packages if p in available]
+
+    def _package_available_in_repos(self, package_name: str) -> bool:
+        """Check if a single package exists in the repositories."""
+        cmd = ["pacman", "-Ssq", f"^{package_name}$"]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+        return result.returncode == 0 and package_name in result.stdout.strip().splitlines()
 
     def get_obsolete_kernels(self) -> list[KernelInfo]:
         """Return kernels that are installed but no longer available in repos.
