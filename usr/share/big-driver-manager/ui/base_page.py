@@ -77,7 +77,9 @@ class BaseSection(Gtk.Box):
         dialog.add_response("ok", "OK")
         dialog.set_default_response("ok")
         dialog.set_close_response("ok")
-        dialog.present(self._get_window())
+        window = self._get_window()
+        if window:
+            dialog.present(window)
         return False
 
     def _get_window(self) -> Gtk.Window:

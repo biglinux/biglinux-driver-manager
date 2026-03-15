@@ -160,6 +160,15 @@ class TestIsKernelPackage(unittest.TestCase):
         self.assertTrue(mgr._is_kernel_package("linux-xanmod"))
         self.assertTrue(mgr._is_kernel_package("linux612-xanmod"))
 
+    def test_cachyos_kernel(self):
+        mgr = self._make_manager()
+        self.assertTrue(mgr._is_kernel_package("linux-cachyos"))
+        self.assertTrue(mgr._is_kernel_package("linux-cachyos-lts"))
+
+    def test_excludes_cachyos_modules(self):
+        mgr = self._make_manager()
+        self.assertFalse(mgr._is_kernel_package("linux-cachyos-headers"))
+
     def test_rt_kernel(self):
         mgr = self._make_manager()
         self.assertTrue(mgr._is_kernel_package("linux612-rt"))
@@ -228,6 +237,20 @@ class TestAddKernelFlags(unittest.TestCase):
     def test_xanmod_not_flagged_as_lts(self):
         """Xanmod kernels should not get implicit LTS flag."""
         mgr = self._make_manager()
+
+    def test_cachyos_flag(self):
+        mgr = self._make_manager()
+        kernel = {"name": "linux-cachyos", "version": "6.19.8-1"}
+        mgr._add_kernel_flags(kernel)
+        self.assertTrue(kernel.get("cachyos"))
+        self.assertFalse(kernel.get("lts", False))
+
+    def test_cachyos_lts_flag(self):
+        mgr = self._make_manager()
+        kernel = {"name": "linux-cachyos-lts", "version": "6.18.18-1"}
+        mgr._add_kernel_flags(kernel)
+        self.assertTrue(kernel.get("cachyos"))
+        self.assertTrue(kernel.get("lts"))
         kernel = {"name": "linux-xanmod", "version": "6.12.10-1"}
         mgr._add_kernel_flags(kernel)
         self.assertFalse(kernel.get("lts", False))
@@ -270,7 +293,7 @@ class TestGetLtsKernelVersions(unittest.TestCase):
     @patch("core.kernel_manager.urlopen")
     def test_fallback_on_error(self, mock_urlopen):
         """On network error, returns DEFAULT_LTS_VERSIONS."""
-        mock_urlopen.side_effect = Exception("Connection refused")
+        mock_urlopen.side_effect = OSError("Connection refused")
         mgr = self._make_manager()
         versions = mgr._get_lts_kernel_versions()
         from core.constants import DEFAULT_LTS_VERSIONS

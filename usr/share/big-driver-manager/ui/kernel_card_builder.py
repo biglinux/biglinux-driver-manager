@@ -20,6 +20,7 @@ class KernelTypeInfo:
     is_lts: bool = False
     is_rt: bool = False
     is_xanmod: bool = False
+    is_cachyos: bool = False
     type_desc: str = ""
     full_desc: str = ""
     badge_entries: list[tuple[str, str]] = field(default_factory=list)
@@ -31,6 +32,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
     is_lts = kernel.get("lts", False) or "-lts" in name
     is_rt = kernel.get("rt", False) or "-rt" in name
     is_xanmod = kernel.get("xanmod", False) or "xanmod" in name
+    is_cachyos = kernel.get("cachyos", False) or "cachyos" in name
 
     type_parts: list[str] = []
     full_parts: list[str] = []
@@ -64,6 +66,15 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
             )
         )
         badges.append(("Xanmod", "purple"))
+    if is_cachyos:
+        type_parts.append(_("Performance optimized by CachyOS"))
+        full_parts.append(
+            _(
+                "EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. "
+                "Excellent for gaming and desktop responsiveness."
+            )
+        )
+        badges.append(("CachyOS", "purple"))
 
     type_desc = " · ".join(type_parts) if type_parts else _("Latest features & drivers")
     full_desc = (
@@ -76,6 +87,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
         is_lts=is_lts,
         is_rt=is_rt,
         is_xanmod=is_xanmod,
+        is_cachyos=is_cachyos,
         type_desc=type_desc,
         full_desc=full_desc,
         badge_entries=badges,
