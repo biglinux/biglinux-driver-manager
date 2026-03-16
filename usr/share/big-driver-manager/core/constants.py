@@ -13,7 +13,7 @@ import os
 # Application Metadata
 APP_NAME = "Big Driver Manager"
 APP_ID = "br.com.biglinux.drivermanager"
-APP_VERSION = "2.0.0"
+APP_VERSION = "2.0.1"
 APP_AUTHOR = "BigLinux Team"
 APP_WEBSITE = "https://github.com/communitybig/big-driver-manager"
 
