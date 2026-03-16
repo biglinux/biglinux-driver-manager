@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -262,10 +263,12 @@ msgid "Please wait..."
 msgstr "Veuillez patienter..."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 229
+#, python-brace-format
 msgid "Step {} of {}: {}"
 msgstr "Étape {} sur {} : {}"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 231
+#, python-brace-format
 msgid "Step {} of {}"
 msgstr "Étape {} sur {}"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
@@ -353,12 +356,14 @@ msgid "Switch"
 msgstr "Basculer"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 431
+#, python-brace-format
 msgid "Switch to {}"
 msgstr "Basculer vers {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 msgid "Change Video Driver"
 msgstr "Changer le pilote vidéo"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
+#, python-brace-format
 msgid ""
 "Switch to <b>{}</b>?\n"
 "\n"
@@ -371,6 +376,7 @@ msgstr ""
 msgid "Apply"
 msgstr "Appliquer"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 413
+#, python-brace-format
 msgid "Applying {}"
 msgstr "Application de {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
@@ -426,6 +432,7 @@ msgid "Included"
 msgstr "Inclus"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 754
+#, python-brace-format
 msgid "Already included in your Mesa version ({})"
 msgstr "Déjà inclus dans votre version de Mesa ({})"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
@@ -434,6 +441,7 @@ msgid "Remove"
 msgstr "Supprimer"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
+#, python-brace-format
 msgid "Remove {}"
 msgstr "Supprimer {}"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
@@ -441,6 +449,7 @@ msgstr "Supprimer {}"
 msgid "Install"
 msgstr "Installer"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#, python-brace-format
 msgid "Install {}"
 msgstr "Installer {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
@@ -467,6 +476,7 @@ msgid "⚠ No Wayland support · No longer maintained"
 msgstr "⚠ Pas de support Wayland · Plus maintenu"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 920
+#, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Passer de {} à {}"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -475,6 +485,7 @@ msgstr "Passer de {} à {}"
 # 951
 # File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
 # line: 213
+#, python-brace-format
 msgid "Remove the installed NVIDIA driver ({}) first."
 msgstr "Désinstallez d'abord le pilote NVIDIA installé ({})."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -490,6 +501,7 @@ msgid "Install Driver"
 msgstr "Installer le pilote"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 967
+#, python-brace-format
 msgid ""
 "Install <b>{}</b> ({} driver)?\n"
 "\n"
@@ -499,6 +511,7 @@ msgstr ""
 "\n"
 "Un redémarrage du système peut être nécessaire après l'installation."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#, python-brace-format
 msgid "Installing {}"
 msgstr "Installation de {} en cours"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
@@ -510,6 +523,7 @@ msgid "Switch NVIDIA Driver"
 msgstr "Changer de pilote NVIDIA"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1005
+#, python-brace-format
 msgid ""
 "Switch from <b>{}</b> to <b>{}</b>?\n"
 "\n"
@@ -522,6 +536,7 @@ msgstr ""
 "Un redémarrage du système sera nécessaire."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1027
+#, python-brace-format
 msgid "Switching to {}"
 msgstr "Passage à {}"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -533,6 +548,7 @@ msgid "Remove Driver"
 msgstr "Supprimer le pilote"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1046
+#, python-brace-format
 msgid ""
 "Remove <b>{}</b>?\n"
 "\n"
@@ -542,6 +558,7 @@ msgstr ""
 "\n"
 "Un redémarrage du système peut être nécessaire après la suppression."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#, python-brace-format
 msgid "Removing {}"
 msgstr "Suppression de {} en cours"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
@@ -560,6 +577,7 @@ msgid "removed"
 msgstr "supprimé"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1091
+#, python-brace-format
 msgid ""
 "{} was {} successfully!\n"
 "\n"
@@ -585,6 +603,7 @@ msgid "Install Package"
 msgstr "Installer le paquet"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1191
+#, python-brace-format
 msgid ""
 "Install <b>{}</b>?\n"
 "\n"
@@ -606,12 +625,14 @@ msgid "Remove Package"
 msgstr "Supprimer le paquet"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1232
+#, python-brace-format
 msgid "Remove <b>{}</b>?"
 msgstr "Supprimer <b>{}</b> ?"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 msgid "Removing package..."
 msgstr "Suppression du paquet..."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
+#, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} a été {} avec succès !"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
@@ -732,14 +753,17 @@ msgstr "Aucun pilote dans cette catégorie n'a été détecté comme nécessaire
 msgid "1 driver"
 msgstr "1 pilote"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
+#, python-brace-format
 msgid "{} drivers"
 msgstr "{} pilotes"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 341
+#, python-brace-format
 msgid "{} detected"
 msgstr "{} détecté(s)"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#, python-brace-format
 msgid "{} installed"
 msgstr "{} installé(s)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -760,9 +784,11 @@ msgstr "Non installé"
 msgid "{total} drivers · {detected} detected · {installed} installed"
 msgstr "{total} pilotes · {detected} détectés · {installed} installés"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#, python-brace-format
 msgid "Install {}?"
 msgstr "Installer {} ?"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#, python-brace-format
 msgid "Remove {}?"
 msgstr "Supprimer {} ?"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
@@ -815,6 +841,7 @@ msgid "Compatible drivers available"
 msgstr "Pilotes compatibles disponibles"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 273
+#, python-brace-format
 msgid "{} — no driver loaded, install {} for this device"
 msgstr "{} — aucun pilote chargé, installez {} pour ce périphérique"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
@@ -832,18 +859,22 @@ msgstr ""
 "comme compatible qui peut améliorer les performances ou ajouter des fonctionnalités."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 376
+#, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
 msgstr "Tous les {} paquets vidéo recommandés pour votre matériel {} sont installés."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 386
+#, python-brace-format
 msgid "{} of {} recommended packages are not installed."
 msgstr "{} sur {} paquets recommandés ne sont pas installés."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 396
+#, python-brace-format
 msgid "Install all {} recommended"
 msgstr "Installer tous les {} recommandés"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 457
+#, python-brace-format
 msgid "Already installed ({})"
 msgstr "Déjà installés ({})"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -864,6 +895,7 @@ msgid "Install Recommended Packages"
 msgstr "Installer les paquets recommandés"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 623
+#, python-brace-format
 msgid ""
 "Install <b>{}</b> packages?\n"
 "\n"
@@ -877,6 +909,7 @@ msgstr ""
 msgid "Install All"
 msgstr "Tout installer"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#, python-brace-format
 msgid "Installing {} packages"
 msgstr "Installation de {} paquets"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -903,9 +936,11 @@ msgstr ""
 "Échec de l'installation du paquet.\n"
 "Consultez la sortie du terminal pour plus de détails."
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#, python-brace-format
 msgid "{} installed successfully!"
 msgstr "{} installé avec succès !"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
+#, python-brace-format
 msgid "Installation of {} failed."
 msgstr "L'installation de {} a échoué."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -1058,6 +1093,7 @@ msgid "Hardware detection failed. Check system logs for details."
 msgstr "Échec de la détection du matériel. Consultez les journaux système pour plus de détails."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
+#, python-brace-format
 msgid "Obsolete kernel: {} — no longer receives security updates"
 msgstr "Noyau obsolète : {} — ne reçoit plus de mises à jour de sécurité"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
@@ -1138,6 +1174,7 @@ msgstr "Kernels obsolètes — Suppression recommandée"
 msgid "No longer receives security updates"
 msgstr "Ne reçoit plus de mises à jour de sécurité"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#, python-brace-format
 msgid "Remove kernel {}"
 msgstr "Supprimer le kernel {}"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1197,12 +1234,14 @@ msgstr "Temps Réel (Avancé)"
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 591
+#, python-brace-format
 msgid "Show {} available"
 msgstr "Afficher {} disponibles"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
 msgid "Hide available kernels"
 msgstr "Masquer les noyaux disponibles"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
+#, python-brace-format
 msgid "Install kernel {}"
 msgstr "Installer le noyau {}"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1262,6 +1301,7 @@ msgid "Remove Obsolete Kernels"
 msgstr "Supprimer les noyaux obsolètes"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 820
+#, python-brace-format
 msgid ""
 "Remove all obsolete kernels?\n"
 "\n"
@@ -1279,10 +1319,12 @@ msgstr ""
 msgid "Remove All"
 msgstr "Tout supprimer"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#, python-brace-format
 msgid "Removing kernel {} ({}/{})..."
 msgstr "Suppression du noyau {} ({}/{})..."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 866
+#, python-brace-format
 msgid "Failed to remove {}. Stopping."
 msgstr "Échec de la suppression de {}. Arrêt."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
@@ -1292,6 +1334,7 @@ msgstr "Tous les noyaux obsolètes ont été supprimés avec succès."
 # line: 916
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 919
+#, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Nouveautés de Linux {}"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1744,14 +1787,50 @@ msgstr ""
 # 111
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Packages de micrologiciel supplémentaires pour matériel spécialisé."
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
+#: NEEDS WORK
+msgid "Package"
+msgstr "Paquet"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Status"
+msgstr "Statut"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+#: NEEDS WORK
+msgid "Detected and installed"
+msgstr "Détecté et installé"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+#: NEEDS WORK
+msgid "Detected — not yet installed"
+msgstr "Détecté — pas encore installé"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Available in repository"
+msgstr "Disponible dans le dépôt"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
+#: NEEDS WORK
+msgid "Device"
+msgstr "Appareil"
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
+#, python-brace-format
 msgid "Driver not found: {}"
 msgstr "Pilote non trouvé : {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#, python-brace-format
 msgid "Applying {} driver..."
 msgstr "Application du pilote {}..."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
+#, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Démarrage de l'installation du pilote {}..."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
@@ -1759,14 +1838,17 @@ msgstr "Démarrage de l'installation du pilote {}..."
 msgid "Checking for conflicting packages..."
 msgstr "Vérification des packages en conflit..."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#, python-brace-format
 msgid "Removing conflicts: {}"
 msgstr "Suppression des conflits : {}"
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 178
+#, python-brace-format
 msgid "Checking {} packages..."
 msgstr "Vérification de {} paquets..."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 187
+#, python-brace-format
 msgid "⚠️ Package {} not available, skipping..."
 msgstr "⚠️ Package {} non disponible, passage..."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
@@ -1774,6 +1856,7 @@ msgstr "⚠️ Package {} non disponible, passage..."
 msgid "❌ No packages available to install."
 msgstr "❌ Aucun package disponible à l'installation."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#, python-brace-format
 msgid "Installing: {}"
 msgstr "Installation : {}"
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
@@ -1785,6 +1868,7 @@ msgstr "Suppression des packages en conflit..."
 msgid "Failed to remove conflicting packages."
 msgstr "Échec de la suppression des packages en conflit."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#, python-brace-format
 msgid "Installing {} driver..."
 msgstr "Installation du pilote {}..."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
@@ -1794,37 +1878,47 @@ msgstr "Échec de l'application du pilote."
 msgid "Driver applied successfully!"
 msgstr "Pilote appliqué avec succès !"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#, python-brace-format
 msgid "✅ {} driver applied successfully!"
 msgstr "✅ Pilote {} appliqué avec succès !"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#, python-brace-format
 msgid "Error: {}"
 msgstr "Erreur : {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Erreur : {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#, python-brace-format
 msgid "❌ Operation failed (exit code: {})"
 msgstr "❌ Échec de l'opération (code de sortie : {})"
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 137
+#, python-brace-format
 msgid "Database locked. Retrying in {} seconds..."
 msgstr "Base de données verrouillée. Nouvelle tentative dans {} secondes..."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 142
+#, python-brace-format
 msgid "Waiting {} s before retry..."
 msgstr "Attente de {} s avant la nouvelle tentative..."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 147
+#, python-brace-format
 msgid "Retry attempt {} of {}..."
 msgstr "Tentative de nouvelle tentative {} sur {}..."
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 105
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 108
+#, python-brace-format
 msgid "Starting {}..."
 msgstr "Démarrage de {}..."
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
+#, python-brace-format
 msgid "Command: {}"
 msgstr "Commande : {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 160
+#, python-brace-format
 msgid "Still working... ({:.0%} complete)"
 msgstr "Travail en cours... ({:.0%} terminé)"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 177
@@ -1834,15 +1928,19 @@ msgstr "Opération annulée"
 msgid "Operation was cancelled."
 msgstr "L'opération a été annulée."
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 183
+#, python-brace-format
 msgid "{}  complete!"
 msgstr "{} terminé !"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#, python-brace-format
 msgid "{}  completed successfully."
 msgstr "{}  terminé avec succès."
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 193
+#, python-brace-format
 msgid "{}  failed."
 msgstr "{} a échoué."
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{}  échoué (code de sortie : {})"
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -1952,6 +2050,7 @@ msgid "Synchronizing package databases..."
 msgstr "Synchronisation des bases de données des paquets..."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 99
+#, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer introuvable. Impossible d'installer le paquet AUR {}."
 # File: big-driver-manager/usr/share/big-driver-
