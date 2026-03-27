@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -867,6 +868,53 @@ msgstr "דרייברים לסורקים (SANE backends) מאפשרים לתוכ�
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "חבילות קושחה נוספות לחומרה מיוחדת."
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
+#: NEEDS WORK
+msgid "Package"
+msgstr "חבילה"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Status"
+msgstr "סטטוס"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+#: NEEDS WORK
+msgid "Detected and installed"
+msgstr "זוהה והותקן"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+#: NEEDS WORK
+msgid "Detected — not yet installed"
+msgstr "זוהה — עדיין לא מותקן"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/category_page.py:424
+#: usr/share/big-driver-manager/ui/home_page.py:488
+#: usr/share/big-driver-manager/ui/home_page.py:504
+#: usr/share/big-driver-manager/ui/home_page.py:735
+#: usr/share/big-driver-manager/ui/installed_page.py:313
+#: usr/share/big-driver-manager/ui/installed_page.py:317
+#: usr/share/big-driver-manager/ui/installed_page.py:324
+#: usr/share/big-driver-manager/ui/installed_page.py:331
+#: usr/share/big-driver-manager/ui/window.py:199
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "Install"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Available in repository"
+msgstr "זמין במאגר"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
+#: NEEDS WORK
+msgid "Device"
+msgstr "מכשיר"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
 #: usr/share/big-driver-manager/udev-driver-dialog.py:91
 msgid "Firmware available"
@@ -1091,20 +1139,6 @@ msgstr "{} הותקנו"
 #: usr/share/big-driver-manager/ui/installed_page.py:333
 msgid "Detected"
 msgstr "זוהו"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:424
-#: usr/share/big-driver-manager/ui/home_page.py:488
-#: usr/share/big-driver-manager/ui/home_page.py:504
-#: usr/share/big-driver-manager/ui/home_page.py:735
-#: usr/share/big-driver-manager/ui/installed_page.py:313
-#: usr/share/big-driver-manager/ui/installed_page.py:317
-#: usr/share/big-driver-manager/ui/installed_page.py:324
-#: usr/share/big-driver-manager/ui/installed_page.py:331
-#: usr/share/big-driver-manager/ui/window.py:199
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "Install"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:426
@@ -1478,6 +1512,11 @@ msgstr "3D Printers"
 #: usr/share/big-driver-manager/ui/window.py:107
 msgid "Scanners"
 msgstr "Scanners"
+# 
+# File: usr/share/big-driver-manager/ui/installed_page.py, line: 66
+#: NEEDS WORK
+msgid "Installed Drivers"
+msgstr "דרייברים מותקנים"
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
@@ -1943,6 +1982,17 @@ msgstr "כל הדרייברים מותקנים"
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
 msgid "All necessary drivers are already installed on your system."
 msgstr "כל הדרייברים הנדרשים כבר מותקנים במערכת שלך."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "מומלץ"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "קטגוריות"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 152
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
@@ -2053,12 +2103,6 @@ msgstr "Kernel"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "וידאו"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "קטגוריות"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -2317,11 +2361,6 @@ msgid ""
 "Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
 "and video playback."
 msgstr "נבדק רשמית על ידי צוות Mesa. הבחירה הבטוחה והאמינה ביותר לשימוש יומיומי, משחקים וניגון וידאו."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "מומלץ"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: usr/share/big-driver-manager/ui/mesa_data.py:288
 #: usr/share/big-driver-manager/ui/mesa_data.py:294
