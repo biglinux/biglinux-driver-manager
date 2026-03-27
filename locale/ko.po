@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -867,48 +866,6 @@ msgstr "스캐너 드라이버(SANE 백엔드)는 스캔 애플리케이션이 �
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "특수 하드웨어용 추가 펌웨어 패키지입니다."
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
-#: NEEDS WORK
-msgid "Package"
-msgstr "패키지"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Status"
-msgstr "상태"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-#: NEEDS WORK
-msgid "Detected and installed"
-msgstr "감지됨 및 설치됨"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-#: NEEDS WORK
-msgid "Detected — not yet installed"
-msgstr "감지됨 — 아직 설치되지 않음"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:424
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:488
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:504
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:735
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "설치됨"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Available in repository"
-msgstr "저장소에서 사용 가능"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
-#: NEEDS WORK
-msgid "Device"
-msgstr "장치"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1132,6 +1089,15 @@ msgstr "{}가 설치되었습니다"
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:422
 msgid "Detected"
 msgstr "감지됨"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:424
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:488
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:504
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:735
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "설치됨"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:426
@@ -1908,17 +1874,6 @@ msgstr "모든 드라이버가 설치되어 있습니다."
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:331
 msgid "All necessary drivers are already installed on your system."
 msgstr "필요한 모든 드라이버가 시스템에 이미 설치되어 있습니다."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "추천됨"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:224
-msgid "Categories"
-msgstr "카테고리"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 152
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:152
@@ -2029,6 +1984,12 @@ msgstr "커널"
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:196
 msgid "Video"
 msgstr "비디오"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:224
+msgid "Categories"
+msgstr "카테고리"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:237
@@ -2284,6 +2245,11 @@ msgid ""
 "Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
 "and video playback."
 msgstr "Mesa 팀에서 공식 테스트한 버전입니다. 일상 사용, 게임, 비디오 재생에 가장 안전하고 신뢰할 수 있는 선택입니다."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "추천됨"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:288
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:294

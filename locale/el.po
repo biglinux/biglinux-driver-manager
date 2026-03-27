@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -888,48 +887,6 @@ msgstr ""
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Επιπλέον πακέτα υλικολογισμικού για εξειδικευμένο υλικό."
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
-#: NEEDS WORK
-msgid "Package"
-msgstr "Πακέτο"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Status"
-msgstr "Κατάσταση"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-#: NEEDS WORK
-msgid "Detected and installed"
-msgstr "Ανιχνεύθηκε και εγκαταστάθηκε"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-#: NEEDS WORK
-msgid "Detected — not yet installed"
-msgstr "Ανιχνεύθηκε — δεν έχει εγκατασταθεί ακόμη"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:424
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:488
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:504
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:735
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "Δεν έχει εγκατασταθεί"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Available in repository"
-msgstr "Διαθέσιμο στο αποθετήριο"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
-#: NEEDS WORK
-msgid "Device"
-msgstr "Συσκευή"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1161,6 +1118,15 @@ msgstr "Εγκαταστάθηκε {}"
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:422
 msgid "Detected"
 msgstr "Εντοπίστηκε"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:424
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:488
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:504
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py:735
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "Δεν έχει εγκατασταθεί"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py:426
@@ -1949,17 +1915,6 @@ msgstr "Όλα τα προγράμματα οδήγησης είναι εγκα�
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:331
 msgid "All necessary drivers are already installed on your system."
 msgstr "Όλα τα απαραίτητα προγράμματα οδήγησης είναι ήδη εγκατεστημένα στο σύστημά σας."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "Συνιστώμενο"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:224
-msgid "Categories"
-msgstr "Κατηγορίες"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 152
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:152
@@ -2070,6 +2025,12 @@ msgstr "Πυρήνας"
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:196
 msgid "Video"
 msgstr "Βίντεο"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:224
+msgid "Categories"
+msgstr "Κατηγορίες"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py:237
@@ -2335,6 +2296,11 @@ msgid ""
 msgstr ""
 "Επίσημα δοκιμασμένο από την ομάδα Mesa. Η πιο ασφαλής και αξιόπιστη επιλογή για καθημερινή χρήση, "
 "παιχνίδια και αναπαραγωγή βίντεο."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "Συνιστώμενο"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:288
 #: /home/talesam/Servidor/GitHub/biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py:294
