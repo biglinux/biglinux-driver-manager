@@ -32,6 +32,7 @@ from core.logging_config import get_logger
 from core.mesa_manager import MesaManager
 from core.mhwd_manager import MhwdManager
 from ui.home_page import HomePage
+from ui.installed_page import InstalledPage
 from ui.mesa_page import MesaSection
 from ui.kernel_page import KernelSection
 from ui.category_page import CategorySection
@@ -145,13 +146,16 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         self._split_view.set_content(content_page)
 
         # Responsive breakpoints
-        all_sections = [self.mesa_section, self.kernel_section] + list(
-            self._category_sections.values()
-        )
+        all_sections = [
+            self._installed_page,
+            self.mesa_section,
+            self.kernel_section,
+        ] + list(self._category_sections.values())
         self._setup_breakpoints(all_sections)
 
         # Progress dialog
         self.progress_dialog = ProgressDialog(self)
+        self._installed_page.set_progress_dialog(self.progress_dialog)
         self.mesa_section.set_progress_dialog(self.progress_dialog)
         self.kernel_section.set_progress_dialog(self.progress_dialog)
         for sec in self._category_sections.values():
@@ -192,6 +196,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
 
         _SIDEBAR_ITEMS = [
             ("welcome", "go-home-symbolic", _("Home")),
+            ("installed", "emblem-default-symbolic", _("Installed")),
             ("kernel", "utilities-terminal-symbolic", _("Kernel")),
             ("video", "video-display-symbolic", _("Video")),
         ] + [
@@ -246,6 +251,11 @@ class KernelManagerWindow(Adw.ApplicationWindow):
 
         self._home = HomePage(on_navigate=self._navigate_to)
         self._stack.add_named(self._wrap_scroll(self._home, clamp=900), "welcome")
+
+        self._installed_page = InstalledPage()
+        self._stack.add_named(
+            self._wrap_scroll(self._installed_page, clamp=1200, margin=32), "installed"
+        )
 
         self.kernel_section = KernelSection()
         self._stack.add_named(
@@ -474,6 +484,16 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             def _populate_phase2() -> bool:
                 """Category sections — heavier (printers/scanners)."""
                 self._populate_category_sections(db)
+                self._installed_page.set_installed_data(
+                    modules=list(db.modules),
+                    firmware=list(db.firmware),
+                    printers=list(db.printers),
+                    scanners=list(db.scanners),
+                    kernels=installed_kernels,
+                    running_kernel=running_pkg,
+                    mhwd_video=mhwd_video,
+                    mesa_drivers=mesa_drivers,
+                )
                 # Start async network printer discovery
                 cat = self._category_sections
                 if "printer" in cat:
