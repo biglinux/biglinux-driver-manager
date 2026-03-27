@@ -645,7 +645,7 @@ class HomePage(Gtk.Box):
             cancel_callback=self._mhwd_manager.cancel_operation,
         )
         self._mhwd_manager._run_pacman_command(
-            ["pacman", "-S", "--noconfirm", "--needed", *names],
+            ["-S", "--noconfirm", "--needed", *names],
             progress_callback=self._on_progress_update,
             output_callback=self._on_terminal_output,
             complete_callback=lambda success: GLib.idle_add(
@@ -715,7 +715,7 @@ class HomePage(Gtk.Box):
             cancel_callback=self._mhwd_manager.cancel_operation,
         )
         self._mhwd_manager._run_pacman_command(
-            ["pacman", "-S", "--noconfirm", "--needed", pkg_name],
+            ["-S", "--noconfirm", "--needed", pkg_name],
             progress_callback=self._on_progress_update,
             output_callback=self._on_terminal_output,
             complete_callback=lambda success: GLib.idle_add(

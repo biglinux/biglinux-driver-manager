@@ -1372,7 +1372,7 @@ class MesaSection(BaseSection):
             cancel_callback=self.mhwd_manager.cancel_operation,
         )
         self.mhwd_manager._run_pacman_command(
-            ["pacman", "-S", "--noconfirm", name],
+            ["-S", "--noconfirm", name],
             progress_callback=self._on_progress_update,
             output_callback=self._on_terminal_output,
             complete_callback=lambda success: GLib.idle_add(
@@ -1410,7 +1410,7 @@ class MesaSection(BaseSection):
             cancel_callback=self.mhwd_manager.cancel_operation,
         )
         self.mhwd_manager._run_pacman_command(
-            ["pacman", "-Rns", "--noconfirm", name],
+            ["-Rns", "--noconfirm", name],
             progress_callback=self._on_progress_update,
             output_callback=self._on_terminal_output,
             complete_callback=lambda success: GLib.idle_add(
