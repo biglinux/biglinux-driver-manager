@@ -74,14 +74,14 @@ searchentry:focus-visible, expander:focus-visible {
 /* --- Alert card (inline recommendations) -------------------------- */
 .alert-card {
     padding: 16px; border-radius: 8px;
-    border: 1px solid alpha(@warning_color, 0.3);
-    border-left: 4px solid @warning_color;
-    background: alpha(@warning_color, 0.06);
+    border: 1px solid alpha(#e5a50a, 0.25);
+        border-left: 4px solid #e5a50a;
+        background: alpha(#e5a50a, 0.04);
 }
 .alert-card.info {
-    border-color: alpha(@accent_color, 0.3);
-    border-left: 4px solid @accent_color;
-    background: alpha(@accent_color, 0.06);
+    border-color: alpha(#3584e4, 0.25);
+        border-left: 4px solid #3584e4;
+        background: alpha(#3584e4, 0.04);
 }
 
 /* --- In-use pill -------------------------------------------------- */
@@ -90,40 +90,50 @@ searchentry:focus-visible, expander:focus-visible {
     padding: 2px 8px;
 }
 .badge-box.success {
-    background: alpha(@success_color, 0.12);
+    background: alpha(#2ec27e, 0.10);
 }
 
 .badge-box.warning {
-    background: alpha(@warning_color, 0.12);
+    background: alpha(#e5a50a, 0.10);
 }
 
 .badge-box.accent {
-    background: alpha(@accent_color, 0.12);
+    background: alpha(#3584e4, 0.10);
 }
 
 .badge-box.purple {
-    background: alpha(#9141ac, 0.14);
+    background: alpha(#9141ac, 0.12);
 }
 
 .badge-box.danger {
-    background: alpha(@error_color, 0.12);
+    background: alpha(#c01c28, 0.10);
 }
 
 .badge {
     font-size: 0.8em;
     font-weight: 600;
 }
-.badge-box.success .badge { color: @success_color; }
-.badge-box.warning .badge { color: @warning_color; }
-.badge-box.accent  .badge { color: @accent_color; }
+.badge-box.success .badge {
+    color: #2ec27e;
+}
+
+.badge-box.warning .badge {
+    color: #e5a50a;
+}
+
+.badge-box.accent .badge {
+    color: #3584e4;
+}
 .badge-box.purple  .badge { color: #c061cb; }
-.badge-box.danger  .badge { color: @error_color; }
+.badge-box.danger .badge {
+    color: #c01c28;
+}
 
 /* --- Active pill -------------------------------------------------- */
 .active-pill {
     padding: 2px 8px;
     border-radius: 4px;
-    background: linear-gradient(135deg, alpha(@success_color, 0.22), alpha(@success_color, 0.08));
+    background: linear-gradient(135deg, alpha(#2ec27e, 0.16), alpha(#2ec27e, 0.06));
 }
 
 /* --- Active button (green suggested-action override) -------------- */
@@ -135,24 +145,24 @@ searchentry:focus-visible, expander:focus-visible {
 
 /* --- Purpose section cards ---------------------------------------- */
 .purpose-card-gaming {
-    background: linear-gradient(160deg, alpha(@accent_color, 0.04), @card_bg_color);
-        border-left: 3px solid alpha(@accent_color, 0.30);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#3584e4, 0.35);
 }
 .purpose-card-video {
-    background: linear-gradient(160deg, alpha(@success_color, 0.04), @card_bg_color);
-        border-left: 3px solid alpha(@success_color, 0.30);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#2ec27e, 0.35);
 }
 .purpose-card-compute {
-    background: linear-gradient(160deg, alpha(@warning_color, 0.04), @card_bg_color);
-        border-left: 3px solid alpha(@warning_color, 0.30);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#e5a50a, 0.35);
 }
 .purpose-card-nvidia {
-    background: linear-gradient(160deg, alpha(#76b900, 0.04), @card_bg_color);
-        border-left: 3px solid alpha(#76b900, 0.30);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#76b900, 0.35);
 }
 .purpose-card-mesa {
-    background: linear-gradient(160deg, alpha(@accent_color, 0.03), @card_bg_color);
-        border-left: 3px solid alpha(@accent_color, 0.22);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#3584e4, 0.28);
 }
 
 /* Package row inside purpose card */
@@ -168,14 +178,14 @@ searchentry:focus-visible, expander:focus-visible {
 /* --- Recommendations card ----------------------------------------- */
 .purpose-card-recommend {
     padding: 0;
-    background: linear-gradient(160deg, alpha(@accent_color, 0.04), alpha(@warning_color, 0.02), @card_bg_color);
-        border-left: 3px solid alpha(@accent_color, 0.30);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#3584e4, 0.35);
 }
 
 .purpose-card-suggest {
     padding: 0;
-    background: linear-gradient(160deg, alpha(@accent_color, 0.03), @card_bg_color);
-        border-left: 3px solid alpha(@accent_color, 0.20);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#3584e4, 0.25);
 }
 
 /* --- Kernel page -------------------------------------------------- */
@@ -208,9 +218,9 @@ searchentry:focus-visible, expander:focus-visible {
 .in-use-pill {
     padding: 3px 12px;
     border-radius: 99px;
-    background: linear-gradient(135deg, alpha(@success_color, 0.14), alpha(@success_color, 0.06));
-        border: 1px solid alpha(@success_color, 0.18);
-    color: @success_color;
+    background: linear-gradient(135deg, alpha(#2ec27e, 0.12), alpha(#2ec27e, 0.05));
+        border: 1px solid alpha(#2ec27e, 0.14);
+        color: #2ec27e;
     font-weight: 700;
     font-size: 0.85em;
 }
@@ -219,34 +229,34 @@ searchentry:focus-visible, expander:focus-visible {
 .kernel-installed-card {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@success_color, 0.03), @card_bg_color);
-        border-left: 3px solid alpha(@success_color, 0.22);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#2ec27e, 0.35);
 }
 
 /* Available group cards — by type */
 .kernel-group-lts {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@success_color, 0.02), @card_bg_color);
-        border-left: 3px solid alpha(@success_color, 0.20);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#2ec27e, 0.30);
 }
 .kernel-group-standard {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@accent_color, 0.02), @card_bg_color);
-        border-left: 3px solid alpha(@accent_color, 0.18);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#3584e4, 0.28);
 }
 .kernel-group-xanmod {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(#9141ac, 0.03), @card_bg_color);
-        border-left: 3px solid alpha(#9141ac, 0.22);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#9141ac, 0.30);
 }
 .kernel-group-rt {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@warning_color, 0.03), @card_bg_color);
-        border-left: 3px solid alpha(@warning_color, 0.22);
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#e5a50a, 0.30);
 }
 
 /* Group header inside kernel group cards */
@@ -266,8 +276,13 @@ searchentry:focus-visible, expander:focus-visible {
 }
 
 /* --- Success / error icons ---------------------------------------- */
-.success-icon { color: @success_color; }
-.error-icon   { color: @error_color; }
+.success-icon {
+    color: #2ec27e;
+}
+
+.error-icon {
+    color: #c01c28;
+}
 
 /* --- Misc helpers ------------------------------------------------- */
 .dim-label { opacity: 0.75; }
