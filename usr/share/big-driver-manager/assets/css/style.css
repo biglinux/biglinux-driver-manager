@@ -12,7 +12,7 @@ searchentry:focus-visible, expander:focus-visible {
 .card {
     border-radius: 12px;
     border: 1px solid alpha(@borders, 0.18);
-    background-color: alpha(@card_bg_color, 0.60);
+    background-color: @card_bg_color;
     box-shadow: 0 1px 3px alpha(black, 0.04);
     transition: box-shadow 200ms ease;
 }
@@ -27,40 +27,40 @@ searchentry:focus-visible, expander:focus-visible {
 .intro-kernel {
     background-image: linear-gradient(
         to bottom right,
-        alpha(#3584e4, 0.14),
-        alpha(#1c71d8, 0.04)
+        alpha(#3584e4, 0.08),
+            alpha(#1c71d8, 0.02)
     );
-    border: 1.5px solid alpha(#3584e4, 0.20);
+    border: 1.5px solid alpha(#3584e4, 0.15);
     box-shadow:
-        0 0 0 1px alpha(#3584e4, 0.06),
-        0 4px 16px alpha(#3584e4, 0.12),
-        0 1px 3px alpha(black, 0.06);
+        0 0 0 1px alpha(#3584e4, 0.04),
+            0 4px 16px alpha(#3584e4, 0.08),
+            0 1px 3px alpha(black, 0.04);
 }
 .intro-kernel:hover {
-    border-color: alpha(#3584e4, 0.35);
+    border-color: alpha(#3584e4, 0.28);
     box-shadow:
-        0 0 0 1px alpha(#3584e4, 0.10),
-        0 8px 28px alpha(#3584e4, 0.18),
-        0 2px 6px alpha(black, 0.08);
+        0 0 0 1px alpha(#3584e4, 0.07),
+            0 8px 28px alpha(#3584e4, 0.12),
+            0 2px 6px alpha(black, 0.06);
 }
 .intro-drivers {
     background-image: linear-gradient(
         to bottom right,
-        alpha(#26a269, 0.14),
-        alpha(#1a8a55, 0.04)
+        alpha(#26a269, 0.08),
+            alpha(#1a8a55, 0.02)
     );
-    border: 1.5px solid alpha(#26a269, 0.20);
+    border: 1.5px solid alpha(#26a269, 0.15);
     box-shadow:
-        0 0 0 1px alpha(#26a269, 0.06),
-        0 4px 16px alpha(#26a269, 0.12),
-        0 1px 3px alpha(black, 0.06);
+        0 0 0 1px alpha(#26a269, 0.04),
+            0 4px 16px alpha(#26a269, 0.08),
+            0 1px 3px alpha(black, 0.04);
 }
 .intro-drivers:hover {
-    border-color: alpha(#26a269, 0.35);
+    border-color: alpha(#26a269, 0.28);
     box-shadow:
-        0 0 0 1px alpha(#26a269, 0.10),
-        0 8px 28px alpha(#26a269, 0.18),
-        0 2px 6px alpha(black, 0.08);
+        0 0 0 1px alpha(#26a269, 0.07),
+            0 8px 28px alpha(#26a269, 0.12),
+            0 2px 6px alpha(black, 0.06);
 }
 /* Separator accent line */
 .intro-sep { border-radius: 2px; }
@@ -89,11 +89,25 @@ searchentry:focus-visible, expander:focus-visible {
     border-radius: 4px;
     padding: 2px 8px;
 }
-.badge-box.success { background: alpha(@success_color, 0.18); }
-.badge-box.warning { background: alpha(@warning_color, 0.18); }
-.badge-box.accent  { background: alpha(@accent_color, 0.18); }
-.badge-box.purple  { background: alpha(#9141ac, 0.22); }
-.badge-box.danger  { background: alpha(@error_color, 0.18); }
+.badge-box.success {
+    background: alpha(@success_color, 0.12);
+}
+
+.badge-box.warning {
+    background: alpha(@warning_color, 0.12);
+}
+
+.badge-box.accent {
+    background: alpha(@accent_color, 0.12);
+}
+
+.badge-box.purple {
+    background: alpha(#9141ac, 0.14);
+}
+
+.badge-box.danger {
+    background: alpha(@error_color, 0.12);
+}
 
 .badge {
     font-size: 0.8em;
@@ -121,24 +135,24 @@ searchentry:focus-visible, expander:focus-visible {
 
 /* --- Purpose section cards ---------------------------------------- */
 .purpose-card-gaming {
-    background: linear-gradient(160deg, alpha(@accent_color, 0.06), @card_bg_color);
-    border-left: 3px solid alpha(@accent_color, 0.40);
+    background: linear-gradient(160deg, alpha(@accent_color, 0.04), @card_bg_color);
+        border-left: 3px solid alpha(@accent_color, 0.30);
 }
 .purpose-card-video {
-    background: linear-gradient(160deg, alpha(@success_color, 0.06), @card_bg_color);
-    border-left: 3px solid alpha(@success_color, 0.40);
+    background: linear-gradient(160deg, alpha(@success_color, 0.04), @card_bg_color);
+        border-left: 3px solid alpha(@success_color, 0.30);
 }
 .purpose-card-compute {
-    background: linear-gradient(160deg, alpha(@warning_color, 0.06), @card_bg_color);
-    border-left: 3px solid alpha(@warning_color, 0.40);
+    background: linear-gradient(160deg, alpha(@warning_color, 0.04), @card_bg_color);
+        border-left: 3px solid alpha(@warning_color, 0.30);
 }
 .purpose-card-nvidia {
-    background: linear-gradient(160deg, alpha(#76b900, 0.06), @card_bg_color);
-    border-left: 3px solid alpha(#76b900, 0.40);
+    background: linear-gradient(160deg, alpha(#76b900, 0.04), @card_bg_color);
+        border-left: 3px solid alpha(#76b900, 0.30);
 }
 .purpose-card-mesa {
-    background: linear-gradient(160deg, alpha(@accent_color, 0.04), @card_bg_color);
-    border-left: 3px solid alpha(@accent_color, 0.30);
+    background: linear-gradient(160deg, alpha(@accent_color, 0.03), @card_bg_color);
+        border-left: 3px solid alpha(@accent_color, 0.22);
 }
 
 /* Package row inside purpose card */
@@ -147,21 +161,21 @@ searchentry:focus-visible, expander:focus-visible {
     margin-top: 4px;
     margin-bottom: 8px;
     border-radius: 8px;
-    background: alpha(@window_fg_color, 0.05);
-    border: 1px solid alpha(@borders, 0.08);
+    background: alpha(@window_fg_color, 0.03);
+        border: 1px solid alpha(@borders, 0.06);
 }
 
 /* --- Recommendations card ----------------------------------------- */
 .purpose-card-recommend {
     padding: 0;
-    background: linear-gradient(160deg, alpha(@accent_color, 0.06), alpha(@warning_color, 0.03), @card_bg_color);
-    border-left: 3px solid alpha(@accent_color, 0.40);
+    background: linear-gradient(160deg, alpha(@accent_color, 0.04), alpha(@warning_color, 0.02), @card_bg_color);
+        border-left: 3px solid alpha(@accent_color, 0.30);
 }
 
 .purpose-card-suggest {
     padding: 0;
-    background: linear-gradient(160deg, alpha(@accent_color, 0.04), @card_bg_color);
-    border-left: 3px solid alpha(@accent_color, 0.25);
+    background: linear-gradient(160deg, alpha(@accent_color, 0.03), @card_bg_color);
+        border-left: 3px solid alpha(@accent_color, 0.20);
 }
 
 /* --- Kernel page -------------------------------------------------- */
@@ -172,30 +186,30 @@ searchentry:focus-visible, expander:focus-visible {
     border-radius: 16px;
     background-image: linear-gradient(
         to bottom right,
-        alpha(#3584e4, 0.12),
-        alpha(#1c71d8, 0.03)
+        alpha(#3584e4, 0.07),
+            alpha(#1c71d8, 0.02)
     );
-    border: 1.5px solid alpha(#3584e4, 0.18);
+    border: 1.5px solid alpha(#3584e4, 0.14);
     box-shadow:
-        0 0 0 1px alpha(#3584e4, 0.05),
-        0 4px 14px alpha(#3584e4, 0.10),
-        0 1px 3px alpha(black, 0.05);
+        0 0 0 1px alpha(#3584e4, 0.04),
+            0 4px 14px alpha(#3584e4, 0.07),
+            0 1px 3px alpha(black, 0.04);
     transition: box-shadow 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 .kernel-running-card:hover {
-    border-color: alpha(#3584e4, 0.30);
+    border-color: alpha(#3584e4, 0.24);
     box-shadow:
-        0 0 0 1px alpha(#3584e4, 0.08),
-        0 6px 22px alpha(#3584e4, 0.14),
-        0 2px 6px alpha(black, 0.06);
+        0 0 0 1px alpha(#3584e4, 0.06),
+            0 6px 22px alpha(#3584e4, 0.10),
+            0 2px 6px alpha(black, 0.05);
 }
 
 /* In-use pill badge */
 .in-use-pill {
     padding: 3px 12px;
     border-radius: 99px;
-    background: linear-gradient(135deg, alpha(@success_color, 0.22), alpha(@success_color, 0.10));
-    border: 1px solid alpha(@success_color, 0.25);
+    background: linear-gradient(135deg, alpha(@success_color, 0.14), alpha(@success_color, 0.06));
+        border: 1px solid alpha(@success_color, 0.18);
     color: @success_color;
     font-weight: 700;
     font-size: 0.85em;
@@ -205,34 +219,34 @@ searchentry:focus-visible, expander:focus-visible {
 .kernel-installed-card {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@success_color, 0.04), alpha(@card_bg_color, 0.85));
-    border-left: 3px solid alpha(@success_color, 0.28);
+    background: linear-gradient(160deg, alpha(@success_color, 0.03), @card_bg_color);
+        border-left: 3px solid alpha(@success_color, 0.22);
 }
 
 /* Available group cards — by type */
 .kernel-group-lts {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@success_color, 0.03), alpha(@card_bg_color, 0.85));
-    border-left: 3px solid alpha(@success_color, 0.25);
+    background: linear-gradient(160deg, alpha(@success_color, 0.02), @card_bg_color);
+        border-left: 3px solid alpha(@success_color, 0.20);
 }
 .kernel-group-standard {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@accent_color, 0.03), alpha(@card_bg_color, 0.85));
-    border-left: 3px solid alpha(@accent_color, 0.22);
+    background: linear-gradient(160deg, alpha(@accent_color, 0.02), @card_bg_color);
+        border-left: 3px solid alpha(@accent_color, 0.18);
 }
 .kernel-group-xanmod {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(#9141ac, 0.04), alpha(@card_bg_color, 0.85));
-    border-left: 3px solid alpha(#9141ac, 0.30);
+    background: linear-gradient(160deg, alpha(#9141ac, 0.03), @card_bg_color);
+        border-left: 3px solid alpha(#9141ac, 0.22);
 }
 .kernel-group-rt {
     padding: 0;
     border-radius: 14px;
-    background: linear-gradient(160deg, alpha(@warning_color, 0.04), alpha(@card_bg_color, 0.85));
-    border-left: 3px solid alpha(@warning_color, 0.30);
+    background: linear-gradient(160deg, alpha(@warning_color, 0.03), @card_bg_color);
+        border-left: 3px solid alpha(@warning_color, 0.22);
 }
 
 /* Group header inside kernel group cards */
