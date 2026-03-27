@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -877,53 +876,6 @@ msgstr "Ovladače skenerů (SANE backendy) umožňují skenovacím aplikacím ko
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Další balíčky firmwaru pro specializovaný hardware."
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
-#: NEEDS WORK
-msgid "Package"
-msgstr "Balíček"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Status"
-msgstr "Stav"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-#: NEEDS WORK
-msgid "Detected and installed"
-msgstr "Zjištěno a nainstalováno"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-#: NEEDS WORK
-msgid "Detected — not yet installed"
-msgstr "Zjištěno — dosud nenainstalováno"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:424
-#: usr/share/big-driver-manager/ui/home_page.py:488
-#: usr/share/big-driver-manager/ui/home_page.py:504
-#: usr/share/big-driver-manager/ui/home_page.py:735
-#: usr/share/big-driver-manager/ui/installed_page.py:313
-#: usr/share/big-driver-manager/ui/installed_page.py:317
-#: usr/share/big-driver-manager/ui/installed_page.py:324
-#: usr/share/big-driver-manager/ui/installed_page.py:331
-#: usr/share/big-driver-manager/ui/window.py:199
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "Instalováno"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Available in repository"
-msgstr "Dostupné v repozitáři"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
-#: NEEDS WORK
-msgid "Device"
-msgstr "Zařízení"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 #: usr/share/big-driver-manager/udev-driver-dialog.py:91
@@ -1156,6 +1108,20 @@ msgstr "{} nainstalován"
 #: usr/share/big-driver-manager/ui/installed_page.py:333
 msgid "Detected"
 msgstr "Zjištěno"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/category_page.py:424
+#: usr/share/big-driver-manager/ui/home_page.py:488
+#: usr/share/big-driver-manager/ui/home_page.py:504
+#: usr/share/big-driver-manager/ui/home_page.py:735
+#: usr/share/big-driver-manager/ui/installed_page.py:313
+#: usr/share/big-driver-manager/ui/installed_page.py:317
+#: usr/share/big-driver-manager/ui/installed_page.py:324
+#: usr/share/big-driver-manager/ui/installed_page.py:331
+#: usr/share/big-driver-manager/ui/window.py:199
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "Instalováno"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:426
@@ -1530,11 +1496,6 @@ msgstr "3D tiskárny"
 #: usr/share/big-driver-manager/ui/window.py:107
 msgid "Scanners"
 msgstr "Skenery"
-# 
-# File: usr/share/big-driver-manager/ui/installed_page.py, line: 66
-#: NEEDS WORK
-msgid "Installed Drivers"
-msgstr "Nainstalované ovladače"
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
@@ -2002,17 +1963,6 @@ msgstr "Všechny ovladače jsou nainstalovány"
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
 msgid "All necessary drivers are already installed on your system."
 msgstr "Všechny potřebné ovladače jsou již nainstalovány ve vašem systému."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "Doporučeno"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Kategorie"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 152
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
@@ -2123,6 +2073,12 @@ msgstr "Jádro"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "Video"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Kategorie"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -2385,6 +2341,11 @@ msgid ""
 msgstr ""
 "Oficiálně testováno týmem Mesa. Nejbezpečnější a nejspolehlivější volba pro každodenní použití, "
 "hraní her a přehrávání videa."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "Doporučeno"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: usr/share/big-driver-manager/ui/mesa_data.py:288
 #: usr/share/big-driver-manager/ui/mesa_data.py:294

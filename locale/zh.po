@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -844,53 +843,6 @@ msgstr "扫描仪驱动程序（SANE后端）允许扫描应用程序与您的�
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "用于专用硬件的附加固件包。"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
-#: NEEDS WORK
-msgid "Package"
-msgstr "包"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Status"
-msgstr "状态"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-#: NEEDS WORK
-msgid "Detected and installed"
-msgstr "已检测并安装"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-#: NEEDS WORK
-msgid "Detected — not yet installed"
-msgstr "检测到 - 尚未安装"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:424
-#: usr/share/big-driver-manager/ui/home_page.py:488
-#: usr/share/big-driver-manager/ui/home_page.py:504
-#: usr/share/big-driver-manager/ui/home_page.py:735
-#: usr/share/big-driver-manager/ui/installed_page.py:313
-#: usr/share/big-driver-manager/ui/installed_page.py:317
-#: usr/share/big-driver-manager/ui/installed_page.py:324
-#: usr/share/big-driver-manager/ui/installed_page.py:331
-#: usr/share/big-driver-manager/ui/window.py:199
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "已安装"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Available in repository"
-msgstr "可在仓库中获取"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
-#: NEEDS WORK
-msgid "Device"
-msgstr "设备"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1117,6 +1069,20 @@ msgstr "已安装 {}"
 #: usr/share/big-driver-manager/ui/installed_page.py:333
 msgid "Detected"
 msgstr "已检测"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/category_page.py:424
+#: usr/share/big-driver-manager/ui/home_page.py:488
+#: usr/share/big-driver-manager/ui/home_page.py:504
+#: usr/share/big-driver-manager/ui/home_page.py:735
+#: usr/share/big-driver-manager/ui/installed_page.py:313
+#: usr/share/big-driver-manager/ui/installed_page.py:317
+#: usr/share/big-driver-manager/ui/installed_page.py:324
+#: usr/share/big-driver-manager/ui/installed_page.py:331
+#: usr/share/big-driver-manager/ui/window.py:199
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "已安装"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:426
@@ -1484,11 +1450,6 @@ msgstr "3D打印机"
 #: usr/share/big-driver-manager/ui/window.py:107
 msgid "Scanners"
 msgstr "扫描仪"
-# 
-# File: usr/share/big-driver-manager/ui/installed_page.py, line: 66
-#: NEEDS WORK
-msgid "Installed Drivers"
-msgstr "已安装的驱动程序"
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
@@ -1940,17 +1901,6 @@ msgstr "所有驱动程序均已安装"
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
 msgid "All necessary drivers are already installed on your system."
 msgstr "所有必需的驱动程序均已安装在您的系统上。"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "推荐"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "类别"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 152
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
@@ -2061,6 +2011,12 @@ msgstr "内核"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "视频"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "类别"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -2315,6 +2271,11 @@ msgid ""
 "Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
 "and video playback."
 msgstr "由Mesa团队官方测试。日常使用、游戏和视频播放的最安全可靠选择。"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "推荐"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: usr/share/big-driver-manager/ui/mesa_data.py:288
 #: usr/share/big-driver-manager/ui/mesa_data.py:294

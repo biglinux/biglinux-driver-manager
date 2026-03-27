@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -882,53 +881,6 @@ msgstr ""
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Paquetes de firmware adicionales para hardware especializado."
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
-#: NEEDS WORK
-msgid "Package"
-msgstr "Paquete"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Status"
-msgstr "Estado"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-#: NEEDS WORK
-msgid "Detected and installed"
-msgstr "Detectado e instalado"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-#: NEEDS WORK
-msgid "Detected — not yet installed"
-msgstr "Detectado — aún no instalado"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:424
-#: usr/share/big-driver-manager/ui/home_page.py:488
-#: usr/share/big-driver-manager/ui/home_page.py:504
-#: usr/share/big-driver-manager/ui/home_page.py:735
-#: usr/share/big-driver-manager/ui/installed_page.py:313
-#: usr/share/big-driver-manager/ui/installed_page.py:317
-#: usr/share/big-driver-manager/ui/installed_page.py:324
-#: usr/share/big-driver-manager/ui/installed_page.py:331
-#: usr/share/big-driver-manager/ui/window.py:199
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "Instalado"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
-msgid "Available in repository"
-msgstr "Disponible en el repositorio"
-# 
-# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
-#: NEEDS WORK
-msgid "Device"
-msgstr "Dispositivo"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1163,6 +1115,20 @@ msgstr "{} instalado"
 #: usr/share/big-driver-manager/ui/installed_page.py:333
 msgid "Detected"
 msgstr "Detectado"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/category_page.py:424
+#: usr/share/big-driver-manager/ui/home_page.py:488
+#: usr/share/big-driver-manager/ui/home_page.py:504
+#: usr/share/big-driver-manager/ui/home_page.py:735
+#: usr/share/big-driver-manager/ui/installed_page.py:313
+#: usr/share/big-driver-manager/ui/installed_page.py:317
+#: usr/share/big-driver-manager/ui/installed_page.py:324
+#: usr/share/big-driver-manager/ui/installed_page.py:331
+#: usr/share/big-driver-manager/ui/window.py:199
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "Instalado"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:426
@@ -1537,11 +1503,6 @@ msgstr "Impresoras 3D"
 #: usr/share/big-driver-manager/ui/window.py:107
 msgid "Scanners"
 msgstr "Escáneres"
-# 
-# File: usr/share/big-driver-manager/ui/installed_page.py, line: 66
-#: NEEDS WORK
-msgid "Installed Drivers"
-msgstr "Controladores instalados"
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
@@ -2011,17 +1972,6 @@ msgstr "Todos los controladores están instalados."
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
 msgid "All necessary drivers are already installed on your system."
 msgstr "Todos los controladores necesarios ya están instalados en su sistema."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "Recomendado"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Categorías"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 152
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
@@ -2132,6 +2082,12 @@ msgstr "Núcleo"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "Vídeo"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Categorías"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -2395,6 +2351,11 @@ msgid ""
 msgstr ""
 "Oficialmente probado por el equipo de Mesa. La opción más segura y confiable para uso diario, "
 "juegos y reproducción de video."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "Recomendado"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: usr/share/big-driver-manager/ui/mesa_data.py:288
 #: usr/share/big-driver-manager/ui/mesa_data.py:294
