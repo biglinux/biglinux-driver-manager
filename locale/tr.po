@@ -2,40 +2,126 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-27 12:30-0300\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 137
-#: usr/share/big-driver-manager/core/base_manager.py:140
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 116
+#: usr/share/big-driver-manager/core/mesa_manager.py:116
 #, python-brace-format
-msgid "Database locked. Retrying in {} seconds..."
-msgstr "Veritabanı kilitlendi. {} saniye içinde yeniden deneniyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 142
-#: usr/share/big-driver-manager/core/base_manager.py:145
+msgid "Driver not found: {}"
+msgstr "Sürücü bulunamadı: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:152
 #, python-brace-format
-msgid "Waiting {} s before retry..."
-msgstr "Tekrar denemeden önce {} sn bekleniyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 147
-#: usr/share/big-driver-manager/core/base_manager.py:150
+msgid "Applying {} driver..."
+msgstr "{} sürücüsü uygulanıyor..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
+#: usr/share/big-driver-manager/core/mesa_manager.py:156
 #, python-brace-format
-msgid "Retry attempt {} of {}..."
-msgstr "{} denemeden {}. tekrar..."
-
+msgid "Starting {} driver installation..."
+msgstr "{} sürücü kurulumu başlatılıyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Çakışan paketler kontrol ediliyor..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
+#, python-brace-format
+msgid "Removing conflicts: {}"
+msgstr "Çakışmalar kaldırılıyor: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "{} paket kontrol ediliyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ {} paketi mevcut değil, atlanıyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ Yüklenecek paket yok."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Yükleniyor: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Çakışan paketler kaldırılıyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "Çakışan paketler kaldırılamadı."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "{} sürücüsü yükleniyor..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
+#: usr/share/big-driver-manager/core/mesa_manager.py:245
+msgid "Failed to apply driver."
+msgstr "Sürücü uygulanamadı."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "Sürücü başarıyla uygulandı!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} sürücü başarıyla uygulandı!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/core/base_manager.py:205
+#: usr/share/big-driver-manager/core/mesa_manager.py:262
+#, python-brace-format
+msgid "Error: {}"
+msgstr "Hata: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/core/mesa_manager.py:263
+#, python-brace-format
+msgid "❌ Error: {}"
+msgstr "❌ Hata: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#: usr/share/big-driver-manager/core/mesa_manager.py:296
+#, python-brace-format
+msgid "❌ Operation failed (exit code: {})"
+msgstr "❌ İşlem başarısız oldu (çıkış kodu: {})"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 951
+# File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
+# line: 213
+#: usr/share/big-driver-manager/core/mhwd_manager.py:213
+#: usr/share/big-driver-manager/ui/mesa_page.py:1102
+#, python-brace-format
+msgid "Remove the installed NVIDIA driver ({}) first."
+msgstr "Önce yüklü NVIDIA sürücüsünü ({}) kaldırın."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 106
+#: usr/share/big-driver-manager/core/base_manager.py:181
+#: usr/share/big-driver-manager/core/mhwd_manager.py:310
+#, python-brace-format
+msgid "Command: {}"
+msgstr "Komut: {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 105
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 108
 #: usr/share/big-driver-manager/core/base_manager.py:180
@@ -44,104 +130,100 @@ msgstr "{} denemeden {}. tekrar..."
 #, python-brace-format
 msgid "Starting {}..."
 msgstr "{} başlatılıyor..."
-
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 106
-#: usr/share/big-driver-manager/core/base_manager.py:181
-#: usr/share/big-driver-manager/core/mhwd_manager.py:310
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/core/mhwd_manager.py:335
+msgid "Completed"
+msgstr "Tamamlandı"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
+#: usr/share/big-driver-manager/core/mhwd_manager.py:335
+#: usr/share/big-driver-manager/ui/progress_dialog.py:374
+msgid "Failed"
+msgstr "Başarısız"
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 137
+#: usr/share/big-driver-manager/core/base_manager.py:140
 #, python-brace-format
-msgid "Command: {}"
-msgstr "Komut: {}"
-
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/core/base_manager.py:205
-#: usr/share/big-driver-manager/core/mesa_manager.py:262
+msgid "Database locked. Retrying in {} seconds..."
+msgstr "Veritabanı kilitlendi. {} saniye içinde yeniden deneniyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 142
+#: usr/share/big-driver-manager/core/base_manager.py:145
 #, python-brace-format
-msgid "Error: {}"
-msgstr "Hata: {}"
-
+msgid "Waiting {} s before retry..."
+msgstr "Tekrar denemeden önce {} sn bekleniyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 147
+#: usr/share/big-driver-manager/core/base_manager.py:150
+#, python-brace-format
+msgid "Retry attempt {} of {}..."
+msgstr "{} denemeden {}. tekrar..."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
 #: usr/share/big-driver-manager/core/base_manager.py:233
 #: usr/share/big-driver-manager/ui/progress_dialog.py:414
 msgid "Operation cancelled by user."
 msgstr "İşlem kullanıcı tarafından iptal edildi."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 160
 #: usr/share/big-driver-manager/core/base_manager.py:256
 #, python-brace-format
 msgid "Still working... ({:.0%} complete)"
 msgstr "Hâlâ çalışıyor... ({:.0%} tamamlandı)"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 177
 #: usr/share/big-driver-manager/core/base_manager.py:282
 msgid "Operation cancelled"
 msgstr "İşlem iptal edildi"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 178
 #: usr/share/big-driver-manager/core/base_manager.py:283
 msgid "Operation was cancelled."
 msgstr "Operasyon iptal edildi."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 183
 #: usr/share/big-driver-manager/core/base_manager.py:288
 #, python-brace-format
 msgid "{}  complete!"
 msgstr "{} tamamlandı!"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/core/base_manager.py:292
 #, python-brace-format
 msgid "{}  completed successfully."
 msgstr "{} başarıyla tamamlandı."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 193
 #: usr/share/big-driver-manager/core/base_manager.py:298
 #, python-brace-format
 msgid "{}  failed."
 msgstr "{} başarısız."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 197
 #: usr/share/big-driver-manager/core/base_manager.py:302
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} başarısız oldu (çıkış kodu: {})"
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 310
 #: usr/share/big-driver-manager/core/base_manager.py:313
 msgid ""
-"Package not found in repositories. The package name may have changed or been "
-"removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
-"for the correct name."
+"Package not found in repositories. The package name may have changed or been removed.\n"
+"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search for the correct name."
 msgstr ""
 "Paket depolarda bulunamadı. Paket adı değişmiş veya kaldırılmış olabilir.\n"
-"Öneri: Veritabanını 'sudo pacman -Sy' ile yenilemeyi deneyin ve doğru adı "
-"arayın."
-
+"Öneri: Veritabanını 'sudo pacman -Sy' ile yenilemeyi deneyin ve doğru adı arayın."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 #: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
 "A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
-"'sudo pacman -Syyu'."
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
 "Bir çakışma işlemin tamamlanmasını engelledi.\n"
-"Öneri: Önbelleği temizleyin ve 'sudo pacman -Scc' ardından 'sudo pacman "
-"-Syyu' ile güncelleyin."
-
+"Öneri: Önbelleği temizleyin ve 'sudo pacman -Scc' ardından 'sudo pacman -Syyu' ile güncelleyin."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 #: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
 "Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
-"and resolve the conflict."
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
 "Bu pakete ait bazı dosyalar sistemde zaten mevcut.\n"
-"Öneri: Dosyanın hangi pakete ait olduğunu 'pacman -Qo <file_path>' ile "
-"kontrol edin ve çakışmayı çözün."
-
+"Öneri: Dosyanın hangi pakete ait olduğunu 'pacman -Qo <file_path>' ile kontrol edin ve çakışmayı "
+"çözün."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 #: usr/share/big-driver-manager/core/base_manager.py:338
@@ -151,31 +233,24 @@ msgid ""
 msgstr ""
 "Gerekli bağımlılıklar çözülemedi.\n"
 "Öneri: Öncelikle tüm sistemi 'sudo pacman -Syu' ile güncelleyin."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 342
 #: usr/share/big-driver-manager/core/base_manager.py:345
 msgid ""
 "Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
 "Paket imzası doğrulanamadı.\n"
-"Öneri: Anahtar halkalarınızı 'sudo pacman -S archlinux-keyring manjaro-"
-"keyring' ile güncelleyin."
-
+"Öneri: Anahtar halkalarınızı 'sudo pacman -S archlinux-keyring manjaro-keyring' ile güncelleyin."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 #: usr/share/big-driver-manager/core/base_manager.py:353
 msgid ""
 "The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
 "Paket veritabanı başka bir işlem tarafından kilitlenmiş.\n"
-"Başka bir paket yöneticisi çalışmıyorsa, kilidi 'sudo rm /var/lib/pacman/"
-"db.lck' ile kaldırın."
-
+"Başka bir paket yöneticisi çalışmıyorsa, kilidi 'sudo rm /var/lib/pacman/db.lck' ile kaldırın."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 #: usr/share/big-driver-manager/core/base_manager.py:361
@@ -185,19 +260,15 @@ msgid ""
 msgstr ""
 "İşlemi tamamlamak için yeterli disk alanı yok.\n"
 "Öneri: Paket önbelleğini 'sudo pacman -Scc' ile temizleyerek alan açın."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try "
-"updating your mirror list."
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
 "Gerekli dosyalar indirilemedi.\n"
-"Öneri: İnternet bağlantınızı kontrol edin. Sorun devam ederse, ayna "
-"listenizi güncellemeyi deneyin."
-
+"Öneri: İnternet bağlantınızı kontrol edin. Sorun devam ederse, ayna listenizi güncellemeyi deneyin."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 #: usr/share/big-driver-manager/core/base_manager.py:377
@@ -207,50 +278,42 @@ msgid ""
 msgstr ""
 "İndirilen paket bozuk.\n"
 "Öneri: Önbelleği 'sudo pacman -Scc' komutuyla temizleyin ve tekrar deneyin."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 391
 #: usr/share/big-driver-manager/core/base_manager.py:394
 msgid "Generating GRUB configuration..."
 msgstr "GRUB yapılandırması oluşturuluyor..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 392
 #: usr/share/big-driver-manager/core/base_manager.py:395
 msgid "Running post-transaction hooks..."
 msgstr "İşlem sonrası kancalar çalıştırılıyor..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/core/base_manager.py:396
 msgid "Installing packages..."
 msgstr "Paketler kuruluyor..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 394
 #: usr/share/big-driver-manager/core/base_manager.py:397
 msgid "Removing packages..."
 msgstr "Paketler kaldırılıyor..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 395
 #: usr/share/big-driver-manager/core/base_manager.py:398
 msgid "Checking for file conflicts..."
 msgstr "Dosya çakışmaları kontrol ediliyor..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 396
 #: usr/share/big-driver-manager/core/base_manager.py:399
 msgid "Checking dependencies..."
 msgstr "Paket veritabanları senkronize ediliyor..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 400
 #: usr/share/big-driver-manager/core/base_manager.py:403
 msgid "Synchronizing package databases..."
 msgstr "Paket veritabanları senkronize ediliyor..."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 643
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -259,7 +322,6 @@ msgstr "Paket veritabanları senkronize ediliyor..."
 #: usr/share/big-driver-manager/ui/home_page.py:644
 msgid "Downloading packages..."
 msgstr "Paketler indiriliyor..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/core/driver_installer.py:57
 #: usr/share/big-driver-manager/ui/category_page.py:626
@@ -273,7 +335,6 @@ msgstr "Paketler indiriliyor..."
 #, python-brace-format
 msgid "Installing {}"
 msgstr "{} kuruluyor"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #: usr/share/big-driver-manager/core/driver_installer.py:85
 #: usr/share/big-driver-manager/ui/category_page.py:664
@@ -286,146 +347,537 @@ msgstr "{} kuruluyor"
 #, python-brace-format
 msgid "Removing {}"
 msgstr "{} kaldırılıyor"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 99
 #: usr/share/big-driver-manager/core/driver_installer.py:99
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer bulunamadı. AUR paketi {} kurulamaz."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 113
 #: usr/share/big-driver-manager/core/driver_installer.py:113
 msgid "Continue the installation in the pamac window that was opened."
 msgstr "Kuruluma açılan pamac penceresinde devam edin."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 116
-#: usr/share/big-driver-manager/core/mesa_manager.py:116
-#, python-brace-format
-msgid "Driver not found: {}"
-msgstr "Sürücü bulunamadı: {}"
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:152
-#, python-brace-format
-msgid "Applying {} driver..."
-msgstr "{} sürücüsü uygulanıyor..."
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
-#: usr/share/big-driver-manager/core/mesa_manager.py:156
-#, python-brace-format
-msgid "Starting {} driver installation..."
-msgstr "{} sürücü kurulumu başlatılıyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Çakışan paketler kontrol ediliyor..."
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Çakışmalar kaldırılıyor: {}"
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "{} paket kontrol ediliyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ {} paketi mevcut değil, atlanıyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ Yüklenecek paket yok."
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
-#, python-brace-format
-msgid "Installing: {}"
-msgstr "Yükleniyor: {}"
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Çakışan paketler kaldırılıyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "Çakışan paketler kaldırılamadı."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "{} sürücüsü yükleniyor..."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "Sürücü uygulanamadı."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "Sürücü başarıyla uygulandı!"
-
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ {} sürücü başarıyla uygulandı!"
-
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/core/mesa_manager.py:263
-#, python-brace-format
-msgid "❌ Error: {}"
-msgstr "❌ Hata: {}"
-
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
-#, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ İşlem başarısız oldu (çıkış kodu: {})"
-
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 951
-# File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
-# line: 213
-#: usr/share/big-driver-manager/core/mhwd_manager.py:213
-#: usr/share/big-driver-manager/ui/mesa_page.py:1102
-#, python-brace-format
-msgid "Remove the installed NVIDIA driver ({}) first."
-msgstr "Önce yüklü NVIDIA sürücüsünü ({}) kaldırın."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/core/mhwd_manager.py:335
-msgid "Completed"
-msgstr "Tamamlandı"
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
-#: usr/share/big-driver-manager/core/mhwd_manager.py:335
-#: usr/share/big-driver-manager/ui/progress_dialog.py:374
-msgid "Failed"
-msgstr "Başarısız"
-
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 173
+#: usr/share/big-driver-manager/utils/desc_translate.py:173
+msgid "Printing driver for"
+msgstr "Yazdırma sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 174
+#: usr/share/big-driver-manager/utils/desc_translate.py:174
+msgid "Printer driver for"
+msgstr "Yazıcı sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 175
+#: usr/share/big-driver-manager/utils/desc_translate.py:175
+msgid "Driver for the"
+msgstr "Sürücü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 176
+#: usr/share/big-driver-manager/utils/desc_translate.py:176
+msgid "Driver for"
+msgstr "Sürücü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 177
+#: usr/share/big-driver-manager/utils/desc_translate.py:177
+msgid "Driver set (printing and scanning) for"
+msgstr "Sürücü seti (yazdırma ve tarama) için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 178
+#: usr/share/big-driver-manager/utils/desc_translate.py:178
+msgid "Complete stand-alone driver set (printing and scanning) for"
+msgstr "Tam bağımsız sürücü seti (yazdırma ve tarama) için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 179
+#: usr/share/big-driver-manager/utils/desc_translate.py:179
+msgid "LPR and CUPS driver for the"
+msgstr "LPR ve CUPS sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 180
+#: usr/share/big-driver-manager/utils/desc_translate.py:180
+msgid "LPR and CUPS driver for"
+msgstr "LPR ve CUPS sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 181
+#: usr/share/big-driver-manager/utils/desc_translate.py:181
+msgid "LPR driver and CUPS wrapper for"
+msgstr "LPR sürücüsü ve CUPS sarmalayıcısı için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 182
+#: usr/share/big-driver-manager/utils/desc_translate.py:182
+msgid "LPR driver for"
+msgstr "LPR sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 183
+#: usr/share/big-driver-manager/utils/desc_translate.py:183
+msgid "CUPS wrapper for"
+msgstr "CUPS sarmalayıcısı için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 184
+#: usr/share/big-driver-manager/utils/desc_translate.py:184
+msgid "CUPS driver for the"
+msgstr "CUPS sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 185
+#: usr/share/big-driver-manager/utils/desc_translate.py:185
+msgid "CUPS driver for"
+msgstr "CUPS sürücüsü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 186
+#: usr/share/big-driver-manager/utils/desc_translate.py:186
+msgid "CUPS and LPR drivers for the"
+msgstr "CUPS ve LPR sürücüleri için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 187
+#: usr/share/big-driver-manager/utils/desc_translate.py:187
+msgid "CUPS printer driver"
+msgstr "CUPS yazıcı sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 188
+#: usr/share/big-driver-manager/utils/desc_translate.py:188
+msgid "CUPS driver"
+msgstr "CUPS sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 189
+#: usr/share/big-driver-manager/utils/desc_translate.py:189
+msgid "color multifunction printer"
+msgstr "renkli çok işlevli yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 190
+#: usr/share/big-driver-manager/utils/desc_translate.py:190
+msgid "multifunction printer"
+msgstr "çok işlevli yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 191
+#: usr/share/big-driver-manager/utils/desc_translate.py:191
+msgid "ink tank multifunction printer"
+msgstr "mürekkep tanklı çok işlevli yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 192
+#: usr/share/big-driver-manager/utils/desc_translate.py:192
+msgid "Wi-Fi multifunction printer"
+msgstr "Wi-Fi çok işlevli yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 193
+#: usr/share/big-driver-manager/utils/desc_translate.py:193
+msgid "color laser printer"
+msgstr "renkli lazer yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 194
+#: usr/share/big-driver-manager/utils/desc_translate.py:194
+msgid "laser printer driver"
+msgstr "lazer yazıcı sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 195
+#: usr/share/big-driver-manager/utils/desc_translate.py:195
+msgid "laser printer"
+msgstr "lazer yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 196
+#: usr/share/big-driver-manager/utils/desc_translate.py:196
+msgid "inkjet printer driver"
+msgstr "mürekkep püskürtmeli yazıcı sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 197
+#: usr/share/big-driver-manager/utils/desc_translate.py:197
+msgid "inkjet printer"
+msgstr "mürekkep püskürtmeli yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 198
+#: usr/share/big-driver-manager/utils/desc_translate.py:198
+msgid "inkjet printers"
+msgstr "mürekkep püskürtmeli yazıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 199
+#: usr/share/big-driver-manager/utils/desc_translate.py:199
+msgid "label and receipt printer"
+msgstr "etiket ve fiş yazıcısı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 200
+#: usr/share/big-driver-manager/utils/desc_translate.py:200
+msgid "label printer"
+msgstr "etiket yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 201
+#: usr/share/big-driver-manager/utils/desc_translate.py:201
+msgid "laser printers"
+msgstr "lazer yazıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 202
+#: usr/share/big-driver-manager/utils/desc_translate.py:202
+msgid "printer communication"
+msgstr "yazıcı iletişimi"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 203
+#: usr/share/big-driver-manager/utils/desc_translate.py:203
+msgid "print system integration"
+msgstr "yazdırma sistemi entegrasyonu"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 204
+#: usr/share/big-driver-manager/utils/desc_translate.py:204
+msgid "series inkjet printer"
+msgstr "seri mürekkep püskürtmeli yazıcı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 205
+#: usr/share/big-driver-manager/utils/desc_translate.py:205
+msgid "multifunction inkjet"
+msgstr "çok işlevli mürekkep püskürtmeli"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 206
+#: usr/share/big-driver-manager/utils/desc_translate.py:206
+msgid "(printer communication)"
+msgstr "(yazıcı iletişimi)"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 207
+#: usr/share/big-driver-manager/utils/desc_translate.py:207
+msgid "(print system integration)"
+msgstr "(yazdırma sistemi entegrasyonu)"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 208
+#: usr/share/big-driver-manager/utils/desc_translate.py:208
+msgid "Wi-Fi driver for"
+msgstr "için Wi-Fi sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 209
+#: usr/share/big-driver-manager/utils/desc_translate.py:209
+msgid "DKMS driver for"
+msgstr "için DKMS sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 210
+#: usr/share/big-driver-manager/utils/desc_translate.py:210
+msgid "Wired network driver for"
+msgstr "için Kablolu ağ sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 211
+#: usr/share/big-driver-manager/utils/desc_translate.py:211
+msgid "Bluetooth driver for"
+msgstr "için Bluetooth sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 212
+#: usr/share/big-driver-manager/utils/desc_translate.py:212
+msgid "Kernel driver module for"
+msgstr "Çekirdek sürücü modülü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 213
+#: usr/share/big-driver-manager/utils/desc_translate.py:213
+msgid "wireless driver"
+msgstr "kablosuz sürücü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 214
+#: usr/share/big-driver-manager/utils/desc_translate.py:214
+msgid "wireless adapters"
+msgstr "kablosuz adaptörler"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 215
+#: usr/share/big-driver-manager/utils/desc_translate.py:215
+msgid "USB wireless adapters"
+msgstr "USB kablosuz adaptörler"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 216
+#: usr/share/big-driver-manager/utils/desc_translate.py:216
+msgid "USB dual-band wireless adapters"
+msgstr "USB çift bant kablosuz adaptörler"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 217
+#: usr/share/big-driver-manager/utils/desc_translate.py:217
+msgid "USB tri-band wireless adapters"
+msgstr "USB üç bant kablosuz adaptörler"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 218
+#: usr/share/big-driver-manager/utils/desc_translate.py:218
+msgid "Ethernet driver"
+msgstr "Ethernet sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 219
+#: usr/share/big-driver-manager/utils/desc_translate.py:219
+msgid "monitor mode & frame injection support"
+msgstr "monitör modu ve çerçeve enjeksiyonu desteği"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 220
+#: usr/share/big-driver-manager/utils/desc_translate.py:220
+msgid "Firmware for"
+msgstr "Firmware için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 221
+#: usr/share/big-driver-manager/utils/desc_translate.py:221
+msgid "Bluetooth firmware for"
+msgstr "Bluetooth firmware'i için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 222
+#: usr/share/big-driver-manager/utils/desc_translate.py:222
+msgid "Firmware files for"
+msgstr "Firmware dosyaları için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 223
+#: usr/share/big-driver-manager/utils/desc_translate.py:223
+msgid "digital TV (DVB) receivers"
+msgstr "dijital TV (DVB) alıcıları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 224
+#: usr/share/big-driver-manager/utils/desc_translate.py:224
+msgid "digital TV (DVB) tuners"
+msgstr "dijital TV (DVB) tunerleri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 225
+#: usr/share/big-driver-manager/utils/desc_translate.py:225
+msgid "digital TV tuner"
+msgstr "dijital TV tuner"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 226
+#: usr/share/big-driver-manager/utils/desc_translate.py:226
+msgid "wireless networking chips"
+msgstr "kablosuz ağ yongaları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 227
+#: usr/share/big-driver-manager/utils/desc_translate.py:227
+msgid "Wi-Fi chips"
+msgstr "Wi-Fi yongaları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 228
+#: usr/share/big-driver-manager/utils/desc_translate.py:228
+msgid "wireless cards"
+msgstr "kablosuz kartlar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 229
+#: usr/share/big-driver-manager/utils/desc_translate.py:229
+msgid "network adapters"
+msgstr "ağ adaptörleri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 230
+#: usr/share/big-driver-manager/utils/desc_translate.py:230
+msgid "touchscreen controllers"
+msgstr "dokunmatik ekran denetleyicileri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 231
+#: usr/share/big-driver-manager/utils/desc_translate.py:231
+msgid "USB audio interfaces"
+msgstr "USB ses arayüzleri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 232
+#: usr/share/big-driver-manager/utils/desc_translate.py:232
+msgid "USB logic analyzers"
+msgstr "USB mantık analizörleri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 233
+#: usr/share/big-driver-manager/utils/desc_translate.py:233
+msgid "USB MIDI interfaces"
+msgstr "USB MIDI arayüzleri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 234
+#: usr/share/big-driver-manager/utils/desc_translate.py:234
+msgid "controller cards"
+msgstr "denetleyici kartları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 235
+#: usr/share/big-driver-manager/utils/desc_translate.py:235
+msgid "controller chips"
+msgstr "denetleyici çipleri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 236
+#: usr/share/big-driver-manager/utils/desc_translate.py:236
+msgid "SCSI controllers"
+msgstr "SCSI denetleyicileri"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 237
+#: usr/share/big-driver-manager/utils/desc_translate.py:237
+msgid "legacy devices only"
+msgstr "sadece eski cihazlar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 238
+#: usr/share/big-driver-manager/utils/desc_translate.py:238
+msgid "stable tested version"
+msgstr "kararlı test edilmiş sürüm"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 239
+#: usr/share/big-driver-manager/utils/desc_translate.py:239
+msgid "latest release"
+msgstr "en son sürüm"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 240
+#: usr/share/big-driver-manager/utils/desc_translate.py:240
+msgid "Scanner software for"
+msgstr "için Tarayıcı yazılımı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 241
+#: usr/share/big-driver-manager/utils/desc_translate.py:241
+msgid "Scanner driver for"
+msgstr "için Tarayıcı sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 242
+#: usr/share/big-driver-manager/utils/desc_translate.py:242
+msgid "SANE scanner driver for"
+msgstr "için SANE tarayıcı sürücüsü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 243
+#: usr/share/big-driver-manager/utils/desc_translate.py:243
+msgid "scanner plugin for Image Scan!"
+msgstr "Image Scan! için tarayıcı eklentisi"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 244
+#: usr/share/big-driver-manager/utils/desc_translate.py:244
+msgid "Image Scan! plugin for"
+msgstr "Image Scan! eklentisi|||"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 245
+#: usr/share/big-driver-manager/utils/desc_translate.py:245
+msgid "Image Scan! frontend for"
+msgstr "Image Scan! ön yüzü için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 246
+#: usr/share/big-driver-manager/utils/desc_translate.py:246
+msgid "Data files required by"
+msgstr "Tarayıcılar ve çok fonksiyonlu yazıcılar tarafından gereken veri dosyaları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 247
+#: usr/share/big-driver-manager/utils/desc_translate.py:247
+msgid "scanners and multifunction printers"
+msgstr "çok fonksiyonlu yazıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 248
+#: usr/share/big-driver-manager/utils/desc_translate.py:248
+msgid "multifunction printers"
+msgstr "düz yataklı ve hepsi bir arada tarayıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 249
+#: usr/share/big-driver-manager/utils/desc_translate.py:249
+msgid "flatbed and all-in-one scanners"
+msgstr "USB ve ağ tarayıcıları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 250
+#: usr/share/big-driver-manager/utils/desc_translate.py:250
+msgid "USB and network scanners"
+msgstr "ağ ve USB tarayıcıları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 251
+#: usr/share/big-driver-manager/utils/desc_translate.py:251
+msgid "network and USB scanners"
+msgstr "taşınabilir belge tarayıcısı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 252
+#: usr/share/big-driver-manager/utils/desc_translate.py:252
+msgid "portable document scanner"
+msgstr "tek dokunuşla tarama"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 253
+#: usr/share/big-driver-manager/utils/desc_translate.py:253
+msgid "one-touch scanning"
+msgstr "tarayıcı panel düğmesi"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 254
+#: usr/share/big-driver-manager/utils/desc_translate.py:254
+msgid "scanner panel button"
+msgstr "yazıcılar, tarafından sağlanır"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 255
+#: usr/share/big-driver-manager/utils/desc_translate.py:255
+msgid "printers, supplied by"
+msgstr "için PPD dosyaları"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 256
+#: usr/share/big-driver-manager/utils/desc_translate.py:256
+msgid "PPD files for"
+msgstr "Yönetim aracı, yönetmek için"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 257
+#: usr/share/big-driver-manager/utils/desc_translate.py:257
+msgid "Administration tool for managing"
+msgstr "ağınızdaki yazıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 258
+#: usr/share/big-driver-manager/utils/desc_translate.py:258
+msgid "printers on your network"
+msgstr "(özel)"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/desc_translate.py, line: 259
+#: usr/share/big-driver-manager/utils/desc_translate.py:259
+msgid "(proprietary)"
+msgstr "(telif hakkı saklı)"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 28
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:28
+msgid ""
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
+msgstr ""
+"Wi-Fi'niz zaten çalışıyorsa, yerleşik çekirdek sürücüsü genellikle en iyi seçenektir. Bağlantı "
+"sorunlarınız varsa alternatif bir sürücü yükleyin."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 33
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:33
+msgid ""
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
+msgstr ""
+"Kablolu ağ adaptörleri neredeyse her zaman kutudan çıktığı gibi çalışır. Çok yeni veya nadir "
+"donanımlar için ekstra sürücü gerekir."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 37
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:37
+msgid ""
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
+msgstr ""
+"Bazı Bluetooth adaptörleri çalışmak için ekstra firmware gerektirir. Eşleştirme başarısız olursa, "
+"adaptörünüz için firmware yüklemek sorunu çözebilir."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 42
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:42
+msgid ""
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
+msgstr ""
+"Dijital TV tunerları genellikle özel firmware gerektirir. Firmware olmadan cihaz sistem tarafından "
+"tanınmaz."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 46
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:46
+msgid ""
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
+msgstr ""
+"Çoğu ses cihazı çekirdeğe entegre ALSA ile çalışır. Sadece belirli USB ses arayüzleri için ekstra "
+"firmware gerekir."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 50
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:50
+msgid ""
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
+msgstr ""
+"Çoğu web kamerası otomatik olarak çalışır. Ek firmware görüntü kalitesini artırabilir veya ek "
+"özellikler sağlayabilir."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 54
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:54
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "Dokunmatik ekranınız yanıt vermiyorsa, uyumlu firmware yüklemek genellikle sorunu çözer."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 58
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:58
+msgid ""
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
+msgstr ""
+"Yazıcı sürücüleri sistemin modelinizle iletişim kurmasını sağlar. Yazıcı ağınızda veya USB'de "
+"algılandıysa, uyumlu sürücüyü yüklemeniz önerilir."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 63
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:63
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "3D yazıcı firmware'i, dilimleyici ile yazıcı donanımı arasında iletişimi sağlar."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 67
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:67
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
+msgstr ""
+"Tarayıcı sürücüleri (SANE arka uçları), tarama uygulamalarının tarayıcı modelinizle iletişim "
+"kurmasını sağlar."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 111
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:70
+msgid "Additional firmware packages for specialized hardware."
+msgstr "Özel donanım için ek firmware paketleri."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -433,25 +885,21 @@ msgstr "Başarısız"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:91
 msgid "Firmware available"
 msgstr "Firmware mevcut"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 #: usr/share/big-driver-manager/udev-driver-dialog.py:92
 msgid "Printer driver available"
 msgstr "Yazıcı sürücüsü mevcut"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 #: usr/share/big-driver-manager/udev-driver-dialog.py:93
 msgid "Scanner driver available"
 msgstr "Tarayıcı sürücüsü mevcut"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 #: usr/share/big-driver-manager/udev-driver-dialog.py:95
 msgid "Driver available"
 msgstr "Sürücü mevcut"
-
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
@@ -460,11 +908,10 @@ msgstr "Sürücü mevcut"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:166
 msgid "Don't alert for this device again"
 msgstr "Bu cihaz için bir daha uyarı verme"
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
@@ -488,7 +935,6 @@ msgstr "Bu cihaz için bir daha uyarı verme"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:145
 msgid "Cancel"
 msgstr "İptal"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/udev-driver-dialog.py:184
@@ -508,31 +954,70 @@ msgstr "İptal"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1356
 msgid "Install"
 msgstr "Yükle"
-
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/ui/application.py:143
-#: usr/share/big-driver-manager/ui/kernel_page.py:165
-#: usr/share/big-driver-manager/ui/mesa_page.py:414
-msgid "Error"
-msgstr "Hata"
-
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
-#: usr/share/big-driver-manager/ui/base_page.py:39
-#: usr/share/big-driver-manager/ui/base_page.py:44
-msgid "Loading..."
-msgstr "Yükleniyor..."
-
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
-#: usr/share/big-driver-manager/ui/base_page.py:40
-msgid "Loading"
-msgstr "Yükleniyor"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Hala yükleniyor… Ağ bağlantınızı kontrol edin."
-
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 40
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:42
+msgid "Stable, long-term support"
+msgstr "Kararlı, uzun vadeli destek"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 43
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
+msgstr ""
+"Yıllarca güvenlik güncellemeleri alır. Çoğu kullanıcı için en iyi seçim — güvenilir ve iyi test "
+"edilmiş."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 49
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
+msgid "Low-latency, real-time"
+msgstr "Düşük gecikme süresi, gerçek zamanlı"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 52
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
+msgid ""
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
+msgstr ""
+"Ses/video prodüksiyonu ve hassas zamanlama gerektiren görevler için tasarlandı. Bazı sürücülerle "
+"(örneğin NVIDIA) uyumsuz olabilir. Sadece ileri düzey kullanıcılar için önerilir."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 59
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
+msgid "Gaming & performance optimized"
+msgstr "Oyun ve performans için optimize edildi"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 62
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
+msgid ""
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
+msgstr ""
+"Daha hızlı oyun ve daha duyarlı bir masaüstü için ayarlandı. Ekstra performans istiyorsanız günlük "
+"kullanım için harika."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
+msgid "Performance optimized by CachyOS"
+msgstr "Performans CachyOS tarafından optimize edildi"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
+msgid ""
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
+msgstr ""
+"LTO, AutoFDO ve Propeller optimizasyonlarına sahip EEVDF zamanlayıcı. Oyun ve masaüstü yanıt "
+"verebilirliği için mükemmel."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 68
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
+msgid "Latest features & drivers"
+msgstr "En son özellikler ve sürücüler"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 72
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
+msgid "Always up to date with the newest features and hardware support."
+msgstr "Her zaman en yeni özellikler ve donanım desteği ile güncel."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 67
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -544,30 +1029,25 @@ msgstr "Hala yükleniyor… Ağ bağlantınızı kontrol edin."
 #: usr/share/big-driver-manager/ui/window.py:113
 msgid "Other"
 msgstr "Diğer"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 128
 #: usr/share/big-driver-manager/ui/category_page.py:131
 msgid "Search drivers..."
 msgstr "Sürücüleri arayın..."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
 #: usr/share/big-driver-manager/ui/category_page.py:135
 msgid "Search drivers"
 msgstr "Sürücüleri arayın"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 #: usr/share/big-driver-manager/ui/category_page.py:160
 msgid "Searching for printers on the network…"
 msgstr "Ağda yazıcılar aranıyor…"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 162
 #: usr/share/big-driver-manager/ui/category_page.py:179
 msgid "No more automatically detected compatible drivers in this category."
 msgstr "Bu kategoride artık otomatik olarak algılanan uyumlu sürücü yok."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -576,7 +1056,6 @@ msgstr "Bu kategoride artık otomatik olarak algılanan uyumlu sürücü yok."
 #: usr/share/big-driver-manager/ui/category_page.py:211
 msgid "Show drivers without detected compatibility"
 msgstr "Algılanan uyumluluğu olmayan sürücüleri göster"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -585,34 +1064,23 @@ msgstr "Algılanan uyumluluğu olmayan sürücüleri göster"
 #: usr/share/big-driver-manager/ui/category_page.py:278
 msgid "No drivers needed for this category"
 msgstr "Bu kategori için sürücü gerekmez"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 #: usr/share/big-driver-manager/ui/category_page.py:202
-msgid ""
-"No drivers in this category were automatically detected as compatible with "
-"your hardware."
-msgstr ""
-"Bu kategorideki sürücülerden hiçbiri donanımınızla uyumlu olarak otomatik "
-"algılanmadı."
-
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "Bu kategorideki sürücülerden hiçbiri donanımınızla uyumlu olarak otomatik algılanmadı."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 #: usr/share/big-driver-manager/ui/category_page.py:257
 msgid "Detection Error"
 msgstr "Algılama Hatası"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 #: usr/share/big-driver-manager/ui/category_page.py:281
-msgid ""
-"No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"Bu kategorideki sürücülerden hiçbiri donanımınız için gerekli olarak "
-"algılanmadı."
-
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "Bu kategorideki sürücülerden hiçbiri donanımınız için gerekli olarak algılanmadı."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 339
 # File: big-driver-manager/usr/share/big-driver-
@@ -621,34 +1089,29 @@ msgstr ""
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:283
 msgid "1 driver"
 msgstr "1 sürücü"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/category_page.py:356
 #, python-brace-format
 msgid "{} drivers"
 msgstr "{} sürücü"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 341
 #: usr/share/big-driver-manager/ui/category_page.py:358
 #, python-brace-format
 msgid "{} detected"
 msgstr "{} algılandı"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:360
 #, python-brace-format
 msgid "{} installed"
 msgstr "{} yüklendi"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 405
 #: usr/share/big-driver-manager/ui/category_page.py:422
 #: usr/share/big-driver-manager/ui/installed_page.py:333
 msgid "Detected"
 msgstr "Saptanmış"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:424
@@ -663,13 +1126,11 @@ msgstr "Saptanmış"
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
 msgstr "Yüklendi"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/category_page.py:426
 msgid "Not installed"
 msgstr "Kurulu değil"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:449
@@ -686,7 +1147,6 @@ msgstr "Kurulu değil"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1394
 msgid "Remove"
 msgstr "Kaldır"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:461
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:250
@@ -699,7 +1159,6 @@ msgstr "Kaldır"
 #, python-brace-format
 msgid "Install {}"
 msgstr "Düzenlemek {}"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:463
@@ -711,14 +1170,12 @@ msgstr "Düzenlemek {}"
 #, python-brace-format
 msgid "Remove {}"
 msgstr "{} kaldır"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 503
 #: usr/share/big-driver-manager/ui/category_page.py:530
 #, python-brace-format
 msgid "{total} drivers · {detected} detected · {installed} installed"
 msgstr "{total} sürücü · {detected} algılandı · {installed} yüklü"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
 #: usr/share/big-driver-manager/ui/category_page.py:605
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:363
@@ -726,7 +1183,6 @@ msgstr "{total} sürücü · {detected} algılandı · {installed} yüklü"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1114
 msgid "Install Driver"
 msgstr "Sürücüyü Yükle"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:606
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
@@ -734,7 +1190,6 @@ msgstr "Sürücüyü Yükle"
 #, python-brace-format
 msgid "Install {}?"
 msgstr "{} yüklemek istiyor musunuz?"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 #: usr/share/big-driver-manager/ui/category_page.py:627
 #: usr/share/big-driver-manager/ui/category_page.py:665
@@ -743,330 +1198,124 @@ msgstr "{} yüklemek istiyor musunuz?"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:207
 msgid "Please wait..."
 msgstr "Lütfen bekleyin..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 #: usr/share/big-driver-manager/ui/category_page.py:643
 #: usr/share/big-driver-manager/ui/installed_page.py:395
 #: usr/share/big-driver-manager/ui/mesa_page.py:1193
 msgid "Remove Driver"
 msgstr "Sürücüyü Kaldır"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #: usr/share/big-driver-manager/ui/category_page.py:644
 #: usr/share/big-driver-manager/ui/installed_page.py:396
 #, python-brace-format
 msgid "Remove {}?"
 msgstr "{} kaldırılsın mı?"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 #: usr/share/big-driver-manager/ui/category_page.py:692
 #: usr/share/big-driver-manager/ui/installed_page.py:443
 msgid "Operation completed successfully."
 msgstr "İşlem başarıyla tamamlandı."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 #: usr/share/big-driver-manager/ui/category_page.py:696
 #: usr/share/big-driver-manager/ui/installed_page.py:447
 msgid "Operation failed. Check logs for details."
 msgstr "İşlem başarısız oldu. Ayrıntılar için günlükleri kontrol edin."
-
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 36
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:36
-#: usr/share/big-driver-manager/ui/installed_page.py:27
-#: usr/share/big-driver-manager/ui/window.py:47
-msgid "Video / GPU"
-msgstr "Video / GPU"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 37
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:37
-#: usr/share/big-driver-manager/ui/installed_page.py:28
-#: usr/share/big-driver-manager/ui/window.py:53
-msgid "Wi-Fi"
-msgstr "Wifi"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 38
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:38
-#: usr/share/big-driver-manager/ui/installed_page.py:29
-#: usr/share/big-driver-manager/ui/window.py:59
-msgid "Ethernet"
-msgstr "ethernet"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 39
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:39
-#: usr/share/big-driver-manager/ui/installed_page.py:30
-#: usr/share/big-driver-manager/ui/window.py:65
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 40
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:40
-#: usr/share/big-driver-manager/ui/installed_page.py:31
-#: usr/share/big-driver-manager/ui/window.py:71
-msgid "DVB / TV"
-msgstr "DVB / TV"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 41
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:41
-#: usr/share/big-driver-manager/ui/installed_page.py:32
-#: usr/share/big-driver-manager/ui/window.py:77
-msgid "Audio"
-msgstr "Ses"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 42
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:42
-#: usr/share/big-driver-manager/ui/installed_page.py:33
-#: usr/share/big-driver-manager/ui/window.py:83
-msgid "Webcam"
-msgstr "Web kamerası"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 43
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:43
-#: usr/share/big-driver-manager/ui/installed_page.py:34
-#: usr/share/big-driver-manager/ui/window.py:89
-msgid "Touchscreen"
-msgstr "Dokunmatik ekran"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 44
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:44
-#: usr/share/big-driver-manager/ui/installed_page.py:35
-#: usr/share/big-driver-manager/ui/window.py:95
-msgid "Printers"
-msgstr "Yazıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 45
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:45
-#: usr/share/big-driver-manager/ui/installed_page.py:36
-#: usr/share/big-driver-manager/ui/window.py:101
-msgid "3D Printers"
-msgstr "3D Yazıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 46
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:46
-#: usr/share/big-driver-manager/ui/installed_page.py:37
-#: usr/share/big-driver-manager/ui/window.py:107
-msgid "Scanners"
-msgstr "Tarayıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Tüm sürücüler yüklü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Gerekli tüm sürücüler sisteminizde zaten yüklü."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
-#: usr/share/big-driver-manager/ui/mesa_data.py:284
-msgid "Recommended"
-msgstr "Tavsiye Edilen"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Kategoriler"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Donanım algılanıyor"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Donanım algılanıyor..."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
-#, python-brace-format
-msgid "{n} drivers"
-msgstr "{n} sürücüler"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 yüklü"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
-#, python-brace-format
-msgid "{n} installed"
-msgstr "{n} yüklendi"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
-#, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "Yüklemek için {n} sürücüler mevcut"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr "Daha iyi donanım desteği için önerilen sürücüleri yükleyin."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Sürücü başarıyla yüklendi."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "Kurulum başarısız oldu. Ayrıntılar için günlükleri kontrol edin."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
 msgid "What is Kernel?"
 msgstr "Kernel nedir?"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 72
 #: usr/share/big-driver-manager/ui/home_page.py:72
 msgid ""
-"The kernel is the heart of your operating system. It controls your "
-"processor, memory, and all hardware. Most drivers already come built-in with "
-"the kernel."
+"The kernel is the heart of your operating system. It controls your processor, memory, and all "
+"hardware. Most drivers already come built-in with the kernel."
 msgstr ""
-"Çekirdek işletim sisteminizin kalbidir. İşlemcinizi, belleğinizi ve tüm "
-"donanımınızı kontrol eder. Çoğu sürücü zaten çekirdekle birlikte yerleşik "
-"olarak gelir."
-
+"Çekirdek işletim sisteminizin kalbidir. İşlemcinizi, belleğinizi ve tüm donanımınızı kontrol eder. "
+"Çoğu sürücü zaten çekirdekle birlikte yerleşik olarak gelir."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 #: usr/share/big-driver-manager/ui/home_page.py:83
 msgid "What are Drivers?"
 msgstr "Sürücüler nedir?"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 85
 #: usr/share/big-driver-manager/ui/home_page.py:85
 msgid ""
-"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
-"communicate with the system. If everything is already working, you probably "
-"don't need to change anything."
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to communicate with the system. "
+"If everything is already working, you probably don't need to change anything."
 msgstr ""
-"Sürücüler, video kartınız, Wi-Fi veya ses gibi her cihazın sistemle iletişim "
-"kurmasını sağlar. Her şey zaten çalışıyorsa, muhtemelen bir şey "
-"değiştirmenize gerek yoktur."
-
+"Sürücüler, video kartınız, Wi-Fi veya ses gibi her cihazın sistemle iletişim kurmasını sağlar. Her "
+"şey zaten çalışıyorsa, muhtemelen bir şey değiştirmenize gerek yoktur."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 #: usr/share/big-driver-manager/ui/home_page.py:113
 msgid "Checking your system…"
 msgstr "Sisteminiz kontrol ediliyor…"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 119
 #: usr/share/big-driver-manager/ui/home_page.py:119
 msgid "Detecting hardware and installed drivers."
 msgstr "Donanım ve yüklü sürücülerin algılanması."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 149
 #: usr/share/big-driver-manager/ui/home_page.py:149
 msgid "Recommended for your hardware"
 msgstr "Donanımınız için önerilir"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Önerilenleri yükle"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 #: usr/share/big-driver-manager/ui/home_page.py:227
 msgid "Compatible drivers available"
 msgstr "Uyumlu sürücüler mevcut"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 273
 #: usr/share/big-driver-manager/ui/home_page.py:273
 #, python-brace-format
 msgid "{} — no driver loaded, install {} for this device"
 msgstr "{} — sürücü yüklenmedi, bu cihaz için {} yükleyin"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/home_page.py:277
 msgid "Go to drivers"
 msgstr "Sürücülere git"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 287
 #: usr/share/big-driver-manager/ui/home_page.py:287
 msgid ""
-"Your devices are already working with the built-in driver, which is usually "
-"the most stable and recommended option. If you experience issues, you can "
-"try a driver detected as compatible that may improve performance or add "
-"features."
+"Your devices are already working with the built-in driver, which is usually the most stable and "
+"recommended option. If you experience issues, you can try a driver detected as compatible that may "
+"improve performance or add features."
 msgstr ""
-"Aygıtlarınız zaten genellikle en stabil ve önerilen seçenek olan yerleşik "
-"sürücü ile çalışıyor. Sorun yaşarsanız, performansı artırabilecek veya "
-"özellik ekleyebilecek uyumlu olarak algılanan bir sürücüyü deneyebilirsiniz."
-
+"Aygıtlarınız zaten genellikle en stabil ve önerilen seçenek olan yerleşik sürücü ile çalışıyor. "
+"Sorun yaşarsanız, performansı artırabilecek veya özellik ekleyebilecek uyumlu olarak algılanan bir "
+"sürücüyü deneyebilirsiniz."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 376
 #: usr/share/big-driver-manager/ui/home_page.py:377
 #, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
 msgstr "{} donanımınız için tüm {} önerilen video paketleri yüklendi."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 386
 #: usr/share/big-driver-manager/ui/home_page.py:387
 #, python-brace-format
 msgid "{} of {} recommended packages are not installed."
 msgstr "{} önerilen paketin {} yüklenmedi."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 396
 #: usr/share/big-driver-manager/ui/home_page.py:397
 #, python-brace-format
 msgid "Install all {} recommended"
 msgstr "Tüm {} önerilenleri yükle"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 457
 #: usr/share/big-driver-manager/ui/home_page.py:458
 #, python-brace-format
 msgid "Already installed ({})"
 msgstr "Zaten yüklü ({})"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 469
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1078,19 +1327,16 @@ msgstr "Zaten yüklü ({})"
 #: usr/share/big-driver-manager/ui/home_page.py:609
 msgid "Show installed packages"
 msgstr "Yüklü paketleri göster"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 605
 #: usr/share/big-driver-manager/ui/home_page.py:606
 msgid "Hide installed packages"
 msgstr "Yüklü paketleri gizle"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 620
 #: usr/share/big-driver-manager/ui/home_page.py:621
 msgid "Install Recommended Packages"
 msgstr "Önerilen Paketleri Yükle"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 623
 #: usr/share/big-driver-manager/ui/home_page.py:624
@@ -1103,31 +1349,26 @@ msgstr ""
 "<b>{}</b> paketleri yüklensin mi?\n"
 "\n"
 "{}"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #: usr/share/big-driver-manager/ui/home_page.py:630
 msgid "Install All"
 msgstr "Tümünü Yükle"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/home_page.py:643
 #, python-brace-format
 msgid "Installing {} packages"
 msgstr "{} paketleri kuruluyor"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 653
 #: usr/share/big-driver-manager/ui/home_page.py:654
 msgid "Installing recommended packages"
 msgstr "Önerilen paketler yükleniyor"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 670
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "Tüm önerilen paketler başarıyla yüklendi!"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
 #: usr/share/big-driver-manager/ui/home_page.py:681
 msgid ""
@@ -1136,9 +1377,8 @@ msgid ""
 msgstr ""
 "Paket yüklemesi başarısız oldu.\n"
 "Ayrıntılar için terminal çıktısını kontrol edin."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1212
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1147,21 +1387,18 @@ msgstr ""
 #: usr/share/big-driver-manager/ui/mesa_page.py:1371
 msgid "Downloading package..."
 msgstr "Paket indiriliyor..."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/ui/home_page.py:733
 #, python-brace-format
 msgid "{} installed successfully!"
 msgstr "{} başarıyla yüklendi!"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
 #: usr/share/big-driver-manager/ui/home_page.py:741
 #, python-brace-format
 msgid "Installation of {} failed."
 msgstr "{} kurulumu başarısız oldu."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1170,250 +1407,1101 @@ msgstr "{} kurulumu başarısız oldu."
 #: usr/share/big-driver-manager/ui/kernel_page.py:348
 msgid "Warning"
 msgstr "Uyarı"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 #: usr/share/big-driver-manager/ui/home_page.py:771
 msgid "Information"
 msgstr "Bilgi"
-
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Çekirdekler"
-
-#: usr/share/big-driver-manager/ui/installed_page.py:66
-msgid "Installed Drivers"
-msgstr "Yüklü sürücüler"
-
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 36
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:36
+#: usr/share/big-driver-manager/ui/installed_page.py:27
+#: usr/share/big-driver-manager/ui/window.py:47
+msgid "Video / GPU"
+msgstr "Video / GPU"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 37
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:37
+#: usr/share/big-driver-manager/ui/installed_page.py:28
+#: usr/share/big-driver-manager/ui/window.py:53
+msgid "Wi-Fi"
+msgstr "Wifi"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 38
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:38
+#: usr/share/big-driver-manager/ui/installed_page.py:29
+#: usr/share/big-driver-manager/ui/window.py:59
+msgid "Ethernet"
+msgstr "ethernet"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 39
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:39
+#: usr/share/big-driver-manager/ui/installed_page.py:30
+#: usr/share/big-driver-manager/ui/window.py:65
+msgid "Bluetooth"
+msgstr "Bluetooth"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 40
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:40
+#: usr/share/big-driver-manager/ui/installed_page.py:31
+#: usr/share/big-driver-manager/ui/window.py:71
+msgid "DVB / TV"
+msgstr "DVB / TV"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 41
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:41
+#: usr/share/big-driver-manager/ui/installed_page.py:32
+#: usr/share/big-driver-manager/ui/window.py:77
+msgid "Audio"
+msgstr "Ses"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 42
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:42
+#: usr/share/big-driver-manager/ui/installed_page.py:33
+#: usr/share/big-driver-manager/ui/window.py:83
+msgid "Webcam"
+msgstr "Web kamerası"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 43
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:43
+#: usr/share/big-driver-manager/ui/installed_page.py:34
+#: usr/share/big-driver-manager/ui/window.py:89
+msgid "Touchscreen"
+msgstr "Dokunmatik ekran"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 44
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:44
+#: usr/share/big-driver-manager/ui/installed_page.py:35
+#: usr/share/big-driver-manager/ui/window.py:95
+msgid "Printers"
+msgstr "Yazıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 45
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:45
+#: usr/share/big-driver-manager/ui/installed_page.py:36
+#: usr/share/big-driver-manager/ui/window.py:101
+msgid "3D Printers"
+msgstr "3D Yazıcılar"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 46
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:46
+#: usr/share/big-driver-manager/ui/installed_page.py:37
+#: usr/share/big-driver-manager/ui/window.py:107
+msgid "Scanners"
+msgstr "Tarayıcılar"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
-msgid ""
-"All drivers and firmware currently installed on your system, grouped by "
-"category."
+msgid "All drivers and firmware currently installed on your system, grouped by category."
 msgstr "Sisteminizde yüklü olan tüm sürücüler ve yazılımlar, kategoriye göre gruplandırılmıştır."
-
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "No extra drivers installed"
 msgstr "Ekstra sürücü yüklü değil"
-
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 #: usr/share/big-driver-manager/ui/installed_page.py:106
 msgid "Your system is using only default drivers."
 msgstr "Sisteminiz yalnızca varsayılan sürücüleri kullanıyor."
-
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #: usr/share/big-driver-manager/ui/installed_page.py:279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{cats} kategoride {total} yüklü sürücü"
-
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 #: usr/share/big-driver-manager/ui/installed_page.py:311
 msgid "Running"
 msgstr "Çalışıyor"
-
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 #: usr/share/big-driver-manager/ui/installed_page.py:317
 msgid "MHWD driver"
 msgstr "MHWD sürücüsü"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
 #: usr/share/big-driver-manager/ui/installed_page.py:322
 #: usr/share/big-driver-manager/ui/mesa_page.py:519
 #: usr/share/big-driver-manager/ui/mesa_page.py:525
 msgid "Active"
 msgstr "Aktif"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 40
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:42
-msgid "Stable, long-term support"
-msgstr "Kararlı, uzun vadeli destek"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 43
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 117
+#: usr/share/big-driver-manager/ui/progress_dialog.py:117
+msgid "Technical details"
+msgstr "Teknik detaylar"
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 67
+#: usr/share/big-driver-manager/ui/progress_dialog.py:131
+msgid "Terminal output"
+msgstr "Terminal çıktısı"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Kapat"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 229
+#: usr/share/big-driver-manager/ui/progress_dialog.py:229
+#, python-brace-format
+msgid "Step {} of {}: {}"
+msgstr "Adım {} / {}: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 231
+#: usr/share/big-driver-manager/ui/progress_dialog.py:231
+#, python-brace-format
+msgid "Step {} of {}"
+msgstr "Adım {} / {}"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/ui/progress_dialog.py:340
+msgid "Operation completed successfully!"
+msgstr "İşlem başarıyla tamamlandı!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/progress_dialog.py:345
+msgid "Operation failed. Check terminal output for details."
+msgstr "İşlem başarısız oldu. Detaylar için terminal çıktısını kontrol edin."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/ui/progress_dialog.py:371
+msgid "Completed!"
+msgstr "Tamamlandı!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "İptal edildi"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-driver-manager/ui/mesa_page.py:117
+msgid "Video Drivers"
+msgstr "Video Sürücüleri"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 127
+#: usr/share/big-driver-manager/ui/mesa_page.py:129
 msgid ""
-"Receives security updates for years. Best choice for most users — reliable "
-"and well-tested."
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) are built into a single "
+"project called <b>Mesa</b>. Below you can choose a Mesa variant and manage extra packages for "
+"gaming, video playback, compute and AI."
 msgstr ""
-"Yıllarca güvenlik güncellemeleri alır. Çoğu kullanıcı için en iyi seçim — "
-"güvenilir ve iyi test edilmiş."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 49
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
-msgid "Low-latency, real-time"
-msgstr "Düşük gecikme süresi, gerçek zamanlı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 52
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
+"Linux'ta, AMD, Intel ve NVIDIA (ücretsiz yazılım Nouveau) için video sürücüleri <b>Mesa</b> adlı "
+"tek bir projede birleştirilmiştir. Aşağıdan bir Mesa varyantı seçebilir ve oyun, video oynatma, "
+"hesaplama ve yapay zeka için ek paketleri yönetebilirsiniz."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 150
+#: usr/share/big-driver-manager/ui/mesa_page.py:152
 msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be "
-"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
-"users."
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the official proprietary driver "
+"for the best performance in gaming, AI and professional applications."
 msgstr ""
-"Ses/video prodüksiyonu ve hassas zamanlama gerektiren görevler için "
-"tasarlandı. Bazı sürücülerle (örneğin NVIDIA) uyumsuz olabilir. Sadece ileri "
-"düzey kullanıcılar için önerilir."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 59
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
-msgid "Gaming & performance optimized"
-msgstr "Oyun ve performans için optimize edildi"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 62
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
+"Bilgisayarınızda bir <b>NVIDIA</b> grafik kartı var. Oyun, yapay zeka ve profesyonel uygulamalarda "
+"en iyi performans için resmi özel sürücüyü kurabilirsiniz."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 183
+#: usr/share/big-driver-manager/ui/mesa_page.py:185
+msgid "Mesa Variant"
+msgstr "Mesa Varyantı"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 194
+#: usr/share/big-driver-manager/ui/mesa_page.py:196
+msgid "Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "Hangi Mesa derlemesini kullanmak istediğinizi seçin. Aynı anda sadece bir varyant aktif olabilir."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 209
+#: usr/share/big-driver-manager/ui/mesa_page.py:209
 msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use "
-"if you want extra performance."
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used for minor tasks in this "
+"case. We recommend keeping the <b>Stable</b> variant — other versions will not improve performance "
+"and may cause instabilities."
 msgstr ""
-"Daha hızlı oyun ve daha duyarlı bir masaüstü için ayarlandı. Ekstra "
-"performans istiyorsanız günlük kullanım için harika."
-
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
-msgid "Performance optimized by CachyOS"
-msgstr "Performans CachyOS tarafından optimize edildi"
-
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
+"<b>Not:</b> NVIDIA özel sürücüsünü kullanıyorsunuz. Bu durumda Mesa sadece küçük görevler için "
+"kullanılır. <b>Stable</b> varyantını kullanmanızı öneririz — diğer sürümler performansı artırmaz ve "
+"kararsızlıklara neden olabilir."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 282
+#: usr/share/big-driver-manager/ui/mesa_page.py:380
+msgid "Detected graphics cards:"
+msgstr "Algılanan grafik kartları:"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 384
+#: usr/share/big-driver-manager/ui/mesa_page.py:384
+msgid "NVIDIA proprietary driver (not Mesa)"
+msgstr "NVIDIA özel sürücüsü (Mesa değil)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 389
+#: usr/share/big-driver-manager/ui/mesa_page.py:389
+msgid "Mesa driver"
+msgstr "Mesa sürücüsü"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/ui/application.py:143
+#: usr/share/big-driver-manager/ui/kernel_page.py:165
+#: usr/share/big-driver-manager/ui/mesa_page.py:414
+msgid "Error"
+msgstr "Hata"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 427
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 916
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1014
+#: usr/share/big-driver-manager/ui/mesa_page.py:529
+#: usr/share/big-driver-manager/ui/mesa_page.py:1059
+#: usr/share/big-driver-manager/ui/mesa_page.py:1165
+msgid "Switch"
+msgstr "Değiştir"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 431
+#: usr/share/big-driver-manager/ui/mesa_page.py:532
+#: usr/share/big-driver-manager/ui/mesa_page.py:1070
+#, python-brace-format
+msgid "Switch to {}"
+msgstr "{} öğesine geç"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
+#: usr/share/big-driver-manager/ui/mesa_page.py:556
+msgid "Change Video Driver"
+msgstr "Video Sürücüsünü Değiştir"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
+#: usr/share/big-driver-manager/ui/mesa_page.py:560
+#, python-brace-format
 msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
-"gaming and desktop responsiveness."
+"Switch to <b>{}</b>?\n"
+"\n"
+"A system reboot will be required for the change to take effect."
 msgstr ""
-"LTO, AutoFDO ve Propeller optimizasyonlarına sahip EEVDF zamanlayıcı. Oyun "
-"ve masaüstü yanıt verebilirliği için mükemmel."
-
+"<b>{}</b> öğesine geçilsin mi?\n"
+"\n"
+"Değişikliğin geçerli olması için sistem yeniden başlatılmalıdır."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
+#: usr/share/big-driver-manager/ui/mesa_page.py:565
+msgid "Apply"
+msgstr "Uygula"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 413
+#: usr/share/big-driver-manager/ui/mesa_page.py:581
+#, python-brace-format
+msgid "Applying {}"
+msgstr "{} uygulanıyor"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
+#: usr/share/big-driver-manager/ui/mesa_page.py:582
+msgid "Preparing to apply driver..."
+msgstr "Sürücüyü uygulamaya hazırlanıyor..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 337
+#: usr/share/big-driver-manager/ui/mesa_page.py:603
+msgid ""
+"Video driver changed successfully!\n"
+"\n"
+"You must reboot your system for the new driver to become active."
+msgstr ""
+"Video sürücüsü başarıyla değiştirildi!\n"
+"\n"
+"Yeni sürücünün etkin olması için sisteminizi yeniden başlatmalısınız."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 451
+#: usr/share/big-driver-manager/ui/mesa_page.py:609
+msgid ""
+"Driver change failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"Sürücü değişikliği başarısız oldu.\n"
+"Ayrıntılar için terminal çıktısını kontrol edin."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 589
+#: usr/share/big-driver-manager/ui/mesa_page.py:689
+msgid "NVIDIA Proprietary Driver"
+msgstr "NVIDIA Tescilli Sürücü"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 701
+#: usr/share/big-driver-manager/ui/mesa_page.py:701
+msgid "Official closed-source driver with the best performance for gaming, AI, and professional workloads."
+msgstr "Oyun, yapay zeka ve profesyonel iş yükleri için en iyi performansa sahip resmi kapalı kaynak sürücü."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 713
+#: usr/share/big-driver-manager/ui/mesa_page.py:713
+msgid "Only one version can be active at a time."
+msgstr "Aynı anda yalnızca bir sürüm aktif olabilir."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 677
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 680
+#: usr/share/big-driver-manager/ui/mesa_page.py:810
+#: usr/share/big-driver-manager/ui/mesa_page.py:813
+msgid "All recommended packages installed"
+msgstr "Tüm önerilen paketler yüklendi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 686
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 689
+#: usr/share/big-driver-manager/ui/mesa_page.py:819
+#: usr/share/big-driver-manager/ui/mesa_page.py:822
+msgid "Some packages not installed"
+msgstr "Bazı paketler yüklenmedi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 747
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1163
+#: usr/share/big-driver-manager/ui/mesa_page.py:880
+#: usr/share/big-driver-manager/ui/mesa_page.py:1314
+msgid "Included"
+msgstr "Dahil"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 754
+#: usr/share/big-driver-manager/ui/mesa_page.py:887
+#, python-brace-format
+msgid "Already included in your Mesa version ({})"
+msgstr "Mesa sürümünüze zaten dahil ({})"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-driver-manager/ui/mesa_page.py:929
+msgid "Other Drivers"
+msgstr "Diğer Sürücüler"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 808
+#: usr/share/big-driver-manager/ui/mesa_page.py:941
+msgid "Additional drivers for special hardware configurations like virtual machines."
+msgstr "Sanal makineler gibi özel donanım yapılandırmaları için ek sürücüler."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/ui/mesa_page.py:1026
+msgid "Compatible"
+msgstr "Uyumlu"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 888
+#: usr/share/big-driver-manager/ui/mesa_page.py:1027
+msgid "Open Source"
+msgstr "Açık Kaynak"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 888
+#: usr/share/big-driver-manager/ui/mesa_page.py:1027
+msgid "Proprietary"
+msgstr "Tescilli"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 895
+#: usr/share/big-driver-manager/ui/mesa_page.py:1034
+msgid "⚠ No Wayland support · No longer maintained"
+msgstr "⚠ Wayland desteği yok · Artık bakım yapılmıyor"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 920
+#: usr/share/big-driver-manager/ui/mesa_page.py:1063
+#, python-brace-format
+msgid "Switch from {} to {}"
+msgstr "{}'dan {}'a geçiş yap"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 961
+#: usr/share/big-driver-manager/ui/mesa_page.py:1112
+msgid "open-source"
+msgstr "açık kaynak"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 961
+#: usr/share/big-driver-manager/ui/mesa_page.py:1112
+msgid "proprietary"
+msgstr "tescilli"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 967
+#: usr/share/big-driver-manager/ui/mesa_page.py:1118
+#, python-brace-format
+msgid ""
+"Install <b>{}</b> ({} driver)?\n"
+"\n"
+"A system reboot may be required after installation."
+msgstr ""
+"<b>{}</b> ({} sürücüsü) kurulacak mı?\n"
+"\n"
+"Kurulumdan sonra sistem yeniden başlatılabilir."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
+#: usr/share/big-driver-manager/ui/kernel_page.py:700
+#: usr/share/big-driver-manager/ui/mesa_page.py:1137
+msgid "Preparing installation..."
+msgstr "Kurulum hazırlanıyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1001
+#: usr/share/big-driver-manager/ui/mesa_page.py:1152
+msgid "Switch NVIDIA Driver"
+msgstr "NVIDIA Sürücüsünü Değiştir"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1005
+#: usr/share/big-driver-manager/ui/mesa_page.py:1156
+#, python-brace-format
+msgid ""
+"Switch from <b>{}</b> to <b>{}</b>?\n"
+"\n"
+"The current driver will be replaced automatically.\n"
+"A system reboot will be required."
+msgstr ""
+"<b>{}</b> sürücüsünden <b>{}</b> sürücüsüne geçilsin mi?\n"
+"\n"
+"Mevcut sürücü otomatik olarak değiştirilecek.\n"
+"Sistem yeniden başlatılması gerekecek."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1027
+#: usr/share/big-driver-manager/ui/mesa_page.py:1178
+#, python-brace-format
+msgid "Switching to {}"
+msgstr "{}'a geçiliyor"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1028
+#: usr/share/big-driver-manager/ui/mesa_page.py:1179
+msgid "Replacing current NVIDIA driver..."
+msgstr "Mevcut NVIDIA sürücüsü değiştiriliyor..."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1046
+#: usr/share/big-driver-manager/ui/mesa_page.py:1197
+#, python-brace-format
+msgid ""
+"Remove <b>{}</b>?\n"
+"\n"
+"A system reboot may be required after removal."
+msgstr ""
+"<b>{}</b> kaldırılacak mı?\n"
+"\n"
+"Kaldırmadan sonra sistem yeniden başlatılabilir."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
+#: usr/share/big-driver-manager/ui/mesa_page.py:1215
+msgid "Preparing removal..."
+msgstr "Kaldırma hazırlanıyor..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
+#: usr/share/big-driver-manager/ui/mesa_page.py:1235
+msgid "activated"
+msgstr "etkinleştirildi"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/mesa_page.py:1237
+#: usr/share/big-driver-manager/ui/mesa_page.py:1429
+msgid "installed"
+msgstr "yüklü"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-driver-manager/ui/mesa_page.py:1239
+#: usr/share/big-driver-manager/ui/mesa_page.py:1429
+msgid "removed"
+msgstr "kaldırıldı"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1091
+#: usr/share/big-driver-manager/ui/mesa_page.py:1242
+#, python-brace-format
+msgid ""
+"{} was {} successfully!\n"
+"\n"
+"A system reboot may be required."
+msgstr ""
+"{} başarıyla {}!\n"
+"\n"
+"Sistem yeniden başlatılabilir."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/mesa_page.py:1248
+msgid ""
+"Driver operation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"Sürücü işlemi başarısız oldu.\n"
+"Detaylar için terminal çıktısını kontrol edin."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1146
+#: usr/share/big-driver-manager/ui/mesa_page.py:1297
+msgid "Already included in your Mesa version"
+msgstr "Mesa sürümünüzde zaten mevcut"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/mesa_page.py:1347
+msgid "Install Package"
+msgstr "Paket Kur"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1191
+#: usr/share/big-driver-manager/ui/mesa_page.py:1350
+#, python-brace-format
+msgid ""
+"Install <b>{}</b>?\n"
+"\n"
+"{}"
+msgstr ""
+"<b>{}</b> kurulacak mı?\n"
+"\n"
+"{}"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/mesa_page.py:1388
+msgid "Remove Package"
+msgstr "Paketi Kaldır"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 1232
+#: usr/share/big-driver-manager/ui/mesa_page.py:1391
+#, python-brace-format
+msgid "Remove <b>{}</b>?"
+msgstr "<b>{}</b> kaldırılacak mı?"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/ui/mesa_page.py:1409
+msgid "Removing package..."
+msgstr "Paket kaldırılıyor..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-driver-manager/ui/mesa_page.py:1431
+#, python-brace-format
+msgid "{} was {} successfully!"
+msgstr "{} başarıyla {}!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/mesa_page.py:1436
+msgid ""
+"Package operation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"Paket işlemi başarısız oldu.\n"
+"Ayrıntılar için terminal çıktısını kontrol edin."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 68
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
-msgid "Latest features & drivers"
-msgstr "En son özellikler ve sürücüler"
-
+# manager/ui/drivers_hub_page.py, line: 93
 # File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 72
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
-msgid "Always up to date with the newest features and hardware support."
-msgstr "Her zaman en yeni özellikler ve donanım desteği ile güncel."
-
+# manager/ui/drivers_hub_page.py, line: 329
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
+msgid "All drivers are installed"
+msgstr "Tüm sürücüler yüklü"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 95
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 331
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
+msgid "All necessary drivers are already installed on your system."
+msgstr "Gerekli tüm sürücüler sisteminizde zaten yüklü."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 152
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
+msgid "Detecting hardware"
+msgstr "Donanım algılanıyor"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 155
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
+msgid "Detecting hardware..."
+msgstr "Donanım algılanıyor..."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 285
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
+#, python-brace-format
+msgid "{n} drivers"
+msgstr "{n} sürücüler"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
+msgid "1 installed"
+msgstr "1 yüklü"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "{n} yüklendi"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 320
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
+#, python-brace-format
+msgid "{n} drivers available to install"
+msgstr "Yüklemek için {n} sürücüler mevcut"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 323
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
+msgid "Install recommended drivers for better hardware support."
+msgstr "Daha iyi donanım desteği için önerilen sürücüleri yükleyin."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
+msgid "Driver installed successfully."
+msgstr "Sürücü başarıyla yüklendi."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
+msgid "Installation failed. Check logs for details."
+msgstr "Kurulum başarısız oldu. Ayrıntılar için günlükleri kontrol edin."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
+#: usr/share/big-driver-manager/ui/window.py:48
+msgid "Mesa, NVIDIA, and GPU drivers."
+msgstr "Mesa, NVIDIA ve GPU sürücüleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
+#: usr/share/big-driver-manager/ui/window.py:54
+msgid "Wireless network adapter drivers."
+msgstr "Kablosuz ağ adaptörü sürücüleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
+#: usr/share/big-driver-manager/ui/window.py:60
+msgid "Wired network adapter drivers."
+msgstr "Kablolu ağ adaptörü sürücüleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
+#: usr/share/big-driver-manager/ui/window.py:66
+msgid "Bluetooth adapter drivers."
+msgstr "Bluetooth bağdaştırıcısı sürücüleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
+#: usr/share/big-driver-manager/ui/window.py:72
+msgid "Digital TV tuner firmware."
+msgstr "Dijital TV tuner yazılımı."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
+#: usr/share/big-driver-manager/ui/window.py:78
+msgid "Audio device firmware."
+msgstr "Ses cihazı yazılımı."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
+#: usr/share/big-driver-manager/ui/window.py:84
+msgid "Webcam device firmware."
+msgstr "Webcam cihazı yazılımı."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
+#: usr/share/big-driver-manager/ui/window.py:90
+msgid "Touchscreen device firmware."
+msgstr "Dokunmatik ekran cihazı yazılımı."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
+#: usr/share/big-driver-manager/ui/window.py:96
+msgid "Printer drivers and support packages."
+msgstr "Yazıcı sürücüleri ve destek paketleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
+#: usr/share/big-driver-manager/ui/window.py:102
+msgid "3D printer firmware."
+msgstr "3D yazıcı yazılımı."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 105
+#: usr/share/big-driver-manager/ui/window.py:108
+msgid "Scanner drivers and SANE backends."
+msgstr "Tarayıcı sürücüleri ve SANE arka uçları."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 111
+#: usr/share/big-driver-manager/ui/window.py:114
+msgid "Additional firmware packages."
+msgstr "Ek firmware paketleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 189
+#: usr/share/big-driver-manager/ui/window.py:198
+msgid "Home"
+msgstr "Ana Sayfa"
+# File: usr/share/big-driver-manager/ui/window.py, line: 89
+#: usr/share/big-driver-manager/ui/window.py:200
+msgid "Kernel"
+msgstr "Çekirdek"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 191
+#: usr/share/big-driver-manager/ui/window.py:201
+msgid "Video"
+msgstr "Video"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Kategoriler"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 231
+#: usr/share/big-driver-manager/ui/window.py:242
+msgid "A system reboot is recommended to apply changes."
+msgstr "Değişikliklerin uygulanması için sistemin yeniden başlatılması önerilir."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 269
+#: usr/share/big-driver-manager/ui/window.py:285
+msgid "Content"
+msgstr "İçerik"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 328
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 623
+#: usr/share/big-driver-manager/ui/window.py:338
+#: usr/share/big-driver-manager/ui/window.py:656
+msgid "Showing drivers detected as compatible with your computer"
+msgstr "Bilgisayarınızla uyumlu olarak algılanan sürücüler gösteriliyor"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 327
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 329
+#: usr/share/big-driver-manager/ui/window.py:348
+#: usr/share/big-driver-manager/ui/window.py:350
+msgid "Show all drivers"
+msgstr "Tüm sürücüleri göster"
+# File: usr/share/big-driver-manager/ui/window.py, line: 129
+#: usr/share/big-driver-manager/ui/window.py:362
+msgid "Menu"
+msgstr "Menü"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 318
+#: usr/share/big-driver-manager/ui/window.py:364
+msgid "Application menu"
+msgstr "Uygulama menüsü"
+# File: usr/share/big-driver-manager/ui/window.py, line: 134
+#: usr/share/big-driver-manager/ui/window.py:367
+msgid "About"
+msgstr "Hakkında"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/window.py:515
+msgid "Hardware detection failed. Check system logs for details."
+msgstr "Donanım algılama başarısız oldu. Ayrıntılar için sistem günlüklerini kontrol edin."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 534
+#: usr/share/big-driver-manager/ui/window.py:627
+#, python-brace-format
+msgid "Obsolete kernel: {} — no longer receives security updates"
+msgstr "Eski çekirdek: {} — artık güvenlik güncellemeleri almıyor"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 538
+#: usr/share/big-driver-manager/ui/window.py:631
+msgid "Manage"
+msgstr "Üstesinden gelmek"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 619
+#: usr/share/big-driver-manager/ui/window.py:652
+msgid "Showing all drivers, including incompatible ones"
+msgstr "Tüm sürücüler gösteriliyor, uyumsuz olanlar dahil"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 37
+#: usr/share/big-driver-manager/ui/mesa_data.py:37
+msgid "Latest NVIDIA driver — best performance and newest features"
+msgstr "En yeni NVIDIA sürücüsü — en iyi performans ve en yeni özellikler"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 40
+#: usr/share/big-driver-manager/ui/mesa_data.py:40
+msgid "NVIDIA 575 series — use if the latest driver causes issues"
+msgstr "NVIDIA 575 serisi — en yeni sürücü sorun çıkarırsa kullanın"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 43
+#: usr/share/big-driver-manager/ui/mesa_data.py:43
+msgid "NVIDIA 570 series — use if the latest driver causes issues"
+msgstr "NVIDIA 570 serisi — en yeni sürücü sorun çıkarırsa kullanın"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 47
+#: usr/share/big-driver-manager/ui/mesa_data.py:47
+msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
+msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — pil tasarrufu için GPU'lar arasında geçiş yapar"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 50
+#: usr/share/big-driver-manager/ui/mesa_data.py:50
+msgid "For Intel + NVIDIA laptops — NVIDIA 575 series"
+msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 575 serisi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 53
+#: usr/share/big-driver-manager/ui/mesa_data.py:53
+msgid "For Intel + NVIDIA laptops — NVIDIA 570 series"
+msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 570 serisi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 56
+#: usr/share/big-driver-manager/ui/mesa_data.py:56
+msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
+msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 470 (eski, Wayland desteği yok)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 59
+#: usr/share/big-driver-manager/ui/mesa_data.py:59
+msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
+msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 390 (sadece çok eski GPU'lar)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 63
+#: usr/share/big-driver-manager/ui/mesa_data.py:63
+msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
+msgstr "AMD + NVIDIA dizüstü bilgisayarlar için — pil tasarrufu için GPU'lar arasında geçiş yapar"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 66
+#: usr/share/big-driver-manager/ui/mesa_data.py:66
+msgid "For AMD + NVIDIA laptops — NVIDIA 575 series"
+msgstr "AMD + NVIDIA dizüstü bilgisayarlar için — NVIDIA 575 serisi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 69
+#: usr/share/big-driver-manager/ui/mesa_data.py:69
+msgid "For AMD + NVIDIA laptops — NVIDIA 570 series"
+msgstr "AMD + NVIDIA dizüstü bilgisayarlar için — NVIDIA 570 serisi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 72
+#: usr/share/big-driver-manager/ui/mesa_data.py:72
+msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
+msgstr "AMD + NVIDIA dizüstü bilgisayarlar için — NVIDIA 470 (eski, Wayland yok)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 76
+#: usr/share/big-driver-manager/ui/mesa_data.py:76
+msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
+msgstr "Sanal makineler için optimize edilmiş ekran (VirtualBox, VMware, QEMU/KVM)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 90
+#: usr/share/big-driver-manager/ui/mesa_data.py:90
+msgid "Gaming & 3D Graphics"
+msgstr "Oyun ve 3D Grafikler"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 93
+#: usr/share/big-driver-manager/ui/mesa_data.py:93
+msgid "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D applications."
+msgstr "Oyunlar, Steam, Wine/Proton ve 3D uygulamalar için gerekli Vulkan ve OpenGL kütüphaneleri."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 99
+#: usr/share/big-driver-manager/ui/mesa_data.py:99
+msgid "Vulkan for AMD Radeon GPUs"
+msgstr "AMD Radeon GPU'lar için Vulkan"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 106
+#: usr/share/big-driver-manager/ui/mesa_data.py:106
+msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
+msgstr "32-bit Vulkan (AMD) — Steam, Wine/Proton ve eski oyunlar için gerekli"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 114
+#: usr/share/big-driver-manager/ui/mesa_data.py:114
+msgid "Vulkan for Intel GPUs"
+msgstr "Intel GPU'lar için Vulkan"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 121
+#: usr/share/big-driver-manager/ui/mesa_data.py:121
+msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
+msgstr "32-bit Vulkan (Intel) — Steam, Wine/Proton ve eski oyunlar için gerekli"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 130
+#: usr/share/big-driver-manager/ui/mesa_data.py:130
+msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
+msgstr "NVIDIA için açık kaynak Vulkan (Nouveau) — özel sürücü gerekmez"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 139
+#: usr/share/big-driver-manager/ui/mesa_data.py:139
+msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
+msgstr "32-bit OpenGL — Steam, Wine/Proton ve eski 32-bit oyunlar için gerekli"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 149
+#: usr/share/big-driver-manager/ui/mesa_data.py:149
+msgid "Video Playback"
+msgstr "Video Oynatma"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 152
+#: usr/share/big-driver-manager/ui/mesa_data.py:152
+msgid ""
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming and video calls smoother "
+"while reducing CPU and power usage."
+msgstr ""
+"Donanım hızlandırmalı video kod çözme (VAAPI/VDPAU). Videoları, yayınları ve görüntülü aramaları "
+"daha akıcı yapar, CPU ve güç kullanımını azaltır."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 159
+#: usr/share/big-driver-manager/ui/mesa_data.py:159
+msgid "VAAPI for NVIDIA proprietary driver"
+msgstr "NVIDIA özel sürücüsü için VAAPI"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 165
+#: usr/share/big-driver-manager/ui/mesa_data.py:165
+msgid "VAAPI for Intel (Broadwell / Gen 8 and newer)"
+msgstr "Intel için VAAPI (Broadwell / 8. Nesil ve daha yenisi)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 172
+#: usr/share/big-driver-manager/ui/mesa_data.py:172
+msgid "VAAPI for older Intel (Haswell to Coffee Lake / Gen 4–9)"
+msgstr "Eski Intel (Haswell'den Coffee Lake / Gen 4–9'a) için VAAPI"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 179
+#: usr/share/big-driver-manager/ui/mesa_data.py:179
+msgid "VAAPI for AMD and NVIDIA open-source (Nouveau)"
+msgstr "AMD ve NVIDIA açık kaynak (Nouveau) için VAAPI"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 186
+#: usr/share/big-driver-manager/ui/mesa_data.py:186
+msgid ""
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and Vulkan. Probably not "
+"needed."
+msgstr ""
+"AMD/NVIDIA için VDPAU açık kaynak — eski API, VAAPI ve Vulkan ile değiştiriliyor. Muhtemelen gerek "
+"yok."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 197
+#: usr/share/big-driver-manager/ui/mesa_data.py:197
+msgid "GPU Compute (AI / ML)"
+msgstr "GPU Hesaplama (Yapay Zeka / Makine Öğrenimi)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 200
+#: usr/share/big-driver-manager/ui/mesa_data.py:200
+msgid ""
+"Your graphics card can do more than display images — it can also help with heavy processing tasks. "
+"These libraries allow programs to use the GPU for things like artificial intelligence, video "
+"editing, 3D rendering, image processing and scientific simulations. Examples: running local AI "
+"assistants (Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in Blender, "
+"applying filters in GIMP or Darktable, generating images with Stable Diffusion, and running physics "
+"simulations."
+msgstr ""
+"Grafik kartınız sadece görüntüleri göstermekle kalmaz — aynı zamanda ağır işlem görevlerinde de "
+"yardımcı olabilir. Bu kütüphaneler, programların yapay zeka, video düzenleme, 3D render, görüntü "
+"işleme ve bilimsel simülasyonlar gibi işlemler için GPU'yu kullanmasını sağlar. Örnekler: yerel AI "
+"asistanlarını çalıştırmak (Ollama, LocalAI), Whisper ile ses transkripti, Blender'da 3D sahneleri "
+"render etmek, GIMP veya Darktable'da filtre uygulamak, Stable Diffusion ile görüntü üretmek ve "
+"fizik simülasyonları çalıştırmak."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 215
+#: usr/share/big-driver-manager/ui/mesa_data.py:215
+msgid "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
+msgstr "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 222
+#: usr/share/big-driver-manager/ui/mesa_data.py:222
+msgid "OpenCL for NVIDIA — Blender, GIMP, Darktable"
+msgstr "NVIDIA için OpenCL — Blender, GIMP, Darktable"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 228
+#: usr/share/big-driver-manager/ui/mesa_data.py:228
+msgid "OpenCL for AMD — Blender, GIMP, Darktable"
+msgstr "AMD için OpenCL — Blender, GIMP, Darktable"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 234
+#: usr/share/big-driver-manager/ui/mesa_data.py:234
+msgid "OpenCL for Intel — Blender, GIMP, Darktable"
+msgstr "Intel için OpenCL — Blender, GIMP, Darktable"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 270
+#: usr/share/big-driver-manager/ui/mesa_data.py:279
+msgid "Stable"
+msgstr "Kararlı"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 272
+#: usr/share/big-driver-manager/ui/mesa_data.py:281
+msgid ""
+"Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
+"and video playback."
+msgstr ""
+"Mesa ekibi tarafından resmi olarak test edilmiştir. Günlük kullanım, oyun ve video oynatma için en "
+"güvenli ve en güvenilir seçim."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
+#: usr/share/big-driver-manager/ui/mesa_data.py:284
+msgid "Recommended"
+msgstr "Tavsiye Edilen"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
+#: usr/share/big-driver-manager/ui/mesa_data.py:288
+#: usr/share/big-driver-manager/ui/mesa_data.py:294
+msgid "Performance"
+msgstr "Performans"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 281
+#: usr/share/big-driver-manager/ui/mesa_data.py:290
+msgid ""
+"Modified version with gaming optimizations for extra performance. Reliable for most users but may "
+"rarely cause instabilities."
+msgstr ""
+"Ekstra performans için oyun optimizasyonları içeren değiştirilmiş sürüm. Çoğu kullanıcı için "
+"güvenilir ancak nadiren kararsızlıklara neden olabilir."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 289
+#: usr/share/big-driver-manager/ui/mesa_data.py:298
+msgid "Development"
+msgstr "Gelişim"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 291
+#: usr/share/big-driver-manager/ui/mesa_data.py:300
+msgid ""
+"Built from the very latest source code with cutting-edge features. Offers the best gaming "
+"performance but is the least tested — only for advanced users."
+msgstr ""
+"En son kaynak kodundan, en yeni özelliklerle derlenmiştir. En iyi oyun performansını sunar ancak en "
+"az test edilmiş sürümdür — sadece ileri düzey kullanıcılar için."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
+#: usr/share/big-driver-manager/ui/mesa_data.py:308
+#: usr/share/big-driver-manager/ui/mesa_data.py:314
+msgid "Legacy"
+msgstr "Eski"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
+# 301
+#: usr/share/big-driver-manager/ui/mesa_data.py:310
+msgid ""
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
+"Mesa versions don't work with your hardware."
+msgstr ""
+"Sadece OpenGL 2.1 veya daha eski sürümleri destekleyen çok eski grafik kartları için. Donanımınızla "
+"yeni Mesa sürümleri çalışmıyorsa sadece bunu kurun."
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
+#: usr/share/big-driver-manager/ui/base_page.py:39
+#: usr/share/big-driver-manager/ui/base_page.py:44
+msgid "Loading..."
+msgstr "Yükleniyor..."
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
+#: usr/share/big-driver-manager/ui/base_page.py:40
+msgid "Loading"
+msgstr "Yükleniyor"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Hala yükleniyor… Ağ bağlantınızı kontrol edin."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 #: usr/share/big-driver-manager/ui/kernel_page.py:107
 msgid "Installed Kernels"
 msgstr "Yüklü Çekirdekler"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/kernel_page.py:119
 msgid "Remove all obsolete kernels"
 msgstr "Tüm eski çekirdekleri kaldır"
-
 # File: usr/share/big-driver-manager/ui/window.py, line: 89
 #: usr/share/big-driver-manager/ui/kernel_page.py:262
 msgid "Kernel in use"
 msgstr "Kullanılan çekirdek"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
 #: usr/share/big-driver-manager/ui/kernel_page.py:268
 msgid "In Use"
 msgstr "Kullanımda"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 331
 #: usr/share/big-driver-manager/ui/kernel_page.py:332
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Eski Çekirdekler — Kaldırılması Önerilir"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 360
 #: usr/share/big-driver-manager/ui/kernel_page.py:361
 msgid "No longer receives security updates"
 msgstr "Artık güvenlik güncellemeleri almıyor"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/kernel_page.py:373
 #: usr/share/big-driver-manager/ui/kernel_page.py:436
 #, python-brace-format
 msgid "Remove kernel {}"
 msgstr "Çekirdeği kaldır {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 416
 #: usr/share/big-driver-manager/ui/kernel_page.py:422
 msgid "Last backup"
 msgstr "Son yedekleme"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 420
 #: usr/share/big-driver-manager/ui/kernel_page.py:426
 msgid "At least one backup kernel must remain installed"
-msgstr ""
-"En yeni özellikler ve donanım desteğiyle her zaman güncel. En yeni "
-"sürücülere ihtiyacınız varsa iyi."
-
+msgstr "En yeni özellikler ve donanım desteğiyle her zaman güncel. En yeni sürücülere ihtiyacınız varsa iyi."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
 msgid ""
-"Recommended for most users. These kernels receive security updates for years "
-"and are thoroughly tested."
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
 msgstr ""
-"Çoğu kullanıcı için önerilir. Bu çekirdekler yıllarca güvenlik "
-"güncellemeleri alır ve kapsamlı şekilde test edilir."
-
+"Çoğu kullanıcı için önerilir. Bu çekirdekler yıllarca güvenlik güncellemeleri alır ve kapsamlı "
+"şekilde test edilir."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 #: usr/share/big-driver-manager/ui/kernel_page.py:449
 msgid ""
-"Always up to date with the latest features and hardware support. Good if you "
-"need the newest drivers."
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
 msgstr ""
-"Her zaman en son özellikler ve donanım desteğiyle güncel. En yeni sürücülere "
-"ihtiyacınız varsa iyidir."
-
+"Her zaman en son özellikler ve donanım desteğiyle güncel. En yeni sürücülere ihtiyacınız varsa "
+"iyidir."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 #: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid ""
-"Tuned for gaming and desktop responsiveness. A good option for daily use "
-"with extra performance."
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
 msgstr ""
-"Oyun ve masaüstü yanıt verebilirliği için optimize edilmiştir. Ekstra "
-"performansla günlük kullanım için iyi bir seçenek."
-
+"Oyun ve masaüstü yanıt verebilirliği için optimize edilmiştir. Ekstra performansla günlük kullanım "
+"için iyi bir seçenek."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:457
 msgid ""
-"Built for audio/video production needing precise timing. May be incompatible "
-"with some drivers (e.g. NVIDIA). Only for advanced users."
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
 msgstr ""
-"Kesin zamanlama gerektiren ses/video prodüksiyonu için tasarlanmıştır. Bazı "
-"sürücülerle uyumsuz olabilir (ör. NVIDIA). Yalnızca ileri düzey kullanıcılar "
-"için."
-
+"Kesin zamanlama gerektiren ses/video prodüksiyonu için tasarlanmıştır. Bazı sürücülerle uyumsuz "
+"olabilir (ör. NVIDIA). Yalnızca ileri düzey kullanıcılar için."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 #: usr/share/big-driver-manager/ui/kernel_page.py:498
 msgid "LTS — Long Term Support (Recommended)"
 msgstr "LTS — Uzun Süreli Destek (Önerilen)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 493
 #: usr/share/big-driver-manager/ui/kernel_page.py:499
 msgid "Standard"
 msgstr "Standart"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 #: usr/share/big-driver-manager/ui/kernel_page.py:500
 msgid "Xanmod (Performance)"
 msgstr "Xanmod (Performans)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 495
 #: usr/share/big-driver-manager/ui/kernel_page.py:501
 msgid "Real-Time (Advanced)"
 msgstr "Gerçek Zamanlı (İleri Düzey)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1423,31 +2511,21 @@ msgstr "Gerçek Zamanlı (İleri Düzey)"
 #, python-brace-format
 msgid "Show {} available"
 msgstr "{} tanesinin müsait olduğunu göster"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
 #: usr/share/big-driver-manager/ui/kernel_page.py:600
 msgid "Hide available kernels"
 msgstr "Kullanılabilir çekirdekleri gizle"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
 #: usr/share/big-driver-manager/ui/kernel_page.py:650
 #: usr/share/big-driver-manager/ui/kernel_page.py:653
 #, python-brace-format
 msgid "Install kernel {}"
 msgstr "Kerneli yükle {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 661
 #: usr/share/big-driver-manager/ui/kernel_page.py:672
 msgid "The following packages will be installed:"
 msgstr "Aşağıdaki paketler yüklenecek:"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
-#: usr/share/big-driver-manager/ui/kernel_page.py:700
-#: usr/share/big-driver-manager/ui/mesa_page.py:1137
-msgid "Preparing installation..."
-msgstr "Kurulum hazırlanıyor..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
 #: usr/share/big-driver-manager/ui/kernel_page.py:724
 msgid ""
@@ -1456,7 +2534,6 @@ msgid ""
 msgstr ""
 "Çekirdek başarıyla yüklendi.\n"
 "Kullanmak için yeniden başlatmanız gerekebilir."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
 #: usr/share/big-driver-manager/ui/kernel_page.py:731
 msgid ""
@@ -1465,47 +2542,38 @@ msgid ""
 msgstr ""
 "Çekirdek yüklemesi başarısız oldu.\n"
 "Ayrıntılar için terminal çıktısını kontrol edin."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
 #: usr/share/big-driver-manager/ui/kernel_page.py:745
 msgid "Cannot Remove Running Kernel"
 msgstr "Çalışan Çekirdeği Kaldıramıyor"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
 #: usr/share/big-driver-manager/ui/kernel_page.py:747
 msgid "This kernel is currently in use. Boot into a different kernel first."
 msgstr "Bu çekirdek şu anda kullanılıyor. Önce farklı bir çekirdekle başlatın."
-
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 #: usr/share/big-driver-manager/ui/kernel_page.py:770
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will "
-"have no fallback.\n"
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Bu son yedek çekirdeğinizdir. Çalışan çekirdek başarısız olursa, geri "
-"dönüşünüz olmaz.\n"
+"⚠ Bu son yedek çekirdeğinizdir. Çalışan çekirdek başarısız olursa, geri dönüşünüz olmaz.\n"
 "\n"
 "Aşağıdaki paketler kaldırılacak:"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 749
 #: usr/share/big-driver-manager/ui/kernel_page.py:775
 msgid "The following packages will be removed:"
 msgstr "Aşağıdaki paketler kaldırılacak:"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
 #: usr/share/big-driver-manager/ui/kernel_page.py:804
 msgid "Preparing removal…"
 msgstr "Kaldırma hazırlanıyor…"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:825
 msgid "Kernel removed successfully."
 msgstr "Çekirdek başarıyla kaldırıldı."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
 #: usr/share/big-driver-manager/ui/kernel_page.py:828
 msgid ""
@@ -1514,12 +2582,10 @@ msgid ""
 msgstr ""
 "Çekirdek kaldırma başarısız oldu.\n"
 "Ayrıntılar için terminal çıktısını kontrol edin."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 #: usr/share/big-driver-manager/ui/kernel_page.py:842
 msgid "Remove Obsolete Kernels"
 msgstr "Eski Çekirdekleri Kaldır"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 820
 #: usr/share/big-driver-manager/ui/kernel_page.py:846
@@ -1536,31 +2602,26 @@ msgstr ""
 "<b>{}</b>\n"
 "\n"
 "Bu çekirdekler artık güvenlik güncellemeleri almıyor."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/kernel_page.py:851
 msgid "Remove All"
 msgstr "Tümünü Kaldır"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/kernel_page.py:874
 #, python-brace-format
 msgid "Removing kernel {} ({}/{})..."
 msgstr "{} ({}/{}) çekirdeği kaldırılıyor..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 866
 #: usr/share/big-driver-manager/ui/kernel_page.py:892
 #, python-brace-format
 msgid "Failed to remove {}. Stopping."
 msgstr "{} kaldırılamadı. Duruyorum."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:903
 msgid "All obsolete kernels removed successfully."
 msgstr "Tüm eski çekirdekler başarıyla kaldırıldı."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 916
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1570,1601 +2631,3 @@ msgstr "Tüm eski çekirdekler başarıyla kaldırıldı."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Linux {}'de yenilikler"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 37
-#: usr/share/big-driver-manager/ui/mesa_data.py:37
-msgid "Latest NVIDIA driver — best performance and newest features"
-msgstr "En yeni NVIDIA sürücüsü — en iyi performans ve en yeni özellikler"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 40
-#: usr/share/big-driver-manager/ui/mesa_data.py:40
-msgid "NVIDIA 575 series — use if the latest driver causes issues"
-msgstr "NVIDIA 575 serisi — en yeni sürücü sorun çıkarırsa kullanın"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 43
-#: usr/share/big-driver-manager/ui/mesa_data.py:43
-msgid "NVIDIA 570 series — use if the latest driver causes issues"
-msgstr "NVIDIA 570 serisi — en yeni sürücü sorun çıkarırsa kullanın"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 47
-#: usr/share/big-driver-manager/ui/mesa_data.py:47
-msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Intel + NVIDIA dizüstü bilgisayarlar için — pil tasarrufu için GPU'lar "
-"arasında geçiş yapar"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 50
-#: usr/share/big-driver-manager/ui/mesa_data.py:50
-msgid "For Intel + NVIDIA laptops — NVIDIA 575 series"
-msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 575 serisi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 53
-#: usr/share/big-driver-manager/ui/mesa_data.py:53
-msgid "For Intel + NVIDIA laptops — NVIDIA 570 series"
-msgstr "Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 570 serisi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 56
-#: usr/share/big-driver-manager/ui/mesa_data.py:56
-msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr ""
-"Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 470 (eski, Wayland "
-"desteği yok)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 59
-#: usr/share/big-driver-manager/ui/mesa_data.py:59
-msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
-msgstr ""
-"Intel + NVIDIA dizüstü bilgisayarlar için — NVIDIA 390 (sadece çok eski "
-"GPU'lar)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 63
-#: usr/share/big-driver-manager/ui/mesa_data.py:63
-msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"AMD + NVIDIA dizüstü bilgisayarlar için — pil tasarrufu için GPU'lar "
-"arasında geçiş yapar"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 66
-#: usr/share/big-driver-manager/ui/mesa_data.py:66
-msgid "For AMD + NVIDIA laptops — NVIDIA 575 series"
-msgstr "AMD + NVIDIA dizüstü bilgisayarlar için — NVIDIA 575 serisi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 69
-#: usr/share/big-driver-manager/ui/mesa_data.py:69
-msgid "For AMD + NVIDIA laptops — NVIDIA 570 series"
-msgstr "AMD + NVIDIA dizüstü bilgisayarlar için — NVIDIA 570 serisi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 72
-#: usr/share/big-driver-manager/ui/mesa_data.py:72
-msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr ""
-"AMD + NVIDIA dizüstü bilgisayarlar için — NVIDIA 470 (eski, Wayland yok)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 76
-#: usr/share/big-driver-manager/ui/mesa_data.py:76
-msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Sanal makineler için optimize edilmiş ekran (VirtualBox, VMware, QEMU/KVM)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 90
-#: usr/share/big-driver-manager/ui/mesa_data.py:90
-msgid "Gaming & 3D Graphics"
-msgstr "Oyun ve 3D Grafikler"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 93
-#: usr/share/big-driver-manager/ui/mesa_data.py:93
-msgid ""
-"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
-"applications."
-msgstr ""
-"Oyunlar, Steam, Wine/Proton ve 3D uygulamalar için gerekli Vulkan ve OpenGL "
-"kütüphaneleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 99
-#: usr/share/big-driver-manager/ui/mesa_data.py:99
-msgid "Vulkan for AMD Radeon GPUs"
-msgstr "AMD Radeon GPU'lar için Vulkan"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 106
-#: usr/share/big-driver-manager/ui/mesa_data.py:106
-msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
-msgstr "32-bit Vulkan (AMD) — Steam, Wine/Proton ve eski oyunlar için gerekli"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 114
-#: usr/share/big-driver-manager/ui/mesa_data.py:114
-msgid "Vulkan for Intel GPUs"
-msgstr "Intel GPU'lar için Vulkan"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 121
-#: usr/share/big-driver-manager/ui/mesa_data.py:121
-msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-bit Vulkan (Intel) — Steam, Wine/Proton ve eski oyunlar için gerekli"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 130
-#: usr/share/big-driver-manager/ui/mesa_data.py:130
-msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr "NVIDIA için açık kaynak Vulkan (Nouveau) — özel sürücü gerekmez"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 139
-#: usr/share/big-driver-manager/ui/mesa_data.py:139
-msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
-msgstr "32-bit OpenGL — Steam, Wine/Proton ve eski 32-bit oyunlar için gerekli"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 149
-#: usr/share/big-driver-manager/ui/mesa_data.py:149
-msgid "Video Playback"
-msgstr "Video Oynatma"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 152
-#: usr/share/big-driver-manager/ui/mesa_data.py:152
-msgid ""
-"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
-"and video calls smoother while reducing CPU and power usage."
-msgstr ""
-"Donanım hızlandırmalı video kod çözme (VAAPI/VDPAU). Videoları, yayınları ve "
-"görüntülü aramaları daha akıcı yapar, CPU ve güç kullanımını azaltır."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 159
-#: usr/share/big-driver-manager/ui/mesa_data.py:159
-msgid "VAAPI for NVIDIA proprietary driver"
-msgstr "NVIDIA özel sürücüsü için VAAPI"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 165
-#: usr/share/big-driver-manager/ui/mesa_data.py:165
-msgid "VAAPI for Intel (Broadwell / Gen 8 and newer)"
-msgstr "Intel için VAAPI (Broadwell / 8. Nesil ve daha yenisi)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 172
-#: usr/share/big-driver-manager/ui/mesa_data.py:172
-msgid "VAAPI for older Intel (Haswell to Coffee Lake / Gen 4–9)"
-msgstr "Eski Intel (Haswell'den Coffee Lake / Gen 4–9'a) için VAAPI"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 179
-#: usr/share/big-driver-manager/ui/mesa_data.py:179
-msgid "VAAPI for AMD and NVIDIA open-source (Nouveau)"
-msgstr "AMD ve NVIDIA açık kaynak (Nouveau) için VAAPI"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 186
-#: usr/share/big-driver-manager/ui/mesa_data.py:186
-msgid ""
-"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
-"Vulkan. Probably not needed."
-msgstr ""
-"AMD/NVIDIA için VDPAU açık kaynak — eski API, VAAPI ve Vulkan ile "
-"değiştiriliyor. Muhtemelen gerek yok."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 197
-#: usr/share/big-driver-manager/ui/mesa_data.py:197
-msgid "GPU Compute (AI / ML)"
-msgstr "GPU Hesaplama (Yapay Zeka / Makine Öğrenimi)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 200
-#: usr/share/big-driver-manager/ui/mesa_data.py:200
-msgid ""
-"Your graphics card can do more than display images — it can also help with "
-"heavy processing tasks. These libraries allow programs to use the GPU for "
-"things like artificial intelligence, video editing, 3D rendering, image "
-"processing and scientific simulations. Examples: running local AI assistants "
-"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
-"Blender, applying filters in GIMP or Darktable, generating images with "
-"Stable Diffusion, and running physics simulations."
-msgstr ""
-"Grafik kartınız sadece görüntüleri göstermekle kalmaz — aynı zamanda ağır "
-"işlem görevlerinde de yardımcı olabilir. Bu kütüphaneler, programların yapay "
-"zeka, video düzenleme, 3D render, görüntü işleme ve bilimsel simülasyonlar "
-"gibi işlemler için GPU'yu kullanmasını sağlar. Örnekler: yerel AI "
-"asistanlarını çalıştırmak (Ollama, LocalAI), Whisper ile ses transkripti, "
-"Blender'da 3D sahneleri render etmek, GIMP veya Darktable'da filtre "
-"uygulamak, Stable Diffusion ile görüntü üretmek ve fizik simülasyonları "
-"çalıştırmak."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 215
-#: usr/share/big-driver-manager/ui/mesa_data.py:215
-msgid "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
-msgstr "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 222
-#: usr/share/big-driver-manager/ui/mesa_data.py:222
-msgid "OpenCL for NVIDIA — Blender, GIMP, Darktable"
-msgstr "NVIDIA için OpenCL — Blender, GIMP, Darktable"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 228
-#: usr/share/big-driver-manager/ui/mesa_data.py:228
-msgid "OpenCL for AMD — Blender, GIMP, Darktable"
-msgstr "AMD için OpenCL — Blender, GIMP, Darktable"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 234
-#: usr/share/big-driver-manager/ui/mesa_data.py:234
-msgid "OpenCL for Intel — Blender, GIMP, Darktable"
-msgstr "Intel için OpenCL — Blender, GIMP, Darktable"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 270
-#: usr/share/big-driver-manager/ui/mesa_data.py:279
-msgid "Stable"
-msgstr "Kararlı"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 272
-#: usr/share/big-driver-manager/ui/mesa_data.py:281
-msgid ""
-"Officially tested by the Mesa team. The safest and most reliable choice for "
-"everyday use, gaming, and video playback."
-msgstr ""
-"Mesa ekibi tarafından resmi olarak test edilmiştir. Günlük kullanım, oyun ve "
-"video oynatma için en güvenli ve en güvenilir seçim."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
-#: usr/share/big-driver-manager/ui/mesa_data.py:288
-#: usr/share/big-driver-manager/ui/mesa_data.py:294
-msgid "Performance"
-msgstr "Performans"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 281
-#: usr/share/big-driver-manager/ui/mesa_data.py:290
-msgid ""
-"Modified version with gaming optimizations for extra performance. Reliable "
-"for most users but may rarely cause instabilities."
-msgstr ""
-"Ekstra performans için oyun optimizasyonları içeren değiştirilmiş sürüm. "
-"Çoğu kullanıcı için güvenilir ancak nadiren kararsızlıklara neden olabilir."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 289
-#: usr/share/big-driver-manager/ui/mesa_data.py:298
-msgid "Development"
-msgstr "Gelişim"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 291
-#: usr/share/big-driver-manager/ui/mesa_data.py:300
-msgid ""
-"Built from the very latest source code with cutting-edge features. Offers "
-"the best gaming performance but is the least tested — only for advanced "
-"users."
-msgstr ""
-"En son kaynak kodundan, en yeni özelliklerle derlenmiştir. En iyi oyun "
-"performansını sunar ancak en az test edilmiş sürümdür — sadece ileri düzey "
-"kullanıcılar için."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
-#: usr/share/big-driver-manager/ui/mesa_data.py:308
-#: usr/share/big-driver-manager/ui/mesa_data.py:314
-msgid "Legacy"
-msgstr "Eski"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
-# 301
-#: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid ""
-"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
-"install this if newer Mesa versions don't work with your hardware."
-msgstr ""
-"Sadece OpenGL 2.1 veya daha eski sürümleri destekleyen çok eski grafik "
-"kartları için. Donanımınızla yeni Mesa sürümleri çalışmıyorsa sadece bunu "
-"kurun."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
-#: usr/share/big-driver-manager/ui/mesa_page.py:117
-msgid "Video Drivers"
-msgstr "Video Sürücüleri"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 127
-#: usr/share/big-driver-manager/ui/mesa_page.py:129
-msgid ""
-"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
-"are built into a single project called <b>Mesa</b>. Below you can choose a "
-"Mesa variant and manage extra packages for gaming, video playback, compute "
-"and AI."
-msgstr ""
-"Linux'ta, AMD, Intel ve NVIDIA (ücretsiz yazılım Nouveau) için video "
-"sürücüleri <b>Mesa</b> adlı tek bir projede birleştirilmiştir. Aşağıdan bir "
-"Mesa varyantı seçebilir ve oyun, video oynatma, hesaplama ve yapay zeka için "
-"ek paketleri yönetebilirsiniz."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 150
-#: usr/share/big-driver-manager/ui/mesa_page.py:152
-msgid ""
-"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
-"official proprietary driver for the best performance in gaming, AI and "
-"professional applications."
-msgstr ""
-"Bilgisayarınızda bir <b>NVIDIA</b> grafik kartı var. Oyun, yapay zeka ve "
-"profesyonel uygulamalarda en iyi performans için resmi özel sürücüyü "
-"kurabilirsiniz."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 183
-#: usr/share/big-driver-manager/ui/mesa_page.py:185
-msgid "Mesa Variant"
-msgstr "Mesa Varyantı"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 194
-#: usr/share/big-driver-manager/ui/mesa_page.py:196
-msgid ""
-"Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Hangi Mesa derlemesini kullanmak istediğinizi seçin. Aynı anda sadece bir "
-"varyant aktif olabilir."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 209
-#: usr/share/big-driver-manager/ui/mesa_page.py:209
-msgid ""
-"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
-"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
-"— other versions will not improve performance and may cause instabilities."
-msgstr ""
-"<b>Not:</b> NVIDIA özel sürücüsünü kullanıyorsunuz. Bu durumda Mesa sadece "
-"küçük görevler için kullanılır. <b>Stable</b> varyantını kullanmanızı "
-"öneririz — diğer sürümler performansı artırmaz ve kararsızlıklara neden "
-"olabilir."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 282
-#: usr/share/big-driver-manager/ui/mesa_page.py:380
-msgid "Detected graphics cards:"
-msgstr "Algılanan grafik kartları:"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 384
-#: usr/share/big-driver-manager/ui/mesa_page.py:384
-msgid "NVIDIA proprietary driver (not Mesa)"
-msgstr "NVIDIA özel sürücüsü (Mesa değil)"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 389
-#: usr/share/big-driver-manager/ui/mesa_page.py:389
-msgid "Mesa driver"
-msgstr "Mesa sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 427
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 916
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1014
-#: usr/share/big-driver-manager/ui/mesa_page.py:529
-#: usr/share/big-driver-manager/ui/mesa_page.py:1059
-#: usr/share/big-driver-manager/ui/mesa_page.py:1165
-msgid "Switch"
-msgstr "Değiştir"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 431
-#: usr/share/big-driver-manager/ui/mesa_page.py:532
-#: usr/share/big-driver-manager/ui/mesa_page.py:1070
-#, python-brace-format
-msgid "Switch to {}"
-msgstr "{} öğesine geç"
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
-#: usr/share/big-driver-manager/ui/mesa_page.py:556
-msgid "Change Video Driver"
-msgstr "Video Sürücüsünü Değiştir"
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
-#: usr/share/big-driver-manager/ui/mesa_page.py:560
-#, python-brace-format
-msgid ""
-"Switch to <b>{}</b>?\n"
-"\n"
-"A system reboot will be required for the change to take effect."
-msgstr ""
-"<b>{}</b> öğesine geçilsin mi?\n"
-"\n"
-"Değişikliğin geçerli olması için sistem yeniden başlatılmalıdır."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
-#: usr/share/big-driver-manager/ui/mesa_page.py:565
-msgid "Apply"
-msgstr "Uygula"
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 413
-#: usr/share/big-driver-manager/ui/mesa_page.py:581
-#, python-brace-format
-msgid "Applying {}"
-msgstr "{} uygulanıyor"
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/ui/mesa_page.py:582
-msgid "Preparing to apply driver..."
-msgstr "Sürücüyü uygulamaya hazırlanıyor..."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 337
-#: usr/share/big-driver-manager/ui/mesa_page.py:603
-msgid ""
-"Video driver changed successfully!\n"
-"\n"
-"You must reboot your system for the new driver to become active."
-msgstr ""
-"Video sürücüsü başarıyla değiştirildi!\n"
-"\n"
-"Yeni sürücünün etkin olması için sisteminizi yeniden başlatmalısınız."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 451
-#: usr/share/big-driver-manager/ui/mesa_page.py:609
-msgid ""
-"Driver change failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Sürücü değişikliği başarısız oldu.\n"
-"Ayrıntılar için terminal çıktısını kontrol edin."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 589
-#: usr/share/big-driver-manager/ui/mesa_page.py:689
-msgid "NVIDIA Proprietary Driver"
-msgstr "NVIDIA Tescilli Sürücü"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 701
-#: usr/share/big-driver-manager/ui/mesa_page.py:701
-msgid ""
-"Official closed-source driver with the best performance for gaming, AI, and "
-"professional workloads."
-msgstr ""
-"Oyun, yapay zeka ve profesyonel iş yükleri için en iyi performansa sahip "
-"resmi kapalı kaynak sürücü."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 713
-#: usr/share/big-driver-manager/ui/mesa_page.py:713
-msgid "Only one version can be active at a time."
-msgstr "Aynı anda yalnızca bir sürüm aktif olabilir."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 677
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 680
-#: usr/share/big-driver-manager/ui/mesa_page.py:810
-#: usr/share/big-driver-manager/ui/mesa_page.py:813
-msgid "All recommended packages installed"
-msgstr "Tüm önerilen paketler yüklendi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 686
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 689
-#: usr/share/big-driver-manager/ui/mesa_page.py:819
-#: usr/share/big-driver-manager/ui/mesa_page.py:822
-msgid "Some packages not installed"
-msgstr "Bazı paketler yüklenmedi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 747
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1163
-#: usr/share/big-driver-manager/ui/mesa_page.py:880
-#: usr/share/big-driver-manager/ui/mesa_page.py:1314
-msgid "Included"
-msgstr "Dahil"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 754
-#: usr/share/big-driver-manager/ui/mesa_page.py:887
-#, python-brace-format
-msgid "Already included in your Mesa version ({})"
-msgstr "Mesa sürümünüze zaten dahil ({})"
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
-#: usr/share/big-driver-manager/ui/mesa_page.py:929
-msgid "Other Drivers"
-msgstr "Diğer Sürücüler"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 808
-#: usr/share/big-driver-manager/ui/mesa_page.py:941
-msgid ""
-"Additional drivers for special hardware configurations like virtual machines."
-msgstr "Sanal makineler gibi özel donanım yapılandırmaları için ek sürücüler."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/ui/mesa_page.py:1026
-msgid "Compatible"
-msgstr "Uyumlu"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 888
-#: usr/share/big-driver-manager/ui/mesa_page.py:1027
-msgid "Open Source"
-msgstr "Açık Kaynak"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 888
-#: usr/share/big-driver-manager/ui/mesa_page.py:1027
-msgid "Proprietary"
-msgstr "Tescilli"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 895
-#: usr/share/big-driver-manager/ui/mesa_page.py:1034
-msgid "⚠ No Wayland support · No longer maintained"
-msgstr "⚠ Wayland desteği yok · Artık bakım yapılmıyor"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 920
-#: usr/share/big-driver-manager/ui/mesa_page.py:1063
-#, python-brace-format
-msgid "Switch from {} to {}"
-msgstr "{}'dan {}'a geçiş yap"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 961
-#: usr/share/big-driver-manager/ui/mesa_page.py:1112
-msgid "open-source"
-msgstr "açık kaynak"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 961
-#: usr/share/big-driver-manager/ui/mesa_page.py:1112
-msgid "proprietary"
-msgstr "tescilli"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 967
-#: usr/share/big-driver-manager/ui/mesa_page.py:1118
-#, python-brace-format
-msgid ""
-"Install <b>{}</b> ({} driver)?\n"
-"\n"
-"A system reboot may be required after installation."
-msgstr ""
-"<b>{}</b> ({} sürücüsü) kurulacak mı?\n"
-"\n"
-"Kurulumdan sonra sistem yeniden başlatılabilir."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1001
-#: usr/share/big-driver-manager/ui/mesa_page.py:1152
-msgid "Switch NVIDIA Driver"
-msgstr "NVIDIA Sürücüsünü Değiştir"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1005
-#: usr/share/big-driver-manager/ui/mesa_page.py:1156
-#, python-brace-format
-msgid ""
-"Switch from <b>{}</b> to <b>{}</b>?\n"
-"\n"
-"The current driver will be replaced automatically.\n"
-"A system reboot will be required."
-msgstr ""
-"<b>{}</b> sürücüsünden <b>{}</b> sürücüsüne geçilsin mi?\n"
-"\n"
-"Mevcut sürücü otomatik olarak değiştirilecek.\n"
-"Sistem yeniden başlatılması gerekecek."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1027
-#: usr/share/big-driver-manager/ui/mesa_page.py:1178
-#, python-brace-format
-msgid "Switching to {}"
-msgstr "{}'a geçiliyor"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1028
-#: usr/share/big-driver-manager/ui/mesa_page.py:1179
-msgid "Replacing current NVIDIA driver..."
-msgstr "Mevcut NVIDIA sürücüsü değiştiriliyor..."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1046
-#: usr/share/big-driver-manager/ui/mesa_page.py:1197
-#, python-brace-format
-msgid ""
-"Remove <b>{}</b>?\n"
-"\n"
-"A system reboot may be required after removal."
-msgstr ""
-"<b>{}</b> kaldırılacak mı?\n"
-"\n"
-"Kaldırmadan sonra sistem yeniden başlatılabilir."
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
-#: usr/share/big-driver-manager/ui/mesa_page.py:1215
-msgid "Preparing removal..."
-msgstr "Kaldırma hazırlanıyor..."
-
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
-#: usr/share/big-driver-manager/ui/mesa_page.py:1235
-msgid "activated"
-msgstr "etkinleştirildi"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/mesa_page.py:1237
-#: usr/share/big-driver-manager/ui/mesa_page.py:1429
-msgid "installed"
-msgstr "yüklü"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
-#: usr/share/big-driver-manager/ui/mesa_page.py:1239
-#: usr/share/big-driver-manager/ui/mesa_page.py:1429
-msgid "removed"
-msgstr "kaldırıldı"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1091
-#: usr/share/big-driver-manager/ui/mesa_page.py:1242
-#, python-brace-format
-msgid ""
-"{} was {} successfully!\n"
-"\n"
-"A system reboot may be required."
-msgstr ""
-"{} başarıyla {}!\n"
-"\n"
-"Sistem yeniden başlatılabilir."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1248
-msgid ""
-"Driver operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Sürücü işlemi başarısız oldu.\n"
-"Detaylar için terminal çıktısını kontrol edin."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1146
-#: usr/share/big-driver-manager/ui/mesa_page.py:1297
-msgid "Already included in your Mesa version"
-msgstr "Mesa sürümünüzde zaten mevcut"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/mesa_page.py:1347
-msgid "Install Package"
-msgstr "Paket Kur"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1191
-#: usr/share/big-driver-manager/ui/mesa_page.py:1350
-#, python-brace-format
-msgid ""
-"Install <b>{}</b>?\n"
-"\n"
-"{}"
-msgstr ""
-"<b>{}</b> kurulacak mı?\n"
-"\n"
-"{}"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/mesa_page.py:1388
-msgid "Remove Package"
-msgstr "Paketi Kaldır"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 1232
-#: usr/share/big-driver-manager/ui/mesa_page.py:1391
-#, python-brace-format
-msgid "Remove <b>{}</b>?"
-msgstr "<b>{}</b> kaldırılacak mı?"
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/ui/mesa_page.py:1409
-msgid "Removing package..."
-msgstr "Paket kaldırılıyor..."
-
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
-#: usr/share/big-driver-manager/ui/mesa_page.py:1431
-#, python-brace-format
-msgid "{} was {} successfully!"
-msgstr "{} başarıyla {}!"
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Paket işlemi başarısız oldu.\n"
-"Ayrıntılar için terminal çıktısını kontrol edin."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 117
-#: usr/share/big-driver-manager/ui/progress_dialog.py:117
-msgid "Technical details"
-msgstr "Teknik detaylar"
-
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 67
-#: usr/share/big-driver-manager/ui/progress_dialog.py:131
-msgid "Terminal output"
-msgstr "Terminal çıktısı"
-
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Kapat"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 229
-#: usr/share/big-driver-manager/ui/progress_dialog.py:229
-#, python-brace-format
-msgid "Step {} of {}: {}"
-msgstr "Adım {} / {}: {}"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 231
-#: usr/share/big-driver-manager/ui/progress_dialog.py:231
-#, python-brace-format
-msgid "Step {} of {}"
-msgstr "Adım {} / {}"
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/progress_dialog.py:340
-msgid "Operation completed successfully!"
-msgstr "İşlem başarıyla tamamlandı!"
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/progress_dialog.py:345
-msgid "Operation failed. Check terminal output for details."
-msgstr "İşlem başarısız oldu. Detaylar için terminal çıktısını kontrol edin."
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/ui/progress_dialog.py:371
-msgid "Completed!"
-msgstr "Tamamlandı!"
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "İptal edildi"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
-#: usr/share/big-driver-manager/ui/window.py:48
-msgid "Mesa, NVIDIA, and GPU drivers."
-msgstr "Mesa, NVIDIA ve GPU sürücüleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
-#: usr/share/big-driver-manager/ui/window.py:54
-msgid "Wireless network adapter drivers."
-msgstr "Kablosuz ağ adaptörü sürücüleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
-#: usr/share/big-driver-manager/ui/window.py:60
-msgid "Wired network adapter drivers."
-msgstr "Kablolu ağ adaptörü sürücüleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
-#: usr/share/big-driver-manager/ui/window.py:66
-msgid "Bluetooth adapter drivers."
-msgstr "Bluetooth bağdaştırıcısı sürücüleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
-#: usr/share/big-driver-manager/ui/window.py:72
-msgid "Digital TV tuner firmware."
-msgstr "Dijital TV tuner yazılımı."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
-#: usr/share/big-driver-manager/ui/window.py:78
-msgid "Audio device firmware."
-msgstr "Ses cihazı yazılımı."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
-#: usr/share/big-driver-manager/ui/window.py:84
-msgid "Webcam device firmware."
-msgstr "Webcam cihazı yazılımı."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
-#: usr/share/big-driver-manager/ui/window.py:90
-msgid "Touchscreen device firmware."
-msgstr "Dokunmatik ekran cihazı yazılımı."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
-#: usr/share/big-driver-manager/ui/window.py:96
-msgid "Printer drivers and support packages."
-msgstr "Yazıcı sürücüleri ve destek paketleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
-#: usr/share/big-driver-manager/ui/window.py:102
-msgid "3D printer firmware."
-msgstr "3D yazıcı yazılımı."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 105
-#: usr/share/big-driver-manager/ui/window.py:108
-msgid "Scanner drivers and SANE backends."
-msgstr "Tarayıcı sürücüleri ve SANE arka uçları."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 111
-#: usr/share/big-driver-manager/ui/window.py:114
-msgid "Additional firmware packages."
-msgstr "Ek firmware paketleri."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 189
-#: usr/share/big-driver-manager/ui/window.py:198
-msgid "Home"
-msgstr "Ana Sayfa"
-
-# File: usr/share/big-driver-manager/ui/window.py, line: 89
-#: usr/share/big-driver-manager/ui/window.py:200
-msgid "Kernel"
-msgstr "Çekirdek"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 191
-#: usr/share/big-driver-manager/ui/window.py:201
-msgid "Video"
-msgstr "Video"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 231
-#: usr/share/big-driver-manager/ui/window.py:242
-msgid "A system reboot is recommended to apply changes."
-msgstr ""
-"Değişikliklerin uygulanması için sistemin yeniden başlatılması önerilir."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 269
-#: usr/share/big-driver-manager/ui/window.py:285
-msgid "Content"
-msgstr "İçerik"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 328
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 623
-#: usr/share/big-driver-manager/ui/window.py:338
-#: usr/share/big-driver-manager/ui/window.py:656
-msgid "Showing drivers detected as compatible with your computer"
-msgstr "Bilgisayarınızla uyumlu olarak algılanan sürücüler gösteriliyor"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 327
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 329
-#: usr/share/big-driver-manager/ui/window.py:348
-#: usr/share/big-driver-manager/ui/window.py:350
-msgid "Show all drivers"
-msgstr "Tüm sürücüleri göster"
-
-# File: usr/share/big-driver-manager/ui/window.py, line: 129
-#: usr/share/big-driver-manager/ui/window.py:362
-msgid "Menu"
-msgstr "Menü"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 318
-#: usr/share/big-driver-manager/ui/window.py:364
-msgid "Application menu"
-msgstr "Uygulama menüsü"
-
-# File: usr/share/big-driver-manager/ui/window.py, line: 134
-#: usr/share/big-driver-manager/ui/window.py:367
-msgid "About"
-msgstr "Hakkında"
-
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/window.py:515
-msgid "Hardware detection failed. Check system logs for details."
-msgstr ""
-"Donanım algılama başarısız oldu. Ayrıntılar için sistem günlüklerini kontrol "
-"edin."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 534
-#: usr/share/big-driver-manager/ui/window.py:627
-#, python-brace-format
-msgid "Obsolete kernel: {} — no longer receives security updates"
-msgstr "Eski çekirdek: {} — artık güvenlik güncellemeleri almıyor"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 538
-#: usr/share/big-driver-manager/ui/window.py:631
-msgid "Manage"
-msgstr "Üstesinden gelmek"
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 619
-#: usr/share/big-driver-manager/ui/window.py:652
-msgid "Showing all drivers, including incompatible ones"
-msgstr "Tüm sürücüler gösteriliyor, uyumsuz olanlar dahil"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 173
-#: usr/share/big-driver-manager/utils/desc_translate.py:173
-msgid "Printing driver for"
-msgstr "Yazdırma sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 174
-#: usr/share/big-driver-manager/utils/desc_translate.py:174
-msgid "Printer driver for"
-msgstr "Yazıcı sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 175
-#: usr/share/big-driver-manager/utils/desc_translate.py:175
-msgid "Driver for the"
-msgstr "Sürücü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 176
-#: usr/share/big-driver-manager/utils/desc_translate.py:176
-msgid "Driver for"
-msgstr "Sürücü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 177
-#: usr/share/big-driver-manager/utils/desc_translate.py:177
-msgid "Driver set (printing and scanning) for"
-msgstr "Sürücü seti (yazdırma ve tarama) için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 178
-#: usr/share/big-driver-manager/utils/desc_translate.py:178
-msgid "Complete stand-alone driver set (printing and scanning) for"
-msgstr "Tam bağımsız sürücü seti (yazdırma ve tarama) için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 179
-#: usr/share/big-driver-manager/utils/desc_translate.py:179
-msgid "LPR and CUPS driver for the"
-msgstr "LPR ve CUPS sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 180
-#: usr/share/big-driver-manager/utils/desc_translate.py:180
-msgid "LPR and CUPS driver for"
-msgstr "LPR ve CUPS sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 181
-#: usr/share/big-driver-manager/utils/desc_translate.py:181
-msgid "LPR driver and CUPS wrapper for"
-msgstr "LPR sürücüsü ve CUPS sarmalayıcısı için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 182
-#: usr/share/big-driver-manager/utils/desc_translate.py:182
-msgid "LPR driver for"
-msgstr "LPR sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 183
-#: usr/share/big-driver-manager/utils/desc_translate.py:183
-msgid "CUPS wrapper for"
-msgstr "CUPS sarmalayıcısı için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 184
-#: usr/share/big-driver-manager/utils/desc_translate.py:184
-msgid "CUPS driver for the"
-msgstr "CUPS sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 185
-#: usr/share/big-driver-manager/utils/desc_translate.py:185
-msgid "CUPS driver for"
-msgstr "CUPS sürücüsü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 186
-#: usr/share/big-driver-manager/utils/desc_translate.py:186
-msgid "CUPS and LPR drivers for the"
-msgstr "CUPS ve LPR sürücüleri için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 187
-#: usr/share/big-driver-manager/utils/desc_translate.py:187
-msgid "CUPS printer driver"
-msgstr "CUPS yazıcı sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 188
-#: usr/share/big-driver-manager/utils/desc_translate.py:188
-msgid "CUPS driver"
-msgstr "CUPS sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 189
-#: usr/share/big-driver-manager/utils/desc_translate.py:189
-msgid "color multifunction printer"
-msgstr "renkli çok işlevli yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 190
-#: usr/share/big-driver-manager/utils/desc_translate.py:190
-msgid "multifunction printer"
-msgstr "çok işlevli yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 191
-#: usr/share/big-driver-manager/utils/desc_translate.py:191
-msgid "ink tank multifunction printer"
-msgstr "mürekkep tanklı çok işlevli yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 192
-#: usr/share/big-driver-manager/utils/desc_translate.py:192
-msgid "Wi-Fi multifunction printer"
-msgstr "Wi-Fi çok işlevli yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 193
-#: usr/share/big-driver-manager/utils/desc_translate.py:193
-msgid "color laser printer"
-msgstr "renkli lazer yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 194
-#: usr/share/big-driver-manager/utils/desc_translate.py:194
-msgid "laser printer driver"
-msgstr "lazer yazıcı sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 195
-#: usr/share/big-driver-manager/utils/desc_translate.py:195
-msgid "laser printer"
-msgstr "lazer yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 196
-#: usr/share/big-driver-manager/utils/desc_translate.py:196
-msgid "inkjet printer driver"
-msgstr "mürekkep püskürtmeli yazıcı sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 197
-#: usr/share/big-driver-manager/utils/desc_translate.py:197
-msgid "inkjet printer"
-msgstr "mürekkep püskürtmeli yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 198
-#: usr/share/big-driver-manager/utils/desc_translate.py:198
-msgid "inkjet printers"
-msgstr "mürekkep püskürtmeli yazıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 199
-#: usr/share/big-driver-manager/utils/desc_translate.py:199
-msgid "label and receipt printer"
-msgstr "etiket ve fiş yazıcısı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 200
-#: usr/share/big-driver-manager/utils/desc_translate.py:200
-msgid "label printer"
-msgstr "etiket yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 201
-#: usr/share/big-driver-manager/utils/desc_translate.py:201
-msgid "laser printers"
-msgstr "lazer yazıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 202
-#: usr/share/big-driver-manager/utils/desc_translate.py:202
-msgid "printer communication"
-msgstr "yazıcı iletişimi"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 203
-#: usr/share/big-driver-manager/utils/desc_translate.py:203
-msgid "print system integration"
-msgstr "yazdırma sistemi entegrasyonu"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 204
-#: usr/share/big-driver-manager/utils/desc_translate.py:204
-msgid "series inkjet printer"
-msgstr "seri mürekkep püskürtmeli yazıcı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 205
-#: usr/share/big-driver-manager/utils/desc_translate.py:205
-msgid "multifunction inkjet"
-msgstr "çok işlevli mürekkep püskürtmeli"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 206
-#: usr/share/big-driver-manager/utils/desc_translate.py:206
-msgid "(printer communication)"
-msgstr "(yazıcı iletişimi)"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 207
-#: usr/share/big-driver-manager/utils/desc_translate.py:207
-msgid "(print system integration)"
-msgstr "(yazdırma sistemi entegrasyonu)"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 208
-#: usr/share/big-driver-manager/utils/desc_translate.py:208
-msgid "Wi-Fi driver for"
-msgstr "için Wi-Fi sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 209
-#: usr/share/big-driver-manager/utils/desc_translate.py:209
-msgid "DKMS driver for"
-msgstr "için DKMS sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 210
-#: usr/share/big-driver-manager/utils/desc_translate.py:210
-msgid "Wired network driver for"
-msgstr "için Kablolu ağ sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 211
-#: usr/share/big-driver-manager/utils/desc_translate.py:211
-msgid "Bluetooth driver for"
-msgstr "için Bluetooth sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 212
-#: usr/share/big-driver-manager/utils/desc_translate.py:212
-msgid "Kernel driver module for"
-msgstr "Çekirdek sürücü modülü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 213
-#: usr/share/big-driver-manager/utils/desc_translate.py:213
-msgid "wireless driver"
-msgstr "kablosuz sürücü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 214
-#: usr/share/big-driver-manager/utils/desc_translate.py:214
-msgid "wireless adapters"
-msgstr "kablosuz adaptörler"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 215
-#: usr/share/big-driver-manager/utils/desc_translate.py:215
-msgid "USB wireless adapters"
-msgstr "USB kablosuz adaptörler"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 216
-#: usr/share/big-driver-manager/utils/desc_translate.py:216
-msgid "USB dual-band wireless adapters"
-msgstr "USB çift bant kablosuz adaptörler"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 217
-#: usr/share/big-driver-manager/utils/desc_translate.py:217
-msgid "USB tri-band wireless adapters"
-msgstr "USB üç bant kablosuz adaptörler"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 218
-#: usr/share/big-driver-manager/utils/desc_translate.py:218
-msgid "Ethernet driver"
-msgstr "Ethernet sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 219
-#: usr/share/big-driver-manager/utils/desc_translate.py:219
-msgid "monitor mode & frame injection support"
-msgstr "monitör modu ve çerçeve enjeksiyonu desteği"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 220
-#: usr/share/big-driver-manager/utils/desc_translate.py:220
-msgid "Firmware for"
-msgstr "Firmware için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 221
-#: usr/share/big-driver-manager/utils/desc_translate.py:221
-msgid "Bluetooth firmware for"
-msgstr "Bluetooth firmware'i için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 222
-#: usr/share/big-driver-manager/utils/desc_translate.py:222
-msgid "Firmware files for"
-msgstr "Firmware dosyaları için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 223
-#: usr/share/big-driver-manager/utils/desc_translate.py:223
-msgid "digital TV (DVB) receivers"
-msgstr "dijital TV (DVB) alıcıları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 224
-#: usr/share/big-driver-manager/utils/desc_translate.py:224
-msgid "digital TV (DVB) tuners"
-msgstr "dijital TV (DVB) tunerleri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 225
-#: usr/share/big-driver-manager/utils/desc_translate.py:225
-msgid "digital TV tuner"
-msgstr "dijital TV tuner"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 226
-#: usr/share/big-driver-manager/utils/desc_translate.py:226
-msgid "wireless networking chips"
-msgstr "kablosuz ağ yongaları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 227
-#: usr/share/big-driver-manager/utils/desc_translate.py:227
-msgid "Wi-Fi chips"
-msgstr "Wi-Fi yongaları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 228
-#: usr/share/big-driver-manager/utils/desc_translate.py:228
-msgid "wireless cards"
-msgstr "kablosuz kartlar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 229
-#: usr/share/big-driver-manager/utils/desc_translate.py:229
-msgid "network adapters"
-msgstr "ağ adaptörleri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 230
-#: usr/share/big-driver-manager/utils/desc_translate.py:230
-msgid "touchscreen controllers"
-msgstr "dokunmatik ekran denetleyicileri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 231
-#: usr/share/big-driver-manager/utils/desc_translate.py:231
-msgid "USB audio interfaces"
-msgstr "USB ses arayüzleri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 232
-#: usr/share/big-driver-manager/utils/desc_translate.py:232
-msgid "USB logic analyzers"
-msgstr "USB mantık analizörleri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 233
-#: usr/share/big-driver-manager/utils/desc_translate.py:233
-msgid "USB MIDI interfaces"
-msgstr "USB MIDI arayüzleri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 234
-#: usr/share/big-driver-manager/utils/desc_translate.py:234
-msgid "controller cards"
-msgstr "denetleyici kartları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 235
-#: usr/share/big-driver-manager/utils/desc_translate.py:235
-msgid "controller chips"
-msgstr "denetleyici çipleri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 236
-#: usr/share/big-driver-manager/utils/desc_translate.py:236
-msgid "SCSI controllers"
-msgstr "SCSI denetleyicileri"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 237
-#: usr/share/big-driver-manager/utils/desc_translate.py:237
-msgid "legacy devices only"
-msgstr "sadece eski cihazlar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 238
-#: usr/share/big-driver-manager/utils/desc_translate.py:238
-msgid "stable tested version"
-msgstr "kararlı test edilmiş sürüm"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 239
-#: usr/share/big-driver-manager/utils/desc_translate.py:239
-msgid "latest release"
-msgstr "en son sürüm"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 240
-#: usr/share/big-driver-manager/utils/desc_translate.py:240
-msgid "Scanner software for"
-msgstr "için Tarayıcı yazılımı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 241
-#: usr/share/big-driver-manager/utils/desc_translate.py:241
-msgid "Scanner driver for"
-msgstr "için Tarayıcı sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 242
-#: usr/share/big-driver-manager/utils/desc_translate.py:242
-msgid "SANE scanner driver for"
-msgstr "için SANE tarayıcı sürücüsü"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 243
-#: usr/share/big-driver-manager/utils/desc_translate.py:243
-msgid "scanner plugin for Image Scan!"
-msgstr "Image Scan! için tarayıcı eklentisi"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 244
-#: usr/share/big-driver-manager/utils/desc_translate.py:244
-msgid "Image Scan! plugin for"
-msgstr "Image Scan! eklentisi|||"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 245
-#: usr/share/big-driver-manager/utils/desc_translate.py:245
-msgid "Image Scan! frontend for"
-msgstr "Image Scan! ön yüzü için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 246
-#: usr/share/big-driver-manager/utils/desc_translate.py:246
-msgid "Data files required by"
-msgstr ""
-"Tarayıcılar ve çok fonksiyonlu yazıcılar tarafından gereken veri dosyaları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 247
-#: usr/share/big-driver-manager/utils/desc_translate.py:247
-msgid "scanners and multifunction printers"
-msgstr "çok fonksiyonlu yazıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 248
-#: usr/share/big-driver-manager/utils/desc_translate.py:248
-msgid "multifunction printers"
-msgstr "düz yataklı ve hepsi bir arada tarayıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 249
-#: usr/share/big-driver-manager/utils/desc_translate.py:249
-msgid "flatbed and all-in-one scanners"
-msgstr "USB ve ağ tarayıcıları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 250
-#: usr/share/big-driver-manager/utils/desc_translate.py:250
-msgid "USB and network scanners"
-msgstr "ağ ve USB tarayıcıları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 251
-#: usr/share/big-driver-manager/utils/desc_translate.py:251
-msgid "network and USB scanners"
-msgstr "taşınabilir belge tarayıcısı"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 252
-#: usr/share/big-driver-manager/utils/desc_translate.py:252
-msgid "portable document scanner"
-msgstr "tek dokunuşla tarama"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 253
-#: usr/share/big-driver-manager/utils/desc_translate.py:253
-msgid "one-touch scanning"
-msgstr "tarayıcı panel düğmesi"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 254
-#: usr/share/big-driver-manager/utils/desc_translate.py:254
-msgid "scanner panel button"
-msgstr "yazıcılar, tarafından sağlanır"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 255
-#: usr/share/big-driver-manager/utils/desc_translate.py:255
-msgid "printers, supplied by"
-msgstr "için PPD dosyaları"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 256
-#: usr/share/big-driver-manager/utils/desc_translate.py:256
-msgid "PPD files for"
-msgstr "Yönetim aracı, yönetmek için"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 257
-#: usr/share/big-driver-manager/utils/desc_translate.py:257
-msgid "Administration tool for managing"
-msgstr "ağınızdaki yazıcılar"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 258
-#: usr/share/big-driver-manager/utils/desc_translate.py:258
-msgid "printers on your network"
-msgstr "(özel)"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/desc_translate.py, line: 259
-#: usr/share/big-driver-manager/utils/desc_translate.py:259
-msgid "(proprietary)"
-msgstr "(telif hakkı saklı)"
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 28
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:28
-msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the "
-"best option. Install an alternative only if you have connection problems."
-msgstr ""
-"Wi-Fi'niz zaten çalışıyorsa, yerleşik çekirdek sürücüsü genellikle en iyi "
-"seçenektir. Bağlantı sorunlarınız varsa alternatif bir sürücü yükleyin."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 33
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:33
-msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is "
-"only needed for very new or rare hardware."
-msgstr ""
-"Kablolu ağ adaptörleri neredeyse her zaman kutudan çıktığı gibi çalışır. Çok "
-"yeni veya nadir donanımlar için ekstra sürücü gerekir."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 37
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:37
-msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, "
-"installing the firmware for your adapter may solve the problem."
-msgstr ""
-"Bazı Bluetooth adaptörleri çalışmak için ekstra firmware gerektirir. "
-"Eşleştirme başarısız olursa, adaptörünüz için firmware yüklemek sorunu "
-"çözebilir."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 42
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:42
-msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device "
-"won't be recognized by the system."
-msgstr ""
-"Dijital TV tunerları genellikle özel firmware gerektirir. Firmware olmadan "
-"cihaz sistem tarafından tanınmaz."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 46
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:46
-msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is "
-"only needed for specific USB audio interfaces."
-msgstr ""
-"Çoğu ses cihazı çekirdeğe entegre ALSA ile çalışır. Sadece belirli USB ses "
-"arayüzleri için ekstra firmware gerekir."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 50
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:50
-msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or "
-"enable additional features."
-msgstr ""
-"Çoğu web kamerası otomatik olarak çalışır. Ek firmware görüntü kalitesini "
-"artırabilir veya ek özellikler sağlayabilir."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 54
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid ""
-"If your touchscreen doesn't respond, installing the matching firmware "
-"usually fixes it."
-msgstr ""
-"Dokunmatik ekranınız yanıt vermiyorsa, uyumlu firmware yüklemek genellikle "
-"sorunu çözer."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 58
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:58
-msgid ""
-"Printer drivers let the system communicate with your model. If the printer "
-"was detected on your network or USB, installing the matching driver is "
-"recommended."
-msgstr ""
-"Yazıcı sürücüleri sistemin modelinizle iletişim kurmasını sağlar. Yazıcı "
-"ağınızda veya USB'de algılandıysa, uyumlu sürücüyü yüklemeniz önerilir."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 63
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid ""
-"3D printer firmware enables communication between the slicer and the printer "
-"hardware."
-msgstr ""
-"3D yazıcı firmware'i, dilimleyici ile yazıcı donanımı arasında iletişimi "
-"sağlar."
-
-# File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 67
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid ""
-"Scanner drivers (SANE backends) allow scanning applications to communicate "
-"with your scanner model."
-msgstr ""
-"Tarayıcı sürücüleri (SANE arka uçları), tarama uygulamalarının tarayıcı "
-"modelinizle iletişim kurmasını sağlar."
-
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 111
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:70
-msgid "Additional firmware packages for specialized hardware."
-msgstr "Özel donanım için ek firmware paketleri."
-
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:97
-msgid "Package"
-msgstr ""
-
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:103
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:105
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:109
-msgid "Status"
-msgstr ""
-
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:103
-msgid "Detected and installed"
-msgstr ""
-
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:105
-msgid "Detected — not yet installed"
-msgstr ""
-
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:109
-msgid "Available in repository"
-msgstr ""
-
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:114
-msgid "Device"
-msgstr ""
