@@ -7,15 +7,25 @@ Big Driver Manager - Application Class
 This module defines the main application class for the Big Driver Manager.
 """
 
-import os
 import json
+import os
+import tempfile
 import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gdk, Gio, Gtk, Adw
 
-from core.constants import APP_ID, APP_NAME, CONFIG_DIR, SETTINGS_FILE
+from core.constants import (
+    APP_ID,
+    APP_NAME,
+    CONFIG_DIR,
+    SETTINGS_FILE,
+    WINDOW_DEFAULT_HEIGHT,
+    WINDOW_DEFAULT_WIDTH,
+    WINDOW_MIN_HEIGHT,
+    WINDOW_MIN_WIDTH,
+)
 from core.logging_config import init_app_logging, get_logger
 from utils import _
 from utils.style_manager import StyleManager
@@ -25,6 +35,12 @@ from ui.window import KernelManagerWindow
 class SettingsManager:
     """Settings manager for the Big Driver Manager application."""
 
+    _INT_SETTINGS = {
+        "window_width": (WINDOW_MIN_WIDTH, 7680),
+        "window_height": (WINDOW_MIN_HEIGHT, 4320),
+    }
+    _BOOL_SETTINGS = {"window_maximized"}
+
     def __init__(self):
         """Initialize the settings manager."""
         self.settings_file = SETTINGS_FILE
@@ -32,21 +48,80 @@ class SettingsManager:
         os.makedirs(CONFIG_DIR, exist_ok=True)
         self._settings = self._load_settings()
 
+    def _sanitize_settings(self, data: object) -> dict:
+        """Return validated known settings while preserving unknown keys."""
+        if not isinstance(data, dict):
+            self._logger.warning("Ignoring invalid settings payload of type %s", type(data))
+            return {}
+
+        sanitized = {
+            key: value
+            for key, value in data.items()
+            if key not in self._INT_SETTINGS and key not in self._BOOL_SETTINGS
+        }
+        for key, (minimum, maximum) in self._INT_SETTINGS.items():
+            if key not in data:
+                continue
+            value = data[key]
+            if type(value) is not int:
+                self._logger.warning("Ignoring non-integer setting %s=%r", key, value)
+                continue
+            if not minimum <= value <= maximum:
+                self._logger.warning(
+                    "Ignoring out-of-range setting %s=%r (expected %d-%d)",
+                    key,
+                    value,
+                    minimum,
+                    maximum,
+                )
+                continue
+            sanitized[key] = value
+
+        for key in self._BOOL_SETTINGS:
+            if key not in data:
+                continue
+            value = data[key]
+            if isinstance(value, bool):
+                sanitized[key] = value
+            else:
+                self._logger.warning("Ignoring non-boolean setting %s=%r", key, value)
+
+        return sanitized
+
     def _load_settings(self) -> dict:
         """Load settings from file."""
         if os.path.exists(self.settings_file):
             try:
                 with open(self.settings_file, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    return self._sanitize_settings(json.load(f))
             except Exception as e:
                 self._logger.error("Error loading settings: %s", e)
         return {}
 
     def _save_settings(self) -> bool:
         """Save settings to file."""
+        sanitized = self._sanitize_settings(self._settings)
+        self._settings = sanitized
         try:
-            with open(self.settings_file, "w", encoding="utf-8") as f:
-                json.dump(self._settings, f, indent=2, ensure_ascii=False)
+            settings_dir = os.path.dirname(self.settings_file) or CONFIG_DIR
+            os.makedirs(settings_dir, exist_ok=True)
+            fd, tmp_path = tempfile.mkstemp(
+                prefix="settings.",
+                suffix=".tmp",
+                dir=settings_dir,
+            )
+            try:
+                with os.fdopen(fd, "w", encoding="utf-8") as f:
+                    json.dump(sanitized, f, indent=2, ensure_ascii=False)
+                    f.flush()
+                    os.fsync(f.fileno())
+                os.replace(tmp_path, self.settings_file)
+            except Exception:
+                try:
+                    os.unlink(tmp_path)
+                except OSError:
+                    pass
+                raise
             return True
         except Exception as e:
             self._logger.error("Error saving settings: %s", e)
@@ -110,12 +185,11 @@ class KernelManagerApplication(Adw.Application):
 
         # Restore window size from settings
         sm = self.settings_manager
-        width = sm.get("window_width", None)
-        height = sm.get("window_height", None)
+        width = sm.get("window_width", WINDOW_DEFAULT_WIDTH)
+        height = sm.get("window_height", WINDOW_DEFAULT_HEIGHT)
 
         win = KernelManagerWindow(application=app)
-        if width and height:
-            win.set_default_size(int(width), int(height))
+        win.set_default_size(width, height)
         if sm.get("window_maximized", False):
             win.maximize()
 

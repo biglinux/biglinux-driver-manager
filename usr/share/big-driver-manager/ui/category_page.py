@@ -156,6 +156,11 @@ class CategorySection(BaseSection):
         net_spinner = Gtk.Spinner()
         net_spinner.set_spinning(True)
         net_spinner.set_size_request(16, 16)
+        net_spinner.set_tooltip_text(_("Searching for printers on the network"))
+        net_spinner.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Searching for printers on the network")],
+        )
         self._net_scan_box.append(net_spinner)
         net_label = Gtk.Label(label=_("Searching for printers on the network…"))
         net_label.add_css_class("dim-label")
@@ -621,16 +626,21 @@ class CategorySection(BaseSection):
         if response != "install":
             return
         pkg = getattr(item, "package", item.name)
+        plan = self._installer.build_install_plan(pkg)
         if self.progress_dialog:
             self.progress_dialog.show_progress(
                 _("Installing {}").format(pkg),
-                _("Please wait..."),
+                plan.initial_message,
+                cancel_callback=(
+                    self._installer.cancel_operation if plan.cancelable else None
+                ),
             )
         self._installer.install_package(
             package=pkg,
             progress_callback=self._on_progress,
             output_callback=self._on_output,
             complete_callback=self._on_complete,
+            plan=plan,
         )
 
     def _on_remove_clicked(
@@ -663,6 +673,7 @@ class CategorySection(BaseSection):
             self.progress_dialog.show_progress(
                 _("Removing {}").format(pkg),
                 _("Please wait..."),
+                cancel_callback=self._installer.cancel_operation,
             )
         self._installer.remove_package(
             package=pkg,
@@ -683,6 +694,7 @@ class CategorySection(BaseSection):
         def _update() -> bool:
             if success:
                 self._refresh_installed_status()
+                self._request_refresh()
                 window = self.get_root()
                 if hasattr(window, "show_reboot_banner"):
                     window.show_reboot_banner()

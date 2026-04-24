@@ -9,6 +9,7 @@ Sidebar navigation using Adw.NavigationSplitView:
 """
 
 import threading
+from types import SimpleNamespace
 
 import gi
 
@@ -37,6 +38,7 @@ from ui.mesa_page import MesaSection
 from ui.kernel_page import KernelSection
 from ui.category_page import CategorySection
 from ui.progress_dialog import ProgressDialog
+from utils.accessibility import animations_enabled
 from utils.i18n import _
 
 # Category definitions: (id, icon, title, description)
@@ -115,6 +117,41 @@ _CATEGORY_DEFS = [
     ),
 ]
 
+_MODULE_ERROR_CATEGORIES = {"wifi", "ethernet", "bluetooth"}
+_FIRMWARE_ERROR_CATEGORIES = {
+    "wifi",
+    "bluetooth",
+    "dvb",
+    "sound",
+    "webcam",
+    "touchscreen",
+    "printer3d",
+    "scanner",
+    "other",
+}
+_PERIPHERAL_ERROR_CATEGORIES = {"printer", "scanner"}
+
+
+def _future_result_or_fallback(future, fallback, logger, label: str):
+    """Return a future result or a safe fallback while logging the failure."""
+    try:
+        return future.result()
+    except Exception as exc:
+        logger.warning("%s failed: %s", label, exc)
+        return fallback
+
+
+def _empty_database_view():
+    """Return a database-like object when asset loading fails."""
+    return SimpleNamespace(
+        modules=[],
+        firmware=[],
+        printers=[],
+        scanners=[],
+        get_modules_by_category=lambda _category: [],
+        get_firmware_by_category=lambda _category: [],
+    )
+
 
 class KernelManagerWindow(Adw.ApplicationWindow):
     """Main window with sidebar navigation."""
@@ -122,11 +159,15 @@ class KernelManagerWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self._logger = get_logger("Window")
+        self._detection_in_progress = False
+        self._refresh_pending = False
         self.set_title(APP_NAME)
         self.set_default_size(WINDOW_DEFAULT_WIDTH, WINDOW_DEFAULT_HEIGHT)
         self.set_size_request(360, 480)
         self.set_resizable(True)
         self._category_sections: dict[str, CategorySection] = {}
+        self._sidebar_buttons: dict[str, Gtk.ToggleButton] = {}
+        self._sidebar_syncing = False
         self._build_ui()
         GLib.idle_add(self._start_detection)
 
@@ -158,16 +199,18 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         self._installed_page.set_progress_dialog(self.progress_dialog)
         self.mesa_section.set_progress_dialog(self.progress_dialog)
         self.kernel_section.set_progress_dialog(self.progress_dialog)
+        self._installed_page.set_refresh_handler(self.refresh_data_async)
+        self.mesa_section.set_refresh_handler(self.refresh_data_async)
+        self.kernel_section.set_refresh_handler(self.refresh_data_async)
         for sec in self._category_sections.values():
             sec.set_progress_dialog(self.progress_dialog)
+            sec.set_refresh_handler(self.refresh_data_async)
         self._home.set_install_handler(
             self.mesa_section.mhwd_manager, self.progress_dialog
         )
 
         # Initial state — select Home
-        first_row = self._sidebar_list.get_row_at_index(0)
-        if first_row:
-            self._sidebar_list.select_row(first_row)
+        self._select_sidebar_page("welcome")
 
         self.set_content(self._split_view)
 
@@ -189,10 +232,15 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         sidebar_scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         sidebar_scroll.set_vexpand(True)
 
-        self._sidebar_list = Gtk.ListBox()
-        self._sidebar_list.set_selection_mode(Gtk.SelectionMode.SINGLE)
-        self._sidebar_list.add_css_class("navigation-sidebar")
-        self._sidebar_list.connect("row-selected", self._on_sidebar_row_selected)
+        self._sidebar_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
+        self._sidebar_box.add_css_class("sidebar-nav")
+        self._sidebar_box.set_margin_start(8)
+        self._sidebar_box.set_margin_end(8)
+        self._sidebar_box.set_margin_top(8)
+        self._sidebar_box.set_margin_bottom(8)
+        self._sidebar_box.update_property(
+            [Gtk.AccessibleProperty.LABEL], [_("Categories")]
+        )
 
         _SIDEBAR_ITEMS = [
             ("welcome", "go-home-symbolic", _("Home")),
@@ -206,14 +254,19 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         ]
 
         for page_id, icon_name, label_text in _SIDEBAR_ITEMS:
-            row = Gtk.ListBoxRow()
-            row.set_name(page_id)
-            row.update_property([Gtk.AccessibleProperty.LABEL], [label_text])
+            btn = Gtk.ToggleButton()
+            btn.set_name(page_id)
+            btn.add_css_class("flat")
+            btn.add_css_class("sidebar-nav-btn")
+            btn.set_halign(Gtk.Align.FILL)
+            btn.set_hexpand(True)
+            btn.set_tooltip_text(label_text)
+            btn.update_property([Gtk.AccessibleProperty.LABEL], [label_text])
             box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
             box.set_margin_start(4)
             box.set_margin_end(4)
-            box.set_margin_top(2)
-            box.set_margin_bottom(2)
+            box.set_margin_top(6)
+            box.set_margin_bottom(6)
             icon = Gtk.Image.new_from_icon_name(icon_name)
             icon.set_pixel_size(18)
             box.append(icon)
@@ -221,10 +274,12 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             lbl.set_halign(Gtk.Align.START)
             lbl.set_hexpand(True)
             box.append(lbl)
-            row.set_child(box)
-            self._sidebar_list.append(row)
+            btn.set_child(box)
+            btn.connect("toggled", self._on_sidebar_button_toggled, page_id)
+            self._sidebar_buttons[page_id] = btn
+            self._sidebar_box.append(btn)
 
-        sidebar_scroll.set_child(self._sidebar_list)
+        sidebar_scroll.set_child(self._sidebar_box)
         sidebar_toolbar.set_content(sidebar_scroll)
         return Adw.NavigationPage.new(sidebar_toolbar, _("Categories"))
 
@@ -246,25 +301,37 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         content_toolbar.add_top_bar(self._reboot_banner)
 
         self._stack = Gtk.Stack()
-        self._stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
-        self._stack.set_transition_duration(150)
+        if animations_enabled():
+            self._stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
+            self._stack.set_transition_duration(150)
+        else:
+            self._stack.set_transition_type(Gtk.StackTransitionType.NONE)
+            self._stack.set_transition_duration(0)
 
         self._home = HomePage(on_navigate=self._navigate_to)
-        self._stack.add_named(self._wrap_scroll(self._home, clamp=900), "welcome")
+        self._stack.add_titled(
+            self._wrap_scroll(self._home, clamp=900), "welcome", _("Home")
+        )
 
         self._installed_page = InstalledPage()
-        self._stack.add_named(
-            self._wrap_scroll(self._installed_page, clamp=1200, margin=32), "installed"
+        self._stack.add_titled(
+            self._wrap_scroll(self._installed_page, clamp=1200, margin=32),
+            "installed",
+            _("Installed"),
         )
 
         self.kernel_section = KernelSection()
-        self._stack.add_named(
-            self._wrap_scroll(self.kernel_section, clamp=1200, margin=32), "kernel"
+        self._stack.add_titled(
+            self._wrap_scroll(self.kernel_section, clamp=1200, margin=32),
+            "kernel",
+            _("Kernel"),
         )
 
         self.mesa_section = MesaSection()
-        self._stack.add_named(
-            self._wrap_scroll(self.mesa_section, clamp=1200, margin=32), "video"
+        self._stack.add_titled(
+            self._wrap_scroll(self.mesa_section, clamp=1200, margin=32),
+            "video",
+            _("Video"),
         )
 
         for cat_id, icon_name, cat_title, cat_desc in _CATEGORY_DEFS:
@@ -276,8 +343,8 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 icon_name=icon_name,
                 category_id=cat_id,
             )
-            self._stack.add_named(
-                self._wrap_scroll(section, clamp=1200, margin=32), cat_id
+            self._stack.add_titled(
+                self._wrap_scroll(section, clamp=1200, margin=32), cat_id, cat_title
             )
             self._category_sections[cat_id] = section
 
@@ -380,37 +447,41 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         cat_id for cat_id, *_ in _CATEGORY_DEFS if cat_id != "video"
     }
 
-    def _on_sidebar_row_selected(
-        self, _listbox: Gtk.ListBox, row: Gtk.ListBoxRow | None
+    def _on_sidebar_button_toggled(
+        self, button: Gtk.ToggleButton, page_id: str
     ) -> None:
-        if row is None:
+        if self._sidebar_syncing:
             return
-        page_id = row.get_name()
-        self._stack.set_visible_child_name(page_id)
-        self._show_all_box.set_visible(page_id in self._DRIVER_PAGES)
-        # On collapsed split view, show content pane
-        self._split_view.set_show_content(True)
+        if not button.get_active():
+            if self._stack.get_visible_child_name() == page_id:
+                self._select_sidebar_page(page_id)
+            return
+        self._select_sidebar_page(page_id)
+
+    def _select_sidebar_page(self, page_id: str) -> None:
+        self._sidebar_syncing = True
+        try:
+            for current_page, button in self._sidebar_buttons.items():
+                button.set_active(current_page == page_id)
+            self._stack.set_visible_child_name(page_id)
+            self._show_all_box.set_visible(page_id in self._DRIVER_PAGES)
+            # On collapsed split view, show content pane
+            self._split_view.set_show_content(True)
+        finally:
+            self._sidebar_syncing = False
 
     def _navigate_to(self, page_name: str) -> None:
         """Navigate to a page (used by home page action rows)."""
-        # Find and select the sidebar row for the target page
-        idx = 0
-        row = self._sidebar_list.get_row_at_index(idx)
-        while row is not None:
-            if row.get_name() == page_name:
-                self._sidebar_list.select_row(row)
-                return
-            idx += 1
-            row = self._sidebar_list.get_row_at_index(idx)
+        if page_name in self._sidebar_buttons:
+            self._select_sidebar_page(page_name)
+            self._sidebar_buttons[page_name].grab_focus()
+            return
         # Page not in sidebar (shouldn't happen) — direct fallback
         self._stack.set_visible_child_name(page_name)
 
     def _on_key_pressed(self, _ctrl, keyval, _keycode, _state) -> bool:
         if keyval == Gdk.KEY_Escape:
-            # Go home
-            first_row = self._sidebar_list.get_row_at_index(0)
-            if first_row:
-                self._sidebar_list.select_row(first_row)
+            self._select_sidebar_page("welcome")
             return True
         return False
 
@@ -419,48 +490,102 @@ class KernelManagerWindow(Adw.ApplicationWindow):
     # ------------------------------------------------------------------
 
     def _start_detection(self) -> bool:
+        if self._detection_in_progress:
+            self._refresh_pending = True
+            return False
+        self._detection_in_progress = True
         threading.Thread(target=self._detect_hardware, daemon=True).start()
         return False
+
+    def refresh_data_async(self) -> None:
+        """Queue a full data refresh after a successful operation."""
+        GLib.idle_add(self._start_detection)
 
     def _detect_hardware(self) -> None:
         from concurrent.futures import ThreadPoolExecutor
 
+        category_errors: set[str] = set()
         try:
-            db = DriverDatabase()
+            try:
+                db = DriverDatabase.get_default()
+            except Exception as exc:
+                self._logger.error("Driver database load failed: %s", exc)
+                db = _empty_database_view()
+                category_errors.update(
+                    {cat_id for cat_id, *_rest in _CATEGORY_DEFS if cat_id != "video"}
+                )
 
             # Phase 1: run independent I/O tasks in parallel
-            with ThreadPoolExecutor(max_workers=5) as pool:
+            with ThreadPoolExecutor(max_workers=6) as pool:
                 fut_devices = pool.submit(detect_all_devices)
                 fut_installed = pool.submit(fetch_installed_set)
                 fut_mhwd = pool.submit(MhwdManager().get_video_drivers)
                 fut_gpu = pool.submit(MesaSection._detect_gpu_info)
+                fut_vm = pool.submit(MesaSection._detect_virtual_machine)
 
                 km = KernelManager()
                 fut_kernels = pool.submit(km.get_available_kernels)
 
-                devices = fut_devices.result()
-                installed_pkgs = fut_installed.result()
-                mhwd_video = fut_mhwd.result()
-                gpu_info = fut_gpu.result()
-                available_kernels = fut_kernels.result()
+                devices = _future_result_or_fallback(
+                    fut_devices, [], self._logger, "Device detection"
+                )
+                installed_pkgs = _future_result_or_fallback(
+                    fut_installed, set(), self._logger, "Installed package scan"
+                )
+                mhwd_video = _future_result_or_fallback(
+                    fut_mhwd, [], self._logger, "MHWD video detection"
+                )
+                gpu_info = _future_result_or_fallback(
+                    fut_gpu,
+                    {"nvidia_loaded": False, "nvidia_pkg": False, "gpus": []},
+                    self._logger,
+                    "GPU detection",
+                )
+                is_vm = _future_result_or_fallback(
+                    fut_vm, False, self._logger, "VM detection"
+                )
+                available_kernels = _future_result_or_fallback(
+                    fut_kernels, [], self._logger, "Kernel availability scan"
+                )
 
             # Phase 2: match drivers (depends on installed_pkgs)
-            match_modules(db, devices, installed_cache=installed_pkgs)
-            match_firmware(db, installed_cache=installed_pkgs)
-            update_peripheral_install_status(db, installed_cache=installed_pkgs)
+            try:
+                match_modules(db, devices, installed_cache=installed_pkgs)
+            except Exception as exc:
+                self._logger.warning("Module matching failed: %s", exc)
+                category_errors.update(_MODULE_ERROR_CATEGORIES)
+            try:
+                match_firmware(db, installed_cache=installed_pkgs)
+            except Exception as exc:
+                self._logger.warning("Firmware matching failed: %s", exc)
+                category_errors.update(_FIRMWARE_ERROR_CATEGORIES)
+            try:
+                update_peripheral_install_status(db, installed_cache=installed_pkgs)
+            except Exception as exc:
+                self._logger.warning("Peripheral status update failed: %s", exc)
+                category_errors.update(_PERIPHERAL_ERROR_CATEGORIES)
 
             # Kernel info
-            running_pkg = km.get_running_kernel_package()
-            installed_kernels = km.get_installed_kernels()
-            available_names = {k["name"] for k in available_kernels}
-            obsolete_kernels = [
-                {**k, "obsolete": True}
-                for k in installed_kernels
-                if k["name"] != running_pkg and k["name"] not in available_names
-            ]
+            try:
+                running_pkg = km.get_running_kernel_package()
+            except Exception as exc:
+                self._logger.warning("Running kernel detection failed: %s", exc)
+                running_pkg = ""
+            try:
+                installed_kernels = km.get_installed_kernels()
+            except Exception as exc:
+                self._logger.warning("Installed kernel scan failed: %s", exc)
+                installed_kernels = []
+            obsolete_kernels = KernelManager.compute_obsolete_kernels(
+                installed_kernels, available_kernels, running_pkg
+            )
             # Mesa info
-            mesa = MesaManager()
-            mesa_drivers = mesa.get_available_drivers(installed_set=installed_pkgs)
+            try:
+                mesa = MesaManager()
+                mesa_drivers = mesa.get_available_drivers(installed_set=installed_pkgs)
+            except Exception as exc:
+                self._logger.warning("Mesa driver scan failed: %s", exc)
+                mesa_drivers = []
 
             def _populate_phase1() -> bool:
                 """Home, kernel, mesa — lightweight, show content fast."""
@@ -473,6 +598,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                     running_pkg,
                     obsolete_kernels,
                 )
+                self.mesa_section.set_is_vm(is_vm)
                 self.mesa_section.set_preloaded_data(
                     mesa_drivers,
                     gpu_info,
@@ -483,7 +609,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
 
             def _populate_phase2() -> bool:
                 """Category sections — heavier (printers/scanners)."""
-                self._populate_category_sections(db)
+                self._populate_category_sections(db, category_errors)
                 self._installed_page.set_installed_data(
                     modules=list(db.modules),
                     firmware=list(db.firmware),
@@ -496,7 +622,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 )
                 # Start async network printer discovery
                 cat = self._category_sections
-                if "printer" in cat:
+                if "printer" in cat and "printer" not in category_errors:
                     cat["printer"].show_network_scan()
                     threading.Thread(
                         target=self._detect_network_printers,
@@ -517,6 +643,15 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 return False
 
             GLib.idle_add(_show_error)
+        finally:
+            def _finish_detection() -> bool:
+                self._detection_in_progress = False
+                if self._refresh_pending:
+                    self._refresh_pending = False
+                    self._start_detection()
+                return False
+
+            GLib.idle_add(_finish_detection)
 
     def _detect_network_printers(self, db: DriverDatabase) -> None:
         """Run network printer discovery in background and update UI."""
@@ -548,43 +683,58 @@ class KernelManagerWindow(Adw.ApplicationWindow):
     # Populate helpers (called from GLib.idle_add in _detect_hardware)
     # ------------------------------------------------------------------
 
-    def _populate_category_sections(self, db) -> None:
+    def _populate_category_sections(self, db, category_errors: set[str] | None = None) -> None:
         """Populate each category page with detected items."""
         cat = self._category_sections
+        errors = category_errors or set()
+
+        def _set_or_error(category_id: str, items) -> None:
+            if category_id not in cat:
+                return
+            if category_id in errors:
+                cat[category_id].show_error(
+                    _("Hardware detection for this category failed. Try refreshing later.")
+                )
+                return
+            cat[category_id].set_items(items)
+
         if "wifi" in cat:
-            cat["wifi"].set_items(
+            _set_or_error(
+                "wifi",
                 [
                     *db.get_modules_by_category("wifi"),
                     *db.get_firmware_by_category("wifi"),
-                ]
+                ],
             )
         if "ethernet" in cat:
-            cat["ethernet"].set_items(db.get_modules_by_category("ethernet"))
+            _set_or_error("ethernet", db.get_modules_by_category("ethernet"))
         if "bluetooth" in cat:
-            cat["bluetooth"].set_items(
+            _set_or_error(
+                "bluetooth",
                 [
                     *db.get_modules_by_category("bluetooth"),
                     *db.get_firmware_by_category("bluetooth"),
-                ]
+                ],
             )
         if "dvb" in cat:
-            cat["dvb"].set_items(db.get_firmware_by_category("dvb"))
+            _set_or_error("dvb", db.get_firmware_by_category("dvb"))
         if "sound" in cat:
-            cat["sound"].set_items(db.get_firmware_by_category("sound"))
+            _set_or_error("sound", db.get_firmware_by_category("sound"))
         if "webcam" in cat:
-            cat["webcam"].set_items(db.get_firmware_by_category("webcam"))
+            _set_or_error("webcam", db.get_firmware_by_category("webcam"))
         if "touchscreen" in cat:
-            cat["touchscreen"].set_items(db.get_firmware_by_category("touchscreen"))
+            _set_or_error("touchscreen", db.get_firmware_by_category("touchscreen"))
         if "printer" in cat:
-            cat["printer"].set_items(db.printers)
+            _set_or_error("printer", db.printers)
         if "printer3d" in cat:
-            cat["printer3d"].set_items(db.get_firmware_by_category("printer3d"))
+            _set_or_error("printer3d", db.get_firmware_by_category("printer3d"))
         if "scanner" in cat:
-            cat["scanner"].set_items(
-                [*db.scanners, *db.get_firmware_by_category("scanner")]
+            _set_or_error(
+                "scanner",
+                [*db.scanners, *db.get_firmware_by_category("scanner")],
             )
         if "other" in cat:
-            cat["other"].set_items(db.get_firmware_by_category("other"))
+            _set_or_error("other", db.get_firmware_by_category("other"))
 
     def _populate_home_dashboard(
         self,
@@ -679,7 +829,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             website=APP_WEBSITE,
             issue_url="https://github.com/communitybig/big-driver-manager/issues",
             copyright="© 2024-2025 BigLinux Team",
-            license_type=Gtk.License.GPL_3_0,
+            license_type=Gtk.License.MIT_X11,
             developers=[APP_AUTHOR],
             artists=[APP_AUTHOR],
         )

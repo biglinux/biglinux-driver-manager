@@ -5,7 +5,7 @@ pkgname=biglinux-driver-manager
 pkgdesc="Application to manage kernel and mesa drivers for BigLinux"
 # Uncomment and edit the following lines as needed
 depends=(
-  'python>=3.6'
+  'python>=3.10'
   'python-gobject'
   'gtk4'
   'libadwaita'
@@ -21,7 +21,7 @@ pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
 epoch=1
 arch=('any')
-license=('GPL')
+license=('MIT')
 url="https://github.com/biglinux/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
@@ -33,49 +33,20 @@ elif [ -e "pkgbuild.install" ]; then
     install=pkgbuild.install
 fi
 
-prepare() {
-    cd "${srcdir}/${pkgname}"
-    # Add any preparation steps here, if needed
-    # For example: patch -p1 < "${srcdir}/patch-file.patch"
-}
-
-build() {
-    cd "${srcdir}/${pkgname}"
-    # Add build steps here, if needed
-    # For example: make
-}
-
-check() {
-    cd "${srcdir}/${pkgname}"
-    # Add check/test steps here, if needed
-    # For example: make check
-}
-
 package() {
     cd "${srcdir}/${pkgname}"
 
-    # Determine the correct source directory
-    if [ -d "${pkgname}" ]; then
-        srcdir="${srcdir}/${pkgname}/${pkgname}"
-    else
-        srcdir="${srcdir}/${pkgname}"
+    # Install tree directly: the repo layout already mirrors the final
+    # install prefix (usr/...), so a single cp -a is enough.
+    if [ -d usr ]; then
+        cp -a usr "${pkgdir}/"
     fi
 
-    # Install files
-    local dirs=("usr" "etc" "opt")
-    for dir in "${dirs[@]}"; do
-        if [ -d "${srcdir}/${dir}" ]; then
-            cp -a "${srcdir}/${dir}" "${pkgdir}/"
-        fi
-    done
-
-    # Install license file if present
-    if [ -f "LICENSE" ]; then
+    # Install license and documentation if present
+    if [ -f LICENSE ]; then
         install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     fi
-
-    # Install documentation if present
-    if [ -f "README.md" ]; then
+    if [ -f README.md ]; then
         install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
     fi
 }

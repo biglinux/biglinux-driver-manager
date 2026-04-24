@@ -24,6 +24,7 @@ class BaseSection(Gtk.Box):
         super().__init__(orientation=orientation, spacing=spacing)
         # No margins — the parent Clamp + content box handles them
         self._loading_box = None
+        self._refresh_handler = None
 
     def _show_loading(self) -> None:
         if self._loading_box is not None:
@@ -92,6 +93,13 @@ class BaseSection(Gtk.Box):
 
     def set_progress_dialog(self, dialog) -> None:
         self.progress_dialog = dialog
+
+    def set_refresh_handler(self, handler) -> None:
+        self._refresh_handler = handler
+
+    def _request_refresh(self) -> None:
+        if callable(self._refresh_handler):
+            self._refresh_handler()
 
     def _create_badge(self, text: str, style_class: str) -> Gtk.Box:
         """Create a colored pill badge (badge-box + color class)."""

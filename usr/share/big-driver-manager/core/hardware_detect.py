@@ -113,19 +113,22 @@ def detect_sdio_devices() -> list[DetectedDevice]:
     if not sdio_base.is_dir():
         return devices
     for entry in sdio_base.iterdir():
-        vendor_file = entry / "vendor"
-        device_file = entry / "device"
-        if vendor_file.exists() and device_file.exists():
-            vendor = vendor_file.read_text().strip().replace("0x", "").upper()
-            device = device_file.read_text().strip().replace("0x", "").upper()
-            devices.append(
-                DetectedDevice(
-                    bus="sdio",
-                    vendor_id=vendor,
-                    device_id=device,
-                    name=entry.name,
+        try:
+            vendor_file = entry / "vendor"
+            device_file = entry / "device"
+            if vendor_file.exists() and device_file.exists():
+                vendor = vendor_file.read_text().strip().replace("0x", "").upper()
+                device = device_file.read_text().strip().replace("0x", "").upper()
+                devices.append(
+                    DetectedDevice(
+                        bus="sdio",
+                        vendor_id=vendor,
+                        device_id=device,
+                        name=entry.name,
+                    )
                 )
-            )
+        except OSError as exc:
+            _logger.warning("Failed to inspect SDIO device %s: %s", entry, exc)
     _logger.info("SDIO devices detected: %d", len(devices))
     return devices
 
@@ -140,8 +143,19 @@ def detect_all_devices() -> list[DetectedDevice]:
 
 
 def detect_missing_firmware() -> set[str]:
-    """Parse dmesg for missing firmware file paths."""
+    """Parse dmesg for missing firmware file paths.
+
+    Some distributions restrict ``dmesg`` to root via ``kernel.dmesg_restrict``.
+    In that case ``_run`` returns an empty string and we log a hint so the
+    silent result is greppable in the app log.
+    """
     output = _run(["dmesg"], timeout=5)
+    if not output:
+        _logger.info(
+            "dmesg returned no output (kernel.dmesg_restrict may be enabled); "
+            "missing-firmware detection will be skipped"
+        )
+        return set()
     missing: set[str] = set()
     # Pattern: "firmware: failed to load X" or "Direct firmware load for X failed"
     patterns = [

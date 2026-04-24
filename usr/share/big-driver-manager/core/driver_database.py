@@ -102,6 +102,27 @@ def _read_text(path: Path) -> str:
 class DriverDatabase:
     """Loads and holds all driver/firmware/peripheral databases."""
 
+    # Shared cache keyed by assets directory. Loading the flat-file DB is
+    # I/O heavy (thousands of files) so we memoize by path.
+    _cache: "dict[str, DriverDatabase]" = {}
+
+    @classmethod
+    def get_default(cls, assets_dir: Path | None = None) -> "DriverDatabase":
+        """Return a cached DriverDatabase for the given assets directory."""
+        base = Path(assets_dir) if assets_dir else _ASSETS_DIR
+        key = str(base.resolve()) if base.exists() else str(base)
+        cached = cls._cache.get(key)
+        if cached is not None:
+            return cached
+        instance = cls(base)
+        cls._cache[key] = instance
+        return instance
+
+    @classmethod
+    def reset_cache(cls) -> None:
+        """Clear the cached instances (used by tests and ``refresh()``)."""
+        cls._cache.clear()
+
     def __init__(self, assets_dir: Path | None = None) -> None:
         self._base = assets_dir or _ASSETS_DIR
         self.modules: list[DriverModule] = []

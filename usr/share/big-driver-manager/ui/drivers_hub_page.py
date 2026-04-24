@@ -379,15 +379,21 @@ class DriversHubPage(Gtk.Box):
         if response != "install":
             return
         pkg = getattr(item, "package", getattr(item, "name", str(item)))
+        plan = self._installer.build_install_plan(pkg)
         if self.progress_dialog:
             self.progress_dialog.show_progress(
-                _("Installing {}").format(pkg), _("Please wait...")
+                _("Installing {}").format(pkg),
+                plan.initial_message,
+                cancel_callback=(
+                    self._installer.cancel_operation if plan.cancelable else None
+                ),
             )
         self._installer.install_package(
             package=pkg,
             progress_callback=self._on_progress,
             output_callback=self._on_output,
             complete_callback=self._on_complete,
+            plan=plan,
         )
 
     def _on_progress(self, fraction: float, text: str) -> None:

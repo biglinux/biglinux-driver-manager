@@ -19,6 +19,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib
 
 from core.constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
+from utils.accessibility import animations_enabled
 from utils.i18n import _
 
 if TYPE_CHECKING:
@@ -108,6 +109,11 @@ class HomePage(Gtk.Box):
         self._spinner.set_size_request(48, 48)
         self._spinner.set_halign(Gtk.Align.CENTER)
         self._spinner.set_spinning(True)
+        self._spinner.set_tooltip_text(_("Checking your system"))
+        self._spinner.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Checking your system")],
+        )
         self._loading_box.append(self._spinner)
 
         self._loading_label = Gtk.Label(label=_("Checking your system…"))
@@ -180,7 +186,10 @@ class HomePage(Gtk.Box):
         self._rec_inner.append(self._rec_toggle_btn)
 
         self._rec_revealer = Gtk.Revealer()
-        self._rec_revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_DOWN)
+        if animations_enabled():
+            self._rec_revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_DOWN)
+        else:
+            self._rec_revealer.set_transition_type(Gtk.RevealerTransitionType.NONE)
         self._rec_revealer.set_reveal_child(False)
         self._rec_installed_box = Gtk.Box(
             orientation=Gtk.Orientation.VERTICAL, spacing=4
@@ -196,6 +205,10 @@ class HomePage(Gtk.Box):
         self._rec_details_btn = Gtk.Button()
         self._rec_details_btn.set_label(_("Install recommended"))
         self._rec_details_btn.add_css_class("suggested-action")
+        self._rec_details_btn.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Install recommended")],
+        )
         self._rec_details_btn.connect("clicked", self._on_install_recommended)
         self._rec_btn_box.append(self._rec_details_btn)
 
@@ -395,6 +408,10 @@ class HomePage(Gtk.Box):
         if len(missing) > 1:
             self._rec_details_btn.set_label(
                 _("Install all {} recommended").format(len(missing))
+            )
+            self._rec_details_btn.update_property(
+                [Gtk.AccessibleProperty.LABEL],
+                [self._rec_details_btn.get_label()],
             )
             self._rec_details_btn.set_visible(True)
             self._rec_btn_box.set_visible(True)
@@ -644,7 +661,7 @@ class HomePage(Gtk.Box):
             _("Downloading packages..."),
             cancel_callback=self._mhwd_manager.cancel_operation,
         )
-        self._mhwd_manager._run_pacman_command(
+        self._mhwd_manager.run_pacman_command(
             ["-S", "--noconfirm", "--needed", *names],
             progress_callback=self._on_progress_update,
             output_callback=self._on_terminal_output,
@@ -714,7 +731,7 @@ class HomePage(Gtk.Box):
             _("Downloading package..."),
             cancel_callback=self._mhwd_manager.cancel_operation,
         )
-        self._mhwd_manager._run_pacman_command(
+        self._mhwd_manager.run_pacman_command(
             ["-S", "--noconfirm", "--needed", pkg_name],
             progress_callback=self._on_progress_update,
             output_callback=self._on_terminal_output,
@@ -733,6 +750,10 @@ class HomePage(Gtk.Box):
                     _("{} installed successfully!").format(pkg_name)
                 )
                 btn.set_label(_("Installed"))
+                btn.update_property(
+                    [Gtk.AccessibleProperty.LABEL],
+                    [_("Installed {}").format(pkg_name)],
+                )
                 btn.set_sensitive(False)
                 btn.remove_css_class("pill")
                 btn.add_css_class("success")

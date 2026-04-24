@@ -6,7 +6,7 @@ Kernel Manager Application - Package Manager
 
 This module provides a query-only interface to interact with pacman package
 manager for listing and checking packages. Actual install/remove operations
-are handled by BaseManager._run_pacman_command.
+are handled by BaseManager.run_pacman_command.
 """
 
 import re
@@ -16,6 +16,23 @@ import threading
 
 class PackageManager:
     """Interface for querying the pacman package manager."""
+
+    # Process-wide default instance so every manager shares the same cache
+    # (pacman -Q is slow-ish on big systems; repeating it per manager is
+    # wasteful). Use ``PackageManager.get_default()`` to retrieve it.
+    _default_instance: "PackageManager | None" = None
+
+    @classmethod
+    def get_default(cls) -> "PackageManager":
+        """Return the shared default instance (lazy-initialized)."""
+        if cls._default_instance is None:
+            cls._default_instance = cls()
+        return cls._default_instance
+
+    @classmethod
+    def reset_default(cls) -> None:
+        """Reset the default instance (used by tests)."""
+        cls._default_instance = None
 
     def __init__(self) -> None:
         self._installed_cache: list[dict[str, str]] | None = None

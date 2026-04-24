@@ -2,7 +2,15 @@
 # When a USB device is added, check if we have a driver available.
 # Uses systemd-run to avoid blocking the udev event queue.
 
-# USB devices: trigger on device add (not interfaces)
+# USB devices: trigger on device add (not interfaces).
+# Filter out USB hubs (class 09), which produce noisy events and never
+# need extra drivers — this is the single biggest source of spurious
+# notifications on desktops with many internal/external hubs.
 ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", \
   ATTR{idVendor}!="", ATTR{idProduct}!="", \
-  RUN+="/usr/bin/systemd-run --no-block /usr/share/big-driver-manager/udev-notify.sh usb $attr{idVendor} $attr{idProduct}"
+  ATTR{bDeviceClass}!="09", \
+  RUN+="/usr/bin/systemd-run --no-block \
+    --property=RuntimeDirectory=big-driver-manager \
+    --property=RuntimeDirectoryMode=0755 \
+    --property=RuntimeDirectoryPreserve=yes \
+    /usr/share/big-driver-manager/udev-notify.sh usb $attr{idVendor} $attr{idProduct}"

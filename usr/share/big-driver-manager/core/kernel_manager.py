@@ -45,11 +45,17 @@ class KernelInfo(TypedDict, total=False):
 class KernelManager(BaseManager):
     """Manager for handling Linux kernels."""
 
-    def __init__(self):
-        """Initialize the kernel manager."""
+    def __init__(self, package_manager: PackageManager | None = None) -> None:
+        """Initialize the kernel manager.
+
+        Args:
+            package_manager: Optional shared ``PackageManager`` instance.
+                Defaults to ``PackageManager.get_default()`` so cache hits
+                are shared across managers.
+        """
         super().__init__()
         self._logger = get_logger("KernelManager")
-        self.package_manager = PackageManager()
+        self.package_manager = package_manager or PackageManager.get_default()
 
         # Use patterns from constants
         self.kernel_patterns = KERNEL_PATTERNS
@@ -281,6 +287,21 @@ class KernelManager(BaseManager):
             kernel["optimized"] = True
             kernel["opt_level"] = match.group(1)
 
+    def get_modules_for_install(self, kernel_name: str) -> list[str]:
+        """Public entry point: list module packages to install with *kernel_name*.
+
+        Equivalent to :meth:`_get_kernel_modules`; exposed so UI code does
+        not need to touch private helpers when building the install plan.
+        """
+        return self._get_kernel_modules(kernel_name)
+
+    def get_modules_for_remove(self, kernel_name: str) -> list[str]:
+        """Public entry point: list installed module packages of *kernel_name*.
+
+        Equivalent to :meth:`_get_installed_kernel_modules`.
+        """
+        return self._get_installed_kernel_modules(kernel_name)
+
     def _get_kernel_modules(self, kernel_name: str) -> list[str]:
         """
         Detect modules installed on the running kernel and return equivalent
@@ -365,6 +386,30 @@ class KernelManager(BaseManager):
         result = subprocess.run(cmd, capture_output=True, text=True, check=False)
         return result.returncode == 0 and package_name in result.stdout.strip().splitlines()
 
+    @staticmethod
+    def compute_obsolete_kernels(
+        installed: list[KernelInfo],
+        available: list[KernelInfo],
+        running_pkg: str,
+    ) -> list[KernelInfo]:
+        """Return the subset of *installed* kernels no longer in *available*.
+
+        Pure function — takes pre-fetched lists so callers that already have
+        them (e.g. the main window) don't trigger duplicate pacman queries.
+        The running kernel is never flagged as obsolete even if its package
+        is missing from the repos (removing it would soft-brick the system).
+        """
+        available_names = {k["name"] for k in available}
+        obsolete: list[KernelInfo] = []
+        for kernel in installed:
+            name = kernel["name"]
+            if name == running_pkg:
+                continue
+            if name not in available_names:
+                kernel = {**kernel, "obsolete": True}
+                obsolete.append(kernel)
+        return obsolete
+
     def get_obsolete_kernels(self) -> list[KernelInfo]:
         """Return kernels that are installed but no longer available in repos.
 
@@ -373,19 +418,8 @@ class KernelManager(BaseManager):
         """
         installed = self.get_installed_kernels()
         available = self.get_available_kernels()
-        available_names = {k["name"] for k in available}
         running_pkg = self.get_running_kernel_package()
-
-        obsolete = []
-        for kernel in installed:
-            name = kernel["name"]
-            # Skip the running kernel — never flag it as obsolete
-            if name == running_pkg:
-                continue
-            if name not in available_names:
-                kernel["obsolete"] = True
-                obsolete.append(kernel)
-
+        obsolete = self.compute_obsolete_kernels(installed, available, running_pkg)
         self._logger.info("Obsolete kernels: %s", [k["name"] for k in obsolete])
         return obsolete
 
@@ -416,7 +450,7 @@ class KernelManager(BaseManager):
 
         # Use base manager's run_pacman_command
         args = ["-S", "--noconfirm"] + packages
-        self._run_pacman_command(
+        self.run_pacman_command(
             args=args,
             progress_callback=progress_callback,
             output_callback=output_callback,
@@ -469,7 +503,7 @@ class KernelManager(BaseManager):
 
         # Use base manager's run_pacman_command
         args = ["-R", "--noconfirm"] + packages
-        self._run_pacman_command(
+        self.run_pacman_command(
             args=args,
             progress_callback=progress_callback,
             output_callback=output_callback,

@@ -7,11 +7,15 @@
 
 set -euo pipefail
 
-readonly CACHE_FILE="/var/cache/big-driver-manager/ids_cache.txt"
-readonly DIALOG_SCRIPT="/usr/share/big-driver-manager/udev-driver-dialog.py"
-readonly BLACKLIST_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/big-driver-manager/ignored_devices.json"
-readonly SHOWN_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/big-driver-manager/login_check_shown"
-readonly MAX_DIALOGS=3  # Don't overwhelm the user
+readonly CACHE_FILE="${BDM_CACHE_FILE:-/var/cache/big-driver-manager/ids_cache.txt}"
+readonly DIALOG_SCRIPT="${BDM_DIALOG_SCRIPT:-/usr/share/big-driver-manager/udev-driver-dialog.py}"
+readonly BLACKLIST_FILE="${BDM_BLACKLIST_FILE:-${XDG_CONFIG_HOME:-$HOME/.config}/big-driver-manager/ignored_devices.json}"
+readonly SHOWN_FILE="${BDM_SHOWN_FILE:-${XDG_CONFIG_HOME:-$HOME/.config}/big-driver-manager/login_check_shown}"
+readonly MAX_DIALOGS="${BDM_MAX_DIALOGS:-3}"  # Don't overwhelm the user
+readonly PACMAN_BIN="${BDM_PACMAN_BIN:-pacman}"
+readonly PYTHON_BIN="${BDM_PYTHON_BIN:-python3}"
+readonly LSPCI_BIN="${BDM_LSPCI_BIN:-lspci}"
+readonly DMESG_BIN="${BDM_DMESG_BIN:-dmesg}"
 
 [[ -f "$CACHE_FILE" ]] || exit 0
 [[ -f "$DIALOG_SCRIPT" ]] || exit 0
@@ -24,17 +28,26 @@ if [[ -f "$SHOWN_FILE" ]]; then
     [[ $SHOWN_AGE -lt 3600 ]] && exit 0
 fi
 
-# Load blacklist into a lookup string
-BLACKLIST=""
+# Load blacklist into an associative array for O(1) lookups. Entries look
+# like "VENDOR:DEVICE" or "fw:<package-name>".
+declare -A BLACKLIST_SET=()
 if [[ -f "$BLACKLIST_FILE" ]]; then
-    BLACKLIST=$(python3 -c "
-import json, sys
+    while IFS= read -r entry; do
+        [[ -n "$entry" ]] && BLACKLIST_SET["$entry"]=1
+    done < <(BLACKLIST_PATH="$BLACKLIST_FILE" "$PYTHON_BIN" -c '
+import json
+import os
+import sys
 try:
-    data = json.load(open('$BLACKLIST_FILE'))
-    print('\n'.join(data) if isinstance(data, list) else '')
+    with open(os.environ["BLACKLIST_PATH"], encoding="utf-8") as handle:
+        data = json.load(handle)
+    if isinstance(data, list):
+        for entry in data:
+            if isinstance(entry, str) and entry:
+                print(entry)
 except Exception:
-    pass
-" 2>/dev/null || true)
+    sys.exit(0)
+' 2>/dev/null || true)
 fi
 
 # Collect all USB VID:PID from sysfs
@@ -56,7 +69,7 @@ while IFS= read -r line; do
     if [[ -n "$vid_did" ]]; then
         PCI_IDS["${vid_did^^}"]=1
     fi
-done < <(lspci -n 2>/dev/null || true)
+done < <("$LSPCI_BIN" -n 2>/dev/null || true)
 
 # Merge all present device IDs
 declare -A ALL_IDS
@@ -83,18 +96,16 @@ if [[ -n "$ID_PATTERN" ]]; then
         bus="${ALL_IDS[$cache_id]:-usb}"
 
         # Already installed?
-        pacman -Qq "$package" &>/dev/null && continue
+        "$PACMAN_BIN" -Qq "$package" &>/dev/null && continue
 
-        # Blacklisted?
-        if [[ -n "$BLACKLIST" ]] && echo "$BLACKLIST" | grep -qF "$cache_id"; then
-            continue
-        fi
+        # Blacklisted? O(1) lookup.
+        [[ -n "${BLACKLIST_SET[$cache_id]+_}" ]] && continue
 
         vid="${cache_id%%:*}"
         did="${cache_id#*:}"
 
         # Launch dialog
-        python3 "$DIALOG_SCRIPT" "$bus" "$vid" "$did" "$category" "$driver_name" "$package" "$description" &
+        "$PYTHON_BIN" "$DIALOG_SCRIPT" "$bus" "$vid" "$did" "$category" "$driver_name" "$package" "$description" &
         dialog_count=$((dialog_count + 1))
 
         # Small delay between dialogs to avoid overlap
@@ -104,11 +115,11 @@ if [[ -n "$ID_PATTERN" ]]; then
 fi
 
 # ─── Firmware check via dmesg ───
-readonly FW_CACHE="/var/cache/big-driver-manager/firmware_cache.txt"
+readonly FW_CACHE="${BDM_FW_CACHE_FILE:-/var/cache/big-driver-manager/firmware_cache.txt}"
 
 if [[ -f "$FW_CACHE" ]] && [[ $dialog_count -lt $MAX_DIALOGS ]]; then
     # Extract firmware names that failed to load
-    MISSING_FW=$(dmesg 2>/dev/null | grep -oP 'Direct firmware load for \K\S+(?= failed)' | sort -u || true)
+    MISSING_FW=$("$DMESG_BIN" 2>/dev/null | grep -oP 'Direct firmware load for \K\S+(?= failed)' | sort -u || true)
 
     if [[ -n "$MISSING_FW" ]]; then
         # Build grep pattern from missing firmware paths
@@ -121,15 +132,13 @@ if [[ -f "$FW_CACHE" ]] && [[ $dialog_count -lt $MAX_DIALOGS ]]; then
             [[ -n "${FW_SHOWN[$package]+_}" ]] && continue
 
             # Already installed?
-            pacman -Qq "$package" &>/dev/null && continue
+            "$PACMAN_BIN" -Qq "$package" &>/dev/null && continue
 
-            # Blacklisted?
-            if [[ -n "$BLACKLIST" ]] && echo "$BLACKLIST" | grep -qF "fw:$package"; then
-                continue
-            fi
+            # Blacklisted? O(1) lookup.
+            [[ -n "${BLACKLIST_SET["fw:$package"]+_}" ]] && continue
 
             FW_SHOWN["$package"]=1
-            python3 "$DIALOG_SCRIPT" "firmware" "0000" "0000" "firmware" "$package" "$package" "$description" &
+            "$PYTHON_BIN" "$DIALOG_SCRIPT" "firmware" "0000" "0000" "firmware" "$package" "$package" "$description" &
             dialog_count=$((dialog_count + 1))
             sleep 2
         done < <(grep -E "^(${FW_PATTERN})" "$FW_CACHE" || true)

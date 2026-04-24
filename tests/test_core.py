@@ -237,6 +237,13 @@ class TestAddKernelFlags(unittest.TestCase):
     def test_xanmod_not_flagged_as_lts(self):
         """Xanmod kernels should not get implicit LTS flag."""
         mgr = self._make_manager()
+        # Pretend 6.12 is a known LTS; xanmod on that version should NOT
+        # inherit the LTS flag just because of the numeric version.
+        mgr._lts_versions = ["612"]
+        kernel = {"name": "linux612-xanmod", "version": "6.12.10-1"}
+        mgr._add_kernel_flags(kernel)
+        self.assertTrue(kernel.get("xanmod"))
+        self.assertFalse(kernel.get("lts", False))
 
     def test_cachyos_flag(self):
         mgr = self._make_manager()
@@ -476,6 +483,35 @@ class TestSettingsManager(unittest.TestCase):
         mgr = self._make_manager()
         self.assertEqual(mgr._settings, {})
 
+    def test_load_invalid_values_is_sanitized(self):
+        with open(self._settings_file, "w", encoding="utf-8") as f:
+            f.write(
+                '{"window_width": "wide", "window_height": 999999, "window_maximized": "yes"}'
+            )
+
+        mgr = self._make_manager()
+        self.assertEqual(mgr._settings, {})
+
+    def test_save_uses_atomic_replace_without_leftover_temp_files(self):
+        mgr = self._make_manager()
+        mgr._settings = {
+            "window_width": 1200,
+            "window_height": 800,
+            "window_maximized": True,
+        }
+
+        self.assertTrue(mgr._save_settings())
+        temp_files = [
+            name
+            for name in os.listdir(self._tmpdir)
+            if name.startswith("settings.") and name.endswith(".tmp")
+        ]
+        self.assertEqual(temp_files, [])
+        mgr2 = self._make_manager()
+        self.assertEqual(mgr2.get("window_width"), 1200)
+        self.assertEqual(mgr2.get("window_height"), 800)
+        self.assertTrue(mgr2.get("window_maximized"))
+
 
 class TestProgressDialogGetLineTag(unittest.TestCase):
     """Tests for ProgressDialog._get_line_tag."""
@@ -525,6 +561,131 @@ class TestProgressDialogGetLineTag(unittest.TestCase):
     def test_no_tag(self):
         d = self._make_dialog()
         self.assertIsNone(d._get_line_tag("random output line"))
+
+
+class TestProgressDialogRunningState(unittest.TestCase):
+    """Tests for ProgressDialog.show_progress cancel semantics."""
+
+    class _FakeLabel:
+        def __init__(self):
+            self.text = None
+            self.visible = None
+
+        def set_text(self, text):
+            self.text = text
+
+        def set_visible(self, visible):
+            self.visible = visible
+
+    class _FakeProgressBar:
+        def __init__(self):
+            self.fraction = None
+            self.text = None
+
+        def set_fraction(self, fraction):
+            self.fraction = fraction
+
+        def set_text(self, text):
+            self.text = text
+
+    class _FakeBuffer:
+        def __init__(self):
+            self.text = None
+
+        def set_text(self, text, _length):
+            self.text = text
+
+    class _FakeExpander:
+        def __init__(self):
+            self.expanded = None
+
+        def set_expanded(self, expanded):
+            self.expanded = expanded
+
+    class _FakeButton:
+        def __init__(self):
+            self.visible = None
+
+        def set_visible(self, visible):
+            self.visible = visible
+
+    class _FakeStack:
+        def __init__(self):
+            self.name = None
+
+        def set_visible_child_name(self, name):
+            self.name = name
+
+    class _FakeSpinner:
+        def __init__(self):
+            self.started = False
+            self.stopped = False
+
+        def start(self):
+            self.started = True
+
+        def stop(self):
+            self.stopped = True
+
+    def _make_dialog(self):
+        from ui.progress_dialog import ProgressDialog
+
+        dialog = ProgressDialog.__new__(ProgressDialog)
+        dialog._parent_window = object()
+        dialog._title_label = self._FakeLabel()
+        dialog._status_label = self._FakeLabel()
+        dialog._step_label = self._FakeLabel()
+        dialog._progress_bar = self._FakeProgressBar()
+        dialog._terminal_buffer = self._FakeBuffer()
+        dialog._terminal_expander = self._FakeExpander()
+        dialog._cancel_btn = self._FakeButton()
+        dialog._close_btn = self._FakeButton()
+        dialog._icon_stack = self._FakeStack()
+        dialog._spinner = self._FakeSpinner()
+        dialog.set_can_close = lambda value: setattr(dialog, "_can_close", value)
+        dialog.present = lambda _parent: None
+        return dialog
+
+    def test_show_progress_hides_cancel_without_callback(self):
+        dialog = self._make_dialog()
+        dialog.show_progress("Title", "Working")
+        self.assertIsNone(dialog._cancel_callback)
+        self.assertFalse(dialog._cancel_btn.visible)
+
+    def test_show_progress_shows_cancel_with_callback(self):
+        dialog = self._make_dialog()
+        dialog.show_progress("Title", "Working", cancel_callback=lambda: None)
+        self.assertTrue(dialog._cancel_btn.visible)
+
+    def test_cancel_click_without_callback_is_noop(self):
+        dialog = self._make_dialog()
+        dialog.show_progress("Title", "Working")
+        dialog._on_cancel_clicked(None)
+        self.assertFalse(getattr(dialog, "_is_complete", False))
+        self.assertEqual(dialog._status_label.text, "Working")
+
+    def test_cancel_click_invokes_callback_and_marks_state(self):
+        dialog = self._make_dialog()
+        called = []
+        dialog.show_progress("Title", "Working", cancel_callback=lambda: called.append(True))
+        dialog._on_cancel_clicked(None)
+        from utils import _
+
+        self.assertEqual(called, [True])
+        self.assertTrue(dialog._is_complete)
+        self.assertEqual(dialog._status_label.text, _("Operation cancelled by user."))
+
+    def test_cancelled_dialog_ignores_late_result_updates(self):
+        from utils import _
+
+        dialog = self._make_dialog()
+        dialog.show_progress("Title", "Working", cancel_callback=lambda: None)
+        dialog._on_cancel_clicked(None)
+
+        dialog._show_result_idle(False, "Operation failed later.")
+        self.assertEqual(dialog._status_label.text, _("Operation cancelled by user."))
+        self.assertEqual(dialog._progress_bar.text, _("Cancelled"))
+        self.assertEqual(dialog._icon_stack.name, "error")
 
 
 class TestRetryableError(unittest.TestCase):
@@ -892,6 +1053,7 @@ class TestThreadLauncherInjection(unittest.TestCase):
 
         mgr = BaseManager(thread_launcher=fake_launcher)
         self.assertEqual(mgr._thread_launcher, fake_launcher)
+        self.assertEqual(calls, [])
 
 
 class TestMesaDriversJson(unittest.TestCase):
@@ -929,6 +1091,22 @@ class TestKernelInfoTypedDict(unittest.TestCase):
         all_keys = required | optional
         for key in ("name", "version", "installed", "rt", "lts", "obsolete"):
             self.assertIn(key, all_keys, f"Missing field '{key}' in KernelInfo")
+
+
+class TestInstalledPageHelpers(unittest.TestCase):
+    """Tests for InstalledPage group refresh helpers."""
+
+    def test_remove_item_from_groups_prunes_empty_categories(self):
+        from ui.installed_page import InstalledPage
+
+        target = MagicMock()
+        keep = MagicMock()
+        fake_page = type("FakePage", (), {"_groups": {"wifi": [target], "other": [keep]}})()
+
+        InstalledPage._remove_item_from_groups(fake_page, target)
+
+        self.assertNotIn("wifi", fake_page._groups)
+        self.assertEqual(fake_page._groups["other"], [keep])
 
 
 if __name__ == "__main__":

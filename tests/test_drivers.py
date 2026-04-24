@@ -248,6 +248,40 @@ class TestHardwareDetect(unittest.TestCase):
         self.assertFalse(result["nvidia"])
         self.assertTrue(result["linux"])
 
+    def test_detect_sdio_devices_ignores_oserror(self):
+        from core.hardware_detect import detect_sdio_devices
+
+        with TemporaryDirectory() as tmpdir:
+            base = Path(tmpdir)
+            good = base / "good"
+            good.mkdir()
+            (good / "vendor").write_text("0x024c\n")
+            (good / "device").write_text("0x1234\n")
+
+            broken = base / "broken"
+            broken.mkdir()
+            (broken / "vendor").write_text("0x0000\n")
+            (broken / "device").write_text("0x9999\n")
+
+            real_path = Path
+            original_read_text = Path.read_text
+
+            def fake_path(_value):
+                return real_path(tmpdir)
+
+            def flaky_read_text(path_obj, *args, **kwargs):
+                if path_obj.parent.name == "broken":
+                    raise OSError("device disappeared")
+                return original_read_text(path_obj, *args, **kwargs)
+
+            with patch("core.hardware_detect.Path", side_effect=fake_path):
+                with patch("pathlib.Path.read_text", new=flaky_read_text):
+                    devices = detect_sdio_devices()
+
+        self.assertEqual(len(devices), 1)
+        self.assertEqual(devices[0].vendor_id, "024C")
+        self.assertEqual(devices[0].device_id, "1234")
+
 
 class TestDriverInstaller(unittest.TestCase):
     """Tests for DriverInstaller."""
@@ -260,8 +294,32 @@ class TestDriverInstaller(unittest.TestCase):
             installer = DriverInstaller()
             self.assertIsInstance(installer, BaseManager)
 
-    @patch("core.base_manager.BaseManager._run_pacman_command")
-    def test_install_package_calls_pacman(self, mock_run):
+    @patch("core.driver_installer._is_in_repo", return_value=True)
+    def test_build_install_plan_for_repo_package(self, _mock_repo):
+        with patch("core.driver_installer.get_logger"):
+            from core.driver_installer import DriverInstaller
+
+            installer = DriverInstaller()
+            plan = installer.build_install_plan("test-pkg")
+
+        self.assertEqual(plan.source, "repo")
+        self.assertTrue(plan.cancelable)
+
+    @patch("core.driver_installer._is_in_repo", return_value=False)
+    def test_build_install_plan_for_aur_package(self, _mock_repo):
+        with patch("core.driver_installer.get_logger"):
+            from core.driver_installer import DriverInstaller
+
+            installer = DriverInstaller()
+            plan = installer.build_install_plan("aur-pkg")
+
+        self.assertEqual(plan.source, "aur")
+        self.assertFalse(plan.cancelable)
+        self.assertIn("pamac", plan.initial_message.lower())
+
+    @patch("core.driver_installer._is_in_repo", return_value=True)
+    @patch("core.base_manager.BaseManager.run_pacman_command")
+    def test_install_package_calls_pacman(self, mock_run, _mock_repo):
         with patch("core.driver_installer.get_logger"):
             from core.driver_installer import DriverInstaller
 
@@ -272,7 +330,18 @@ class TestDriverInstaller(unittest.TestCase):
             self.assertIn("-S", args)
             self.assertIn("test-pkg", args)
 
-    @patch("core.base_manager.BaseManager._run_pacman_command")
+    @patch("core.driver_installer.DriverInstaller._launch_pamac")
+    @patch("core.driver_installer._is_in_repo", return_value=False)
+    def test_install_package_uses_pamac_for_aur(self, _mock_repo, mock_pamac):
+        with patch("core.driver_installer.get_logger"):
+            from core.driver_installer import DriverInstaller
+
+            installer = DriverInstaller()
+            installer.install_package("aur-pkg")
+
+        mock_pamac.assert_called_once()
+
+    @patch("core.base_manager.BaseManager.run_pacman_command")
     def test_remove_package_calls_pacman(self, mock_run):
         with patch("core.driver_installer.get_logger"):
             from core.driver_installer import DriverInstaller
@@ -371,6 +440,40 @@ class TestNetworkPrinterDiscovery(unittest.TestCase):
         db.printers = []
         result = match_network_printers(db, [])
         self.assertEqual(result, 0)
+
+
+class TestWindowHelpers(unittest.TestCase):
+    """Tests for helper functions extracted from the main window flow."""
+
+    def test_future_result_or_fallback_success(self):
+        from ui.window import _future_result_or_fallback
+
+        future = MagicMock()
+        future.result.return_value = ["ok"]
+        logger = MagicMock()
+
+        result = _future_result_or_fallback(future, [], logger, "task")
+        self.assertEqual(result, ["ok"])
+        logger.warning.assert_not_called()
+
+    def test_future_result_or_fallback_logs_and_returns_fallback(self):
+        from ui.window import _future_result_or_fallback
+
+        future = MagicMock()
+        future.result.side_effect = RuntimeError("boom")
+        logger = MagicMock()
+
+        result = _future_result_or_fallback(future, ["fallback"], logger, "task")
+        self.assertEqual(result, ["fallback"])
+        logger.warning.assert_called_once()
+
+    def test_empty_database_view_has_expected_shape(self):
+        from ui.window import _empty_database_view
+
+        db = _empty_database_view()
+        self.assertEqual(db.modules, [])
+        self.assertEqual(db.get_modules_by_category("wifi"), [])
+        self.assertEqual(db.get_firmware_by_category("other"), [])
 
 
 if __name__ == "__main__":

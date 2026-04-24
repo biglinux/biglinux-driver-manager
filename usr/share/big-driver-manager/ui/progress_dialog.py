@@ -19,9 +19,12 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, GLib, Adw
 
+from core.logging_config import get_logger
+from utils.accessibility import animations_enabled
 from utils.i18n import _
 
 _ANSI_RE = re.compile(r"\x1b\[[0-9;]*[a-zA-Z]")
+_logger = get_logger("ProgressDialog")
 
 
 class ProgressDialog(Adw.Dialog):
@@ -33,6 +36,7 @@ class ProgressDialog(Adw.Dialog):
         self._is_complete = False
         self._success = False
         self._cancel_callback = None
+        self._cancelled_by_user = False
         self._current_step = 0
         self._total_steps = 0
 
@@ -65,11 +69,20 @@ class ProgressDialog(Adw.Dialog):
         header_row.set_halign(Gtk.Align.CENTER)
 
         self._icon_stack = Gtk.Stack()
-        self._icon_stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
-        self._icon_stack.set_transition_duration(300)
+        if animations_enabled():
+            self._icon_stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
+            self._icon_stack.set_transition_duration(300)
+        else:
+            self._icon_stack.set_transition_type(Gtk.StackTransitionType.NONE)
+            self._icon_stack.set_transition_duration(0)
 
         self._spinner = Gtk.Spinner()
         self._spinner.set_size_request(32, 32)
+        self._spinner.set_tooltip_text(_("Operation in progress"))
+        self._spinner.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Operation in progress")],
+        )
         self._icon_stack.add_named(self._spinner, "spinner")
 
         ok_icon = Gtk.Image.new_from_icon_name("emblem-ok-symbolic")
@@ -198,7 +211,10 @@ class ProgressDialog(Adw.Dialog):
         """Present the dialog in progress state."""
         self._is_complete = False
         self._success = False
-        self._cancel_callback = cancel_callback
+        self._cancelled_by_user = False
+        self._cancel_callback = (
+            cancel_callback if callable(cancel_callback) else None
+        )
         self._current_step = 0
         self._total_steps = 0
         self.set_can_close(False)
@@ -211,7 +227,7 @@ class ProgressDialog(Adw.Dialog):
         self._terminal_buffer.set_text("", 0)
         self._terminal_expander.set_expanded(False)
 
-        self._cancel_btn.set_visible(True)
+        self._cancel_btn.set_visible(self._cancel_callback is not None)
         self._close_btn.set_visible(False)
 
         self._icon_stack.set_visible_child_name("spinner")
@@ -262,13 +278,18 @@ class ProgressDialog(Adw.Dialog):
         ("✅", "success"),
         ("⚠️", "warning"),
     ]
-    _KEYWORD_TAGS: list[tuple[str, str]] = [
-        ("error", "error"),
-        ("failed", "error"),
-        ("successfully", "success"),
-        ("success", "success"),
-        ("warning", "warning"),
+    # Word-boundary keyword matching. Patterns are precompiled at import time
+    # and avoid false-positives like "no errors found" being tagged as error,
+    # or "unsuccessful" matching as success.
+    _KEYWORD_TAGS_RAW: list[tuple[str, str]] = [
+        (r"\berror:", "error"),
+        (r"\bfatal\b", "error"),
+        (r"\bfailed\b", "error"),
+        (r"\bcompleted successfully\b", "success"),
+        (r"\binstalled successfully\b", "success"),
+        (r"\bwarning:", "warning"),
     ]
+    _KEYWORD_TAGS = [(re.compile(pat, re.IGNORECASE), tag) for pat, tag in _KEYWORD_TAGS_RAW]
     _STARTSWITH_TAGS: list[tuple[tuple[str, ...], str]] = [
         (
             (
@@ -290,9 +311,8 @@ class ProgressDialog(Adw.Dialog):
         for prefix, tag in self._PREFIX_TAGS:
             if stripped.startswith(prefix):
                 return tag
-        stripped_lower = stripped.lower()
-        for keyword, tag in self._KEYWORD_TAGS:
-            if keyword in stripped_lower:
+        for pattern, tag in self._KEYWORD_TAGS:
+            if pattern.search(stripped):
                 return tag
         for prefixes, tag in self._STARTSWITH_TAGS:
             if stripped.startswith(prefixes):
@@ -331,8 +351,10 @@ class ProgressDialog(Adw.Dialog):
             vadj = self._terminal_view.get_vadjustment()
             if vadj:
                 vadj.set_value(vadj.get_upper() - vadj.get_page_size())
-        except Exception:
-            pass
+        except Exception as exc:
+            # Never propagate UI-rendering errors back to the pacman thread;
+            # log them so the failure is greppable in the app log.
+            _logger.debug("terminal buffer update failed: %s", exc)
         return False
 
     def show_success(self, message: str | None = None) -> None:
@@ -360,6 +382,8 @@ class ProgressDialog(Adw.Dialog):
             self.show_error(message)
 
     def _show_result_idle(self, success: bool, message: str) -> bool:
+        if self._cancelled_by_user:
+            return False
         self._is_complete = True
         self._success = success
         self._spinner.stop()
@@ -400,13 +424,15 @@ class ProgressDialog(Adw.Dialog):
     # ------------------------------------------------------------------
 
     def _on_cancel_clicked(self, _button) -> None:
-        if self._cancel_callback:
-            try:
-                self._cancel_callback()
-            except Exception:
-                pass
+        if not self._cancel_callback:
+            return
+        try:
+            self._cancel_callback()
+        except Exception as exc:
+            _logger.warning("cancel callback raised: %s", exc)
 
         self._spinner.stop()
+        self._cancelled_by_user = True
         self._is_complete = True
         self._success = False
         self.set_can_close(True)

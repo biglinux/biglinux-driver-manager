@@ -23,6 +23,7 @@ from core.constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
 from core.kernel_manager import KernelManager
 from ui.base_page import BaseSection
 from ui.kernel_card_builder import KernelTypeInfo, classify_kernel, version_sort_key
+from utils.accessibility import animations_enabled
 from utils.i18n import _
 
 _ICONS_DIR = os.path.join(
@@ -150,14 +151,10 @@ class KernelSection(BaseSection):
         try:
             kernels = self.kernel_manager.get_available_kernels()
             running_pkg = self.kernel_manager.get_running_kernel_package()
-            # Compute obsolete from already-fetched data (avoid duplicate query)
             installed = self.kernel_manager.get_installed_kernels()
-            available_names = {k["name"] for k in kernels}
-            obsolete = [
-                {**k, "obsolete": True}
-                for k in installed
-                if k["name"] != running_pkg and k["name"] not in available_names
-            ]
+            obsolete = KernelManager.compute_obsolete_kernels(
+                installed, kernels, running_pkg
+            )
             GLib.idle_add(self._update_kernel_list, kernels, running_pkg, obsolete)
         except Exception as e:
             GLib.idle_add(
@@ -579,7 +576,10 @@ class KernelSection(BaseSection):
         )
 
         revealer = Gtk.Revealer()
-        revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_DOWN)
+        if animations_enabled():
+            revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_DOWN)
+        else:
+            revealer.set_transition_type(Gtk.RevealerTransitionType.NONE)
         revealer.set_reveal_child(False)
         revealer.set_child(rows_box)
 
@@ -663,7 +663,7 @@ class KernelSection(BaseSection):
 
     def _on_install_clicked(self, button: Gtk.Button, kernel: dict) -> None:
         kernel_name = kernel["name"]
-        modules = self.kernel_manager._get_kernel_modules(kernel_name)
+        modules = self.kernel_manager.get_modules_for_install(kernel_name)
         packages = [kernel_name] + modules
 
         pkg_list = "\n".join(f"  • {p}" for p in packages)
@@ -751,7 +751,7 @@ class KernelSection(BaseSection):
             return
 
         kernel_name = kernel["name"]
-        modules = self.kernel_manager._get_installed_kernel_modules(kernel_name)
+        modules = self.kernel_manager.get_modules_for_remove(kernel_name)
         packages = [kernel_name] + modules
 
         # Check if this is the last backup kernel
@@ -975,10 +975,12 @@ class KernelSection(BaseSection):
 
     @staticmethod
     def _clear_listbox(listbox: Gtk.ListBox) -> None:
-        while row := listbox.get_first_child():
-            listbox.remove(row)
+        from utils.gtk_helpers import clear_listbox
+
+        clear_listbox(listbox)
 
     @staticmethod
     def _clear_box(box: Gtk.Box) -> None:
-        while child := box.get_first_child():
-            box.remove(child)
+        from utils.gtk_helpers import clear_box
+
+        clear_box(box)
