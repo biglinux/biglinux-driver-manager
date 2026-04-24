@@ -18,6 +18,33 @@ searchentry:focus-visible, expander:focus-visible {
 }
 .card:hover { box-shadow: 0 2px 6px alpha(black, 0.06); }
 
+/* --- Sidebar navigation ------------------------------------------- */
+.sidebar-nav {
+    padding: 4px 0;
+}
+
+button.sidebar-nav-btn {
+    border-radius: 10px;
+    padding: 0 10px;
+    min-height: 38px;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+button.sidebar-nav-btn:hover {
+    background: alpha(@window_fg_color, 0.05);
+}
+
+button.sidebar-nav-btn:checked {
+    background: alpha(@accent_bg_color, 0.18);
+    border-color: alpha(@accent_bg_color, 0.14);
+}
+
+button.sidebar-nav-btn:checked label,
+button.sidebar-nav-btn:checked image {
+    color: @accent_color;
+}
+
 /* --- Intro cards (home page) -------------------------------------- */
 .intro-card {
     padding: 0;
@@ -233,6 +260,18 @@ searchentry:focus-visible, expander:focus-visible {
         border-left: 3px solid alpha(#2ec27e, 0.35);
 }
 
+/* Installed Drivers page — per-category group accent.
+ * Mirrors kernel-installed-card so "installed" reads the same color across
+ * the app. Applied directly to Adw.PreferencesGroup; the border hugs the
+ * whole group (title + list) giving the left-edge accent the other pages
+ * already use. */
+.installed-group {
+    padding: 4px 0 4px 10px;
+    border-radius: 14px;
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#2ec27e, 0.35);
+}
+
 /* Available group cards — by type */
 .kernel-group-lts {
     padding: 0;
@@ -307,10 +346,6 @@ row, button { transition: background 200ms ease; }
     padding: 0;
 }
 
-/* --- Reduced motion ----------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition-duration: 0ms !important;
-        animation-duration: 0ms !important;
-    }
-}
+/* Reduced motion is handled in GTK code because GTK CSS does not support
+ * prefers-reduced-motion media queries.
+ */

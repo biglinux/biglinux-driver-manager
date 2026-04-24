@@ -250,6 +250,8 @@ class InstalledPage(BaseSection):
         group.set_description(
             _("{n} installed").format(n=len(items))
         )
+        # Left-edge accent for visual parity with kernel/mesa/purpose cards.
+        group.add_css_class("installed-group")
 
         for item in items:
             group.add(self._build_action_row(item, icon_name))
