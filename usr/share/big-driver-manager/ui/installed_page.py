@@ -46,7 +46,7 @@ class InstalledPage(BaseSection):
         super().__init__(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         self._installer = DriverInstaller()
         self._groups: dict[str, list] = {}
-        self._row_data: list[tuple[Gtk.Box, object]] = []
+        self._row_data: list[tuple[Adw.ActionRow, object]] = []
         self.progress_dialog = None
         self._create_content()
         self._show_loading()
@@ -56,19 +56,17 @@ class InstalledPage(BaseSection):
     # ------------------------------------------------------------------
 
     def _create_content(self) -> None:
-        # Page header
-        header_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
-        header_box.set_margin_bottom(16)
-
+        # Page header — matches category_page header scale (size='large').
         title_lbl = Gtk.Label()
         title_lbl.set_markup(
-            f"<span size='x-large' weight='bold'>"
+            f"<span size='large' weight='bold'>"
             f"{GLib.markup_escape_text(_('Installed Drivers'))}</span>"
         )
         title_lbl.set_halign(Gtk.Align.START)
         title_lbl.set_margin_start(4)
+        title_lbl.set_margin_bottom(4)
         title_lbl.set_accessible_role(Gtk.AccessibleRole.HEADING)
-        header_box.append(title_lbl)
+        self.append(title_lbl)
 
         desc_lbl = Gtk.Label(
             label=_(
@@ -80,9 +78,8 @@ class InstalledPage(BaseSection):
         desc_lbl.set_wrap(True)
         desc_lbl.add_css_class("dim-label")
         desc_lbl.set_margin_start(4)
-        header_box.append(desc_lbl)
-
-        self.append(header_box)
+        desc_lbl.set_margin_bottom(12)
+        self.append(desc_lbl)
 
         # Summary label
         self._summary_label = Gtk.Label()
@@ -94,8 +91,8 @@ class InstalledPage(BaseSection):
         self._summary_label.set_visible(False)
         self.append(self._summary_label)
 
-        # Container for category groups
-        self._list_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        # Container for per-category Adw.PreferencesGroup blocks.
+        self._list_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=18)
         self.append(self._list_box)
 
         # Empty state
@@ -202,7 +199,6 @@ class InstalledPage(BaseSection):
 
     def _rebuild_ui(self) -> None:
         """Rebuild the categorized list from self._groups."""
-        # Clear previous content
         while True:
             child = self._list_box.get_first_child()
             if child is None:
@@ -218,54 +214,7 @@ class InstalledPage(BaseSection):
                 continue
 
             total_installed += len(items)
-
-            # Category group card
-            group = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
-            group.add_css_class("card")
-            group.set_margin_start(2)
-            group.set_margin_end(2)
-
-            # Category header inside card
-            header = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-            header.set_margin_start(14)
-            header.set_margin_end(14)
-            header.set_margin_top(12)
-            header.set_margin_bottom(8)
-
-            cat_icon = Gtk.Image.new_from_icon_name(icon_name)
-            cat_icon.set_pixel_size(24)
-            header.append(cat_icon)
-
-            header_label = Gtk.Label()
-            header_label.set_markup(
-                f"<b>{GLib.markup_escape_text(cat_label)}</b>"
-                f"  <small>({len(items)})</small>"
-            )
-            header_label.set_halign(Gtk.Align.START)
-            header_label.set_hexpand(True)
-            header.append(header_label)
-
-            group.append(header)
-
-            # Separator
-            sep = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
-            sep.set_margin_start(14)
-            sep.set_margin_end(14)
-            group.append(sep)
-
-            # Items
-            items_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
-            items_box.set_margin_start(4)
-            items_box.set_margin_end(4)
-            items_box.set_margin_top(4)
-            items_box.set_margin_bottom(8)
-
-            for item in items:
-                row = self._build_item_row(item, cat_id, icon_name)
-                items_box.append(row)
-
-            group.append(items_box)
-            self._list_box.append(group)
+            self._list_box.append(self._build_category_group(cat_label, icon_name, items))
 
         if total_installed == 0:
             self._empty_status.set_visible(True)
@@ -282,102 +231,92 @@ class InstalledPage(BaseSection):
             )
             self._summary_label.set_visible(True)
 
-    def _build_item_row(
-        self, item: object, cat_id: str, icon_name: str
-    ) -> Gtk.Box:
-        """Build a row for an installed item."""
-        row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        row.set_valign(Gtk.Align.CENTER)
-        row.add_css_class("purpose-pkg-row")
+    def _build_category_group(
+        self,
+        cat_label: str,
+        icon_name: str,
+        items: list,
+    ) -> Adw.PreferencesGroup:
+        """Build an Adw.PreferencesGroup for a single category.
 
-        # Icon
+        Matches the visual idiom used by drivers_hub_page (boxed-list of
+        Adw.ActionRow): title in the group header, per-row prefix icon and
+        optional remove-button suffix.
+        """
+        group = Adw.PreferencesGroup()
+        group.set_title(cat_label)
+        # Put the count in the group description slot so it aligns with the
+        # standard Adwaita group layout instead of a bespoke header bar.
+        group.set_description(
+            _("{n} installed").format(n=len(items))
+        )
+
+        for item in items:
+            group.add(self._build_action_row(item, icon_name))
+
+        return group
+
+    def _describe_item(self, item: object) -> tuple[str, str]:
+        """Return (display_name, subtitle) for a row, regardless of item kind."""
+        if isinstance(item, dict):
+            display_name = item["name"].replace("-", " ").title()
+            parts: list[str] = []
+            kind = item.get("kind", "")
+            if kind == "kernel":
+                parts.append(_("Running") + " ✓" if item.get("running") else _("Installed") + " ✓")
+            elif kind == "mhwd":
+                parts.append(_("MHWD driver") + " · " + _("Installed") + " ✓")
+            elif kind == "mesa":
+                parts.append(_("Active") + " ✓" if item.get("active") else _("Installed") + " ✓")
+            if item.get("description"):
+                parts.append(item["description"])
+            return display_name, " · ".join(parts)
+
+        display_name = item.name.replace("-", " ").title()
+        status = _("Installed") + " ✓"
+        if getattr(item, "detected", False):
+            status = _("Detected") + " · " + status
+        desc = getattr(item, "description", "")
+        device_name = getattr(item, "detected_device_name", None)
+        info = device_name or translate_description(desc.strip())
+        parts = [status]
+        if info:
+            parts.append(info)
+        return display_name, " · ".join(parts)
+
+    def _build_action_row(self, item: object, icon_name: str) -> Adw.ActionRow:
+        """Build an Adw.ActionRow for one installed item."""
+        display_name, subtitle = self._describe_item(item)
+
+        row = Adw.ActionRow()
+        row.set_title(GLib.markup_escape_text(display_name))
+        if subtitle:
+            row.set_subtitle(GLib.markup_escape_text(subtitle))
+
         icon = Gtk.Image.new_from_icon_name(icon_name)
         icon.set_pixel_size(ICON_SIZE_ITEM)
-        row.append(icon)
+        row.add_prefix(icon)
 
-        # Text column
-        text_col = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
-        text_col.set_hexpand(True)
+        raw_name = item["name"] if isinstance(item, dict) else item.name
+        row.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            ["{}: {}".format(raw_name, "installed")],
+        )
 
-        # Determine display name and subtitle based on item type
-        if isinstance(item, dict):
-            # Kernel, MHWD, or mesa item
-            display_name = item["name"].replace("-", " ").title()
-            subtitle_parts = []
-            kind = item.get("kind", "")
-
-            if kind == "kernel":
-                if item.get("running"):
-                    subtitle_parts.append(_("Running") + " ✓")
-                else:
-                    subtitle_parts.append(_("Installed") + " ✓")
-                if item.get("description"):
-                    subtitle_parts.append(item["description"])
-            elif kind == "mhwd":
-                subtitle_parts.append(_("MHWD driver") + " · " + _("Installed") + " ✓")
-                if item.get("description"):
-                    subtitle_parts.append(item["description"])
-            elif kind == "mesa":
-                if item.get("active"):
-                    subtitle_parts.append(_("Active") + " ✓")
-                else:
-                    subtitle_parts.append(_("Installed") + " ✓")
-                if item.get("description"):
-                    subtitle_parts.append(item["description"])
-            subtitle = "\n".join(subtitle_parts)
-        else:
-            # DriverModule, FirmwareEntry, PeripheralEntry
-            display_name = item.name.replace("-", " ").title()
-            status = _("Installed") + " ✓"
-            if getattr(item, "detected", False):
-                status = _("Detected") + " · " + status
-
-            desc = getattr(item, "description", "")
-            device_name = getattr(item, "detected_device_name", None)
-            info = device_name or translate_description(desc.strip())
-            subtitle_parts = [status]
-            if info:
-                subtitle_parts.append(info)
-            subtitle = "\n".join(subtitle_parts)
-
-        title_lbl = Gtk.Label(label=display_name)
-        title_lbl.set_xalign(0)
-        title_lbl.add_css_class("heading")
-        text_col.append(title_lbl)
-
-        if subtitle:
-            sub_lbl = Gtk.Label(label=subtitle)
-            sub_lbl.set_xalign(0)
-            sub_lbl.set_wrap(True)
-            sub_lbl.add_css_class("dim-label")
-            sub_lbl.add_css_class("caption")
-            text_col.append(sub_lbl)
-
-        row.append(text_col)
-
-        # Remove button (only for non-kernel, non-mesa, non-mhwd items)
+        # Remove button — skip for kernel/mesa/mhwd (managed via their own pages).
         if not isinstance(item, dict):
             pkg = getattr(item, "package", item.name)
             btn = Gtk.Button(label=_("Remove"))
             btn.add_css_class("destructive-action")
+            btn.add_css_class("flat")
             btn.set_valign(Gtk.Align.CENTER)
             btn.update_property(
                 [Gtk.AccessibleProperty.LABEL],
                 [_("Remove {}").format(pkg)],
             )
             btn.connect("clicked", self._on_remove_clicked, item)
-            row.append(btn)
+            row.add_suffix(btn)
             self._row_data.append((row, item))
-
-        row.update_property(
-            [Gtk.AccessibleProperty.LABEL],
-            [
-                "{}: {}".format(
-                    item["name"] if isinstance(item, dict) else item.name,
-                    "installed",
-                )
-            ],
-        )
 
         return row
 
@@ -415,12 +354,13 @@ class InstalledPage(BaseSection):
             self.progress_dialog.show_progress(
                 _("Removing {}").format(pkg),
                 _("Please wait..."),
+                cancel_callback=self._installer.cancel_operation,
             )
         self._installer.remove_package(
             package=pkg,
             progress_callback=self._on_progress,
             output_callback=self._on_output,
-            complete_callback=self._on_complete,
+            complete_callback=lambda success: self._on_complete(success, item),
         )
 
     def _on_progress(self, fraction: float, text: str) -> None:
@@ -431,9 +371,29 @@ class InstalledPage(BaseSection):
         if self.progress_dialog:
             self.progress_dialog.append_terminal_output(line)
 
-    def _on_complete(self, success: bool) -> None:
+    def _remove_item_from_groups(
+        self, item: DriverModule | FirmwareEntry | PeripheralEntry
+    ) -> None:
+        """Remove an item from the grouped view after successful uninstall."""
+        empty_categories: list[str] = []
+        for category, items in self._groups.items():
+            self._groups[category] = [existing for existing in items if existing is not item]
+            if not self._groups[category]:
+                empty_categories.append(category)
+        for category in empty_categories:
+            self._groups.pop(category, None)
+
+    def _on_complete(
+        self,
+        success: bool,
+        item: DriverModule | FirmwareEntry | PeripheralEntry | None = None,
+    ) -> None:
         def _update() -> bool:
             if success:
+                if item is not None:
+                    self._remove_item_from_groups(item)
+                    self._rebuild_ui()
+                self._request_refresh()
                 window = self.get_root()
                 if hasattr(window, "show_reboot_banner"):
                     window.show_reboot_banner()

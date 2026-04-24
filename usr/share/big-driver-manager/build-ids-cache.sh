@@ -13,11 +13,19 @@ readonly CACHE_DIR="/var/cache/big-driver-manager"
 readonly CACHE_FILE="${CACHE_DIR}/ids_cache.txt"
 readonly FW_CACHE_FILE="${CACHE_DIR}/firmware_cache.txt"
 
-mkdir -p "$CACHE_DIR"
+# Make sure the cache directory exists AND is writable. On upgrades that
+# come from older packages this directory might exist with the wrong
+# permissions — `install -d` normalises it.
+install -d -m 0755 "$CACHE_DIR"
+if [[ ! -w "$CACHE_DIR" ]]; then
+    echo "big-driver-manager: cannot write to $CACHE_DIR" >&2
+    exit 1
+fi
 
-# Temporary file for atomic write
+# Temporary files for atomic writes (both cleaned on exit)
 TMPFILE=$(mktemp "${CACHE_DIR}/.ids_cache.XXXXXX")
-trap 'rm -f "$TMPFILE"' EXIT
+TMPFILE_FW=""
+trap 'rm -f "$TMPFILE" "$TMPFILE_FW"' EXIT
 
 {
 # Process device-ids (pci.ids, usb.ids, sdio.ids)
@@ -85,7 +93,6 @@ echo "Big Driver Manager: device ID cache built (${LINES} entries)"
 # Format: firmware_path<TAB>package<TAB>description
 # firmware_path is relative to /usr/lib/firmware/ (what dmesg shows)
 TMPFILE_FW=$(mktemp "${CACHE_DIR}/.fw_cache.XXXXXX")
-trap 'rm -f "$TMPFILE_FW"' EXIT
 
 {
 if [[ -d "${ASSETS_DIR}/firmware" ]]; then
@@ -95,7 +102,15 @@ if [[ -d "${ASSETS_DIR}/firmware" ]]; then
         fw_list="${fw_dir}/${pkg}"
         [[ -f "$fw_list" ]] || continue
 
-        desc=$(cat "${fw_dir}/description" 2>/dev/null | tr '\n' ' ' | sed 's/  */ /g;s/ *$//' || echo "$pkg")
+        # Pipelines swallow the cat failure under pipefail (cat fails after
+        # redirecting stderr to /dev/null, tr/sed still succeed). Check the
+        # file first so the fallback actually runs when description is missing.
+        if [[ -f "${fw_dir}/description" ]]; then
+            desc=$(tr '\n' ' ' < "${fw_dir}/description" | sed 's/  */ /g;s/ *$//')
+            [[ -z "$desc" ]] && desc="$pkg"
+        else
+            desc="$pkg"
+        fi
 
         while IFS= read -r fwpath; do
             fwpath="${fwpath%%[[:space:]]}"
