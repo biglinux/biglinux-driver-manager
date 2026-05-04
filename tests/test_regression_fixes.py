@@ -79,7 +79,9 @@ class TestMesaApplyIsSafe(unittest.TestCase):
         mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
         calls = self._capture_calls(mgr, [True, True])
         completed: list[bool] = []
-        mgr._apply_driver_thread(mgr.drivers[1], None, lambda _l: None, completed.append)
+        mgr._apply_driver_thread(
+            mgr.drivers[1], None, lambda _l: None, completed.append
+        )
         for call in calls:
             self.assertNotIn("-Rdd", call)
         self.assertEqual(completed, [True])
@@ -123,9 +125,7 @@ class TestMesaApplyIsSafe(unittest.TestCase):
     def test_apply_skips_remove_phase_when_no_conflicts(self):
         mgr = self._make_manager([], {"mesa-tkg-stable"})
         calls = self._capture_calls(mgr, [True])
-        mgr._apply_driver_thread(
-            mgr.drivers[1], None, lambda _l: None, lambda _s: None
-        )
+        mgr._apply_driver_thread(mgr.drivers[1], None, lambda _l: None, lambda _s: None)
         self.assertEqual(len(calls), 1)
         self.assertIn("-S", calls[0])
 
@@ -222,7 +222,10 @@ class TestPackagingMetadata(unittest.TestCase):
         # L10: discoverability in GNOME Shell / KRunner.
         parser = configparser.RawConfigParser(strict=False)
         parser.read(
-            REPO_ROOT / "usr" / "share" / "applications"
+            REPO_ROOT
+            / "usr"
+            / "share"
+            / "applications"
             / "br.com.biglinux.drivermanager.desktop",
             encoding="utf-8",
         )
@@ -330,8 +333,9 @@ class TestSharedPackageManager(unittest.TestCase):
         from core.package_manager import PackageManager
 
         default = PackageManager.get_default()
-        with patch("core.kernel_manager.get_logger"), patch(
-            "core.mesa_manager.get_logger"
+        with (
+            patch("core.kernel_manager.get_logger"),
+            patch("core.mesa_manager.get_logger"),
         ):
             km = KernelManager()
             mm = MesaManager()
@@ -533,7 +537,11 @@ class TestMhwdRowVersionDisplay(unittest.TestCase):
 class TestUdevRuleFiltersHubs(unittest.TestCase):
     def test_rule_excludes_class_09(self):
         text = (
-            REPO_ROOT / "usr" / "lib" / "udev" / "rules.d"
+            REPO_ROOT
+            / "usr"
+            / "lib"
+            / "udev"
+            / "rules.d"
             / "99-big-driver-manager.rules"
         ).read_text(encoding="utf-8")
         self.assertIn('bDeviceClass}!="09"', text)
@@ -549,9 +557,7 @@ class TestMesaGpuInfoUsesSubprocessEnv(unittest.TestCase):
         # Scan the source: dynamic import would require gi fakes.
         src = (APP_SRC / "ui" / "mesa_page.py").read_text(encoding="utf-8")
         self.assertIn("from core.subprocess_env import subprocess_env", src)
-        m = re.search(
-            r"def _detect_gpu_info.*?def ", src, flags=re.DOTALL
-        )
+        m = re.search(r"def _detect_gpu_info.*?def ", src, flags=re.DOTALL)
         self.assertIsNotNone(m)
         self.assertIn("subprocess_env()", m.group(0))
 
@@ -575,9 +581,7 @@ class TestProgressTagWordBoundary(unittest.TestCase):
         self.assertEqual(
             dlg._get_line_tag("Transaction completed successfully."), "success"
         )
-        self.assertEqual(
-            dlg._get_line_tag("warning: signature is invalid"), "warning"
-        )
+        self.assertEqual(dlg._get_line_tag("warning: signature is invalid"), "warning")
         self.assertEqual(dlg._get_line_tag("Installing linux612"), "info")
 
 
@@ -661,14 +665,15 @@ class TestShellScriptsValid(unittest.TestCase):
                     text=True,
                     timeout=10,
                 )
-                self.assertEqual(
-                    result.returncode, 0, msg=result.stderr
-                )
+                self.assertEqual(result.returncode, 0, msg=result.stderr)
 
     def test_login_check_uses_blacklist_set(self):
         # H8: lookup should be O(1) via declare -A, not O(N) grep echo loop.
         text = (
-            REPO_ROOT / "usr" / "share" / "big-driver-manager"
+            REPO_ROOT
+            / "usr"
+            / "share"
+            / "big-driver-manager"
             / "login-check-drivers.sh"
         ).read_text(encoding="utf-8")
         self.assertIn("declare -A BLACKLIST_SET", text)
@@ -677,15 +682,13 @@ class TestShellScriptsValid(unittest.TestCase):
     def test_udev_notify_has_global_cap(self):
         # H9: concurrent dialog cap is documented and enforced.
         text = (
-            REPO_ROOT / "usr" / "share" / "big-driver-manager"
-            / "udev-notify.sh"
+            REPO_ROOT / "usr" / "share" / "big-driver-manager" / "udev-notify.sh"
         ).read_text(encoding="utf-8")
         self.assertIn("MAX_CONCURRENT", text)
 
     def test_build_cache_checks_writability(self):
         text = (
-            REPO_ROOT / "usr" / "share" / "big-driver-manager"
-            / "build-ids-cache.sh"
+            REPO_ROOT / "usr" / "share" / "big-driver-manager" / "build-ids-cache.sh"
         ).read_text(encoding="utf-8")
         self.assertIn("[[ ! -w", text)
 

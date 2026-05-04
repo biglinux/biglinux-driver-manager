@@ -51,7 +51,9 @@ class SettingsManager:
     def _sanitize_settings(self, data: object) -> dict:
         """Return validated known settings while preserving unknown keys."""
         if not isinstance(data, dict):
-            self._logger.warning("Ignoring invalid settings payload of type %s", type(data))
+            self._logger.warning(
+                "Ignoring invalid settings payload of type %s", type(data)
+            )
             return {}
 
         sanitized = {

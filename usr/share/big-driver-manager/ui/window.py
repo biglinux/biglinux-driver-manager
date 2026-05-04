@@ -590,7 +590,10 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             def _populate_phase1() -> bool:
                 """Home, kernel, mesa — lightweight, show content fast."""
                 self._populate_home_dashboard(
-                    gpu_info, mesa_drivers, obsolete_kernels, db,
+                    gpu_info,
+                    mesa_drivers,
+                    obsolete_kernels,
+                    db,
                     installed_pkgs=installed_pkgs,
                 )
                 self.kernel_section.set_preloaded_data(
@@ -644,6 +647,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
 
             GLib.idle_add(_show_error)
         finally:
+
             def _finish_detection() -> bool:
                 self._detection_in_progress = False
                 if self._refresh_pending:
@@ -683,7 +687,9 @@ class KernelManagerWindow(Adw.ApplicationWindow):
     # Populate helpers (called from GLib.idle_add in _detect_hardware)
     # ------------------------------------------------------------------
 
-    def _populate_category_sections(self, db, category_errors: set[str] | None = None) -> None:
+    def _populate_category_sections(
+        self, db, category_errors: set[str] | None = None
+    ) -> None:
         """Populate each category page with detected items."""
         cat = self._category_sections
         errors = category_errors or set()
@@ -693,7 +699,9 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 return
             if category_id in errors:
                 cat[category_id].show_error(
-                    _("Hardware detection for this category failed. Try refreshing later.")
+                    _(
+                        "Hardware detection for this category failed. Try refreshing later."
+                    )
                 )
                 return
             cat[category_id].set_items(items)

@@ -384,7 +384,10 @@ class KernelManager(BaseManager):
         """Check if a single package exists in the repositories."""
         cmd = ["pacman", "-Ssq", f"^{package_name}$"]
         result = subprocess.run(cmd, capture_output=True, text=True, check=False)
-        return result.returncode == 0 and package_name in result.stdout.strip().splitlines()
+        return (
+            result.returncode == 0
+            and package_name in result.stdout.strip().splitlines()
+        )
 
     @staticmethod
     def compute_obsolete_kernels(

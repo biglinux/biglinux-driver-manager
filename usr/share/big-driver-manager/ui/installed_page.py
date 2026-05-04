@@ -214,7 +214,9 @@ class InstalledPage(BaseSection):
                 continue
 
             total_installed += len(items)
-            self._list_box.append(self._build_category_group(cat_label, icon_name, items))
+            self._list_box.append(
+                self._build_category_group(cat_label, icon_name, items)
+            )
 
         if total_installed == 0:
             self._empty_status.set_visible(True)
@@ -247,9 +249,7 @@ class InstalledPage(BaseSection):
         group.set_title(cat_label)
         # Put the count in the group description slot so it aligns with the
         # standard Adwaita group layout instead of a bespoke header bar.
-        group.set_description(
-            _("{n} installed").format(n=len(items))
-        )
+        group.set_description(_("{n} installed").format(n=len(items)))
         # Left-edge accent for visual parity with kernel/mesa/purpose cards.
         group.add_css_class("installed-group")
 
@@ -265,11 +265,17 @@ class InstalledPage(BaseSection):
             parts: list[str] = []
             kind = item.get("kind", "")
             if kind == "kernel":
-                parts.append(_("Running") + " ✓" if item.get("running") else _("Installed") + " ✓")
+                parts.append(
+                    _("Running") + " ✓"
+                    if item.get("running")
+                    else _("Installed") + " ✓"
+                )
             elif kind == "mhwd":
                 parts.append(_("MHWD driver") + " · " + _("Installed") + " ✓")
             elif kind == "mesa":
-                parts.append(_("Active") + " ✓" if item.get("active") else _("Installed") + " ✓")
+                parts.append(
+                    _("Active") + " ✓" if item.get("active") else _("Installed") + " ✓"
+                )
             if item.get("description"):
                 parts.append(item["description"])
             return display_name, " · ".join(parts)
@@ -379,7 +385,9 @@ class InstalledPage(BaseSection):
         """Remove an item from the grouped view after successful uninstall."""
         empty_categories: list[str] = []
         for category, items in self._groups.items():
-            self._groups[category] = [existing for existing in items if existing is not item]
+            self._groups[category] = [
+                existing for existing in items if existing is not item
+            ]
             if not self._groups[category]:
                 empty_categories.append(category)
         for category in empty_categories:

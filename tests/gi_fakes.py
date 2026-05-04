@@ -200,7 +200,9 @@ class FakeWidget:
     def get_next_sibling(self):
         if self._parent is None:
             return None
-        siblings = [child for child in self._parent._children if hasattr(child, "_parent")]
+        siblings = [
+            child for child in self._parent._children if hasattr(child, "_parent")
+        ]
         try:
             idx = siblings.index(self)
         except ValueError:
@@ -533,9 +535,21 @@ def install_fake_gi() -> None:
             "Window": FakeWindow,
             "Box": type("Box", (FakeWidget,), {}),
             "Spinner": type("Spinner", (FakeWidget,), {}),
-            "Label": type("Label", (FakeWidget,), {"new": classmethod(lambda cls, text: cls(label=text))}),
+            "Label": type(
+                "Label",
+                (FakeWidget,),
+                {"new": classmethod(lambda cls, text: cls(label=text))},
+            ),
             "Button": type("Button", (FakeWidget,), {}),
-            "Image": type("Image", (FakeWidget,), {"set_from_icon_name": lambda self, name: setattr(self, "_icon_name", name)}),
+            "Image": type(
+                "Image",
+                (FakeWidget,),
+                {
+                    "set_from_icon_name": lambda self, name: setattr(
+                        self, "_icon_name", name
+                    )
+                },
+            ),
             "Revealer": type("Revealer", (FakeWidget,), {}),
             "SearchEntry": type("SearchEntry", (FakeWidget,), {}),
             "Switch": type("Switch", (FakeWidget,), {}),
@@ -564,19 +578,38 @@ def install_fake_gi() -> None:
             "ApplicationWindow": type("ApplicationWindow", (FakeWindow,), {}),
             "Dialog": type("Dialog", (FakeDialog,), {}),
             "NavigationSplitView": type("NavigationSplitView", (FakeWidget,), {}),
-            "NavigationPage": type("NavigationPage", (FakeWidget,), {"new": classmethod(lambda cls, child, title: cls(child=child, title=title))}),
+            "NavigationPage": type(
+                "NavigationPage",
+                (FakeWidget,),
+                {
+                    "new": classmethod(
+                        lambda cls, child, title: cls(child=child, title=title)
+                    )
+                },
+            ),
             "ToolbarView": type("ToolbarView", (FakeWidget,), {}),
             "HeaderBar": type("HeaderBar", (FakeWidget,), {}),
             "Banner": type("Banner", (FakeWidget,), {}),
             "StatusPage": type("StatusPage", (FakeWidget,), {}),
             "AlertDialog": type("AlertDialog", (FakeDialog,), {}),
-            "Breakpoint": type("Breakpoint", (FakeWidget,), {"new": classmethod(lambda cls, condition: cls(condition=condition))}),
-            "BreakpointCondition": type("BreakpointCondition", (FakeWidget,), {"parse": classmethod(lambda cls, text: cls(text=text))}),
+            "Breakpoint": type(
+                "Breakpoint",
+                (FakeWidget,),
+                {"new": classmethod(lambda cls, condition: cls(condition=condition))},
+            ),
+            "BreakpointCondition": type(
+                "BreakpointCondition",
+                (FakeWidget,),
+                {"parse": classmethod(lambda cls, text: cls(text=text))},
+            ),
             "Clamp": type("Clamp", (FakeWidget,), {}),
             "ActionRow": type(
                 "ActionRow",
                 (FakeWidget,),
-                {"add_prefix": FakeWidget._attach_child, "add_suffix": FakeWidget._attach_child},
+                {
+                    "add_prefix": FakeWidget._attach_child,
+                    "add_suffix": FakeWidget._attach_child,
+                },
             ),
             "PreferencesGroup": type(
                 "PreferencesGroup",
@@ -584,7 +617,15 @@ def install_fake_gi() -> None:
                 {"add": FakeWidget._attach_child},
             ),
             "AboutDialog": type("AboutDialog", (FakeDialog,), {}),
-            "WindowTitle": type("WindowTitle", (FakeWidget,), {"new": classmethod(lambda cls, title, subtitle: cls(title=title, subtitle=subtitle))}),
+            "WindowTitle": type(
+                "WindowTitle",
+                (FakeWidget,),
+                {
+                    "new": classmethod(
+                        lambda cls, title, subtitle: cls(title=title, subtitle=subtitle)
+                    )
+                },
+            ),
         },
     )
     gio = FakeModule(
@@ -636,9 +677,5 @@ def install_fake_gi() -> None:
 def reload_ui_modules() -> None:
     """Drop already-loaded UI/style modules so imports use the fake GI."""
     for name in list(sys.modules):
-        if (
-            name == "ui"
-            or name.startswith("ui.")
-            or name == "utils.style_manager"
-        ):
+        if name == "ui" or name.startswith("ui.") or name == "utils.style_manager":
             sys.modules.pop(name, None)

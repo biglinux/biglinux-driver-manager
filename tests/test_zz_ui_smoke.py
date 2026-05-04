@@ -78,7 +78,9 @@ class ProgressSpy:
 class RebootRoot:
     def __init__(self) -> None:
         self.reboot_shown = False
-        self._show_all_switch = SimpleNamespace(set_active=lambda value: setattr(self, "show_all_active", value))
+        self._show_all_switch = SimpleNamespace(
+            set_active=lambda value: setattr(self, "show_all_active", value)
+        )
 
     def show_reboot_banner(self) -> None:
         self.reboot_shown = True
@@ -117,7 +119,11 @@ class TestStyleAndProgressSmoke(unittest.TestCase):
         cancelled = []
 
         dialog = progress_mod.ProgressDialog(gtk.Window())
-        dialog.show_progress("Installing", "Please wait...", cancel_callback=lambda: cancelled.append(True))
+        dialog.show_progress(
+            "Installing",
+            "Please wait...",
+            cancel_callback=lambda: cancelled.append(True),
+        )
         dialog.set_steps(2, 3, "Installing packages")
         dialog.update_progress(0.42, "Downloading")
         dialog.append_terminal_output("error: disk full")
@@ -126,7 +132,9 @@ class TestStyleAndProgressSmoke(unittest.TestCase):
         self.assertEqual(dialog._get_line_tag("warning: foo"), "warning")
         dialog.show_success("done")
         self.assertTrue(dialog._is_complete)
-        dialog.show_progress("Removing", "Please wait...", cancel_callback=lambda: cancelled.append(True))
+        dialog.show_progress(
+            "Removing", "Please wait...", cancel_callback=lambda: cancelled.append(True)
+        )
         dialog._on_cancel_clicked(None)
         self.assertTrue(cancelled)
         self.assertIn("cancel", dialog._status_label.get_text().lower())
@@ -309,8 +317,17 @@ class TestInstalledAndDriversHubSmoke(unittest.TestCase):
             scanners=[],
             kernels=[{"name": "linux612", "version": "6.12.10-1"}],
             running_kernel="linux612",
-            mhwd_video=[SimpleNamespace(name="video-nvidia", info="NVIDIA", installed=True)],
-            mesa_drivers=[{"id": "stable", "name": "Mesa Stable", "installed": True, "active": True}],
+            mhwd_video=[
+                SimpleNamespace(name="video-nvidia", info="NVIDIA", installed=True)
+            ],
+            mesa_drivers=[
+                {
+                    "id": "stable",
+                    "name": "Mesa Stable",
+                    "installed": True,
+                    "active": True,
+                }
+            ],
         )
         self.assertTrue(page._summary_label.get_visible())
 
@@ -375,11 +392,26 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
         kernel_mod = importlib.import_module("ui.kernel_page")
         section = kernel_mod.KernelSection()
         kernels = [
-            {"name": "linux612", "version": "6.12.10-1", "installed": True, "lts": True},
+            {
+                "name": "linux612",
+                "version": "6.12.10-1",
+                "installed": True,
+                "lts": True,
+            },
             {"name": "linux66", "version": "6.6.70-1", "installed": True, "lts": True},
             {"name": "linux619", "version": "6.19.1-1", "installed": False},
-            {"name": "linux619-xanmod", "version": "6.19.1-1", "installed": False, "xanmod": True},
-            {"name": "linux612-rt", "version": "6.12.10-rt1", "installed": False, "rt": True},
+            {
+                "name": "linux619-xanmod",
+                "version": "6.19.1-1",
+                "installed": False,
+                "xanmod": True,
+            },
+            {
+                "name": "linux612-rt",
+                "version": "6.12.10-rt1",
+                "installed": False,
+                "rt": True,
+            },
         ]
         obsolete = [{"name": "linux66", "version": "6.6.70-1", "obsolete": True}]
         section.set_preloaded_data(kernels, "linux612", obsolete)
@@ -428,13 +460,22 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
         mesa_mod = importlib.import_module("ui.mesa_page")
         from core.mhwd_manager import MhwdDriver
 
-        with patch.object(mesa_mod.MesaSection, "_detect_virtual_machine", return_value=False):
+        with patch.object(
+            mesa_mod.MesaSection, "_detect_virtual_machine", return_value=False
+        ):
             mesa = mesa_mod.MesaSection()
         mesa.pkg_manager = MagicMock()
-        mesa.pkg_manager.is_package_installed.side_effect = lambda name: name in {"lib32-mesa"}
+        mesa.pkg_manager.is_package_installed.side_effect = lambda name: (
+            name in {"lib32-mesa"}
+        )
         drivers = [
             {"id": "stable", "name": "mesa", "detect_package": "mesa", "active": True},
-            {"id": "tkg-stable", "name": "mesa-tkg-stable", "detect_package": "mesa-tkg-stable", "active": False},
+            {
+                "id": "tkg-stable",
+                "name": "mesa-tkg-stable",
+                "detect_package": "mesa-tkg-stable",
+                "active": False,
+            },
         ]
         gpu_info = {
             "nvidia_loaded": True,
@@ -486,8 +527,11 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
 
         window_mod = importlib.import_module("ui.window")
         app = SimpleNamespace(add_action=MagicMock())
-        with patch.object(window_mod.GLib, "idle_add", return_value=1), patch.object(
-            window_mod.MesaSection, "_detect_virtual_machine", return_value=False
+        with (
+            patch.object(window_mod.GLib, "idle_add", return_value=1),
+            patch.object(
+                window_mod.MesaSection, "_detect_virtual_machine", return_value=False
+            ),
         ):
             win = window_mod.KernelManagerWindow(application=app)
 
@@ -497,10 +541,13 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
             printers=[make_item("brlaser", category="printer", detected=True)],
             scanners=[make_item("sane-airscan", category="scanner", detected=False)],
             get_modules_by_category=lambda category: [
-                item for item in [make_item("rtl8xxxu", category="wifi", detected=True)] if item.category == category
+                item
+                for item in [make_item("rtl8xxxu", category="wifi", detected=True)]
+                if item.category == category
             ],
             get_firmware_by_category=lambda category: [
-                item for item in [
+                item
+                for item in [
                     make_item("bt-firmware", category="bluetooth", detected=True),
                     make_item("scan-firmware", category="scanner", detected=False),
                 ]
@@ -519,17 +566,21 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
         )
         win._show_all_switch.set_active(True)
         self.assertTrue(win._show_all_label.get_label())
-        self.assertTrue(win._on_key_pressed(None, window_mod.Gdk.KEY_Escape, None, None))
+        self.assertTrue(
+            win._on_key_pressed(None, window_mod.Gdk.KEY_Escape, None, None)
+        )
         win.show_reboot_banner()
         self.assertTrue(win._reboot_banner._revealed)
         win._on_about_activated(None, None)
 
         reload_ui_modules()
         app_mod = importlib.import_module("ui.application")
-        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
-            app_mod, "CONFIG_DIR", tmpdir
-        ), patch.object(
-            app_mod, "SETTINGS_FILE", os.path.join(tmpdir, "settings.json")
+        with (
+            tempfile.TemporaryDirectory() as tmpdir,
+            patch.object(app_mod, "CONFIG_DIR", tmpdir),
+            patch.object(
+                app_mod, "SETTINGS_FILE", os.path.join(tmpdir, "settings.json")
+            ),
         ):
             settings = app_mod.SettingsManager()
             self.assertEqual(
@@ -552,9 +603,15 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
         fake_window.is_maximized.return_value = False
         fake_window.get_width.return_value = 1024
         fake_window.get_height.return_value = 768
-        with patch.object(app_mod.StyleManager, "get_default", return_value=fake_style), patch.object(
-            app_mod.Gdk.Display, "get_default", return_value=app_mod.Gdk.Display.get_default()
-        ), patch.object(app_mod, "KernelManagerWindow", return_value=fake_window):
+        with (
+            patch.object(app_mod.StyleManager, "get_default", return_value=fake_style),
+            patch.object(
+                app_mod.Gdk.Display,
+                "get_default",
+                return_value=app_mod.Gdk.Display.get_default(),
+            ),
+            patch.object(app_mod, "KernelManagerWindow", return_value=fake_window),
+        ):
             app_instance = app_mod.KernelManagerApplication()
             app_instance.settings_manager = MagicMock()
             app_instance.settings_manager.get.side_effect = lambda key, default=None: {

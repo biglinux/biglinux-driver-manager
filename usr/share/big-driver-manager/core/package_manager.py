@@ -62,7 +62,9 @@ class PackageManager:
         with self._cache_lock:
             if self._installed_cache is None:
                 cmd = ["pacman", "-Q"]
-                result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+                result = subprocess.run(
+                    cmd, capture_output=True, text=True, check=False
+                )
 
                 if result.returncode != 0:
                     return []
@@ -78,7 +80,9 @@ class PackageManager:
                 self._installed_names = {p["name"] for p in packages}
 
             if pattern:
-                return [p for p in self._installed_cache if re.search(pattern, p["name"])]
+                return [
+                    p for p in self._installed_cache if re.search(pattern, p["name"])
+                ]
             return list(self._installed_cache)
 
     def is_package_installed(self, package_name: str) -> bool:

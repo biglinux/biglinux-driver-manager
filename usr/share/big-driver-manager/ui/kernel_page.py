@@ -195,8 +195,11 @@ class KernelSection(BaseSection):
             reverse=True,
         )
         available = sorted(
-            [k for k in self._all_kernels
-             if not k.get("installed") and not k.get("cachyos")],
+            [
+                k
+                for k in self._all_kernels
+                if not k.get("installed") and not k.get("cachyos")
+            ],
             key=version_sort_key,
             reverse=True,
         )
@@ -756,7 +759,8 @@ class KernelSection(BaseSection):
 
         # Check if this is the last backup kernel
         installed_others = [
-            k for k in self._all_kernels
+            k
+            for k in self._all_kernels
             if k.get("installed") and k["name"] != self._running_kernel_package
         ]
         is_last_backup = len(installed_others) <= 1
@@ -767,9 +771,11 @@ class KernelSection(BaseSection):
 
         if is_last_backup:
             dialog.set_body(
-                _("⚠ This is your last backup kernel. "
-                  "If the running kernel fails, you will have no fallback.\n\n"
-                  "The following packages will be removed:")
+                _(
+                    "⚠ This is your last backup kernel. "
+                    "If the running kernel fails, you will have no fallback.\n\n"
+                    "The following packages will be removed:"
+                )
             )
         else:
             dialog.set_body(_("The following packages will be removed:"))

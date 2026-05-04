@@ -667,7 +667,9 @@ class TestProgressDialogRunningState(unittest.TestCase):
     def test_cancel_click_invokes_callback_and_marks_state(self):
         dialog = self._make_dialog()
         called = []
-        dialog.show_progress("Title", "Working", cancel_callback=lambda: called.append(True))
+        dialog.show_progress(
+            "Title", "Working", cancel_callback=lambda: called.append(True)
+        )
         dialog._on_cancel_clicked(None)
         from utils import _
 
@@ -1101,7 +1103,9 @@ class TestInstalledPageHelpers(unittest.TestCase):
 
         target = MagicMock()
         keep = MagicMock()
-        fake_page = type("FakePage", (), {"_groups": {"wifi": [target], "other": [keep]}})()
+        fake_page = type(
+            "FakePage", (), {"_groups": {"wifi": [target], "other": [keep]}}
+        )()
 
         InstalledPage._remove_item_from_groups(fake_page, target)
 

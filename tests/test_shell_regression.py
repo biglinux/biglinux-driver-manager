@@ -254,16 +254,12 @@ class TestBuildIdsCache(unittest.TestCase):
             )
 
             # Device-ids entries are upper-cased VID:DID, tab-separated.
-            self.assertIn(
-                "0BDA:8178\tdevice-ids\trtl8xxxu\trtl8xxxu-dkms\t", ids_cache
-            )
+            self.assertIn("0BDA:8178\tdevice-ids\trtl8xxxu\trtl8xxxu-dkms\t", ids_cache)
             self.assertIn(
                 "04F9:0042\tprinter\tbrother-mfc-l\tbrother-mfc-l\t", ids_cache
             )
             # Firmware cache uses path-relative-to /usr/lib/firmware/.
-            self.assertIn(
-                "intel/sof/example.ri\talsa-sof-firmware\t", fw_cache
-            )
+            self.assertIn("intel/sof/example.ri\talsa-sof-firmware\t", fw_cache)
 
 
 if __name__ == "__main__":

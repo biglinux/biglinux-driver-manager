@@ -27,6 +27,17 @@ TMPFILE=$(mktemp "${CACHE_DIR}/.ids_cache.XXXXXX")
 TMPFILE_FW=""
 trap 'rm -f "$TMPFILE" "$TMPFILE_FW"' EXIT
 
+# Trim leading and trailing whitespace from a string.
+# Bash %%/## with a bracket-expression pattern only strips a single
+# whitespace char; this idiom uses pattern subtraction to strip every
+# leading and trailing whitespace character in one go.
+trim() {
+    local v="$1"
+    v="${v#"${v%%[![:space:]]*}"}"
+    v="${v%"${v##*[![:space:]]}"}"
+    printf '%s' "$v"
+}
+
 {
 # Process device-ids (pci.ids, usb.ids, sdio.ids)
 if [[ -d "${ASSETS_DIR}/device-ids" ]]; then
@@ -34,10 +45,9 @@ if [[ -d "${ASSETS_DIR}/device-ids" ]]; then
         [[ -d "$driver_dir" ]] || continue
         drv_name=$(basename "$driver_dir")
         drv_pkg=$(cat "${driver_dir}/pkg" 2>/dev/null || echo "$drv_name")
-        drv_pkg="${drv_pkg%%[[:space:]]}"
-        drv_pkg="${drv_pkg##[[:space:]]}"
+        drv_pkg=$(trim "$drv_pkg")
         drv_desc=$(cat "${driver_dir}/description" 2>/dev/null || echo "$drv_name")
-        drv_desc="${drv_desc%%[[:space:]]}"
+        drv_desc=$(trim "$drv_desc")
 
         for ids_file in "${driver_dir}"/*.ids; do
             [[ -f "$ids_file" ]] || continue
@@ -64,7 +74,7 @@ for category in printer scanner; do
             [[ -d "$driver_dir" ]] || continue
             drv_name=$(basename "$driver_dir")
             drv_desc=$(cat "${driver_dir}/description" 2>/dev/null || echo "$drv_name")
-            drv_desc="${drv_desc%%[[:space:]]}"
+            drv_desc=$(trim "$drv_desc")
 
             ids_file="${driver_dir}/usb.ids"
             [[ -f "$ids_file" ]] || continue
@@ -113,8 +123,7 @@ if [[ -d "${ASSETS_DIR}/firmware" ]]; then
         fi
 
         while IFS= read -r fwpath; do
-            fwpath="${fwpath%%[[:space:]]}"
-            fwpath="${fwpath##[[:space:]]}"
+            fwpath=$(trim "$fwpath")
             [[ -z "$fwpath" ]] && continue
             # Strip /usr/lib/firmware/ prefix to get the relative path
             rel="${fwpath#/usr/lib/firmware/}"

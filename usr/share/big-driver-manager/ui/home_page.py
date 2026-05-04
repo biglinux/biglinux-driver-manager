@@ -187,7 +187,9 @@ class HomePage(Gtk.Box):
 
         self._rec_revealer = Gtk.Revealer()
         if animations_enabled():
-            self._rec_revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_DOWN)
+            self._rec_revealer.set_transition_type(
+                Gtk.RevealerTransitionType.SLIDE_DOWN
+            )
         else:
             self._rec_revealer.set_transition_type(Gtk.RevealerTransitionType.NONE)
         self._rec_revealer.set_reveal_child(False)

@@ -42,7 +42,10 @@ class TestBaseManagerExtra(unittest.TestCase):
 
         process = MagicMock()
         process.poll.return_value = None
-        process.wait.side_effect = [subprocess.TimeoutExpired(cmd="pacman", timeout=2), None]
+        process.wait.side_effect = [
+            subprocess.TimeoutExpired(cmd="pacman", timeout=2),
+            None,
+        ]
 
         mgr = BaseManager()
         mgr._current_process = process
@@ -68,9 +71,10 @@ class TestBaseManagerExtra(unittest.TestCase):
                 return False
             return True
 
-        with patch.object(mgr, "_run_single_attempt", side_effect=fake_attempt), patch(
-            "core.base_manager.time.sleep"
-        ) as sleep_mock:
+        with (
+            patch.object(mgr, "_run_single_attempt", side_effect=fake_attempt),
+            patch("core.base_manager.time.sleep") as sleep_mock,
+        ):
             mgr._execute_command_thread(
                 ["-S", "pkg"],
                 lambda frac, text: progress.append((frac, text)),
@@ -107,12 +111,8 @@ class TestBaseManagerExtra(unittest.TestCase):
         from core.base_manager import BaseManager
 
         mgr = BaseManager()
-        self.assertEqual(
-            mgr._parse_download_progress("downloading foo 75%", 0.1), 0.4
-        )
-        self.assertEqual(
-            mgr._parse_download_progress("downloading (3/4)", 0.1), 0.4
-        )
+        self.assertEqual(mgr._parse_download_progress("downloading foo 75%", 0.1), 0.4)
+        self.assertEqual(mgr._parse_download_progress("downloading (3/4)", 0.1), 0.4)
         progress, text = mgr._parse_progress("checking dependencies", 0.0)
         self.assertEqual(progress, 0.2)
         self.assertTrue(text)
@@ -135,21 +135,27 @@ class TestKernelManagerExtra(unittest.TestCase):
 
     def test_get_running_kernel_package_matches_and_falls_back(self):
         mgr = self._make_manager()
-        with patch.object(
-            mgr,
-            "get_installed_kernels",
-            return_value=[
-                {"name": "linux612", "version": "6.12.10-1"},
-                {"name": "linux66", "version": "6.6.70-1"},
-            ],
-        ), patch.object(mgr, "get_running_kernel", return_value="6.12.10-1-MANJARO"):
+        with (
+            patch.object(
+                mgr,
+                "get_installed_kernels",
+                return_value=[
+                    {"name": "linux612", "version": "6.12.10-1"},
+                    {"name": "linux66", "version": "6.6.70-1"},
+                ],
+            ),
+            patch.object(mgr, "get_running_kernel", return_value="6.12.10-1-MANJARO"),
+        ):
             self.assertEqual(mgr.get_running_kernel_package(), "linux612")
 
-        with patch.object(
-            mgr,
-            "get_installed_kernels",
-            return_value=[{"name": "linux612", "version": "6.12.9-1"}],
-        ), patch.object(mgr, "get_running_kernel", return_value="6.12.10-1-MANJARO"):
+        with (
+            patch.object(
+                mgr,
+                "get_installed_kernels",
+                return_value=[{"name": "linux612", "version": "6.12.9-1"}],
+            ),
+            patch.object(mgr, "get_running_kernel", return_value="6.12.10-1-MANJARO"),
+        ):
             self.assertEqual(mgr.get_running_kernel_package(), "linux612")
 
     @patch("subprocess.run")
@@ -164,7 +170,10 @@ class TestKernelManagerExtra(unittest.TestCase):
         )
         mgr = self._make_manager()
         kernels = mgr._search_kernel_packages("linux")
-        self.assertEqual(kernels, [{"name": "linux612", "version": "6.12.10-1", "repository": "core"}])
+        self.assertEqual(
+            kernels,
+            [{"name": "linux612", "version": "6.12.10-1", "repository": "core"}],
+        )
 
     def test_get_kernel_modules_includes_headers_and_repo_filter(self):
         mgr = self._make_manager()
@@ -175,10 +184,13 @@ class TestKernelManagerExtra(unittest.TestCase):
             {"name": "mesa"},
         ]
 
-        with patch.object(mgr, "get_running_kernel_package", return_value="linux612"), patch.object(
-            mgr,
-            "_filter_existing_in_repos",
-            return_value=["linux619-headers", "linux619-nvidia-550xx"],
+        with (
+            patch.object(mgr, "get_running_kernel_package", return_value="linux612"),
+            patch.object(
+                mgr,
+                "_filter_existing_in_repos",
+                return_value=["linux619-headers", "linux619-nvidia-550xx"],
+            ),
         ):
             modules = mgr._get_kernel_modules("linux619")
 
@@ -186,18 +198,22 @@ class TestKernelManagerExtra(unittest.TestCase):
 
     def test_get_obsolete_kernels_skips_running_kernel(self):
         mgr = self._make_manager()
-        with patch.object(
-            mgr,
-            "get_installed_kernels",
-            return_value=[
-                {"name": "linux66", "version": "6.6.70-1"},
-                {"name": "linux612", "version": "6.12.10-1"},
-            ],
-        ), patch.object(
-            mgr,
-            "get_available_kernels",
-            return_value=[{"name": "linux612", "version": "6.12.10-1"}],
-        ), patch.object(mgr, "get_running_kernel_package", return_value="linux612"):
+        with (
+            patch.object(
+                mgr,
+                "get_installed_kernels",
+                return_value=[
+                    {"name": "linux66", "version": "6.6.70-1"},
+                    {"name": "linux612", "version": "6.12.10-1"},
+                ],
+            ),
+            patch.object(
+                mgr,
+                "get_available_kernels",
+                return_value=[{"name": "linux612", "version": "6.12.10-1"}],
+            ),
+            patch.object(mgr, "get_running_kernel_package", return_value="linux612"),
+        ):
             obsolete = mgr.get_obsolete_kernels()
 
         self.assertEqual(len(obsolete), 1)
@@ -207,11 +223,21 @@ class TestKernelManagerExtra(unittest.TestCase):
     def test_install_and_remove_kernel_use_precomputed_packages(self):
         mgr = self._make_manager()
         with patch.object(mgr, "run_pacman_command") as run_cmd:
-            mgr.install_kernel({"name": "linux612"}, packages=["linux612", "linux612-headers"])
-            mgr.remove_kernel({"name": "linux612"}, packages=["linux612", "linux612-headers"])
+            mgr.install_kernel(
+                {"name": "linux612"}, packages=["linux612", "linux612-headers"]
+            )
+            mgr.remove_kernel(
+                {"name": "linux612"}, packages=["linux612", "linux612-headers"]
+            )
 
-        self.assertEqual(run_cmd.call_args_list[0].kwargs["args"], ["-S", "--noconfirm", "linux612", "linux612-headers"])
-        self.assertEqual(run_cmd.call_args_list[1].kwargs["args"], ["-R", "--noconfirm", "linux612", "linux612-headers"])
+        self.assertEqual(
+            run_cmd.call_args_list[0].kwargs["args"],
+            ["-S", "--noconfirm", "linux612", "linux612-headers"],
+        )
+        self.assertEqual(
+            run_cmd.call_args_list[1].kwargs["args"],
+            ["-R", "--noconfirm", "linux612", "linux612-headers"],
+        )
 
 
 class TestMesaManagerExtra(unittest.TestCase):
@@ -248,7 +274,11 @@ class TestMesaManagerExtra(unittest.TestCase):
         mgr = self._make_manager()
         outputs = []
         completed = []
-        mgr.apply_driver("missing", output_callback=outputs.append, complete_callback=completed.append)
+        mgr.apply_driver(
+            "missing",
+            output_callback=outputs.append,
+            complete_callback=completed.append,
+        )
         self.assertIn("missing", outputs[0])
         self.assertEqual(completed, [False])
 
@@ -259,18 +289,23 @@ class TestMesaManagerExtra(unittest.TestCase):
         completed = []
         captured_args: list[list[str]] = []
 
-        def fake_run_pacman(args, progress_callback=None, output_callback=None,
-                             complete_callback=None, operation_name=""):
+        def fake_run_pacman(
+            args,
+            progress_callback=None,
+            output_callback=None,
+            complete_callback=None,
+            operation_name="",
+        ):
             captured_args.append(list(args))
             if complete_callback:
                 complete_callback(True)
 
-        with patch.object(
-            mgr, "_is_real_package_installed", side_effect=lambda pkg: pkg == "mesa"
-        ), patch.object(
-            mgr, "_packages_available", return_value={"mesa-tkg-stable"}
-        ), patch.object(
-            mgr, "run_pacman_command", side_effect=fake_run_pacman
+        with (
+            patch.object(
+                mgr, "_is_real_package_installed", side_effect=lambda pkg: pkg == "mesa"
+            ),
+            patch.object(mgr, "_packages_available", return_value={"mesa-tkg-stable"}),
+            patch.object(mgr, "run_pacman_command", side_effect=fake_run_pacman),
         ):
             mgr._apply_driver_thread(
                 driver,
@@ -300,19 +335,24 @@ class TestMesaManagerExtra(unittest.TestCase):
         completed: list[bool] = []
         call_count = {"n": 0}
 
-        def fake_run_pacman(args, progress_callback=None, output_callback=None,
-                             complete_callback=None, operation_name=""):
+        def fake_run_pacman(
+            args,
+            progress_callback=None,
+            output_callback=None,
+            complete_callback=None,
+            operation_name="",
+        ):
             call_count["n"] += 1
             # First call is the remove — simulate failure; second must not run.
             if complete_callback:
                 complete_callback(False)
 
-        with patch.object(
-            mgr, "_is_real_package_installed", side_effect=lambda pkg: pkg == "mesa"
-        ), patch.object(
-            mgr, "_packages_available", return_value={"mesa-tkg-stable"}
-        ), patch.object(
-            mgr, "run_pacman_command", side_effect=fake_run_pacman
+        with (
+            patch.object(
+                mgr, "_is_real_package_installed", side_effect=lambda pkg: pkg == "mesa"
+            ),
+            patch.object(mgr, "_packages_available", return_value={"mesa-tkg-stable"}),
+            patch.object(mgr, "run_pacman_command", side_effect=fake_run_pacman),
         ):
             mgr._apply_driver_thread(driver, None, outputs.append, completed.append)
 
@@ -343,9 +383,12 @@ class TestLoggingAndExceptions(unittest.TestCase):
         from core.constants import APP_NAME
         from core.logging_config import setup_logging
 
-        with patch("core.logging_config.os.makedirs"), patch(
-            "core.logging_config.RotatingFileHandler",
-            side_effect=OSError("no disk"),
+        with (
+            patch("core.logging_config.os.makedirs"),
+            patch(
+                "core.logging_config.RotatingFileHandler",
+                side_effect=OSError("no disk"),
+            ),
         ):
             logger = setup_logging(console_output=True, file_output=True)
 
@@ -380,9 +423,10 @@ class TestMainEntrypoint(unittest.TestCase):
         fake_app.run.return_value = 7
         fake_ui_module.KernelManagerApplication = MagicMock(return_value=fake_app)
 
-        with patch.dict(sys.modules, {"ui.application": fake_ui_module}), patch(
-            "signal.signal"
-        ) as signal_mock:
+        with (
+            patch.dict(sys.modules, {"ui.application": fake_ui_module}),
+            patch("signal.signal") as signal_mock,
+        ):
             if "main" in sys.modules:
                 sys.modules.pop("main", None)
             import main

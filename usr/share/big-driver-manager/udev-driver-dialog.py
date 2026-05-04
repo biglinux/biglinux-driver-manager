@@ -182,7 +182,7 @@ class DriverDialog(Adw.Application):
         self._ignore_switch.set_valign(Gtk.Align.CENTER)
 
         if self._category == "firmware":
-            ignore_label_text = _("Don't alert for this device again")
+            ignore_label_text = _("Don't alert for this firmware again")
         else:
             ignore_label_text = _("Don't alert for this device again")
         ignore_label = Gtk.Label(label=ignore_label_text)

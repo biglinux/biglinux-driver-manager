@@ -212,9 +212,7 @@ class ProgressDialog(Adw.Dialog):
         self._is_complete = False
         self._success = False
         self._cancelled_by_user = False
-        self._cancel_callback = (
-            cancel_callback if callable(cancel_callback) else None
-        )
+        self._cancel_callback = cancel_callback if callable(cancel_callback) else None
         self._current_step = 0
         self._total_steps = 0
         self.set_can_close(False)
@@ -289,7 +287,9 @@ class ProgressDialog(Adw.Dialog):
         (r"\binstalled successfully\b", "success"),
         (r"\bwarning:", "warning"),
     ]
-    _KEYWORD_TAGS = [(re.compile(pat, re.IGNORECASE), tag) for pat, tag in _KEYWORD_TAGS_RAW]
+    _KEYWORD_TAGS = [
+        (re.compile(pat, re.IGNORECASE), tag) for pat, tag in _KEYWORD_TAGS_RAW
+    ]
     _STARTSWITH_TAGS: list[tuple[tuple[str, ...], str]] = [
         (
             (

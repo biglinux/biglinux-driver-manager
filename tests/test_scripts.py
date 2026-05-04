@@ -85,8 +85,7 @@ class TestUdevNotifyScript(ScriptTestCase):
         self.dialog_script = self._write_dialog_script()
         self._write_fake_bin(
             "pacman",
-            "#!/bin/sh\n"
-            "exit 1\n",
+            "#!/bin/sh\nexit 1\n",
         )
         self._write_fake_bin(
             "loginctl",
@@ -170,18 +169,15 @@ class TestLoginCheckScript(ScriptTestCase):
         self.shown_file = self.base / "shown"
         self._write_fake_bin(
             "pacman",
-            "#!/bin/sh\n"
-            "exit 1\n",
+            "#!/bin/sh\nexit 1\n",
         )
         self._write_fake_bin(
             "lspci",
-            "#!/bin/sh\n"
-            "printf '00:02.0 0300: 1234:5678 (rev 01)\\n'\n",
+            "#!/bin/sh\nprintf '00:02.0 0300: 1234:5678 (rev 01)\\n'\n",
         )
         self._write_fake_bin(
             "dmesg",
-            "#!/bin/sh\n"
-            "exit 0\n",
+            "#!/bin/sh\nexit 0\n",
         )
 
     def test_blacklist_prevents_dialog(self):
@@ -257,7 +253,9 @@ class TestDialogTestScript(ScriptTestCase):
         (driver_dir / "description").write_text("Test USB Driver\n", encoding="utf-8")
         firmware_dir = self.assets_dir / "firmware" / "test-firmware-package"
         firmware_dir.mkdir(parents=True)
-        (firmware_dir / "description").write_text("Test Firmware Package\n", encoding="utf-8")
+        (firmware_dir / "description").write_text(
+            "Test Firmware Package\n", encoding="utf-8"
+        )
 
     def test_resolves_device_from_assets_and_launches_dialog(self):
         env = self._script_env(
