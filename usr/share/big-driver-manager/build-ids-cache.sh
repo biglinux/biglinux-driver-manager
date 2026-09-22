@@ -15,6 +15,15 @@ readonly FW_CACHE_FILE="${CACHE_DIR}/firmware_cache.txt"
 
 mkdir -p "$CACHE_DIR"
 
+# Strip all leading/trailing whitespace (the ${var%%[[:space:]]} form
+# removes a single character only).
+trim() {
+    local s="$1"
+    s="${s#"${s%%[![:space:]]*}"}"
+    s="${s%"${s##*[![:space:]]}"}"
+    printf '%s' "$s"
+}
+
 # Temporary file for atomic write
 TMPFILE=$(mktemp "${CACHE_DIR}/.ids_cache.XXXXXX")
 trap 'rm -f "$TMPFILE"' EXIT
@@ -26,10 +35,9 @@ if [[ -d "${ASSETS_DIR}/device-ids" ]]; then
         [[ -d "$driver_dir" ]] || continue
         drv_name=$(basename "$driver_dir")
         drv_pkg=$(cat "${driver_dir}/pkg" 2>/dev/null || echo "$drv_name")
-        drv_pkg="${drv_pkg%%[[:space:]]}"
-        drv_pkg="${drv_pkg##[[:space:]]}"
+        drv_pkg=$(trim "$drv_pkg")
         drv_desc=$(cat "${driver_dir}/description" 2>/dev/null || echo "$drv_name")
-        drv_desc="${drv_desc%%[[:space:]]}"
+        drv_desc=$(trim "$drv_desc")
 
         for ids_file in "${driver_dir}"/*.ids; do
             [[ -f "$ids_file" ]] || continue
@@ -56,7 +64,7 @@ for category in printer scanner; do
             [[ -d "$driver_dir" ]] || continue
             drv_name=$(basename "$driver_dir")
             drv_desc=$(cat "${driver_dir}/description" 2>/dev/null || echo "$drv_name")
-            drv_desc="${drv_desc%%[[:space:]]}"
+            drv_desc=$(trim "$drv_desc")
 
             ids_file="${driver_dir}/usb.ids"
             [[ -f "$ids_file" ]] || continue
@@ -98,8 +106,7 @@ if [[ -d "${ASSETS_DIR}/firmware" ]]; then
         desc=$(cat "${fw_dir}/description" 2>/dev/null | tr '\n' ' ' | sed 's/  */ /g;s/ *$//' || echo "$pkg")
 
         while IFS= read -r fwpath; do
-            fwpath="${fwpath%%[[:space:]]}"
-            fwpath="${fwpath##[[:space:]]}"
+            fwpath=$(trim "$fwpath")
             [[ -z "$fwpath" ]] && continue
             # Strip /usr/lib/firmware/ prefix to get the relative path
             rel="${fwpath#/usr/lib/firmware/}"

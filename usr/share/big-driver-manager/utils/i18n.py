@@ -25,8 +25,8 @@ if "APPIMAGE" in os.environ or "APPDIR" in os.environ:
         locale_dir = appimage_locale
 
 # Configure the translation text domain for big-driver-manager
-gettext.bindtextdomain("big-driver-manager", locale_dir)
-gettext.textdomain("big-driver-manager")
+gettext.bindtextdomain("biglinux-driver-manager", locale_dir)
+gettext.textdomain("biglinux-driver-manager")
 
 # Export _ directly as the translation function
 _ = gettext.gettext

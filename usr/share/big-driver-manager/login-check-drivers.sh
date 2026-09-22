@@ -27,41 +27,45 @@ fi
 # Load blacklist into a lookup string
 BLACKLIST=""
 if [[ -f "$BLACKLIST_FILE" ]]; then
-    BLACKLIST=$(python3 -c "
+    BLACKLIST=$(python3 -c '
 import json, sys
 try:
-    data = json.load(open('$BLACKLIST_FILE'))
-    print('\n'.join(data) if isinstance(data, list) else '')
+    data = json.load(open(sys.argv[1]))
+    print("\n".join(data) if isinstance(data, list) else "")
 except Exception:
     pass
-" 2>/dev/null || true)
+' "$BLACKLIST_FILE" 2>/dev/null || true)
 fi
 
-# Collect all USB VID:PID from sysfs
-declare -A USB_IDS
+# Collect present USB and PCI IDs from sysfs, remembering which devices
+# already have a kernel driver bound (those need no extra driver).
+declare -A ALL_IDS
+declare -A HAS_DRIVER
+
 for dev in /sys/bus/usb/devices/*/idVendor; do
     dir="${dev%/idVendor}"
     vid=$(cat "$dev" 2>/dev/null || true)
     pid=$(cat "$dir/idProduct" 2>/dev/null || true)
-    if [[ -n "$vid" && -n "$pid" ]]; then
-        USB_IDS["${vid^^}:${pid^^}"]=1
-    fi
+    [[ -n "$vid" && -n "$pid" ]] || continue
+    id="${vid^^}:${pid^^}"
+    ALL_IDS["$id"]="usb"
+    for drv in "$dir"/*:*/driver; do
+        [[ -e "$drv" ]] || continue
+        [[ "$(basename "$(readlink -f "$drv")")" == "usbfs" ]] && continue
+        HAS_DRIVER["$id"]=1
+        break
+    done
 done
 
-# Collect all PCI VID:DID from lspci
-declare -A PCI_IDS
-while IFS= read -r line; do
-    # lspci -n output: 00:02.0 0300: 8086:5917 (rev 04)
-    vid_did=$(echo "$line" | grep -oP '\b[0-9a-fA-F]{4}:[0-9a-fA-F]{4}\b' | head -1)
-    if [[ -n "$vid_did" ]]; then
-        PCI_IDS["${vid_did^^}"]=1
-    fi
-done < <(lspci -n 2>/dev/null || true)
-
-# Merge all present device IDs
-declare -A ALL_IDS
-for id in "${!USB_IDS[@]}"; do ALL_IDS["$id"]="usb"; done
-for id in "${!PCI_IDS[@]}"; do ALL_IDS["$id"]="pci"; done
+for dir in /sys/bus/pci/devices/*; do
+    vid=$(cat "$dir/vendor" 2>/dev/null || true)
+    did=$(cat "$dir/device" 2>/dev/null || true)
+    [[ -n "$vid" && -n "$did" ]] || continue
+    vid="${vid#0x}"; did="${did#0x}"
+    id="${vid^^}:${did^^}"
+    ALL_IDS["$id"]="pci"
+    [[ -e "$dir/driver" ]] && HAS_DRIVER["$id"]=1
+done
 
 # Build a grep pattern from all present IDs for fast cache lookup
 ID_PATTERN=""
@@ -81,6 +85,9 @@ if [[ -n "$ID_PATTERN" ]]; then
         [[ -z "$cache_id" ]] && continue
 
         bus="${ALL_IDS[$cache_id]:-usb}"
+
+        # Device already works with a built-in kernel driver?
+        [[ "$category" == "device-ids" && -n "${HAS_DRIVER[$cache_id]:-}" ]] && continue
 
         # Already installed?
         pacman -Qq "$package" &>/dev/null && continue

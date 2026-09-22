@@ -260,8 +260,9 @@ class TestDriverInstaller(unittest.TestCase):
             installer = DriverInstaller()
             self.assertIsInstance(installer, BaseManager)
 
+    @patch("core.driver_installer.fetch_repo_package_set", return_value={"test-pkg"})
     @patch("core.base_manager.BaseManager._run_pacman_command")
-    def test_install_package_calls_pacman(self, mock_run):
+    def test_install_package_calls_pacman(self, mock_run, _mock_repo):
         with patch("core.driver_installer.get_logger"):
             from core.driver_installer import DriverInstaller
 

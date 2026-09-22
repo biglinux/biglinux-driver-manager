@@ -349,6 +349,7 @@ def _get_recommendations(
     active_mesa: str,
     has_nvidia_proprietary: bool,
     installed_set: set[str] | None = None,
+    available_set: set[str] | None = None,
 ) -> tuple[list[dict], list[dict]]:
     """Return (missing, installed) recommended packages for detected GPUs.
 
@@ -356,6 +357,9 @@ def _get_recommendations(
 
     When *installed_set* is provided it is used directly, avoiding
     subprocess calls via *pkg_manager* (safe for the UI thread).
+    When *available_set* is provided, missing packages that the enabled
+    repositories don't offer (e.g. lib32-* without multilib) are skipped
+    instead of being recommended and then failing to install.
     """
     _init_purpose_sections()
     bundled = _MESA_BUNDLED.get(active_mesa or "stable", frozenset())
@@ -400,7 +404,7 @@ def _get_recommendations(
             }
             if _is_installed(name):
                 installed.append(entry)
-            else:
+            elif not available_set or name in available_set:
                 missing.append(entry)
 
     return missing, installed

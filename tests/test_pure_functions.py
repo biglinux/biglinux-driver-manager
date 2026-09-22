@@ -151,38 +151,6 @@ class TestVersionSortKey(unittest.TestCase):
 
 
 # ------------------------------------------------------------------
-# _get_category_icon
-# ------------------------------------------------------------------
-
-
-class TestGetCategoryIcon(unittest.TestCase):
-    """Tests for _get_category_icon from drivers_hub_page."""
-
-    @classmethod
-    def setUpClass(cls):
-        from ui.drivers_hub_page import _get_category_icon
-
-        cls._fn = staticmethod(_get_category_icon)
-
-    def test_known_categories(self):
-        known = {
-            "video": "video-display-symbolic",
-            "wifi": "network-wireless-symbolic",
-            "bluetooth": "bluetooth-symbolic",
-            "printer": "printer-symbolic",
-            "scanner": "document-scan-symbolic",
-        }
-        for cat_id, expected_icon in known.items():
-            self.assertEqual(self._fn(cat_id), expected_icon)
-
-    def test_unknown_returns_fallback(self):
-        self.assertEqual(
-            self._fn("nonexistent_category"),
-            "application-x-firmware-symbolic",
-        )
-
-
-# ------------------------------------------------------------------
 # _MESA_HUMAN_NAMES
 # ------------------------------------------------------------------
 

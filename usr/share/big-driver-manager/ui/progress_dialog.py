@@ -33,6 +33,9 @@ class ProgressDialog(Adw.Dialog):
         self._is_complete = False
         self._success = False
         self._cancel_callback = None
+        # Set once the user cancelled: the late result of the killed
+        # operation must not overwrite the "cancelled" state.
+        self._cancelled = False
         self._current_step = 0
         self._total_steps = 0
 
@@ -199,6 +202,7 @@ class ProgressDialog(Adw.Dialog):
         self._is_complete = False
         self._success = False
         self._cancel_callback = cancel_callback
+        self._cancelled = False
         self._current_step = 0
         self._total_steps = 0
         self.set_can_close(False)
@@ -211,7 +215,9 @@ class ProgressDialog(Adw.Dialog):
         self._terminal_buffer.set_text("", 0)
         self._terminal_expander.set_expanded(False)
 
-        self._cancel_btn.set_visible(True)
+        # Without a callback there is nothing that could actually stop the work
+        self._cancel_btn.set_visible(cancel_callback is not None)
+        self._cancel_btn.set_sensitive(True)
         self._close_btn.set_visible(False)
 
         self._icon_stack.set_visible_child_name("spinner")
@@ -360,6 +366,8 @@ class ProgressDialog(Adw.Dialog):
             self.show_error(message)
 
     def _show_result_idle(self, success: bool, message: str) -> bool:
+        if self._cancelled:
+            return False
         self._is_complete = True
         self._success = success
         self._spinner.stop()
@@ -400,12 +408,26 @@ class ProgressDialog(Adw.Dialog):
     # ------------------------------------------------------------------
 
     def _on_cancel_clicked(self, _button) -> None:
+        stopped = True
         if self._cancel_callback:
             try:
-                self._cancel_callback()
+                # cancel_operation() returns False when the process can't be
+                # stopped safely (pacman running as root after pkexec)
+                stopped = self._cancel_callback() is not False
             except Exception:
-                pass
+                stopped = False
 
+        if not stopped:
+            self._cancel_btn.set_sensitive(False)
+            self._status_label.set_text(
+                _(
+                    "This step can no longer be cancelled safely. "
+                    "Waiting for it to finish…"
+                )
+            )
+            return
+
+        self._cancelled = True
         self._spinner.stop()
         self._is_complete = True
         self._success = False

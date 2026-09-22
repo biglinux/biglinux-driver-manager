@@ -17,6 +17,7 @@ readonly COOLDOWN=30  # seconds between notifications for the same device
 BUS="${1:-}"        # "usb" or "pci"
 VENDOR="${2:-}"     # vendor ID (hex)
 DEVICE="${3:-}"     # device/product ID (hex)
+DEVPATH="${4:-}"    # sysfs devpath (e.g. /devices/pci0000:00/.../2-2.3)
 
 [[ -z "$BUS" || -z "$VENDOR" || -z "$DEVICE" ]] && exit 0
 
@@ -34,7 +35,8 @@ SEARCH_ID="${VENDOR}:${DEVICE}"
 
 # Fast lookup in the pre-built cache (~1ms for ~1400 lines)
 # Cache format: VID:DID<TAB>category<TAB>driver_name<TAB>package<TAB>description
-MATCH=$(grep -m1 -F "$SEARCH_ID" "$CACHE_FILE" 2>/dev/null || true)
+# Exact match on the ID column (a plain grep could hit a description).
+MATCH=$(awk -F'\t' -v id="$SEARCH_ID" '$1 == id { print; exit }' "$CACHE_FILE" 2>/dev/null || true)
 [[ -z "$MATCH" ]] && exit 0
 
 # Parse the match
@@ -42,6 +44,21 @@ IFS=$'\t' read -r _id CATEGORY DRIVER_NAME PACKAGE DESCRIPTION <<< "$MATCH"
 
 # Check if the package is already installed
 pacman -Qq "$PACKAGE" &>/dev/null && exit 0
+
+# For hardware drivers, stay quiet when the kernel already drives the device
+# (e.g. RTL8153 adapters work with the built-in r8152 module). Interface
+# drivers bind a moment after the "add" event, so wait a few seconds.
+if [[ "$CATEGORY" == "device-ids" && -n "$DEVPATH" ]]; then
+    for _ in 1 2 3 4 5; do
+        sleep 1
+        [[ -d "/sys${DEVPATH}" ]] || exit 0  # unplugged meanwhile
+        for drv in "/sys${DEVPATH}"/*:*/driver; do
+            [[ -e "$drv" ]] || continue
+            [[ "$(basename "$(readlink -f "$drv")")" == "usbfs" ]] && continue
+            exit 0
+        done
+    done
+fi
 
 # Rate-limit: avoid duplicate dialogs for the same device
 mkdir -p "$LOCK_DIR" 2>/dev/null || true

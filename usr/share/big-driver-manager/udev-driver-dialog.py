@@ -29,7 +29,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio, GLib, Gtk
 
 _APP_ID = "br.com.biglinux.drivermanager.udev"
-_DOMAIN = "big-driver-manager"
+_DOMAIN = "biglinux-driver-manager"
 
 # --- i18n ---
 _locale_dir = "/usr/share/locale"
@@ -68,6 +68,21 @@ def _save_blacklist(entries: list[str]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(sorted(set(entries)), fh, indent=2)
+
+
+def _blacklist_key(category: str, vid: str, did: str, package: str) -> str:
+    if category == "firmware":
+        return f"fw:{package}"
+    return f"{vid}:{did}".upper()
+
+
+def _is_blacklisted(key: str) -> bool:
+    """True if the user chose "Don't alert for this device again".
+
+    Checked here because udev-notify.sh (hotplug) runs as root and never
+    reads the user's list — only the login check did.
+    """
+    return key.upper() in {entry.upper() for entry in _load_blacklist()}
 
 
 # --- Parse CLI args ---
@@ -191,9 +206,7 @@ class DriverDialog(Adw.Application):
         win.present()
 
     def _blacklist_key(self) -> str:
-        if self._category == "firmware":
-            return f"fw:{self._package}"
-        return f"{self._vid}:{self._did}"
+        return _blacklist_key(self._category, self._vid, self._did, self._package)
 
     def _maybe_blacklist(self) -> None:
         if self._ignore_switch.get_active():
@@ -208,7 +221,8 @@ class DriverDialog(Adw.Application):
     def _on_install(self, _btn: Gtk.Button) -> None:
         self._maybe_blacklist()
         # Launch big-driver-manager in the user session scope so it survives
-        # after this transient dialog process exits.
+        # after this transient dialog process exits. --install opens the
+        # driver's page with the install confirmation already shown.
         try:
             subprocess.Popen(
                 [
@@ -217,6 +231,8 @@ class DriverDialog(Adw.Application):
                     "--scope",
                     "--",
                     "big-driver-manager",
+                    "--install",
+                    self._package,
                 ],
                 start_new_session=True,
             )
@@ -236,6 +252,8 @@ def main() -> None:
         sys.exit(1)
 
     bus, vid, did, category, driver_name, package, description = args
+    if _is_blacklisted(_blacklist_key(category, vid, did, package)):
+        sys.exit(0)
     app = DriverDialog(bus, vid, did, category, driver_name, package, description)
     app.run([])
 

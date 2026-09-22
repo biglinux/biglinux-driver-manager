@@ -21,12 +21,15 @@ from core.driver_database import DriverDatabase
 from core.hardware_detect import (
     detect_all_devices,
     detect_network_printers,
+    detect_wired_links,
     fetch_installed_set,
+    mark_repo_availability,
     match_firmware,
     match_modules,
     match_network_printers,
     update_peripheral_install_status,
 )
+from core.package_manager import fetch_repo_package_set, last_sync_age_days
 from core.kernel_manager import KernelManager
 from core.logging_config import get_logger
 from core.mesa_manager import MesaManager
@@ -38,6 +41,14 @@ from ui.kernel_page import KernelSection
 from ui.category_page import CategorySection
 from ui.progress_dialog import ProgressDialog
 from utils.i18n import _
+
+try:
+    from big_gnome_center_material import attach_window_material
+except ImportError:
+    attach_window_material = None
+
+# Warn before installing when the package database is older than this
+_STALE_SYNC_DAYS = 14
 
 # Category definitions: (id, icon, title, description)
 _CATEGORY_DEFS = [
@@ -121,12 +132,19 @@ class KernelManagerWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.add_css_class("big-driver-manager")
+        if attach_window_material is not None:
+            self._window_material = attach_window_material(self, "big-driver-manager")
         self._logger = get_logger("Window")
         self.set_title(APP_NAME)
         self.set_default_size(WINDOW_DEFAULT_WIDTH, WINDOW_DEFAULT_HEIGHT)
         self.set_size_request(360, 480)
         self.set_resizable(True)
         self._category_sections: dict[str, CategorySection] = {}
+        # Package requested from the command line (driver notification),
+        # handled once the category pages are populated.
+        self._pending_install: str | None = None
+        self._categories_ready = False
         self._build_ui()
         GLib.idle_add(self._start_detection)
 
@@ -160,9 +178,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         self.kernel_section.set_progress_dialog(self.progress_dialog)
         for sec in self._category_sections.values():
             sec.set_progress_dialog(self.progress_dialog)
-        self._home.set_install_handler(
-            self.mesa_section.mhwd_manager, self.progress_dialog
-        )
+        self._home.set_install_handler(self.progress_dialog)
 
         # Initial state — select Home
         first_row = self._sidebar_list.get_row_at_index(0)
@@ -429,9 +445,11 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             db = DriverDatabase()
 
             # Phase 1: run independent I/O tasks in parallel
-            with ThreadPoolExecutor(max_workers=5) as pool:
+            with ThreadPoolExecutor(max_workers=7) as pool:
                 fut_devices = pool.submit(detect_all_devices)
                 fut_installed = pool.submit(fetch_installed_set)
+                fut_repo = pool.submit(fetch_repo_package_set)
+                fut_links = pool.submit(detect_wired_links)
                 fut_mhwd = pool.submit(MhwdManager().get_video_drivers)
                 fut_gpu = pool.submit(MesaSection._detect_gpu_info)
 
@@ -443,9 +461,13 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 mhwd_video = fut_mhwd.result()
                 gpu_info = fut_gpu.result()
                 available_kernels = fut_kernels.result()
+                repo_pkgs = fut_repo.result()
+                wired_links = fut_links.result()
+            sync_age = last_sync_age_days()
 
             # Phase 2: match drivers (depends on installed_pkgs)
             match_modules(db, devices, installed_cache=installed_pkgs)
+            mark_repo_availability(db, repo_pkgs)
             match_firmware(db, installed_cache=installed_pkgs)
             update_peripheral_install_status(db, installed_cache=installed_pkgs)
 
@@ -467,6 +489,8 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 self._populate_home_dashboard(
                     gpu_info, mesa_drivers, obsolete_kernels, db,
                     installed_pkgs=installed_pkgs,
+                    repo_pkgs=repo_pkgs,
+                    sync_age=sync_age,
                 )
                 self.kernel_section.set_preloaded_data(
                     available_kernels,
@@ -477,6 +501,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                     mesa_drivers,
                     gpu_info,
                     mhwd_video,
+                    repo_set=repo_pkgs,
                 )
                 GLib.idle_add(_populate_phase2)
                 return False
@@ -484,6 +509,10 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             def _populate_phase2() -> bool:
                 """Category sections — heavier (printers/scanners)."""
                 self._populate_category_sections(db)
+                if "ethernet" in self._category_sections:
+                    self._category_sections["ethernet"].set_link_status(wired_links)
+                self._categories_ready = True
+                self._handle_pending_install()
                 self._installed_page.set_installed_data(
                     modules=list(db.modules),
                     firmware=list(db.firmware),
@@ -584,7 +613,12 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 [*db.scanners, *db.get_firmware_by_category("scanner")]
             )
         if "other" in cat:
-            cat["other"].set_items(db.get_firmware_by_category("other"))
+            cat["other"].set_items(
+                [
+                    *db.get_modules_by_category("other"),
+                    *db.get_firmware_by_category("other"),
+                ]
+            )
 
     def _populate_home_dashboard(
         self,
@@ -593,6 +627,8 @@ class KernelManagerWindow(Adw.ApplicationWindow):
         obsolete_kernels: list[dict],
         db,
         installed_pkgs: set[str] | None = None,
+        repo_pkgs: set[str] | None = None,
+        sync_age: float | None = None,
     ) -> None:
         """Populate the home dashboard with video recs, driver suggestions, and alerts."""
         from ui.mesa_data import _get_recommendations
@@ -613,6 +649,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
             active_mesa_id,
             has_nvidia_prop,
             installed_set=installed_pkgs,
+            available_set=repo_pkgs,
         )
         vendor_label = ", ".join(
             v.upper() if v == "amd" else v.capitalize() for v in sorted(gpu_vendors)
@@ -631,7 +668,42 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 action_label=_("Manage"),
                 action_page="kernel",
             )
+        if sync_age is not None and sync_age >= _STALE_SYNC_DAYS:
+            home.add_alert(
+                _(
+                    "The package database was last updated {} days ago. "
+                    "Update your system before installing drivers to avoid "
+                    "download failures and missing packages."
+                ).format(int(sync_age)),
+                alert_type="info",
+            )
         home.update_banner()
+
+    # ------------------------------------------------------------------
+    # Install request from the command line (driver notifications)
+    # ------------------------------------------------------------------
+
+    def request_install(self, package: str) -> None:
+        """Open the page holding *package* and ask to install it.
+
+        Called by the application for ``--install PACKAGE``; if detection
+        is still running, the request is handled when it finishes.
+        """
+        self._pending_install = package
+        if self._categories_ready:
+            self._handle_pending_install()
+
+    def _handle_pending_install(self) -> None:
+        package, self._pending_install = self._pending_install, None
+        if not package:
+            return
+        for cat_id, section in self._category_sections.items():
+            item = section.find_item(package)
+            if item is not None:
+                self._navigate_to(cat_id)
+                section.prompt_install(item)
+                return
+        self._logger.warning("Requested package %s not found in database", package)
 
     # ------------------------------------------------------------------
     # Reboot banner

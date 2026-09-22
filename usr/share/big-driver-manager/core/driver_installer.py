@@ -5,34 +5,50 @@
 Driver Installer — installs and removes driver/firmware/peripheral packages.
 
 For repo packages, runs pacman via pkexec with progress tracking.
-For AUR packages, launches pamac-installer --build (BigLinux standard).
+For AUR packages, launches pamac-installer --build (BigLinux standard),
+after installing the build prerequisites DKMS modules need.
 """
 
 import subprocess
 import shutil
+import threading
 
 from typing import Callable
 
 from core.base_manager import BaseManager
+from core.hardware_detect import fetch_installed_set
 from core.logging_config import get_logger
-from core.subprocess_env import subprocess_env
+from core.package_manager import fetch_repo_package_set
 from utils.i18n import _
 
 _logger = get_logger("DriverInstaller")
 
+# Packages every DKMS build needs besides the headers of each kernel
+_DKMS_BUILD_DEPS = ("dkms", "base-devel")
 
-def _is_in_repo(package: str) -> bool:
-    """Check if a package is available in pacman repositories."""
-    try:
-        result = subprocess.run(
-            ["pacman", "-Si", package],
-            capture_output=True,
-            timeout=15,
-            env=subprocess_env(),
-        )
-        return result.returncode == 0
-    except (subprocess.TimeoutExpired, OSError):
-        return False
+
+def is_in_repo(package: str) -> bool:
+    """Check if a package is available in the enabled pacman repositories."""
+    return package in fetch_repo_package_set()
+
+
+def missing_dkms_prerequisites(installed: set[str], available: set[str]) -> list[str]:
+    """Return the repo packages still needed to build a DKMS module.
+
+    Includes dkms, base-devel and the headers of every installed kernel,
+    so the module is built for all of them — not only the running one.
+    """
+    needed = [pkg for pkg in _DKMS_BUILD_DEPS if pkg not in installed]
+    for name in sorted(installed):
+        headers = f"{name}-headers"
+        if (
+            name.startswith("linux")
+            and not name.endswith("-headers")
+            and headers in available
+            and headers not in installed
+        ):
+            needed.append(headers)
+    return [pkg for pkg in needed if pkg in available]
 
 
 class DriverInstaller(BaseManager):
@@ -47,8 +63,9 @@ class DriverInstaller(BaseManager):
     ) -> None:
         """Install a driver package in background thread."""
         _logger.info("Installing package: %s", package)
+        self.last_error_hint = None
 
-        if _is_in_repo(package):
+        if is_in_repo(package):
             self._run_pacman_command(
                 args=["-S", "--noconfirm", "--needed", package],
                 progress_callback=progress_callback,
@@ -56,10 +73,15 @@ class DriverInstaller(BaseManager):
                 complete_callback=complete_callback,
                 operation_name=_("Installing {}").format(package),
             )
-        else:
-            _logger.info(
-                "Package %s not in repos, using pamac-installer --build", package
-            )
+            return
+
+        _logger.info("Package %s not in repos, using pamac-installer --build", package)
+
+        def _launch(success: bool = True) -> None:
+            if not success:
+                if complete_callback:
+                    complete_callback(False)
+                return
             self._launch_pamac(
                 package,
                 build=True,
@@ -67,6 +89,28 @@ class DriverInstaller(BaseManager):
                 output_callback=output_callback,
                 complete_callback=complete_callback,
             )
+
+        prereqs = []
+        if "dkms" in package:
+            prereqs = missing_dkms_prerequisites(
+                fetch_installed_set(), fetch_repo_package_set()
+            )
+        if not prereqs:
+            _launch()
+            return
+
+        _logger.info("Installing DKMS prerequisites first: %s", prereqs)
+        self._output(
+            output_callback,
+            _("Installing build prerequisites: {}").format(", ".join(prereqs)),
+        )
+        self._run_pacman_command(
+            args=["-S", "--noconfirm", "--needed", *prereqs],
+            progress_callback=progress_callback,
+            output_callback=output_callback,
+            complete_callback=_launch,
+            operation_name=_("Installing build prerequisites"),
+        )
 
     def remove_package(
         self,
@@ -85,8 +129,8 @@ class DriverInstaller(BaseManager):
             operation_name=_("Removing {}").format(package),
         )
 
-    @staticmethod
     def _launch_pamac(
+        self,
         package: str,
         build: bool = False,
         progress_callback: Callable | None = None,
@@ -98,6 +142,7 @@ class DriverInstaller(BaseManager):
         if not pamac:
             msg = _("pamac-installer not found. Cannot install AUR package {}.")
             _logger.error(msg.format(package))
+            self.last_error_hint = msg.format(package)
             if output_callback:
                 output_callback(msg.format(package))
             if complete_callback:
@@ -115,17 +160,18 @@ class DriverInstaller(BaseManager):
 
         def _wait() -> None:
             try:
-                proc = subprocess.Popen(cmd)
-                proc.wait()
-                success = proc.returncode == 0
+                # Tracked so cancel_operation() can close the pamac window
+                self._current_process = subprocess.Popen(cmd)
+                self._current_process.wait()
+                success = self._current_process.returncode == 0
             except OSError as exc:
                 _logger.error("Failed to launch pamac-installer: %s", exc)
                 if output_callback:
                     output_callback(str(exc))
                 success = False
+            finally:
+                self._current_process = None
             if complete_callback:
                 complete_callback(success)
-
-        import threading
 
         threading.Thread(target=_wait, daemon=True).start()

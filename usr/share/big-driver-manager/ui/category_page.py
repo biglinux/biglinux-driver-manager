@@ -14,11 +14,18 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, GLib, Adw
 
 from collections.abc import Sequence
+from functools import partial
 
 from core.constants import ICON_SIZE_ITEM
 from core.driver_database import DriverModule, FirmwareEntry, PeripheralEntry
 from core.driver_installer import DriverInstaller
-from ui.base_page import BaseSection
+from core.hardware_detect import WiredLink
+from ui.base_page import (
+    BaseSection,
+    PackageOperationMixin,
+    create_aur_badge,
+    install_confirm_body,
+)
 from utils.desc_translate import translate_description
 from utils.i18n import _
 from utils.tooltip_helper import TooltipHelper, build_tooltip_body
@@ -29,6 +36,22 @@ _GROUP_THRESHOLD = 20
 # Map package-name prefixes to human brand names.
 # Longer prefixes checked first (sorted by -len at init time).
 _BRAND_PREFIXES: list[tuple[str, str]] = []
+
+
+def _covered_by_kernel(item) -> bool:
+    """True when the matched device already works with a built-in driver.
+
+    Third-party drivers for such devices are not suggested: they only show
+    up with "Show all drivers" enabled.
+    """
+    return getattr(item, "detected", False) and getattr(
+        item, "device_has_driver", False
+    )
+
+
+def _is_suggested(item) -> bool:
+    """Detected hardware that still needs this driver."""
+    return getattr(item, "detected", False) and not _covered_by_kernel(item)
 
 
 def _init_brand_prefixes() -> None:
@@ -69,7 +92,7 @@ def _detect_brand(name: str) -> str:
     return _("Other")
 
 
-class CategorySection(BaseSection):
+class CategorySection(PackageOperationMixin, BaseSection):
     """A generic driver/peripheral category section with boxed-list layout."""
 
     def __init__(
@@ -146,6 +169,12 @@ class CategorySection(BaseSection):
         self._status_label.set_margin_bottom(8)
         self._status_label.set_visible(False)
         self.append(self._status_label)
+
+        # Wired link diagnostics (Ethernet page only, hidden by default)
+        self._link_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
+        self._link_box.set_margin_bottom(12)
+        self._link_box.set_visible(False)
+        self.append(self._link_box)
 
         # Network scan banner (hidden by default)
         self._net_scan_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
@@ -229,6 +258,69 @@ class CategorySection(BaseSection):
         self._items = list(items)
         self._rebuild_list()
 
+    def set_link_status(self, links: list[WiredLink]) -> None:
+        """Show whether each wired adapter works and has a cable connected.
+
+        Answers the most common Ethernet question — "do I need a driver?" —
+        before the user tries installing one for an adapter that already works.
+        """
+        while child := self._link_box.get_first_child():
+            self._link_box.remove(child)
+        for link in links:
+            row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+            row.add_css_class("purpose-pkg-row")
+            icon = Gtk.Image.new_from_icon_name("network-wired-symbolic")
+            icon.set_pixel_size(ICON_SIZE_ITEM)
+            row.append(icon)
+
+            text_col = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
+            text_col.set_hexpand(True)
+            title = _("Adapter {} — working (driver {})").format(
+                link.interface, link.driver or _("unknown")
+            )
+            title_lbl = Gtk.Label(label=title)
+            title_lbl.set_xalign(0)
+            title_lbl.set_wrap(True)
+            text_col.append(title_lbl)
+
+            if link.carrier:
+                state = _("Cable connected")
+                if link.speed_mbps:
+                    state += f" · {link.speed_mbps} Mb/s"
+            elif link.carrier is None:
+                state = _("Interface disabled")
+            else:
+                state = _(
+                    "No cable or link detected. Check the cable and the "
+                    "router/switch port — no extra driver is needed."
+                )
+            state_lbl = Gtk.Label(label=state)
+            state_lbl.set_xalign(0)
+            state_lbl.set_wrap(True)
+            state_lbl.add_css_class("dim-label")
+            state_lbl.add_css_class("caption")
+            text_col.append(state_lbl)
+            row.append(text_col)
+            self._link_box.append(row)
+        self._link_box.set_visible(bool(links))
+
+    def find_item(
+        self, package: str
+    ) -> DriverModule | FirmwareEntry | PeripheralEntry | None:
+        """Return the item of this category that installs *package*."""
+        for item in self._items:
+            if getattr(item, "package", item.name) == package:
+                return item
+        return None
+
+    def prompt_install(
+        self, item: DriverModule | FirmwareEntry | PeripheralEntry
+    ) -> None:
+        """Open the install confirmation for *item* (used by notifications)."""
+        if getattr(item, "installed", False):
+            return
+        self._on_install_clicked(None, item)
+
     def show_network_scan(self) -> None:
         """Show the 'searching network printers' banner."""
         self._net_scan_box.set_visible(True)
@@ -304,9 +396,8 @@ class CategorySection(BaseSection):
         def sort_key(
             item: DriverModule | FirmwareEntry | PeripheralEntry,
         ) -> tuple[bool, bool, str]:
-            detected = getattr(item, "detected", False)
             installed = getattr(item, "installed", False)
-            return (not detected, installed, item.name.lower())
+            return (not _is_suggested(item), installed, item.name.lower())
 
         sorted_items = sorted(self._items, key=sort_key)
 
@@ -428,6 +519,13 @@ class CategorySection(BaseSection):
         desc = getattr(item, "description", "")
         device_name = getattr(item, "detected_device_name", None)
         info = device_name or translate_description(desc.strip())
+        covered = _covered_by_kernel(item) and not installed
+        if covered:
+            status_parts[:] = [
+                _("Not needed: device already works with built-in driver {}").format(
+                    getattr(item, "device_driver", "") or _("unknown")
+                )
+            ]
 
         subtitle_parts: list[str] = []
         if status_parts:
@@ -444,6 +542,9 @@ class CategorySection(BaseSection):
 
         row.append(text_col)
 
+        if getattr(item, "in_repo", None) is False:
+            row.append(create_aur_badge())
+
         # Action button
         if installed:
             btn = Gtk.Button(label=_("Remove"))
@@ -451,7 +552,8 @@ class CategorySection(BaseSection):
             btn.connect("clicked", self._on_remove_clicked, item)
         else:
             btn = Gtk.Button(label=_("Install"))
-            btn.add_css_class("suggested-action")
+            if not covered:
+                btn.add_css_class("suggested-action")
             btn.connect("clicked", self._on_install_clicked, item)
 
         btn.set_valign(Gtk.Align.CENTER)
@@ -486,8 +588,7 @@ class CategorySection(BaseSection):
         if self._is_grouped:
             for expander, _brand, items in self._brand_expanders:
                 has_relevant = any(
-                    getattr(i, "detected", False) or getattr(i, "installed", False)
-                    for i in items
+                    _is_suggested(i) or getattr(i, "installed", False) for i in items
                 )
                 show = self._show_all or has_relevant
                 expander.set_visible(show)
@@ -500,13 +601,13 @@ class CategorySection(BaseSection):
                     for i in items:
                         if getattr(i, "installed", False):
                             installed_count += 1
-                        if getattr(i, "detected", False):
+                        if _is_suggested(i):
                             detected_count += 1
                     visible_count += len(items)
         else:
             # Flat mode: toggle individual rows
             for row, item in self._row_data:
-                detected = getattr(item, "detected", False)
+                detected = _is_suggested(item)
                 installed = getattr(item, "installed", False)
                 show = self._show_all or detected or installed
                 row.set_visible(show)
@@ -603,7 +704,12 @@ class CategorySection(BaseSection):
         pkg = getattr(item, "package", item.name)
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Install Driver"))
-        dialog.set_body(_("Install {}?").format(pkg))
+        kernel_driver = (
+            getattr(item, "device_driver", "") if _covered_by_kernel(item) else ""
+        )
+        dialog.set_body(
+            install_confirm_body(pkg, getattr(item, "in_repo", None), kernel_driver)
+        )
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("install", _("Install"))
         dialog.set_response_appearance("install", Adw.ResponseAppearance.SUGGESTED)
@@ -621,16 +727,11 @@ class CategorySection(BaseSection):
         if response != "install":
             return
         pkg = getattr(item, "package", item.name)
-        if self.progress_dialog:
-            self.progress_dialog.show_progress(
-                _("Installing {}").format(pkg),
-                _("Please wait..."),
-            )
-        self._installer.install_package(
-            package=pkg,
-            progress_callback=self._on_progress,
-            output_callback=self._on_output,
-            complete_callback=self._on_complete,
+        self._start_package_operation(
+            self._installer,
+            _("Installing {}").format(pkg),
+            partial(self._installer.install_package, pkg),
+            self._on_operation_done,
         )
 
     def _on_remove_clicked(
@@ -659,45 +760,25 @@ class CategorySection(BaseSection):
         if response != "remove":
             return
         pkg = getattr(item, "package", item.name)
-        if self.progress_dialog:
-            self.progress_dialog.show_progress(
-                _("Removing {}").format(pkg),
-                _("Please wait..."),
-            )
-        self._installer.remove_package(
-            package=pkg,
-            progress_callback=self._on_progress,
-            output_callback=self._on_output,
-            complete_callback=self._on_complete,
+        self._start_package_operation(
+            self._installer,
+            _("Removing {}").format(pkg),
+            partial(self._installer.remove_package, pkg),
+            self._on_operation_done,
         )
 
-    def _on_progress(self, fraction: float, text: str) -> None:
-        if self.progress_dialog:
-            self.progress_dialog.update_progress(fraction, text)
-
-    def _on_output(self, line: str) -> None:
-        if self.progress_dialog:
-            self.progress_dialog.append_terminal_output(line)
-
-    def _on_complete(self, success: bool) -> None:
-        def _update() -> bool:
-            if success:
-                self._refresh_installed_status()
-                window = self.get_root()
-                if hasattr(window, "show_reboot_banner"):
-                    window.show_reboot_banner()
-            if self.progress_dialog:
-                if success:
-                    self.progress_dialog.show_success(
-                        _("Operation completed successfully.")
-                    )
-                else:
-                    self.progress_dialog.show_error(
-                        _("Operation failed. Check logs for details.")
-                    )
-            return False
-
-        GLib.idle_add(_update)
+    def _on_operation_done(self, success: bool, hint: str | None) -> None:
+        if success:
+            self._refresh_installed_status()
+            window = self.get_root()
+            if hasattr(window, "show_reboot_banner"):
+                window.show_reboot_banner()
+        self._report_operation_result(
+            success,
+            _("Operation completed successfully."),
+            _("Operation failed. Check logs for details."),
+            hint,
+        )
 
     def _refresh_installed_status(self) -> None:
         """Re-check installed state for all items and rebuild list."""

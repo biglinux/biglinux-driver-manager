@@ -8,6 +8,8 @@ Groups installed items by category (Video, Wi-Fi, Kernel, etc.) so
 the user can see at a glance everything that is currently active.
 """
 
+from functools import partial
+
 import gi
 
 gi.require_version("Gtk", "4.0")
@@ -17,7 +19,7 @@ from gi.repository import Gtk, GLib, Adw
 from core.constants import ICON_SIZE_ITEM
 from core.driver_database import DriverModule, FirmwareEntry, PeripheralEntry
 from core.driver_installer import DriverInstaller
-from ui.base_page import BaseSection
+from ui.base_page import BaseSection, PackageOperationMixin
 from utils.desc_translate import translate_description
 from utils.i18n import _
 
@@ -39,7 +41,7 @@ _INSTALLED_CATEGORIES = [
 ]
 
 
-class InstalledPage(BaseSection):
+class InstalledPage(PackageOperationMixin, BaseSection):
     """Consolidated page showing every installed driver grouped by category."""
 
     def __init__(self) -> None:
@@ -179,9 +181,12 @@ class InstalledPage(BaseSection):
                 self._groups.setdefault(cat, []).append(mod)
 
         # Firmware by category
+        known = {cat_id for cat_id, *_rest in _INSTALLED_CATEGORIES}
         for fw in firmware:
             if fw.installed:
-                cat = fw.category or "other"
+                # Firmware may list several categories ("wifi bluetooth");
+                # group under the first one the page knows about.
+                cat = next((c for c in fw.category.split() if c in known), "other")
                 self._groups.setdefault(cat, []).append(fw)
 
         # Printers
@@ -411,41 +416,26 @@ class InstalledPage(BaseSection):
         if response != "remove":
             return
         pkg = getattr(item, "package", item.name)
-        if self.progress_dialog:
-            self.progress_dialog.show_progress(
-                _("Removing {}").format(pkg),
-                _("Please wait..."),
-            )
-        self._installer.remove_package(
-            package=pkg,
-            progress_callback=self._on_progress,
-            output_callback=self._on_output,
-            complete_callback=self._on_complete,
+        self._start_package_operation(
+            self._installer,
+            _("Removing {}").format(pkg),
+            partial(self._installer.remove_package, pkg),
+            partial(self._on_remove_done, item),
         )
 
-    def _on_progress(self, fraction: float, text: str) -> None:
-        if self.progress_dialog:
-            self.progress_dialog.update_progress(fraction, text)
-
-    def _on_output(self, line: str) -> None:
-        if self.progress_dialog:
-            self.progress_dialog.append_terminal_output(line)
-
-    def _on_complete(self, success: bool) -> None:
-        def _update() -> bool:
-            if success:
-                window = self.get_root()
-                if hasattr(window, "show_reboot_banner"):
-                    window.show_reboot_banner()
-            if self.progress_dialog:
-                if success:
-                    self.progress_dialog.show_success(
-                        _("Operation completed successfully.")
-                    )
-                else:
-                    self.progress_dialog.show_error(
-                        _("Operation failed. Check logs for details.")
-                    )
-            return False
-
-        GLib.idle_add(_update)
+    def _on_remove_done(self, item, success: bool, hint: str | None) -> None:
+        if success:
+            item.installed = False
+            for items in self._groups.values():
+                if item in items:
+                    items.remove(item)
+            self._rebuild_ui()
+            window = self.get_root()
+            if hasattr(window, "show_reboot_banner"):
+                window.show_reboot_banner()
+        self._report_operation_result(
+            success,
+            _("Operation completed successfully."),
+            _("Operation failed. Check logs for details."),
+            hint,
+        )

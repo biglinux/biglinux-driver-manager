@@ -8,6 +8,8 @@ Shared functionality for UI sections (Kernel, Mesa):
 progress handling, dialogs, badges and loading spinner.
 """
 
+from collections.abc import Callable
+
 import gi
 
 gi.require_version("Gtk", "4.0")
@@ -15,6 +17,123 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib
 
 from utils.i18n import _
+
+
+AUR_NOTICE = _(
+    "This package is not in the official repositories. It will be built "
+    "from the AUR on your computer, which can take several minutes and is "
+    "not reviewed by the distribution."
+)
+
+
+def create_badge(text: str, style_class: str) -> Gtk.Box:
+    """Create a colored pill badge (badge-box + color class)."""
+    badge = Gtk.Label.new(text)
+    badge.add_css_class("caption")
+    badge.add_css_class("badge")
+
+    box = Gtk.Box()
+    box.add_css_class(style_class)
+    box.add_css_class("badge-box")
+    box.set_valign(Gtk.Align.CENTER)
+    box.update_property([Gtk.AccessibleProperty.LABEL], [text])
+    box.append(badge)
+    return box
+
+
+def create_aur_badge() -> Gtk.Box:
+    """Badge marking a package that is built from the AUR."""
+    box = create_badge("AUR", "warning")
+    box.set_tooltip_text(AUR_NOTICE)
+    return box
+
+
+def install_confirm_body(
+    package: str, in_repo: bool | None, kernel_driver: str = ""
+) -> str:
+    """Body text for the install confirmation dialog.
+
+    *kernel_driver* is the built-in driver already running the device, if any.
+    """
+    body = _("Install {}?").format(package)
+    if kernel_driver:
+        body += "\n\n" + _(
+            "Your device already works with the built-in driver {}, which is "
+            "the recommended option. Only install this third-party driver to "
+            "work around a specific problem — it may conflict with the "
+            "built-in one."
+        ).format(kernel_driver)
+    if in_repo is False:
+        body += "\n\n" + AUR_NOTICE
+    return body
+
+
+class PackageOperationMixin:
+    """Progress, cancel and result handling shared by pages that run
+    package operations. Hosts provide ``self.progress_dialog`` (or None).
+    """
+
+    progress_dialog = None
+
+    def _start_package_operation(
+        self,
+        manager,
+        title: str,
+        run: Callable[..., None],
+        on_done: Callable[[bool, str | None], None],
+        subtitle: str = "",
+    ) -> None:
+        """Present the progress dialog and start *run*.
+
+        *run* receives progress/output/complete callbacks, e.g.
+        ``functools.partial(installer.install_package, pkg)``.
+        *on_done(success, error_hint)* runs on the GTK main loop.
+        """
+        if self.progress_dialog:
+            self.progress_dialog.show_progress(
+                title,
+                subtitle or _("Please wait..."),
+                cancel_callback=manager.cancel_operation,
+            )
+        run(
+            progress_callback=self._op_progress,
+            output_callback=self._op_output,
+            complete_callback=lambda ok: GLib.idle_add(
+                self._op_complete, manager, ok, on_done
+            ),
+        )
+
+    # ProgressDialog marshals these to the main loop itself, so they are
+    # safe to call from the worker thread.
+    def _op_progress(self, fraction: float, text: str | None = None) -> None:
+        if self.progress_dialog:
+            self.progress_dialog.update_progress(fraction, text)
+
+    def _op_output(self, line: str) -> None:
+        if self.progress_dialog and line:
+            self.progress_dialog.append_terminal_output(line)
+
+    @staticmethod
+    def _op_complete(manager, ok: bool, on_done) -> bool:
+        on_done(ok, manager.last_error_hint)
+        return False
+
+    def _report_operation_result(
+        self,
+        success: bool,
+        success_msg: str,
+        failure_msg: str,
+        hint: str | None = None,
+    ) -> None:
+        """Show the final state, including the known cause of a failure."""
+        if not self.progress_dialog:
+            return
+        if success:
+            self.progress_dialog.show_success(success_msg)
+        else:
+            self.progress_dialog.show_error(
+                f"{failure_msg}\n\n{hint}" if hint else failure_msg
+            )
 
 
 class BaseSection(Gtk.Box):
@@ -95,17 +214,7 @@ class BaseSection(Gtk.Box):
 
     def _create_badge(self, text: str, style_class: str) -> Gtk.Box:
         """Create a colored pill badge (badge-box + color class)."""
-        badge = Gtk.Label.new(text)
-        badge.add_css_class("caption")
-        badge.add_css_class("badge")
-
-        box = Gtk.Box()
-        box.add_css_class(style_class)
-        box.add_css_class("badge-box")
-        box.set_valign(Gtk.Align.CENTER)
-        box.update_property([Gtk.AccessibleProperty.LABEL], [text])
-        box.append(badge)
-        return box
+        return create_badge(text, style_class)
 
 
 # Backward compatibility alias

@@ -34,6 +34,10 @@ class DriverModule:
     installed: bool = False
     detected_device_name: str | None = None
     device_has_driver: bool = False
+    # Kernel driver currently bound to the matched device (e.g. "r8152")
+    device_driver: str = ""
+    # None = unknown (not checked yet), False = AUR / not in enabled repos
+    in_repo: bool | None = None
 
 
 @dataclass
@@ -47,6 +51,7 @@ class FirmwareEntry:
     firmware_files: list[str] = field(default_factory=list)
     detected: bool = False
     installed: bool = False
+    in_repo: bool | None = None
 
 
 @dataclass
@@ -61,6 +66,7 @@ class PeripheralEntry:
     installed: bool = False
     detected: bool = False
     detected_device_name: str | None = None
+    in_repo: bool | None = None
 
 
 def _parse_ids_file(path: Path) -> list[tuple[str, str]]:
@@ -90,6 +96,19 @@ def _parse_vendor_ids_file(path: Path) -> list[str]:
         if token:
             vendors.append(token)
     return vendors
+
+
+# Categories shown by the UI; anything else is logged and falls into "other".
+# Old/alternative spellings found in the asset files are mapped here.
+MODULE_CATEGORIES = frozenset({"wifi", "ethernet", "bluetooth", "other"})
+_CATEGORY_ALIASES = {"wireless": "wifi", "wired": "ethernet"}
+
+
+def normalize_category(raw: str) -> str:
+    """Normalize a module category read from disk (case, aliases)."""
+    cat = raw.strip().lower()
+    cat = _CATEGORY_ALIASES.get(cat, cat)
+    return cat if cat in MODULE_CATEGORIES else "other"
 
 
 def _read_text(path: Path) -> str:
@@ -131,7 +150,15 @@ class DriverDatabase:
             if not entry.is_dir():
                 continue
             name = entry.name
-            category = _read_text(entry / "category") or "other"
+            raw_category = _read_text(entry / "category") or "other"
+            category = normalize_category(raw_category)
+            if category != raw_category:
+                _logger.warning(
+                    "device-ids/%s: category %r normalized to %r",
+                    name,
+                    raw_category,
+                    category,
+                )
             description = _read_text(entry / "description")
             package = _read_text(entry / "pkg") or name
             pci_ids = _parse_ids_file(entry / "pci.ids")
@@ -207,6 +234,10 @@ class DriverDatabase:
     def get_firmware_by_category(self, category: str) -> list[FirmwareEntry]:
         """Return firmware entries whose category contains the given keyword."""
         return [fw for fw in self.firmware if category in fw.category.split()]
+
+    def all_entries(self) -> list[DriverModule | FirmwareEntry | PeripheralEntry]:
+        """Return every module, firmware and peripheral entry."""
+        return [*self.modules, *self.firmware, *self.printers, *self.scanners]
 
     def get_all_categories(self) -> list[str]:
         cats = sorted({m.category for m in self.modules})

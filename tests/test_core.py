@@ -237,6 +237,9 @@ class TestAddKernelFlags(unittest.TestCase):
     def test_xanmod_not_flagged_as_lts(self):
         """Xanmod kernels should not get implicit LTS flag."""
         mgr = self._make_manager()
+        kernel = {"name": "linux-xanmod", "version": "6.12.10-1"}
+        mgr._add_kernel_flags(kernel)
+        self.assertFalse(kernel.get("lts", False))
 
     def test_cachyos_flag(self):
         mgr = self._make_manager()
