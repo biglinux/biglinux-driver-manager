@@ -152,6 +152,58 @@ class TestUdevNotifyScript(ScriptTestCase):
         self.assertIn(str(self.dialog_script), log_lines[0])
 
 
+    def _udev_env(self, **extra):
+        return self._script_env(
+            BDM_CACHE_FILE=str(self.cache_file),
+            BDM_DIALOG_SCRIPT=str(self.dialog_script),
+            BDM_RUNTIME_DIR=str(self.runtime_dir),
+            BDM_SYSTEMD_RUN_LOG=str(self.systemd_run_log),
+            BDM_PACMAN_BIN=str(self.fakebin / "pacman"),
+            BDM_LOGINCTL_BIN=str(self.fakebin / "loginctl"),
+            BDM_SYSTEMD_RUN_BIN=str(self.fakebin / "systemd-run"),
+            BDM_PYTHON_BIN=sys.executable,
+            BDM_DRIVER_WAIT="1",
+            **extra,
+        )
+
+    def _fake_usb_device(self, driver: str | None) -> tuple[Path, str]:
+        """Create <root>/devices/usb2/2-2.3 with one interface (optionally bound)."""
+        root = self.base / "sys"
+        dev = root / "devices" / "usb2" / "2-2.3"
+        intf = dev / "2-2.3:1.0"
+        intf.mkdir(parents=True)
+        if driver:
+            drv = root / "bus" / "usb" / "drivers" / driver
+            drv.mkdir(parents=True)
+            (intf / "driver").symlink_to(drv)
+        return root, "/devices/usb2/2-2.3"
+
+    def test_device_with_kernel_driver_is_silent(self):
+        """RTL8153 case: r8152 already bound -> no third-party suggestion."""
+        root, devpath = self._fake_usb_device("r8152")
+        env = self._udev_env(BDM_SYSFS_ROOT=str(root))
+        subprocess.run(
+            ["bash", str(UDEV_SCRIPT), "usb", "1234", "5678", devpath],
+            check=True,
+            env=env,
+            cwd=REPO_ROOT,
+        )
+        self.assertFalse(self.systemd_run_log.exists())
+
+    def test_device_without_driver_still_notifies(self):
+        root, devpath = self._fake_usb_device(None)
+        env = self._udev_env(BDM_SYSFS_ROOT=str(root))
+        subprocess.run(
+            ["bash", str(UDEV_SCRIPT), "usb", "1234", "5678", devpath],
+            check=True,
+            env=env,
+            cwd=REPO_ROOT,
+        )
+        self.assertEqual(
+            len(self.systemd_run_log.read_text(encoding="utf-8").splitlines()), 1
+        )
+
+
 class TestLoginCheckScript(ScriptTestCase):
     """Tests for login-check-drivers.sh session gating and blacklist logic."""
 

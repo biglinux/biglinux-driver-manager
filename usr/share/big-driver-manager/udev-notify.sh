@@ -23,11 +23,15 @@ readonly PACMAN_BIN="${BDM_PACMAN_BIN:-pacman}"
 readonly LOGINCTL_BIN="${BDM_LOGINCTL_BIN:-loginctl}"
 readonly SYSTEMD_RUN_BIN="${BDM_SYSTEMD_RUN_BIN:-systemd-run}"
 readonly PYTHON_BIN="${BDM_PYTHON_BIN:-python3}"
+readonly SYSFS_ROOT="${BDM_SYSFS_ROOT:-/sys}"
+# Seconds to wait for a kernel driver to bind before notifying
+readonly DRIVER_WAIT="${BDM_DRIVER_WAIT:-5}"
 
 # Arguments from udev rule
 BUS="${1:-}"        # "usb" or "pci"
 VENDOR="${2:-}"     # vendor ID (hex)
 DEVICE="${3:-}"     # device/product ID (hex)
+DEVPATH="${4:-}"    # sysfs devpath (e.g. /devices/pci0000:00/.../2-2.3)
 
 [[ -z "$BUS" || -z "$VENDOR" || -z "$DEVICE" ]] && exit 0
 
@@ -43,14 +47,10 @@ SEARCH_ID="${VENDOR}:${DEVICE}"
 [[ -f "$CACHE_FILE" ]] || exit 0
 [[ -f "$DIALOG_SCRIPT" ]] || exit 0
 
-# Create a root-owned runtime directory in /run, never in a world-writable path.
-install -d -m 0755 "$RUNTIME_BASE" "$STATE_DIR"
-exec 9>"$GLOBAL_LOCK_FILE"
-flock 9
-
 # Fast lookup in the pre-built cache (~1ms for ~1400 lines)
 # Cache format: VID:DID<TAB>category<TAB>driver_name<TAB>package<TAB>description
-MATCH=$(grep -m1 -F "$SEARCH_ID" "$CACHE_FILE" 2>/dev/null || true)
+# Exact match on the ID column (a plain grep could hit a description).
+MATCH=$(awk -F'\t' -v id="$SEARCH_ID" '$1 == id { print; exit }' "$CACHE_FILE" 2>/dev/null || true)
 [[ -z "$MATCH" ]] && exit 0
 
 # Parse the match
@@ -58,6 +58,27 @@ IFS=$'\t' read -r _id CATEGORY DRIVER_NAME PACKAGE DESCRIPTION <<< "$MATCH"
 
 # Check if the package is already installed
 "$PACMAN_BIN" -Qq "$PACKAGE" &>/dev/null && exit 0
+
+# For hardware drivers, stay quiet when the kernel already drives the device
+# (e.g. RTL8153 adapters work with the built-in r8152 module). Interface
+# drivers bind a moment after the "add" event, so wait a few seconds.
+if [[ "$CATEGORY" == "device-ids" && -n "$DEVPATH" ]]; then
+    for ((i = 0; i < DRIVER_WAIT; i++)); do
+        sleep 1
+        [[ -d "${SYSFS_ROOT}${DEVPATH}" ]] || exit 0  # unplugged meanwhile
+        for drv in "${SYSFS_ROOT}${DEVPATH}"/*:*/driver; do
+            [[ -e "$drv" ]] || continue
+            [[ "$(basename "$(readlink -f "$drv")")" == "usbfs" ]] && continue
+            exit 0
+        done
+    done
+fi
+
+# Create a root-owned runtime directory in /run, never in a world-writable path.
+# Taken only now: the driver wait above must not serialize hotplug events.
+install -d -m 0755 "$RUNTIME_BASE" "$STATE_DIR"
+exec 9>"$GLOBAL_LOCK_FILE"
+flock 9
 
 # Rate-limit: avoid duplicate dialogs for the same device
 STATE_FILE="${STATE_DIR}/${SEARCH_ID//:/_}"

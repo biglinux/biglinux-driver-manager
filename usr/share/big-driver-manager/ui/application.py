@@ -14,7 +14,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gdk, Gio, Gtk, Adw
+from gi.repository import Gdk, Gio, GLib, Gtk, Adw
 
 from core.constants import (
     APP_ID,
@@ -144,8 +144,19 @@ class KernelManagerApplication(Adw.Application):
 
     def __init__(self):
         """Initialize the application."""
-        super().__init__(application_id=APP_ID, flags=Gio.ApplicationFlags.FLAGS_NONE)
+        super().__init__(
+            application_id=APP_ID, flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE
+        )
         self.connect("activate", self.on_activate)
+        self.connect("command-line", self._on_command_line)
+        self.add_main_option(
+            "install",
+            0,
+            GLib.OptionFlags.NONE,
+            GLib.OptionArg.STRING,
+            _("Open the page of a driver package and offer to install it"),
+            "PACKAGE",
+        )
 
         # Initialize logging
         self._logger = init_app_logging()
@@ -176,6 +187,12 @@ class KernelManagerApplication(Adw.Application):
         """
         self._logger.info("Application activated")
 
+        # A second launch reuses the running instance: just raise the window
+        existing = self.get_active_window()
+        if existing is not None:
+            existing.present()
+            return
+
         # Register keyboard shortcuts
         self.set_accels_for_action("app.quit", ["<Control>q"])
         self.set_accels_for_action("app.about", ["F1"])
@@ -197,6 +214,16 @@ class KernelManagerApplication(Adw.Application):
 
         win.connect("close-request", self._on_window_close)
         win.present()
+
+    def _on_command_line(self, _app, command_line: Gio.ApplicationCommandLine) -> int:
+        """Handle a launch (first or remote) with its options."""
+        self.activate()
+        options = command_line.get_options_dict().end().unpack()
+        package = options.get("install")
+        window = self.get_active_window()
+        if package and window is not None and hasattr(window, "request_install"):
+            window.request_install(package)
+        return 0
 
     def _on_window_close(self, window) -> bool:
         """Persist window geometry before closing."""

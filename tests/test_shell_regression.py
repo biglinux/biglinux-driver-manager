@@ -126,20 +126,11 @@ class TestLoginCheckBlacklist(unittest.TestCase):
             "BDM_MAX_DIALOGS": "5",
             "BDM_FW_CACHE_FILE": str(tmp / "nonexistent_fw_cache"),
         }
-        # We can't actually redirect /sys/bus/usb/devices cleanly without
-        # root; when sysfs_override is True we temporarily adjust the
-        # script to point at our fake tree via a small sed before running.
+        # The script reads USB devices from $BDM_USB_SYSFS, so the fake
+        # tree can be injected without editing the script.
         script_path = LOGIN_CHECK
         if sysfs_override:
-            modified = tmp / "login-check.sh"
-            modified.write_text(
-                LOGIN_CHECK.read_text(encoding="utf-8").replace(
-                    "/sys/bus/usb/devices/*/idVendor",
-                    str(tmp / "sysbus_usb" / "*" / "idVendor"),
-                )
-            )
-            modified.chmod(0o755)
-            script_path = modified
+            env["BDM_USB_SYSFS"] = str(tmp / "sysbus_usb")
         result = subprocess.run(
             ["bash", str(script_path)],
             env=env,
@@ -197,6 +188,25 @@ class TestLoginCheckBlacklist(unittest.TestCase):
             os.environ["BDM_MAX_DIALOGS"] = "1"
             log = self._run(tmp, state, sysfs_override=True)
             self.assertIn("rtl8xxxu", log)
+
+    def test_device_with_kernel_driver_is_skipped(self):
+        """A USB device already bound to a kernel driver needs no extra one."""
+        with tempfile.TemporaryDirectory() as td:
+            tmp = Path(td)
+            state = self._prepare(
+                tmp,
+                present_ids=[{"bus": "usb", "vid": "0BDA", "did": "8153"}],
+                cache_rows=[
+                    ("0BDA:8153", "device-ids", "r8152", "r8152-dkms", "Ethernet")
+                ],
+                blacklist=[],
+            )
+            intf = tmp / "sysbus_usb" / "usb0" / "usb0:1.0"
+            intf.mkdir()
+            (tmp / "drivers" / "r8152").mkdir(parents=True)
+            (intf / "driver").symlink_to(tmp / "drivers" / "r8152")
+            log = self._run(tmp, state, sysfs_override=True)
+            self.assertEqual(log, "", msg="no dialog for hardware that already works")
 
 
 class TestBuildIdsCache(unittest.TestCase):

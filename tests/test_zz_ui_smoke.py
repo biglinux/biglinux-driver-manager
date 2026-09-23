@@ -108,7 +108,13 @@ class TestStyleAndProgressSmoke(unittest.TestCase):
         section = base_page.BaseSection()
         section._show_loading()
         section._on_loading_timeout()
-        self.assertIn("carreg", section._loading_label.get_text().lower())
+        # Compare with the translated string: the suite runs in any locale
+        from utils.i18n import _
+
+        self.assertEqual(
+            section._loading_label.get_text(),
+            _("Still loading… Check your network connection."),
+        )
         badge = section._create_badge("LTS", "success")
         self.assertIsNotNone(badge)
         section._hide_loading()
@@ -148,7 +154,7 @@ class TestHomePageSmoke(unittest.TestCase):
         home_mod = importlib.import_module("ui.home_page")
         page = home_mod.HomePage(lambda _page: None)
 
-        optional = make_item(
+        working = make_item(
             "rtl8xxxu",
             description="Wireless driver",
             category="wifi",
@@ -164,9 +170,13 @@ class TestHomePageSmoke(unittest.TestCase):
             device_has_driver=False,
             detected_device_name="Realtek RTL8852AU",
         )
-        page.set_driver_suggestions([optional, needed])
-        self.assertTrue(page._sug_card.get_visible())
+        page.set_driver_suggestions([working, needed])
+        # Hardware already driven by the kernel gets no third-party suggestion;
+        # only the device without a driver raises an alert.
+        self.assertFalse(hasattr(page, "_sug_card"))
         self.assertEqual(len(page._alerts), 1)
+        self.assertIn("Realtek RTL8852AU", page._alerts[0]["message"])
+        self.assertNotIn("Realtek RTL8192", page._alerts[0]["message"])
 
         page.set_video_recommendations(
             missing=[{"name": "vulkan-radeon", "short": "AMD Vulkan", "cat": "Vulkan"}],
@@ -181,22 +191,39 @@ class TestHomePageSmoke(unittest.TestCase):
         page.update_banner()
         self.assertTrue(page._content_box.get_visible())
 
+        # A refresh repopulates the dashboard: alerts must not pile up
+        page.clear_alerts()
+        self.assertEqual(page._alerts, [])
+
         progress = ProgressSpy()
-        manager = MagicMock()
-        page.set_install_handler(manager, progress)
+        page.set_install_handler(progress)
+        installer = MagicMock()
+        installer.last_error_hint = None
+        installer.install_repo_packages.side_effect = (
+            lambda *_a, complete_callback=None, **_k: complete_callback(True)
+        )
+        page._installer = installer
 
         page._on_rec_install_confirm(None, "install", ["vulkan-radeon"])
-        manager.run_pacman_command.assert_called_once()
-        page._on_rec_install_done(True)
+        installer.install_repo_packages.assert_called_once()
+        self.assertEqual(installer.install_repo_packages.call_args.args[0], ["vulkan-radeon"])
         self.assertTrue(progress.success)
         self.assertFalse(page._rec_card.get_visible())
+        # The cancel button is wired to the installer that runs the operation
+        self.assertIs(progress.shown[-1][2], installer.cancel_operation)
 
         button = MagicMock()
         page._on_single_install_confirm(None, "install", "rtl8xxxu", button)
-        self.assertEqual(manager.run_pacman_command.call_count, 2)
-        page._on_single_install_done(True, "rtl8xxxu", button)
-        self.assertTrue(progress.success)
+        self.assertEqual(installer.install_repo_packages.call_count, 2)
         button.set_label.assert_called()
+
+        # A failure shows the known cause instead of a generic message
+        installer.last_error_hint = "Package not available in the enabled repositories."
+        installer.install_repo_packages.side_effect = (
+            lambda *_a, complete_callback=None, **_k: complete_callback(False)
+        )
+        page._on_single_install_confirm(None, "install", "missing-pkg", MagicMock())
+        self.assertIn("enabled repositories", progress.errors[-1])
 
 
 class TestCategorySectionSmoke(unittest.TestCase):
@@ -285,7 +312,7 @@ class TestInstalledAndDriversHubSmoke(unittest.TestCase):
     def setUp(self):
         reload_ui_modules()
 
-    def test_installed_page_and_drivers_hub(self):
+    def test_installed_page(self):
         installed_mod = importlib.import_module("ui.installed_page")
         page = installed_mod.InstalledPage()
         module = make_item(
@@ -343,45 +370,6 @@ class TestInstalledAndDriversHubSmoke(unittest.TestCase):
         page._on_complete(True, module)
         self.assertTrue(root.reboot_shown)
         page._request_refresh.assert_called_once()
-
-        hub_mod = importlib.import_module("ui.drivers_hub_page")
-        navigated = []
-        hub = hub_mod.DriversHubPage(navigated.append)
-        hub.progress_dialog = progress
-        hub._installer = MagicMock()
-        hub._installer.build_install_plan.return_value = SimpleNamespace(
-            initial_message="Please wait...",
-            cancelable=True,
-        )
-        wifi_item = make_item(
-            "rtl8xxxu",
-            description="Wi-Fi driver",
-            category="wifi",
-            detected=True,
-            installed=False,
-            detected_device_name="RTL8192",
-        )
-        printer_item = make_item(
-            "brlaser",
-            description="Printer driver",
-            category="printer",
-            compatible=True,
-            installed=True,
-        )
-        hub.set_category_items("wifi", [wifi_item])
-        hub.set_category_items("printer", [printer_item])
-        self.assertTrue(hub._status_banner.get_visible())
-        hub.set_show_all(True)
-        first_row = next(iter(hub._category_rows.values()))
-        hub._on_row_activated(hub._list_box, first_row)
-        self.assertTrue(navigated)
-        hub._on_install_response(None, "install", wifi_item)
-        hub._installer.install_package.assert_called_once()
-        hub.get_root = lambda: root
-        hub._refresh_installed_status = MagicMock()
-        hub._on_complete(True)
-        self.assertTrue(root.reboot_shown)
-        hub._refresh_installed_status.assert_called_once()
 
 
 class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
@@ -619,9 +607,14 @@ class TestKernelMesaWindowAndApplicationSmoke(unittest.TestCase):
                 "window_height": 700,
                 "window_maximized": True,
             }.get(key, default)
-            app_instance._active_window = fake_window
             app_instance.on_activate(app_instance)
             fake_window.set_default_size.assert_called_with(900, 700)
             fake_window.maximize.assert_called_once()
+            # Single instance: a second activation raises the existing window
+            app_instance._active_window = fake_window
+            app_mod.KernelManagerWindow.reset_mock()
+            app_instance.on_activate(app_instance)
+            app_mod.KernelManagerWindow.assert_not_called()
+            fake_window.present.assert_called()
             self.assertFalse(app_instance._on_window_close(fake_window))
             app_instance.show_error_dialog("boom")

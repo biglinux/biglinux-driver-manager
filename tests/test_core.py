@@ -605,9 +605,13 @@ class TestProgressDialogRunningState(unittest.TestCase):
     class _FakeButton:
         def __init__(self):
             self.visible = None
+            self.sensitive = True
 
         def set_visible(self, visible):
             self.visible = visible
+
+        def set_sensitive(self, sensitive):
+            self.sensitive = sensitive
 
     class _FakeStack:
         def __init__(self):
@@ -676,6 +680,17 @@ class TestProgressDialogRunningState(unittest.TestCase):
         self.assertEqual(called, [True])
         self.assertTrue(dialog._is_complete)
         self.assertEqual(dialog._status_label.text, _("Operation cancelled by user."))
+
+    def test_cancel_refused_keeps_dialog_running(self):
+        """cancel_operation() returning False (pacman already running as
+        root) must not pretend the operation was cancelled."""
+        dialog = self._make_dialog()
+        dialog.show_progress("Title", "Working", cancel_callback=lambda: False)
+        dialog._on_cancel_clicked(None)
+
+        self.assertFalse(dialog._is_complete)
+        self.assertFalse(dialog._cancelled_by_user)
+        self.assertFalse(dialog._cancel_btn.sensitive)
 
     def test_cancelled_dialog_ignores_late_result_updates(self):
         from utils import _

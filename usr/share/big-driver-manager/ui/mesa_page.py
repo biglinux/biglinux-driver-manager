@@ -13,6 +13,7 @@ List-based layout:
 import subprocess
 import os
 import re
+from functools import partial
 from pathlib import Path
 
 import gi
@@ -26,7 +27,7 @@ from core.mesa_manager import MesaManager
 from core.mhwd_manager import MhwdManager, MhwdDriver
 from core.package_manager import PackageManager
 from core.subprocess_env import subprocess_env
-from ui.base_page import BaseSection
+from ui.base_page import BaseSection, PackageOperationMixin
 from ui.mesa_data import (
     _CAT_ROW_ICONS,
     _DRIVER_NOTES,
@@ -42,7 +43,7 @@ from ui.mesa_data import (
 from utils.i18n import _
 
 
-class MesaSection(BaseSection):
+class MesaSection(PackageOperationMixin, BaseSection):
     """Video driver management page — list-based layout."""
 
     def __init__(self) -> None:
@@ -62,6 +63,8 @@ class MesaSection(BaseSection):
         # the UI construction blocking-free. Pessimistic default is False
         # (hides video-virtualmachine until detection confirms otherwise).
         self._is_vm = False
+        # Packages available in the enabled repos; None = unknown
+        self._repo_set: set[str] | None = None
         _init_mesa_names()
         _init_driver_notes()
         self._build_page()
@@ -95,8 +98,10 @@ class MesaSection(BaseSection):
         drivers: list[dict],
         gpu_info: dict | None,
         mhwd_drivers: list[MhwdDriver],
+        repo_set: set[str] | None = None,
     ) -> None:
         """Receive pre-computed data from window (skip redundant queries)."""
+        self._repo_set = repo_set or None
         self._populate_all(drivers, gpu_info, mhwd_drivers)
 
     # ------------------------------------------------------------------
@@ -908,6 +913,8 @@ class MesaSection(BaseSection):
                 btn.add_css_class("destructive-action")
                 btn.set_tooltip_text(_("Remove {}").format(name))
                 btn.connect("clicked", self._on_gpu_pkg_remove_clicked, compat_pkg)
+            elif not self._is_available(name):
+                self._mark_unavailable(btn)
             else:
                 btn.set_label(_("Install"))
                 btn.add_css_class("suggested-action")
@@ -1358,6 +1365,11 @@ class MesaSection(BaseSection):
                 )
                 btn.connect("clicked", self._on_gpu_pkg_remove_clicked, pkg)
                 row.append(btn)
+            elif not self._is_available(pkg_name):
+                btn = Gtk.Button()
+                btn.set_valign(Gtk.Align.CENTER)
+                self._mark_unavailable(btn)
+                row.append(btn)
             else:
                 btn = Gtk.Button(label=_("Install"))
                 btn.add_css_class("suggested-action")
@@ -1391,25 +1403,38 @@ class MesaSection(BaseSection):
         dialog.connect("response", self._on_gpu_pkg_install_confirm, pkg)
         dialog.present(self.get_root())
 
+    def _is_available(self, name: str) -> bool:
+        """True when *name* can be installed from the enabled repositories."""
+        return self._repo_set is None or name in self._repo_set
+
+    @staticmethod
+    def _mark_unavailable(btn: Gtk.Button) -> None:
+        btn.set_label(_("Unavailable"))
+        btn.set_sensitive(False)
+        btn.set_tooltip_text(
+            _(
+                "Not available in the enabled repositories. "
+                "32-bit (lib32) packages require the multilib repository."
+            )
+        )
+        btn.update_property([Gtk.AccessibleProperty.LABEL], [btn.get_tooltip_text()])
+
     def _on_gpu_pkg_install_confirm(
         self, _dialog: Adw.AlertDialog, response: str, pkg: dict[str, str]
     ) -> None:
         if response != "install" or not self.progress_dialog:
             return
         name = pkg["name"]
-        self.progress_dialog.show_progress(
+        self._start_package_operation(
+            self.mhwd_manager,
             _("Installing {}").format(name),
-            _("Downloading package..."),
-            cancel_callback=self.mhwd_manager.cancel_operation,
-        )
-        self.mhwd_manager.run_pacman_command(
-            ["-S", "--noconfirm", name],
-            progress_callback=self._on_progress_update,
-            output_callback=self._on_terminal_output,
-            complete_callback=lambda success: GLib.idle_add(
-                self._gpu_pkg_complete, success, name, "install"
+            partial(
+                self.mhwd_manager.install_repo_packages,
+                [name],
+                operation_name=_("Installing {}").format(name),
             ),
-            operation_name=_("Installing {}").format(name),
+            partial(self._gpu_pkg_complete, name, "install"),
+            subtitle=_("Downloading package..."),
         )
 
     def _on_gpu_pkg_remove_clicked(
@@ -1435,42 +1460,35 @@ class MesaSection(BaseSection):
         if response != "remove" or not self.progress_dialog:
             return
         name = pkg["name"]
-        self.progress_dialog.show_progress(
+        self._start_package_operation(
+            self.mhwd_manager,
             _("Removing {}").format(name),
-            _("Removing package..."),
-            cancel_callback=self.mhwd_manager.cancel_operation,
-        )
-        self.mhwd_manager.run_pacman_command(
-            ["-Rns", "--noconfirm", name],
-            progress_callback=self._on_progress_update,
-            output_callback=self._on_terminal_output,
-            complete_callback=lambda success: GLib.idle_add(
-                self._gpu_pkg_complete, success, name, "remove"
+            partial(
+                self.mhwd_manager.remove_packages,
+                [name],
+                operation_name=_("Removing {}").format(name),
             ),
-            operation_name=_("Removing {}").format(name),
+            partial(self._gpu_pkg_complete, name, "remove"),
+            subtitle=_("Removing package..."),
         )
 
-    def _gpu_pkg_complete(self, success: bool, name: str, action: str) -> bool:
+    def _gpu_pkg_complete(
+        self, name: str, action: str, success: bool, hint: str | None
+    ) -> None:
         if success:
+            self.pkg_manager.invalidate_cache()
             window = self.get_root()
             if hasattr(window, "show_reboot_banner"):
                 window.show_reboot_banner()
-        if self.progress_dialog:
-            if success:
-                verb = _("installed") if action == "install" else _("removed")
-                self.progress_dialog.show_success(
-                    _("{} was {} successfully!").format(name, verb)
-                )
-            else:
-                self.progress_dialog.show_error(
-                    _(
-                        "Package operation failed.\n"
-                        "Check the terminal output for details."
-                    )
-                )
+        verb = _("installed") if action == "install" else _("removed")
+        self._report_operation_result(
+            success,
+            _("{} was {} successfully!").format(name, verb),
+            _("Package operation failed."),
+            hint,
+        )
         # Rebuild vendor sections to refresh installed statuses
         self._build_vendor_sections(self._mhwd_all_drivers)
-        return False
 
     # ------------------------------------------------------------------
     # Progress callbacks

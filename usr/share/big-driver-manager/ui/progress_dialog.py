@@ -226,6 +226,7 @@ class ProgressDialog(Adw.Dialog):
         self._terminal_expander.set_expanded(False)
 
         self._cancel_btn.set_visible(self._cancel_callback is not None)
+        self._cancel_btn.set_sensitive(True)
         self._close_btn.set_visible(False)
 
         self._icon_stack.set_visible_child_name("spinner")
@@ -427,9 +428,22 @@ class ProgressDialog(Adw.Dialog):
         if not self._cancel_callback:
             return
         try:
-            self._cancel_callback()
+            # cancel_operation() returns False when the process can't be
+            # stopped safely (pacman running as root after pkexec)
+            stopped = self._cancel_callback() is not False
         except Exception as exc:
             _logger.warning("cancel callback raised: %s", exc)
+            stopped = False
+
+        if not stopped:
+            self._cancel_btn.set_sensitive(False)
+            self._status_label.set_text(
+                _(
+                    "This step can no longer be cancelled safely. "
+                    "Waiting for it to finish…"
+                )
+            )
+            return
 
         self._spinner.stop()
         self._cancelled_by_user = True

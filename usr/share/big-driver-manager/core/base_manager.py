@@ -41,6 +41,8 @@ class BaseManager:
         self._current_process: subprocess.Popen | None = None
         self._cancelled = False
         self._last_output_lines: list[str] = []
+        # User-facing hint for the last failed operation (see _ERROR_SUGGESTIONS)
+        self.last_error_hint: str | None = None
         self._thread_launcher = thread_launcher or self._default_launcher
 
     @staticmethod
@@ -48,21 +50,37 @@ class BaseManager:
         thread = threading.Thread(target=target, args=args, daemon=True)
         thread.start()
 
-    def cancel_operation(self):
-        """Cancel the current operation by terminating the subprocess."""
-        self._cancelled = True
-        if self._current_process and self._current_process.poll() is None:
+    def cancel_operation(self) -> bool:
+        """Try to cancel the current operation by terminating its subprocess.
+
+        Returns True when nothing is left running. Returns False when the
+        process could not be stopped — e.g. pacman already running as root
+        after pkexec authentication, which an unprivileged process cannot
+        signal. Killing pacman mid-transaction would also leave the database
+        locked, so in that case the operation is left to finish.
+        """
+        proc = self._current_process
+        if proc is None or proc.poll() is not None:
+            self._cancelled = True
+            return True
+        try:
+            proc.terminate()
+            proc.wait(timeout=2)
+        except PermissionError:
+            _logger.warning("Cannot cancel privileged process %d", proc.pid)
+            return False
+        except subprocess.TimeoutExpired:
             try:
-                self._current_process.terminate()
-                # Give it a moment to terminate gracefully
-                try:
-                    self._current_process.wait(timeout=2)
-                except subprocess.TimeoutExpired:
-                    # Force kill if it doesn't terminate
-                    self._current_process.kill()
-                    self._current_process.wait()
-            except Exception as e:
-                _logger.error("Error terminating process: %s", e)
+                proc.kill()
+                proc.wait(timeout=2)
+            except (PermissionError, subprocess.TimeoutExpired):
+                _logger.warning("Process %d did not stop", proc.pid)
+                return False
+        except OSError as e:
+            _logger.error("Error terminating process: %s", e)
+            return False
+        self._cancelled = True
+        return True
 
     def run_pacman_command(
         self,
@@ -96,6 +114,40 @@ class BaseManager:
             ),
         )
 
+    def install_repo_packages(
+        self,
+        packages: list[str],
+        progress_callback: Callable | None = None,
+        output_callback: Callable | None = None,
+        complete_callback: Callable | None = None,
+        operation_name: str = "",
+    ) -> None:
+        """Install packages from the enabled repositories (no AUR fallback)."""
+        self.run_pacman_command(
+            ["-S", "--noconfirm", "--needed", *packages],
+            progress_callback=progress_callback,
+            output_callback=output_callback,
+            complete_callback=complete_callback,
+            operation_name=operation_name or _("Installing packages"),
+        )
+
+    def remove_packages(
+        self,
+        packages: list[str],
+        progress_callback: Callable | None = None,
+        output_callback: Callable | None = None,
+        complete_callback: Callable | None = None,
+        operation_name: str = "",
+    ) -> None:
+        """Remove packages together with their unneeded dependencies."""
+        self.run_pacman_command(
+            ["-Rns", "--noconfirm", *packages],
+            progress_callback=progress_callback,
+            output_callback=output_callback,
+            complete_callback=complete_callback,
+            operation_name=operation_name or _("Removing packages"),
+        )
+
     # Retry delays (in seconds) for transient pacman errors (e.g. db.lck)
     _RETRY_DELAYS = (5, 10)
 
@@ -121,6 +173,7 @@ class BaseManager:
             operation_name: Name of the operation
         """
         self._cancelled = False
+        self.last_error_hint = None
         cmd = [self.sudo_command, "pacman"] + args
 
         for attempt in range(1 + len(self._RETRY_DELAYS)):
@@ -313,10 +366,11 @@ class BaseManager:
         (
             "target not found",
             _(
-                "Package not found in repositories. "
-                "The package name may have changed or been removed.\n"
-                "Suggestion: Try refreshing the database with "
-                "'sudo pacman -Sy' and search for the correct name."
+                "Package not available in the enabled repositories. "
+                "It may come from the AUR, belong to a disabled repository "
+                "(such as multilib), or the package database may be outdated.\n"
+                "Suggestion: Update the whole system with 'sudo pacman -Syu' "
+                "and try again."
             ),
         ),
         (
@@ -385,10 +439,15 @@ class BaseManager:
     ]
 
     def _suggest_error_recovery(self, output_callback: Callable | None) -> None:
-        """Check collected output for known error patterns and suggest fixes."""
+        """Check collected output for known error patterns and suggest fixes.
+
+        The matched suggestion is also kept in ``last_error_hint`` so the UI
+        can show the real cause instead of a generic failure message.
+        """
         combined = " ".join(self._last_output_lines).lower()
         for pattern, suggestion in self._ERROR_SUGGESTIONS:
             if re.search(pattern, combined):
+                self.last_error_hint = suggestion
                 self._output(output_callback, f"💡 {suggestion}")
                 return
 

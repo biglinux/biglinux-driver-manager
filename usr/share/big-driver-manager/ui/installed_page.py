@@ -8,6 +8,7 @@ Groups installed items by category (Video, Wi-Fi, Kernel, etc.) so
 the user can see at a glance everything that is currently active.
 """
 
+
 import gi
 
 gi.require_version("Gtk", "4.0")
@@ -176,9 +177,12 @@ class InstalledPage(BaseSection):
                 self._groups.setdefault(cat, []).append(mod)
 
         # Firmware by category
+        known = {cat_id for cat_id, *_rest in _INSTALLED_CATEGORIES}
         for fw in firmware:
             if fw.installed:
-                cat = fw.category or "other"
+                # Firmware may list several categories ("wifi bluetooth");
+                # group under the first one the page knows about.
+                cat = next((c for c in fw.category.split() if c in known), "other")
                 self._groups.setdefault(cat, []).append(fw)
 
         # Printers
@@ -241,7 +245,7 @@ class InstalledPage(BaseSection):
     ) -> Adw.PreferencesGroup:
         """Build an Adw.PreferencesGroup for a single category.
 
-        Matches the visual idiom used by drivers_hub_page (boxed-list of
+        Matches the visual idiom used by category_page (boxed-list of
         Adw.ActionRow): title in the group header, per-row prefix icon and
         optional remove-button suffix.
         """
@@ -413,8 +417,10 @@ class InstalledPage(BaseSection):
                         _("Operation completed successfully.")
                     )
                 else:
+                    message = _("Operation failed. Check logs for details.")
+                    hint = self._installer.last_error_hint
                     self.progress_dialog.show_error(
-                        _("Operation failed. Check logs for details.")
+                        f"{message}\n\n{hint}" if hint else message
                     )
             return False
 

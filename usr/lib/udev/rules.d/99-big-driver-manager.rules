@@ -13,4 +13,4 @@ ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", \
     --property=RuntimeDirectory=big-driver-manager \
     --property=RuntimeDirectoryMode=0755 \
     --property=RuntimeDirectoryPreserve=yes \
-    /usr/share/big-driver-manager/udev-notify.sh usb $attr{idVendor} $attr{idProduct}"
+    /usr/share/big-driver-manager/udev-notify.sh usb $attr{idVendor} $attr{idProduct} $devpath"

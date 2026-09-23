@@ -650,6 +650,8 @@ def install_fake_gi() -> None:
             "idle_add": lambda func, *args: func(*args),
             "source_remove": lambda *_args: None,
             "markup_escape_text": lambda text: text,
+            "OptionFlags": SimpleNamespace(NONE=0),
+            "OptionArg": SimpleNamespace(NONE=0, STRING=1),
         },
     )
     pango = FakeModule("Pango")

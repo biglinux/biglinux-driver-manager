@@ -16,6 +16,7 @@ readonly PACMAN_BIN="${BDM_PACMAN_BIN:-pacman}"
 readonly PYTHON_BIN="${BDM_PYTHON_BIN:-python3}"
 readonly LSPCI_BIN="${BDM_LSPCI_BIN:-lspci}"
 readonly DMESG_BIN="${BDM_DMESG_BIN:-dmesg}"
+readonly USB_SYSFS="${BDM_USB_SYSFS:-/sys/bus/usb/devices}"
 
 [[ -f "$CACHE_FILE" ]] || exit 0
 [[ -f "$DIALOG_SCRIPT" ]] || exit 0
@@ -50,31 +51,39 @@ except Exception:
 ' 2>/dev/null || true)
 fi
 
-# Collect all USB VID:PID from sysfs
-declare -A USB_IDS
-for dev in /sys/bus/usb/devices/*/idVendor; do
+# Collect present USB and PCI IDs, remembering which devices already have a
+# kernel driver bound (those need no extra driver).
+declare -A ALL_IDS
+declare -A HAS_DRIVER
+
+for dev in "$USB_SYSFS"/*/idVendor; do
     dir="${dev%/idVendor}"
     vid=$(cat "$dev" 2>/dev/null || true)
     pid=$(cat "$dir/idProduct" 2>/dev/null || true)
-    if [[ -n "$vid" && -n "$pid" ]]; then
-        USB_IDS["${vid^^}:${pid^^}"]=1
-    fi
+    [[ -n "$vid" && -n "$pid" ]] || continue
+    id="${vid^^}:${pid^^}"
+    ALL_IDS["$id"]="usb"
+    for drv in "$dir"/*:*/driver; do
+        [[ -e "$drv" ]] || continue
+        [[ "$(basename "$(readlink -f "$drv")")" == "usbfs" ]] && continue
+        HAS_DRIVER["$id"]=1
+        break
+    done
 done
 
-# Collect all PCI VID:DID from lspci
-declare -A PCI_IDS
+# lspci -nk output:
+#   00:02.0 0300: 8086:5917 (rev 04)
+#   \tKernel driver in use: i915
+pci_id=""
 while IFS= read -r line; do
-    # lspci -n output: 00:02.0 0300: 8086:5917 (rev 04)
-    vid_did=$(echo "$line" | grep -oP '\b[0-9a-fA-F]{4}:[0-9a-fA-F]{4}\b' | head -1)
-    if [[ -n "$vid_did" ]]; then
-        PCI_IDS["${vid_did^^}"]=1
+    if [[ "$line" != [[:space:]]* ]]; then
+        pci_id=$(grep -oP '\b[0-9a-fA-F]{4}:[0-9a-fA-F]{4}\b' <<< "$line" | head -1 || true)
+        pci_id="${pci_id^^}"
+        [[ -n "$pci_id" ]] && ALL_IDS["$pci_id"]="pci"
+    elif [[ -n "$pci_id" && "$line" == *"Kernel driver in use:"* ]]; then
+        HAS_DRIVER["$pci_id"]=1
     fi
-done < <("$LSPCI_BIN" -n 2>/dev/null || true)
-
-# Merge all present device IDs
-declare -A ALL_IDS
-for id in "${!USB_IDS[@]}"; do ALL_IDS["$id"]="usb"; done
-for id in "${!PCI_IDS[@]}"; do ALL_IDS["$id"]="pci"; done
+done < <("$LSPCI_BIN" -nk 2>/dev/null || true)
 
 # Build a grep pattern from all present IDs for fast cache lookup
 ID_PATTERN=""
@@ -94,6 +103,9 @@ if [[ -n "$ID_PATTERN" ]]; then
         [[ -z "$cache_id" ]] && continue
 
         bus="${ALL_IDS[$cache_id]:-usb}"
+
+        # Device already works with a built-in kernel driver?
+        [[ "$category" == "device-ids" && -n "${HAS_DRIVER[$cache_id]:-}" ]] && continue
 
         # Already installed?
         "$PACMAN_BIN" -Qq "$package" &>/dev/null && continue

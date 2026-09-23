@@ -9,6 +9,7 @@ without requiring the user to click anything.
 """
 
 from collections.abc import Callable
+from functools import partial
 import os
 from typing import TYPE_CHECKING
 
@@ -19,16 +20,17 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib
 
 from core.constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
+from core.driver_installer import DriverInstaller
+from ui.base_page import PackageOperationMixin
 from utils.accessibility import animations_enabled
 from utils.i18n import _
 
 if TYPE_CHECKING:
     from core.driver_database import DriverModule
-    from core.mhwd_manager import MhwdManager
     from ui.progress_dialog import ProgressDialog
 
 
-class HomePage(Gtk.Box):
+class HomePage(PackageOperationMixin, Gtk.Box):
     """Dashboard landing page with status banner, summary cards, and alerts."""
 
     def __init__(self, on_navigate: Callable[[str], None]) -> None:
@@ -41,8 +43,8 @@ class HomePage(Gtk.Box):
         self._video_missing_count: int = 0
         self._video_missing_pkgs: list[dict] = []
         self._rec_total_count: int = 0
-        self._mhwd_manager = None
-        self._progress_dialog = None
+        self._installer = DriverInstaller()
+        self.progress_dialog = None
 
         self._build_ui()
 
@@ -97,7 +99,6 @@ class HomePage(Gtk.Box):
         self._content_box.append(self._alert_box)
 
         self._build_rec_card()
-        self._build_sug_card()
 
     def _build_loading_box(self) -> None:
         """Build the centered loading spinner shown during detection."""
@@ -218,151 +219,29 @@ class HomePage(Gtk.Box):
         self._rec_card.append(self._rec_inner)
         self._content_box.append(self._rec_card)
 
-    def _build_sug_card(self) -> None:
-        """Build the optional driver suggestions card."""
-        self._sug_card = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
-        self._sug_card.add_css_class("card")
-        self._sug_card.add_css_class("purpose-card-suggest")
-        self._sug_card.set_visible(False)
-
-        self._sug_inner = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
-        self._sug_inner.set_margin_start(16)
-        self._sug_inner.set_margin_end(16)
-        self._sug_inner.set_margin_top(16)
-        self._sug_inner.set_margin_bottom(16)
-
-        sug_hdr = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        sug_hdr.set_valign(Gtk.Align.CENTER)
-        _base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        sug_icon = Gtk.Image.new_from_file(
-            os.path.join(_base, "assets", "illustrations", "icon_compatible.svg")
-        )
-        sug_icon.set_pixel_size(ICON_SIZE_HEADER)
-        sug_hdr.append(sug_icon)
-        sug_title = Gtk.Label(label=_("Compatible drivers available"))
-        sug_title.add_css_class("title-4")
-        sug_title.set_halign(Gtk.Align.START)
-        sug_title.set_hexpand(True)
-        sug_title.set_accessible_role(Gtk.AccessibleRole.HEADING)
-        sug_hdr.append(sug_title)
-        self._sug_inner.append(sug_hdr)
-
-        self._sug_desc = Gtk.Label()
-        self._sug_desc.set_wrap(True)
-        self._sug_desc.set_xalign(0)
-        self._sug_desc.add_css_class("dim-label")
-        self._sug_inner.append(self._sug_desc)
-
-        self._sug_rows_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
-        self._sug_inner.append(self._sug_rows_box)
-
-        self._sug_card.append(self._sug_inner)
-        self._content_box.append(self._sug_card)
-
     # ------------------------------------------------------------------
     # Public API — called by Window after hardware detection
     # ------------------------------------------------------------------
 
     def set_driver_suggestions(self, modules: "list[DriverModule]") -> None:
-        """Show compatible but optional driver modules.
+        """Alert about detected devices that have no driver loaded.
 
-        Only shows modules where the device already works (has a kernel driver)
-        so they are presented as optional improvements, not critical needs.
+        Devices already running a built-in kernel driver are not mentioned:
+        suggesting a third-party driver for working hardware only invites
+        conflicts. Those drivers stay reachable via "Show all drivers".
         """
-        # Clear previous rows
-        child = self._sug_rows_box.get_first_child()
-        while child is not None:
-            nxt = child.get_next_sibling()
-            self._sug_rows_box.remove(child)
-            child = nxt
-
-        # Separate: device works (optional) vs device has no driver (needed)
-        optional = [m for m in modules if m.device_has_driver]
-        needed = [m for m in modules if not m.device_has_driver]
-
-        # Add needed drivers as warnings in the alert system
-        for m in needed:
+        for m in modules:
+            if m.device_has_driver:
+                continue
             device_name = m.detected_device_name or m.name
-            cat_page = m.category if m.category else "wifi"
             self.add_alert(
-                _("{} — no driver loaded, install {} for this device").format(
-                    device_name, m.package
-                ),
+                _(
+                    "{} has no driver loaded. A compatible driver is available: {}"
+                ).format(device_name, m.package),
                 alert_type="warning",
                 action_label=_("Go to drivers"),
-                action_page=cat_page,
+                action_page=m.category or "other",
             )
-
-        if not optional:
-            self._sug_card.set_visible(False)
-            return
-
-        self._sug_desc.set_text(
-            _(
-                "Your devices are already working with the built-in driver, "
-                "which is usually the most stable and recommended option. "
-                "If you experience issues, you can try a driver detected as "
-                "compatible that may improve performance or add features."
-            )
-        )
-
-        _CAT_ICONS = {
-            "wifi": "network-wireless-symbolic",
-            "ethernet": "network-wired-symbolic",
-            "bluetooth": "bluetooth-symbolic",
-            "sound": "audio-card-symbolic",
-            "webcam": "camera-video-symbolic",
-            "dvb": "video-display-symbolic",
-            "touchscreen": "input-touchscreen-symbolic",
-        }
-
-        for mod in optional:
-            row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
-            row.add_css_class("purpose-pkg-row")
-
-            icon_name = _CAT_ICONS.get(mod.category, "application-x-firmware-symbolic")
-            icon = Gtk.Image.new_from_icon_name(icon_name)
-            icon.set_pixel_size(ICON_SIZE_ITEM)
-            row.append(icon)
-
-            text_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=1)
-            text_box.set_hexpand(True)
-
-            name_lbl = Gtk.Label(label=mod.package)
-            name_lbl.set_xalign(0)
-            text_box.append(name_lbl)
-
-            details = mod.description or ""
-            if mod.detected_device_name:
-                details = f"{mod.detected_device_name}"
-                if mod.description:
-                    details += f" — {mod.description}"
-            desc_lbl = Gtk.Label(label=details)
-            desc_lbl.set_xalign(0)
-            desc_lbl.set_wrap(True)
-            desc_lbl.add_css_class("dim-label")
-            desc_lbl.add_css_class("caption")
-            text_box.append(desc_lbl)
-            row.append(text_box)
-
-            install_btn = Gtk.Button(label=_("Install"))
-            install_btn.add_css_class("suggested-action")
-            install_btn.set_valign(Gtk.Align.CENTER)
-            install_btn.set_tooltip_text(_("Install {}").format(mod.package))
-            install_btn.update_property(
-                [Gtk.AccessibleProperty.LABEL],
-                [install_btn.get_tooltip_text()],
-            )
-            pkg_name = mod.package
-            install_btn.connect(
-                "clicked",
-                lambda _, p=pkg_name, b=install_btn: self._on_install_single(p, b),
-            )
-            row.append(install_btn)
-
-            self._sug_rows_box.append(row)
-
-        self._sug_card.set_visible(True)
 
     def set_video_recommendations(
         self,
@@ -545,6 +424,11 @@ class HomePage(Gtk.Box):
         )
         self._rebuild_alerts()
 
+    def clear_alerts(self) -> None:
+        """Drop all alerts before the dashboard is repopulated (refresh)."""
+        self._alerts.clear()
+        self._rebuild_alerts()
+
     def update_banner(self) -> None:
         """Reveal content after detection finishes."""
         self._spinner.set_spinning(False)
@@ -609,12 +493,9 @@ class HomePage(Gtk.Box):
     # Install handler
     # ------------------------------------------------------------------
 
-    def set_install_handler(
-        self, mhwd_manager: "MhwdManager", progress_dialog: "ProgressDialog"
-    ) -> None:
-        """Set the mhwd manager and progress dialog for installing packages."""
-        self._mhwd_manager = mhwd_manager
-        self._progress_dialog = progress_dialog
+    def set_install_handler(self, progress_dialog: "ProgressDialog") -> None:
+        """Set the progress dialog used for installing packages."""
+        self.progress_dialog = progress_dialog
 
     def _on_rec_toggle(self, _btn: Gtk.Button) -> None:
         """Toggle the installed packages revealer."""
@@ -633,7 +514,7 @@ class HomePage(Gtk.Box):
 
     def _on_install_recommended(self, _btn: Gtk.Button) -> None:
         """Install all recommended packages at once after confirmation."""
-        if not self._video_missing_pkgs or not self._mhwd_manager:
+        if not self._video_missing_pkgs:
             return
         names = [p["name"] for p in self._video_missing_pkgs]
         dialog = Adw.AlertDialog()
@@ -642,7 +523,7 @@ class HomePage(Gtk.Box):
         dialog.set_body(
             _("Install <b>{}</b> packages?\n\n{}").format(
                 len(names),
-                ", ".join(names),
+                GLib.markup_escape_text(", ".join(names)),
             )
         )
         dialog.add_response("cancel", _("Cancel"))
@@ -656,57 +537,37 @@ class HomePage(Gtk.Box):
     def _on_rec_install_confirm(
         self, _dialog: Adw.AlertDialog, response: str, names: list[str]
     ) -> None:
-        if response != "install" or not self._progress_dialog:
+        if response != "install":
             return
-        self._progress_dialog.show_progress(
+        # Recommendations are pre-filtered to repo packages, so plain
+        # pacman is correct here (no AUR fallback wanted for lib32-*).
+        self._start_package_operation(
+            self._installer,
             _("Installing {} packages").format(len(names)),
-            _("Downloading packages..."),
-            cancel_callback=self._mhwd_manager.cancel_operation,
-        )
-        self._mhwd_manager.run_pacman_command(
-            ["-S", "--noconfirm", "--needed", *names],
-            progress_callback=self._on_progress_update,
-            output_callback=self._on_terminal_output,
-            complete_callback=lambda success: GLib.idle_add(
-                self._on_rec_install_done, success
+            partial(
+                self._installer.install_repo_packages,
+                names,
+                operation_name=_("Installing recommended packages"),
             ),
-            operation_name=_("Installing recommended packages"),
+            self._on_rec_install_done,
+            subtitle=_("Downloading packages..."),
         )
 
-    def _on_progress_update(self, fraction: float, text: str) -> bool:
-        if self._progress_dialog:
-            self._progress_dialog.update_progress(fraction, text)
-        return False
-
-    def _on_terminal_output(self, line: str) -> bool:
-        if self._progress_dialog:
-            self._progress_dialog.append_terminal_output(line)
-        return False
-
-    def _on_rec_install_done(self, success: bool) -> bool:
-        if self._progress_dialog:
-            if success:
-                self._progress_dialog.show_success(
-                    _("All recommended packages installed successfully!")
-                )
-                # Hide the rec card and update banner
-                self._video_missing_count = 0
-                self._video_missing_pkgs = []
-                self._rec_card.set_visible(False)
-                self.update_banner()
-            else:
-                self._progress_dialog.show_error(
-                    _(
-                        "Package installation failed.\n"
-                        "Check the terminal output for details."
-                    )
-                )
-        return False
+    def _on_rec_install_done(self, success: bool, hint: str | None) -> None:
+        if success:
+            self._video_missing_count = 0
+            self._video_missing_pkgs = []
+            self._rec_card.set_visible(False)
+            self.update_banner()
+        self._report_operation_result(
+            success,
+            _("All recommended packages installed successfully!"),
+            _("Package installation failed."),
+            hint,
+        )
 
     def _on_install_single(self, pkg_name: str, btn: Gtk.Button) -> None:
-        """Install a single optional driver package."""
-        if not self._mhwd_manager:
-            return
+        """Confirm and install one recommended repository package."""
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Install Driver"))
         dialog.set_body(_("Install {}?").format(pkg_name))
@@ -715,55 +576,44 @@ class HomePage(Gtk.Box):
         dialog.set_response_appearance("install", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
-        dialog.connect(
-            "response",
-            self._on_single_install_confirm,
-            pkg_name,
-            btn,
-        )
+        dialog.connect("response", self._on_single_install_confirm, pkg_name, btn)
         dialog.present(self.get_root())
 
     def _on_single_install_confirm(
         self, _dialog: Adw.AlertDialog, response: str, pkg_name: str, btn: Gtk.Button
     ) -> None:
-        if response != "install" or not self._progress_dialog:
+        if response != "install":
             return
-        self._progress_dialog.show_progress(
+        self._start_package_operation(
+            self._installer,
             _("Installing {}").format(pkg_name),
-            _("Downloading package..."),
-            cancel_callback=self._mhwd_manager.cancel_operation,
-        )
-        self._mhwd_manager.run_pacman_command(
-            ["-S", "--noconfirm", "--needed", pkg_name],
-            progress_callback=self._on_progress_update,
-            output_callback=self._on_terminal_output,
-            complete_callback=lambda success: GLib.idle_add(
-                self._on_single_install_done, success, pkg_name, btn
+            partial(
+                self._installer.install_repo_packages,
+                [pkg_name],
+                operation_name=_("Installing {}").format(pkg_name),
             ),
-            operation_name=_("Installing {}").format(pkg_name),
+            partial(self._on_single_install_done, pkg_name, btn),
+            subtitle=_("Downloading package..."),
         )
 
     def _on_single_install_done(
-        self, success: bool, pkg_name: str, btn: Gtk.Button
-    ) -> bool:
-        if self._progress_dialog:
-            if success:
-                self._progress_dialog.show_success(
-                    _("{} installed successfully!").format(pkg_name)
-                )
-                btn.set_label(_("Installed"))
-                btn.update_property(
-                    [Gtk.AccessibleProperty.LABEL],
-                    [_("Installed {}").format(pkg_name)],
-                )
-                btn.set_sensitive(False)
-                btn.remove_css_class("pill")
-                btn.add_css_class("success")
-            else:
-                self._progress_dialog.show_error(
-                    _("Installation of {} failed.").format(pkg_name)
-                )
-        return False
+        self, pkg_name: str, btn: Gtk.Button, success: bool, hint: str | None
+    ) -> None:
+        if success:
+            btn.set_label(_("Installed"))
+            btn.update_property(
+                [Gtk.AccessibleProperty.LABEL],
+                [_("Installed {}").format(pkg_name)],
+            )
+            btn.set_sensitive(False)
+            btn.remove_css_class("pill")
+            btn.add_css_class("success")
+        self._report_operation_result(
+            success,
+            _("{} installed successfully!").format(pkg_name),
+            _("Installation of {} failed.").format(pkg_name),
+            hint,
+        )
 
     # ------------------------------------------------------------------
     # Private

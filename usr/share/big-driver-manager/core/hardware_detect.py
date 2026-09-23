@@ -83,9 +83,52 @@ def detect_pci_devices() -> list[DetectedDevice]:
     return devices
 
 
+_USB_SYSFS = Path("/sys/bus/usb/devices")
+_NET_SYSFS = Path("/sys/class/net")
+
+# Drivers that only mean "claimed by userspace", not a working kernel driver
+_USB_PSEUDO_DRIVERS = frozenset({"usbfs"})
+
+
+def _read_sysfs(path: Path) -> str:
+    try:
+        return path.read_text().strip()
+    except OSError:
+        return ""
+
+
+def _usb_drivers_by_id(base: Path = _USB_SYSFS) -> dict[tuple[str, str], str]:
+    """Map USB (VID, PID) to the kernel driver bound to one of its interfaces.
+
+    lsusb doesn't report driver bindings, so sysfs is read directly:
+    each device dir (e.g. ``2-2.3``) has interface dirs (``2-2.3:1.0``)
+    whose ``driver`` symlink names the bound kernel module.
+    """
+    drivers: dict[tuple[str, str], str] = {}
+    try:
+        entries = list(base.iterdir())
+    except OSError:
+        return drivers
+    for dev in entries:
+        vid = _read_sysfs(dev / "idVendor").upper()
+        pid = _read_sysfs(dev / "idProduct").upper()
+        if not vid or not pid:
+            continue  # interface dirs have no idVendor
+        for intf in sorted(dev.glob(f"{dev.name}:*")):
+            link = intf / "driver"
+            if not link.exists():
+                continue
+            name = link.resolve().name
+            if name not in _USB_PSEUDO_DRIVERS:
+                drivers.setdefault((vid, pid), name)
+                break
+    return drivers
+
+
 def detect_usb_devices() -> list[DetectedDevice]:
-    """Detect USB devices using lsusb."""
+    """Detect USB devices using lsusb, with driver bindings from sysfs."""
     output = _run(["lsusb"])
+    bound = _usb_drivers_by_id()
     devices: list[DetectedDevice] = []
     # Line example: Bus 001 Device 003: ID 0bda:8178 Realtek Semiconductor Corp. RTL8192CU ...
     pattern = re.compile(
@@ -94,12 +137,14 @@ def detect_usb_devices() -> list[DetectedDevice]:
     for line in output.splitlines():
         m = pattern.search(line)
         if m:
+            vid, did = m.group(1).upper(), m.group(2).upper()
             devices.append(
                 DetectedDevice(
                     bus="usb",
-                    vendor_id=m.group(1).upper(),
-                    device_id=m.group(2).upper(),
+                    vendor_id=vid,
+                    device_id=did,
                     name=m.group(3).strip(),
+                    driver_in_use=bound.get((vid, did), ""),
                 )
             )
     _logger.info("USB devices detected: %d", len(devices))
@@ -131,6 +176,49 @@ def detect_sdio_devices() -> list[DetectedDevice]:
             _logger.warning("Failed to inspect SDIO device %s: %s", entry, exc)
     _logger.info("SDIO devices detected: %d", len(devices))
     return devices
+
+
+@dataclass
+class WiredLink:
+    """Link state of a physical wired network interface."""
+
+    interface: str
+    driver: str
+    carrier: bool | None  # None = interface administratively down
+    speed_mbps: int | None = None
+
+
+def detect_wired_links(base: Path = _NET_SYSFS) -> list[WiredLink]:
+    """Return link state for every physical Ethernet interface.
+
+    Virtual interfaces (lo, docker, veth, bridges) have no ``device`` link
+    and Wi-Fi ones have a ``wireless`` dir; both are skipped.
+    """
+    links: list[WiredLink] = []
+    try:
+        ifaces = sorted(base.iterdir())
+    except OSError:
+        return links
+    for iface in ifaces:
+        dev = iface / "device"
+        if not dev.exists():
+            continue
+        if (iface / "wireless").exists() or (iface / "phy80211").exists():
+            continue
+        if _read_sysfs(iface / "type") != "1":  # ARPHRD_ETHER
+            continue
+        driver_link = dev / "driver"
+        driver = driver_link.resolve().name if driver_link.exists() else ""
+        # Reading carrier on a down interface fails with EINVAL
+        carrier_raw = _read_sysfs(iface / "carrier")
+        carrier = None if carrier_raw == "" else carrier_raw == "1"
+        speed = None
+        speed_raw = _read_sysfs(iface / "speed")
+        if carrier and speed_raw.isdigit() and int(speed_raw) > 0:
+            speed = int(speed_raw)
+        links.append(WiredLink(iface.name, driver, carrier, speed))
+    _logger.info("Wired interfaces detected: %d", len(links))
+    return links
 
 
 def detect_all_devices() -> list[DetectedDevice]:
@@ -251,10 +339,20 @@ def match_modules(
             module.detected = True
             module.detected_device_name = matched_device.name
             module.device_has_driver = bool(matched_device.driver_in_use)
+            module.device_driver = matched_device.driver_in_use
             detected_modules.append(module)
 
     _logger.info("Matched modules: %d", len(detected_modules))
     return detected_modules
+
+
+def mark_repo_availability(database: DriverDatabase, repo_set: set[str]) -> None:
+    """Flag each database entry as available in the repos or AUR-only.
+
+    With an empty *repo_set* (pacman query failed) availability stays unknown.
+    """
+    for entry in database.all_entries():
+        entry.in_repo = (entry.package in repo_set) if repo_set else None
 
 
 def match_firmware(
