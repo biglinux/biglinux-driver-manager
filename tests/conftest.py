@@ -155,6 +155,10 @@ def _block_system_commands():
     old_path = os.environ.get("PATH", "")
     os.environ["PATH"] = f"{stub_dir}{os.pathsep}{old_path}"
     os.environ.setdefault("BDM_BLOCKED_LOG", str(stub_dir / "blocked.log"))
+    # Caches written by the code under test (e.g. the LTS list) must not
+    # land in the developer's real ~/.cache
+    old_cache = os.environ.get("XDG_CACHE_HOME")
+    os.environ["XDG_CACHE_HOME"] = str(stub_dir / "cache")
 
     originals = {
         "Popen_init": subprocess.Popen.__init__,
@@ -178,3 +182,7 @@ def _block_system_commands():
         subprocess.Popen.__init__ = originals["Popen_init"]
         os.system = originals["system"]
         os.environ["PATH"] = old_path
+        if old_cache is None:
+            os.environ.pop("XDG_CACHE_HOME", None)
+        else:
+            os.environ["XDG_CACHE_HOME"] = old_cache

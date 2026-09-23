@@ -14,7 +14,9 @@ Unit tests for core functionality covering:
 
 import sys
 import os
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import patch, MagicMock
 
 # Add the application source to path
@@ -302,10 +304,56 @@ class TestGetLtsKernelVersions(unittest.TestCase):
         """On network error, returns DEFAULT_LTS_VERSIONS."""
         mock_urlopen.side_effect = OSError("Connection refused")
         mgr = self._make_manager()
+        mgr._lts_cache_file = Path(tempfile.mkdtemp()) / "none.json"  # no cache
         versions = mgr._get_lts_kernel_versions()
         from core.constants import DEFAULT_LTS_VERSIONS
 
         self.assertEqual(versions, DEFAULT_LTS_VERSIONS)
+
+    def _feed(self, mock_urlopen, xml: bytes):
+        mock_response = MagicMock()
+        mock_response.read.return_value = xml
+        mock_response.__enter__ = MagicMock(return_value=mock_response)
+        mock_response.__exit__ = MagicMock(return_value=False)
+        mock_urlopen.return_value = mock_response
+
+    @patch("core.kernel_manager.urlopen")
+    def test_offline_uses_last_fetched_list(self, mock_urlopen):
+        """A friend's machine offline showed 6.18 without the LTS badge
+        because the hardcoded fallback was stale; the cache avoids that."""
+        cache = Path(tempfile.mkdtemp()) / "lts.json"
+        self._feed(
+            mock_urlopen,
+            b"<rss><channel><item><title>6.18.53: longterm</title></item>"
+            b"<item><title>6.12.111: longterm</title></item></channel></rss>",
+        )
+        mgr = self._make_manager()
+        mgr._lts_cache_file = cache
+        self.assertEqual(mgr._get_lts_kernel_versions(), ["618", "612"])
+
+        mock_urlopen.side_effect = OSError("offline")
+        offline = self._make_manager()
+        offline._lts_cache_file = cache
+        self.assertEqual(offline._get_lts_kernel_versions(), ["618", "612"])
+
+    @patch("core.kernel_manager.urlopen")
+    def test_feed_without_longterm_entries_is_a_failure(self, mock_urlopen):
+        """A captive portal answering with unrelated XML must not wipe LTS."""
+        self._feed(
+            mock_urlopen,
+            b"<rss><channel><item><title>login</title></item></channel></rss>",
+        )
+        mgr = self._make_manager()
+        mgr._lts_cache_file = Path(tempfile.mkdtemp()) / "none.json"
+        from core.constants import DEFAULT_LTS_VERSIONS
+
+        self.assertEqual(mgr._get_lts_kernel_versions(), DEFAULT_LTS_VERSIONS)
+
+    def test_default_list_is_current(self):
+        from core.constants import DEFAULT_LTS_VERSIONS
+
+        self.assertIn("618", DEFAULT_LTS_VERSIONS)
+        self.assertNotIn("614", DEFAULT_LTS_VERSIONS)  # 6.14 was never LTS
 
 
 class TestPackageManager(unittest.TestCase):

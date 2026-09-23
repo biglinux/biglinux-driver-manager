@@ -8,9 +8,12 @@ This module provides functionality for managing Linux kernels
 including listing, installing, and removing kernels.
 """
 
+import json
+import os
 import platform
 import re
 import subprocess
+from pathlib import Path
 from urllib.request import urlopen, Request
 from xml.etree import ElementTree
 from typing import Callable, TypedDict
@@ -40,6 +43,45 @@ class KernelInfo(TypedDict, total=False):
     cachyos: bool
     x64v: int
     obsolete: bool
+    # "local": package not in the enabled repos (third-party/self-built);
+    # "manual": kernel installed outside pacman (no package at all)
+    source: str
+    kver: str
+
+
+def lts_cache_path() -> Path:
+    """Where the last kernel.org LTS list is kept (respects XDG_CACHE_HOME)."""
+    base = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
+    return Path(base) / "big-driver-manager" / "lts_versions.json"
+
+
+# Every Arch/Manjaro kernel package installs /usr/lib/modules/<kver>/vmlinuz
+# plus a "pkgbase" file holding the package name — a name-independent way to
+# find kernels (e.g. linux72-comm), including self-compiled ones.
+MODULES_DIR = Path("/usr/lib/modules")
+
+
+def scan_module_kernels(base: Path = MODULES_DIR) -> list[dict[str, str | None]]:
+    """Return ``{"kver", "pkgbase"}`` for every bootable kernel in *base*.
+
+    Directories without a ``vmlinuz`` are leftovers (e.g. an old ``build``
+    link) and are skipped. ``pkgbase`` is None for kernels not installed by
+    a package.
+    """
+    kernels: list[dict[str, str | None]] = []
+    try:
+        entries = sorted(base.iterdir())
+    except OSError:
+        return kernels
+    for entry in entries:
+        if not (entry / "vmlinuz").exists():
+            continue
+        try:
+            pkgbase = (entry / "pkgbase").read_text(encoding="utf-8").strip() or None
+        except OSError:
+            pkgbase = None
+        kernels.append({"kver": entry.name, "pkgbase": pkgbase})
+    return kernels
 
 
 class KernelManager(BaseManager):
@@ -60,6 +102,8 @@ class KernelManager(BaseManager):
         # Use patterns from constants
         self.kernel_patterns = KERNEL_PATTERNS
         self.excluded_patterns = EXCLUDED_PATTERNS
+        self._modules_dir = MODULES_DIR
+        self._lts_cache_file = lts_cache_path()
 
         # LTS versions - lazy loaded to avoid blocking startup
         self._lts_versions = None
@@ -89,6 +133,12 @@ class KernelManager(BaseManager):
         """
         running_version = self.get_running_kernel()
 
+        # Exact answer: the running kernel's own pkgbase (or its release
+        # string for a kernel installed outside pacman)
+        for entry in scan_module_kernels(self._modules_dir):
+            if entry["kver"] == running_version:
+                return entry["pkgbase"] or running_version
+
         # Get installed kernels and match by version
         installed = self.get_installed_kernels()
         for kernel in installed:
@@ -114,10 +164,15 @@ class KernelManager(BaseManager):
         """
         Get a list of current LTS kernel versions from kernel.org.
 
+        A successful result is cached on disk, so a machine that is offline
+        (or behind a proxy/captive portal) keeps using the last known list
+        instead of the hardcoded DEFAULT_LTS_VERSIONS, which ages with every
+        new LTS release.
+
         Returns:
             List of LTS kernel versions as strings (e.g. "612" for 6.12).
         """
-        lts_versions = []
+        lts_versions: list[str] = []
         try:
             req = Request(KERNEL_ORG_FEED_URL)
             with urlopen(req, timeout=5) as response:
@@ -131,32 +186,89 @@ class KernelManager(BaseManager):
                             version = version_match.group(1)
                             numeric_version = version.replace(".", "")
                             lts_versions.append(numeric_version)
-
-            self._logger.debug(f"Fetched LTS versions: {lts_versions}")
-            return lts_versions
         except (OSError, ValueError, ElementTree.ParseError) as e:
             self._logger.warning("Failed to get LTS kernel versions: %s", e)
-            return DEFAULT_LTS_VERSIONS.copy()
+
+        if lts_versions:
+            self._logger.debug(f"Fetched LTS versions: {lts_versions}")
+            self._save_lts_cache(lts_versions)
+            return lts_versions
+
+        # Feed unreachable or without longterm entries (e.g. a captive portal)
+        cached = self._load_lts_cache()
+        if cached:
+            self._logger.info("Using cached LTS versions: %s", cached)
+            return cached
+        return DEFAULT_LTS_VERSIONS.copy()
+
+    def _save_lts_cache(self, versions: list[str]) -> None:
+        try:
+            self._lts_cache_file.parent.mkdir(parents=True, exist_ok=True)
+            self._lts_cache_file.write_text(json.dumps(versions), encoding="utf-8")
+        except OSError as e:
+            self._logger.debug("Cannot write LTS cache: %s", e)
+
+    def _load_lts_cache(self) -> list[str]:
+        try:
+            data = json.loads(self._lts_cache_file.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return []
+        if isinstance(data, list) and all(
+            isinstance(v, str) and v.isdigit() for v in data
+        ):
+            return data
+        return []
 
     def get_installed_kernels(self) -> list[KernelInfo]:
         """
         Get a list of installed kernels.
 
+        Combines packages whose names match the known kernel patterns with
+        whatever /usr/lib/modules reports, so kernels with unusual names
+        (linux72-comm, self-built packages) and kernels installed without a
+        package are listed too.
+
         Returns:
             List of installed kernels with their information.
         """
         installed_packages = self.package_manager.get_installed_packages()
+        versions = {p["name"]: p["version"] for p in installed_packages}
 
-        kernels = []
+        kernels: list[KernelInfo] = []
+        seen: set[str] = set()
         for package in installed_packages:
             if self._is_kernel_package(package["name"]):
-                kernel = {
+                kernel: KernelInfo = {
                     "name": package["name"],
                     "version": package["version"],
                     "installed": True,
                 }
                 self._add_kernel_flags(kernel)
                 kernels.append(kernel)
+                seen.add(package["name"])
+
+        for entry in scan_module_kernels(self._modules_dir):
+            pkgbase, kver = entry["pkgbase"], entry["kver"]
+            if pkgbase:
+                # A stale pkgbase of a removed package is not a kernel
+                if pkgbase in seen or pkgbase not in versions:
+                    continue
+                kernel = {
+                    "name": pkgbase,
+                    "version": versions[pkgbase],
+                    "installed": True,
+                }
+                seen.add(pkgbase)
+            else:
+                kernel = {
+                    "name": kver,
+                    "version": kver,
+                    "installed": True,
+                    "source": "manual",
+                    "kver": kver,
+                }
+            self._add_kernel_flags(kernel)
+            kernels.append(kernel)
 
         return kernels
 
@@ -193,6 +305,20 @@ class KernelManager(BaseManager):
             seen_kernels.add(kernel_key)
             kernel["installed"] = kernel_name in installed_names
             self._add_kernel_flags(kernel)
+            filtered_kernels.append(kernel)
+
+        # Installed kernels the repos don't offer still belong on the page.
+        # Official-looking names that left the repos are EOL ("obsolete",
+        # handled by compute_obsolete_kernels); anything else is a
+        # third-party/self-built package or a manual install.
+        repo_names = {k["name"] for k in filtered_kernels}
+        for kernel in installed_kernels:
+            if kernel["name"] in repo_names:
+                continue
+            if kernel.get("source") != "manual":
+                if self._is_kernel_package(kernel["name"]):
+                    continue  # EOL official kernel -> obsolete alert
+                kernel = {**kernel, "source": "local"}
             filtered_kernels.append(kernel)
 
         return sorted(filtered_kernels, key=lambda k: (k["name"], k["version"]))
@@ -407,6 +533,10 @@ class KernelManager(BaseManager):
         for kernel in installed:
             name = kernel["name"]
             if name == running_pkg:
+                continue
+            # Not from the repos is not the same as end-of-life: third-party
+            # and manual kernels are listed with their origin instead.
+            if kernel.get("source") in ("local", "manual"):
                 continue
             if name not in available_names:
                 kernel = {**kernel, "obsolete": True}

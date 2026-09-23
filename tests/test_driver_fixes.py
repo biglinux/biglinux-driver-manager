@@ -470,5 +470,134 @@ class TestNotificationIgnoreList(unittest.TestCase):
         )
 
 
+class TestKernelDetectionByModules(unittest.TestCase):
+    """Kernels are found through /usr/lib/modules, not only by name.
+
+    Mirrors a real system: linux618 from the repos, linux71-comm and
+    linux72-comm self-built (not in the repos), plus an empty leftover dir.
+    """
+
+    def _modules(self, base: Path, kver: str, pkgbase: str | None, vmlinuz=True):
+        d = base / kver
+        d.mkdir(parents=True)
+        if vmlinuz:
+            (d / "vmlinuz").write_text("")
+        if pkgbase:
+            (d / "pkgbase").write_text(pkgbase + "\n")
+
+    def _manager(self, base: Path, installed: dict[str, str], repo: list[str]):
+        from core.kernel_manager import KernelManager
+
+        pm = MagicMock()
+        pm.get_installed_packages.return_value = [
+            {"name": n, "version": v} for n, v in installed.items()
+        ]
+        km = KernelManager(package_manager=pm)
+        km._modules_dir = base
+        km._lts_versions = ["618", "612"]
+        km._search_kernel_packages = lambda _pattern: [
+            {"name": n, "version": "1.0-1", "repository": "core"} for n in repo
+        ]
+        return km
+
+    def _real_system(self, tmp: Path, running: str = "7.2.4-1-MANJARO-COMM"):
+        self._modules(tmp, "6.18.12-1-MANJARO", None, vmlinuz=False)  # leftover
+        self._modules(tmp, "6.18.50-1-MANJARO", "linux618")
+        self._modules(tmp, "7.1.8-1-MANJARO-COMM", "linux71-comm")
+        self._modules(tmp, "7.2.4-1-MANJARO-COMM", "linux72-comm")
+        installed = {
+            "linux618": "6.18.50-1",
+            "linux71-comm": "7.1.8-1",
+            "linux72-comm": "7.2.4-1",
+        }
+        km = self._manager(tmp, installed, ["linux618", "linux612", "linux73"])
+        km.get_running_kernel = lambda: running
+        return km
+
+    def test_scan_skips_leftover_dirs(self):
+        from core.kernel_manager import scan_module_kernels
+
+        with TemporaryDirectory() as t:
+            tmp = Path(t)
+            self._real_system(tmp)
+            kvers = [e["kver"] for e in scan_module_kernels(tmp)]
+        self.assertNotIn("6.18.12-1-MANJARO", kvers)
+        self.assertEqual(len(kvers), 3)
+
+    def test_unusual_kernel_names_are_installed(self):
+        with TemporaryDirectory() as t:
+            km = self._real_system(Path(t))
+            names = {k["name"] for k in km.get_installed_kernels()}
+        self.assertEqual(names, {"linux618", "linux71-comm", "linux72-comm"})
+
+    def test_running_kernel_comes_from_pkgbase(self):
+        with TemporaryDirectory() as t:
+            km = self._real_system(Path(t))
+            self.assertEqual(km.get_running_kernel_package(), "linux72-comm")
+
+    def test_local_kernels_listed_and_not_obsolete(self):
+        from core.kernel_manager import KernelManager
+
+        with TemporaryDirectory() as t:
+            km = self._real_system(Path(t))
+            available = km.get_available_kernels()
+            installed = km.get_installed_kernels()
+            obsolete = KernelManager.compute_obsolete_kernels(
+                installed, available, km.get_running_kernel_package()
+            )
+        page = {k["name"]: k for k in available if k.get("installed")}
+        self.assertEqual(page["linux71-comm"]["source"], "local")
+        self.assertEqual(page["linux72-comm"]["source"], "local")
+        self.assertNotIn("source", page["linux618"])
+        self.assertEqual(obsolete, [])
+
+    def test_eol_official_kernel_is_still_obsolete(self):
+        from core.kernel_manager import KernelManager
+
+        with TemporaryDirectory() as t:
+            tmp = Path(t)
+            self._modules(tmp, "6.1.100-1-MANJARO", "linux61")
+            self._modules(tmp, "6.18.50-1-MANJARO", "linux618")
+            km = self._manager(
+                tmp, {"linux61": "6.1.100-1", "linux618": "6.18.50-1"}, ["linux618"]
+            )
+            km.get_running_kernel = lambda: "6.18.50-1-MANJARO"
+            available = km.get_available_kernels()
+            obsolete = KernelManager.compute_obsolete_kernels(
+                km.get_installed_kernels(), available, "linux618"
+            )
+        self.assertEqual([k["name"] for k in obsolete], ["linux61"])
+        self.assertNotIn("linux61", {k["name"] for k in available})
+
+    def test_manual_kernel_detected(self):
+        with TemporaryDirectory() as t:
+            tmp = Path(t)
+            self._modules(tmp, "6.20.0-custom", None)
+            self._modules(tmp, "6.18.50-1-MANJARO", "linux618")
+            km = self._manager(tmp, {"linux618": "6.18.50-1"}, ["linux618"])
+            km.get_running_kernel = lambda: "6.20.0-custom"
+            manual = [
+                k for k in km.get_available_kernels() if k.get("source") == "manual"
+            ]
+            running = km.get_running_kernel_package()
+        self.assertEqual([k["name"] for k in manual], ["6.20.0-custom"])
+        self.assertEqual(running, "6.20.0-custom")
+
+    def test_stale_pkgbase_of_removed_package_is_ignored(self):
+        with TemporaryDirectory() as t:
+            tmp = Path(t)
+            self._modules(tmp, "7.0.1-1-MANJARO-COMM", "linux70-comm")
+            km = self._manager(tmp, {}, [])
+            self.assertEqual(km.get_installed_kernels(), [])
+
+    def test_origin_badges(self):
+        from ui.kernel_card_builder import classify_kernel
+
+        local = classify_kernel({"name": "linux72-comm", "source": "local"})
+        manual = classify_kernel({"name": "6.20.0-custom", "source": "manual"})
+        self.assertIn("accent", [style for _t, style in local.badge_entries])
+        self.assertIn("warning", [style for _t, style in manual.badge_entries])
+
+
 if __name__ == "__main__":
     unittest.main()
