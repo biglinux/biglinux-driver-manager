@@ -266,7 +266,7 @@ class TestDriverInstallerRouting(unittest.TestCase):
         mock_repo.return_value = {"broadcom-wl-dkms"}
         inst = self._installer()
         with (
-            patch.object(inst, "_run_pacman_command") as run,
+            patch.object(inst, "run_pacman_command") as run,
             patch.object(inst, "_launch_pamac") as pamac,
         ):
             inst.install_package("broadcom-wl-dkms")
@@ -280,7 +280,7 @@ class TestDriverInstallerRouting(unittest.TestCase):
         mock_inst.return_value = {"linux72-comm", "base-devel"}
         inst = self._installer()
         with (
-            patch.object(inst, "_run_pacman_command") as run,
+            patch.object(inst, "run_pacman_command") as run,
             patch.object(inst, "_launch_pamac") as pamac,
         ):
             inst.install_package("rtw89-dkms-git")
@@ -301,7 +301,7 @@ class TestDriverInstallerRouting(unittest.TestCase):
         done = MagicMock()
         inst = self._installer()
         with (
-            patch.object(inst, "_run_pacman_command") as run,
+            patch.object(inst, "run_pacman_command") as run,
             patch.object(inst, "_launch_pamac") as pamac,
         ):
             inst.install_package("rtw89-dkms-git", complete_callback=done)
@@ -314,7 +314,7 @@ class TestDriverInstallerRouting(unittest.TestCase):
         mock_repo.return_value = set()
         inst = self._installer()
         with (
-            patch.object(inst, "_run_pacman_command") as run,
+            patch.object(inst, "run_pacman_command") as run,
             patch.object(inst, "_launch_pamac") as pamac,
         ):
             inst.install_package("some-printer-driver")

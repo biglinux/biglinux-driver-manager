@@ -160,6 +160,7 @@ cython_debug/
 .pypirc
 
 # Project-specific
+.codex
 .audit
 .mypy_cache
 .pytest_cache
@@ -167,3 +168,12 @@ cython_debug/
 driver-verify
 PLANNING.md
 *~
+
+# makepkg build artifacts
+pkgbuild/pkg/
+pkgbuild/src/
+pkgbuild/biglinux-driver-manager/
+pkgbuild/*.pkg.tar.*
+
+# Project-local dev tooling (codex skills, scratch scripts)
+tools/

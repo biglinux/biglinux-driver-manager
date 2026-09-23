@@ -82,7 +82,7 @@ class BaseManager:
         self._cancelled = True
         return True
 
-    def _run_pacman_command(
+    def run_pacman_command(
         self,
         args: list[str],
         progress_callback: Callable | None = None,
@@ -93,12 +93,15 @@ class BaseManager:
         """
         Run a pacman command in a background thread with progress tracking.
 
+        This is the single public entry point for UI code to trigger a
+        pacman operation with progress streaming and cancellation support.
+
         Args:
-            args: List of arguments to pass to pacman
-            progress_callback: Callback for progress updates (fraction, text)
-            output_callback: Callback for terminal output
-            complete_callback: Callback for completion (success: bool)
-            operation_name: Name of the operation for progress messages
+            args: List of arguments to pass to pacman (without the binary).
+            progress_callback: Callback for progress updates (fraction, text).
+            output_callback: Callback for terminal output (one line at a time).
+            complete_callback: Callback for completion (success: bool).
+            operation_name: Human-readable name used in progress messages.
         """
         self._thread_launcher(
             self._execute_command_thread,
@@ -120,7 +123,7 @@ class BaseManager:
         operation_name: str = "",
     ) -> None:
         """Install packages from the enabled repositories (no AUR fallback)."""
-        self._run_pacman_command(
+        self.run_pacman_command(
             ["-S", "--noconfirm", "--needed", *packages],
             progress_callback=progress_callback,
             output_callback=output_callback,
@@ -137,7 +140,7 @@ class BaseManager:
         operation_name: str = "",
     ) -> None:
         """Remove packages together with their unneeded dependencies."""
-        self._run_pacman_command(
+        self.run_pacman_command(
             ["-Rns", "--noconfirm", *packages],
             progress_callback=progress_callback,
             output_callback=output_callback,

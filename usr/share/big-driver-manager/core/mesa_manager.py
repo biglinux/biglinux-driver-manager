@@ -20,12 +20,33 @@ from core.logging_config import get_logger
 from core.subprocess_env import subprocess_env
 from utils.i18n import _
 
+_logger = get_logger("MesaManager")
+
+
+# Phase weights for progress reporting when applying a driver.
+_PHASE_CHECK = 0.1
+_PHASE_RESOLVE = 0.2
+_PHASE_REMOVE_CONFLICTS = 0.35
+_PHASE_INSTALL = 0.5
+_PHASE_DONE = 1.0
+
 
 def _load_mesa_drivers() -> list[dict]:
-    """Load Mesa driver definitions from external JSON data file."""
+    """Load Mesa driver definitions from external JSON data file.
+
+    Failure to load leaves the Mesa page empty rather than crashing the
+    whole app at import time — users can still manage kernels and other
+    drivers while the JSON is inspected/repaired.
+    """
     data_path = Path(__file__).resolve().parent.parent / "assets" / "mesa_drivers.json"
-    with open(data_path, encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(data_path, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        _logger.error("mesa_drivers.json not found at %s", data_path)
+    except (OSError, json.JSONDecodeError) as exc:
+        _logger.error("Failed to load mesa_drivers.json: %s", exc)
+    return []
 
 
 MESA_DRIVERS: list[dict] = _load_mesa_drivers()
@@ -34,11 +55,15 @@ MESA_DRIVERS: list[dict] = _load_mesa_drivers()
 class MesaManager(BaseManager):
     """Manager for handling Mesa drivers."""
 
-    def __init__(self):
-        """Initialize the Mesa manager."""
+    def __init__(self, package_manager: PackageManager | None = None) -> None:
+        """Initialize the Mesa manager.
+
+        Args:
+            package_manager: Optional shared ``PackageManager`` instance.
+        """
         super().__init__()
         self._logger = get_logger("MesaManager")
-        self.package_manager = PackageManager()
+        self.package_manager = package_manager or PackageManager.get_default()
         self.drivers = MESA_DRIVERS.copy()
 
     def get_available_drivers(
@@ -142,161 +167,204 @@ class MesaManager(BaseManager):
         """
         Thread function for applying a driver.
 
+        Strategy (safe, atomic-ish):
+          1. Resolve installed conflicts and available target packages.
+          2. Remove conflicting packages with ``pacman -Rnc --noconfirm``
+             (respects dependencies; recursively removes unneeded deps).
+          3. Install the new Mesa variant with ``pacman -S --noconfirm
+             --needed --overwrite '*'`` to handle file conflicts with the
+             old variant that may have been carried over.
+
+        Both pacman calls go through the standard ``run_pacman_command``
+        path so they populate ``self._current_process`` and honour the
+        user cancel button.
+
         Args:
             driver: The driver configuration to apply.
             progress_callback: Callback function for progress updates.
             output_callback: Callback function for command output.
             complete_callback: Callback function for completion notification.
         """
+        self._cancelled = False
+        name = driver.get("name", driver.get("id", "mesa"))
         self._progress(
-            progress_callback, 0.1, _("Applying {} driver...").format(driver["name"])
+            progress_callback, _PHASE_CHECK, _("Applying {} driver...").format(name)
         )
         self._output(
             output_callback,
-            _("Starting {} driver installation...").format(driver["name"]),
+            _("Starting {} driver installation...").format(name),
         )
 
         try:
-            # Step 1: Check for conflicting packages
-            installed_conflicts = []
-            if driver["conflicts"]:
-                self._progress(
-                    progress_callback, 0.2, _("Checking for conflicting packages...")
-                )
-
-                installed_conflicts = [
-                    conflict
-                    for conflict in driver["conflicts"]
-                    if self._is_real_package_installed(conflict)
-                ]
-
-                if installed_conflicts:
-                    self._output(
-                        output_callback,
-                        _("Removing conflicts: {}").format(
-                            ", ".join(installed_conflicts)
-                        ),
-                    )
-
-            # Step 2: Check available packages to install
-            self._progress(
-                progress_callback,
-                0.3,
-                _("Checking {} packages...").format(driver["name"]),
-            )
-
-            packages_to_install = []
-            for pkg in driver["packages"]:
-                if self._package_available(pkg):
-                    packages_to_install.append(pkg)
-                else:
-                    self._output(
-                        output_callback,
-                        _("⚠️ Package {} not available, skipping...").format(pkg),
-                    )
-
-            if not packages_to_install:
-                self._output(output_callback, _("❌ No packages available to install."))
-                if complete_callback:
-                    complete_callback(False)
-                return
-
-            self._output(
-                output_callback,
-                _("Installing: {}").format(", ".join(packages_to_install)),
-            )
-
-            # Step 3: Remove conflicting packages (if any)
-            if installed_conflicts:
-                self._progress(
-                    progress_callback, 0.35, _("Removing conflicting packages...")
-                )
-                ok = self._run_pacman_subprocess(
-                    [self.sudo_command, "pacman", "-Rdd", "--noconfirm"]
-                    + installed_conflicts,
-                    0.35,
-                    progress_callback,
-                    output_callback,
-                )
-                if not ok:
-                    self._progress(
-                        progress_callback,
-                        0.0,
-                        _("Failed to remove conflicting packages."),
-                    )
-                    if complete_callback:
-                        complete_callback(False)
-                    return
-
-            # Step 4: Install the new driver packages
-            self._progress(
-                progress_callback,
-                0.5,
-                _("Installing {} driver...").format(driver["name"]),
-            )
-            ok = self._run_pacman_subprocess(
-                [self.sudo_command, "pacman", "-S", "--noconfirm", "--ask", "4"]
-                + packages_to_install,
-                0.5,
-                progress_callback,
-                output_callback,
-            )
-            if not ok:
-                self._progress(progress_callback, 0.0, _("Failed to apply driver."))
-                if complete_callback:
-                    complete_callback(False)
-                return
-
-            # Success
-            self._progress(progress_callback, 1.0, _("Driver applied successfully!"))
-            self._output(
-                output_callback,
-                _("✅ {} driver applied successfully!").format(driver["name"]),
-            )
-
-            if complete_callback:
-                complete_callback(True)
-
-        except Exception as e:
-            self._logger.error(f"Error applying driver: {e}")
-            self._progress(progress_callback, 0.0, _("Error: {}").format(str(e)))
-            self._output(output_callback, _("❌ Error: {}").format(str(e)))
+            plan = self._plan_driver_apply(driver, output_callback, progress_callback)
+        except Exception as exc:
+            self._logger.error("Error planning driver apply: %s", exc)
+            self._progress(progress_callback, 0.0, _("Error: {}").format(str(exc)))
+            self._output(output_callback, _("❌ Error: {}").format(str(exc)))
             if complete_callback:
                 complete_callback(False)
+            return
 
-    def _run_pacman_subprocess(
-        self,
-        cmd: list[str],
-        initial_progress: float,
-        progress_callback: Callable | None,
-        output_callback: Callable | None,
-    ) -> bool:
-        """Run a pacman command, stream output, and return success."""
-        env = subprocess_env()
-        process = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            stdin=subprocess.DEVNULL,
-            text=True,
-            env=env,
-        )
-        progress = initial_progress
-        if process.stdout:
-            for line in iter(process.stdout.readline, ""):
-                line = line.strip()
-                if line:
-                    self._output(output_callback, line)
-                    progress, _status = self._parse_progress(line, progress)
-                    self._progress(progress_callback, progress, _status)
-        process.wait()
-        if process.returncode != 0:
+        if plan is None:
+            if complete_callback:
+                complete_callback(False)
+            return
+
+        packages_to_install, installed_conflicts = plan
+
+        # Step A: remove conflicts (if any), then install. Either step can
+        # be cancelled by the user; we short-circuit on failure.
+        def _after_remove(success: bool) -> None:
+            if self._cancelled or not success:
+                self._progress(
+                    progress_callback,
+                    0.0,
+                    _("Failed to remove conflicting packages."),
+                )
+                if complete_callback:
+                    complete_callback(False)
+                return
+            self._install_driver_packages(
+                name,
+                packages_to_install,
+                progress_callback,
+                output_callback,
+                complete_callback,
+            )
+
+        if installed_conflicts:
             self._output(
                 output_callback,
-                _("❌ Operation failed (exit code: {})").format(process.returncode),
+                _("Removing conflicts: {}").format(", ".join(installed_conflicts)),
             )
-            return False
-        return True
+            self._progress(
+                progress_callback,
+                _PHASE_REMOVE_CONFLICTS,
+                _("Removing conflicting packages..."),
+            )
+            # -Rnc: recursively remove unneeded deps, skip config backups.
+            # This is safer than -Rdd which forces through dependency
+            # violations and can corrupt the system.
+            self.run_pacman_command(
+                args=["-Rnc", "--noconfirm", *installed_conflicts],
+                progress_callback=progress_callback,
+                output_callback=output_callback,
+                complete_callback=_after_remove,
+                operation_name=_("Removing conflicting packages"),
+            )
+        else:
+            self._install_driver_packages(
+                name,
+                packages_to_install,
+                progress_callback,
+                output_callback,
+                complete_callback,
+            )
+
+    def _plan_driver_apply(
+        self,
+        driver: dict,
+        output_callback: Callable | None,
+        progress_callback: Callable | None,
+    ) -> tuple[list[str], list[str]] | None:
+        """Compute the (install, remove) plan for applying a Mesa variant.
+
+        Returns ``None`` (and notifies the UI) when there is nothing to
+        install, which is treated as a failure.
+        """
+        self._progress(
+            progress_callback,
+            _PHASE_RESOLVE,
+            _("Checking for conflicting packages..."),
+        )
+        installed_conflicts = [
+            pkg
+            for pkg in driver.get("conflicts") or []
+            if self._is_real_package_installed(pkg)
+        ]
+
+        self._progress(
+            progress_callback,
+            _PHASE_RESOLVE + 0.05,
+            _("Checking {} packages...").format(driver.get("name", "")),
+        )
+        # Batch availability check for target packages.
+        target = list(driver.get("packages") or [])
+        if not target:
+            self._output(output_callback, _("❌ No packages available to install."))
+            return None
+        available_set = self._packages_available(target)
+        packages_to_install = [p for p in target if p in available_set]
+        for skipped in (p for p in target if p not in available_set):
+            self._output(
+                output_callback,
+                _("⚠️ Package {} not available, skipping...").format(skipped),
+            )
+
+        if not packages_to_install:
+            self._output(output_callback, _("❌ No packages available to install."))
+            return None
+
+        return packages_to_install, installed_conflicts
+
+    def _install_driver_packages(
+        self,
+        driver_name: str,
+        packages: list[str],
+        progress_callback: Callable | None,
+        output_callback: Callable | None,
+        complete_callback: Callable | None,
+    ) -> None:
+        """Install the packages for a Mesa variant through the safe path."""
+        if self._cancelled:
+            if complete_callback:
+                complete_callback(False)
+            return
+
+        self._output(
+            output_callback,
+            _("Installing: {}").format(", ".join(packages)),
+        )
+        self._progress(
+            progress_callback,
+            _PHASE_INSTALL,
+            _("Installing {} driver...").format(driver_name),
+        )
+
+        # --needed avoids reinstalls, --overwrite '*' handles file-level
+        # conflicts that can remain from the previous variant even after
+        # package removal (some Mesa builds ship the same file paths with
+        # different ownership). We deliberately do NOT pass --ask 4.
+        args = [
+            "-S",
+            "--noconfirm",
+            "--needed",
+            "--overwrite",
+            "*",
+            *packages,
+        ]
+
+        def _after_install(success: bool) -> None:
+            if success and not self._cancelled:
+                self._progress(
+                    progress_callback,
+                    _PHASE_DONE,
+                    _("Driver applied successfully!"),
+                )
+                self._output(
+                    output_callback,
+                    _("✅ {} driver applied successfully!").format(driver_name),
+                )
+            if complete_callback:
+                complete_callback(success and not self._cancelled)
+
+        self.run_pacman_command(
+            args=args,
+            progress_callback=progress_callback,
+            output_callback=output_callback,
+            complete_callback=_after_install,
+            operation_name=_("Installing {} driver").format(driver_name),
+        )
 
     def _is_real_package_installed(self, package_name: str) -> bool:
         """
@@ -329,15 +397,27 @@ class MesaManager(BaseManager):
         return False
 
     def _package_available(self, package_name: str) -> bool:
-        """
-        Check if a package is available in the repositories.
+        """Check if a single package is available in the repositories."""
+        return package_name in self._packages_available([package_name])
 
-        Args:
-            package_name: Name of the package to check.
+    def _packages_available(self, package_names: list[str]) -> set[str]:
+        """Return the subset of package names that exist in the repositories.
 
-        Returns:
-            True if the package exists in repos, False otherwise.
+        Uses a single ``pacman -Si`` invocation for all packages: pacman
+        returns a non-zero exit status if any are missing but still prints
+        "Name : <pkg>" blocks for every package it DID find, so parsing
+        those blocks is reliable.
         """
-        cmd = ["pacman", "-Si", package_name]
-        result = subprocess.run(cmd, capture_output=True, text=True, check=False)
-        return result.returncode == 0
+        if not package_names:
+            return set()
+        cmd = ["pacman", "-Si", *package_names]
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, check=False, env=subprocess_env()
+        )
+        found: set[str] = set()
+        for line in result.stdout.splitlines():
+            if line.startswith("Name") and ":" in line:
+                name = line.split(":", 1)[1].strip()
+                if name:
+                    found.add(name)
+        return found

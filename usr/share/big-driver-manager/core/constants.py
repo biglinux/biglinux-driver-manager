@@ -74,8 +74,11 @@ EXCLUDED_PATTERNS = [
 # LTS Kernel Feed URL
 KERNEL_ORG_FEED_URL = "https://www.kernel.org/feeds/kdist.xml"
 
-# Default LTS versions (fallback if fetch fails)
-DEFAULT_LTS_VERSIONS = ["66", "612", "614"]
+# Default LTS kernel versions (fallback when kernel.org feed is unreachable).
+# Encoded as "majorminor" (e.g. "612" = Linux 6.12) to match the package naming
+# scheme used by Manjaro/BigLinux (linux612, linux66, etc.). Keep this list in
+# sync with https://www.kernel.org/category/releases.html.
+DEFAULT_LTS_VERSIONS = ["61", "66", "612", "614"]
 
 # Progress update intervals (seconds)
 PROGRESS_UPDATE_INTERVAL = 0.5

@@ -13,6 +13,7 @@ import subprocess
 import shutil
 import threading
 
+from dataclasses import dataclass
 from typing import Callable
 
 from core.base_manager import BaseManager
@@ -27,7 +28,7 @@ _logger = get_logger("DriverInstaller")
 _DKMS_BUILD_DEPS = ("dkms", "base-devel")
 
 
-def is_in_repo(package: str) -> bool:
+def _is_in_repo(package: str) -> bool:
     """Check if a package is available in the enabled pacman repositories."""
     return package in fetch_repo_package_set()
 
@@ -51,8 +52,36 @@ def missing_dkms_prerequisites(installed: set[str], available: set[str]) -> list
     return [pkg for pkg in needed if pkg in available]
 
 
+@dataclass(frozen=True)
+class InstallPlan:
+    """Describe how a package install will be executed."""
+
+    package: str
+    source: str  # "repo" or "aur"
+    cancelable: bool
+    initial_message: str
+
+
 class DriverInstaller(BaseManager):
     """Install/remove driver packages with progress tracking."""
+
+    def build_install_plan(self, package: str) -> InstallPlan:
+        """Return the install mode so the UI can expose honest controls."""
+        if _is_in_repo(package):
+            return InstallPlan(
+                package=package,
+                source="repo",
+                cancelable=True,
+                initial_message=_("Please wait..."),
+            )
+        return InstallPlan(
+            package=package,
+            source="aur",
+            cancelable=False,
+            initial_message=_(
+                "Continue the installation in the pamac window that was opened."
+            ),
+        )
 
     def install_package(
         self,
@@ -60,13 +89,15 @@ class DriverInstaller(BaseManager):
         progress_callback: Callable | None = None,
         output_callback: Callable | None = None,
         complete_callback: Callable | None = None,
+        plan: InstallPlan | None = None,
     ) -> None:
         """Install a driver package in background thread."""
         _logger.info("Installing package: %s", package)
         self.last_error_hint = None
 
-        if is_in_repo(package):
-            self._run_pacman_command(
+        resolved_plan = plan or self.build_install_plan(package)
+        if resolved_plan.source == "repo":
+            self.run_pacman_command(
                 args=["-S", "--noconfirm", "--needed", package],
                 progress_callback=progress_callback,
                 output_callback=output_callback,
@@ -104,7 +135,7 @@ class DriverInstaller(BaseManager):
             output_callback,
             _("Installing build prerequisites: {}").format(", ".join(prereqs)),
         )
-        self._run_pacman_command(
+        self.run_pacman_command(
             args=["-S", "--noconfirm", "--needed", *prereqs],
             progress_callback=progress_callback,
             output_callback=output_callback,
@@ -121,7 +152,7 @@ class DriverInstaller(BaseManager):
     ) -> None:
         """Remove a driver package in background thread."""
         _logger.info("Removing package: %s", package)
-        self._run_pacman_command(
+        self.run_pacman_command(
             args=["-R", "--noconfirm", package],
             progress_callback=progress_callback,
             output_callback=output_callback,
@@ -155,12 +186,18 @@ class DriverInstaller(BaseManager):
         if progress_callback:
             progress_callback(
                 0.0,
-                _("Continue the installation in the pamac window that was opened."),
+                _(
+                    "Continue the installation in the pamac window that was opened. "
+                    "This dialog is only monitoring the result."
+                ),
             )
 
         def _wait() -> None:
+            success = False
             try:
-                # Tracked so cancel_operation() can close the pamac window
+                # pamac-installer is a GUI: keep the user's locale (no
+                # subprocess_env/LANG=C, which would show it in English).
+                # Tracked so cancel_operation() can close the pamac window.
                 self._current_process = subprocess.Popen(cmd)
                 self._current_process.wait()
                 success = self._current_process.returncode == 0
@@ -168,10 +205,13 @@ class DriverInstaller(BaseManager):
                 _logger.error("Failed to launch pamac-installer: %s", exc)
                 if output_callback:
                     output_callback(str(exc))
-                success = False
+            except Exception as exc:  # noqa: BLE001
+                _logger.exception("Unexpected error waiting on pamac: %s", exc)
+                if output_callback:
+                    output_callback(str(exc))
             finally:
                 self._current_process = None
-            if complete_callback:
-                complete_callback(success)
+                if complete_callback:
+                    complete_callback(success)
 
         threading.Thread(target=_wait, daemon=True).start()

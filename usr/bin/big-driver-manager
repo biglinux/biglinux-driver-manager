@@ -1,21 +1,37 @@
 #!/bin/bash
-# Wrapper to execute Big Driver Manager GUI
+# Wrapper to execute Big Driver Manager GUI.
+# Resolves the install directory by picking the most recent Python
+# site-packages install, falling back to /usr/share or the dev tree.
 
-# Detect the installation directory
-# Search first in Python site-packages (newest to oldest version)
-# Then fallback to /usr/share/big-driver-manager or local directory
-for i in /usr/lib/python3.{25..6}/site-packages/big-driver-manager /usr/share/big-driver-manager; do
-    if [[ -e "$i" ]]; then
-        BIG_DRIVER_MANAGER_DIR="$i"
-        break
+set -o pipefail
+
+find_install_dir() {
+    local candidate
+    # Newest Python 3.x site-packages first.
+    while IFS= read -r candidate; do
+        [[ -e "${candidate}" ]] || continue
+        printf '%s\n' "${candidate}"
+        return 0
+    done < <(printf '%s\n' /usr/lib/python3.*/site-packages/big-driver-manager | sort -Vr)
+
+    if [[ -e /usr/share/big-driver-manager ]]; then
+        printf '%s\n' /usr/share/big-driver-manager
+        return 0
     fi
-done
 
-# If not found, try the local directory (development)
-if [[ -z "$BIG_DRIVER_MANAGER_DIR" ]]; then
-    SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-    BIG_DRIVER_MANAGER_DIR="$SCRIPT_DIR/../share/big-driver-manager"
-fi
+    local self_dir
+    self_dir="$(dirname "$(readlink -f "$0")")"
+    if [[ -e "${self_dir}/../share/big-driver-manager" ]]; then
+        printf '%s\n' "${self_dir}/../share/big-driver-manager"
+        return 0
+    fi
 
-# Execute main.py
-exec python3 "$BIG_DRIVER_MANAGER_DIR/main.py" "$@"
+    return 1
+}
+
+BIG_DRIVER_MANAGER_DIR="$(find_install_dir)" || {
+    echo "big-driver-manager: installation directory not found" >&2
+    exit 1
+}
+
+exec python3 "${BIG_DRIVER_MANAGER_DIR}/main.py" "$@"

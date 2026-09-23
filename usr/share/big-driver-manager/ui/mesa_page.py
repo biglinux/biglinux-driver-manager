@@ -26,6 +26,7 @@ from core.constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
 from core.mesa_manager import MesaManager
 from core.mhwd_manager import MhwdManager, MhwdDriver
 from core.package_manager import PackageManager
+from core.subprocess_env import subprocess_env
 from ui.base_page import BaseSection, PackageOperationMixin
 from ui.mesa_data import (
     _CAT_ROW_ICONS,
@@ -49,7 +50,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         super().__init__(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         self.mesa_manager = MesaManager()
         self.mhwd_manager = MhwdManager()
-        self.pkg_manager = PackageManager()
+        self.pkg_manager = PackageManager.get_default()
         self.progress_dialog = None
         self._show_all = False
         self._mhwd_all_drivers: list[MhwdDriver] = []
@@ -58,7 +59,10 @@ class MesaSection(PackageOperationMixin, BaseSection):
         self._active_mesa: str = ""
         self._has_nvidia_proprietary: bool = False
         self._intel_gen: int = 0  # Detected Intel GPU generation (0 = unknown)
-        self._is_vm = self._detect_virtual_machine()
+        # VM detection is deferred to the background detection phase to keep
+        # the UI construction blocking-free. Pessimistic default is False
+        # (hides video-virtualmachine until detection confirms otherwise).
+        self._is_vm = False
         # Packages available in the enabled repos; None = unknown
         self._repo_set: set[str] | None = None
         _init_mesa_names()
@@ -75,10 +79,19 @@ class MesaSection(PackageOperationMixin, BaseSection):
                 capture_output=True,
                 text=True,
                 timeout=5,
+                env=subprocess_env(),
             )
             return result.returncode == 0
         except (FileNotFoundError, subprocess.TimeoutExpired):
             return False
+
+    def set_is_vm(self, is_vm: bool) -> None:
+        """Inform this section whether the host is a VM.
+
+        Called from the background detection phase so we never block the
+        UI thread on ``systemd-detect-virt``.
+        """
+        self._is_vm = bool(is_vm)
 
     def set_preloaded_data(
         self,
@@ -242,8 +255,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
     @staticmethod
     def _detect_gpu_info() -> dict:
         """Detect GPU hardware and NVIDIA proprietary driver status."""
-        env = os.environ.copy()
-        env["LANG"] = "C"
+        env = subprocess_env()
         info: dict = {"nvidia_loaded": False, "nvidia_pkg": False, "gpus": []}
 
         try:
@@ -1028,7 +1040,16 @@ class MesaSection(PackageOperationMixin, BaseSection):
         title_lbl.set_xalign(0)
         text_col.append(title_lbl)
 
-        subtitle_parts = [f"v{driver.version}"]
+        # MHWD reports a "date-version" (e.g. 2025.09.29) for non-NVIDIA
+        # configs, which is confusing. Only show the version when it looks
+        # like a real semver-ish package version (resolved by
+        # MhwdManager._resolve_nvidia_versions for NVIDIA drivers). We
+        # restrict the major to 1–3 digits so a four-digit year is rejected.
+        subtitle_parts: list[str] = []
+        if driver.version and re.match(
+            r"^\d{1,3}\.\d+(\.\d+)?([-.]\w+)?$", driver.version
+        ):
+            subtitle_parts.append(f"v{driver.version}")
         if driver.compatible:
             subtitle_parts.append(_("Compatible"))
         label = _("Open Source") if driver.free_driver else _("Proprietary")
@@ -1092,6 +1113,16 @@ class MesaSection(PackageOperationMixin, BaseSection):
             else:
                 btn.set_sensitive(False)
                 btn.set_tooltip_text(reason)
+                btn.update_property(
+                    [
+                        Gtk.AccessibleProperty.LABEL,
+                        Gtk.AccessibleProperty.DESCRIPTION,
+                    ],
+                    [
+                        _("Install {} unavailable").format(driver.display_name),
+                        reason,
+                    ],
+                )
             row.append(btn)
 
         # 470xx warning style
@@ -1475,17 +1506,23 @@ class MesaSection(PackageOperationMixin, BaseSection):
     # Helpers
     # ------------------------------------------------------------------
 
+    # Lightweight forwarders preserved for backwards compatibility with
+    # tests that patch these helpers on the class. New code should import
+    # from ``utils.gtk_helpers`` directly.
     @staticmethod
     def _clear_listbox(listbox: Gtk.ListBox) -> None:
-        while row := listbox.get_first_child():
-            listbox.remove(row)
+        from utils.gtk_helpers import clear_listbox
+
+        clear_listbox(listbox)
 
     @staticmethod
     def _clear_flow(flow: Gtk.FlowBox) -> None:
-        while child := flow.get_first_child():
-            flow.remove(child)
+        from utils.gtk_helpers import clear_flow
+
+        clear_flow(flow)
 
     @staticmethod
     def _clear_box(box: Gtk.Box) -> None:
-        while child := box.get_first_child():
-            box.remove(child)
+        from utils.gtk_helpers import clear_box
+
+        clear_box(box)

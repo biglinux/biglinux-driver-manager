@@ -8,10 +8,24 @@
 
 set -euo pipefail
 
-readonly CACHE_FILE="/var/cache/big-driver-manager/ids_cache.txt"
-readonly DIALOG_SCRIPT="/usr/share/big-driver-manager/udev-driver-dialog.py"
-readonly LOCK_DIR="/tmp/bkm-udev-notify"
-readonly COOLDOWN=30  # seconds between notifications for the same device
+readonly CACHE_FILE="${BDM_CACHE_FILE:-/var/cache/big-driver-manager/ids_cache.txt}"
+readonly DIALOG_SCRIPT="${BDM_DIALOG_SCRIPT:-/usr/share/big-driver-manager/udev-driver-dialog.py}"
+readonly RUNTIME_BASE="${RUNTIME_DIRECTORY:-${BDM_RUNTIME_DIR:-/run/big-driver-manager}}"
+readonly STATE_DIR="${RUNTIME_BASE}/notify-state"
+readonly GLOBAL_LOCK_FILE="${RUNTIME_BASE}/notify.lock"
+readonly COOLDOWN="${BDM_COOLDOWN:-30}"  # seconds between notifications for the same device
+# Global cap: how many dialogs can be open concurrently for a session.
+# Matches login-check-drivers.sh MAX_DIALOGS so hotplug storms (hub plug)
+# don't flood the user.
+readonly MAX_CONCURRENT="${BDM_MAX_CONCURRENT:-3}"
+readonly CONCURRENT_FILE="${RUNTIME_BASE}/concurrent"
+readonly PACMAN_BIN="${BDM_PACMAN_BIN:-pacman}"
+readonly LOGINCTL_BIN="${BDM_LOGINCTL_BIN:-loginctl}"
+readonly SYSTEMD_RUN_BIN="${BDM_SYSTEMD_RUN_BIN:-systemd-run}"
+readonly PYTHON_BIN="${BDM_PYTHON_BIN:-python3}"
+readonly SYSFS_ROOT="${BDM_SYSFS_ROOT:-/sys}"
+# Seconds to wait for a kernel driver to bind before notifying
+readonly DRIVER_WAIT="${BDM_DRIVER_WAIT:-5}"
 
 # Arguments from udev rule
 BUS="${1:-}"        # "usb" or "pci"
@@ -43,16 +57,16 @@ MATCH=$(awk -F'\t' -v id="$SEARCH_ID" '$1 == id { print; exit }' "$CACHE_FILE" 2
 IFS=$'\t' read -r _id CATEGORY DRIVER_NAME PACKAGE DESCRIPTION <<< "$MATCH"
 
 # Check if the package is already installed
-pacman -Qq "$PACKAGE" &>/dev/null && exit 0
+"$PACMAN_BIN" -Qq "$PACKAGE" &>/dev/null && exit 0
 
 # For hardware drivers, stay quiet when the kernel already drives the device
 # (e.g. RTL8153 adapters work with the built-in r8152 module). Interface
 # drivers bind a moment after the "add" event, so wait a few seconds.
 if [[ "$CATEGORY" == "device-ids" && -n "$DEVPATH" ]]; then
-    for _ in 1 2 3 4 5; do
+    for ((i = 0; i < DRIVER_WAIT; i++)); do
         sleep 1
-        [[ -d "/sys${DEVPATH}" ]] || exit 0  # unplugged meanwhile
-        for drv in "/sys${DEVPATH}"/*:*/driver; do
+        [[ -d "${SYSFS_ROOT}${DEVPATH}" ]] || exit 0  # unplugged meanwhile
+        for drv in "${SYSFS_ROOT}${DEVPATH}"/*:*/driver; do
             [[ -e "$drv" ]] || continue
             [[ "$(basename "$(readlink -f "$drv")")" == "usbfs" ]] && continue
             exit 0
@@ -60,22 +74,37 @@ if [[ "$CATEGORY" == "device-ids" && -n "$DEVPATH" ]]; then
     done
 fi
 
+# Create a root-owned runtime directory in /run, never in a world-writable path.
+# Taken only now: the driver wait above must not serialize hotplug events.
+install -d -m 0755 "$RUNTIME_BASE" "$STATE_DIR"
+exec 9>"$GLOBAL_LOCK_FILE"
+flock 9
+
 # Rate-limit: avoid duplicate dialogs for the same device
-mkdir -p "$LOCK_DIR" 2>/dev/null || true
-LOCK_FILE="${LOCK_DIR}/${SEARCH_ID//:/}"
-if [[ -f "$LOCK_FILE" ]]; then
-    LOCK_AGE=$(( $(date +%s) - $(stat -c %Y "$LOCK_FILE" 2>/dev/null || echo 0) ))
+STATE_FILE="${STATE_DIR}/${SEARCH_ID//:/_}"
+if [[ -f "$STATE_FILE" ]]; then
+    LOCK_AGE=$(( $(date +%s) - $(stat -c %Y "$STATE_FILE" 2>/dev/null || echo 0) ))
     [[ $LOCK_AGE -lt $COOLDOWN ]] && exit 0
 fi
-touch "$LOCK_FILE" 2>/dev/null || true
+
+# Global concurrency cap: count recently-created state files (within the
+# current session-ish window of 5 minutes). If we're at the cap, skip.
+recent_count=$(find "$STATE_DIR" -maxdepth 1 -type f -mmin -5 2>/dev/null | wc -l)
+if [[ "$recent_count" -ge "$MAX_CONCURRENT" ]]; then
+    exit 0
+fi
+
+touch "$STATE_FILE"
+# Maintain a small counter file for observability.
+printf '%s\n' "$recent_count" > "$CONCURRENT_FILE" 2>/dev/null || true
 
 # Find active graphical session and launch dialog as that user
 while IFS= read -r session_id; do
     [[ -z "$session_id" ]] && continue
 
-    SESSION_USER=$(loginctl show-session "$session_id" -p Name --value 2>/dev/null || true)
-    SESSION_TYPE=$(loginctl show-session "$session_id" -p Type --value 2>/dev/null || true)
-    SESSION_STATE=$(loginctl show-session "$session_id" -p State --value 2>/dev/null || true)
+    SESSION_USER=$("$LOGINCTL_BIN" show-session "$session_id" -p Name --value 2>/dev/null || true)
+    SESSION_TYPE=$("$LOGINCTL_BIN" show-session "$session_id" -p Type --value 2>/dev/null || true)
+    SESSION_STATE=$("$LOGINCTL_BIN" show-session "$session_id" -p State --value 2>/dev/null || true)
 
     # Only target graphical sessions that are active
     [[ "$SESSION_TYPE" == "x11" || "$SESSION_TYPE" == "wayland" ]] || continue
@@ -86,14 +115,15 @@ while IFS= read -r session_id; do
     [[ -n "$USER_ID" ]] || continue
 
     # Get display info for Wayland/X11
-    DISPLAY_VAR=$(loginctl show-session "$session_id" -p Display --value 2>/dev/null || true)
-    WAYLAND_DISPLAY_VAR=$(loginctl show-session "$session_id" -p WaylandDisplay --value 2>/dev/null || true)
+    DISPLAY_VAR=$("$LOGINCTL_BIN" show-session "$session_id" -p Display --value 2>/dev/null || true)
+    WAYLAND_DISPLAY_VAR=$("$LOGINCTL_BIN" show-session "$session_id" -p WaylandDisplay --value 2>/dev/null || true)
 
-    USER_HOME=$(eval echo "~${SESSION_USER}")
+    USER_HOME=$(getent passwd "$SESSION_USER" 2>/dev/null | cut -d: -f6)
+    [[ -n "$USER_HOME" ]] || continue
 
     # Launch the GTK dialog as the session user via systemd-run
     # (sudo -u does not reliably grant access to the Wayland socket)
-    systemd-run --no-block --collect \
+    "$SYSTEMD_RUN_BIN" --no-block --collect \
         --uid="$USER_ID" --gid="$(id -g "$SESSION_USER")" \
         --setenv=HOME="$USER_HOME" \
         --setenv=DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${USER_ID}/bus" \
@@ -101,11 +131,11 @@ while IFS= read -r session_id; do
         --setenv=XDG_CONFIG_HOME="${USER_HOME}/.config" \
         --setenv=DISPLAY="${DISPLAY_VAR:-:0}" \
         --setenv=WAYLAND_DISPLAY="${WAYLAND_DISPLAY_VAR:-wayland-0}" \
-        python3 "$DIALOG_SCRIPT" \
+        "$PYTHON_BIN" "$DIALOG_SCRIPT" \
             "$BUS" "$VENDOR" "$DEVICE" "$CATEGORY" "$DRIVER_NAME" "$PACKAGE" "$DESCRIPTION"
     break  # Only show on the first active graphical session
 
-done < <(loginctl list-sessions --no-legend 2>/dev/null | awk '{print $1}')
+done < <("$LOGINCTL_BIN" list-sessions --no-legend 2>/dev/null | awk '{print $1}')
 
-# Clean old lock files (>5 min)
-find "$LOCK_DIR" -maxdepth 1 -type f -mmin +5 -delete 2>/dev/null || true
+# Clean old state files (>5 min) from the protected runtime directory.
+find "$STATE_DIR" -mindepth 1 -maxdepth 1 -type f -mmin +5 -delete 2>/dev/null || true

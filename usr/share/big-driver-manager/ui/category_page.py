@@ -14,7 +14,6 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, GLib, Adw
 
 from collections.abc import Sequence
-from functools import partial
 
 from core.constants import ICON_SIZE_ITEM
 from core.driver_database import DriverModule, FirmwareEntry, PeripheralEntry
@@ -22,7 +21,6 @@ from core.driver_installer import DriverInstaller
 from core.hardware_detect import WiredLink
 from ui.base_page import (
     BaseSection,
-    PackageOperationMixin,
     create_aur_badge,
     install_confirm_body,
 )
@@ -92,7 +90,7 @@ def _detect_brand(name: str) -> str:
     return _("Other")
 
 
-class CategorySection(PackageOperationMixin, BaseSection):
+class CategorySection(BaseSection):
     """A generic driver/peripheral category section with boxed-list layout."""
 
     def __init__(
@@ -185,6 +183,11 @@ class CategorySection(PackageOperationMixin, BaseSection):
         net_spinner = Gtk.Spinner()
         net_spinner.set_spinning(True)
         net_spinner.set_size_request(16, 16)
+        net_spinner.set_tooltip_text(_("Searching for printers on the network"))
+        net_spinner.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Searching for printers on the network")],
+        )
         self._net_scan_box.append(net_spinner)
         net_label = Gtk.Label(label=_("Searching for printers on the network…"))
         net_label.add_css_class("dim-label")
@@ -727,11 +730,21 @@ class CategorySection(PackageOperationMixin, BaseSection):
         if response != "install":
             return
         pkg = getattr(item, "package", item.name)
-        self._start_package_operation(
-            self._installer,
-            _("Installing {}").format(pkg),
-            partial(self._installer.install_package, pkg),
-            self._on_operation_done,
+        plan = self._installer.build_install_plan(pkg)
+        if self.progress_dialog:
+            self.progress_dialog.show_progress(
+                _("Installing {}").format(pkg),
+                plan.initial_message,
+                cancel_callback=(
+                    self._installer.cancel_operation if plan.cancelable else None
+                ),
+            )
+        self._installer.install_package(
+            package=pkg,
+            progress_callback=self._on_progress,
+            output_callback=self._on_output,
+            complete_callback=self._on_complete,
+            plan=plan,
         )
 
     def _on_remove_clicked(
@@ -760,25 +773,49 @@ class CategorySection(PackageOperationMixin, BaseSection):
         if response != "remove":
             return
         pkg = getattr(item, "package", item.name)
-        self._start_package_operation(
-            self._installer,
-            _("Removing {}").format(pkg),
-            partial(self._installer.remove_package, pkg),
-            self._on_operation_done,
+        if self.progress_dialog:
+            self.progress_dialog.show_progress(
+                _("Removing {}").format(pkg),
+                _("Please wait..."),
+                cancel_callback=self._installer.cancel_operation,
+            )
+        self._installer.remove_package(
+            package=pkg,
+            progress_callback=self._on_progress,
+            output_callback=self._on_output,
+            complete_callback=self._on_complete,
         )
 
-    def _on_operation_done(self, success: bool, hint: str | None) -> None:
-        if success:
-            self._refresh_installed_status()
-            window = self.get_root()
-            if hasattr(window, "show_reboot_banner"):
-                window.show_reboot_banner()
-        self._report_operation_result(
-            success,
-            _("Operation completed successfully."),
-            _("Operation failed. Check logs for details."),
-            hint,
-        )
+    def _on_progress(self, fraction: float, text: str) -> None:
+        if self.progress_dialog:
+            self.progress_dialog.update_progress(fraction, text)
+
+    def _on_output(self, line: str) -> None:
+        if self.progress_dialog:
+            self.progress_dialog.append_terminal_output(line)
+
+    def _on_complete(self, success: bool) -> None:
+        def _update() -> bool:
+            if success:
+                self._refresh_installed_status()
+                self._request_refresh()
+                window = self.get_root()
+                if hasattr(window, "show_reboot_banner"):
+                    window.show_reboot_banner()
+            if self.progress_dialog:
+                if success:
+                    self.progress_dialog.show_success(
+                        _("Operation completed successfully.")
+                    )
+                else:
+                    message = _("Operation failed. Check logs for details.")
+                    hint = self._installer.last_error_hint
+                    self.progress_dialog.show_error(
+                        f"{message}\n\n{hint}" if hint else message
+                    )
+            return False
+
+        GLib.idle_add(_update)
 
     def _refresh_installed_status(self) -> None:
         """Re-check installed state for all items and rebuild list."""

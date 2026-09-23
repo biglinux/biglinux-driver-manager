@@ -6,7 +6,7 @@ For every device-ids/*/pkg, checks the enabled pacman repositories
 when a package exists in neither, so renamed/removed packages are caught
 before users hit "target not found".
 
-Usage: tools/check_driver_packages.py [--assets PATH]
+Usage: scripts/check_driver_packages.py [--assets PATH]
 """
 
 import argparse

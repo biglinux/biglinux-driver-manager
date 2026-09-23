@@ -7,7 +7,7 @@ Kernel Manager Application - Package Manager
 This module provides a query-only interface to interact with pacman package
 manager for listing and checking packages (installed and available in the
 repositories). Actual install/remove operations are handled by
-BaseManager._run_pacman_command.
+BaseManager.run_pacman_command.
 """
 
 import os
@@ -104,6 +104,23 @@ def _last_sync_from_log() -> float | None:
 class PackageManager:
     """Interface for querying the pacman package manager."""
 
+    # Process-wide default instance so every manager shares the same cache
+    # (pacman -Q is slow-ish on big systems; repeating it per manager is
+    # wasteful). Use ``PackageManager.get_default()`` to retrieve it.
+    _default_instance: "PackageManager | None" = None
+
+    @classmethod
+    def get_default(cls) -> "PackageManager":
+        """Return the shared default instance (lazy-initialized)."""
+        if cls._default_instance is None:
+            cls._default_instance = cls()
+        return cls._default_instance
+
+    @classmethod
+    def reset_default(cls) -> None:
+        """Reset the default instance (used by tests)."""
+        cls._default_instance = None
+
     def __init__(self) -> None:
         self._installed_cache: list[dict[str, str]] | None = None
         self._installed_names: set[str] | None = None
@@ -132,7 +149,9 @@ class PackageManager:
         with self._cache_lock:
             if self._installed_cache is None:
                 cmd = ["pacman", "-Q"]
-                result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+                result = subprocess.run(
+                    cmd, capture_output=True, text=True, check=False
+                )
 
                 if result.returncode != 0:
                     return []
@@ -148,7 +167,9 @@ class PackageManager:
                 self._installed_names = {p["name"] for p in packages}
 
             if pattern:
-                return [p for p in self._installed_cache if re.search(pattern, p["name"])]
+                return [
+                    p for p in self._installed_cache if re.search(pattern, p["name"])
+                ]
             return list(self._installed_cache)
 
     def is_package_installed(self, package_name: str) -> bool:

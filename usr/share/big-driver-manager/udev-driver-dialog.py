@@ -3,7 +3,7 @@
 """Standalone GTK4/Adw dialog for driver availability notifications.
 
 Launched by udev-notify.sh (hotplug) or login-check-drivers.sh (timer).
-Shows available driver info and lets the user install or ignore.
+Shows available driver info and lets the user open Driver Manager or ignore.
 
 Usage:
     python3 udev-driver-dialog.py BUS VID DID CATEGORY DRIVER_NAME PACKAGE DESCRIPTION
@@ -28,7 +28,9 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio, GLib, Gtk
 
-_APP_ID = "br.com.biglinux.drivermanager.udev"
+# Use the same app ID as the main desktop file so Wayland taskbar/dock
+# resolves the proper icon instead of a generic fallback.
+_APP_ID = "br.com.biglinux.drivermanager"
 _DOMAIN = "biglinux-driver-manager"
 
 # --- i18n ---
@@ -110,6 +112,12 @@ def _title_for_category(category: str) -> str:
     return titles.get(category, _("Driver available"))
 
 
+def _action_info_text(category: str) -> str:
+    if category == "firmware":
+        return _("Open Driver Manager to review and install this firmware.")
+    return _("Open Driver Manager to review and install this driver.")
+
+
 class DriverDialog(Adw.Application):
     """Single-window Adw app showing a driver notification dialog."""
 
@@ -136,7 +144,13 @@ class DriverDialog(Adw.Application):
         win = Adw.ApplicationWindow(
             application=self, default_width=440, default_height=-1
         )
+        win.set_title(_("Driver Manager"))
         win.set_resizable(False)
+        win.connect("close-request", self._on_close_request)
+
+        header = Gtk.HeaderBar()
+        header.set_show_title_buttons(True)
+        win.set_titlebar(header)
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         box.set_margin_top(24)
@@ -164,6 +178,13 @@ class DriverDialog(Adw.Application):
             desc_label.add_css_class("dim-label")
             box.append(desc_label)
 
+        # Action hint
+        action_label = Gtk.Label(label=_action_info_text(self._category))
+        action_label.set_wrap(True)
+        action_label.set_xalign(0)
+        action_label.add_css_class("dim-label")
+        box.append(action_label)
+
         # Package info
         pkg_label = Gtk.Label(label=f"📦 {self._package}")
         pkg_label.set_xalign(0)
@@ -176,7 +197,7 @@ class DriverDialog(Adw.Application):
         self._ignore_switch.set_valign(Gtk.Align.CENTER)
 
         if self._category == "firmware":
-            ignore_label_text = _("Don't alert for this device again")
+            ignore_label_text = _("Don't alert for this firmware again")
         else:
             ignore_label_text = _("Don't alert for this device again")
         ignore_label = Gtk.Label(label=ignore_label_text)
@@ -192,14 +213,14 @@ class DriverDialog(Adw.Application):
         btn_box.set_margin_top(12)
         btn_box.set_halign(Gtk.Align.END)
 
-        cancel_btn = Gtk.Button(label=_("Cancel"))
-        cancel_btn.connect("clicked", self._on_cancel)
-        btn_box.append(cancel_btn)
+        close_btn = Gtk.Button(label=_("Close"))
+        close_btn.connect("clicked", self._on_close)
+        btn_box.append(close_btn)
 
-        install_btn = Gtk.Button(label=_("Install"))
-        install_btn.add_css_class("suggested-action")
-        install_btn.connect("clicked", self._on_install)
-        btn_box.append(install_btn)
+        open_btn = Gtk.Button(label=_("Open Driver Manager"))
+        open_btn.add_css_class("suggested-action")
+        open_btn.connect("clicked", self._on_open_manager)
+        btn_box.append(open_btn)
 
         box.append(btn_box)
         win.set_content(box)
@@ -214,11 +235,15 @@ class DriverDialog(Adw.Application):
             bl.append(self._blacklist_key())
             _save_blacklist(bl)
 
-    def _on_cancel(self, _btn: Gtk.Button) -> None:
+    def _on_close_request(self, _win: Gtk.Window) -> bool:
+        self._maybe_blacklist()
+        return False
+
+    def _on_close(self, _btn: Gtk.Button) -> None:
         self._maybe_blacklist()
         self.quit()
 
-    def _on_install(self, _btn: Gtk.Button) -> None:
+    def _on_open_manager(self, _btn: Gtk.Button) -> None:
         self._maybe_blacklist()
         # Launch big-driver-manager in the user session scope so it survives
         # after this transient dialog process exits. --install opens the
