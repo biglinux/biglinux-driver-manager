@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -1064,6 +1065,20 @@ msgstr "Posledná záloha"
 #: usr/share/big-driver-manager/ui/kernel_page.py:426
 msgid "At least one backup kernel must remain installed"
 msgstr "Aspoň jedno záložné jadro musí zostať nainštalované"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
+#: NEEDS WORK
+msgid "Not removable here"
+msgstr "Tu nie je možné odstrániť"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 438
+#: NEEDS WORK
+msgid ""
+"Installed outside the package manager. Remove its files from /boot and /usr/lib/modules the same "
+"way it was installed."
+msgstr ""
+"Nainštalované mimo správcu balíkov. Odstráňte jeho súbory z /boot a /usr/lib/modules rovnakým "
+"spôsobom, akým bol nainštalovaný."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
@@ -1567,6 +1582,44 @@ msgid ""
 msgstr ""
 "Plánovač EEVDF s LTO, AutoFDO a optimalizáciami Propeller. Výborný pre hranie hier a odozvu "
 "pracovnej plochy."
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 82
+#: NEEDS WORK
+msgid "Package from outside the official repositories"
+msgstr "Balík z vonkajších oficiálnych repozitárov"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 85
+#: NEEDS WORK
+msgid ""
+"Installed from a package that the enabled repositories don't provide (community or self-built). It "
+"is updated by whoever provides the package, not by system updates."
+msgstr ""
+"Nainštalované z balíka, ktorý povolené repozitáre neposkytujú (komunitný alebo vlastný). "
+"Aktualizuje ho ten, kto poskytuje balík, nie systémové aktualizácie."
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 90
+#: NEEDS WORK
+msgid "Local"
+msgstr "Miestny"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 92
+#: NEEDS WORK
+msgid "Installed manually, outside the package manager"
+msgstr "Nainštalované ručne, mimo správcu balíkov"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 95
+#: NEEDS WORK
+msgid ""
+"This kernel was not installed by a package, so it can't be updated or removed here. Manage it the "
+"same way it was installed."
+msgstr ""
+"Tento kernel nebol nainštalovaný prostredníctvom balíka, takže ho tu nie je možné aktualizovať ani "
+"odstrániť. Spravujte ho rovnakým spôsobom, akým bol nainštalovaný."
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 99
+#: NEEDS WORK
+msgid "Manual"
+msgstr "Príručka"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79

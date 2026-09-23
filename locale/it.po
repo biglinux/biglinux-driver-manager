@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -1068,6 +1069,20 @@ msgstr "Ultimo backup"
 #: usr/share/big-driver-manager/ui/kernel_page.py:426
 msgid "At least one backup kernel must remain installed"
 msgstr "Almeno un kernel di backup deve rimanere installato"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
+#: NEEDS WORK
+msgid "Not removable here"
+msgstr "Non rimovibile qui"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 438
+#: NEEDS WORK
+msgid ""
+"Installed outside the package manager. Remove its files from /boot and /usr/lib/modules the same "
+"way it was installed."
+msgstr ""
+"Installato al di fuori del gestore di pacchetti. Rimuovi i suoi file da /boot e /usr/lib/modules "
+"nello stesso modo in cui è stato installato."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
@@ -1574,6 +1589,44 @@ msgid ""
 msgstr ""
 "Scheduler EEVDF con LTO, AutoFDO e ottimizzazioni Propeller. Eccellente per gaming e reattività "
 "desktop."
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 82
+#: NEEDS WORK
+msgid "Package from outside the official repositories"
+msgstr "Pacchetto proveniente da fonti esterne ai repository ufficiali"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 85
+#: NEEDS WORK
+msgid ""
+"Installed from a package that the enabled repositories don't provide (community or self-built). It "
+"is updated by whoever provides the package, not by system updates."
+msgstr ""
+"Installato da un pacchetto che i repository abilitati non forniscono (comunità o auto-costruito). "
+"Viene aggiornato da chi fornisce il pacchetto, non dagli aggiornamenti di sistema."
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 90
+#: NEEDS WORK
+msgid "Local"
+msgstr "Locale"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 92
+#: NEEDS WORK
+msgid "Installed manually, outside the package manager"
+msgstr "Installato manualmente, al di fuori del gestore pacchetti"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 95
+#: NEEDS WORK
+msgid ""
+"This kernel was not installed by a package, so it can't be updated or removed here. Manage it the "
+"same way it was installed."
+msgstr ""
+"Questo kernel non è stato installato da un pacchetto, quindi non può essere aggiornato o rimosso "
+"qui. Gestiscilo allo stesso modo in cui è stato installato."
+# 
+# File: usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 99
+#: NEEDS WORK
+msgid "Manual"
+msgstr "Manuale"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
