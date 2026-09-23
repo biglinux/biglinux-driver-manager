@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,354 +14,221 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 116
-#: usr/share/big-driver-manager/core/mesa_manager.py:116
-#, python-brace-format
-msgid "Driver not found: {}"
-msgstr "Controlador no encontrado: {}"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:152
-#, python-brace-format
-msgid "Applying {} driver..."
-msgstr "Aplicando controlador {}..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
-#: usr/share/big-driver-manager/core/mesa_manager.py:156
-#, python-brace-format
-msgid "Starting {} driver installation..."
-msgstr "Iniciando la instalación del controlador {}..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Comprobando paquetes en conflicto..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Eliminando conflictos: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "Comprobando {} paquetes..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ Paquete {} no disponible, omitiendo..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ No hay paquetes disponibles para instalar."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#: usr/share/big-driver-manager/ui/category_page.py:606
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
+#: usr/share/big-driver-manager/ui/home_page.py:693
 #, python-brace-format
-msgid "Installing: {}"
-msgstr "Instalando: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Eliminando paquetes conflictivos..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "No se pudieron eliminar los paquetes conflictivos."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "Instalando el controlador {}..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "No se pudo aplicar el controlador."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "¡Controlador aplicado con éxito!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ ¡Controlador {} aplicado con éxito!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/core/base_manager.py:205
-#: usr/share/big-driver-manager/core/mesa_manager.py:262
-#, python-brace-format
-msgid "Error: {}"
-msgstr "Error: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/core/mesa_manager.py:263
-#, python-brace-format
-msgid "❌ Error: {}"
-msgstr "❌ Error: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
-#, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ Operación fallida (código de salida: {})"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 951
-# File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
-# line: 213
-#: usr/share/big-driver-manager/core/mhwd_manager.py:213
-#: usr/share/big-driver-manager/ui/mesa_page.py:1102
-#, python-brace-format
-msgid "Remove the installed NVIDIA driver ({}) first."
-msgstr "Primero elimine el controlador NVIDIA instalado ({})."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 106
-#: usr/share/big-driver-manager/core/base_manager.py:181
-#: usr/share/big-driver-manager/core/mhwd_manager.py:310
-#, python-brace-format
-msgid "Command: {}"
-msgstr "Comando: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 105
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 108
-#: usr/share/big-driver-manager/core/base_manager.py:180
-#: usr/share/big-driver-manager/core/base_manager.py:183
-#: usr/share/big-driver-manager/core/mhwd_manager.py:312
-#, python-brace-format
-msgid "Starting {}..."
-msgstr "Iniciando {}..."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/core/mhwd_manager.py:335
-msgid "Completed"
-msgstr "Completado"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
-#: usr/share/big-driver-manager/core/mhwd_manager.py:335
-#: usr/share/big-driver-manager/ui/progress_dialog.py:374
-msgid "Failed"
-msgstr "Fallido"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 137
-#: usr/share/big-driver-manager/core/base_manager.py:140
-#, python-brace-format
-msgid "Database locked. Retrying in {} seconds..."
-msgstr "Base de datos bloqueada. Reintentando en {} segundos..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 142
-#: usr/share/big-driver-manager/core/base_manager.py:145
-#, python-brace-format
-msgid "Waiting {} s before retry..."
-msgstr "Esperando {} s antes de reintentar..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 147
-#: usr/share/big-driver-manager/core/base_manager.py:150
-#, python-brace-format
-msgid "Retry attempt {} of {}..."
-msgstr "Intento de reintento {} de {}..."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "Operación cancelada por el usuario."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 160
-#: usr/share/big-driver-manager/core/base_manager.py:256
-#, python-brace-format
-msgid "Still working... ({:.0%} complete)"
-msgstr "Todavía trabajando... ({:.0%} completado)"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 177
-#: usr/share/big-driver-manager/core/base_manager.py:282
-msgid "Operation cancelled"
-msgstr "Operación cancelada"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 178
-#: usr/share/big-driver-manager/core/base_manager.py:283
-msgid "Operation was cancelled."
-msgstr "La operación fue cancelada."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 183
-#: usr/share/big-driver-manager/core/base_manager.py:288
-#, python-brace-format
-msgid "{}  complete!"
-msgstr "{}  ¡completo!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/base_manager.py:292
-#, python-brace-format
-msgid "{}  completed successfully."
-msgstr "{} completado con éxito."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 193
-#: usr/share/big-driver-manager/core/base_manager.py:298
-#, python-brace-format
-msgid "{}  failed."
-msgstr "{} falló."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/base_manager.py:302
-#, python-brace-format
-msgid "{}  failed (exit code: {})"
-msgstr "{} falló (código de salida: {})"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search for the correct name."
-msgstr ""
-"Paquete no encontrado en los repositorios. El nombre del paquete puede haber cambiado o haber sido "
-"eliminado.\n"
-"Sugerencia: Intenta actualizar la base de datos con 'sudo pacman -Sy' y busca el nombre correcto."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 319
-#: usr/share/big-driver-manager/core/base_manager.py:322
-msgid ""
-"A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
-msgstr ""
-"Un conflicto impidió que la operación se completara.\n"
-"Sugerencia: Limpia la caché y actualiza con 'sudo pacman -Scc' seguido de 'sudo pacman -Syyu'."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 327
-#: usr/share/big-driver-manager/core/base_manager.py:330
-msgid ""
-"Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
-"conflict."
-msgstr ""
-"Algunos archivos de este paquete ya existen en el sistema.\n"
-"Sugerencia: Verifica qué paquete posee el archivo con 'pacman -Qo <file_path>' y resuelve el "
-"conflicto."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 335
-#: usr/share/big-driver-manager/core/base_manager.py:338
-msgid ""
-"Required dependencies could not be resolved.\n"
-"Suggestion: Update the full system first with 'sudo pacman -Syu'."
-msgstr ""
-"No se pudieron resolver las dependencias requeridas.\n"
-"Sugerencia: Actualiza todo el sistema primero con 'sudo pacman -Syu'."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 342
-#: usr/share/big-driver-manager/core/base_manager.py:345
-msgid ""
-"Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
-msgstr ""
-"No se pudo verificar la firma del paquete.\n"
-"Sugerencia: Actualiza tus llaveros con 'sudo pacman -S archlinux-keyring manjaro-keyring'."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 350
-#: usr/share/big-driver-manager/core/base_manager.py:353
-msgid ""
-"The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
-msgstr ""
-"La base de datos de paquetes está bloqueada por otro proceso.\n"
-"Si no hay otro gestor de paquetes en ejecución, elimine el bloqueo con 'sudo rm "
-"/var/lib/pacman/db.lck'."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 358
-#: usr/share/big-driver-manager/core/base_manager.py:361
-msgid ""
-"Not enough disk space to complete the operation.\n"
-"Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
-msgstr ""
-"No hay suficiente espacio en disco para completar la operación.\n"
-"Sugerencia: Libere espacio limpiando la caché de paquetes con 'sudo pacman -Scc'."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 366
-#: usr/share/big-driver-manager/core/base_manager.py:369
-msgid ""
-"Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
-msgstr ""
-"No se pudieron descargar los archivos requeridos.\n"
-"Sugerencia: Verifique su conexión a internet. Si el problema persiste, intente actualizar su lista "
-"de espejos."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 374
-#: usr/share/big-driver-manager/core/base_manager.py:377
-msgid ""
-"A downloaded package is corrupted.\n"
-"Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
-msgstr ""
-"Un paquete descargado está corrupto.\n"
-"Sugerencia: Limpie la caché con 'sudo pacman -Scc' y vuelva a intentarlo."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 391
-#: usr/share/big-driver-manager/core/base_manager.py:394
-msgid "Generating GRUB configuration..."
-msgstr "Generando configuración de GRUB..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 392
-#: usr/share/big-driver-manager/core/base_manager.py:395
-msgid "Running post-transaction hooks..."
-msgstr "Ejecutando ganchos post-transacción..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/base_manager.py:396
-msgid "Installing packages..."
-msgstr "Instalando paquetes..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 394
-#: usr/share/big-driver-manager/core/base_manager.py:397
-msgid "Removing packages..."
-msgstr "Eliminando paquetes..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 395
-#: usr/share/big-driver-manager/core/base_manager.py:398
-msgid "Checking for file conflicts..."
-msgstr "Comprobando conflictos de archivos..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 396
-#: usr/share/big-driver-manager/core/base_manager.py:399
-msgid "Checking dependencies..."
-msgstr "Comprobando dependencias..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 400
-#: usr/share/big-driver-manager/core/base_manager.py:403
-msgid "Synchronizing package databases..."
-msgstr "Sincronizando bases de datos de paquetes..."
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
+msgid "Install {}?"
+msgstr "¿Instalar {}?"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 566
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 591
+#: usr/share/big-driver-manager/udev-driver-dialog.py:91
+msgid "Firmware available"
+msgstr "Firmware disponible"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 643
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 423
-#: usr/share/big-driver-manager/core/base_manager.py:426
-#: usr/share/big-driver-manager/ui/home_page.py:644
-msgid "Downloading packages..."
-msgstr "Descargando paquetes..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/driver_installer.py:57
-#: usr/share/big-driver-manager/ui/category_page.py:626
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
-#: usr/share/big-driver-manager/ui/home_page.py:713
-#: usr/share/big-driver-manager/ui/home_page.py:724
-#: usr/share/big-driver-manager/ui/kernel_page.py:699
-#: usr/share/big-driver-manager/ui/mesa_page.py:1136
-#: usr/share/big-driver-manager/ui/mesa_page.py:1370
-#: usr/share/big-driver-manager/ui/mesa_page.py:1381
-#, python-brace-format
-msgid "Installing {}"
-msgstr "Instalando {}"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/driver_installer.py:85
-#: usr/share/big-driver-manager/ui/category_page.py:664
-#: usr/share/big-driver-manager/ui/installed_page.py:416
-#: usr/share/big-driver-manager/ui/kernel_page.py:803
-#: usr/share/big-driver-manager/ui/kernel_page.py:873
-#: usr/share/big-driver-manager/ui/mesa_page.py:1214
-#: usr/share/big-driver-manager/ui/mesa_page.py:1408
-#: usr/share/big-driver-manager/ui/mesa_page.py:1419
-#, python-brace-format
-msgid "Removing {}"
-msgstr "Eliminando {}"
+# 227
+#: usr/share/big-driver-manager/udev-driver-dialog.py:92
+msgid "Printer driver available"
+msgstr "Controlador de impresora disponible"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 227
+#: usr/share/big-driver-manager/udev-driver-dialog.py:93
+msgid "Scanner driver available"
+msgstr "Controlador de escáner disponible"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 227
+#: usr/share/big-driver-manager/udev-driver-dialog.py:95
+msgid "Driver available"
+msgstr "Controlador disponible"
+# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
+# line: 164
+# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
+# line: 166
+#: usr/share/big-driver-manager/udev-driver-dialog.py:164
+#: usr/share/big-driver-manager/udev-driver-dialog.py:166
+msgid "Don't alert for this device again"
+msgstr "No volver a alertar para este dispositivo"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "Cancelar"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "Instalar"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 99
-#: usr/share/big-driver-manager/core/driver_installer.py:99
-#, python-brace-format
-msgid "pamac-installer not found. Cannot install AUR package {}."
-msgstr "pamac-installer no encontrado. No se puede instalar el paquete AUR {}."
+# manager/utils/tooltip_helper.py, line: 28
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:28
+msgid ""
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
+msgstr ""
+"Si su Wi-Fi ya está funcionando, el controlador kernel incorporado suele ser la mejor opción. "
+"Instale una alternativa solo si tiene problemas de conexión."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "Continúe la instalación en la ventana de pamac que se abrió."
+# manager/utils/tooltip_helper.py, line: 33
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:33
+msgid ""
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
+msgstr ""
+"Los adaptadores de red cableados casi siempre funcionan automáticamente. Solo se necesita un "
+"controlador adicional para hardware muy nuevo o raro."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 37
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:37
+msgid ""
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
+msgstr ""
+"Algunos adaptadores Bluetooth necesitan firmware adicional para funcionar. Si el emparejamiento "
+"falla, instalar el firmware para tu adaptador puede resolver el problema."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 42
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:42
+msgid ""
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
+msgstr ""
+"Los sintonizadores de TV digital suelen necesitar firmware específico. Sin él, el sistema no "
+"reconocerá el dispositivo."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 46
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:46
+msgid ""
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
+msgstr ""
+"La mayoría de los dispositivos de audio funcionan con ALSA integrado en el kernel. Solo se necesita "
+"firmware adicional para interfaces de audio USB específicas."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 50
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:50
+msgid ""
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
+msgstr ""
+"La mayoría de las webcams funcionan automáticamente. El firmware adicional puede mejorar la calidad "
+"de imagen o habilitar funciones adicionales."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 54
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:54
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "Si tu pantalla táctil no responde, instalar el firmware correspondiente generalmente lo soluciona."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 58
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:58
+msgid ""
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
+msgstr ""
+"Los controladores de impresora permiten que el sistema se comunique con tu modelo. Si la impresora "
+"fue detectada en tu red o USB, se recomienda instalar el controlador correspondiente."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 63
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:63
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "El firmware de impresoras 3D permite la comunicación entre el slicer y el hardware de la impresora."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 67
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:67
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
+msgstr ""
+"Los controladores de escáner (backends SANE) permiten que las aplicaciones de escaneo se comuniquen "
+"con tu modelo de escáner."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 111
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:70
+msgid "Additional firmware packages for specialized hardware."
+msgstr "Paquetes de firmware adicionales para hardware especializado."
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
+#: NEEDS WORK
+msgid "Package"
+msgstr "Paquete"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Status"
+msgstr "Estado"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+#: NEEDS WORK
+msgid "Detected and installed"
+msgstr "Detectado e instalado"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+#: NEEDS WORK
+msgid "Detected — not yet installed"
+msgstr "Detectado — aún no instalado"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/category_page.py:424
+#: usr/share/big-driver-manager/ui/home_page.py:488
+#: usr/share/big-driver-manager/ui/home_page.py:504
+#: usr/share/big-driver-manager/ui/home_page.py:735
+#: usr/share/big-driver-manager/ui/installed_page.py:313
+#: usr/share/big-driver-manager/ui/installed_page.py:317
+#: usr/share/big-driver-manager/ui/installed_page.py:324
+#: usr/share/big-driver-manager/ui/installed_page.py:331
+#: usr/share/big-driver-manager/ui/window.py:199
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "Instalado"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Available in repository"
+msgstr "Disponible en el repositorio"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
+#: NEEDS WORK
+msgid "Device"
+msgstr "Dispositivo"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 173
 #: usr/share/big-driver-manager/utils/desc_translate.py:173
@@ -796,231 +664,134 @@ msgstr "impresoras en su red"
 #: usr/share/big-driver-manager/utils/desc_translate.py:259
 msgid "(proprietary)"
 msgstr "(propietario)"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 28
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:28
-msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
-"alternative only if you have connection problems."
-msgstr ""
-"Si su Wi-Fi ya está funcionando, el controlador kernel incorporado suele ser la mejor opción. "
-"Instale una alternativa solo si tiene problemas de conexión."
+# manager/ui/drivers_hub_page.py, line: 36
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:36
+#: usr/share/big-driver-manager/ui/installed_page.py:27
+#: usr/share/big-driver-manager/ui/window.py:47
+msgid "Video / GPU"
+msgstr "Video / GPU"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
+#: usr/share/big-driver-manager/ui/window.py:48
+msgid "Mesa, NVIDIA, and GPU drivers."
+msgstr "Controladores Mesa, NVIDIA y GPU."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 33
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:33
-msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
-"new or rare hardware."
-msgstr ""
-"Los adaptadores de red cableados casi siempre funcionan automáticamente. Solo se necesita un "
-"controlador adicional para hardware muy nuevo o raro."
+# manager/ui/drivers_hub_page.py, line: 37
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:37
+#: usr/share/big-driver-manager/ui/installed_page.py:28
+#: usr/share/big-driver-manager/ui/window.py:53
+msgid "Wi-Fi"
+msgstr "Wifi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
+#: usr/share/big-driver-manager/ui/window.py:54
+msgid "Wireless network adapter drivers."
+msgstr "Controladores de adaptadores de red inalámbricos."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 37
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:37
-msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
-"your adapter may solve the problem."
-msgstr ""
-"Algunos adaptadores Bluetooth necesitan firmware adicional para funcionar. Si el emparejamiento "
-"falla, instalar el firmware para tu adaptador puede resolver el problema."
+# manager/ui/drivers_hub_page.py, line: 38
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:38
+#: usr/share/big-driver-manager/ui/installed_page.py:29
+#: usr/share/big-driver-manager/ui/window.py:59
+msgid "Ethernet"
+msgstr "Ethernet"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
+#: usr/share/big-driver-manager/ui/window.py:60
+msgid "Wired network adapter drivers."
+msgstr "Controladores de adaptadores de red cableados."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 42
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:42
-msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
-"system."
-msgstr ""
-"Los sintonizadores de TV digital suelen necesitar firmware específico. Sin él, el sistema no "
-"reconocerá el dispositivo."
+# manager/ui/drivers_hub_page.py, line: 39
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:39
+#: usr/share/big-driver-manager/ui/installed_page.py:30
+#: usr/share/big-driver-manager/ui/window.py:65
+msgid "Bluetooth"
+msgstr "bluetooth"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
+#: usr/share/big-driver-manager/ui/window.py:66
+msgid "Bluetooth adapter drivers."
+msgstr "Controladores del adaptador Bluetooth."
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 46
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:46
-msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
-"USB audio interfaces."
-msgstr ""
-"La mayoría de los dispositivos de audio funcionan con ALSA integrado en el kernel. Solo se necesita "
-"firmware adicional para interfaces de audio USB específicas."
+# manager/ui/drivers_hub_page.py, line: 40
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:40
+#: usr/share/big-driver-manager/ui/installed_page.py:31
+#: usr/share/big-driver-manager/ui/window.py:71
+msgid "DVB / TV"
+msgstr "DVB / TV"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
+#: usr/share/big-driver-manager/ui/window.py:72
+msgid "Digital TV tuner firmware."
+msgstr "Firmware de sintonizador de TV digital."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 50
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:50
-msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
-"features."
-msgstr ""
-"La mayoría de las webcams funcionan automáticamente. El firmware adicional puede mejorar la calidad "
-"de imagen o habilitar funciones adicionales."
+# manager/ui/drivers_hub_page.py, line: 41
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:41
+#: usr/share/big-driver-manager/ui/installed_page.py:32
+#: usr/share/big-driver-manager/ui/window.py:77
+msgid "Audio"
+msgstr "Audio"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
+#: usr/share/big-driver-manager/ui/window.py:78
+msgid "Audio device firmware."
+msgstr "Firmware de dispositivo de audio."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 54
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
-msgstr "Si tu pantalla táctil no responde, instalar el firmware correspondiente generalmente lo soluciona."
+# manager/ui/drivers_hub_page.py, line: 42
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:42
+#: usr/share/big-driver-manager/ui/installed_page.py:33
+#: usr/share/big-driver-manager/ui/window.py:83
+msgid "Webcam"
+msgstr "cámara web"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
+#: usr/share/big-driver-manager/ui/window.py:84
+msgid "Webcam device firmware."
+msgstr "Firmware de dispositivo de cámara web."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 58
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:58
-msgid ""
-"Printer drivers let the system communicate with your model. If the printer was detected on your "
-"network or USB, installing the matching driver is recommended."
-msgstr ""
-"Los controladores de impresora permiten que el sistema se comunique con tu modelo. Si la impresora "
-"fue detectada en tu red o USB, se recomienda instalar el controlador correspondiente."
+# manager/ui/drivers_hub_page.py, line: 43
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:43
+#: usr/share/big-driver-manager/ui/installed_page.py:34
+#: usr/share/big-driver-manager/ui/window.py:89
+msgid "Touchscreen"
+msgstr "Pantalla táctil"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
+#: usr/share/big-driver-manager/ui/window.py:90
+msgid "Touchscreen device firmware."
+msgstr "Firmware de dispositivo de pantalla táctil."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 63
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid "3D printer firmware enables communication between the slicer and the printer hardware."
-msgstr "El firmware de impresoras 3D permite la comunicación entre el slicer y el hardware de la impresora."
+# manager/ui/drivers_hub_page.py, line: 44
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:44
+#: usr/share/big-driver-manager/ui/installed_page.py:35
+#: usr/share/big-driver-manager/ui/window.py:95
+msgid "Printers"
+msgstr "Impresoras"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
+#: usr/share/big-driver-manager/ui/window.py:96
+msgid "Printer drivers and support packages."
+msgstr "Controladores de impresora y paquetes de soporte."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 67
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
-msgstr ""
-"Los controladores de escáner (backends SANE) permiten que las aplicaciones de escaneo se comuniquen "
-"con tu modelo de escáner."
+# manager/ui/drivers_hub_page.py, line: 45
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:45
+#: usr/share/big-driver-manager/ui/installed_page.py:36
+#: usr/share/big-driver-manager/ui/window.py:101
+msgid "3D Printers"
+msgstr "Impresoras 3D"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
+#: usr/share/big-driver-manager/ui/window.py:102
+msgid "3D printer firmware."
+msgstr "Firmware de impresora 3D."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 46
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:46
+#: usr/share/big-driver-manager/ui/installed_page.py:37
+#: usr/share/big-driver-manager/ui/window.py:107
+msgid "Scanners"
+msgstr "Escáneres"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 111
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:70
-msgid "Additional firmware packages for specialized hardware."
-msgstr "Paquetes de firmware adicionales para hardware especializado."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 566
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 591
-#: usr/share/big-driver-manager/udev-driver-dialog.py:91
-msgid "Firmware available"
-msgstr "Firmware disponible"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/udev-driver-dialog.py:92
-msgid "Printer driver available"
-msgstr "Controlador de impresora disponible"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/udev-driver-dialog.py:93
-msgid "Scanner driver available"
-msgstr "Controlador de escáner disponible"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/udev-driver-dialog.py:95
-msgid "Driver available"
-msgstr "Controlador disponible"
-# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
-# line: 164
-# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
-# line: 166
-#: usr/share/big-driver-manager/udev-driver-dialog.py:164
-#: usr/share/big-driver-manager/udev-driver-dialog.py:166
-msgid "Don't alert for this device again"
-msgstr "No volver a alertar para este dispositivo"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "Cancelar"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "Instalar"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 40
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:42
-msgid "Stable, long-term support"
-msgstr "Estable, con soporte a largo plazo"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 43
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
-msgstr ""
-"Recibe actualizaciones de seguridad durante años. La mejor opción para la mayoría de los usuarios — "
-"confiable y bien probado."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 49
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
-msgid "Low-latency, real-time"
-msgstr "Baja latencia, en tiempo real"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 52
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
-msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
-"drivers (e.g. NVIDIA). Only recommended for advanced users."
-msgstr ""
-"Diseñado para producción de audio/video y tareas que requieren sincronización precisa. Puede ser "
-"incompatible con algunos controladores (p. ej., NVIDIA). Solo recomendado para usuarios avanzados."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 59
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
-msgid "Gaming & performance optimized"
-msgstr "Optimizado para juegos y rendimiento"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 62
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
-msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
-"performance."
-msgstr ""
-"Ajustado para juegos más rápidos y un escritorio más receptivo. Ideal para uso diario si quieres un "
-"rendimiento extra."
-# 
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
-msgid "Performance optimized by CachyOS"
-msgstr "Rendimiento optimizado por CachyOS"
-# 
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
-msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
-"responsiveness."
-msgstr ""
-"Planificador EEVDF con LTO, AutoFDO y optimizaciones Propeller. Excelente para juegos y respuesta "
-"en escritorio."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 68
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
-msgid "Latest features & drivers"
-msgstr "Últimas funciones y controladores"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 72
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
-msgid "Always up to date with the newest features and hardware support."
-msgstr "Siempre actualizado con las funciones y soporte de hardware más recientes."
+# 105
+#: usr/share/big-driver-manager/ui/window.py:108
+msgid "Scanner drivers and SANE backends."
+msgstr "Controladores de escáner y backends SANE."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 67
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -1032,108 +803,212 @@ msgstr "Siempre actualizado con las funciones y soporte de hardware más recient
 #: usr/share/big-driver-manager/ui/window.py:113
 msgid "Other"
 msgstr "Otro"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 128
-#: usr/share/big-driver-manager/ui/category_page.py:131
-msgid "Search drivers..."
-msgstr "Buscar controladores..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
-#: usr/share/big-driver-manager/ui/category_page.py:135
-msgid "Search drivers"
-msgstr "Buscar controladores"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 160
-#: usr/share/big-driver-manager/ui/category_page.py:160
-msgid "Searching for printers on the network…"
-msgstr "Buscando impresoras en la red…"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 162
-#: usr/share/big-driver-manager/ui/category_page.py:179
-msgid "No more automatically detected compatible drivers in this category."
-msgstr "No más controladores compatibles detectados automáticamente en esta categoría."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 187
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 211
-#: usr/share/big-driver-manager/ui/category_page.py:187
-#: usr/share/big-driver-manager/ui/category_page.py:211
-msgid "Show drivers without detected compatibility"
-msgstr "Mostrar controladores sin compatibilidad detectada"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 187
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 260
-#: usr/share/big-driver-manager/ui/category_page.py:199
-#: usr/share/big-driver-manager/ui/category_page.py:278
-msgid "No drivers needed for this category"
-msgstr "No se necesitan controladores para esta categoría"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 191
-#: usr/share/big-driver-manager/ui/category_page.py:202
-msgid "No drivers in this category were automatically detected as compatible with your hardware."
-msgstr "No se detectaron controladores en esta categoría compatibles automáticamente con tu hardware."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 238
-#: usr/share/big-driver-manager/ui/category_page.py:257
-msgid "Detection Error"
-msgstr "Error de detección"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 264
-#: usr/share/big-driver-manager/ui/category_page.py:281
-msgid "No drivers in this category were detected as necessary for your hardware."
-msgstr "No se detectaron controladores en esta categoría necesarios para tu hardware."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 111
+#: usr/share/big-driver-manager/ui/window.py:114
+msgid "Additional firmware packages."
+msgstr "Paquetes adicionales de firmware."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 189
+#: usr/share/big-driver-manager/ui/window.py:198
+msgid "Home"
+msgstr "Inicio"
+# File: usr/share/big-driver-manager/ui/window.py, line: 89
+#: usr/share/big-driver-manager/ui/window.py:200
+msgid "Kernel"
+msgstr "Núcleo"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 191
+#: usr/share/big-driver-manager/ui/window.py:201
+msgid "Video"
+msgstr "Vídeo"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Categorías"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 231
+#: usr/share/big-driver-manager/ui/window.py:242
+msgid "A system reboot is recommended to apply changes."
+msgstr "Se recomienda reiniciar el sistema para aplicar los cambios."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 269
+#: usr/share/big-driver-manager/ui/window.py:285
+msgid "Content"
+msgstr "Contenido"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 328
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 623
+#: usr/share/big-driver-manager/ui/window.py:338
+#: usr/share/big-driver-manager/ui/window.py:656
+msgid "Showing drivers detected as compatible with your computer"
+msgstr "Mostrando controladores detectados como compatibles con tu computadora"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 327
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 329
+#: usr/share/big-driver-manager/ui/window.py:348
+#: usr/share/big-driver-manager/ui/window.py:350
+msgid "Show all drivers"
+msgstr "Mostrar todos los drivers"
+# File: usr/share/big-driver-manager/ui/window.py, line: 129
+#: usr/share/big-driver-manager/ui/window.py:362
+msgid "Menu"
+msgstr "Menú"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 318
+#: usr/share/big-driver-manager/ui/window.py:364
+msgid "Application menu"
+msgstr "Menú de la aplicación"
+# File: usr/share/big-driver-manager/ui/window.py, line: 134
+#: usr/share/big-driver-manager/ui/window.py:367
+msgid "About"
+msgstr "Acerca de"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/window.py:515
+msgid "Hardware detection failed. Check system logs for details."
+msgstr "Fallo en la detección de hardware. Consulte los registros del sistema para más detalles."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 534
+#: usr/share/big-driver-manager/ui/window.py:627
+#, python-brace-format
+msgid "Obsolete kernel: {} — no longer receives security updates"
+msgstr "Kernel obsoleto: {} — ya no recibe actualizaciones de seguridad"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 538
+#: usr/share/big-driver-manager/ui/window.py:631
+msgid "Manage"
+msgstr "Administrar"
+# 
+# File: usr/share/big-driver-manager/ui/window.py, line: 674
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
+msgstr ""
+"La base de datos de paquetes se actualizó por última vez hace {} días. Actualiza tu sistema antes "
+"de instalar controladores para evitar fallos en la descarga y paquetes faltantes."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 619
+#: usr/share/big-driver-manager/ui/window.py:652
+msgid "Showing all drivers, including incompatible ones"
+msgstr "Mostrando todos los controladores, incluidos los incompatibles"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 117
+#: usr/share/big-driver-manager/ui/progress_dialog.py:117
+msgid "Technical details"
+msgstr "Detalles técnicos"
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 67
+#: usr/share/big-driver-manager/ui/progress_dialog.py:131
+msgid "Terminal output"
+msgstr "Salida del terminal"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 # 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 339
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 283
-#: usr/share/big-driver-manager/ui/category_page.py:356
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:283
-msgid "1 driver"
-msgstr "1 controlador"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
-#: usr/share/big-driver-manager/ui/category_page.py:356
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Cerrar"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
+#: usr/share/big-driver-manager/ui/category_page.py:627
+#: usr/share/big-driver-manager/ui/category_page.py:665
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
+#: usr/share/big-driver-manager/ui/installed_page.py:417
+#: usr/share/big-driver-manager/ui/progress_dialog.py:207
+msgid "Please wait..."
+msgstr "Por favor, espere..."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 229
+#: usr/share/big-driver-manager/ui/progress_dialog.py:229
 #, python-brace-format
-msgid "{} drivers"
-msgstr "{} drivers"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 341
-#: usr/share/big-driver-manager/ui/category_page.py:358
+msgid "Step {} of {}: {}"
+msgstr "Paso {} de {}: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 231
+#: usr/share/big-driver-manager/ui/progress_dialog.py:231
 #, python-brace-format
-msgid "{} detected"
-msgstr "{} detectado"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:360
-#, python-brace-format
-msgid "{} installed"
-msgstr "{} instalado"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 405
-#: usr/share/big-driver-manager/ui/category_page.py:422
-#: usr/share/big-driver-manager/ui/installed_page.py:333
-msgid "Detected"
-msgstr "Detectado"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:424
-#: usr/share/big-driver-manager/ui/home_page.py:488
-#: usr/share/big-driver-manager/ui/home_page.py:504
-#: usr/share/big-driver-manager/ui/home_page.py:735
-#: usr/share/big-driver-manager/ui/installed_page.py:313
-#: usr/share/big-driver-manager/ui/installed_page.py:317
-#: usr/share/big-driver-manager/ui/installed_page.py:324
-#: usr/share/big-driver-manager/ui/installed_page.py:331
-#: usr/share/big-driver-manager/ui/window.py:199
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "Instalado"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:426
-msgid "Not installed"
-msgstr "No instalado"
+msgid "Step {} of {}"
+msgstr "Paso {} de {}"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/ui/progress_dialog.py:340
+msgid "Operation completed successfully!"
+msgstr "¡Operación completada con éxito!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/progress_dialog.py:345
+msgid "Operation failed. Check terminal output for details."
+msgstr "La operación falló. Verifique la salida del terminal para más detalles."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/ui/progress_dialog.py:371
+msgid "Completed!"
+msgstr "¡Terminado!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
+#: usr/share/big-driver-manager/core/mhwd_manager.py:335
+#: usr/share/big-driver-manager/ui/progress_dialog.py:374
+msgid "Failed"
+msgstr "Fallido"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
+#: NEEDS WORK
+msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
+msgstr "Este paso ya no se puede cancelar de forma segura. Esperando a que termine…"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "Operación cancelada por el usuario."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "Cancelado"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
+#: usr/share/big-driver-manager/ui/kernel_page.py:107
+msgid "Installed Kernels"
+msgstr "Kernels instalados"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/kernel_page.py:119
+msgid "Remove all obsolete kernels"
+msgstr "Eliminar todos los kernels obsoletos"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/ui/application.py:143
+#: usr/share/big-driver-manager/ui/kernel_page.py:165
+#: usr/share/big-driver-manager/ui/mesa_page.py:414
+msgid "Error"
+msgstr "Error"
+# File: usr/share/big-driver-manager/ui/window.py, line: 89
+#: usr/share/big-driver-manager/ui/kernel_page.py:262
+msgid "Kernel in use"
+msgstr "Kernel en uso"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
+#: usr/share/big-driver-manager/ui/kernel_page.py:268
+msgid "In Use"
+msgstr "En uso"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 331
+#: usr/share/big-driver-manager/ui/kernel_page.py:332
+msgid "Obsolete Kernels — Removal Recommended"
+msgstr "Núcleos obsoletos — Se recomienda eliminar"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 770
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 347
+#: usr/share/big-driver-manager/ui/home_page.py:771
+#: usr/share/big-driver-manager/ui/kernel_page.py:348
+msgid "Warning"
+msgstr "Advertencia"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 360
+#: usr/share/big-driver-manager/ui/kernel_page.py:361
+msgid "No longer receives security updates"
+msgstr "Ya no recibe actualizaciones de seguridad"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:449
@@ -1150,6 +1025,94 @@ msgstr "No instalado"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1394
 msgid "Remove"
 msgstr "Eliminar"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/kernel_page.py:373
+#: usr/share/big-driver-manager/ui/kernel_page.py:436
+#, python-brace-format
+msgid "Remove kernel {}"
+msgstr "Eliminar núcleo {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 416
+#: usr/share/big-driver-manager/ui/kernel_page.py:422
+msgid "Last backup"
+msgstr "Última copia de seguridad"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 420
+#: usr/share/big-driver-manager/ui/kernel_page.py:426
+msgid "At least one backup kernel must remain installed"
+msgstr "Al menos un kernel de respaldo debe permanecer instalado"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 439
+#: usr/share/big-driver-manager/ui/kernel_page.py:445
+msgid ""
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
+msgstr ""
+"Recomendado para la mayoría de los usuarios. Estos núcleos reciben actualizaciones de seguridad "
+"durante años y están completamente probados."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 443
+#: usr/share/big-driver-manager/ui/kernel_page.py:449
+msgid ""
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
+msgstr ""
+"Siempre actualizado con las últimas funciones y soporte de hardware. Bueno si necesitas los "
+"controladores más recientes."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 447
+#: usr/share/big-driver-manager/ui/kernel_page.py:453
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
+msgstr ""
+"Optimizado para juegos y respuesta en escritorio. Una buena opción para uso diario con rendimiento "
+"extra."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 451
+#: usr/share/big-driver-manager/ui/kernel_page.py:457
+msgid ""
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
+msgstr ""
+"Diseñado para producción de audio/video que requiere sincronización precisa. Puede ser incompatible "
+"con algunos controladores (p. ej. NVIDIA). Solo para usuarios avanzados."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 492
+#: usr/share/big-driver-manager/ui/kernel_page.py:498
+msgid "LTS — Long Term Support (Recommended)"
+msgstr "LTS — Soporte a Largo Plazo (Recomendado)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 493
+#: usr/share/big-driver-manager/ui/kernel_page.py:499
+msgid "Standard"
+msgstr "Estándar"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
+#: usr/share/big-driver-manager/ui/kernel_page.py:500
+msgid "Xanmod (Performance)"
+msgstr "Xanmod (Rendimiento)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 495
+#: usr/share/big-driver-manager/ui/kernel_page.py:501
+msgid "Real-Time (Advanced)"
+msgstr "Tiempo Real (Avanzado)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 566
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 591
+#: usr/share/big-driver-manager/ui/kernel_page.py:572
+#: usr/share/big-driver-manager/ui/kernel_page.py:597
+#, python-brace-format
+msgid "Show {} available"
+msgstr "Mostrar {} disponible"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
+#: usr/share/big-driver-manager/ui/kernel_page.py:600
+msgid "Hide available kernels"
+msgstr "Ocultar núcleos disponibles"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
+#: usr/share/big-driver-manager/ui/kernel_page.py:650
+#: usr/share/big-driver-manager/ui/kernel_page.py:653
+#, python-brace-format
+msgid "Install kernel {}"
+msgstr "Instalar núcleo {}"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:461
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:250
@@ -1162,6 +1125,53 @@ msgstr "Eliminar"
 #, python-brace-format
 msgid "Install {}"
 msgstr "Instalar {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 661
+#: usr/share/big-driver-manager/ui/kernel_page.py:672
+msgid "The following packages will be installed:"
+msgstr "Se instalarán los siguientes paquetes:"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/driver_installer.py:57
+#: usr/share/big-driver-manager/ui/category_page.py:626
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
+#: usr/share/big-driver-manager/ui/home_page.py:713
+#: usr/share/big-driver-manager/ui/home_page.py:724
+#: usr/share/big-driver-manager/ui/kernel_page.py:699
+#: usr/share/big-driver-manager/ui/mesa_page.py:1136
+#: usr/share/big-driver-manager/ui/mesa_page.py:1370
+#: usr/share/big-driver-manager/ui/mesa_page.py:1381
+#, python-brace-format
+msgid "Installing {}"
+msgstr "Instalando {}"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
+#: usr/share/big-driver-manager/ui/kernel_page.py:700
+#: usr/share/big-driver-manager/ui/mesa_page.py:1137
+msgid "Preparing installation..."
+msgstr "Preparando la instalación..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
+#: usr/share/big-driver-manager/ui/kernel_page.py:724
+msgid ""
+"Kernel installed successfully.\n"
+"You may need to reboot to use it."
+msgstr ""
+"Núcleo instalado con éxito.\n"
+"Puede que necesites reiniciar para usarlo."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
+#: usr/share/big-driver-manager/ui/kernel_page.py:731
+msgid ""
+"Kernel installation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"La instalación del núcleo falló.\n"
+"Revisa la salida del terminal para más detalles."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
+#: usr/share/big-driver-manager/ui/kernel_page.py:745
+msgid "Cannot Remove Running Kernel"
+msgstr "No se puede eliminar el kernel en ejecución"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
+#: usr/share/big-driver-manager/ui/kernel_page.py:747
+msgid "This kernel is currently in use. Boot into a different kernel first."
+msgstr "Este núcleo está en uso actualmente. Arranca primero con un núcleo diferente."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:463
@@ -1173,56 +1183,135 @@ msgstr "Instalar {}"
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Eliminar {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 503
-#: usr/share/big-driver-manager/ui/category_page.py:530
-#, python-brace-format
-msgid "{total} drivers · {detected} detected · {installed} installed"
-msgstr "{total} controladores · {detected} detectados · {installed} instalados"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
-#: usr/share/big-driver-manager/ui/category_page.py:605
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:363
-#: usr/share/big-driver-manager/ui/home_page.py:692
-#: usr/share/big-driver-manager/ui/mesa_page.py:1114
-msgid "Install Driver"
-msgstr "Instalar controlador"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/ui/category_page.py:606
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
-#: usr/share/big-driver-manager/ui/home_page.py:693
-#, python-brace-format
-msgid "Install {}?"
-msgstr "¿Instalar {}?"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
-#: usr/share/big-driver-manager/ui/category_page.py:627
-#: usr/share/big-driver-manager/ui/category_page.py:665
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
-#: usr/share/big-driver-manager/ui/installed_page.py:417
-#: usr/share/big-driver-manager/ui/progress_dialog.py:207
-msgid "Please wait..."
-msgstr "Por favor, espere..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
-#: usr/share/big-driver-manager/ui/category_page.py:643
-#: usr/share/big-driver-manager/ui/installed_page.py:395
-#: usr/share/big-driver-manager/ui/mesa_page.py:1193
-msgid "Remove Driver"
-msgstr "Quitar controlador"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
+#: usr/share/big-driver-manager/ui/kernel_page.py:770
+msgid ""
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
+"\n"
+"The following packages will be removed:"
+msgstr ""
+"⚠ Este es tu último kernel de respaldo. Si el kernel en ejecución falla, no tendrás una opción de "
+"recuperación.\n"
+"\n"
+"Se eliminarán los siguientes paquetes:"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 749
+#: usr/share/big-driver-manager/ui/kernel_page.py:775
+msgid "The following packages will be removed:"
+msgstr "Se eliminarán los siguientes paquetes:"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/ui/category_page.py:644
-#: usr/share/big-driver-manager/ui/installed_page.py:396
+#: usr/share/big-driver-manager/core/driver_installer.py:85
+#: usr/share/big-driver-manager/ui/category_page.py:664
+#: usr/share/big-driver-manager/ui/installed_page.py:416
+#: usr/share/big-driver-manager/ui/kernel_page.py:803
+#: usr/share/big-driver-manager/ui/kernel_page.py:873
+#: usr/share/big-driver-manager/ui/mesa_page.py:1214
+#: usr/share/big-driver-manager/ui/mesa_page.py:1408
+#: usr/share/big-driver-manager/ui/mesa_page.py:1419
 #, python-brace-format
-msgid "Remove {}?"
-msgstr "¿Eliminar {}?"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/category_page.py:692
-#: usr/share/big-driver-manager/ui/installed_page.py:443
-msgid "Operation completed successfully."
-msgstr "La operación se completó con éxito."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/category_page.py:696
-#: usr/share/big-driver-manager/ui/installed_page.py:447
-msgid "Operation failed. Check logs for details."
-msgstr "Operación fallida. Consulta los registros para más detalles."
+msgid "Removing {}"
+msgstr "Eliminando {}"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
+#: usr/share/big-driver-manager/ui/kernel_page.py:804
+msgid "Preparing removal…"
+msgstr "Preparando la eliminación…"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-driver-manager/ui/kernel_page.py:825
+msgid "Kernel removed successfully."
+msgstr "Kernel eliminado exitosamente."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
+#: usr/share/big-driver-manager/ui/kernel_page.py:828
+msgid ""
+"Kernel removal failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"Error al eliminar el kernel.\n"
+"Consulta la salida del terminal para más detalles."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
+#: usr/share/big-driver-manager/ui/kernel_page.py:842
+msgid "Remove Obsolete Kernels"
+msgstr "Eliminar núcleos obsoletos"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 820
+#: usr/share/big-driver-manager/ui/kernel_page.py:846
+#, python-brace-format
+msgid ""
+"Remove all obsolete kernels?\n"
+"\n"
+"<b>{}</b>\n"
+"\n"
+"These kernels no longer receive security updates."
+msgstr ""
+"¿Eliminar todos los kernels obsoletos?\n"
+"\n"
+"<b>{}</b>\n"
+"\n"
+"Estos kernels ya no reciben actualizaciones de seguridad."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-driver-manager/ui/kernel_page.py:851
+msgid "Remove All"
+msgstr "Eliminar todo"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/kernel_page.py:874
+#, python-brace-format
+msgid "Removing kernel {} ({}/{})..."
+msgstr "Eliminando kernel {} ({}/{})..."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 866
+#: usr/share/big-driver-manager/ui/kernel_page.py:892
+#, python-brace-format
+msgid "Failed to remove {}. Stopping."
+msgstr "No se pudo eliminar {}. Parada."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-driver-manager/ui/kernel_page.py:903
+msgid "All obsolete kernels removed successfully."
+msgstr "Todos los kernels obsoletos se eliminaron con éxito."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 916
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 919
+#: usr/share/big-driver-manager/ui/kernel_page.py:942
+#: usr/share/big-driver-manager/ui/kernel_page.py:945
+#, python-brace-format
+msgid "What's new in Linux {}"
+msgstr "Novedades en Linux {}"
+# 
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 23
+#: NEEDS WORK
+msgid ""
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
+msgstr ""
+"Este paquete no está en los repositorios oficiales. Se construirá desde el AUR en su computadora, "
+"lo que puede tardar varios minutos y no es revisado por la distribución."
+# 
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 61
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
+msgstr ""
+"Su dispositivo ya funciona con el controlador integrado {}, que es la opción recomendada. Solo "
+"instale este controlador de terceros para solucionar un problema específico; puede entrar en "
+"conflicto con el integrado."
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
+#: usr/share/big-driver-manager/ui/base_page.py:39
+#: usr/share/big-driver-manager/ui/base_page.py:44
+msgid "Loading..."
+msgstr "Cargando..."
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
+#: usr/share/big-driver-manager/ui/base_page.py:40
+msgid "Loading"
+msgstr "Cargando"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Aún cargando... Verifique su conexión de red."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1269,32 +1358,16 @@ msgstr "Recomendado para su hardware"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Instalar recomendado"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "Controladores compatibles disponibles"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
+# 
+# File: usr/share/big-driver-manager/ui/home_page.py, line: 224
+#: NEEDS WORK
 #, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr "{} — no driver loaded, install {} for this device"
+msgid "{} has no driver loaded. A compatible driver is available: {}"
+msgstr "{} no tiene un controlador cargado. Hay un controlador compatible disponible: {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/home_page.py:277
 msgid "Go to drivers"
 msgstr "Ir a drivers"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually the most stable and "
-"recommended option. If you experience issues, you can try a driver detected as compatible that may "
-"improve performance or add features."
-msgstr ""
-"Tus dispositivos ya están funcionando con el controlador incorporado, que suele ser la opción más "
-"estable y recomendada. Si experimentas problemas, puedes probar un controlador detectado como "
-"compatible que podría mejorar el rendimiento o añadir funciones."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 376
 #: usr/share/big-driver-manager/ui/home_page.py:377
@@ -1367,19 +1440,33 @@ msgstr "Instalando paquetes {}"
 #: usr/share/big-driver-manager/ui/home_page.py:654
 msgid "Installing recommended packages"
 msgstr "Instalando paquetes recomendados"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 643
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 423
+#: usr/share/big-driver-manager/core/base_manager.py:426
+#: usr/share/big-driver-manager/ui/home_page.py:644
+msgid "Downloading packages..."
+msgstr "Descargando paquetes..."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 670
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "¡Todos los paquetes recomendados instalados con éxito!"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"La instalación del paquete falló.\n"
-"Consulte la salida del terminal para más detalles."
+# 
+# File: usr/share/big-driver-manager/ui/home_page.py, line: 541
+#: NEEDS WORK
+msgid "Package installation failed."
+msgstr "La instalación del paquete ha fallado."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
+#: usr/share/big-driver-manager/ui/category_page.py:605
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:363
+#: usr/share/big-driver-manager/ui/home_page.py:692
+#: usr/share/big-driver-manager/ui/mesa_page.py:1114
+msgid "Install Driver"
+msgstr "Instalar controlador"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 # 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1400,109 +1487,85 @@ msgstr "¡{} instalado con éxito!"
 #, python-brace-format
 msgid "Installation of {} failed."
 msgstr "La instalación de {} falló."
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 770
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 347
-#: usr/share/big-driver-manager/ui/home_page.py:771
-#: usr/share/big-driver-manager/ui/kernel_page.py:348
-msgid "Warning"
-msgstr "Advertencia"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 #: usr/share/big-driver-manager/ui/home_page.py:771
 msgid "Information"
 msgstr "Información"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 40
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:42
+msgid "Stable, long-term support"
+msgstr "Estable, con soporte a largo plazo"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 43
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
+msgstr ""
+"Recibe actualizaciones de seguridad durante años. La mejor opción para la mayoría de los usuarios — "
+"confiable y bien probado."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 49
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
+msgid "Low-latency, real-time"
+msgstr "Baja latencia, en tiempo real"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 52
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
+msgid ""
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
+msgstr ""
+"Diseñado para producción de audio/video y tareas que requieren sincronización precisa. Puede ser "
+"incompatible con algunos controladores (p. ej., NVIDIA). Solo recomendado para usuarios avanzados."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 59
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
+msgid "Gaming & performance optimized"
+msgstr "Optimizado para juegos y rendimiento"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 62
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
+msgid ""
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
+msgstr ""
+"Ajustado para juegos más rápidos y un escritorio más receptivo. Ideal para uso diario si quieres un "
+"rendimiento extra."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
+msgid "Performance optimized by CachyOS"
+msgstr "Rendimiento optimizado por CachyOS"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
+msgid ""
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
+msgstr ""
+"Planificador EEVDF con LTO, AutoFDO y optimizaciones Propeller. Excelente para juegos y respuesta "
+"en escritorio."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 68
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
+msgid "Latest features & drivers"
+msgstr "Últimas funciones y controladores"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 72
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
+msgid "Always up to date with the newest features and hardware support."
+msgstr "Siempre actualizado con las funciones y soporte de hardware más recientes."
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Kernels"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 # 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 36
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:36
-#: usr/share/big-driver-manager/ui/installed_page.py:27
-#: usr/share/big-driver-manager/ui/window.py:47
-msgid "Video / GPU"
-msgstr "Video / GPU"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 37
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:37
-#: usr/share/big-driver-manager/ui/installed_page.py:28
-#: usr/share/big-driver-manager/ui/window.py:53
-msgid "Wi-Fi"
-msgstr "Wifi"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 38
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:38
-#: usr/share/big-driver-manager/ui/installed_page.py:29
-#: usr/share/big-driver-manager/ui/window.py:59
-msgid "Ethernet"
-msgstr "Ethernet"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 39
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:39
-#: usr/share/big-driver-manager/ui/installed_page.py:30
-#: usr/share/big-driver-manager/ui/window.py:65
-msgid "Bluetooth"
-msgstr "bluetooth"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 40
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:40
-#: usr/share/big-driver-manager/ui/installed_page.py:31
-#: usr/share/big-driver-manager/ui/window.py:71
-msgid "DVB / TV"
-msgstr "DVB / TV"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 41
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:41
-#: usr/share/big-driver-manager/ui/installed_page.py:32
-#: usr/share/big-driver-manager/ui/window.py:77
-msgid "Audio"
-msgstr "Audio"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 42
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:42
-#: usr/share/big-driver-manager/ui/installed_page.py:33
-#: usr/share/big-driver-manager/ui/window.py:83
-msgid "Webcam"
-msgstr "cámara web"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 43
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:43
-#: usr/share/big-driver-manager/ui/installed_page.py:34
-#: usr/share/big-driver-manager/ui/window.py:89
-msgid "Touchscreen"
-msgstr "Pantalla táctil"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 44
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:44
-#: usr/share/big-driver-manager/ui/installed_page.py:35
-#: usr/share/big-driver-manager/ui/window.py:95
-msgid "Printers"
-msgstr "Impresoras"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 45
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:45
-#: usr/share/big-driver-manager/ui/installed_page.py:36
-#: usr/share/big-driver-manager/ui/window.py:101
-msgid "3D Printers"
-msgstr "Impresoras 3D"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 46
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:46
-#: usr/share/big-driver-manager/ui/installed_page.py:37
-#: usr/share/big-driver-manager/ui/window.py:107
-msgid "Scanners"
-msgstr "Escáneres"
+# File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
+#: NEEDS WORK
+msgid "Installed Drivers"
+msgstr "Controladores instalados"
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
@@ -1540,53 +1603,34 @@ msgstr "Controlador MHWD"
 #: usr/share/big-driver-manager/ui/mesa_page.py:525
 msgid "Active"
 msgstr "Activo"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 117
-#: usr/share/big-driver-manager/ui/progress_dialog.py:117
-msgid "Technical details"
-msgstr "Detalles técnicos"
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 67
-#: usr/share/big-driver-manager/ui/progress_dialog.py:131
-msgid "Terminal output"
-msgstr "Salida del terminal"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Cerrar"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 229
-#: usr/share/big-driver-manager/ui/progress_dialog.py:229
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 405
+#: usr/share/big-driver-manager/ui/category_page.py:422
+#: usr/share/big-driver-manager/ui/installed_page.py:333
+msgid "Detected"
+msgstr "Detectado"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
+#: usr/share/big-driver-manager/ui/category_page.py:643
+#: usr/share/big-driver-manager/ui/installed_page.py:395
+#: usr/share/big-driver-manager/ui/mesa_page.py:1193
+msgid "Remove Driver"
+msgstr "Quitar controlador"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/ui/category_page.py:644
+#: usr/share/big-driver-manager/ui/installed_page.py:396
 #, python-brace-format
-msgid "Step {} of {}: {}"
-msgstr "Paso {} de {}: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 231
-#: usr/share/big-driver-manager/ui/progress_dialog.py:231
-#, python-brace-format
-msgid "Step {} of {}"
-msgstr "Paso {} de {}"
+msgid "Remove {}?"
+msgstr "¿Eliminar {}?"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/progress_dialog.py:340
-msgid "Operation completed successfully!"
-msgstr "¡Operación completada con éxito!"
+#: usr/share/big-driver-manager/ui/category_page.py:692
+#: usr/share/big-driver-manager/ui/installed_page.py:443
+msgid "Operation completed successfully."
+msgstr "La operación se completó con éxito."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/progress_dialog.py:345
-msgid "Operation failed. Check terminal output for details."
-msgstr "La operación falló. Verifique la salida del terminal para más detalles."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/ui/progress_dialog.py:371
-msgid "Completed!"
-msgstr "¡Terminado!"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "Cancelado"
+#: usr/share/big-driver-manager/ui/category_page.py:696
+#: usr/share/big-driver-manager/ui/installed_page.py:447
+msgid "Operation failed. Check logs for details."
+msgstr "Operación fallida. Consulta los registros para más detalles."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/mesa_page.py:117
 msgid "Video Drivers"
@@ -1647,12 +1691,6 @@ msgstr "Controlador propietario de NVIDIA (no Mesa)"
 #: usr/share/big-driver-manager/ui/mesa_page.py:389
 msgid "Mesa driver"
 msgstr "Controlador Mesa"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/ui/application.py:143
-#: usr/share/big-driver-manager/ui/kernel_page.py:165
-#: usr/share/big-driver-manager/ui/mesa_page.py:414
-msgid "Error"
-msgstr "Error"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 427
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1798,6 +1836,17 @@ msgstr "⚠ Sin soporte para Wayland · Ya no se mantiene"
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Cambiar de {} a {}"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 951
+# File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
+# line: 213
+#: usr/share/big-driver-manager/core/mhwd_manager.py:213
+#: usr/share/big-driver-manager/ui/mesa_page.py:1102
+#, python-brace-format
+msgid "Remove the installed NVIDIA driver ({}) first."
+msgstr "Primero elimine el controlador NVIDIA instalado ({})."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 961
 #: usr/share/big-driver-manager/ui/mesa_page.py:1112
@@ -1820,11 +1869,6 @@ msgstr ""
 "¿Instalar <b>{}</b> ({} driver)?\n"
 "\n"
 "Puede ser necesario reiniciar el sistema después de la instalación."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
-#: usr/share/big-driver-manager/ui/kernel_page.py:700
-#: usr/share/big-driver-manager/ui/mesa_page.py:1137
-msgid "Preparing installation..."
-msgstr "Preparando la instalación..."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1001
 #: usr/share/big-driver-manager/ui/mesa_page.py:1152
@@ -1929,6 +1973,18 @@ msgstr ""
 "¿Instalar <b>{}</b>?\n"
 "\n"
 "{}"
+# 
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
+#: NEEDS WORK
+msgid "Unavailable"
+msgstr "No disponible"
+# 
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
+#: NEEDS WORK
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
+msgstr ""
+"No disponible en los repositorios habilitados. Los paquetes de 32 bits (lib32) requieren el "
+"repositorio multilib."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -1948,205 +2004,139 @@ msgstr "Eliminando paquete..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} se {} con éxito!"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
+# 
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
+#: NEEDS WORK
+msgid "Package operation failed."
+msgstr "La operación del paquete ha fallado."
+# 
+# File: usr/share/big-driver-manager/ui/application.py, line: 80
+#: NEEDS WORK
+msgid "Open the page of a driver package and offer to install it"
+msgstr "Abre la página de un paquete de controladores y ofrece instalarlo."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 128
+#: usr/share/big-driver-manager/ui/category_page.py:131
+msgid "Search drivers..."
+msgstr "Buscar controladores..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
+#: usr/share/big-driver-manager/ui/category_page.py:135
+msgid "Search drivers"
+msgstr "Buscar controladores"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 160
+#: usr/share/big-driver-manager/ui/category_page.py:160
+msgid "Searching for printers on the network…"
+msgstr "Buscando impresoras en la red…"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 162
+#: usr/share/big-driver-manager/ui/category_page.py:179
+msgid "No more automatically detected compatible drivers in this category."
+msgstr "No más controladores compatibles detectados automáticamente en esta categoría."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 187
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 211
+#: usr/share/big-driver-manager/ui/category_page.py:187
+#: usr/share/big-driver-manager/ui/category_page.py:211
+msgid "Show drivers without detected compatibility"
+msgstr "Mostrar controladores sin compatibilidad detectada"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 187
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 260
+#: usr/share/big-driver-manager/ui/category_page.py:199
+#: usr/share/big-driver-manager/ui/category_page.py:278
+msgid "No drivers needed for this category"
+msgstr "No se necesitan controladores para esta categoría"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 191
+#: usr/share/big-driver-manager/ui/category_page.py:202
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "No se detectaron controladores en esta categoría compatibles automáticamente con tu hardware."
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 278
+#: NEEDS WORK
+#, python-brace-format
+msgid "Adapter {} — working (driver {})"
+msgstr "Adaptador {} — funcionando (controlador {})"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 279
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 526
+#: NEEDS WORK
+msgid "unknown"
+msgstr "desconocido"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 287
+#: NEEDS WORK
+msgid "Cable connected"
+msgstr "Cable conectado"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 291
+#: NEEDS WORK
+msgid "Interface disabled"
+msgstr "Interfaz deshabilitada"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 294
+#: NEEDS WORK
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 msgstr ""
-"La operación del paquete falló.\n"
-"Consulta la salida del terminal para más detalles."
+"No se detecta cable ni enlace. Verifique el cable y el puerto del enrutador/conmutador — no se "
+"necesita controlador adicional."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 238
+#: usr/share/big-driver-manager/ui/category_page.py:257
+msgid "Detection Error"
+msgstr "Error de detección"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 264
+#: usr/share/big-driver-manager/ui/category_page.py:281
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "No se detectaron controladores en esta categoría necesarios para tu hardware."
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 339
 # File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Todos los controladores están instalados."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Todos los controladores necesarios ya están instalados en su sistema."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Detectando hardware"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Detectando hardware..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
+# manager/ui/drivers_hub_page.py, line: 283
+#: usr/share/big-driver-manager/ui/category_page.py:356
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:283
+msgid "1 driver"
+msgstr "1 controlador"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-driver-manager/ui/category_page.py:356
 #, python-brace-format
-msgid "{n} drivers"
-msgstr "Controladores {n}"
+msgid "{} drivers"
+msgstr "{} drivers"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 341
+#: usr/share/big-driver-manager/ui/category_page.py:358
+#, python-brace-format
+msgid "{} detected"
+msgstr "{} detectado"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 instalado"
+#: usr/share/big-driver-manager/ui/category_page.py:360
+#, python-brace-format
+msgid "{} installed"
+msgstr "{} instalado"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#: usr/share/big-driver-manager/ui/category_page.py:426
+msgid "Not installed"
+msgstr "No instalado"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 525
+#: NEEDS WORK
 #, python-brace-format
-msgid "{n} installed"
-msgstr "{n} instalado"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
+msgid "Not needed: device already works with built-in driver {}"
+msgstr "No es necesario: el dispositivo ya funciona con el controlador integrado {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 503
+#: usr/share/big-driver-manager/ui/category_page.py:530
 #, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "Controladores {n} disponibles para instalar"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr "Instale los controladores recomendados para un mejor soporte de hardware."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Controlador instalado correctamente."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "La instalación falló. Consulte los registros para más detalles."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
-#: usr/share/big-driver-manager/ui/window.py:48
-msgid "Mesa, NVIDIA, and GPU drivers."
-msgstr "Controladores Mesa, NVIDIA y GPU."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
-#: usr/share/big-driver-manager/ui/window.py:54
-msgid "Wireless network adapter drivers."
-msgstr "Controladores de adaptadores de red inalámbricos."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
-#: usr/share/big-driver-manager/ui/window.py:60
-msgid "Wired network adapter drivers."
-msgstr "Controladores de adaptadores de red cableados."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
-#: usr/share/big-driver-manager/ui/window.py:66
-msgid "Bluetooth adapter drivers."
-msgstr "Controladores del adaptador Bluetooth."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
-#: usr/share/big-driver-manager/ui/window.py:72
-msgid "Digital TV tuner firmware."
-msgstr "Firmware de sintonizador de TV digital."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
-#: usr/share/big-driver-manager/ui/window.py:78
-msgid "Audio device firmware."
-msgstr "Firmware de dispositivo de audio."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
-#: usr/share/big-driver-manager/ui/window.py:84
-msgid "Webcam device firmware."
-msgstr "Firmware de dispositivo de cámara web."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
-#: usr/share/big-driver-manager/ui/window.py:90
-msgid "Touchscreen device firmware."
-msgstr "Firmware de dispositivo de pantalla táctil."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
-#: usr/share/big-driver-manager/ui/window.py:96
-msgid "Printer drivers and support packages."
-msgstr "Controladores de impresora y paquetes de soporte."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
-#: usr/share/big-driver-manager/ui/window.py:102
-msgid "3D printer firmware."
-msgstr "Firmware de impresora 3D."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 105
-#: usr/share/big-driver-manager/ui/window.py:108
-msgid "Scanner drivers and SANE backends."
-msgstr "Controladores de escáner y backends SANE."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 111
-#: usr/share/big-driver-manager/ui/window.py:114
-msgid "Additional firmware packages."
-msgstr "Paquetes adicionales de firmware."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 189
-#: usr/share/big-driver-manager/ui/window.py:198
-msgid "Home"
-msgstr "Inicio"
-# File: usr/share/big-driver-manager/ui/window.py, line: 89
-#: usr/share/big-driver-manager/ui/window.py:200
-msgid "Kernel"
-msgstr "Núcleo"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 191
-#: usr/share/big-driver-manager/ui/window.py:201
-msgid "Video"
-msgstr "Vídeo"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Categorías"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 231
-#: usr/share/big-driver-manager/ui/window.py:242
-msgid "A system reboot is recommended to apply changes."
-msgstr "Se recomienda reiniciar el sistema para aplicar los cambios."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 269
-#: usr/share/big-driver-manager/ui/window.py:285
-msgid "Content"
-msgstr "Contenido"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 328
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 623
-#: usr/share/big-driver-manager/ui/window.py:338
-#: usr/share/big-driver-manager/ui/window.py:656
-msgid "Showing drivers detected as compatible with your computer"
-msgstr "Mostrando controladores detectados como compatibles con tu computadora"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 327
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 329
-#: usr/share/big-driver-manager/ui/window.py:348
-#: usr/share/big-driver-manager/ui/window.py:350
-msgid "Show all drivers"
-msgstr "Mostrar todos los drivers"
-# File: usr/share/big-driver-manager/ui/window.py, line: 129
-#: usr/share/big-driver-manager/ui/window.py:362
-msgid "Menu"
-msgstr "Menú"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 318
-#: usr/share/big-driver-manager/ui/window.py:364
-msgid "Application menu"
-msgstr "Menú de la aplicación"
-# File: usr/share/big-driver-manager/ui/window.py, line: 134
-#: usr/share/big-driver-manager/ui/window.py:367
-msgid "About"
-msgstr "Acerca de"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/window.py:515
-msgid "Hardware detection failed. Check system logs for details."
-msgstr "Fallo en la detección de hardware. Consulte los registros del sistema para más detalles."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 534
-#: usr/share/big-driver-manager/ui/window.py:627
-#, python-brace-format
-msgid "Obsolete kernel: {} — no longer receives security updates"
-msgstr "Kernel obsoleto: {} — ya no recibe actualizaciones de seguridad"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 538
-#: usr/share/big-driver-manager/ui/window.py:631
-msgid "Manage"
-msgstr "Administrar"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 619
-#: usr/share/big-driver-manager/ui/window.py:652
-msgid "Showing all drivers, including incompatible ones"
-msgstr "Mostrando todos los controladores, incluidos los incompatibles"
+msgid "{total} drivers · {detected} detected · {installed} installed"
+msgstr "{total} controladores · {detected} detectados · {installed} instalados"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
@@ -2398,242 +2388,318 @@ msgid ""
 msgstr ""
 "Para tarjetas gráficas muy antiguas que solo soportan OpenGL 2.1 o anteriores. Instale esto solo si "
 "las versiones más nuevas de Mesa no funcionan con su hardware."
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
-#: usr/share/big-driver-manager/ui/base_page.py:39
-#: usr/share/big-driver-manager/ui/base_page.py:44
-msgid "Loading..."
-msgstr "Cargando..."
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
-#: usr/share/big-driver-manager/ui/base_page.py:40
-msgid "Loading"
-msgstr "Cargando"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Aún cargando... Verifique su conexión de red."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
-#: usr/share/big-driver-manager/ui/kernel_page.py:107
-msgid "Installed Kernels"
-msgstr "Kernels instalados"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/kernel_page.py:119
-msgid "Remove all obsolete kernels"
-msgstr "Eliminar todos los kernels obsoletos"
-# File: usr/share/big-driver-manager/ui/window.py, line: 89
-#: usr/share/big-driver-manager/ui/kernel_page.py:262
-msgid "Kernel in use"
-msgstr "Kernel en uso"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
-#: usr/share/big-driver-manager/ui/kernel_page.py:268
-msgid "In Use"
-msgstr "En uso"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 331
-#: usr/share/big-driver-manager/ui/kernel_page.py:332
-msgid "Obsolete Kernels — Removal Recommended"
-msgstr "Núcleos obsoletos — Se recomienda eliminar"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 360
-#: usr/share/big-driver-manager/ui/kernel_page.py:361
-msgid "No longer receives security updates"
-msgstr "Ya no recibe actualizaciones de seguridad"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/kernel_page.py:373
-#: usr/share/big-driver-manager/ui/kernel_page.py:436
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 116
+#: usr/share/big-driver-manager/core/mesa_manager.py:116
 #, python-brace-format
-msgid "Remove kernel {}"
-msgstr "Eliminar núcleo {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 416
-#: usr/share/big-driver-manager/ui/kernel_page.py:422
-msgid "Last backup"
-msgstr "Última copia de seguridad"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 420
-#: usr/share/big-driver-manager/ui/kernel_page.py:426
-msgid "At least one backup kernel must remain installed"
-msgstr "Al menos un kernel de respaldo debe permanecer instalado"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 439
-#: usr/share/big-driver-manager/ui/kernel_page.py:445
-msgid ""
-"Recommended for most users. These kernels receive security updates for years and are thoroughly "
-"tested."
-msgstr ""
-"Recomendado para la mayoría de los usuarios. Estos núcleos reciben actualizaciones de seguridad "
-"durante años y están completamente probados."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 443
-#: usr/share/big-driver-manager/ui/kernel_page.py:449
-msgid ""
-"Always up to date with the latest features and hardware support. Good if you need the newest "
-"drivers."
-msgstr ""
-"Siempre actualizado con las últimas funciones y soporte de hardware. Bueno si necesitas los "
-"controladores más recientes."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 447
-#: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
-msgstr ""
-"Optimizado para juegos y respuesta en escritorio. Una buena opción para uso diario con rendimiento "
-"extra."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 451
-#: usr/share/big-driver-manager/ui/kernel_page.py:457
-msgid ""
-"Built for audio/video production needing precise timing. May be incompatible with some drivers "
-"(e.g. NVIDIA). Only for advanced users."
-msgstr ""
-"Diseñado para producción de audio/video que requiere sincronización precisa. Puede ser incompatible "
-"con algunos controladores (p. ej. NVIDIA). Solo para usuarios avanzados."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 492
-#: usr/share/big-driver-manager/ui/kernel_page.py:498
-msgid "LTS — Long Term Support (Recommended)"
-msgstr "LTS — Soporte a Largo Plazo (Recomendado)"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 493
-#: usr/share/big-driver-manager/ui/kernel_page.py:499
-msgid "Standard"
-msgstr "Estándar"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
-#: usr/share/big-driver-manager/ui/kernel_page.py:500
-msgid "Xanmod (Performance)"
-msgstr "Xanmod (Rendimiento)"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 495
-#: usr/share/big-driver-manager/ui/kernel_page.py:501
-msgid "Real-Time (Advanced)"
-msgstr "Tiempo Real (Avanzado)"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 566
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 591
-#: usr/share/big-driver-manager/ui/kernel_page.py:572
-#: usr/share/big-driver-manager/ui/kernel_page.py:597
+msgid "Driver not found: {}"
+msgstr "Controlador no encontrado: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:152
 #, python-brace-format
-msgid "Show {} available"
-msgstr "Mostrar {} disponible"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
-#: usr/share/big-driver-manager/ui/kernel_page.py:600
-msgid "Hide available kernels"
-msgstr "Ocultar núcleos disponibles"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
-#: usr/share/big-driver-manager/ui/kernel_page.py:650
-#: usr/share/big-driver-manager/ui/kernel_page.py:653
+msgid "Applying {} driver..."
+msgstr "Aplicando controlador {}..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
+#: usr/share/big-driver-manager/core/mesa_manager.py:156
 #, python-brace-format
-msgid "Install kernel {}"
-msgstr "Instalar núcleo {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 661
-#: usr/share/big-driver-manager/ui/kernel_page.py:672
-msgid "The following packages will be installed:"
-msgstr "Se instalarán los siguientes paquetes:"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
-#: usr/share/big-driver-manager/ui/kernel_page.py:724
-msgid ""
-"Kernel installed successfully.\n"
-"You may need to reboot to use it."
-msgstr ""
-"Núcleo instalado con éxito.\n"
-"Puede que necesites reiniciar para usarlo."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/kernel_page.py:731
-msgid ""
-"Kernel installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"La instalación del núcleo falló.\n"
-"Revisa la salida del terminal para más detalles."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
-#: usr/share/big-driver-manager/ui/kernel_page.py:745
-msgid "Cannot Remove Running Kernel"
-msgstr "No se puede eliminar el kernel en ejecución"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
-#: usr/share/big-driver-manager/ui/kernel_page.py:747
-msgid "This kernel is currently in use. Boot into a different kernel first."
-msgstr "Este núcleo está en uso actualmente. Arranca primero con un núcleo diferente."
+msgid "Starting {} driver installation..."
+msgstr "Iniciando la instalación del controlador {}..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Comprobando paquetes en conflicto..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
+#, python-brace-format
+msgid "Removing conflicts: {}"
+msgstr "Eliminando conflictos: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "Comprobando {} paquetes..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ Paquete {} no disponible, omitiendo..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ No hay paquetes disponibles para instalar."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Instalando: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Eliminando paquetes conflictivos..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "No se pudieron eliminar los paquetes conflictivos."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "Instalando el controlador {}..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
+#: usr/share/big-driver-manager/core/mesa_manager.py:245
+msgid "Failed to apply driver."
+msgstr "No se pudo aplicar el controlador."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "¡Controlador aplicado con éxito!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ ¡Controlador {} aplicado con éxito!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/core/base_manager.py:205
+#: usr/share/big-driver-manager/core/mesa_manager.py:262
+#, python-brace-format
+msgid "Error: {}"
+msgstr "Error: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/core/mesa_manager.py:263
+#, python-brace-format
+msgid "❌ Error: {}"
+msgstr "❌ Error: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#: usr/share/big-driver-manager/core/mesa_manager.py:296
+#, python-brace-format
+msgid "❌ Operation failed (exit code: {})"
+msgstr "❌ Operación fallida (código de salida: {})"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 106
+#: usr/share/big-driver-manager/core/base_manager.py:181
+#: usr/share/big-driver-manager/core/mhwd_manager.py:310
+#, python-brace-format
+msgid "Command: {}"
+msgstr "Comando: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 105
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 108
+#: usr/share/big-driver-manager/core/base_manager.py:180
+#: usr/share/big-driver-manager/core/base_manager.py:183
+#: usr/share/big-driver-manager/core/mhwd_manager.py:312
+#, python-brace-format
+msgid "Starting {}..."
+msgstr "Iniciando {}..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/core/mhwd_manager.py:335
+msgid "Completed"
+msgstr "Completado"
 # 
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
-#: usr/share/big-driver-manager/ui/kernel_page.py:770
+# File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
+#: NEEDS WORK
+#, python-brace-format
+msgid "Installing build prerequisites: {}"
+msgstr "Instalando requisitos previos de construcción: {}"
+# 
+# File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
+#: NEEDS WORK
+msgid "Installing build prerequisites"
+msgstr "Instalando requisitos previos de construcción"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 99
+#: usr/share/big-driver-manager/core/driver_installer.py:99
+#, python-brace-format
+msgid "pamac-installer not found. Cannot install AUR package {}."
+msgstr "pamac-installer no encontrado. No se puede instalar el paquete AUR {}."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "Continúe la instalación en la ventana de pamac que se abrió."
+# 
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 128
+#: NEEDS WORK
+msgid "Installing packages"
+msgstr "Instalando paquetes"
+# 
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 145
+#: NEEDS WORK
+msgid "Removing packages"
+msgstr "Eliminando paquetes"
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 137
+#: usr/share/big-driver-manager/core/base_manager.py:140
+#, python-brace-format
+msgid "Database locked. Retrying in {} seconds..."
+msgstr "Base de datos bloqueada. Reintentando en {} segundos..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 142
+#: usr/share/big-driver-manager/core/base_manager.py:145
+#, python-brace-format
+msgid "Waiting {} s before retry..."
+msgstr "Esperando {} s antes de reintentar..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 147
+#: usr/share/big-driver-manager/core/base_manager.py:150
+#, python-brace-format
+msgid "Retry attempt {} of {}..."
+msgstr "Intento de reintento {} de {}..."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 160
+#: usr/share/big-driver-manager/core/base_manager.py:256
+#, python-brace-format
+msgid "Still working... ({:.0%} complete)"
+msgstr "Todavía trabajando... ({:.0%} completado)"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 177
+#: usr/share/big-driver-manager/core/base_manager.py:282
+msgid "Operation cancelled"
+msgstr "Operación cancelada"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 178
+#: usr/share/big-driver-manager/core/base_manager.py:283
+msgid "Operation was cancelled."
+msgstr "La operación fue cancelada."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 183
+#: usr/share/big-driver-manager/core/base_manager.py:288
+#, python-brace-format
+msgid "{}  complete!"
+msgstr "{}  ¡completo!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/base_manager.py:292
+#, python-brace-format
+msgid "{}  completed successfully."
+msgstr "{} completado con éxito."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 193
+#: usr/share/big-driver-manager/core/base_manager.py:298
+#, python-brace-format
+msgid "{}  failed."
+msgstr "{} falló."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#: usr/share/big-driver-manager/core/base_manager.py:302
+#, python-brace-format
+msgid "{}  failed (exit code: {})"
+msgstr "{} falló (código de salida: {})"
+# 
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 366
+#: NEEDS WORK
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
-"\n"
-"The following packages will be removed:"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
+"Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"⚠ Este es tu último kernel de respaldo. Si el kernel en ejecución falla, no tendrás una opción de "
-"recuperación.\n"
-"\n"
-"Se eliminarán los siguientes paquetes:"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 749
-#: usr/share/big-driver-manager/ui/kernel_page.py:775
-msgid "The following packages will be removed:"
-msgstr "Se eliminarán los siguientes paquetes:"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
-#: usr/share/big-driver-manager/ui/kernel_page.py:804
-msgid "Preparing removal…"
-msgstr "Preparando la eliminación…"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
-#: usr/share/big-driver-manager/ui/kernel_page.py:825
-msgid "Kernel removed successfully."
-msgstr "Kernel eliminado exitosamente."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
-#: usr/share/big-driver-manager/ui/kernel_page.py:828
+"Paquete no disponible en los repositorios habilitados. Puede provenir del AUR, pertenecer a un "
+"repositorio deshabilitado (como multilib) o la base de datos de paquetes puede estar "
+"desactualizada.  \n"
+"Sugerencia: Actualiza todo el sistema con 'sudo pacman -Syu' y vuelve a intentarlo."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 319
+#: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
-"Kernel removal failed.\n"
-"Check the terminal output for details."
+"A conflict prevented the operation from completing.\n"
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
-"Error al eliminar el kernel.\n"
-"Consulta la salida del terminal para más detalles."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
-#: usr/share/big-driver-manager/ui/kernel_page.py:842
-msgid "Remove Obsolete Kernels"
-msgstr "Eliminar núcleos obsoletos"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 820
-#: usr/share/big-driver-manager/ui/kernel_page.py:846
-#, python-brace-format
+"Un conflicto impidió que la operación se completara.\n"
+"Sugerencia: Limpia la caché y actualiza con 'sudo pacman -Scc' seguido de 'sudo pacman -Syyu'."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 327
+#: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
-"Remove all obsolete kernels?\n"
-"\n"
-"<b>{}</b>\n"
-"\n"
-"These kernels no longer receive security updates."
+"Some files from this package already exist on the system.\n"
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
-"¿Eliminar todos los kernels obsoletos?\n"
-"\n"
-"<b>{}</b>\n"
-"\n"
-"Estos kernels ya no reciben actualizaciones de seguridad."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
-#: usr/share/big-driver-manager/ui/kernel_page.py:851
-msgid "Remove All"
-msgstr "Eliminar todo"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/kernel_page.py:874
-#, python-brace-format
-msgid "Removing kernel {} ({}/{})..."
-msgstr "Eliminando kernel {} ({}/{})..."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 866
-#: usr/share/big-driver-manager/ui/kernel_page.py:892
-#, python-brace-format
-msgid "Failed to remove {}. Stopping."
-msgstr "No se pudo eliminar {}. Parada."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
-#: usr/share/big-driver-manager/ui/kernel_page.py:903
-msgid "All obsolete kernels removed successfully."
-msgstr "Todos los kernels obsoletos se eliminaron con éxito."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 916
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 919
-#: usr/share/big-driver-manager/ui/kernel_page.py:942
-#: usr/share/big-driver-manager/ui/kernel_page.py:945
-#, python-brace-format
-msgid "What's new in Linux {}"
-msgstr "Novedades en Linux {}"
+"Algunos archivos de este paquete ya existen en el sistema.\n"
+"Sugerencia: Verifica qué paquete posee el archivo con 'pacman -Qo <file_path>' y resuelve el "
+"conflicto."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 335
+#: usr/share/big-driver-manager/core/base_manager.py:338
+msgid ""
+"Required dependencies could not be resolved.\n"
+"Suggestion: Update the full system first with 'sudo pacman -Syu'."
+msgstr ""
+"No se pudieron resolver las dependencias requeridas.\n"
+"Sugerencia: Actualiza todo el sistema primero con 'sudo pacman -Syu'."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 342
+#: usr/share/big-driver-manager/core/base_manager.py:345
+msgid ""
+"Package signature could not be verified.\n"
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
+msgstr ""
+"No se pudo verificar la firma del paquete.\n"
+"Sugerencia: Actualiza tus llaveros con 'sudo pacman -S archlinux-keyring manjaro-keyring'."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 350
+#: usr/share/big-driver-manager/core/base_manager.py:353
+msgid ""
+"The package database is locked by another process.\n"
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
+msgstr ""
+"La base de datos de paquetes está bloqueada por otro proceso.\n"
+"Si no hay otro gestor de paquetes en ejecución, elimine el bloqueo con 'sudo rm "
+"/var/lib/pacman/db.lck'."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 358
+#: usr/share/big-driver-manager/core/base_manager.py:361
+msgid ""
+"Not enough disk space to complete the operation.\n"
+"Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
+msgstr ""
+"No hay suficiente espacio en disco para completar la operación.\n"
+"Sugerencia: Libere espacio limpiando la caché de paquetes con 'sudo pacman -Scc'."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 366
+#: usr/share/big-driver-manager/core/base_manager.py:369
+msgid ""
+"Could not download required files.\n"
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
+msgstr ""
+"No se pudieron descargar los archivos requeridos.\n"
+"Sugerencia: Verifique su conexión a internet. Si el problema persiste, intente actualizar su lista "
+"de espejos."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 374
+#: usr/share/big-driver-manager/core/base_manager.py:377
+msgid ""
+"A downloaded package is corrupted.\n"
+"Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
+msgstr ""
+"Un paquete descargado está corrupto.\n"
+"Sugerencia: Limpie la caché con 'sudo pacman -Scc' y vuelva a intentarlo."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 391
+#: usr/share/big-driver-manager/core/base_manager.py:394
+msgid "Generating GRUB configuration..."
+msgstr "Generando configuración de GRUB..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 392
+#: usr/share/big-driver-manager/core/base_manager.py:395
+msgid "Running post-transaction hooks..."
+msgstr "Ejecutando ganchos post-transacción..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/base_manager.py:396
+msgid "Installing packages..."
+msgstr "Instalando paquetes..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 394
+#: usr/share/big-driver-manager/core/base_manager.py:397
+msgid "Removing packages..."
+msgstr "Eliminando paquetes..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 395
+#: usr/share/big-driver-manager/core/base_manager.py:398
+msgid "Checking for file conflicts..."
+msgstr "Comprobando conflictos de archivos..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 396
+#: usr/share/big-driver-manager/core/base_manager.py:399
+msgid "Checking dependencies..."
+msgstr "Comprobando dependencias..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 400
+#: usr/share/big-driver-manager/core/base_manager.py:403
+msgid "Synchronizing package databases..."
+msgstr "Sincronizando bases de datos de paquetes..."

@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,350 +14,205 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 116
-#: usr/share/big-driver-manager/core/mesa_manager.py:116
-#, python-brace-format
-msgid "Driver not found: {}"
-msgstr "드라이버를 찾을 수 없음: {}"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:152
-#, python-brace-format
-msgid "Applying {} driver..."
-msgstr "{} 드라이버 적용 중..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
-#: usr/share/big-driver-manager/core/mesa_manager.py:156
-#, python-brace-format
-msgid "Starting {} driver installation..."
-msgstr "{} 드라이버 설치 시작 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "충돌하는 패키지를 확인하는 중..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "충돌 제거 중: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "{} 패키지를 확인하는 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ 패키지 {}를 사용할 수 없어 건너뜁니다..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ 설치할 패키지가 없습니다."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#: usr/share/big-driver-manager/ui/category_page.py:606
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
+#: usr/share/big-driver-manager/ui/home_page.py:693
 #, python-brace-format
-msgid "Installing: {}"
-msgstr "설치 중: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "충돌하는 패키지 제거 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "충돌하는 패키지를 제거하지 못했습니다."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "{} 드라이버 설치 중..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "드라이버를 적용하지 못했습니다."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "드라이버가 성공적으로 적용되었습니다!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ {} 드라이버가 성공적으로 적용되었습니다!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/core/base_manager.py:205
-#: usr/share/big-driver-manager/core/mesa_manager.py:262
-#, python-brace-format
-msgid "Error: {}"
-msgstr "오류: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/core/mesa_manager.py:263
-#, python-brace-format
-msgid "❌ Error: {}"
-msgstr "❌ 오류: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
-#, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ 작업 실패 (종료 코드: {})"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
-# 951
-# File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
-# line: 213
-#: usr/share/big-driver-manager/core/mhwd_manager.py:213
-#: usr/share/big-driver-manager/ui/mesa_page.py:1102
-#, python-brace-format
-msgid "Remove the installed NVIDIA driver ({}) first."
-msgstr "먼저 설치된 NVIDIA 드라이버({})를 제거하세요."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 106
-#: usr/share/big-driver-manager/core/base_manager.py:181
-#: usr/share/big-driver-manager/core/mhwd_manager.py:310
-#, python-brace-format
-msgid "Command: {}"
-msgstr "명령: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 105
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 108
-#: usr/share/big-driver-manager/core/base_manager.py:180
-#: usr/share/big-driver-manager/core/base_manager.py:183
-#: usr/share/big-driver-manager/core/mhwd_manager.py:312
-#, python-brace-format
-msgid "Starting {}..."
-msgstr "{} 시작 중..."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/core/mhwd_manager.py:335
-msgid "Completed"
-msgstr "완료되었습니다"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
-#: usr/share/big-driver-manager/core/mhwd_manager.py:335
-#: usr/share/big-driver-manager/ui/progress_dialog.py:374
-msgid "Failed"
-msgstr "실패함"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 137
-#: usr/share/big-driver-manager/core/base_manager.py:140
-#, python-brace-format
-msgid "Database locked. Retrying in {} seconds..."
-msgstr "데이터베이스가 잠겨 있습니다. {}초 후에 재시도 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 142
-#: usr/share/big-driver-manager/core/base_manager.py:145
-#, python-brace-format
-msgid "Waiting {} s before retry..."
-msgstr "재시도 전 {} 초 대기 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 147
-#: usr/share/big-driver-manager/core/base_manager.py:150
-#, python-brace-format
-msgid "Retry attempt {} of {}..."
-msgstr "재시도 {}회차 / 총 {}회..."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "사용자에 의해 작업이 취소되었습니다."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 160
-#: usr/share/big-driver-manager/core/base_manager.py:256
-#, python-brace-format
-msgid "Still working... ({:.0%} complete)"
-msgstr "작업 진행 중... ({:.0%} 완료)"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 177
-#: usr/share/big-driver-manager/core/base_manager.py:282
-msgid "Operation cancelled"
-msgstr "작업이 취소되었습니다"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 178
-#: usr/share/big-driver-manager/core/base_manager.py:283
-msgid "Operation was cancelled."
-msgstr "작업이 취소되었습니다."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 183
-#: usr/share/big-driver-manager/core/base_manager.py:288
-#, python-brace-format
-msgid "{}  complete!"
-msgstr "{} 완료!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/base_manager.py:292
-#, python-brace-format
-msgid "{}  completed successfully."
-msgstr "{}가 성공적으로 완료되었습니다."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 193
-#: usr/share/big-driver-manager/core/base_manager.py:298
-#, python-brace-format
-msgid "{}  failed."
-msgstr "{} 실패."
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/base_manager.py:302
-#, python-brace-format
-msgid "{}  failed (exit code: {})"
-msgstr "{} 실패(종료 코드: {})"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search for the correct name."
-msgstr ""
-"저장소에서 패키지를 찾을 수 없습니다. 패키지 이름이 변경되었거나 제거되었을 수 있습니다.\n"
-"제안: 'sudo pacman -Sy'로 데이터베이스를 새로 고친 후 올바른 이름을 검색해 보세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 319
-#: usr/share/big-driver-manager/core/base_manager.py:322
-msgid ""
-"A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
-msgstr ""
-"충돌로 인해 작업을 완료할 수 없습니다.\n"
-"제안: 캐시를 정리하고 'sudo pacman -Scc' 실행 후 'sudo pacman -Syyu'로 업데이트하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 327
-#: usr/share/big-driver-manager/core/base_manager.py:330
-msgid ""
-"Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
-"conflict."
-msgstr ""
-"이 패키지의 일부 파일이 이미 시스템에 존재합니다.\n"
-"제안: 'pacman -Qo <file_path>'로 해당 파일을 소유한 패키지를 확인하고 충돌을 해결하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 335
-#: usr/share/big-driver-manager/core/base_manager.py:338
-msgid ""
-"Required dependencies could not be resolved.\n"
-"Suggestion: Update the full system first with 'sudo pacman -Syu'."
-msgstr ""
-"필수 의존성을 해결할 수 없습니다.\n"
-"제안: 먼저 'sudo pacman -Syu'로 시스템 전체를 업데이트하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 342
-#: usr/share/big-driver-manager/core/base_manager.py:345
-msgid ""
-"Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
-msgstr ""
-"패키지 서명을 확인할 수 없습니다.\n"
-"제안: 'sudo pacman -S archlinux-keyring manjaro-keyring'로 키링을 업데이트하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 350
-#: usr/share/big-driver-manager/core/base_manager.py:353
-msgid ""
-"The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
-msgstr ""
-"패키지 데이터베이스가 다른 프로세스에 의해 잠겨 있습니다.\n"
-"다른 패키지 관리자가 실행 중이 아니라면 'sudo rm /var/lib/pacman/db.lck'로 잠금을 해제하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 358
-#: usr/share/big-driver-manager/core/base_manager.py:361
-msgid ""
-"Not enough disk space to complete the operation.\n"
-"Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
-msgstr ""
-"작업을 완료하기에 디스크 공간이 부족합니다.\n"
-"제안: 'sudo pacman -Scc' 명령어로 패키지 캐시를 정리하여 공간을 확보하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 366
-#: usr/share/big-driver-manager/core/base_manager.py:369
-msgid ""
-"Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
-msgstr ""
-"필요한 파일을 다운로드할 수 없습니다.\n"
-"제안: 인터넷 연결을 확인하세요. 문제가 계속되면 미러 목록을 업데이트해 보세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 374
-#: usr/share/big-driver-manager/core/base_manager.py:377
-msgid ""
-"A downloaded package is corrupted.\n"
-"Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
-msgstr ""
-"다운로드한 패키지가 손상되었습니다.\n"
-"제안: 'sudo pacman -Scc' 명령어로 캐시를 지우고 다시 시도하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 391
-#: usr/share/big-driver-manager/core/base_manager.py:394
-msgid "Generating GRUB configuration..."
-msgstr "GRUB 구성 생성 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 392
-#: usr/share/big-driver-manager/core/base_manager.py:395
-msgid "Running post-transaction hooks..."
-msgstr "트랜잭션 후 훅 실행 중..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/base_manager.py:396
-msgid "Installing packages..."
-msgstr "패키지 설치 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 394
-#: usr/share/big-driver-manager/core/base_manager.py:397
-msgid "Removing packages..."
-msgstr "패키지 제거 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 395
-#: usr/share/big-driver-manager/core/base_manager.py:398
-msgid "Checking for file conflicts..."
-msgstr "파일 충돌을 확인하는 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 396
-#: usr/share/big-driver-manager/core/base_manager.py:399
-msgid "Checking dependencies..."
-msgstr "종속성 확인 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 400
-#: usr/share/big-driver-manager/core/base_manager.py:403
-msgid "Synchronizing package databases..."
-msgstr "패키지 데이터베이스 동기화 중..."
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
+msgid "Install {}?"
+msgstr "{}를 설치하시겠습니까?"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 566
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 591
+#: usr/share/big-driver-manager/udev-driver-dialog.py:91
+msgid "Firmware available"
+msgstr "펌웨어 사용 가능"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 643
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 423
-#: usr/share/big-driver-manager/core/base_manager.py:426
-#: usr/share/big-driver-manager/ui/home_page.py:644
-msgid "Downloading packages..."
-msgstr "패키지 다운로드 중..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/driver_installer.py:57
-#: usr/share/big-driver-manager/ui/category_page.py:626
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
-#: usr/share/big-driver-manager/ui/home_page.py:713
-#: usr/share/big-driver-manager/ui/home_page.py:724
-#: usr/share/big-driver-manager/ui/kernel_page.py:699
-#: usr/share/big-driver-manager/ui/mesa_page.py:1136
-#: usr/share/big-driver-manager/ui/mesa_page.py:1370
-#: usr/share/big-driver-manager/ui/mesa_page.py:1381
-#, python-brace-format
-msgid "Installing {}"
-msgstr "{} 설치 중"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/driver_installer.py:85
-#: usr/share/big-driver-manager/ui/category_page.py:664
-#: usr/share/big-driver-manager/ui/installed_page.py:416
-#: usr/share/big-driver-manager/ui/kernel_page.py:803
-#: usr/share/big-driver-manager/ui/kernel_page.py:873
-#: usr/share/big-driver-manager/ui/mesa_page.py:1214
-#: usr/share/big-driver-manager/ui/mesa_page.py:1408
-#: usr/share/big-driver-manager/ui/mesa_page.py:1419
-#, python-brace-format
-msgid "Removing {}"
-msgstr "{} 제거 중"
+# 227
+#: usr/share/big-driver-manager/udev-driver-dialog.py:92
+msgid "Printer driver available"
+msgstr "프린터 드라이버 사용 가능"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 227
+#: usr/share/big-driver-manager/udev-driver-dialog.py:93
+msgid "Scanner driver available"
+msgstr "스캐너 드라이버 사용 가능"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 227
+#: usr/share/big-driver-manager/udev-driver-dialog.py:95
+msgid "Driver available"
+msgstr "드라이버 사용 가능"
+# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
+# line: 164
+# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
+# line: 166
+#: usr/share/big-driver-manager/udev-driver-dialog.py:164
+#: usr/share/big-driver-manager/udev-driver-dialog.py:166
+msgid "Don't alert for this device again"
+msgstr "이 장치에 대해 다시 알리지 않음"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "취소"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "설치"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 99
-#: usr/share/big-driver-manager/core/driver_installer.py:99
-#, python-brace-format
-msgid "pamac-installer not found. Cannot install AUR package {}."
-msgstr "pamac-installer를 찾을 수 없습니다. AUR 패키지 {}를 설치할 수 없습니다."
+# manager/utils/tooltip_helper.py, line: 28
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:28
+msgid ""
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
+msgstr "Wi-Fi가 이미 작동 중이라면 내장 커널 드라이버가 일반적으로 가장 좋은 선택입니다. 연결 문제 발생 시에만 대체 드라이버를 설치하세요."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "열린 pamac 창에서 설치를 계속 진행하세요."
+# manager/utils/tooltip_helper.py, line: 33
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:33
+msgid ""
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
+msgstr "유선 네트워크 어댑터는 거의 항상 바로 작동합니다. 매우 새롭거나 희귀한 하드웨어에만 추가 드라이버가 필요합니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 37
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:37
+msgid ""
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
+msgstr "일부 블루투스 어댑터는 작동을 위해 추가 펌웨어가 필요합니다. 페어링에 실패하면 어댑터용 펌웨어를 설치하면 문제가 해결될 수 있습니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 42
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:42
+msgid ""
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
+msgstr "디지털 TV 튜너는 보통 특정 펌웨어가 필요합니다. 없으면 시스템에서 장치를 인식하지 못합니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 46
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:46
+msgid ""
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
+msgstr "대부분의 오디오 장치는 커널에 내장된 ALSA로 작동합니다. 특정 USB 오디오 인터페이스에만 추가 펌웨어가 필요합니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 50
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:50
+msgid ""
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
+msgstr "대부분의 웹캠은 자동으로 작동합니다. 추가 펌웨어는 이미지 품질을 향상시키거나 추가 기능을 활성화할 수 있습니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 54
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:54
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "터치스크린이 반응하지 않는 경우, 일치하는 펌웨어를 설치하면 보통 문제가 해결됩니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 58
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:58
+msgid ""
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
+msgstr "프린터 드라이버는 시스템이 모델과 통신할 수 있게 합니다. 네트워크나 USB에서 프린터가 감지되었다면 일치하는 드라이버 설치를 권장합니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 63
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:63
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "3D 프린터 펌웨어는 슬라이서와 프린터 하드웨어 간의 통신을 가능하게 합니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/utils/tooltip_helper.py, line: 67
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:67
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
+msgstr "스캐너 드라이버(SANE 백엔드)는 스캔 애플리케이션이 스캐너 모델과 통신할 수 있게 합니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 111
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:70
+msgid "Additional firmware packages for specialized hardware."
+msgstr "특수 하드웨어용 추가 펌웨어 패키지입니다."
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
+#: NEEDS WORK
+msgid "Package"
+msgstr "패키지"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Status"
+msgstr "상태"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
+#: NEEDS WORK
+msgid "Detected and installed"
+msgstr "감지됨 및 설치됨"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
+#: NEEDS WORK
+msgid "Detected — not yet installed"
+msgstr "감지됨 — 아직 설치되지 않음"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/category_page.py:424
+#: usr/share/big-driver-manager/ui/home_page.py:488
+#: usr/share/big-driver-manager/ui/home_page.py:504
+#: usr/share/big-driver-manager/ui/home_page.py:735
+#: usr/share/big-driver-manager/ui/installed_page.py:313
+#: usr/share/big-driver-manager/ui/installed_page.py:317
+#: usr/share/big-driver-manager/ui/installed_page.py:324
+#: usr/share/big-driver-manager/ui/installed_page.py:331
+#: usr/share/big-driver-manager/ui/window.py:199
+#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
+msgid "Installed"
+msgstr "설치됨"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
+#: NEEDS WORK
+msgid "Available in repository"
+msgstr "저장소에서 사용 가능"
+# 
+# File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
+#: NEEDS WORK
+msgid "Device"
+msgstr "장치"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 173
 #: usr/share/big-driver-manager/utils/desc_translate.py:173
@@ -792,207 +648,134 @@ msgstr "(독점)"
 #: usr/share/big-driver-manager/utils/desc_translate.py:259
 msgid "(proprietary)"
 msgstr "Wi-Fi가 이미 작동 중이라면 내장 커널 드라이버가 보통 가장 좋은 선택입니다. 연결 문제 발생 시에만 대체 드라이버를 설치하세요."
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 28
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:28
-msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
-"alternative only if you have connection problems."
-msgstr "Wi-Fi가 이미 작동 중이라면 내장 커널 드라이버가 일반적으로 가장 좋은 선택입니다. 연결 문제 발생 시에만 대체 드라이버를 설치하세요."
+# manager/ui/drivers_hub_page.py, line: 36
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:36
+#: usr/share/big-driver-manager/ui/installed_page.py:27
+#: usr/share/big-driver-manager/ui/window.py:47
+msgid "Video / GPU"
+msgstr "비디오 / GPU"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
+#: usr/share/big-driver-manager/ui/window.py:48
+msgid "Mesa, NVIDIA, and GPU drivers."
+msgstr "Mesa, NVIDIA 및 GPU 드라이버."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 33
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:33
-msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
-"new or rare hardware."
-msgstr "유선 네트워크 어댑터는 거의 항상 바로 작동합니다. 매우 새롭거나 희귀한 하드웨어에만 추가 드라이버가 필요합니다."
+# manager/ui/drivers_hub_page.py, line: 37
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:37
+#: usr/share/big-driver-manager/ui/installed_page.py:28
+#: usr/share/big-driver-manager/ui/window.py:53
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
+#: usr/share/big-driver-manager/ui/window.py:54
+msgid "Wireless network adapter drivers."
+msgstr "무선 네트워크 어댑터 드라이버"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 37
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:37
-msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
-"your adapter may solve the problem."
-msgstr "일부 블루투스 어댑터는 작동을 위해 추가 펌웨어가 필요합니다. 페어링에 실패하면 어댑터용 펌웨어를 설치하면 문제가 해결될 수 있습니다."
+# manager/ui/drivers_hub_page.py, line: 38
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:38
+#: usr/share/big-driver-manager/ui/installed_page.py:29
+#: usr/share/big-driver-manager/ui/window.py:59
+msgid "Ethernet"
+msgstr "이더넷"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
+#: usr/share/big-driver-manager/ui/window.py:60
+msgid "Wired network adapter drivers."
+msgstr "유선 네트워크 어댑터 드라이버"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 42
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:42
-msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
-"system."
-msgstr "디지털 TV 튜너는 보통 특정 펌웨어가 필요합니다. 없으면 시스템에서 장치를 인식하지 못합니다."
+# manager/ui/drivers_hub_page.py, line: 39
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:39
+#: usr/share/big-driver-manager/ui/installed_page.py:30
+#: usr/share/big-driver-manager/ui/window.py:65
+msgid "Bluetooth"
+msgstr "블루투스"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
+#: usr/share/big-driver-manager/ui/window.py:66
+msgid "Bluetooth adapter drivers."
+msgstr "블루투스 어댑터 드라이버."
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 46
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:46
-msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
-"USB audio interfaces."
-msgstr "대부분의 오디오 장치는 커널에 내장된 ALSA로 작동합니다. 특정 USB 오디오 인터페이스에만 추가 펌웨어가 필요합니다."
+# manager/ui/drivers_hub_page.py, line: 40
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:40
+#: usr/share/big-driver-manager/ui/installed_page.py:31
+#: usr/share/big-driver-manager/ui/window.py:71
+msgid "DVB / TV"
+msgstr "DVB / TV"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
+#: usr/share/big-driver-manager/ui/window.py:72
+msgid "Digital TV tuner firmware."
+msgstr "디지털 TV 튜너 펌웨어"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 50
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:50
-msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
-"features."
-msgstr "대부분의 웹캠은 자동으로 작동합니다. 추가 펌웨어는 이미지 품질을 향상시키거나 추가 기능을 활성화할 수 있습니다."
+# manager/ui/drivers_hub_page.py, line: 41
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:41
+#: usr/share/big-driver-manager/ui/installed_page.py:32
+#: usr/share/big-driver-manager/ui/window.py:77
+msgid "Audio"
+msgstr "오디오"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
+#: usr/share/big-driver-manager/ui/window.py:78
+msgid "Audio device firmware."
+msgstr "오디오 장치 펌웨어"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 54
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
-msgstr "터치스크린이 반응하지 않는 경우, 일치하는 펌웨어를 설치하면 보통 문제가 해결됩니다."
+# manager/ui/drivers_hub_page.py, line: 42
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:42
+#: usr/share/big-driver-manager/ui/installed_page.py:33
+#: usr/share/big-driver-manager/ui/window.py:83
+msgid "Webcam"
+msgstr "웹캠"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
+#: usr/share/big-driver-manager/ui/window.py:84
+msgid "Webcam device firmware."
+msgstr "웹캠 장치 펌웨어"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 58
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:58
-msgid ""
-"Printer drivers let the system communicate with your model. If the printer was detected on your "
-"network or USB, installing the matching driver is recommended."
-msgstr "프린터 드라이버는 시스템이 모델과 통신할 수 있게 합니다. 네트워크나 USB에서 프린터가 감지되었다면 일치하는 드라이버 설치를 권장합니다."
+# manager/ui/drivers_hub_page.py, line: 43
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:43
+#: usr/share/big-driver-manager/ui/installed_page.py:34
+#: usr/share/big-driver-manager/ui/window.py:89
+msgid "Touchscreen"
+msgstr "터치스크린"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
+#: usr/share/big-driver-manager/ui/window.py:90
+msgid "Touchscreen device firmware."
+msgstr "터치스크린 장치 펌웨어"
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 63
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid "3D printer firmware enables communication between the slicer and the printer hardware."
-msgstr "3D 프린터 펌웨어는 슬라이서와 프린터 하드웨어 간의 통신을 가능하게 합니다."
+# manager/ui/drivers_hub_page.py, line: 44
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:44
+#: usr/share/big-driver-manager/ui/installed_page.py:35
+#: usr/share/big-driver-manager/ui/window.py:95
+msgid "Printers"
+msgstr "프린터"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
+#: usr/share/big-driver-manager/ui/window.py:96
+msgid "Printer drivers and support packages."
+msgstr "프린터 드라이버 및 지원 패키지."
 # File: big-driver-manager/usr/share/big-driver-
-# manager/utils/tooltip_helper.py, line: 67
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
-msgstr "스캐너 드라이버(SANE 백엔드)는 스캔 애플리케이션이 스캐너 모델과 통신할 수 있게 합니다."
+# manager/ui/drivers_hub_page.py, line: 45
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:45
+#: usr/share/big-driver-manager/ui/installed_page.py:36
+#: usr/share/big-driver-manager/ui/window.py:101
+msgid "3D Printers"
+msgstr "3D 프린터"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
+#: usr/share/big-driver-manager/ui/window.py:102
+msgid "3D printer firmware."
+msgstr "3D 프린터 펌웨어."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 46
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:46
+#: usr/share/big-driver-manager/ui/installed_page.py:37
+#: usr/share/big-driver-manager/ui/window.py:107
+msgid "Scanners"
+msgstr "스캐너"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 111
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:70
-msgid "Additional firmware packages for specialized hardware."
-msgstr "특수 하드웨어용 추가 펌웨어 패키지입니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 566
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 591
-#: usr/share/big-driver-manager/udev-driver-dialog.py:91
-msgid "Firmware available"
-msgstr "펌웨어 사용 가능"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/udev-driver-dialog.py:92
-msgid "Printer driver available"
-msgstr "프린터 드라이버 사용 가능"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/udev-driver-dialog.py:93
-msgid "Scanner driver available"
-msgstr "스캐너 드라이버 사용 가능"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/udev-driver-dialog.py:95
-msgid "Driver available"
-msgstr "드라이버 사용 가능"
-# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
-# line: 164
-# File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
-# line: 166
-#: usr/share/big-driver-manager/udev-driver-dialog.py:164
-#: usr/share/big-driver-manager/udev-driver-dialog.py:166
-msgid "Don't alert for this device again"
-msgstr "이 장치에 대해 다시 알리지 않음"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "취소"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "설치"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 40
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:42
-msgid "Stable, long-term support"
-msgstr "안정적인 장기 지원"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 43
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
-msgstr "수년간 보안 업데이트를 받습니다. 대부분 사용자에게 가장 적합한 선택 — 신뢰할 수 있고 잘 검증됨."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 49
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
-msgid "Low-latency, real-time"
-msgstr "짧은 지연 시간, 실시간"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 52
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
-msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
-"drivers (e.g. NVIDIA). Only recommended for advanced users."
-msgstr "오디오/비디오 제작 및 정밀한 타이밍이 필요한 작업용으로 설계됨. 일부 드라이버(NVIDIA 등)와 호환되지 않을 수 있습니다. 고급 사용자에게만 권장됩니다."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 59
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
-msgid "Gaming & performance optimized"
-msgstr "게임 및 성능 최적화"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 62
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
-msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
-"performance."
-msgstr "더 빠른 게임과 더 반응성이 좋은 데스크톱을 위해 조정됨. 추가 성능을 원한다면 일상 사용에 적합합니다."
-# 
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
-msgid "Performance optimized by CachyOS"
-msgstr "CachyOS로 성능 최적화됨"
-# 
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
-msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
-"responsiveness."
-msgstr "LTO, AutoFDO 및 Propeller 최적화가 적용된 EEVDF 스케줄러. 게임 및 데스크탑 반응성에 탁월합니다."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 68
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
-msgid "Latest features & drivers"
-msgstr "최신 기능 및 드라이버"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/kernel_card_builder.py, line: 72
-#: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
-msgid "Always up to date with the newest features and hardware support."
-msgstr "항상 최신 기능과 하드웨어 지원으로 업데이트됩니다."
+# 105
+#: usr/share/big-driver-manager/ui/window.py:108
+msgid "Scanner drivers and SANE backends."
+msgstr "스캐너 드라이버 및 SANE 백엔드."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 67
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -1004,108 +787,210 @@ msgstr "항상 최신 기능과 하드웨어 지원으로 업데이트됩니다.
 #: usr/share/big-driver-manager/ui/window.py:113
 msgid "Other"
 msgstr "기타"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 128
-#: usr/share/big-driver-manager/ui/category_page.py:131
-msgid "Search drivers..."
-msgstr "드라이버 검색..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
-#: usr/share/big-driver-manager/ui/category_page.py:135
-msgid "Search drivers"
-msgstr "드라이버 검색"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 160
-#: usr/share/big-driver-manager/ui/category_page.py:160
-msgid "Searching for printers on the network…"
-msgstr "네트워크에서 프린터를 검색 중입니다…"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 162
-#: usr/share/big-driver-manager/ui/category_page.py:179
-msgid "No more automatically detected compatible drivers in this category."
-msgstr "이 범주에서는 더 이상 자동으로 호환되는 드라이버를 감지하지 않습니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 187
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 211
-#: usr/share/big-driver-manager/ui/category_page.py:187
-#: usr/share/big-driver-manager/ui/category_page.py:211
-msgid "Show drivers without detected compatibility"
-msgstr "호환성이 감지되지 않은 드라이버 표시"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 187
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 260
-#: usr/share/big-driver-manager/ui/category_page.py:199
-#: usr/share/big-driver-manager/ui/category_page.py:278
-msgid "No drivers needed for this category"
-msgstr "이 카테고리에는 드라이버가 필요하지 않습니다"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 191
-#: usr/share/big-driver-manager/ui/category_page.py:202
-msgid "No drivers in this category were automatically detected as compatible with your hardware."
-msgstr "이 카테고리에서 하드웨어와 호환되는 드라이버가 자동으로 감지되지 않았습니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 238
-#: usr/share/big-driver-manager/ui/category_page.py:257
-msgid "Detection Error"
-msgstr "감지 오류"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 264
-#: usr/share/big-driver-manager/ui/category_page.py:281
-msgid "No drivers in this category were detected as necessary for your hardware."
-msgstr "이 카테고리에서 하드웨어에 필요한 드라이버가 감지되지 않았습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 111
+#: usr/share/big-driver-manager/ui/window.py:114
+msgid "Additional firmware packages."
+msgstr "추가 펌웨어 패키지."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 189
+#: usr/share/big-driver-manager/ui/window.py:198
+msgid "Home"
+msgstr "홈"
+# File: usr/share/big-driver-manager/ui/window.py, line: 89
+#: usr/share/big-driver-manager/ui/window.py:200
+msgid "Kernel"
+msgstr "커널"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 191
+#: usr/share/big-driver-manager/ui/window.py:201
+msgid "Video"
+msgstr "비디오"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "카테고리"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 231
+#: usr/share/big-driver-manager/ui/window.py:242
+msgid "A system reboot is recommended to apply changes."
+msgstr "변경 사항을 적용하려면 시스템을 재부팅하는 것이 좋습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 269
+#: usr/share/big-driver-manager/ui/window.py:285
+msgid "Content"
+msgstr "콘텐츠"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 328
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 623
+#: usr/share/big-driver-manager/ui/window.py:338
+#: usr/share/big-driver-manager/ui/window.py:656
+msgid "Showing drivers detected as compatible with your computer"
+msgstr "귀하의 컴퓨터와 호환되는 것으로 감지된 드라이버를 표시 중입니다"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 327
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 329
+#: usr/share/big-driver-manager/ui/window.py:348
+#: usr/share/big-driver-manager/ui/window.py:350
+msgid "Show all drivers"
+msgstr "모든 드라이버 표시"
+# File: usr/share/big-driver-manager/ui/window.py, line: 129
+#: usr/share/big-driver-manager/ui/window.py:362
+msgid "Menu"
+msgstr "메뉴"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 318
+#: usr/share/big-driver-manager/ui/window.py:364
+msgid "Application menu"
+msgstr "애플리케이션 메뉴"
+# File: usr/share/big-driver-manager/ui/window.py, line: 134
+#: usr/share/big-driver-manager/ui/window.py:367
+msgid "About"
+msgstr "소개"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/window.py:515
+msgid "Hardware detection failed. Check system logs for details."
+msgstr "하드웨어 감지 실패. 자세한 내용은 시스템 로그를 확인하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 534
+#: usr/share/big-driver-manager/ui/window.py:627
+#, python-brace-format
+msgid "Obsolete kernel: {} — no longer receives security updates"
+msgstr "구식 커널: {} — 더 이상 보안 업데이트를 받지 않습니다"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 538
+#: usr/share/big-driver-manager/ui/window.py:631
+msgid "Manage"
+msgstr "관리하다"
+# 
+# File: usr/share/big-driver-manager/ui/window.py, line: 674
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
+msgstr "패키지 데이터베이스는 {}일 전에 마지막으로 업데이트되었습니다. 드라이버를 설치하기 전에 시스템을 업데이트하여 다운로드 실패 및 누락된 패키지를 방지하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 619
+#: usr/share/big-driver-manager/ui/window.py:652
+msgid "Showing all drivers, including incompatible ones"
+msgstr "호환되지 않는 드라이버를 포함한 모든 드라이버 표시"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 117
+#: usr/share/big-driver-manager/ui/progress_dialog.py:117
+msgid "Technical details"
+msgstr "기술적인 세부사항"
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 67
+#: usr/share/big-driver-manager/ui/progress_dialog.py:131
+msgid "Terminal output"
+msgstr "터미널 출력"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 # 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 339
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 283
-#: usr/share/big-driver-manager/ui/category_page.py:356
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:283
-msgid "1 driver"
-msgstr "1개의 드라이버"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
-#: usr/share/big-driver-manager/ui/category_page.py:356
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "닫기"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
+#: usr/share/big-driver-manager/ui/category_page.py:627
+#: usr/share/big-driver-manager/ui/category_page.py:665
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
+#: usr/share/big-driver-manager/ui/installed_page.py:417
+#: usr/share/big-driver-manager/ui/progress_dialog.py:207
+msgid "Please wait..."
+msgstr "잠시만 기다려 주세요..."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 229
+#: usr/share/big-driver-manager/ui/progress_dialog.py:229
 #, python-brace-format
-msgid "{} drivers"
-msgstr "드라이버 {}개"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 341
-#: usr/share/big-driver-manager/ui/category_page.py:358
+msgid "Step {} of {}: {}"
+msgstr "단계 {} / {}: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
+# line: 231
+#: usr/share/big-driver-manager/ui/progress_dialog.py:231
 #, python-brace-format
-msgid "{} detected"
-msgstr "{}가 감지되었습니다"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:360
-#, python-brace-format
-msgid "{} installed"
-msgstr "{}가 설치되었습니다"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 405
-#: usr/share/big-driver-manager/ui/category_page.py:422
-#: usr/share/big-driver-manager/ui/installed_page.py:333
-msgid "Detected"
-msgstr "감지됨"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:424
-#: usr/share/big-driver-manager/ui/home_page.py:488
-#: usr/share/big-driver-manager/ui/home_page.py:504
-#: usr/share/big-driver-manager/ui/home_page.py:735
-#: usr/share/big-driver-manager/ui/installed_page.py:313
-#: usr/share/big-driver-manager/ui/installed_page.py:317
-#: usr/share/big-driver-manager/ui/installed_page.py:324
-#: usr/share/big-driver-manager/ui/installed_page.py:331
-#: usr/share/big-driver-manager/ui/window.py:199
-#: usr/share/big-driver-manager/utils/tooltip_helper.py:107
-msgid "Installed"
-msgstr "설치됨"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/category_page.py:426
-msgid "Not installed"
-msgstr "설치되지 않음"
+msgid "Step {} of {}"
+msgstr "단계 {} / {}"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/ui/progress_dialog.py:340
+msgid "Operation completed successfully!"
+msgstr "작업이 성공적으로 완료되었습니다!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
+#: usr/share/big-driver-manager/ui/progress_dialog.py:345
+msgid "Operation failed. Check terminal output for details."
+msgstr "작업 실패. 자세한 내용은 터미널 출력을 확인하세요."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/ui/progress_dialog.py:371
+msgid "Completed!"
+msgstr "완료!"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
+#: usr/share/big-driver-manager/core/mhwd_manager.py:335
+#: usr/share/big-driver-manager/ui/progress_dialog.py:374
+msgid "Failed"
+msgstr "실패함"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
+#: NEEDS WORK
+msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
+msgstr "이 단계는 더 이상 안전하게 취소할 수 없습니다. 완료될 때까지 기다리는 중…"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "사용자에 의해 작업이 취소되었습니다."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "취소됨"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
+#: usr/share/big-driver-manager/ui/kernel_page.py:107
+msgid "Installed Kernels"
+msgstr "설치된 커널"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/kernel_page.py:119
+msgid "Remove all obsolete kernels"
+msgstr "모든 구식 커널 제거"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/ui/application.py:143
+#: usr/share/big-driver-manager/ui/kernel_page.py:165
+#: usr/share/big-driver-manager/ui/mesa_page.py:414
+msgid "Error"
+msgstr "오류"
+# File: usr/share/big-driver-manager/ui/window.py, line: 89
+#: usr/share/big-driver-manager/ui/kernel_page.py:262
+msgid "Kernel in use"
+msgstr "사용 중인 커널"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
+#: usr/share/big-driver-manager/ui/kernel_page.py:268
+msgid "In Use"
+msgstr "사용 중"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 331
+#: usr/share/big-driver-manager/ui/kernel_page.py:332
+msgid "Obsolete Kernels — Removal Recommended"
+msgstr "구식 커널 — 제거 권장"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 770
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 347
+#: usr/share/big-driver-manager/ui/home_page.py:771
+#: usr/share/big-driver-manager/ui/kernel_page.py:348
+msgid "Warning"
+msgstr "경고"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 360
+#: usr/share/big-driver-manager/ui/kernel_page.py:361
+msgid "No longer receives security updates"
+msgstr "더 이상 보안 업데이트를 받지 않음"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:449
@@ -1122,6 +1007,86 @@ msgstr "설치되지 않음"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1394
 msgid "Remove"
 msgstr "제거"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/kernel_page.py:373
+#: usr/share/big-driver-manager/ui/kernel_page.py:436
+#, python-brace-format
+msgid "Remove kernel {}"
+msgstr "커널 {} 제거"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 416
+#: usr/share/big-driver-manager/ui/kernel_page.py:422
+msgid "Last backup"
+msgstr "마지막 백업"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 420
+#: usr/share/big-driver-manager/ui/kernel_page.py:426
+msgid "At least one backup kernel must remain installed"
+msgstr "대부분의 사용자에게 권장됩니다. 이러한 커널은 수년간 보안 업데이트를 받고 철저한 테스트를 거쳤습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 439
+#: usr/share/big-driver-manager/ui/kernel_page.py:445
+msgid ""
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
+msgstr "대부분 사용자에게 권장됩니다. 이 커널들은 수년간 보안 업데이트를 받고 철저히 테스트됩니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 443
+#: usr/share/big-driver-manager/ui/kernel_page.py:449
+msgid ""
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
+msgstr "최신 기능과 하드웨어 지원을 항상 최신 상태로 유지합니다. 최신 드라이버가 필요한 경우 좋습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 447
+#: usr/share/big-driver-manager/ui/kernel_page.py:453
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
+msgstr "게임 및 데스크탑 반응성에 맞게 조정되었습니다. 추가 성능을 원하는 일상 사용에 적합한 옵션입니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 451
+#: usr/share/big-driver-manager/ui/kernel_page.py:457
+msgid ""
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
+msgstr "정확한 타이밍이 필요한 오디오/비디오 제작용으로 제작되었습니다. 일부 드라이버(예: NVIDIA)와 호환되지 않을 수 있습니다. 고급 사용자 전용입니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 492
+#: usr/share/big-driver-manager/ui/kernel_page.py:498
+msgid "LTS — Long Term Support (Recommended)"
+msgstr "LTS — 장기 지원 (권장)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 493
+#: usr/share/big-driver-manager/ui/kernel_page.py:499
+msgid "Standard"
+msgstr "기준"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
+#: usr/share/big-driver-manager/ui/kernel_page.py:500
+msgid "Xanmod (Performance)"
+msgstr "Xanmod (성능)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 495
+#: usr/share/big-driver-manager/ui/kernel_page.py:501
+msgid "Real-Time (Advanced)"
+msgstr "실시간 (고급)"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 566
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 591
+#: usr/share/big-driver-manager/ui/kernel_page.py:572
+#: usr/share/big-driver-manager/ui/kernel_page.py:597
+#, python-brace-format
+msgid "Show {} available"
+msgstr "{} 표시 사용 가능"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
+#: usr/share/big-driver-manager/ui/kernel_page.py:600
+msgid "Hide available kernels"
+msgstr "사용 가능한 커널 숨기기"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
+#: usr/share/big-driver-manager/ui/kernel_page.py:650
+#: usr/share/big-driver-manager/ui/kernel_page.py:653
+#, python-brace-format
+msgid "Install kernel {}"
+msgstr "커널 설치 {}"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:461
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:250
@@ -1134,6 +1099,53 @@ msgstr "제거"
 #, python-brace-format
 msgid "Install {}"
 msgstr "설치하다 {}"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 661
+#: usr/share/big-driver-manager/ui/kernel_page.py:672
+msgid "The following packages will be installed:"
+msgstr "다음 패키지가 설치됩니다:"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/driver_installer.py:57
+#: usr/share/big-driver-manager/ui/category_page.py:626
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
+#: usr/share/big-driver-manager/ui/home_page.py:713
+#: usr/share/big-driver-manager/ui/home_page.py:724
+#: usr/share/big-driver-manager/ui/kernel_page.py:699
+#: usr/share/big-driver-manager/ui/mesa_page.py:1136
+#: usr/share/big-driver-manager/ui/mesa_page.py:1370
+#: usr/share/big-driver-manager/ui/mesa_page.py:1381
+#, python-brace-format
+msgid "Installing {}"
+msgstr "{} 설치 중"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
+#: usr/share/big-driver-manager/ui/kernel_page.py:700
+#: usr/share/big-driver-manager/ui/mesa_page.py:1137
+msgid "Preparing installation..."
+msgstr "설치 준비 중..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
+#: usr/share/big-driver-manager/ui/kernel_page.py:724
+msgid ""
+"Kernel installed successfully.\n"
+"You may need to reboot to use it."
+msgstr ""
+"커널이 성공적으로 설치되었습니다.\n"
+"사용하려면 재부팅이 필요할 수 있습니다."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
+#: usr/share/big-driver-manager/ui/kernel_page.py:731
+msgid ""
+"Kernel installation failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"커널 설치에 실패했습니다.\n"
+"자세한 내용은 터미널 출력을 확인하세요."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
+#: usr/share/big-driver-manager/ui/kernel_page.py:745
+msgid "Cannot Remove Running Kernel"
+msgstr "실행 중인 커널을 제거할 수 없습니다"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
+#: usr/share/big-driver-manager/ui/kernel_page.py:747
+msgid "This kernel is currently in use. Boot into a different kernel first."
+msgstr "이 커널은 현재 사용 중입니다. 먼저 다른 커널로 부팅하세요."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:463
@@ -1145,56 +1157,129 @@ msgstr "설치하다 {}"
 #, python-brace-format
 msgid "Remove {}"
 msgstr "{} 제거"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
-# line: 503
-#: usr/share/big-driver-manager/ui/category_page.py:530
-#, python-brace-format
-msgid "{total} drivers · {detected} detected · {installed} installed"
-msgstr "{total} 드라이버 · {detected} 감지됨 · {installed} 설치됨"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
-#: usr/share/big-driver-manager/ui/category_page.py:605
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:363
-#: usr/share/big-driver-manager/ui/home_page.py:692
-#: usr/share/big-driver-manager/ui/mesa_page.py:1114
-msgid "Install Driver"
-msgstr "드라이버 설치"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/ui/category_page.py:606
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
-#: usr/share/big-driver-manager/ui/home_page.py:693
-#, python-brace-format
-msgid "Install {}?"
-msgstr "{}를 설치하시겠습니까?"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
-#: usr/share/big-driver-manager/ui/category_page.py:627
-#: usr/share/big-driver-manager/ui/category_page.py:665
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:384
-#: usr/share/big-driver-manager/ui/installed_page.py:417
-#: usr/share/big-driver-manager/ui/progress_dialog.py:207
-msgid "Please wait..."
-msgstr "잠시만 기다려 주세요..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
-#: usr/share/big-driver-manager/ui/category_page.py:643
-#: usr/share/big-driver-manager/ui/installed_page.py:395
-#: usr/share/big-driver-manager/ui/mesa_page.py:1193
-msgid "Remove Driver"
-msgstr "드라이버 제거"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
+#: usr/share/big-driver-manager/ui/kernel_page.py:770
+msgid ""
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
+"\n"
+"The following packages will be removed:"
+msgstr ""
+"⚠ 이것은 마지막 백업 커널입니다. 실행 중인 커널에 문제가 발생하면 대체 커널이 없습니다.\n"
+"\n"
+"다음 패키지가 제거됩니다:"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 749
+#: usr/share/big-driver-manager/ui/kernel_page.py:775
+msgid "The following packages will be removed:"
+msgstr "다음 패키지가 제거됩니다:"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/ui/category_page.py:644
-#: usr/share/big-driver-manager/ui/installed_page.py:396
+#: usr/share/big-driver-manager/core/driver_installer.py:85
+#: usr/share/big-driver-manager/ui/category_page.py:664
+#: usr/share/big-driver-manager/ui/installed_page.py:416
+#: usr/share/big-driver-manager/ui/kernel_page.py:803
+#: usr/share/big-driver-manager/ui/kernel_page.py:873
+#: usr/share/big-driver-manager/ui/mesa_page.py:1214
+#: usr/share/big-driver-manager/ui/mesa_page.py:1408
+#: usr/share/big-driver-manager/ui/mesa_page.py:1419
 #, python-brace-format
-msgid "Remove {}?"
-msgstr "{} 제거하시겠습니까?"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/category_page.py:692
-#: usr/share/big-driver-manager/ui/installed_page.py:443
-msgid "Operation completed successfully."
-msgstr "작업이 성공적으로 완료되었습니다."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/category_page.py:696
-#: usr/share/big-driver-manager/ui/installed_page.py:447
-msgid "Operation failed. Check logs for details."
-msgstr "작업 실패. 자세한 내용은 로그를 확인하세요."
+msgid "Removing {}"
+msgstr "{} 제거 중"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
+#: usr/share/big-driver-manager/ui/kernel_page.py:804
+msgid "Preparing removal…"
+msgstr "제거 준비 중…"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-driver-manager/ui/kernel_page.py:825
+msgid "Kernel removed successfully."
+msgstr "커널이 성공적으로 제거되었습니다."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
+#: usr/share/big-driver-manager/ui/kernel_page.py:828
+msgid ""
+"Kernel removal failed.\n"
+"Check the terminal output for details."
+msgstr ""
+"커널 제거 실패.\n"
+"자세한 내용은 터미널 출력을 확인하세요."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
+#: usr/share/big-driver-manager/ui/kernel_page.py:842
+msgid "Remove Obsolete Kernels"
+msgstr "오래된 커널 제거"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 820
+#: usr/share/big-driver-manager/ui/kernel_page.py:846
+#, python-brace-format
+msgid ""
+"Remove all obsolete kernels?\n"
+"\n"
+"<b>{}</b>\n"
+"\n"
+"These kernels no longer receive security updates."
+msgstr ""
+"모든 오래된 커널을 제거하시겠습니까?\n"
+"\n"
+"<b>{}</b>\n"
+"\n"
+"이 커널들은 더 이상 보안 업데이트를 받지 않습니다."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
+#: usr/share/big-driver-manager/ui/kernel_page.py:851
+msgid "Remove All"
+msgstr "모두 제거"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
+#: usr/share/big-driver-manager/ui/kernel_page.py:874
+#, python-brace-format
+msgid "Removing kernel {} ({}/{})..."
+msgstr "커널 {}({}/{}) 제거 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 866
+#: usr/share/big-driver-manager/ui/kernel_page.py:892
+#, python-brace-format
+msgid "Failed to remove {}. Stopping."
+msgstr "{}을(를) 제거하지 못했습니다. 멎는."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
+#: usr/share/big-driver-manager/ui/kernel_page.py:903
+msgid "All obsolete kernels removed successfully."
+msgstr "모든 오래된 커널이 성공적으로 제거되었습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 916
+# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
+# line: 919
+#: usr/share/big-driver-manager/ui/kernel_page.py:942
+#: usr/share/big-driver-manager/ui/kernel_page.py:945
+#, python-brace-format
+msgid "What's new in Linux {}"
+msgstr "Linux {}의 새로운 기능"
+# 
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 23
+#: NEEDS WORK
+msgid ""
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
+msgstr "이 패키지는 공식 저장소에 없습니다. 이 패키지는 귀하의 컴퓨터에서 AUR로부터 빌드되며, 몇 분이 걸릴 수 있으며 배포판에서 검토되지 않습니다."
+# 
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 61
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
+msgstr "귀하의 장치는 이미 권장 옵션인 내장 드라이버 {}와 함께 작동합니다. 특정 문제를 해결하기 위해 이 타사 드라이버를 설치하십시오. 내장 드라이버와 충돌할 수 있습니다."
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
+#: usr/share/big-driver-manager/ui/base_page.py:39
+#: usr/share/big-driver-manager/ui/base_page.py:44
+msgid "Loading..."
+msgstr "로딩 중..."
+# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
+#: usr/share/big-driver-manager/ui/base_page.py:40
+msgid "Loading"
+msgstr "로드 중"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "아직 로드 중입니다... 네트워크 연결을 확인하세요."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1237,31 +1322,16 @@ msgstr "귀하의 하드웨어에 권장됩니다"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "권장 설치"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "호환 가능한 드라이버 사용 가능"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
+# 
+# File: usr/share/big-driver-manager/ui/home_page.py, line: 224
+#: NEEDS WORK
 #, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr "{} — 드라이버가 로드되지 않았습니다. 이 장치에 대해 {}를 설치하세요"
+msgid "{} has no driver loaded. A compatible driver is available: {}"
+msgstr "{}에 드라이버가 로드되지 않았습니다. 호환 가능한 드라이버가 사용 가능합니다: {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/home_page.py:277
 msgid "Go to drivers"
 msgstr "드라이버로 이동"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually the most stable and "
-"recommended option. If you experience issues, you can try a driver detected as compatible that may "
-"improve performance or add features."
-msgstr ""
-"귀하의 장치는 이미 내장 드라이버로 작동 중이며, 이는 일반적으로 가장 안정적이고 권장되는 옵션입니다. 문제가 발생하면 성능 향상이나 기능 추가가 가능한 호환 드라이버를 시도해 "
-"볼 수 있습니다."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 376
 #: usr/share/big-driver-manager/ui/home_page.py:377
@@ -1334,19 +1404,33 @@ msgstr "{} 패키지 설치 중"
 #: usr/share/big-driver-manager/ui/home_page.py:654
 msgid "Installing recommended packages"
 msgstr "권장 패키지 설치 중"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
+# 643
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 423
+#: usr/share/big-driver-manager/core/base_manager.py:426
+#: usr/share/big-driver-manager/ui/home_page.py:644
+msgid "Downloading packages..."
+msgstr "패키지 다운로드 중..."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 670
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "모든 권장 패키지가 성공적으로 설치되었습니다!"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"패키지 설치 실패.\n"
-"자세한 내용은 터미널 출력을 확인하세요."
+# 
+# File: usr/share/big-driver-manager/ui/home_page.py, line: 541
+#: NEEDS WORK
+msgid "Package installation failed."
+msgstr "패키지 설치에 실패했습니다."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
+#: usr/share/big-driver-manager/ui/category_page.py:605
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:363
+#: usr/share/big-driver-manager/ui/home_page.py:692
+#: usr/share/big-driver-manager/ui/mesa_page.py:1114
+msgid "Install Driver"
+msgstr "드라이버 설치"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 # 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1367,109 +1451,77 @@ msgstr "{}가 성공적으로 설치되었습니다!"
 #, python-brace-format
 msgid "Installation of {} failed."
 msgstr "{} 설치에 실패했습니다."
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 770
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 347
-#: usr/share/big-driver-manager/ui/home_page.py:771
-#: usr/share/big-driver-manager/ui/kernel_page.py:348
-msgid "Warning"
-msgstr "경고"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 #: usr/share/big-driver-manager/ui/home_page.py:771
 msgid "Information"
 msgstr "정보"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 40
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:42
+msgid "Stable, long-term support"
+msgstr "안정적인 장기 지원"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 43
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
+msgstr "수년간 보안 업데이트를 받습니다. 대부분 사용자에게 가장 적합한 선택 — 신뢰할 수 있고 잘 검증됨."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 49
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
+msgid "Low-latency, real-time"
+msgstr "짧은 지연 시간, 실시간"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 52
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
+msgid ""
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
+msgstr "오디오/비디오 제작 및 정밀한 타이밍이 필요한 작업용으로 설계됨. 일부 드라이버(NVIDIA 등)와 호환되지 않을 수 있습니다. 고급 사용자에게만 권장됩니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 59
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
+msgid "Gaming & performance optimized"
+msgstr "게임 및 성능 최적화"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 62
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
+msgid ""
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
+msgstr "더 빠른 게임과 더 반응성이 좋은 데스크톱을 위해 조정됨. 추가 성능을 원한다면 일상 사용에 적합합니다."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
+msgid "Performance optimized by CachyOS"
+msgstr "CachyOS로 성능 최적화됨"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
+msgid ""
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
+msgstr "LTO, AutoFDO 및 Propeller 최적화가 적용된 EEVDF 스케줄러. 게임 및 데스크탑 반응성에 탁월합니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 68
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
+msgid "Latest features & drivers"
+msgstr "최신 기능 및 드라이버"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/kernel_card_builder.py, line: 72
+#: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
+msgid "Always up to date with the newest features and hardware support."
+msgstr "항상 최신 기능과 하드웨어 지원으로 업데이트됩니다."
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "커널"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 # 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 36
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:36
-#: usr/share/big-driver-manager/ui/installed_page.py:27
-#: usr/share/big-driver-manager/ui/window.py:47
-msgid "Video / GPU"
-msgstr "비디오 / GPU"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 37
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:37
-#: usr/share/big-driver-manager/ui/installed_page.py:28
-#: usr/share/big-driver-manager/ui/window.py:53
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 38
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:38
-#: usr/share/big-driver-manager/ui/installed_page.py:29
-#: usr/share/big-driver-manager/ui/window.py:59
-msgid "Ethernet"
-msgstr "이더넷"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 39
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:39
-#: usr/share/big-driver-manager/ui/installed_page.py:30
-#: usr/share/big-driver-manager/ui/window.py:65
-msgid "Bluetooth"
-msgstr "블루투스"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 40
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:40
-#: usr/share/big-driver-manager/ui/installed_page.py:31
-#: usr/share/big-driver-manager/ui/window.py:71
-msgid "DVB / TV"
-msgstr "DVB / TV"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 41
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:41
-#: usr/share/big-driver-manager/ui/installed_page.py:32
-#: usr/share/big-driver-manager/ui/window.py:77
-msgid "Audio"
-msgstr "오디오"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 42
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:42
-#: usr/share/big-driver-manager/ui/installed_page.py:33
-#: usr/share/big-driver-manager/ui/window.py:83
-msgid "Webcam"
-msgstr "웹캠"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 43
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:43
-#: usr/share/big-driver-manager/ui/installed_page.py:34
-#: usr/share/big-driver-manager/ui/window.py:89
-msgid "Touchscreen"
-msgstr "터치스크린"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 44
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:44
-#: usr/share/big-driver-manager/ui/installed_page.py:35
-#: usr/share/big-driver-manager/ui/window.py:95
-msgid "Printers"
-msgstr "프린터"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 45
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:45
-#: usr/share/big-driver-manager/ui/installed_page.py:36
-#: usr/share/big-driver-manager/ui/window.py:101
-msgid "3D Printers"
-msgstr "3D 프린터"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 46
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:46
-#: usr/share/big-driver-manager/ui/installed_page.py:37
-#: usr/share/big-driver-manager/ui/window.py:107
-msgid "Scanners"
-msgstr "스캐너"
+# File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
+#: NEEDS WORK
+msgid "Installed Drivers"
+msgstr "설치된 드라이버"
 # 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
@@ -1507,53 +1559,34 @@ msgstr "MHWD 드라이버"
 #: usr/share/big-driver-manager/ui/mesa_page.py:525
 msgid "Active"
 msgstr "활성"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 117
-#: usr/share/big-driver-manager/ui/progress_dialog.py:117
-msgid "Technical details"
-msgstr "기술적인 세부사항"
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 67
-#: usr/share/big-driver-manager/ui/progress_dialog.py:131
-msgid "Terminal output"
-msgstr "터미널 출력"
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-# 
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "닫기"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 229
-#: usr/share/big-driver-manager/ui/progress_dialog.py:229
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 405
+#: usr/share/big-driver-manager/ui/category_page.py:422
+#: usr/share/big-driver-manager/ui/installed_page.py:333
+msgid "Detected"
+msgstr "감지됨"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
+#: usr/share/big-driver-manager/ui/category_page.py:643
+#: usr/share/big-driver-manager/ui/installed_page.py:395
+#: usr/share/big-driver-manager/ui/mesa_page.py:1193
+msgid "Remove Driver"
+msgstr "드라이버 제거"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/ui/category_page.py:644
+#: usr/share/big-driver-manager/ui/installed_page.py:396
 #, python-brace-format
-msgid "Step {} of {}: {}"
-msgstr "단계 {} / {}: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
-# line: 231
-#: usr/share/big-driver-manager/ui/progress_dialog.py:231
-#, python-brace-format
-msgid "Step {} of {}"
-msgstr "단계 {} / {}"
+msgid "Remove {}?"
+msgstr "{} 제거하시겠습니까?"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/progress_dialog.py:340
-msgid "Operation completed successfully!"
-msgstr "작업이 성공적으로 완료되었습니다!"
+#: usr/share/big-driver-manager/ui/category_page.py:692
+#: usr/share/big-driver-manager/ui/installed_page.py:443
+msgid "Operation completed successfully."
+msgstr "작업이 성공적으로 완료되었습니다."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/progress_dialog.py:345
-msgid "Operation failed. Check terminal output for details."
-msgstr "작업 실패. 자세한 내용은 터미널 출력을 확인하세요."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
-#: usr/share/big-driver-manager/ui/progress_dialog.py:371
-msgid "Completed!"
-msgstr "완료!"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "취소됨"
+#: usr/share/big-driver-manager/ui/category_page.py:696
+#: usr/share/big-driver-manager/ui/installed_page.py:447
+msgid "Operation failed. Check logs for details."
+msgstr "작업 실패. 자세한 내용은 로그를 확인하세요."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/mesa_page.py:117
 msgid "Video Drivers"
@@ -1610,12 +1643,6 @@ msgstr "NVIDIA 독점 드라이버 (Mesa 아님)"
 #: usr/share/big-driver-manager/ui/mesa_page.py:389
 msgid "Mesa driver"
 msgstr "Mesa 드라이버"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
-#: usr/share/big-driver-manager/ui/application.py:143
-#: usr/share/big-driver-manager/ui/kernel_page.py:165
-#: usr/share/big-driver-manager/ui/mesa_page.py:414
-msgid "Error"
-msgstr "오류"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 427
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1759,6 +1786,17 @@ msgstr "⚠ Wayland 지원 없음 · 더 이상 유지 관리되지 않음"
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "{}에서 {}로 전환"
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
+# 951
+# File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
+# line: 213
+#: usr/share/big-driver-manager/core/mhwd_manager.py:213
+#: usr/share/big-driver-manager/ui/mesa_page.py:1102
+#, python-brace-format
+msgid "Remove the installed NVIDIA driver ({}) first."
+msgstr "먼저 설치된 NVIDIA 드라이버({})를 제거하세요."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 961
 #: usr/share/big-driver-manager/ui/mesa_page.py:1112
@@ -1781,11 +1819,6 @@ msgstr ""
 "<b>{}</b> ({} 드라이버)를 설치하시겠습니까?\n"
 "\n"
 "설치 후 시스템 재부팅이 필요할 수 있습니다."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
-#: usr/share/big-driver-manager/ui/kernel_page.py:700
-#: usr/share/big-driver-manager/ui/mesa_page.py:1137
-msgid "Preparing installation..."
-msgstr "설치 준비 중..."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1001
 #: usr/share/big-driver-manager/ui/mesa_page.py:1152
@@ -1890,6 +1923,16 @@ msgstr ""
 "<b>{}</b>를 설치하시겠습니까?\n"
 "\n"
 "{}"
+# 
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
+#: NEEDS WORK
+msgid "Unavailable"
+msgstr "사용 불가"
+# 
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
+#: NEEDS WORK
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
+msgstr "활성화된 저장소에서 사용할 수 없습니다. 32비트(lib32) 패키지는 멀티리브 저장소가 필요합니다."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -1909,205 +1952,137 @@ msgstr "패키지 제거 중..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{}가 {} 성공적으로 완료되었습니다!"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"패키지 작업에 실패했습니다.\n"
-"자세한 내용은 터미널 출력을 확인하세요."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "모든 드라이버가 설치되어 있습니다."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "필요한 모든 드라이버가 시스템에 이미 설치되어 있습니다."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "하드웨어 감지 중"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "하드웨어 감지 중..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
+# 
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
+#: NEEDS WORK
+msgid "Package operation failed."
+msgstr "패키지 작업이 실패했습니다."
+# 
+# File: usr/share/big-driver-manager/ui/application.py, line: 80
+#: NEEDS WORK
+msgid "Open the page of a driver package and offer to install it"
+msgstr "드라이버 패키지의 페이지를 열고 설치를 제안합니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 128
+#: usr/share/big-driver-manager/ui/category_page.py:131
+msgid "Search drivers..."
+msgstr "드라이버 검색..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
+#: usr/share/big-driver-manager/ui/category_page.py:135
+msgid "Search drivers"
+msgstr "드라이버 검색"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 160
+#: usr/share/big-driver-manager/ui/category_page.py:160
+msgid "Searching for printers on the network…"
+msgstr "네트워크에서 프린터를 검색 중입니다…"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 162
+#: usr/share/big-driver-manager/ui/category_page.py:179
+msgid "No more automatically detected compatible drivers in this category."
+msgstr "이 범주에서는 더 이상 자동으로 호환되는 드라이버를 감지하지 않습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 187
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 211
+#: usr/share/big-driver-manager/ui/category_page.py:187
+#: usr/share/big-driver-manager/ui/category_page.py:211
+msgid "Show drivers without detected compatibility"
+msgstr "호환성이 감지되지 않은 드라이버 표시"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 187
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 260
+#: usr/share/big-driver-manager/ui/category_page.py:199
+#: usr/share/big-driver-manager/ui/category_page.py:278
+msgid "No drivers needed for this category"
+msgstr "이 카테고리에는 드라이버가 필요하지 않습니다"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 191
+#: usr/share/big-driver-manager/ui/category_page.py:202
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "이 카테고리에서 하드웨어와 호환되는 드라이버가 자동으로 감지되지 않았습니다."
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 278
+#: NEEDS WORK
 #, python-brace-format
-msgid "{n} drivers"
-msgstr "{n} 드라이버"
+msgid "Adapter {} — working (driver {})"
+msgstr "어댑터 {} — 작동 중 (드라이버 {})"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 279
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 526
+#: NEEDS WORK
+msgid "unknown"
+msgstr "알 수 없음"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 287
+#: NEEDS WORK
+msgid "Cable connected"
+msgstr "케이블 연결됨"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 291
+#: NEEDS WORK
+msgid "Interface disabled"
+msgstr "인터페이스 비활성화"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 294
+#: NEEDS WORK
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
+msgstr "케이블이나 링크가 감지되지 않았습니다. 케이블과 라우터/스위치 포트를 확인하세요 — 추가 드라이버는 필요하지 않습니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 238
+#: usr/share/big-driver-manager/ui/category_page.py:257
+msgid "Detection Error"
+msgstr "감지 오류"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 264
+#: usr/share/big-driver-manager/ui/category_page.py:281
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "이 카테고리에서 하드웨어에 필요한 드라이버가 감지되지 않았습니다."
+# #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
+# 
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 339
+# File: big-driver-manager/usr/share/big-driver-
+# manager/ui/drivers_hub_page.py, line: 283
+#: usr/share/big-driver-manager/ui/category_page.py:356
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:283
+msgid "1 driver"
+msgstr "1개의 드라이버"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
+#: usr/share/big-driver-manager/ui/category_page.py:356
+#, python-brace-format
+msgid "{} drivers"
+msgstr "드라이버 {}개"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 341
+#: usr/share/big-driver-manager/ui/category_page.py:358
+#, python-brace-format
+msgid "{} detected"
+msgstr "{}가 감지되었습니다"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1개 설치됨"
+#: usr/share/big-driver-manager/ui/category_page.py:360
+#, python-brace-format
+msgid "{} installed"
+msgstr "{}가 설치되었습니다"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#: usr/share/big-driver-manager/ui/category_page.py:426
+msgid "Not installed"
+msgstr "설치되지 않음"
+# 
+# File: usr/share/big-driver-manager/ui/category_page.py, line: 525
+#: NEEDS WORK
 #, python-brace-format
-msgid "{n} installed"
-msgstr "{n} 설치됨"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
+msgid "Not needed: device already works with built-in driver {}"
+msgstr "필요 없음: 장치가 이미 내장 드라이버 {}로 작동합니다."
+# File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
+# line: 503
+#: usr/share/big-driver-manager/ui/category_page.py:530
 #, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "설치 가능한 {n} 드라이버"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr "더 나은 하드웨어 지원을 위해 권장 드라이버를 설치하세요."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "드라이버가 성공적으로 설치되었습니다."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "설치 실패. 자세한 내용은 로그를 확인하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
-#: usr/share/big-driver-manager/ui/window.py:48
-msgid "Mesa, NVIDIA, and GPU drivers."
-msgstr "Mesa, NVIDIA 및 GPU 드라이버."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
-#: usr/share/big-driver-manager/ui/window.py:54
-msgid "Wireless network adapter drivers."
-msgstr "무선 네트워크 어댑터 드라이버"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
-#: usr/share/big-driver-manager/ui/window.py:60
-msgid "Wired network adapter drivers."
-msgstr "유선 네트워크 어댑터 드라이버"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
-#: usr/share/big-driver-manager/ui/window.py:66
-msgid "Bluetooth adapter drivers."
-msgstr "블루투스 어댑터 드라이버."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
-#: usr/share/big-driver-manager/ui/window.py:72
-msgid "Digital TV tuner firmware."
-msgstr "디지털 TV 튜너 펌웨어"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
-#: usr/share/big-driver-manager/ui/window.py:78
-msgid "Audio device firmware."
-msgstr "오디오 장치 펌웨어"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
-#: usr/share/big-driver-manager/ui/window.py:84
-msgid "Webcam device firmware."
-msgstr "웹캠 장치 펌웨어"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
-#: usr/share/big-driver-manager/ui/window.py:90
-msgid "Touchscreen device firmware."
-msgstr "터치스크린 장치 펌웨어"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
-#: usr/share/big-driver-manager/ui/window.py:96
-msgid "Printer drivers and support packages."
-msgstr "프린터 드라이버 및 지원 패키지."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
-#: usr/share/big-driver-manager/ui/window.py:102
-msgid "3D printer firmware."
-msgstr "3D 프린터 펌웨어."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 105
-#: usr/share/big-driver-manager/ui/window.py:108
-msgid "Scanner drivers and SANE backends."
-msgstr "스캐너 드라이버 및 SANE 백엔드."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 111
-#: usr/share/big-driver-manager/ui/window.py:114
-msgid "Additional firmware packages."
-msgstr "추가 펌웨어 패키지."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 189
-#: usr/share/big-driver-manager/ui/window.py:198
-msgid "Home"
-msgstr "홈"
-# File: usr/share/big-driver-manager/ui/window.py, line: 89
-#: usr/share/big-driver-manager/ui/window.py:200
-msgid "Kernel"
-msgstr "커널"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 191
-#: usr/share/big-driver-manager/ui/window.py:201
-msgid "Video"
-msgstr "비디오"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "카테고리"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 231
-#: usr/share/big-driver-manager/ui/window.py:242
-msgid "A system reboot is recommended to apply changes."
-msgstr "변경 사항을 적용하려면 시스템을 재부팅하는 것이 좋습니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 269
-#: usr/share/big-driver-manager/ui/window.py:285
-msgid "Content"
-msgstr "콘텐츠"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 328
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 623
-#: usr/share/big-driver-manager/ui/window.py:338
-#: usr/share/big-driver-manager/ui/window.py:656
-msgid "Showing drivers detected as compatible with your computer"
-msgstr "귀하의 컴퓨터와 호환되는 것으로 감지된 드라이버를 표시 중입니다"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 327
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 329
-#: usr/share/big-driver-manager/ui/window.py:348
-#: usr/share/big-driver-manager/ui/window.py:350
-msgid "Show all drivers"
-msgstr "모든 드라이버 표시"
-# File: usr/share/big-driver-manager/ui/window.py, line: 129
-#: usr/share/big-driver-manager/ui/window.py:362
-msgid "Menu"
-msgstr "메뉴"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 318
-#: usr/share/big-driver-manager/ui/window.py:364
-msgid "Application menu"
-msgstr "애플리케이션 메뉴"
-# File: usr/share/big-driver-manager/ui/window.py, line: 134
-#: usr/share/big-driver-manager/ui/window.py:367
-msgid "About"
-msgstr "소개"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/window.py:515
-msgid "Hardware detection failed. Check system logs for details."
-msgstr "하드웨어 감지 실패. 자세한 내용은 시스템 로그를 확인하세요."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 534
-#: usr/share/big-driver-manager/ui/window.py:627
-#, python-brace-format
-msgid "Obsolete kernel: {} — no longer receives security updates"
-msgstr "구식 커널: {} — 더 이상 보안 업데이트를 받지 않습니다"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 538
-#: usr/share/big-driver-manager/ui/window.py:631
-msgid "Manage"
-msgstr "관리하다"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 619
-#: usr/share/big-driver-manager/ui/window.py:652
-msgid "Showing all drivers, including incompatible ones"
-msgstr "호환되지 않는 드라이버를 포함한 모든 드라이버 표시"
+msgid "{total} drivers · {detected} detected · {installed} installed"
+msgstr "{total} 드라이버 · {detected} 감지됨 · {installed} 설치됨"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
@@ -2345,233 +2320,313 @@ msgid ""
 "For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
 "Mesa versions don't work with your hardware."
 msgstr "OpenGL 2.1 이하만 지원하는 매우 오래된 그래픽 카드용입니다. 최신 Mesa 버전이 하드웨어에서 작동하지 않을 경우에만 설치하세요."
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
-#: usr/share/big-driver-manager/ui/base_page.py:39
-#: usr/share/big-driver-manager/ui/base_page.py:44
-msgid "Loading..."
-msgstr "로딩 중..."
-# File: usr/share/big-driver-manager/ui/base_page.py, line: 56
-#: usr/share/big-driver-manager/ui/base_page.py:40
-msgid "Loading"
-msgstr "로드 중"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "아직 로드 중입니다... 네트워크 연결을 확인하세요."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
-#: usr/share/big-driver-manager/ui/kernel_page.py:107
-msgid "Installed Kernels"
-msgstr "설치된 커널"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/kernel_page.py:119
-msgid "Remove all obsolete kernels"
-msgstr "모든 구식 커널 제거"
-# File: usr/share/big-driver-manager/ui/window.py, line: 89
-#: usr/share/big-driver-manager/ui/kernel_page.py:262
-msgid "Kernel in use"
-msgstr "사용 중인 커널"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
-#: usr/share/big-driver-manager/ui/kernel_page.py:268
-msgid "In Use"
-msgstr "사용 중"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 331
-#: usr/share/big-driver-manager/ui/kernel_page.py:332
-msgid "Obsolete Kernels — Removal Recommended"
-msgstr "구식 커널 — 제거 권장"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 360
-#: usr/share/big-driver-manager/ui/kernel_page.py:361
-msgid "No longer receives security updates"
-msgstr "더 이상 보안 업데이트를 받지 않음"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/kernel_page.py:373
-#: usr/share/big-driver-manager/ui/kernel_page.py:436
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 116
+#: usr/share/big-driver-manager/core/mesa_manager.py:116
 #, python-brace-format
-msgid "Remove kernel {}"
-msgstr "커널 {} 제거"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 416
-#: usr/share/big-driver-manager/ui/kernel_page.py:422
-msgid "Last backup"
-msgstr "마지막 백업"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 420
-#: usr/share/big-driver-manager/ui/kernel_page.py:426
-msgid "At least one backup kernel must remain installed"
-msgstr "대부분의 사용자에게 권장됩니다. 이러한 커널은 수년간 보안 업데이트를 받고 철저한 테스트를 거쳤습니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 439
-#: usr/share/big-driver-manager/ui/kernel_page.py:445
-msgid ""
-"Recommended for most users. These kernels receive security updates for years and are thoroughly "
-"tested."
-msgstr "대부분 사용자에게 권장됩니다. 이 커널들은 수년간 보안 업데이트를 받고 철저히 테스트됩니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 443
-#: usr/share/big-driver-manager/ui/kernel_page.py:449
-msgid ""
-"Always up to date with the latest features and hardware support. Good if you need the newest "
-"drivers."
-msgstr "최신 기능과 하드웨어 지원을 항상 최신 상태로 유지합니다. 최신 드라이버가 필요한 경우 좋습니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 447
-#: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
-msgstr "게임 및 데스크탑 반응성에 맞게 조정되었습니다. 추가 성능을 원하는 일상 사용에 적합한 옵션입니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 451
-#: usr/share/big-driver-manager/ui/kernel_page.py:457
-msgid ""
-"Built for audio/video production needing precise timing. May be incompatible with some drivers "
-"(e.g. NVIDIA). Only for advanced users."
-msgstr "정확한 타이밍이 필요한 오디오/비디오 제작용으로 제작되었습니다. 일부 드라이버(예: NVIDIA)와 호환되지 않을 수 있습니다. 고급 사용자 전용입니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 492
-#: usr/share/big-driver-manager/ui/kernel_page.py:498
-msgid "LTS — Long Term Support (Recommended)"
-msgstr "LTS — 장기 지원 (권장)"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 493
-#: usr/share/big-driver-manager/ui/kernel_page.py:499
-msgid "Standard"
-msgstr "기준"
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
-#: usr/share/big-driver-manager/ui/kernel_page.py:500
-msgid "Xanmod (Performance)"
-msgstr "Xanmod (성능)"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 495
-#: usr/share/big-driver-manager/ui/kernel_page.py:501
-msgid "Real-Time (Advanced)"
-msgstr "실시간 (고급)"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 566
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 591
-#: usr/share/big-driver-manager/ui/kernel_page.py:572
-#: usr/share/big-driver-manager/ui/kernel_page.py:597
+msgid "Driver not found: {}"
+msgstr "드라이버를 찾을 수 없음: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:152
 #, python-brace-format
-msgid "Show {} available"
-msgstr "{} 표시 사용 가능"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
-#: usr/share/big-driver-manager/ui/kernel_page.py:600
-msgid "Hide available kernels"
-msgstr "사용 가능한 커널 숨기기"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
-#: usr/share/big-driver-manager/ui/kernel_page.py:650
-#: usr/share/big-driver-manager/ui/kernel_page.py:653
+msgid "Applying {} driver..."
+msgstr "{} 드라이버 적용 중..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
+#: usr/share/big-driver-manager/core/mesa_manager.py:156
 #, python-brace-format
-msgid "Install kernel {}"
-msgstr "커널 설치 {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 661
-#: usr/share/big-driver-manager/ui/kernel_page.py:672
-msgid "The following packages will be installed:"
-msgstr "다음 패키지가 설치됩니다:"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
-#: usr/share/big-driver-manager/ui/kernel_page.py:724
-msgid ""
-"Kernel installed successfully.\n"
-"You may need to reboot to use it."
-msgstr ""
-"커널이 성공적으로 설치되었습니다.\n"
-"사용하려면 재부팅이 필요할 수 있습니다."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/kernel_page.py:731
-msgid ""
-"Kernel installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"커널 설치에 실패했습니다.\n"
-"자세한 내용은 터미널 출력을 확인하세요."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
-#: usr/share/big-driver-manager/ui/kernel_page.py:745
-msgid "Cannot Remove Running Kernel"
-msgstr "실행 중인 커널을 제거할 수 없습니다"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
-#: usr/share/big-driver-manager/ui/kernel_page.py:747
-msgid "This kernel is currently in use. Boot into a different kernel first."
-msgstr "이 커널은 현재 사용 중입니다. 먼저 다른 커널로 부팅하세요."
+msgid "Starting {} driver installation..."
+msgstr "{} 드라이버 설치 시작 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "충돌하는 패키지를 확인하는 중..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
+#, python-brace-format
+msgid "Removing conflicts: {}"
+msgstr "충돌 제거 중: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "{} 패키지를 확인하는 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ 패키지 {}를 사용할 수 없어 건너뜁니다..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ 설치할 패키지가 없습니다."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "설치 중: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "충돌하는 패키지 제거 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "충돌하는 패키지를 제거하지 못했습니다."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "{} 드라이버 설치 중..."
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
+#: usr/share/big-driver-manager/core/mesa_manager.py:245
+msgid "Failed to apply driver."
+msgstr "드라이버를 적용하지 못했습니다."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "드라이버가 성공적으로 적용되었습니다!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} 드라이버가 성공적으로 적용되었습니다!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/core/base_manager.py:205
+#: usr/share/big-driver-manager/core/mesa_manager.py:262
+#, python-brace-format
+msgid "Error: {}"
+msgstr "오류: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 206
+#: usr/share/big-driver-manager/core/mesa_manager.py:263
+#, python-brace-format
+msgid "❌ Error: {}"
+msgstr "❌ 오류: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#: usr/share/big-driver-manager/core/mesa_manager.py:296
+#, python-brace-format
+msgid "❌ Operation failed (exit code: {})"
+msgstr "❌ 작업 실패 (종료 코드: {})"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 106
+#: usr/share/big-driver-manager/core/base_manager.py:181
+#: usr/share/big-driver-manager/core/mhwd_manager.py:310
+#, python-brace-format
+msgid "Command: {}"
+msgstr "명령: {}"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 105
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 108
+#: usr/share/big-driver-manager/core/base_manager.py:180
+#: usr/share/big-driver-manager/core/base_manager.py:183
+#: usr/share/big-driver-manager/core/mhwd_manager.py:312
+#, python-brace-format
+msgid "Starting {}..."
+msgstr "{} 시작 중..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
+#: usr/share/big-driver-manager/core/mhwd_manager.py:335
+msgid "Completed"
+msgstr "완료되었습니다"
 # 
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
-#: usr/share/big-driver-manager/ui/kernel_page.py:770
+# File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
+#: NEEDS WORK
+#, python-brace-format
+msgid "Installing build prerequisites: {}"
+msgstr "빌드 필수 구성 요소 설치 중: {}"
+# 
+# File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
+#: NEEDS WORK
+msgid "Installing build prerequisites"
+msgstr "빌드 필수 구성 요소 설치 중"
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 99
+#: usr/share/big-driver-manager/core/driver_installer.py:99
+#, python-brace-format
+msgid "pamac-installer not found. Cannot install AUR package {}."
+msgstr "pamac-installer를 찾을 수 없습니다. AUR 패키지 {}를 설치할 수 없습니다."
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "열린 pamac 창에서 설치를 계속 진행하세요."
+# 
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 128
+#: NEEDS WORK
+msgid "Installing packages"
+msgstr "패키지 설치 중"
+# 
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 145
+#: NEEDS WORK
+msgid "Removing packages"
+msgstr "패키지 제거 중"
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 137
+#: usr/share/big-driver-manager/core/base_manager.py:140
+#, python-brace-format
+msgid "Database locked. Retrying in {} seconds..."
+msgstr "데이터베이스가 잠겨 있습니다. {}초 후에 재시도 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 142
+#: usr/share/big-driver-manager/core/base_manager.py:145
+#, python-brace-format
+msgid "Waiting {} s before retry..."
+msgstr "재시도 전 {} 초 대기 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 147
+#: usr/share/big-driver-manager/core/base_manager.py:150
+#, python-brace-format
+msgid "Retry attempt {} of {}..."
+msgstr "재시도 {}회차 / 총 {}회..."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 160
+#: usr/share/big-driver-manager/core/base_manager.py:256
+#, python-brace-format
+msgid "Still working... ({:.0%} complete)"
+msgstr "작업 진행 중... ({:.0%} 완료)"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 177
+#: usr/share/big-driver-manager/core/base_manager.py:282
+msgid "Operation cancelled"
+msgstr "작업이 취소되었습니다"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 178
+#: usr/share/big-driver-manager/core/base_manager.py:283
+msgid "Operation was cancelled."
+msgstr "작업이 취소되었습니다."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 183
+#: usr/share/big-driver-manager/core/base_manager.py:288
+#, python-brace-format
+msgid "{}  complete!"
+msgstr "{} 완료!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/base_manager.py:292
+#, python-brace-format
+msgid "{}  completed successfully."
+msgstr "{}가 성공적으로 완료되었습니다."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 193
+#: usr/share/big-driver-manager/core/base_manager.py:298
+#, python-brace-format
+msgid "{}  failed."
+msgstr "{} 실패."
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
+#: usr/share/big-driver-manager/core/base_manager.py:302
+#, python-brace-format
+msgid "{}  failed (exit code: {})"
+msgstr "{} 실패(종료 코드: {})"
+# 
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 366
+#: NEEDS WORK
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
-"\n"
-"The following packages will be removed:"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
+"Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"⚠ 이것은 마지막 백업 커널입니다. 실행 중인 커널에 문제가 발생하면 대체 커널이 없습니다.\n"
-"\n"
-"다음 패키지가 제거됩니다:"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 749
-#: usr/share/big-driver-manager/ui/kernel_page.py:775
-msgid "The following packages will be removed:"
-msgstr "다음 패키지가 제거됩니다:"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
-#: usr/share/big-driver-manager/ui/kernel_page.py:804
-msgid "Preparing removal…"
-msgstr "제거 준비 중…"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
-#: usr/share/big-driver-manager/ui/kernel_page.py:825
-msgid "Kernel removed successfully."
-msgstr "커널이 성공적으로 제거되었습니다."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
-#: usr/share/big-driver-manager/ui/kernel_page.py:828
+"사용 가능한 리포지토리에 패키지가 없습니다. AUR에서 가져오거나 비활성화된 리포지토리(예: multilib)에 속하거나 패키지 데이터베이스가 오래되었을 수 있습니다.  \n"
+"제안: 'sudo pacman -Syu'로 전체 시스템을 업데이트하고 다시 시도하십시오."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 319
+#: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
-"Kernel removal failed.\n"
-"Check the terminal output for details."
+"A conflict prevented the operation from completing.\n"
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
-"커널 제거 실패.\n"
-"자세한 내용은 터미널 출력을 확인하세요."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
-#: usr/share/big-driver-manager/ui/kernel_page.py:842
-msgid "Remove Obsolete Kernels"
-msgstr "오래된 커널 제거"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 820
-#: usr/share/big-driver-manager/ui/kernel_page.py:846
-#, python-brace-format
+"충돌로 인해 작업을 완료할 수 없습니다.\n"
+"제안: 캐시를 정리하고 'sudo pacman -Scc' 실행 후 'sudo pacman -Syyu'로 업데이트하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 327
+#: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
-"Remove all obsolete kernels?\n"
-"\n"
-"<b>{}</b>\n"
-"\n"
-"These kernels no longer receive security updates."
+"Some files from this package already exist on the system.\n"
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
-"모든 오래된 커널을 제거하시겠습니까?\n"
-"\n"
-"<b>{}</b>\n"
-"\n"
-"이 커널들은 더 이상 보안 업데이트를 받지 않습니다."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
-#: usr/share/big-driver-manager/ui/kernel_page.py:851
-msgid "Remove All"
-msgstr "모두 제거"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
-#: usr/share/big-driver-manager/ui/kernel_page.py:874
-#, python-brace-format
-msgid "Removing kernel {} ({}/{})..."
-msgstr "커널 {}({}/{}) 제거 중..."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 866
-#: usr/share/big-driver-manager/ui/kernel_page.py:892
-#, python-brace-format
-msgid "Failed to remove {}. Stopping."
-msgstr "{}을(를) 제거하지 못했습니다. 멎는."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
-#: usr/share/big-driver-manager/ui/kernel_page.py:903
-msgid "All obsolete kernels removed successfully."
-msgstr "모든 오래된 커널이 성공적으로 제거되었습니다."
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 916
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 919
-#: usr/share/big-driver-manager/ui/kernel_page.py:942
-#: usr/share/big-driver-manager/ui/kernel_page.py:945
-#, python-brace-format
-msgid "What's new in Linux {}"
-msgstr "Linux {}의 새로운 기능"
+"이 패키지의 일부 파일이 이미 시스템에 존재합니다.\n"
+"제안: 'pacman -Qo <file_path>'로 해당 파일을 소유한 패키지를 확인하고 충돌을 해결하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 335
+#: usr/share/big-driver-manager/core/base_manager.py:338
+msgid ""
+"Required dependencies could not be resolved.\n"
+"Suggestion: Update the full system first with 'sudo pacman -Syu'."
+msgstr ""
+"필수 의존성을 해결할 수 없습니다.\n"
+"제안: 먼저 'sudo pacman -Syu'로 시스템 전체를 업데이트하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 342
+#: usr/share/big-driver-manager/core/base_manager.py:345
+msgid ""
+"Package signature could not be verified.\n"
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
+msgstr ""
+"패키지 서명을 확인할 수 없습니다.\n"
+"제안: 'sudo pacman -S archlinux-keyring manjaro-keyring'로 키링을 업데이트하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 350
+#: usr/share/big-driver-manager/core/base_manager.py:353
+msgid ""
+"The package database is locked by another process.\n"
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
+msgstr ""
+"패키지 데이터베이스가 다른 프로세스에 의해 잠겨 있습니다.\n"
+"다른 패키지 관리자가 실행 중이 아니라면 'sudo rm /var/lib/pacman/db.lck'로 잠금을 해제하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 358
+#: usr/share/big-driver-manager/core/base_manager.py:361
+msgid ""
+"Not enough disk space to complete the operation.\n"
+"Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
+msgstr ""
+"작업을 완료하기에 디스크 공간이 부족합니다.\n"
+"제안: 'sudo pacman -Scc' 명령어로 패키지 캐시를 정리하여 공간을 확보하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 366
+#: usr/share/big-driver-manager/core/base_manager.py:369
+msgid ""
+"Could not download required files.\n"
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
+msgstr ""
+"필요한 파일을 다운로드할 수 없습니다.\n"
+"제안: 인터넷 연결을 확인하세요. 문제가 계속되면 미러 목록을 업데이트해 보세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 374
+#: usr/share/big-driver-manager/core/base_manager.py:377
+msgid ""
+"A downloaded package is corrupted.\n"
+"Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
+msgstr ""
+"다운로드한 패키지가 손상되었습니다.\n"
+"제안: 'sudo pacman -Scc' 명령어로 캐시를 지우고 다시 시도하세요."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 391
+#: usr/share/big-driver-manager/core/base_manager.py:394
+msgid "Generating GRUB configuration..."
+msgstr "GRUB 구성 생성 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 392
+#: usr/share/big-driver-manager/core/base_manager.py:395
+msgid "Running post-transaction hooks..."
+msgstr "트랜잭션 후 훅 실행 중..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/base_manager.py:396
+msgid "Installing packages..."
+msgstr "패키지 설치 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 394
+#: usr/share/big-driver-manager/core/base_manager.py:397
+msgid "Removing packages..."
+msgstr "패키지 제거 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 395
+#: usr/share/big-driver-manager/core/base_manager.py:398
+msgid "Checking for file conflicts..."
+msgstr "파일 충돌을 확인하는 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 396
+#: usr/share/big-driver-manager/core/base_manager.py:399
+msgid "Checking dependencies..."
+msgstr "종속성 확인 중..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
+# line: 400
+#: usr/share/big-driver-manager/core/base_manager.py:403
+msgid "Synchronizing package databases..."
+msgstr "패키지 데이터베이스 동기화 중..."
