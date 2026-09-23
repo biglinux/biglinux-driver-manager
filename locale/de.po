@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -186,7 +185,6 @@ msgid "Additional firmware packages for specialized hardware."
 msgstr "Zusätzliche Firmware-Pakete für spezialisierte Hardware."
 # 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
-#: NEEDS WORK
 msgid "Package"
 msgstr "Paket"
 # 
@@ -194,17 +192,14 @@ msgstr "Paket"
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
 msgid "Status"
 msgstr "Status"
 # 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
-#: NEEDS WORK
 msgid "Detected and installed"
 msgstr "Erkannt und installiert"
 # 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
-#: NEEDS WORK
 msgid "Detected — not yet installed"
 msgstr "Erkannt — noch nicht installiert"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
@@ -223,12 +218,10 @@ msgid "Installed"
 msgstr "Installiert"
 # 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
-#: NEEDS WORK
 msgid "Available in repository"
 msgstr "Im Repository verfügbar"
 # 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
-#: NEEDS WORK
 msgid "Device"
 msgstr "Gerät"
 # File: big-driver-manager/usr/share/big-driver-
@@ -886,7 +879,6 @@ msgid "Manage"
 msgstr "Verwalten"
 # 
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
-#: NEEDS WORK
 #, python-brace-format
 msgid ""
 "The package database was last updated {} days ago. Update your system before installing drivers to "
@@ -957,7 +949,6 @@ msgid "Failed"
 msgstr "Fehlgeschlagen"
 # 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
-#: NEEDS WORK
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr "Dieser Schritt kann nicht mehr sicher abgebrochen werden. Warten auf den Abschluss…"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
@@ -1281,7 +1272,6 @@ msgid "What's new in Linux {}"
 msgstr "Neuigkeiten in Linux {}"
 # 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
-#: NEEDS WORK
 msgid ""
 "This package is not in the official repositories. It will be built from the AUR on your computer, "
 "which can take several minutes and is not reviewed by the distribution."
@@ -1290,7 +1280,6 @@ msgstr ""
 "erstellt, was mehrere Minuten dauern kann und nicht von der Distribution überprüft wird."
 # 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
-#: NEEDS WORK
 #, python-brace-format
 msgid ""
 "Your device already works with the built-in driver {}, which is the recommended option. Only "
@@ -1362,7 +1351,6 @@ msgid "Install recommended"
 msgstr "Empfohlen installieren"
 # 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
-#: NEEDS WORK
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
 msgstr "{} hat keinen Treiber geladen. Ein kompatibler Treiber ist verfügbar: {}"
@@ -1459,7 +1447,6 @@ msgid "All recommended packages installed successfully!"
 msgstr "Alle empfohlenen Pakete wurden erfolgreich installiert!"
 # 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
-#: NEEDS WORK
 msgid "Package installation failed."
 msgstr "Paketinstallation fehlgeschlagen."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
@@ -1565,7 +1552,6 @@ msgid "Kernels"
 msgstr "Kernel"
 # 
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
-#: NEEDS WORK
 msgid "Installed Drivers"
 msgstr "Installierte Treiber"
 # 
@@ -1978,12 +1964,10 @@ msgstr ""
 "{}"
 # 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
-#: NEEDS WORK
 msgid "Unavailable"
 msgstr "Nicht verfügbar"
 # 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
-#: NEEDS WORK
 msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
 msgstr ""
 "Nicht in den aktivierten Repositories verfügbar. 32-Bit (lib32) Pakete erfordern das "
@@ -2009,12 +1993,10 @@ msgid "{} was {} successfully!"
 msgstr "{} wurde erfolgreich {}!"
 # 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
-#: NEEDS WORK
 msgid "Package operation failed."
 msgstr "Paketoperation fehlgeschlagen."
 # 
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
-#: NEEDS WORK
 msgid "Open the page of a driver package and offer to install it"
 msgstr "Öffnen Sie die Seite eines Treiberpakets und bieten Sie an, es zu installieren."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -2059,29 +2041,24 @@ msgid "No drivers in this category were automatically detected as compatible wit
 msgstr "In dieser Kategorie wurden keine Treiber automatisch als kompatibel mit Ihrer Hardware erkannt."
 # 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
-#: NEEDS WORK
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Adapter {} — funktioniert (Treiber {})"
 # 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
-#: NEEDS WORK
 msgid "unknown"
 msgstr "unbekannt"
 # 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
-#: NEEDS WORK
 msgid "Cable connected"
 msgstr "Kabel verbunden"
 # 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
-#: NEEDS WORK
 msgid "Interface disabled"
 msgstr "Schnittstelle deaktiviert"
 # 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
-#: NEEDS WORK
 msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 msgstr ""
 "Kein Kabel oder Link erkannt. Überprüfen Sie das Kabel und den Router/Switch-Port – es wird kein "
@@ -2130,7 +2107,6 @@ msgid "Not installed"
 msgstr "Nicht installiert"
 # 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
-#: NEEDS WORK
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
 msgstr "Nicht erforderlich: Gerät funktioniert bereits mit dem integrierten Treiber {}"
@@ -2503,13 +2479,11 @@ msgid "Completed"
 msgstr "Abgeschlossen"
 # 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
-#: NEEDS WORK
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Installiere Build-Voraussetzungen: {}"
 # 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
-#: NEEDS WORK
 msgid "Installing build prerequisites"
 msgstr "Installieren der Build-Voraussetzungen"
 # File: big-driver-manager/usr/share/big-driver-
@@ -2525,12 +2499,10 @@ msgid "Continue the installation in the pamac window that was opened."
 msgstr "Fahren Sie mit der Installation im geöffneten pamac-Fenster fort."
 # 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
-#: NEEDS WORK
 msgid "Installing packages"
 msgstr "Pakete installieren"
 # 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
-#: NEEDS WORK
 msgid "Removing packages"
 msgstr "Pakete entfernen"
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -2586,7 +2558,6 @@ msgid "{}  failed (exit code: {})"
 msgstr "{} fehlgeschlagen (Exit-Code: {})"
 # 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
-#: NEEDS WORK
 msgid ""
 "Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
 "repository (such as multilib), or the package database may be outdated.\n"
