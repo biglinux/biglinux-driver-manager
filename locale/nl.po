@@ -2,7 +2,8 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,6 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Nog aan het laden… Controleer uw netwerkverbinding."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "Installeren"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "Operatie geannuleerd door gebruiker."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "Geannuleerd"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:606
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
@@ -42,6 +76,22 @@ msgstr "Scannerdriver beschikbaar"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:95
 msgid "Driver available"
 msgstr "Driver beschikbaar"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
+msgid "Open Driver Manager to review and install this firmware."
+msgstr "Open Driver Manager om deze firmware te bekijken en te installeren."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
+msgid "Open Driver Manager to review and install this driver."
+msgstr "Open Driver Manager om deze stuurprogramma te bekijken en te installeren."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
+msgid "Driver Manager"
+msgstr "Stuurprogramma Manager"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
+msgid "Don't alert for this firmware again"
+msgstr "Waarschuw niet opnieuw voor deze firmware."
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
@@ -51,165 +101,118 @@ msgstr "Driver beschikbaar"
 msgid "Don't alert for this device again"
 msgstr "Niet opnieuw waarschuwen voor dit apparaat"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "Annuleren"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "Installeren"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Sluiten"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
+msgid "Open Driver Manager"
+msgstr "Open Driver Manager"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:28
 msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the "
-"best option. Install an alternative only if you have connection problems."
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
 msgstr ""
-"Als uw Wi-Fi al werkt, is de ingebouwde kernel-driver meestal de beste "
-"optie. Installeer een alternatief alleen als u verbindingsproblemen heeft."
+"Als uw Wi-Fi al werkt, is de ingebouwde kernel-driver meestal de beste optie. Installeer een "
+"alternatief alleen als u verbindingsproblemen heeft."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:33
 msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is "
-"only needed for very new or rare hardware."
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
 msgstr ""
-"Bedrade netwerkadapters werken bijna altijd direct. Een extra driver is "
-"alleen nodig voor zeer nieuwe of zeldzame hardware."
+"Bedrade netwerkadapters werken bijna altijd direct. Een extra driver is alleen nodig voor zeer "
+"nieuwe of zeldzame hardware."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:37
 msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, "
-"installing the firmware for your adapter may solve the problem."
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
 msgstr ""
-"Sommige Bluetooth-adapters hebben extra firmware nodig om te werken. Als "
-"koppelen mislukt, kan het installeren van de firmware voor uw adapter het "
-"probleem oplossen."
+"Sommige Bluetooth-adapters hebben extra firmware nodig om te werken. Als koppelen mislukt, kan het "
+"installeren van de firmware voor uw adapter het probleem oplossen."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:42
 msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device "
-"won't be recognized by the system."
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
 msgstr ""
-"Digitale tv-tuners hebben meestal specifieke firmware nodig. Zonder deze "
-"wordt het apparaat niet door het systeem herkend."
+"Digitale tv-tuners hebben meestal specifieke firmware nodig. Zonder deze wordt het apparaat niet "
+"door het systeem herkend."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:46
 msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is "
-"only needed for specific USB audio interfaces."
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
 msgstr ""
-"De meeste audioapparaten werken met ALSA ingebouwd in de kernel. Extra "
-"firmware is alleen nodig voor specifieke USB-audio-interfaces."
+"De meeste audioapparaten werken met ALSA ingebouwd in de kernel. Extra firmware is alleen nodig "
+"voor specifieke USB-audio-interfaces."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:50
 msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or "
-"enable additional features."
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
 msgstr ""
-"De meeste webcams werken automatisch. Extra firmware kan de beeldkwaliteit "
-"verbeteren of extra functies inschakelen."
+"De meeste webcams werken automatisch. Extra firmware kan de beeldkwaliteit verbeteren of extra "
+"functies inschakelen."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid ""
-"If your touchscreen doesn't respond, installing the matching firmware "
-"usually fixes it."
-msgstr ""
-"Als uw touchscreen niet reageert, lost het installeren van de bijpassende "
-"firmware dit meestal op."
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "Als uw touchscreen niet reageert, lost het installeren van de bijpassende firmware dit meestal op."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:58
 msgid ""
-"Printer drivers let the system communicate with your model. If the printer "
-"was detected on your network or USB, installing the matching driver is "
-"recommended."
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
 msgstr ""
-"Printerdrivers laten het systeem communiceren met uw model. Als de printer "
-"op uw netwerk of USB is gedetecteerd, wordt het aanbevolen de bijpassende "
-"driver te installeren."
+"Printerdrivers laten het systeem communiceren met uw model. Als de printer op uw netwerk of USB is "
+"gedetecteerd, wordt het aanbevolen de bijpassende driver te installeren."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid ""
-"3D printer firmware enables communication between the slicer and the printer "
-"hardware."
-msgstr ""
-"3D-printerfirmware maakt communicatie mogelijk tussen de slicer en de "
-"printerhardware."
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "3D-printerfirmware maakt communicatie mogelijk tussen de slicer en de printerhardware."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid ""
-"Scanner drivers (SANE backends) allow scanning applications to communicate "
-"with your scanner model."
-msgstr ""
-"Scannerdrivers (SANE-backends) stellen scanapplicaties in staat te "
-"communiceren met uw scannermodel."
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
+msgstr "Scannerdrivers (SANE-backends) stellen scanapplicaties in staat te communiceren met uw scannermodel."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Aanvullende firmwarepakketten voor gespecialiseerde hardware."
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Pakket"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Status"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Gedetecteerd en geïnstalleerd"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Gedetecteerd — nog niet geïnstalleerd"
@@ -227,11 +230,11 @@ msgstr "Gedetecteerd — nog niet geïnstalleerd"
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
 msgstr "Geïnstalleerd"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Beschikbaar in de repository"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
 msgstr "Apparaat"
@@ -671,7 +674,7 @@ msgstr "printers op uw netwerk"
 msgid "(proprietary)"
 msgstr "(proprietair)"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 36
@@ -718,7 +721,7 @@ msgstr "Bluetooth"
 msgid "Bluetooth adapter drivers."
 msgstr "Stuurprogramma voor Bluetooth-adapter."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 40
@@ -815,6 +818,12 @@ msgstr "Ander"
 msgid "Additional firmware packages."
 msgstr "Aanvullende firmwarepakketten."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Categorieën"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 #: usr/share/big-driver-manager/ui/window.py:198
 msgid "Home"
@@ -829,18 +838,10 @@ msgstr "Kernel"
 msgid "Video"
 msgstr "Video"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Categorieën"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
 msgid "A system reboot is recommended to apply changes."
-msgstr ""
-"Het wordt aanbevolen om het systeem opnieuw op te starten om de wijzigingen "
-"door te voeren."
+msgstr "Het wordt aanbevolen om het systeem opnieuw op te starten om de wijzigingen door te voeren."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 269
 #: usr/share/big-driver-manager/ui/window.py:285
@@ -879,6 +880,10 @@ msgstr "Over"
 #: usr/share/big-driver-manager/ui/window.py:515
 msgid "Hardware detection failed. Check system logs for details."
 msgstr "Hardwaredetectie mislukt. Controleer de systeemlogboeken voor details."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
+msgid "Hardware detection for this category failed. Try refreshing later."
+msgstr "Hardwaredetectie voor deze categorie is mislukt. Probeer later opnieuw."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #: usr/share/big-driver-manager/ui/window.py:627
@@ -890,21 +895,25 @@ msgstr "Verouderde kernel: {} — ontvangt geen beveiligingsupdates meer"
 #: usr/share/big-driver-manager/ui/window.py:631
 msgid "Manage"
 msgstr "Beheren"
-#
+# 
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
 msgid ""
-"The package database was last updated {} days ago. Update your system before "
-"installing drivers to avoid download failures and missing packages."
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
 msgstr ""
-"De pakketdatabase is voor het laatst bijgewerkt {} dagen geleden. Werk uw "
-"systeem bij voordat u stuurprogramma's installeert om downloadfouten en "
-"ontbrekende pakketten te voorkomen."
+"De pakketdatabase is voor het laatst bijgewerkt {} dagen geleden. Werk uw systeem bij voordat u "
+"stuurprogramma's installeert om downloadfouten en ontbrekende pakketten te voorkomen."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 #: usr/share/big-driver-manager/ui/window.py:652
 msgid "Showing all drivers, including incompatible ones"
 msgstr "Alle stuurprogramma's tonen, inclusief incompatibele"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
+msgid "Operation in progress"
+msgstr "Bezig met bewerking"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 #: usr/share/big-driver-manager/ui/progress_dialog.py:117
@@ -915,15 +924,32 @@ msgstr "Technische details"
 msgid "Terminal output"
 msgstr "Terminaluitvoer"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Sluiten"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "Annuleren"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 #: usr/share/big-driver-manager/ui/category_page.py:627
 #: usr/share/big-driver-manager/ui/category_page.py:665
@@ -961,21 +987,10 @@ msgstr "Voltooid!"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:374
 msgid "Failed"
 msgstr "Mislukt"
-#
+# 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
-msgstr ""
-"Deze stap kan niet langer veilig worden geannuleerd. Wachten tot het is "
-"voltooid…"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "Operatie geannuleerd door gebruiker."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "Geannuleerd"
+msgstr "Deze stap kan niet langer veilig worden geannuleerd. Wachten tot het is voltooid…"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 #: usr/share/big-driver-manager/ui/kernel_page.py:107
 msgid "Installed Kernels"
@@ -1004,7 +1019,7 @@ msgstr "In gebruik"
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Verouderde kernels — Verwijderen aanbevolen"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1054,39 +1069,36 @@ msgstr "Er moet ten minste één back-upkernel geïnstalleerd blijven"
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
 msgid ""
-"Recommended for most users. These kernels receive security updates for years "
-"and are thoroughly tested."
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
 msgstr ""
-"Aanbevolen voor de meeste gebruikers. Deze kernels ontvangen jarenlang "
-"beveiligingsupdates en zijn grondig getest."
+"Aanbevolen voor de meeste gebruikers. Deze kernels ontvangen jarenlang beveiligingsupdates en zijn "
+"grondig getest."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 #: usr/share/big-driver-manager/ui/kernel_page.py:449
 msgid ""
-"Always up to date with the latest features and hardware support. Good if you "
-"need the newest drivers."
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
 msgstr ""
-"Altijd up-to-date met de nieuwste functies en hardware-ondersteuning. Goed "
-"als je de nieuwste drivers nodig hebt."
+"Altijd up-to-date met de nieuwste functies en hardware-ondersteuning. Goed als je de nieuwste "
+"drivers nodig hebt."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 #: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid ""
-"Tuned for gaming and desktop responsiveness. A good option for daily use "
-"with extra performance."
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
 msgstr ""
-"Afgestemd op gaming en desktopresponsiviteit. Een goede optie voor dagelijks "
-"gebruik met extra prestaties."
+"Afgestemd op gaming en desktopresponsiviteit. Een goede optie voor dagelijks gebruik met extra "
+"prestaties."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:457
 msgid ""
-"Built for audio/video production needing precise timing. May be incompatible "
-"with some drivers (e.g. NVIDIA). Only for advanced users."
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
 msgstr ""
-"Gebouwd voor audio-/videoproductie die nauwkeurige timing vereist. Kan "
-"incompatibel zijn met sommige drivers (bijv. NVIDIA). Alleen voor gevorderde "
-"gebruikers."
+"Gebouwd voor audio-/videoproductie die nauwkeurige timing vereist. Kan incompatibel zijn met "
+"sommige drivers (bijv. NVIDIA). Alleen voor gevorderde gebruikers."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 #: usr/share/big-driver-manager/ui/kernel_page.py:498
@@ -1183,8 +1195,7 @@ msgstr "Kan actieve kernel niet verwijderen"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
 #: usr/share/big-driver-manager/ui/kernel_page.py:747
 msgid "This kernel is currently in use. Boot into a different kernel first."
-msgstr ""
-"Deze kernel is momenteel in gebruik. Start eerst op in een andere kernel."
+msgstr "Deze kernel is momenteel in gebruik. Start eerst op in een andere kernel."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:463
@@ -1196,17 +1207,15 @@ msgstr ""
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Verwijder {}"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 #: usr/share/big-driver-manager/ui/kernel_page.py:770
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will "
-"have no fallback.\n"
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Dit is uw laatste back-up kernel. Als de actieve kernel faalt, heeft u "
-"geen fallback meer.\n"
+"⚠ Dit is uw laatste back-up kernel. Als de actieve kernel faalt, heeft u geen fallback meer.\n"
 "\n"
 "De volgende pakketten worden verwijderd:"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1291,27 +1300,25 @@ msgstr "Alle verouderde kernels zijn succesvol verwijderd."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Wat is nieuw in Linux {}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
-"This package is not in the official repositories. It will be built from the "
-"AUR on your computer, which can take several minutes and is not reviewed by "
-"the distribution."
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
 msgstr ""
-"Dit pakket bevindt zich niet in de officiële repositories. Het zal op uw "
-"computer worden gebouwd vanuit de AUR, wat enkele minuten kan duren en niet "
-"is beoordeeld door de distributie."
-#
+"Dit pakket bevindt zich niet in de officiële repositories. Het zal op uw computer worden gebouwd "
+"vanuit de AUR, wat enkele minuten kan duren en niet is beoordeeld door de distributie."
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
 msgid ""
-"Your device already works with the built-in driver {}, which is the "
-"recommended option. Only install this third-party driver to work around a "
-"specific problem — it may conflict with the built-in one."
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
 msgstr ""
-"Uw apparaat werkt al met de ingebouwde stuurprogramma {}, wat de aanbevolen "
-"optie is. Installeer dit stuurprogramma van derden alleen om een specifiek "
-"probleem te omzeilen — het kan conflicteren met de ingebouwde."
+"Uw apparaat werkt al met de ingebouwde stuurprogramma {}, wat de aanbevolen optie is. Installeer "
+"dit stuurprogramma van derden alleen om een specifiek probleem te omzeilen — het kan conflicteren "
+"met de ingebouwde."
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 #: usr/share/big-driver-manager/ui/base_page.py:39
 #: usr/share/big-driver-manager/ui/base_page.py:44
@@ -1321,11 +1328,6 @@ msgstr "Laden..."
 #: usr/share/big-driver-manager/ui/base_page.py:40
 msgid "Loading"
 msgstr "Laden"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Nog aan het laden… Controleer uw netwerkverbinding."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1335,13 +1337,11 @@ msgstr "Wat is de Kernel?"
 # 72
 #: usr/share/big-driver-manager/ui/home_page.py:72
 msgid ""
-"The kernel is the heart of your operating system. It controls your "
-"processor, memory, and all hardware. Most drivers already come built-in with "
-"the kernel."
+"The kernel is the heart of your operating system. It controls your processor, memory, and all "
+"hardware. Most drivers already come built-in with the kernel."
 msgstr ""
-"De kernel is het hart van uw besturingssysteem. Het bestuurt uw processor, "
-"geheugen en alle hardware. De meeste stuurprogramma's zijn al ingebouwd in "
-"de kernel."
+"De kernel is het hart van uw besturingssysteem. Het bestuurt uw processor, geheugen en alle "
+"hardware. De meeste stuurprogramma's zijn al ingebouwd in de kernel."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 #: usr/share/big-driver-manager/ui/home_page.py:83
 msgid "What are Drivers?"
@@ -1350,13 +1350,16 @@ msgstr "Wat zijn Drivers?"
 # 85
 #: usr/share/big-driver-manager/ui/home_page.py:85
 msgid ""
-"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
-"communicate with the system. If everything is already working, you probably "
-"don't need to change anything."
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to communicate with the system. "
+"If everything is already working, you probably don't need to change anything."
 msgstr ""
-"Drivers zorgen ervoor dat elk apparaat — zoals je videokaart, Wi-Fi of "
-"geluid — kan communiceren met het systeem. Als alles al werkt, hoef je "
-"waarschijnlijk niets te veranderen."
+"Drivers zorgen ervoor dat elk apparaat — zoals je videokaart, Wi-Fi of geluid — kan communiceren "
+"met het systeem. Als alles al werkt, hoef je waarschijnlijk niets te veranderen."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
+msgid "Checking your system"
+msgstr "Uw systeem controleren"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 #: usr/share/big-driver-manager/ui/home_page.py:113
@@ -1376,13 +1379,11 @@ msgstr "Aanbevolen voor uw hardware"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Aanbevolen installeren"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
-msgstr ""
-"{} heeft geen stuurprogramma geladen. Een compatibel stuurprogramma is "
-"beschikbaar: {}"
+msgstr "{} heeft geen stuurprogramma geladen. Een compatibel stuurprogramma is beschikbaar: {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/home_page.py:277
 msgid "Go to drivers"
@@ -1392,8 +1393,7 @@ msgstr "Ga naar chauffeurs"
 #: usr/share/big-driver-manager/ui/home_page.py:377
 #, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
-msgstr ""
-"Alle aanbevolen video pakketten {} voor je {} hardware zijn geïnstalleerd."
+msgstr "Alle aanbevolen video pakketten {} voor je {} hardware zijn geïnstalleerd."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 386
 #: usr/share/big-driver-manager/ui/home_page.py:387
@@ -1461,7 +1461,7 @@ msgstr "Bezig met installeren van {} pakketten"
 msgid "Installing recommended packages"
 msgstr "Aanbevolen pakketten installeren"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 643
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -1475,7 +1475,7 @@ msgstr "Pakketten downloaden..."
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "Alle aanbevolen pakketten succesvol geïnstalleerd!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "Pakketinstallatie mislukt."
@@ -1487,7 +1487,7 @@ msgstr "Pakketinstallatie mislukt."
 msgid "Install Driver"
 msgstr "Installeer stuurprogramma"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1212
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1496,6 +1496,11 @@ msgstr "Installeer stuurprogramma"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1371
 msgid "Downloading package..."
 msgstr "Bezig met downloaden van pakket..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
+#, python-brace-format
+msgid "Installed {}"
+msgstr "Geïnstalleerd {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/ui/home_page.py:733
 #, python-brace-format
@@ -1519,12 +1524,10 @@ msgstr "Stabiel, langdurige ondersteuning"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid ""
-"Receives security updates for years. Best choice for most users — reliable "
-"and well-tested."
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
 msgstr ""
-"Ontvangt jarenlang beveiligingsupdates. Beste keuze voor de meeste "
-"gebruikers — betrouwbaar en goed getest."
+"Ontvangt jarenlang beveiligingsupdates. Beste keuze voor de meeste gebruikers — betrouwbaar en goed "
+"getest."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
@@ -1534,13 +1537,11 @@ msgstr "Lage latentie, real-time"
 # manager/ui/kernel_card_builder.py, line: 52
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
 msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be "
-"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
-"users."
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
 msgstr ""
-"Ontworpen voor audio/video productie en taken die nauwkeurige timing "
-"vereisen. Kan incompatibel zijn met sommige drivers (bijv. NVIDIA). Alleen "
-"aanbevolen voor gevorderde gebruikers."
+"Ontworpen voor audio/video productie en taken die nauwkeurige timing vereisen. Kan incompatibel "
+"zijn met sommige drivers (bijv. NVIDIA). Alleen aanbevolen voor gevorderde gebruikers."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
@@ -1550,25 +1551,25 @@ msgstr "Geoptimaliseerd voor gaming & prestaties"
 # manager/ui/kernel_card_builder.py, line: 62
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
 msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use "
-"if you want extra performance."
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
 msgstr ""
-"Afgesteld voor snellere gaming en een responsievere desktop. Geweldig voor "
-"dagelijks gebruik als je extra prestaties wilt."
-#
+"Afgesteld voor snellere gaming en een responsievere desktop. Geweldig voor dagelijks gebruik als je "
+"extra prestaties wilt."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
 msgid "Performance optimized by CachyOS"
 msgstr "Prestaties geoptimaliseerd door CachyOS"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
 msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
-"gaming and desktop responsiveness."
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
 msgstr ""
-"EEVDF-planner met LTO, AutoFDO en Propeller-optimalisaties. Uitstekend voor "
-"gaming en desktopresponsiviteit."
+"EEVDF-planner met LTO, AutoFDO en Propeller-optimalisaties. Uitstekend voor gaming en "
+"desktopresponsiviteit."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
@@ -1579,46 +1580,48 @@ msgstr "Nieuwste functies en stuurprogramma's"
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Altijd up-to-date met de nieuwste functies en hardware-ondersteuning."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Kernels"
-#
+# 
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Geïnstalleerde Stuurprogramma's"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
-msgid ""
-"All drivers and firmware currently installed on your system, grouped by "
-"category."
-msgstr ""
-"Alle stuurprogramma's en firmware die op uw systeem zijn geïnstalleerd, "
-"gegroepeerd per categorie."
-#
+msgid "All drivers and firmware currently installed on your system, grouped by category."
+msgstr "Alle stuurprogramma's en firmware die op uw systeem zijn geïnstalleerd, gegroepeerd per categorie."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "No extra drivers installed"
 msgstr "Geen extra stuurprogramma's geïnstalleerd"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 #: usr/share/big-driver-manager/ui/installed_page.py:106
 msgid "Your system is using only default drivers."
 msgstr "Uw systeem gebruikt alleen standaardstuurprogramma's."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #: usr/share/big-driver-manager/ui/installed_page.py:279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} geïnstalleerde stuurprogramma's in {cats} categorieën"
-#
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "{n} geïnstalleerd"
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 #: usr/share/big-driver-manager/ui/installed_page.py:311
 msgid "Running"
 msgstr "Actief"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 #: usr/share/big-driver-manager/ui/installed_page.py:317
 msgid "MHWD driver"
@@ -1665,26 +1668,22 @@ msgstr "Videostuurprogramma's"
 # 127
 #: usr/share/big-driver-manager/ui/mesa_page.py:129
 msgid ""
-"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
-"are built into a single project called <b>Mesa</b>. Below you can choose a "
-"Mesa variant and manage extra packages for gaming, video playback, compute "
-"and AI."
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) are built into a single "
+"project called <b>Mesa</b>. Below you can choose a Mesa variant and manage extra packages for "
+"gaming, video playback, compute and AI."
 msgstr ""
-"Op Linux zijn videostuurprogramma's voor AMD, Intel en NVIDIA (gratis "
-"software Nouveau) ingebouwd in één project genaamd <b>Mesa</b>. Hieronder "
-"kun je een Mesa-variant kiezen en extra pakketten beheren voor gamen, "
-"videoweergave, compute en AI."
+"Op Linux zijn videostuurprogramma's voor AMD, Intel en NVIDIA (gratis software Nouveau) ingebouwd "
+"in één project genaamd <b>Mesa</b>. Hieronder kun je een Mesa-variant kiezen en extra pakketten "
+"beheren voor gamen, videoweergave, compute en AI."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 #: usr/share/big-driver-manager/ui/mesa_page.py:152
 msgid ""
-"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
-"official proprietary driver for the best performance in gaming, AI and "
-"professional applications."
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the official proprietary driver "
+"for the best performance in gaming, AI and professional applications."
 msgstr ""
-"Je computer heeft een <b>NVIDIA</b> grafische kaart. Je kunt de officiële "
-"propriëtaire driver installeren voor de beste prestaties bij gamen, AI en "
-"professionele toepassingen."
+"Je computer heeft een <b>NVIDIA</b> grafische kaart. Je kunt de officiële propriëtaire driver "
+"installeren voor de beste prestaties bij gamen, AI en professionele toepassingen."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 #: usr/share/big-driver-manager/ui/mesa_page.py:185
@@ -1693,23 +1692,19 @@ msgstr "Mesa-variant"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 #: usr/share/big-driver-manager/ui/mesa_page.py:196
-msgid ""
-"Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Kies welke Mesa-build je wilt gebruiken. Er kan maar één variant tegelijk "
-"actief zijn."
+msgid "Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "Kies welke Mesa-build je wilt gebruiken. Er kan maar één variant tegelijk actief zijn."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 #: usr/share/big-driver-manager/ui/mesa_page.py:209
 msgid ""
-"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
-"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
-"— other versions will not improve performance and may cause instabilities."
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used for minor tasks in this "
+"case. We recommend keeping the <b>Stable</b> variant — other versions will not improve performance "
+"and may cause instabilities."
 msgstr ""
-"<b>Opmerking:</b> Je gebruikt de NVIDIA proprietary driver. Mesa wordt in "
-"dit geval alleen voor kleine taken gebruikt. We raden aan de <b>Stable</b> "
-"variant te behouden — andere versies verbeteren de prestaties niet en kunnen "
-"instabiliteit veroorzaken."
+"<b>Opmerking:</b> Je gebruikt de NVIDIA proprietary driver. Mesa wordt in dit geval alleen voor "
+"kleine taken gebruikt. We raden aan de <b>Stable</b> variant te behouden — andere versies "
+"verbeteren de prestaties niet en kunnen instabiliteit veroorzaken."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 #: usr/share/big-driver-manager/ui/mesa_page.py:380
@@ -1797,12 +1792,8 @@ msgstr "NVIDIA-eigen stuurprogramma"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 #: usr/share/big-driver-manager/ui/mesa_page.py:701
-msgid ""
-"Official closed-source driver with the best performance for gaming, AI, and "
-"professional workloads."
-msgstr ""
-"Officiële closed-source driver met de beste prestaties voor gaming, AI en "
-"professionele workloads."
+msgid "Official closed-source driver with the best performance for gaming, AI, and professional workloads."
+msgstr "Officiële closed-source driver met de beste prestaties voor gaming, AI en professionele workloads."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 #: usr/share/big-driver-manager/ui/mesa_page.py:713
@@ -1845,11 +1836,8 @@ msgstr "Andere chauffeurs"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 #: usr/share/big-driver-manager/ui/mesa_page.py:941
-msgid ""
-"Additional drivers for special hardware configurations like virtual machines."
-msgstr ""
-"Extra stuurprogramma's voor speciale hardwareconfiguraties zoals virtuele "
-"machines."
+msgid "Additional drivers for special hardware configurations like virtual machines."
+msgstr "Extra stuurprogramma's voor speciale hardwareconfiguraties zoals virtuele machines."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 #: usr/share/big-driver-manager/ui/mesa_page.py:1026
 msgid "Compatible"
@@ -1875,8 +1863,13 @@ msgstr "⚠ Geen Wayland-ondersteuning · Niet langer onderhouden"
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Schakel over van {} naar {}"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
+#, python-brace-format
+msgid "Install {} unavailable"
+msgstr "Installeer {} niet beschikbaar"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 951
 # File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
@@ -2012,18 +2005,16 @@ msgstr ""
 "Installeer <b>{}</b>?\n"
 "\n"
 "{}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Niet beschikbaar"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
-msgid ""
-"Not available in the enabled repositories. 32-bit (lib32) packages require "
-"the multilib repository."
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
 msgstr ""
-"Niet beschikbaar in de ingeschakelde repositories. 32-bits (lib32) pakketten "
-"vereisen de multilib repository."
+"Niet beschikbaar in de ingeschakelde repositories. 32-bits (lib32) pakketten vereisen de multilib "
+"repository."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -2043,15 +2034,14 @@ msgstr "Pakket verwijderen..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} is succesvol {}!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "Pakketbewerking mislukt."
-#
+# 
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
-msgstr ""
-"Open de pagina van een stuurprogramma-pakket en bied aan het te installeren."
+msgstr "Open de pagina van een stuurprogramma-pakket en bied aan het te installeren."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 128
 #: usr/share/big-driver-manager/ui/category_page.py:131
@@ -2061,6 +2051,11 @@ msgstr "Stuurprogramma's zoeken..."
 #: usr/share/big-driver-manager/ui/category_page.py:135
 msgid "Search drivers"
 msgstr "Zoek chauffeurs"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
+msgid "Searching for printers on the network"
+msgstr "Zoeken naar printers op het netwerk"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 #: usr/share/big-driver-manager/ui/category_page.py:160
@@ -2070,9 +2065,7 @@ msgstr "Printers zoeken op het netwerk…"
 # line: 162
 #: usr/share/big-driver-manager/ui/category_page.py:179
 msgid "No more automatically detected compatible drivers in this category."
-msgstr ""
-"Geen automatisch gedetecteerde compatibele stuurprogramma's meer in deze "
-"categorie."
+msgstr "Geen automatisch gedetecteerde compatibele stuurprogramma's meer in deze categorie."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -2092,38 +2085,32 @@ msgstr "Geen drivers nodig voor deze categorie"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 #: usr/share/big-driver-manager/ui/category_page.py:202
-msgid ""
-"No drivers in this category were automatically detected as compatible with "
-"your hardware."
-msgstr ""
-"Er zijn geen drivers in deze categorie automatisch gedetecteerd als "
-"compatibel met je hardware."
-#
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "Er zijn geen drivers in deze categorie automatisch gedetecteerd als compatibel met je hardware."
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Adapter {} — werkt (stuurprogramma {})"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "onbekend"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Kabel verbonden"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Interface uitgeschakeld"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
-msgid ""
-"No cable or link detected. Check the cable and the router/switch port — no "
-"extra driver is needed."
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 msgstr ""
-"Geen kabel of link gedetecteerd. Controleer de kabel en de router/"
-"switchpoort — er is geen extra stuurprogramma nodig."
+"Geen kabel of link gedetecteerd. Controleer de kabel en de router/switchpoort — er is geen extra "
+"stuurprogramma nodig."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 #: usr/share/big-driver-manager/ui/category_page.py:257
@@ -2132,13 +2119,10 @@ msgstr "Detectiefout"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 #: usr/share/big-driver-manager/ui/category_page.py:281
-msgid ""
-"No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"Er zijn geen drivers in deze categorie gedetecteerd als noodzakelijk voor je "
-"hardware."
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "Er zijn geen drivers in deze categorie gedetecteerd als noodzakelijk voor je hardware."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 339
 # File: big-driver-manager/usr/share/big-driver-
@@ -2169,7 +2153,7 @@ msgstr "{} geïnstalleerd"
 #: usr/share/big-driver-manager/ui/category_page.py:426
 msgid "Not installed"
 msgstr "Niet geïnstalleerd"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
@@ -2179,9 +2163,7 @@ msgstr "Niet nodig: apparaat werkt al met ingebouwde stuurprogramma {}"
 #: usr/share/big-driver-manager/ui/category_page.py:530
 #, python-brace-format
 msgid "{total} drivers · {detected} detected · {installed} installed"
-msgstr ""
-"{total} stuurprogramma's · {detected} gedetecteerd · {installed} "
-"geïnstalleerd"
+msgstr "{total} stuurprogramma's · {detected} gedetecteerd · {installed} geïnstalleerd"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
@@ -2191,20 +2173,17 @@ msgstr "Laatste NVIDIA-driver — beste prestaties en nieuwste functies"
 # 40
 #: usr/share/big-driver-manager/ui/mesa_data.py:40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
-msgstr ""
-"NVIDIA 575-serie — gebruik als de nieuwste driver problemen veroorzaakt"
+msgstr "NVIDIA 575-serie — gebruik als de nieuwste driver problemen veroorzaakt"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 43
 #: usr/share/big-driver-manager/ui/mesa_data.py:43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
-msgstr ""
-"NVIDIA 570-serie — gebruik als de nieuwste driver problemen veroorzaakt"
+msgstr "NVIDIA 570-serie — gebruik als de nieuwste driver problemen veroorzaakt"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 47
 #: usr/share/big-driver-manager/ui/mesa_data.py:47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Voor Intel + NVIDIA laptops — schakelt tussen GPU's om batterij te besparen"
+msgstr "Voor Intel + NVIDIA laptops — schakelt tussen GPU's om batterij te besparen"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 50
 #: usr/share/big-driver-manager/ui/mesa_data.py:50
@@ -2229,8 +2208,7 @@ msgstr "Voor Intel + NVIDIA laptops — NVIDIA 390 (alleen zeer oude GPU's)"
 # 63
 #: usr/share/big-driver-manager/ui/mesa_data.py:63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Voor AMD + NVIDIA laptops — schakelt tussen GPU's om batterij te besparen"
+msgstr "Voor AMD + NVIDIA laptops — schakelt tussen GPU's om batterij te besparen"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 66
 #: usr/share/big-driver-manager/ui/mesa_data.py:66
@@ -2250,8 +2228,7 @@ msgstr "Voor AMD + NVIDIA laptops — NVIDIA 470 (legacy, geen Wayland)"
 # 76
 #: usr/share/big-driver-manager/ui/mesa_data.py:76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Geoptimaliseerd beeld voor virtuele machines (VirtualBox, VMware, QEMU/KVM)"
+msgstr "Geoptimaliseerd beeld voor virtuele machines (VirtualBox, VMware, QEMU/KVM)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 #: usr/share/big-driver-manager/ui/mesa_data.py:90
@@ -2260,12 +2237,8 @@ msgstr "Gamen en 3D-graphics"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 #: usr/share/big-driver-manager/ui/mesa_data.py:93
-msgid ""
-"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
-"applications."
-msgstr ""
-"Vulkan- en OpenGL-bibliotheken essentieel voor games, Steam, Wine/Proton en "
-"3D-toepassingen."
+msgid "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D applications."
+msgstr "Vulkan- en OpenGL-bibliotheken essentieel voor games, Steam, Wine/Proton en 3D-toepassingen."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 #: usr/share/big-driver-manager/ui/mesa_data.py:99
@@ -2290,8 +2263,7 @@ msgstr "32-bit Vulkan (Intel) — nodig voor Steam, Wine/Proton en oudere games"
 # 130
 #: usr/share/big-driver-manager/ui/mesa_data.py:130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr ""
-"Open-source Vulkan voor NVIDIA (Nouveau) — geen proprietaire driver nodig"
+msgstr "Open-source Vulkan voor NVIDIA (Nouveau) — geen proprietaire driver nodig"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 #: usr/share/big-driver-manager/ui/mesa_data.py:139
@@ -2306,11 +2278,11 @@ msgstr "Video afspelen"
 # 152
 #: usr/share/big-driver-manager/ui/mesa_data.py:152
 msgid ""
-"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
-"and video calls smoother while reducing CPU and power usage."
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming and video calls smoother "
+"while reducing CPU and power usage."
 msgstr ""
-"Hardwareversnelde videodecodering (VAAPI/VDPAU). Zorgt voor soepelere "
-"video's, streaming en videogesprekken en vermindert CPU- en energieverbruik."
+"Hardwareversnelde videodecodering (VAAPI/VDPAU). Zorgt voor soepelere video's, streaming en "
+"videogesprekken en vermindert CPU- en energieverbruik."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 #: usr/share/big-driver-manager/ui/mesa_data.py:159
@@ -2335,11 +2307,11 @@ msgstr "VAAPI voor AMD en NVIDIA open-source (Nouveau)"
 # 186
 #: usr/share/big-driver-manager/ui/mesa_data.py:186
 msgid ""
-"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
-"Vulkan. Probably not needed."
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and Vulkan. Probably not "
+"needed."
 msgstr ""
-"VDPAU voor AMD/NVIDIA open-source — legacy API wordt vervangen door VAAPI en "
-"Vulkan. Waarschijnlijk niet nodig."
+"VDPAU voor AMD/NVIDIA open-source — legacy API wordt vervangen door VAAPI en Vulkan. Waarschijnlijk "
+"niet nodig."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 #: usr/share/big-driver-manager/ui/mesa_data.py:197
@@ -2349,22 +2321,19 @@ msgstr "GPU Compute (AI / ML)"
 # 200
 #: usr/share/big-driver-manager/ui/mesa_data.py:200
 msgid ""
-"Your graphics card can do more than display images — it can also help with "
-"heavy processing tasks. These libraries allow programs to use the GPU for "
-"things like artificial intelligence, video editing, 3D rendering, image "
-"processing and scientific simulations. Examples: running local AI assistants "
-"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
-"Blender, applying filters in GIMP or Darktable, generating images with "
-"Stable Diffusion, and running physics simulations."
+"Your graphics card can do more than display images — it can also help with heavy processing tasks. "
+"These libraries allow programs to use the GPU for things like artificial intelligence, video "
+"editing, 3D rendering, image processing and scientific simulations. Examples: running local AI "
+"assistants (Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in Blender, "
+"applying filters in GIMP or Darktable, generating images with Stable Diffusion, and running physics "
+"simulations."
 msgstr ""
-"Je grafische kaart kan meer dan alleen afbeeldingen weergeven — hij kan ook "
-"helpen bij zware verwerkingsklussen. Deze bibliotheken stellen programma's "
-"in staat de GPU te gebruiken voor zaken als kunstmatige intelligentie, video "
-"bewerking, 3D-rendering, beeldbewerking en wetenschappelijke simulaties. "
-"Voorbeelden: lokale AI-assistenten draaien (Ollama, LocalAI), audio "
-"transcriberen met Whisper, 3D-scènes renderen in Blender, filters toepassen "
-"in GIMP of Darktable, afbeeldingen genereren met Stable Diffusion, en "
-"fysicasimulaties uitvoeren."
+"Je grafische kaart kan meer dan alleen afbeeldingen weergeven — hij kan ook helpen bij zware "
+"verwerkingsklussen. Deze bibliotheken stellen programma's in staat de GPU te gebruiken voor zaken "
+"als kunstmatige intelligentie, video bewerking, 3D-rendering, beeldbewerking en wetenschappelijke "
+"simulaties. Voorbeelden: lokale AI-assistenten draaien (Ollama, LocalAI), audio transcriberen met "
+"Whisper, 3D-scènes renderen in Blender, filters toepassen in GIMP of Darktable, afbeeldingen "
+"genereren met Stable Diffusion, en fysicasimulaties uitvoeren."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 #: usr/share/big-driver-manager/ui/mesa_data.py:215
@@ -2394,11 +2363,11 @@ msgstr "Stabiel"
 # 272
 #: usr/share/big-driver-manager/ui/mesa_data.py:281
 msgid ""
-"Officially tested by the Mesa team. The safest and most reliable choice for "
-"everyday use, gaming, and video playback."
+"Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
+"and video playback."
 msgstr ""
-"Officieel getest door het Mesa-team. De veiligste en meest betrouwbare keuze "
-"voor dagelijks gebruik, gamen en videoweergave."
+"Officieel getest door het Mesa-team. De veiligste en meest betrouwbare keuze voor dagelijks "
+"gebruik, gamen en videoweergave."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
 #: usr/share/big-driver-manager/ui/mesa_data.py:284
@@ -2413,11 +2382,11 @@ msgstr "Prestatie"
 # 281
 #: usr/share/big-driver-manager/ui/mesa_data.py:290
 msgid ""
-"Modified version with gaming optimizations for extra performance. Reliable "
-"for most users but may rarely cause instabilities."
+"Modified version with gaming optimizations for extra performance. Reliable for most users but may "
+"rarely cause instabilities."
 msgstr ""
-"Aangepaste versie met game-optimalisaties voor extra prestaties. Betrouwbaar "
-"voor de meeste gebruikers maar kan zelden instabiliteiten veroorzaken."
+"Aangepaste versie met game-optimalisaties voor extra prestaties. Betrouwbaar voor de meeste "
+"gebruikers maar kan zelden instabiliteiten veroorzaken."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 #: usr/share/big-driver-manager/ui/mesa_data.py:298
@@ -2427,13 +2396,11 @@ msgstr "Ontwikkeling"
 # 291
 #: usr/share/big-driver-manager/ui/mesa_data.py:300
 msgid ""
-"Built from the very latest source code with cutting-edge features. Offers "
-"the best gaming performance but is the least tested — only for advanced "
-"users."
+"Built from the very latest source code with cutting-edge features. Offers the best gaming "
+"performance but is the least tested — only for advanced users."
 msgstr ""
-"Gebouwd van de allernieuwste broncode met geavanceerde functies. Biedt de "
-"beste gameprestaties maar is het minst getest — alleen voor gevorderde "
-"gebruikers."
+"Gebouwd van de allernieuwste broncode met geavanceerde functies. Biedt de beste gameprestaties maar "
+"is het minst getest — alleen voor gevorderde gebruikers."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 #: usr/share/big-driver-manager/ui/mesa_data.py:308
 #: usr/share/big-driver-manager/ui/mesa_data.py:314
@@ -2443,12 +2410,11 @@ msgstr "Legacy"
 # 301
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
 msgid ""
-"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
-"install this if newer Mesa versions don't work with your hardware."
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
+"Mesa versions don't work with your hardware."
 msgstr ""
-"Voor zeer oude grafische kaarten die alleen OpenGL 2.1 of eerder "
-"ondersteunen. Installeer dit alleen als nieuwere Mesa-versies niet werken "
-"met je hardware."
+"Voor zeer oude grafische kaarten die alleen OpenGL 2.1 of eerder ondersteunen. Installeer dit "
+"alleen als nieuwere Mesa-versies niet werken met je hardware."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #: usr/share/big-driver-manager/core/mesa_manager.py:116
@@ -2465,66 +2431,6 @@ msgstr "Bezig met toepassen van {} driver..."
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Installatie van {} stuurprogramma starten..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Conflicterende pakketten controleren..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Conflicten verwijderen: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "⚠️ Pakket {} niet beschikbaar, overslaan..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ Pakket {} niet beschikbaar, overslaan..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ Geen pakketten beschikbaar om te installeren."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
-#, python-brace-format
-msgid "Installing: {}"
-msgstr "Installeren: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Conflicterende pakketten verwijderen..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "Kan conflicterende pakketten niet verwijderen."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "{} stuurprogramma installeren..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "Kan stuurprogramma niet toepassen."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "Stuurprogramma succesvol toegepast!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ {} stuurprogramma succesvol toegepast!"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #: usr/share/big-driver-manager/core/base_manager.py:205
 #: usr/share/big-driver-manager/core/mesa_manager.py:262
@@ -2536,11 +2442,71 @@ msgstr "Fout: {}"
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Fout: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "Kan conflicterende pakketten niet verwijderen."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
 #, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ Bewerking mislukt (exitcode: {})"
+msgid "Removing conflicts: {}"
+msgstr "Conflicten verwijderen: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Conflicterende pakketten verwijderen..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
+msgid "Removing conflicting packages"
+msgstr "Conflicterende pakketten verwijderen"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Conflicterende pakketten controleren..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "⚠️ Pakket {} niet beschikbaar, overslaan..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ Geen pakketten beschikbaar om te installeren."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ Pakket {} niet beschikbaar, overslaan..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Installeren: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "{} stuurprogramma installeren..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "Stuurprogramma succesvol toegepast!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} stuurprogramma succesvol toegepast!"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Driver {} installeren"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #: usr/share/big-driver-manager/core/base_manager.py:181
 #: usr/share/big-driver-manager/core/mhwd_manager.py:310
@@ -2559,12 +2525,17 @@ msgstr "Starten {}..."
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 msgid "Completed"
 msgstr "Voltooid"
-#
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "Ga verder met de installatie in het pamac-venster dat is geopend."
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Installeren van build-vereisten: {}"
-#
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "Installeren van build-vereisten"
@@ -2574,16 +2545,19 @@ msgstr "Installeren van build-vereisten"
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer niet gevonden. Kan AUR-pakket {} niet installeren."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "Ga verder met de installatie in het pamac-venster dat is geopend."
-#
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
+msgid ""
+"Continue the installation in the pamac window that was opened. This dialog is only monitoring the "
+"result."
+msgstr ""
+"Ga door met de installatie in het pamac-venster dat is geopend. Deze dialoog houdt alleen het "
+"resultaat in de gaten."
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Pakketten installeren"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Pakketten verwijderen"
@@ -2638,41 +2612,37 @@ msgstr "{} is mislukt."
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} mislukt (afsluitcode: {})"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
-"Package not available in the enabled repositories. It may come from the AUR, "
-"belong to a disabled repository (such as multilib), or the package database "
-"may be outdated.\n"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
 "Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"Pakket niet beschikbaar in de ingeschakelde repositories. Het kan afkomstig "
-"zijn uit de AUR, behoren tot een uitgeschakelde repository (zoals multilib), "
-"of de pakketdatabase kan verouderd zijn.  \n"
-"Suggestie: Werk het hele systeem bij met 'sudo pacman -Syu' en probeer het "
-"opnieuw."
+"Pakket niet beschikbaar in de ingeschakelde repositories. Het kan afkomstig zijn uit de AUR, "
+"behoren tot een uitgeschakelde repository (zoals multilib), of de pakketdatabase kan verouderd "
+"zijn.  \n"
+"Suggestie: Werk het hele systeem bij met 'sudo pacman -Syu' en probeer het opnieuw."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 #: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
 "A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
-"'sudo pacman -Syyu'."
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
 "Een conflict verhinderde dat de bewerking werd voltooid.\n"
-"Suggestie: Maak de cache schoon en update met 'sudo pacman -Scc' gevolgd "
-"door 'sudo pacman -Syyu'."
+"Suggestie: Maak de cache schoon en update met 'sudo pacman -Scc' gevolgd door 'sudo pacman -Syyu'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 #: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
 "Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
-"and resolve the conflict."
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
 "Sommige bestanden van dit pakket bestaan al op het systeem.\n"
-"Suggestie: Controleer welk pakket het bestand bezit met 'pacman -Qo "
-"<file_path>' en los het conflict op."
+"Suggestie: Controleer welk pakket het bestand bezit met 'pacman -Qo <file_path>' en los het "
+"conflict op."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 #: usr/share/big-driver-manager/core/base_manager.py:338
@@ -2687,23 +2657,20 @@ msgstr ""
 #: usr/share/big-driver-manager/core/base_manager.py:345
 msgid ""
 "Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
 "De pakkethandtekening kon niet worden geverifieerd.\n"
-"Suggestie: Werk je keyrings bij met 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestie: Werk je keyrings bij met 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 #: usr/share/big-driver-manager/core/base_manager.py:353
 msgid ""
 "The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
 "De pakketdatabase is vergrendeld door een ander proces.\n"
-"Als er geen andere pakketbeheerder actief is, verwijder dan de vergrendeling "
-"met 'sudo rm /var/lib/pacman/db.lck'."
+"Als er geen andere pakketbeheerder actief is, verwijder dan de vergrendeling met 'sudo rm "
+"/var/lib/pacman/db.lck'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 #: usr/share/big-driver-manager/core/base_manager.py:361
@@ -2712,19 +2679,17 @@ msgid ""
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
 "Niet genoeg schijfruimte om de bewerking te voltooien.\n"
-"Suggestie: Maak ruimte vrij door de pakketcache te legen met 'sudo pacman "
-"-Scc'."
+"Suggestie: Maak ruimte vrij door de pakketcache te legen met 'sudo pacman -Scc'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try "
-"updating your mirror list."
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
 "Kon de vereiste bestanden niet downloaden.\n"
-"Suggestie: Controleer je internetverbinding. Als het probleem aanhoudt, "
-"probeer dan je mirrorlijst bij te werken."
+"Suggestie: Controleer je internetverbinding. Als het probleem aanhoudt, probeer dan je mirrorlijst "
+"bij te werken."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 #: usr/share/big-driver-manager/core/base_manager.py:377
@@ -2768,184 +2733,3 @@ msgstr "Afhankelijkheden controleren..."
 #: usr/share/big-driver-manager/core/base_manager.py:403
 msgid "Synchronizing package databases..."
 msgstr "Pakketdatabases synchroniseren..."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
-msgid "Operation in progress"
-msgstr "Bezig met bewerking"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
-msgid "Hardware detection for this category failed. Try refreshing later."
-msgstr ""
-"Hardwaredetectie voor deze categorie is mislukt. Probeer later opnieuw."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
-#, python-brace-format
-msgid "{n} installed"
-msgstr "{n} geïnstalleerd"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
-msgid "Searching for printers on the network"
-msgstr "Zoeken naar printers op het netwerk"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
-msgid "Checking your system"
-msgstr "Uw systeem controleren"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "Compatibele stuurprogramma's beschikbaar"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
-#, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr "{} — no driver loaded, install {} for this device"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually "
-"the most stable and recommended option. If you experience issues, you can "
-"try a driver detected as compatible that may improve performance or add "
-"features."
-msgstr ""
-"Je apparaten werken al met de ingebouwde driver, die meestal de meest "
-"stabiele en aanbevolen optie is. Als je problemen ondervindt, kun je een "
-"driver proberen die als compatibel is gedetecteerd en mogelijk betere "
-"prestaties of extra functies biedt."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Installatie van pakket mislukt.\n"
-"Controleer de terminaluitvoer voor details."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
-msgid "Installed {}"
-msgstr "Geïnstalleerd {}"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Alle stuurprogramma's zijn geïnstalleerd"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Alle benodigde stuurprogramma's zijn al op uw systeem geïnstalleerd."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Hardware detecteren"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Hardware detecteren..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
-#, python-brace-format
-msgid "{n} drivers"
-msgstr "{n} stuurprogramma's"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 geïnstalleerd"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
-#, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "{n} stuurprogramma's beschikbaar om te installeren"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr ""
-"Installeer aanbevolen stuurprogramma's voor betere hardwareondersteuning."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Stuurprogramma succesvol geïnstalleerd."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "Installatie mislukt. Controleer de logboeken voor details."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
-msgid "Install {} unavailable"
-msgstr "Installeer {} niet beschikbaar"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Pakketbewerking mislukt.\n"
-"Controleer de terminaluitvoer voor details."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
-msgid ""
-"Continue the installation in the pamac window that was opened. This dialog "
-"is only monitoring the result."
-msgstr ""
-"Ga door met de installatie in het pamac-venster dat is geopend. Deze dialoog "
-"houdt alleen het resultaat in de gaten."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
-msgid "Removing conflicting packages"
-msgstr "Conflicterende pakketten verwijderen"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
-msgid "Installing {} driver"
-msgstr "Driver {} installeren"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been "
-"removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
-"for the correct name."
-msgstr ""
-"Pakket niet gevonden in repositories. De pakketnaam kan zijn veranderd of "
-"verwijderd.\n"
-"Suggestie: Probeer de database te verversen met 'sudo pacman -Sy' en zoek "
-"naar de juiste naam."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
-msgid "Open Driver Manager to review and install this firmware."
-msgstr "Open Driver Manager om deze firmware te bekijken en te installeren."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
-msgid "Open Driver Manager to review and install this driver."
-msgstr ""
-"Open Driver Manager om deze stuurprogramma te bekijken en te installeren."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
-msgid "Driver Manager"
-msgstr "Stuurprogramma Manager"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
-msgid "Don't alert for this firmware again"
-msgstr "Waarschuw niet opnieuw voor deze firmware."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
-msgid "Open Driver Manager"
-msgstr "Open Driver Manager"

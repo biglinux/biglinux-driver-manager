@@ -2,7 +2,8 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,6 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Još uvijek se učitava... Provjerite mrežnu vezu."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "Instalirati"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "Operaciju je otkazao korisnik."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "Otkazano"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:606
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
@@ -42,6 +76,22 @@ msgstr "Drajver skenera dostupan"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:95
 msgid "Driver available"
 msgstr "Drajver dostupan"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
+msgid "Open Driver Manager to review and install this firmware."
+msgstr "Otvorite Upravitelj upravljačkih programa za pregled i instalaciju ovog firmvera."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
+msgid "Open Driver Manager to review and install this driver."
+msgstr "Otvorite Upravitelj upravljačkih programa za pregled i instalaciju ovog upravljačkog programa."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
+msgid "Driver Manager"
+msgstr "Upravitelj upravljača"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
+msgid "Don't alert for this firmware again"
+msgstr "Ne upozoravaj na ovaj firmware ponovno"
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
@@ -51,165 +101,122 @@ msgstr "Drajver dostupan"
 msgid "Don't alert for this device again"
 msgstr "Ne upozoravaj ponovno za ovaj uređaj"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "Otkaži"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "Instalirati"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Zatvoriti"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
+msgid "Open Driver Manager"
+msgstr "Otvorite Upravitelj upravljačkih programa"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:28
 msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the "
-"best option. Install an alternative only if you have connection problems."
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
 msgstr ""
-"Ako vaš Wi-Fi već radi, ugrađeni kernel driver obično je najbolja opcija. "
-"Instalirajte alternativu samo ako imate problema s vezom."
+"Ako vaš Wi-Fi već radi, ugrađeni kernel driver obično je najbolja opcija. Instalirajte alternativu "
+"samo ako imate problema s vezom."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:33
 msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is "
-"only needed for very new or rare hardware."
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
 msgstr ""
-"Žični mrežni adapteri gotovo uvijek rade odmah. Dodatni driver potreban je "
-"samo za vrlo novi ili rijetki hardver."
+"Žični mrežni adapteri gotovo uvijek rade odmah. Dodatni driver potreban je samo za vrlo novi ili "
+"rijetki hardver."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:37
 msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, "
-"installing the firmware for your adapter may solve the problem."
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
 msgstr ""
-"Neki Bluetooth adapteri trebaju dodatni firmware da bi radili. Ako "
-"uparivanje ne uspije, instalacija firmwarea za vaš adapter može riješiti "
-"problem."
+"Neki Bluetooth adapteri trebaju dodatni firmware da bi radili. Ako uparivanje ne uspije, "
+"instalacija firmwarea za vaš adapter može riješiti problem."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:42
 msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device "
-"won't be recognized by the system."
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
 msgstr ""
-"Digitalni TV tuneri obično trebaju specifični firmware. Bez njega uređaj "
-"neće biti prepoznat od strane sustava."
+"Digitalni TV tuneri obično trebaju specifični firmware. Bez njega uređaj neće biti prepoznat od "
+"strane sustava."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:46
 msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is "
-"only needed for specific USB audio interfaces."
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
 msgstr ""
-"Većina audio uređaja radi s ALSA-om ugrađenim u kernel. Dodatni firmware "
-"potreban je samo za specifične USB audio sučelja."
+"Većina audio uređaja radi s ALSA-om ugrađenim u kernel. Dodatni firmware potreban je samo za "
+"specifične USB audio sučelja."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:50
 msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or "
-"enable additional features."
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
 msgstr ""
-"Većina web-kamera radi automatski. Dodatni firmware može poboljšati "
-"kvalitetu slike ili omogućiti dodatne značajke."
+"Većina web-kamera radi automatski. Dodatni firmware može poboljšati kvalitetu slike ili omogućiti "
+"dodatne značajke."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid ""
-"If your touchscreen doesn't respond, installing the matching firmware "
-"usually fixes it."
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
 msgstr ""
-"Ako vaš zaslon osjetljiv na dodir ne reagira, instalacija odgovarajućeg "
-"firmwarea obično to popravlja."
+"Ako vaš zaslon osjetljiv na dodir ne reagira, instalacija odgovarajućeg firmwarea obično to "
+"popravlja."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:58
 msgid ""
-"Printer drivers let the system communicate with your model. If the printer "
-"was detected on your network or USB, installing the matching driver is "
-"recommended."
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
 msgstr ""
-"Printer driveri omogućuju sustavu komunikaciju s vašim modelom. Ako je pisač "
-"detektiran na vašoj mreži ili USB-u, preporučuje se instalacija "
-"odgovarajućeg drivera."
+"Printer driveri omogućuju sustavu komunikaciju s vašim modelom. Ako je pisač detektiran na vašoj "
+"mreži ili USB-u, preporučuje se instalacija odgovarajućeg drivera."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid ""
-"3D printer firmware enables communication between the slicer and the printer "
-"hardware."
-msgstr ""
-"Firmware za 3D pisače omogućuje komunikaciju između slicera i hardvera "
-"pisača."
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "Firmware za 3D pisače omogućuje komunikaciju između slicera i hardvera pisača."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid ""
-"Scanner drivers (SANE backends) allow scanning applications to communicate "
-"with your scanner model."
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
 msgstr ""
-"Scanner driveri (SANE backendi) omogućuju aplikacijama za skeniranje "
-"komunikaciju s vašim modelom skenera."
+"Scanner driveri (SANE backendi) omogućuju aplikacijama za skeniranje komunikaciju s vašim modelom "
+"skenera."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Dodatni firmware paketi za specijalizirani hardver."
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Paketa"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Status"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Otkriveno i instalirano"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Otkriveno — još nije instalirano"
@@ -227,11 +234,11 @@ msgstr "Otkriveno — još nije instalirano"
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
 msgstr "instalirano"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Dostupno u repozitoriju"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
 msgstr "Uređaj"
@@ -671,7 +678,7 @@ msgstr "pisačima na vašoj mreži"
 msgid "(proprietary)"
 msgstr "(vlasnički)"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 36
@@ -718,7 +725,7 @@ msgstr "Bluetooth"
 msgid "Bluetooth adapter drivers."
 msgstr "Upravljački programi za Bluetooth adapter."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 40
@@ -815,6 +822,12 @@ msgstr "ostalo"
 msgid "Additional firmware packages."
 msgstr "Dodatni paketi firmvera."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "kategorije"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 #: usr/share/big-driver-manager/ui/window.py:198
 msgid "Home"
@@ -828,12 +841,6 @@ msgstr "Kernel"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "Video"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "kategorije"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -851,9 +858,7 @@ msgstr "Sadržaj"
 #: usr/share/big-driver-manager/ui/window.py:338
 #: usr/share/big-driver-manager/ui/window.py:656
 msgid "Showing drivers detected as compatible with your computer"
-msgstr ""
-"Prikazivanje upravljačkih programa koji su otkriveni kao kompatibilni s "
-"vašim računalom"
+msgstr "Prikazivanje upravljačkih programa koji su otkriveni kao kompatibilni s vašim računalom"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 327
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
@@ -879,6 +884,10 @@ msgstr "Oko"
 #: usr/share/big-driver-manager/ui/window.py:515
 msgid "Hardware detection failed. Check system logs for details."
 msgstr "Neuspjelo otkrivanje hardvera. Provjerite sistemske zapise za detalje."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
+msgid "Hardware detection for this category failed. Try refreshing later."
+msgstr "Otkrivanje hardvera za ovu kategoriju nije uspjelo. Pokušajte osvježiti kasnije."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #: usr/share/big-driver-manager/ui/window.py:627
@@ -890,21 +899,25 @@ msgstr "Zastarjeli kernel: {} — više ne prima sigurnosna ažuriranja"
 #: usr/share/big-driver-manager/ui/window.py:631
 msgid "Manage"
 msgstr "ostalo"
-#
+# 
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
 msgid ""
-"The package database was last updated {} days ago. Update your system before "
-"installing drivers to avoid download failures and missing packages."
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
 msgstr ""
-"Baza podataka paketa posljednji put je ažurirana prije {} dana. Ažurirajte "
-"svoj sustav prije instaliranja upravljačkih programa kako biste izbjegli "
-"neuspjehe preuzimanja i nedostajuće pakete."
+"Baza podataka paketa posljednji put je ažurirana prije {} dana. Ažurirajte svoj sustav prije "
+"instaliranja upravljačkih programa kako biste izbjegli neuspjehe preuzimanja i nedostajuće pakete."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 #: usr/share/big-driver-manager/ui/window.py:652
 msgid "Showing all drivers, including incompatible ones"
 msgstr "Prikaz svih upravljačkih programa, uključujući i nekompatibilne"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
+msgid "Operation in progress"
+msgstr "Operacija u tijeku"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 #: usr/share/big-driver-manager/ui/progress_dialog.py:117
@@ -915,15 +928,32 @@ msgstr "Tehnički detalji"
 msgid "Terminal output"
 msgstr "Izlaz terminala"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Zatvoriti"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "Otkaži"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 #: usr/share/big-driver-manager/ui/category_page.py:627
 #: usr/share/big-driver-manager/ui/category_page.py:665
@@ -961,19 +991,10 @@ msgstr "Završeno!"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:374
 msgid "Failed"
 msgstr "nije uspjelo"
-#
+# 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr "Ovaj korak više ne može biti sigurno otkazan. Čekam da završi…"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "Operaciju je otkazao korisnik."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "Otkazano"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 #: usr/share/big-driver-manager/ui/kernel_page.py:107
 msgid "Installed Kernels"
@@ -1002,7 +1023,7 @@ msgstr "U upotrebi"
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Zastarjeli kerneli — preporučeno uklanjanje"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1052,39 +1073,34 @@ msgstr "Najmanje jedna rezervna jezgra mora ostati instalirana"
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
 msgid ""
-"Recommended for most users. These kernels receive security updates for years "
-"and are thoroughly tested."
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
 msgstr ""
-"Preporučeno za većinu korisnika. Ovi kerneli primaju sigurnosna ažuriranja "
-"godinama i temeljito su testirani."
+"Preporučeno za većinu korisnika. Ovi kerneli primaju sigurnosna ažuriranja godinama i temeljito su "
+"testirani."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 #: usr/share/big-driver-manager/ui/kernel_page.py:449
 msgid ""
-"Always up to date with the latest features and hardware support. Good if you "
-"need the newest drivers."
-msgstr ""
-"Uvijek ažurirano s najnovijim značajkama i podrškom za hardver. Dobro ako "
-"trebate najnovije drivere."
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
+msgstr "Uvijek ažurirano s najnovijim značajkama i podrškom za hardver. Dobro ako trebate najnovije drivere."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 #: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid ""
-"Tuned for gaming and desktop responsiveness. A good option for daily use "
-"with extra performance."
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
 msgstr ""
-"Optimizirano za igre i responzivnost radne površine. Dobra opcija za "
-"svakodnevnu upotrebu s dodatnim performansama."
+"Optimizirano za igre i responzivnost radne površine. Dobra opcija za svakodnevnu upotrebu s "
+"dodatnim performansama."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:457
 msgid ""
-"Built for audio/video production needing precise timing. May be incompatible "
-"with some drivers (e.g. NVIDIA). Only for advanced users."
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
 msgstr ""
-"Izgrađeno za audio/video produkciju koja zahtijeva precizno vrijeme. Može "
-"biti nekompatibilno s nekim driverima (npr. NVIDIA). Samo za napredne "
-"korisnike."
+"Izgrađeno za audio/video produkciju koja zahtijeva precizno vrijeme. Može biti nekompatibilno s "
+"nekim driverima (npr. NVIDIA). Samo za napredne korisnike."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 #: usr/share/big-driver-manager/ui/kernel_page.py:498
@@ -1193,17 +1209,15 @@ msgstr "Ovaj kernel je trenutno u upotrebi. Prvo se pokrenite u drugi kernel."
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Ukloni {}"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 #: usr/share/big-driver-manager/ui/kernel_page.py:770
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will "
-"have no fallback.\n"
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Ovo je vaš zadnji rezervni kernel. Ako trenutni kernel zakaže, nećete "
-"imati rezervnu opciju.\n"
+"⚠ Ovo je vaš zadnji rezervni kernel. Ako trenutni kernel zakaže, nećete imati rezervnu opciju.\n"
 "\n"
 "Sljedeći paketi će biti uklonjeni:"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1288,27 +1302,25 @@ msgstr "Sve zastarjele jezgre uspješno su uklonjene."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Što je novo u Linuxu {}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
-"This package is not in the official repositories. It will be built from the "
-"AUR on your computer, which can take several minutes and is not reviewed by "
-"the distribution."
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
 msgstr ""
-"Ovaj paket nije u službenim repozitorijima. Bit će izgrađen iz AUR-a na "
-"vašem računalu, što može potrajati nekoliko minuta i nije pregledan od "
-"strane distribucije."
-#
+"Ovaj paket nije u službenim repozitorijima. Bit će izgrađen iz AUR-a na vašem računalu, što može "
+"potrajati nekoliko minuta i nije pregledan od strane distribucije."
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
 msgid ""
-"Your device already works with the built-in driver {}, which is the "
-"recommended option. Only install this third-party driver to work around a "
-"specific problem — it may conflict with the built-in one."
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
 msgstr ""
-"Vaš uređaj već radi s ugrađenim upravljačkim programom {}, koji je "
-"preporučena opcija. Instalirajte ovaj upravljački program treće strane samo "
-"kako biste zaobišli određeni problem — može doći do sukoba s ugrađenim."
+"Vaš uređaj već radi s ugrađenim upravljačkim programom {}, koji je preporučena opcija. Instalirajte "
+"ovaj upravljački program treće strane samo kako biste zaobišli određeni problem — može doći do "
+"sukoba s ugrađenim."
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 #: usr/share/big-driver-manager/ui/base_page.py:39
 #: usr/share/big-driver-manager/ui/base_page.py:44
@@ -1318,11 +1330,6 @@ msgstr "Učitavanje..."
 #: usr/share/big-driver-manager/ui/base_page.py:40
 msgid "Loading"
 msgstr "Učitavanje"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Još uvijek se učitava... Provjerite mrežnu vezu."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1332,13 +1339,11 @@ msgstr "Što je Kernel?"
 # 72
 #: usr/share/big-driver-manager/ui/home_page.py:72
 msgid ""
-"The kernel is the heart of your operating system. It controls your "
-"processor, memory, and all hardware. Most drivers already come built-in with "
-"the kernel."
+"The kernel is the heart of your operating system. It controls your processor, memory, and all "
+"hardware. Most drivers already come built-in with the kernel."
 msgstr ""
-"Kernel je srce vašeg operativnog sustava. Upravlja vašim procesorom, "
-"memorijom i svim hardverom. Većina upravljačkih programa već je ugrađena u "
-"kernel."
+"Kernel je srce vašeg operativnog sustava. Upravlja vašim procesorom, memorijom i svim hardverom. "
+"Većina upravljačkih programa već je ugrađena u kernel."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 #: usr/share/big-driver-manager/ui/home_page.py:83
 msgid "What are Drivers?"
@@ -1347,13 +1352,16 @@ msgstr "Što su upravljački programi?"
 # 85
 #: usr/share/big-driver-manager/ui/home_page.py:85
 msgid ""
-"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
-"communicate with the system. If everything is already working, you probably "
-"don't need to change anything."
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to communicate with the system. "
+"If everything is already working, you probably don't need to change anything."
 msgstr ""
-"Upravljački programi omogućuju svakom uređaju — poput vaše grafičke kartice, "
-"Wi-Fi-ja ili zvuka — da komunicira sa sustavom. Ako sve već radi, vjerojatno "
-"ne trebate ništa mijenjati."
+"Upravljački programi omogućuju svakom uređaju — poput vaše grafičke kartice, Wi-Fi-ja ili zvuka — "
+"da komunicira sa sustavom. Ako sve već radi, vjerojatno ne trebate ništa mijenjati."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
+msgid "Checking your system"
+msgstr "Provjera vašeg sustava"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 #: usr/share/big-driver-manager/ui/home_page.py:113
@@ -1373,7 +1381,7 @@ msgstr "Preporučeno za vaš hardver"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Instaliraj preporučeno"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
@@ -1455,7 +1463,7 @@ msgstr "Instaliranje {} paketa"
 msgid "Installing recommended packages"
 msgstr "Instaliranje preporučenih paketa"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 643
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -1469,7 +1477,7 @@ msgstr "Preuzimanje paketa..."
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "Svi preporučeni paketi uspješno instalirani!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "Instalacija paketa nije uspjela."
@@ -1481,7 +1489,7 @@ msgstr "Instalacija paketa nije uspjela."
 msgid "Install Driver"
 msgstr "Instalirajte upravljački program"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1212
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1490,6 +1498,11 @@ msgstr "Instalirajte upravljački program"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1371
 msgid "Downloading package..."
 msgstr "Preuzimanje paketa..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
+#, python-brace-format
+msgid "Installed {}"
+msgstr "Instalirano {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/ui/home_page.py:733
 #, python-brace-format
@@ -1513,12 +1526,10 @@ msgstr "Stabilno, dugoročna podrška"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid ""
-"Receives security updates for years. Best choice for most users — reliable "
-"and well-tested."
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
 msgstr ""
-"Prima sigurnosna ažuriranja godinama. Najbolji izbor za većinu korisnika — "
-"pouzdano i dobro testirano."
+"Prima sigurnosna ažuriranja godinama. Najbolji izbor za većinu korisnika — pouzdano i dobro "
+"testirano."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
@@ -1528,13 +1539,12 @@ msgstr "Mala latencija, u stvarnom vremenu"
 # manager/ui/kernel_card_builder.py, line: 52
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
 msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be "
-"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
-"users."
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
 msgstr ""
-"Dizajnirano za audio/video produkciju i zadatke koji zahtijevaju precizno "
-"vrijeme. Može biti nekompatibilno s nekim upravljačkim programima (npr. "
-"NVIDIA). Preporučuje se samo naprednim korisnicima."
+"Dizajnirano za audio/video produkciju i zadatke koji zahtijevaju precizno vrijeme. Može biti "
+"nekompatibilno s nekim upravljačkim programima (npr. NVIDIA). Preporučuje se samo naprednim "
+"korisnicima."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
@@ -1544,25 +1554,25 @@ msgstr "Optimizirano za igre i performanse"
 # manager/ui/kernel_card_builder.py, line: 62
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
 msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use "
-"if you want extra performance."
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
 msgstr ""
-"Podešeno za brže igranje i responzivniji desktop. Odlično za svakodnevnu "
-"upotrebu ako želite dodatne performanse."
-#
+"Podešeno za brže igranje i responzivniji desktop. Odlično za svakodnevnu upotrebu ako želite "
+"dodatne performanse."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
 msgid "Performance optimized by CachyOS"
 msgstr "Performanse optimizirane od strane CachyOS"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
 msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
-"gaming and desktop responsiveness."
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
 msgstr ""
-"EEVDF planer s LTO, AutoFDO i Propeller optimizacijama. Izvrsno za igre i "
-"responzivnost radne površine."
+"EEVDF planer s LTO, AutoFDO i Propeller optimizacijama. Izvrsno za igre i responzivnost radne "
+"površine."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
@@ -1573,46 +1583,48 @@ msgstr "Najnovije značajke i upravljački programi"
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Uvijek ažurno s najnovijim značajkama i podrškom za hardver."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Jezgre"
-#
+# 
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Instalirani upravljački programi"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
-msgid ""
-"All drivers and firmware currently installed on your system, grouped by "
-"category."
-msgstr ""
-"Svi upravljački programi i firmver trenutno instalirani na vašem sustavu, "
-"grupirani po kategoriji."
-#
+msgid "All drivers and firmware currently installed on your system, grouped by category."
+msgstr "Svi upravljački programi i firmver trenutno instalirani na vašem sustavu, grupirani po kategoriji."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "No extra drivers installed"
 msgstr "Nema instaliranih dodatnih upravljačkih programa"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 #: usr/share/big-driver-manager/ui/installed_page.py:106
 msgid "Your system is using only default drivers."
 msgstr "Vaš sustav koristi samo zadane upravljačke programe."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #: usr/share/big-driver-manager/ui/installed_page.py:279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} instaliranih upravljačkih programa u {cats} kategorija"
-#
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "{n} instalirano"
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 #: usr/share/big-driver-manager/ui/installed_page.py:311
 msgid "Running"
 msgstr "Pokrenut"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 #: usr/share/big-driver-manager/ui/installed_page.py:317
 msgid "MHWD driver"
@@ -1659,26 +1671,22 @@ msgstr "Video upravljački programi"
 # 127
 #: usr/share/big-driver-manager/ui/mesa_page.py:129
 msgid ""
-"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
-"are built into a single project called <b>Mesa</b>. Below you can choose a "
-"Mesa variant and manage extra packages for gaming, video playback, compute "
-"and AI."
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) are built into a single "
+"project called <b>Mesa</b>. Below you can choose a Mesa variant and manage extra packages for "
+"gaming, video playback, compute and AI."
 msgstr ""
-"Na Linuxu, video upravljački programi za AMD, Intel i NVIDIA (besplatni "
-"softver Nouveau) ugrađeni su u jedinstveni projekt nazvan <b>Mesa</b>. Ispod "
-"možete odabrati varijantu Mesa i upravljati dodatnim paketima za igre, "
-"reprodukciju videa, računanje i AI."
+"Na Linuxu, video upravljački programi za AMD, Intel i NVIDIA (besplatni softver Nouveau) ugrađeni "
+"su u jedinstveni projekt nazvan <b>Mesa</b>. Ispod možete odabrati varijantu Mesa i upravljati "
+"dodatnim paketima za igre, reprodukciju videa, računanje i AI."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 #: usr/share/big-driver-manager/ui/mesa_page.py:152
 msgid ""
-"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
-"official proprietary driver for the best performance in gaming, AI and "
-"professional applications."
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the official proprietary driver "
+"for the best performance in gaming, AI and professional applications."
 msgstr ""
-"Vaše računalo ima <b>NVIDIA</b> grafičku karticu. Možete instalirati "
-"službeni vlasnički upravljački program za najbolje performanse u igrama, AI "
-"i profesionalnim aplikacijama."
+"Vaše računalo ima <b>NVIDIA</b> grafičku karticu. Možete instalirati službeni vlasnički upravljački "
+"program za najbolje performanse u igrama, AI i profesionalnim aplikacijama."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 #: usr/share/big-driver-manager/ui/mesa_page.py:185
@@ -1687,23 +1695,19 @@ msgstr "Varijanta Mesa"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 #: usr/share/big-driver-manager/ui/mesa_page.py:196
-msgid ""
-"Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Odaberite koju verziju Mesa želite koristiti. Samo jedna varijanta može biti "
-"aktivna u isto vrijeme."
+msgid "Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "Odaberite koju verziju Mesa želite koristiti. Samo jedna varijanta može biti aktivna u isto vrijeme."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 #: usr/share/big-driver-manager/ui/mesa_page.py:209
 msgid ""
-"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
-"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
-"— other versions will not improve performance and may cause instabilities."
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used for minor tasks in this "
+"case. We recommend keeping the <b>Stable</b> variant — other versions will not improve performance "
+"and may cause instabilities."
 msgstr ""
-"<b>Napomena:</b> Koristite NVIDIA vlasnički upravljački program. Mesa se u "
-"ovom slučaju koristi samo za manje zadatke. Preporučujemo da zadržite "
-"<b>Stable</b> varijantu — druge verzije neće poboljšati performanse i mogu "
-"uzrokovati nestabilnosti."
+"<b>Napomena:</b> Koristite NVIDIA vlasnički upravljački program. Mesa se u ovom slučaju koristi "
+"samo za manje zadatke. Preporučujemo da zadržite <b>Stable</b> varijantu — druge verzije neće "
+"poboljšati performanse i mogu uzrokovati nestabilnosti."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 #: usr/share/big-driver-manager/ui/mesa_page.py:380
@@ -1774,8 +1778,7 @@ msgid ""
 msgstr ""
 "Video upravljački program je uspješno promijenjen!\n"
 "\n"
-"Morate ponovno pokrenuti sustav da bi novi upravljački program postao "
-"aktivan."
+"Morate ponovno pokrenuti sustav da bi novi upravljački program postao aktivan."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 451
 #: usr/share/big-driver-manager/ui/mesa_page.py:609
 msgid ""
@@ -1792,12 +1795,10 @@ msgstr "NVIDIA vlasnički upravljački program"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 #: usr/share/big-driver-manager/ui/mesa_page.py:701
-msgid ""
-"Official closed-source driver with the best performance for gaming, AI, and "
-"professional workloads."
+msgid "Official closed-source driver with the best performance for gaming, AI, and professional workloads."
 msgstr ""
-"Službeni zatvoreni upravljački program s najboljim performansama za igre, AI "
-"i profesionalne zadatke."
+"Službeni zatvoreni upravljački program s najboljim performansama za igre, AI i profesionalne "
+"zadatke."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 #: usr/share/big-driver-manager/ui/mesa_page.py:713
@@ -1840,11 +1841,8 @@ msgstr "Ostali vozači"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 #: usr/share/big-driver-manager/ui/mesa_page.py:941
-msgid ""
-"Additional drivers for special hardware configurations like virtual machines."
-msgstr ""
-"Dodatni upravljački programi za posebne hardverske konfiguracije poput "
-"virtualnih strojeva."
+msgid "Additional drivers for special hardware configurations like virtual machines."
+msgstr "Dodatni upravljački programi za posebne hardverske konfiguracije poput virtualnih strojeva."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 #: usr/share/big-driver-manager/ui/mesa_page.py:1026
 msgid "Compatible"
@@ -1870,8 +1868,13 @@ msgstr "⚠ Nema podrške za Wayland · Više se ne održava"
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Prebaci s {} na {}"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
+#, python-brace-format
+msgid "Install {} unavailable"
+msgstr "Instalacija {} nije dostupna"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 951
 # File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
@@ -2007,18 +2010,14 @@ msgstr ""
 "Instalirati <b>{}</b>?\n"
 "\n"
 "{}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Nedostupno"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
-msgid ""
-"Not available in the enabled repositories. 32-bit (lib32) packages require "
-"the multilib repository."
-msgstr ""
-"Nije dostupno u omogućеним repozitorijima. 32-bitni (lib32) paketi "
-"zahtijevaju multilib repozitorij."
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
+msgstr "Nije dostupno u omogućеним repozitorijima. 32-bitni (lib32) paketi zahtijevaju multilib repozitorij."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -2038,11 +2037,11 @@ msgstr "Uklanjanje paketa..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} je uspješno {}!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "Operacija paketa nije uspjela."
-#
+# 
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
 msgstr "Otvorite stranicu paketa upravljača i ponudite instalaciju."
@@ -2055,6 +2054,11 @@ msgstr "Traži vozače..."
 #: usr/share/big-driver-manager/ui/category_page.py:135
 msgid "Search drivers"
 msgstr "Traži vozače"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
+msgid "Searching for printers on the network"
+msgstr "Traženje pisača na mreži"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 #: usr/share/big-driver-manager/ui/category_page.py:160
@@ -2064,9 +2068,7 @@ msgstr "Traženje pisača na mreži…"
 # line: 162
 #: usr/share/big-driver-manager/ui/category_page.py:179
 msgid "No more automatically detected compatible drivers in this category."
-msgstr ""
-"Nema više automatski otkrivenih kompatibilnih upravljačkih programa u ovoj "
-"kategoriji."
+msgstr "Nema više automatski otkrivenih kompatibilnih upravljačkih programa u ovoj kategoriji."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -2086,38 +2088,34 @@ msgstr "Nema potrebnih upravljačkih programa za ovu kategoriju"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 #: usr/share/big-driver-manager/ui/category_page.py:202
-msgid ""
-"No drivers in this category were automatically detected as compatible with "
-"your hardware."
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
 msgstr ""
-"Nijedan upravljački program u ovoj kategoriji nije automatski prepoznat kao "
-"kompatibilan s vašim hardverom."
-#
+"Nijedan upravljački program u ovoj kategoriji nije automatski prepoznat kao kompatibilan s vašim "
+"hardverom."
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Adapter {} — radi (vozač {})"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "nepoznato"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Kabel povezan"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Sučelje onemogućeno"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
-msgid ""
-"No cable or link detected. Check the cable and the router/switch port — no "
-"extra driver is needed."
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 msgstr ""
-"Nema kabela ili veze. Provjerite kabel i port usmjerivača/preklopnika — nije "
-"potreban dodatni upravljački program."
+"Nema kabela ili veze. Provjerite kabel i port usmjerivača/preklopnika — nije potreban dodatni "
+"upravljački program."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 #: usr/share/big-driver-manager/ui/category_page.py:257
@@ -2126,13 +2124,10 @@ msgstr "Pogreška otkrivanja"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 #: usr/share/big-driver-manager/ui/category_page.py:281
-msgid ""
-"No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"Nijedan upravljački program u ovoj kategoriji nije prepoznat kao potreban za "
-"vaš hardver."
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "Nijedan upravljački program u ovoj kategoriji nije prepoznat kao potreban za vaš hardver."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 339
 # File: big-driver-manager/usr/share/big-driver-
@@ -2163,7 +2158,7 @@ msgstr "{} instaliran"
 #: usr/share/big-driver-manager/ui/category_page.py:426
 msgid "Not installed"
 msgstr "Nije instaliran"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
@@ -2173,36 +2168,27 @@ msgstr "Nije potrebno: uređaj već radi s ugrađenim upravljačkim programom {}
 #: usr/share/big-driver-manager/ui/category_page.py:530
 #, python-brace-format
 msgid "{total} drivers · {detected} detected · {installed} installed"
-msgstr ""
-"{total} upravljačkih programa · {detected} otkriveno · {installed} "
-"instalirano"
+msgstr "{total} upravljačkih programa · {detected} otkriveno · {installed} instalirano"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
 msgid "Latest NVIDIA driver — best performance and newest features"
-msgstr ""
-"Najnoviji NVIDIA upravljački program — najbolja izvedba i najnovije značajke"
+msgstr "Najnoviji NVIDIA upravljački program — najbolja izvedba i najnovije značajke"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 40
 #: usr/share/big-driver-manager/ui/mesa_data.py:40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
-msgstr ""
-"NVIDIA serija 575 — koristi se ako najnoviji upravljački program uzrokuje "
-"probleme"
+msgstr "NVIDIA serija 575 — koristi se ako najnoviji upravljački program uzrokuje probleme"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 43
 #: usr/share/big-driver-manager/ui/mesa_data.py:43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
-msgstr ""
-"NVIDIA serija 570 — koristi se ako najnoviji upravljački program uzrokuje "
-"probleme"
+msgstr "NVIDIA serija 570 — koristi se ako najnoviji upravljački program uzrokuje probleme"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 47
 #: usr/share/big-driver-manager/ui/mesa_data.py:47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Za Intel + NVIDIA prijenosna računala — prebacuje se između GPU-a radi "
-"uštede baterije"
+msgstr "Za Intel + NVIDIA prijenosna računala — prebacuje se između GPU-a radi uštede baterije"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 50
 #: usr/share/big-driver-manager/ui/mesa_data.py:50
@@ -2217,22 +2203,17 @@ msgstr "Za Intel + NVIDIA prijenosna računala — NVIDIA serija 570"
 # 56
 #: usr/share/big-driver-manager/ui/mesa_data.py:56
 msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr ""
-"Za Intel + NVIDIA prijenosna računala — NVIDIA 470 (naslijeđeno, bez "
-"Waylanda)"
+msgstr "Za Intel + NVIDIA prijenosna računala — NVIDIA 470 (naslijeđeno, bez Waylanda)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 59
 #: usr/share/big-driver-manager/ui/mesa_data.py:59
 msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
-msgstr ""
-"Za Intel + NVIDIA prijenosna računala — NVIDIA 390 (samo vrlo stari GPU-ovi)"
+msgstr "Za Intel + NVIDIA prijenosna računala — NVIDIA 390 (samo vrlo stari GPU-ovi)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 63
 #: usr/share/big-driver-manager/ui/mesa_data.py:63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Za AMD + NVIDIA prijenosna računala — prebacuje se između GPU-a radi uštede "
-"baterije"
+msgstr "Za AMD + NVIDIA prijenosna računala — prebacuje se između GPU-a radi uštede baterije"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 66
 #: usr/share/big-driver-manager/ui/mesa_data.py:66
@@ -2252,8 +2233,7 @@ msgstr "Za AMD + NVIDIA prijenosnike — NVIDIA 470 (legacy, bez Waylanda)"
 # 76
 #: usr/share/big-driver-manager/ui/mesa_data.py:76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Optimiziran prikaz za virtualne strojeve (VirtualBox, VMware, QEMU/KVM)"
+msgstr "Optimiziran prikaz za virtualne strojeve (VirtualBox, VMware, QEMU/KVM)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 #: usr/share/big-driver-manager/ui/mesa_data.py:90
@@ -2262,12 +2242,8 @@ msgstr "Igranje i 3D grafika"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 #: usr/share/big-driver-manager/ui/mesa_data.py:93
-msgid ""
-"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
-"applications."
-msgstr ""
-"Vulkan i OpenGL biblioteke potrebne za igre, Steam, Wine/Proton i 3D "
-"aplikacije."
+msgid "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D applications."
+msgstr "Vulkan i OpenGL biblioteke potrebne za igre, Steam, Wine/Proton i 3D aplikacije."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 #: usr/share/big-driver-manager/ui/mesa_data.py:99
@@ -2287,20 +2263,17 @@ msgstr "Vulkan za Intel GPU-e"
 # 121
 #: usr/share/big-driver-manager/ui/mesa_data.py:121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-bitni Vulkan (Intel) — potreban za Steam, Wine/Proton i starije igre"
+msgstr "32-bitni Vulkan (Intel) — potreban za Steam, Wine/Proton i starije igre"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 130
 #: usr/share/big-driver-manager/ui/mesa_data.py:130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr ""
-"Open-source Vulkan za NVIDIA (Nouveau) — nije potreban vlasnički drajver"
+msgstr "Open-source Vulkan za NVIDIA (Nouveau) — nije potreban vlasnički drajver"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 #: usr/share/big-driver-manager/ui/mesa_data.py:139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
-msgstr ""
-"32-bitni OpenGL — potreban za Steam, Wine/Proton i starije 32-bitne igre"
+msgstr "32-bitni OpenGL — potreban za Steam, Wine/Proton i starije 32-bitne igre"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 149
 #: usr/share/big-driver-manager/ui/mesa_data.py:149
@@ -2310,11 +2283,11 @@ msgstr "Video reprodukcija"
 # 152
 #: usr/share/big-driver-manager/ui/mesa_data.py:152
 msgid ""
-"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
-"and video calls smoother while reducing CPU and power usage."
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming and video calls smoother "
+"while reducing CPU and power usage."
 msgstr ""
-"Hardverski ubrzano dekodiranje videa (VAAPI/VDPAU). Čini videozapise, "
-"streaming i video pozive glađima uz smanjenu potrošnju CPU-a i energije."
+"Hardverski ubrzano dekodiranje videa (VAAPI/VDPAU). Čini videozapise, streaming i video pozive "
+"glađima uz smanjenu potrošnju CPU-a i energije."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 #: usr/share/big-driver-manager/ui/mesa_data.py:159
@@ -2339,11 +2312,11 @@ msgstr "VAAPI za AMD i NVIDIA open-source (Nouveau)"
 # 186
 #: usr/share/big-driver-manager/ui/mesa_data.py:186
 msgid ""
-"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
-"Vulkan. Probably not needed."
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and Vulkan. Probably not "
+"needed."
 msgstr ""
-"VDPAU za AMD/NVIDIA open-source — legacy API koji zamjenjuju VAAPI i Vulkan. "
-"Vjerojatno nije potreban."
+"VDPAU za AMD/NVIDIA open-source — legacy API koji zamjenjuju VAAPI i Vulkan. Vjerojatno nije "
+"potreban."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 #: usr/share/big-driver-manager/ui/mesa_data.py:197
@@ -2353,21 +2326,19 @@ msgstr "GPU Compute (AI / ML)"
 # 200
 #: usr/share/big-driver-manager/ui/mesa_data.py:200
 msgid ""
-"Your graphics card can do more than display images — it can also help with "
-"heavy processing tasks. These libraries allow programs to use the GPU for "
-"things like artificial intelligence, video editing, 3D rendering, image "
-"processing and scientific simulations. Examples: running local AI assistants "
-"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
-"Blender, applying filters in GIMP or Darktable, generating images with "
-"Stable Diffusion, and running physics simulations."
+"Your graphics card can do more than display images — it can also help with heavy processing tasks. "
+"These libraries allow programs to use the GPU for things like artificial intelligence, video "
+"editing, 3D rendering, image processing and scientific simulations. Examples: running local AI "
+"assistants (Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in Blender, "
+"applying filters in GIMP or Darktable, generating images with Stable Diffusion, and running physics "
+"simulations."
 msgstr ""
-"Vaša grafička kartica može više od prikazivanja slika — može pomoći i u "
-"zahtjevnim procesorskim zadacima. Ove biblioteke omogućuju programima "
-"korištenje GPU-a za stvari poput umjetne inteligencije, uređivanja videa, 3D "
-"renderiranja, obrade slika i znanstvenih simulacija. Primjeri: pokretanje "
-"lokalnih AI asistenata (Ollama, LocalAI), prepisivanje zvuka s Whisperom, "
-"renderiranje 3D scena u Blenderu, primjena filtera u GIMP-u ili Darktableu, "
-"generiranje slika sa Stable Diffusionom i pokretanje fizikalnih simulacija."
+"Vaša grafička kartica može više od prikazivanja slika — može pomoći i u zahtjevnim procesorskim "
+"zadacima. Ove biblioteke omogućuju programima korištenje GPU-a za stvari poput umjetne "
+"inteligencije, uređivanja videa, 3D renderiranja, obrade slika i znanstvenih simulacija. Primjeri: "
+"pokretanje lokalnih AI asistenata (Ollama, LocalAI), prepisivanje zvuka s Whisperom, renderiranje "
+"3D scena u Blenderu, primjena filtera u GIMP-u ili Darktableu, generiranje slika sa Stable "
+"Diffusionom i pokretanje fizikalnih simulacija."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 #: usr/share/big-driver-manager/ui/mesa_data.py:215
@@ -2397,11 +2368,11 @@ msgstr "Stabilno"
 # 272
 #: usr/share/big-driver-manager/ui/mesa_data.py:281
 msgid ""
-"Officially tested by the Mesa team. The safest and most reliable choice for "
-"everyday use, gaming, and video playback."
+"Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
+"and video playback."
 msgstr ""
-"Službeno testirano od strane Mesa tima. Najsigurniji i najpouzdaniji izbor "
-"za svakodnevnu upotrebu, igre i reprodukciju videa."
+"Službeno testirano od strane Mesa tima. Najsigurniji i najpouzdaniji izbor za svakodnevnu upotrebu, "
+"igre i reprodukciju videa."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
 #: usr/share/big-driver-manager/ui/mesa_data.py:284
@@ -2416,11 +2387,11 @@ msgstr "Izvedba"
 # 281
 #: usr/share/big-driver-manager/ui/mesa_data.py:290
 msgid ""
-"Modified version with gaming optimizations for extra performance. Reliable "
-"for most users but may rarely cause instabilities."
+"Modified version with gaming optimizations for extra performance. Reliable for most users but may "
+"rarely cause instabilities."
 msgstr ""
-"Modificirana verzija s optimizacijama za igre za dodatne performanse. "
-"Pouzdano za većinu korisnika, ali rijetko može uzrokovati nestabilnosti."
+"Modificirana verzija s optimizacijama za igre za dodatne performanse. Pouzdano za većinu korisnika, "
+"ali rijetko može uzrokovati nestabilnosti."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 #: usr/share/big-driver-manager/ui/mesa_data.py:298
@@ -2430,13 +2401,11 @@ msgstr "Razvoj"
 # 291
 #: usr/share/big-driver-manager/ui/mesa_data.py:300
 msgid ""
-"Built from the very latest source code with cutting-edge features. Offers "
-"the best gaming performance but is the least tested — only for advanced "
-"users."
+"Built from the very latest source code with cutting-edge features. Offers the best gaming "
+"performance but is the least tested — only for advanced users."
 msgstr ""
-"Izgrađeno od najnovijeg izvornog koda s najmodernijim značajkama. Nudi "
-"najbolje performanse u igrama, ali je najmanje testirano — samo za napredne "
-"korisnike."
+"Izgrađeno od najnovijeg izvornog koda s najmodernijim značajkama. Nudi najbolje performanse u "
+"igrama, ali je najmanje testirano — samo za napredne korisnike."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 #: usr/share/big-driver-manager/ui/mesa_data.py:308
 #: usr/share/big-driver-manager/ui/mesa_data.py:314
@@ -2446,11 +2415,11 @@ msgstr "Legacy"
 # 301
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
 msgid ""
-"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
-"install this if newer Mesa versions don't work with your hardware."
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
+"Mesa versions don't work with your hardware."
 msgstr ""
-"Za vrlo stare grafičke kartice koje podržavaju samo OpenGL 2.1 ili starije. "
-"Instalirajte ovo samo ako novije Mesa verzije ne rade s vašim hardverom."
+"Za vrlo stare grafičke kartice koje podržavaju samo OpenGL 2.1 ili starije. Instalirajte ovo samo "
+"ako novije Mesa verzije ne rade s vašim hardverom."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #: usr/share/big-driver-manager/core/mesa_manager.py:116
@@ -2467,66 +2436,6 @@ msgstr "Primjena drajvera {}..."
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Pokretanje instalacije upravljačkog programa {}..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Provjera sukobljenih paketa..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Uklanjanje sukoba: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "⚠️ Paket {} nije dostupan, preskače..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ Paket {} nije dostupan, preskačem..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ Nema dostupnih paketa za instalaciju."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
-#, python-brace-format
-msgid "Installing: {}"
-msgstr "Instalacija: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Uklanjanje sukobljenih paketa..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "Uklanjanje proturječnih paketa nije uspjelo."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "Instaliranje upravljačkog programa {}..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "Primjena upravljačkog programa nije uspjela."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "Upravljački program uspješno primijenjen!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ {} upravljački program uspješno primijenjen!"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #: usr/share/big-driver-manager/core/base_manager.py:205
 #: usr/share/big-driver-manager/core/mesa_manager.py:262
@@ -2538,11 +2447,71 @@ msgstr "Greška: {}"
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Greška: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "Uklanjanje proturječnih paketa nije uspjelo."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
 #, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ Operacija nije uspjela (izlazni kod: {})"
+msgid "Removing conflicts: {}"
+msgstr "Uklanjanje sukoba: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Uklanjanje sukobljenih paketa..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
+msgid "Removing conflicting packages"
+msgstr "Uklanjanje sukobljenih paketa"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Provjera sukobljenih paketa..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "⚠️ Paket {} nije dostupan, preskače..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ Nema dostupnih paketa za instalaciju."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ Paket {} nije dostupan, preskačem..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Instalacija: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "Instaliranje upravljačkog programa {}..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "Upravljački program uspješno primijenjen!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} upravljački program uspješno primijenjen!"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Instaliranje {} upravljačkog programa"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #: usr/share/big-driver-manager/core/base_manager.py:181
 #: usr/share/big-driver-manager/core/mhwd_manager.py:310
@@ -2561,12 +2530,17 @@ msgstr "Pokretanje {}..."
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 msgid "Completed"
 msgstr "Dovršeno"
-#
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "Nastavite instalaciju u pamac prozoru koji je otvoren."
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Instaliranje preduvjeta za izgradnju: {}"
-#
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "Instaliranje preduvjeta za izgradnju"
@@ -2576,16 +2550,17 @@ msgstr "Instaliranje preduvjeta za izgradnju"
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer nije pronađen. Ne može se instalirati AUR paket {}."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "Nastavite instalaciju u pamac prozoru koji je otvoren."
-#
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
+msgid ""
+"Continue the installation in the pamac window that was opened. This dialog is only monitoring the "
+"result."
+msgstr "Nastavite instalaciju u prozoru pamac koji je otvoren. Ovaj dijalog samo prati rezultat."
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Instaliranje paketa"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Uklanjanje paketa"
@@ -2640,40 +2615,35 @@ msgstr "{} nije uspjelo."
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} nije uspjelo (izlazni kod: {})"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
-"Package not available in the enabled repositories. It may come from the AUR, "
-"belong to a disabled repository (such as multilib), or the package database "
-"may be outdated.\n"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
 "Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"Paket nije dostupan u omogućеним repozitorijima. Možda dolazi iz AUR-a, "
-"pripada onemogućenoj repozitoriju (kao što je multilib) ili je baza podataka "
-"paketa zastarjela.  \n"
+"Paket nije dostupan u omogućеним repozitorijima. Možda dolazi iz AUR-a, pripada onemogućenoj "
+"repozitoriju (kao što je multilib) ili je baza podataka paketa zastarjela.  \n"
 "Preporuka: Ažurirajte cijeli sustav s 'sudo pacman -Syu' i pokušajte ponovo."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 #: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
 "A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
-"'sudo pacman -Syyu'."
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
 "Sukob je spriječio dovršetak operacije.\n"
-"Preporuka: Očistite predmemoriju i ažurirajte s 'sudo pacman -Scc' zatim "
-"'sudo pacman -Syyu'."
+"Preporuka: Očistite predmemoriju i ažurirajte s 'sudo pacman -Scc' zatim 'sudo pacman -Syyu'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 #: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
 "Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
-"and resolve the conflict."
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
 "Neki su datoteke iz ovog paketa već prisutne na sustavu.\n"
-"Preporuka: Provjerite kojem paketu pripada datoteka s 'pacman -Qo "
-"<file_path>' i riješite sukob."
+"Preporuka: Provjerite kojem paketu pripada datoteka s 'pacman -Qo <file_path>' i riješite sukob."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 #: usr/share/big-driver-manager/core/base_manager.py:338
@@ -2688,23 +2658,20 @@ msgstr ""
 #: usr/share/big-driver-manager/core/base_manager.py:345
 msgid ""
 "Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
 "Potpis paketa nije mogao biti verificiran.\n"
-"Preporuka: Ažurirajte svoje ključne prstenove s 'sudo pacman -S archlinux-"
-"keyring manjaro-keyring'."
+"Preporuka: Ažurirajte svoje ključne prstenove s 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 #: usr/share/big-driver-manager/core/base_manager.py:353
 msgid ""
 "The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
 "Baza podataka paketa je zaključana od strane drugog procesa.\n"
-"Ako nijedan drugi upravitelj paketa ne radi, uklonite zaključavanje naredbom "
-"'sudo rm /var/lib/pacman/db.lck'."
+"Ako nijedan drugi upravitelj paketa ne radi, uklonite zaključavanje naredbom 'sudo rm "
+"/var/lib/pacman/db.lck'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 #: usr/share/big-driver-manager/core/base_manager.py:361
@@ -2713,19 +2680,17 @@ msgid ""
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
 "Nema dovoljno slobodnog prostora na disku za dovršetak operacije.\n"
-"Prijedlog: Oslobodite prostor čišćenjem predmemorije paketa naredbom 'sudo "
-"pacman -Scc'."
+"Prijedlog: Oslobodite prostor čišćenjem predmemorije paketa naredbom 'sudo pacman -Scc'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try "
-"updating your mirror list."
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
 "Nije moguće preuzeti potrebne datoteke.\n"
-"Prijedlog: Provjerite svoju internetsku vezu. Ako problem i dalje postoji, "
-"pokušajte ažurirati popis ogledala."
+"Prijedlog: Provjerite svoju internetsku vezu. Ako problem i dalje postoji, pokušajte ažurirati "
+"popis ogledala."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 #: usr/share/big-driver-manager/core/base_manager.py:377
@@ -2734,8 +2699,7 @@ msgid ""
 "Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
 msgstr ""
 "Preuzeti paket je oštećen.\n"
-"Prijedlog: Očistite predmemoriju naredbom 'sudo pacman -Scc' i pokušajte "
-"ponovno."
+"Prijedlog: Očistite predmemoriju naredbom 'sudo pacman -Scc' i pokušajte ponovno."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 391
 #: usr/share/big-driver-manager/core/base_manager.py:394
@@ -2770,188 +2734,3 @@ msgstr "Provjera ovisnosti..."
 #: usr/share/big-driver-manager/core/base_manager.py:403
 msgid "Synchronizing package databases..."
 msgstr "Sinkronizacija baza podataka paketa..."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
-msgid "Operation in progress"
-msgstr "Operacija u tijeku"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
-msgid "Hardware detection for this category failed. Try refreshing later."
-msgstr ""
-"Otkrivanje hardvera za ovu kategoriju nije uspjelo. Pokušajte osvježiti "
-"kasnije."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
-#, python-brace-format
-msgid "{n} installed"
-msgstr "{n} instalirano"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
-msgid "Searching for printers on the network"
-msgstr "Traženje pisača na mreži"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
-msgid "Checking your system"
-msgstr "Provjera vašeg sustava"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "Dostupni kompatibilni upravljački programi"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
-#, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr "{} — upravljački program nije učitan, instalirajte {} za ovaj uređaj"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually "
-"the most stable and recommended option. If you experience issues, you can "
-"try a driver detected as compatible that may improve performance or add "
-"features."
-msgstr ""
-"Vaši uređaji već rade s ugrađenim upravljačkim programom, koji je obično "
-"najstabilnija i preporučena opcija. Ako imate problema, možete isprobati "
-"upravljački program koji je otkriven kao kompatibilan i koji može poboljšati "
-"performanse ili dodati značajke."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Instalacija paketa nije uspjela.\n"
-"Provjerite izlaz terminala za detalje."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
-msgid "Installed {}"
-msgstr "Instalirano {}"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Svi drajveri su instalirani"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Svi potrebni upravljački programi već su instalirani na vašem sustavu."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Otkrivanje hardvera"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Otkrivanje hardvera..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
-#, python-brace-format
-msgid "{n} drivers"
-msgstr "{n} upravljački programi"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 instaliran"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
-#, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "{n} upravljačkih programa dostupno za instalaciju"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr ""
-"Instalirajte preporučene upravljačke programe za bolju podršku hardvera."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Upravljački program je uspješno instaliran."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "Instalacija nije uspjela. Provjerite zapise za detalje."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
-msgid "Install {} unavailable"
-msgstr "Instalacija {} nije dostupna"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Operacija paketa nije uspjela.\n"
-"Provjerite izlaz terminala za detalje."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
-msgid ""
-"Continue the installation in the pamac window that was opened. This dialog "
-"is only monitoring the result."
-msgstr ""
-"Nastavite instalaciju u prozoru pamac koji je otvoren. Ovaj dijalog samo "
-"prati rezultat."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
-msgid "Removing conflicting packages"
-msgstr "Uklanjanje sukobljenih paketa"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
-msgid "Installing {} driver"
-msgstr "Instaliranje {} upravljačkog programa"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been "
-"removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
-"for the correct name."
-msgstr ""
-"Paket nije pronađen u spremištima. Naziv paketa se možda promijenio ili je "
-"uklonjen.\n"
-"Preporuka: Pokušajte osvježiti bazu podataka s 'sudo pacman -Sy' i potražite "
-"ispravan naziv."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
-msgid "Open Driver Manager to review and install this firmware."
-msgstr ""
-"Otvorite Upravitelj upravljačkih programa za pregled i instalaciju ovog "
-"firmvera."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
-msgid "Open Driver Manager to review and install this driver."
-msgstr ""
-"Otvorite Upravitelj upravljačkih programa za pregled i instalaciju ovog "
-"upravljačkog programa."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
-msgid "Driver Manager"
-msgstr "Upravitelj upravljača"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
-msgid "Don't alert for this firmware again"
-msgstr "Ne upozoravaj na ovaj firmware ponovno"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
-msgid "Open Driver Manager"
-msgstr "Otvorite Upravitelj upravljačkih programa"

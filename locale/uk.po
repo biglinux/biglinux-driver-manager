@@ -2,7 +2,8 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,6 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Застарілі ядра — рекомендовано видалення"
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "Встановити"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "Операція скасована користувачем."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "Скасовано"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:606
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
@@ -42,6 +76,22 @@ msgstr "Доступний драйвер сканера"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:95
 msgid "Driver available"
 msgstr "Доступний драйвер"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
+msgid "Open Driver Manager to review and install this firmware."
+msgstr "Відкрийте Диспетчер драйверів, щоб переглянути та встановити це програмне забезпечення."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
+msgid "Open Driver Manager to review and install this driver."
+msgstr "Відкрийте Диспетчер драйверів, щоб переглянути та встановити цей драйвер."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
+msgid "Driver Manager"
+msgstr "Менеджер драйверів"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
+msgid "Don't alert for this firmware again"
+msgstr "Не сповіщати про це програмне забезпечення знову"
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
@@ -51,165 +101,120 @@ msgstr "Доступний драйвер"
 msgid "Don't alert for this device again"
 msgstr "Більше не повідомляти про цей пристрій"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "Скасувати"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "Встановити"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Закрити"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
+msgid "Open Driver Manager"
+msgstr "Відкрити Менеджер драйверів"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:28
 msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the "
-"best option. Install an alternative only if you have connection problems."
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
 msgstr ""
-"Якщо ваш Wi-Fi уже працює, вбудований драйвер ядра зазвичай є найкращим "
-"варіантом. Встановлюйте альтернативу лише у разі проблем із підключенням."
+"Якщо ваш Wi-Fi уже працює, вбудований драйвер ядра зазвичай є найкращим варіантом. Встановлюйте "
+"альтернативу лише у разі проблем із підключенням."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:33
 msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is "
-"only needed for very new or rare hardware."
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
 msgstr ""
-"Дротові мережеві адаптери майже завжди працюють одразу. Додатковий драйвер "
-"потрібен лише для дуже нового або рідкісного обладнання."
+"Дротові мережеві адаптери майже завжди працюють одразу. Додатковий драйвер потрібен лише для дуже "
+"нового або рідкісного обладнання."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:37
 msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, "
-"installing the firmware for your adapter may solve the problem."
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
 msgstr ""
-"Деяким Bluetooth-адаптерам потрібне додаткове прошивання для роботи. Якщо "
-"сполучення не вдається, встановлення прошивки для вашого адаптера може "
-"вирішити проблему."
+"Деяким Bluetooth-адаптерам потрібне додаткове прошивання для роботи. Якщо сполучення не вдається, "
+"встановлення прошивки для вашого адаптера може вирішити проблему."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:42
 msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device "
-"won't be recognized by the system."
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
 msgstr ""
-"Цифрові ТВ-тюнери зазвичай потребують спеціального прошивання. Без нього "
-"пристрій не буде розпізнаний системою."
+"Цифрові ТВ-тюнери зазвичай потребують спеціального прошивання. Без нього пристрій не буде "
+"розпізнаний системою."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:46
 msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is "
-"only needed for specific USB audio interfaces."
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
 msgstr ""
-"Більшість аудіопристроїв працюють з ALSA, вбудованою в ядро. Додаткове "
-"прошивання потрібне лише для специфічних USB-аудіоінтерфейсів."
+"Більшість аудіопристроїв працюють з ALSA, вбудованою в ядро. Додаткове прошивання потрібне лише для "
+"специфічних USB-аудіоінтерфейсів."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:50
 msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or "
-"enable additional features."
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
 msgstr ""
-"Більшість вебкамер працюють автоматично. Додаткове прошивання може покращити "
-"якість зображення або увімкнути додаткові функції."
+"Більшість вебкамер працюють автоматично. Додаткове прошивання може покращити якість зображення або "
+"увімкнути додаткові функції."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid ""
-"If your touchscreen doesn't respond, installing the matching firmware "
-"usually fixes it."
-msgstr ""
-"Якщо ваш сенсорний екран не реагує, встановлення відповідної прошивки "
-"зазвичай це виправляє."
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "Якщо ваш сенсорний екран не реагує, встановлення відповідної прошивки зазвичай це виправляє."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:58
 msgid ""
-"Printer drivers let the system communicate with your model. If the printer "
-"was detected on your network or USB, installing the matching driver is "
-"recommended."
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
 msgstr ""
-"Драйвери принтерів дозволяють системі спілкуватися з вашою моделлю. Якщо "
-"принтер було виявлено у вашій мережі або через USB, рекомендується "
-"встановити відповідний драйвер."
+"Драйвери принтерів дозволяють системі спілкуватися з вашою моделлю. Якщо принтер було виявлено у "
+"вашій мережі або через USB, рекомендується встановити відповідний драйвер."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid ""
-"3D printer firmware enables communication between the slicer and the printer "
-"hardware."
-msgstr ""
-"Прошивка 3D-принтера забезпечує зв’язок між слайсером і апаратним "
-"забезпеченням принтера."
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "Прошивка 3D-принтера забезпечує зв’язок між слайсером і апаратним забезпеченням принтера."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid ""
-"Scanner drivers (SANE backends) allow scanning applications to communicate "
-"with your scanner model."
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
 msgstr ""
-"Драйвери сканерів (SANE backends) дозволяють програмам для сканування "
-"спілкуватися з вашою моделлю сканера."
+"Драйвери сканерів (SANE backends) дозволяють програмам для сканування спілкуватися з вашою моделлю "
+"сканера."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Додаткові пакунки прошивки для спеціалізованого обладнання."
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Пакет"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Статус"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Виявлено та встановлено"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Виявлено — ще не встановлено"
@@ -227,11 +232,11 @@ msgstr "Виявлено — ще не встановлено"
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
 msgstr "встановлено"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Доступно в репозиторії"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
 msgstr "Пристрій"
@@ -671,7 +676,7 @@ msgstr "принтерами у вашій мережі"
 msgid "(proprietary)"
 msgstr "(пропрієтарний)"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 36
@@ -718,7 +723,7 @@ msgstr "Bluetooth"
 msgid "Bluetooth adapter drivers."
 msgstr "Драйвери адаптера bluetooth."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 40
@@ -815,6 +820,12 @@ msgstr "інше"
 msgid "Additional firmware packages."
 msgstr "Додаткові пакети прошивки."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Категорії"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 #: usr/share/big-driver-manager/ui/window.py:198
 msgid "Home"
@@ -828,12 +839,6 @@ msgstr "Ядро"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "Відео"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Категорії"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -877,6 +882,10 @@ msgstr "Про"
 #: usr/share/big-driver-manager/ui/window.py:515
 msgid "Hardware detection failed. Check system logs for details."
 msgstr "Не вдалося виявити обладнання. Перевірте системні журнали для деталей."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
+msgid "Hardware detection for this category failed. Try refreshing later."
+msgstr "Виявлення апаратного забезпечення для цієї категорії не вдалося. Спробуйте оновити пізніше."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #: usr/share/big-driver-manager/ui/window.py:627
@@ -888,21 +897,25 @@ msgstr "Застаріле ядро: {} — більше не отримує о�
 #: usr/share/big-driver-manager/ui/window.py:631
 msgid "Manage"
 msgstr "Керувати"
-#
+# 
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
 msgid ""
-"The package database was last updated {} days ago. Update your system before "
-"installing drivers to avoid download failures and missing packages."
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
 msgstr ""
-"База даних пакетів востаннє оновлювалася {} днів тому. Оновіть вашу систему "
-"перед встановленням драйверів, щоб уникнути збоїв завантаження та відсутніх "
-"пакетів."
+"База даних пакетів востаннє оновлювалася {} днів тому. Оновіть вашу систему перед встановленням "
+"драйверів, щоб уникнути збоїв завантаження та відсутніх пакетів."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 #: usr/share/big-driver-manager/ui/window.py:652
 msgid "Showing all drivers, including incompatible ones"
 msgstr "Показати всі драйвери, включно з несумісними"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
+msgid "Operation in progress"
+msgstr "Операція в процесі"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 #: usr/share/big-driver-manager/ui/progress_dialog.py:117
@@ -913,15 +926,32 @@ msgstr "Технічні деталі"
 msgid "Terminal output"
 msgstr "Вивід терміналу"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Закрити"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "Скасувати"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 #: usr/share/big-driver-manager/ui/category_page.py:627
 #: usr/share/big-driver-manager/ui/category_page.py:665
@@ -959,19 +989,10 @@ msgstr "Завершено!"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:374
 msgid "Failed"
 msgstr "Невдача"
-#
+# 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr "This step can no longer be cancelled safely. Waiting for it to finish…"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "Операція скасована користувачем."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "Скасовано"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 #: usr/share/big-driver-manager/ui/kernel_page.py:107
 msgid "Installed Kernels"
@@ -1000,7 +1021,7 @@ msgstr "In Use"
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Застарілі ядра — рекомендовано видалення"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1050,39 +1071,36 @@ msgstr "Принаймні одне резервне ядро ​​має за�
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
 msgid ""
-"Recommended for most users. These kernels receive security updates for years "
-"and are thoroughly tested."
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
 msgstr ""
-"Рекомендовано для більшості користувачів. Ці ядра отримують оновлення "
-"безпеки протягом років і ретельно тестуються."
+"Рекомендовано для більшості користувачів. Ці ядра отримують оновлення безпеки протягом років і "
+"ретельно тестуються."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 #: usr/share/big-driver-manager/ui/kernel_page.py:449
 msgid ""
-"Always up to date with the latest features and hardware support. Good if you "
-"need the newest drivers."
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
 msgstr ""
-"Завжди оновлені з останніми функціями та підтримкою обладнання. Добре, якщо "
-"потрібні найновіші драйвери."
+"Завжди оновлені з останніми функціями та підтримкою обладнання. Добре, якщо потрібні найновіші "
+"драйвери."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 #: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid ""
-"Tuned for gaming and desktop responsiveness. A good option for daily use "
-"with extra performance."
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
 msgstr ""
-"Оптимізовані для ігор та швидкої реакції робочого столу. Хороший варіант для "
-"щоденного використання з додатковою продуктивністю."
+"Оптимізовані для ігор та швидкої реакції робочого столу. Хороший варіант для щоденного використання "
+"з додатковою продуктивністю."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:457
 msgid ""
-"Built for audio/video production needing precise timing. May be incompatible "
-"with some drivers (e.g. NVIDIA). Only for advanced users."
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
 msgstr ""
-"Створені для аудіо/відео виробництва з точною синхронізацією. Можуть бути "
-"несумісні з деякими драйверами (наприклад, NVIDIA). Лише для досвідчених "
-"користувачів."
+"Створені для аудіо/відео виробництва з точною синхронізацією. Можуть бути несумісні з деякими "
+"драйверами (наприклад, NVIDIA). Лише для досвідчених користувачів."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 #: usr/share/big-driver-manager/ui/kernel_page.py:498
@@ -1191,17 +1209,15 @@ msgstr "Це ядро наразі використовується. Споча�
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Видалити {}"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 #: usr/share/big-driver-manager/ui/kernel_page.py:770
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will "
-"have no fallback.\n"
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Це ваш останній резервний ядро. Якщо поточне ядро вийде з ладу, у вас не "
-"буде запасного варіанту.\n"
+"⚠ Це ваш останній резервний ядро. Якщо поточне ядро вийде з ладу, у вас не буде запасного варіанту.\n"
 "\n"
 "Наступні пакунки будуть видалені:"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1286,27 +1302,25 @@ msgstr "Усі застарілі ядра успішно видалено."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Що нового в Linux {}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
-"This package is not in the official repositories. It will be built from the "
-"AUR on your computer, which can take several minutes and is not reviewed by "
-"the distribution."
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
 msgstr ""
-"This package is not in the official repositories. It will be built from the "
-"AUR on your computer, which can take several minutes and is not reviewed by "
-"the distribution."
-#
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
 msgid ""
-"Your device already works with the built-in driver {}, which is the "
-"recommended option. Only install this third-party driver to work around a "
-"specific problem — it may conflict with the built-in one."
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
 msgstr ""
-"Ваш пристрій вже працює з вбудованим драйвером {}, який є рекомендованим "
-"варіантом. Встановлюйте цей драйвер стороннього виробника лише для вирішення "
-"конкретної проблеми — він може конфліктувати з вбудованим."
+"Ваш пристрій вже працює з вбудованим драйвером {}, який є рекомендованим варіантом. Встановлюйте "
+"цей драйвер стороннього виробника лише для вирішення конкретної проблеми — він може конфліктувати з "
+"вбудованим."
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 #: usr/share/big-driver-manager/ui/base_page.py:39
 #: usr/share/big-driver-manager/ui/base_page.py:44
@@ -1316,11 +1330,6 @@ msgstr "Завантаження..."
 #: usr/share/big-driver-manager/ui/base_page.py:40
 msgid "Loading"
 msgstr "Завантаження"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Застарілі ядра — рекомендовано видалення"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1330,12 +1339,11 @@ msgstr "Що таке ядро?"
 # 72
 #: usr/share/big-driver-manager/ui/home_page.py:72
 msgid ""
-"The kernel is the heart of your operating system. It controls your "
-"processor, memory, and all hardware. Most drivers already come built-in with "
-"the kernel."
+"The kernel is the heart of your operating system. It controls your processor, memory, and all "
+"hardware. Most drivers already come built-in with the kernel."
 msgstr ""
-"Ядро — це серце вашої операційної системи. Він контролює ваш процесор, "
-"пам'ять і все обладнання. Більшість драйверів уже вбудовані в ядро."
+"Ядро — це серце вашої операційної системи. Він контролює ваш процесор, пам'ять і все обладнання. "
+"Більшість драйверів уже вбудовані в ядро."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 #: usr/share/big-driver-manager/ui/home_page.py:83
 msgid "What are Drivers?"
@@ -1344,13 +1352,16 @@ msgstr "Що таке драйвери?"
 # 85
 #: usr/share/big-driver-manager/ui/home_page.py:85
 msgid ""
-"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
-"communicate with the system. If everything is already working, you probably "
-"don't need to change anything."
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to communicate with the system. "
+"If everything is already working, you probably don't need to change anything."
 msgstr ""
-"Драйвери дозволяють кожному пристрою — наприклад, вашій відеокарті, Wi-Fi "
-"або звуку — спілкуватися з системою. Якщо все вже працює, ймовірно, нічого "
-"змінювати не потрібно."
+"Драйвери дозволяють кожному пристрою — наприклад, вашій відеокарті, Wi-Fi або звуку — спілкуватися "
+"з системою. Якщо все вже працює, ймовірно, нічого змінювати не потрібно."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
+msgid "Checking your system"
+msgstr "Перевірка вашої системи"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 #: usr/share/big-driver-manager/ui/home_page.py:113
@@ -1370,7 +1381,7 @@ msgstr "Рекомендовано для вашого обладнання"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Встановити рекомендоване"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
@@ -1452,7 +1463,7 @@ msgstr "Встановлення пакетів {}"
 msgid "Installing recommended packages"
 msgstr "Встановлення рекомендованих пакетів"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 643
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -1466,7 +1477,7 @@ msgstr "Завантаження пакетів..."
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "Всі рекомендовані пакети успішно встановлені!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "Package installation failed."
@@ -1478,7 +1489,7 @@ msgstr "Package installation failed."
 msgid "Install Driver"
 msgstr "Встановити драйвер"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1212
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1487,6 +1498,11 @@ msgstr "Встановити драйвер"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1371
 msgid "Downloading package..."
 msgstr "Завантаження пакету..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
+#, python-brace-format
+msgid "Installed {}"
+msgstr "Встановлено {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/ui/home_page.py:733
 #, python-brace-format
@@ -1510,12 +1526,10 @@ msgstr "Стабільна, з довгостроковою підтримкою
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid ""
-"Receives security updates for years. Best choice for most users — reliable "
-"and well-tested."
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
 msgstr ""
-"Отримує оновлення безпеки протягом років. Найкращий вибір для більшості "
-"користувачів — надійний і добре перевірений."
+"Отримує оновлення безпеки протягом років. Найкращий вибір для більшості користувачів — надійний і "
+"добре перевірений."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
@@ -1525,13 +1539,12 @@ msgstr "Низька затримка, у режимі реального час
 # manager/ui/kernel_card_builder.py, line: 52
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
 msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be "
-"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
-"users."
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
 msgstr ""
-"Розроблено для аудіо/відео виробництва та завдань, що потребують точної "
-"синхронізації. Може бути несумісним з деякими драйверами (наприклад, "
-"NVIDIA). Рекомендується лише для досвідчених користувачів."
+"Розроблено для аудіо/відео виробництва та завдань, що потребують точної синхронізації. Може бути "
+"несумісним з деякими драйверами (наприклад, NVIDIA). Рекомендується лише для досвідчених "
+"користувачів."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
@@ -1541,26 +1554,25 @@ msgstr "Оптимізовано для ігор та продуктивност
 # manager/ui/kernel_card_builder.py, line: 62
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
 msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use "
-"if you want extra performance."
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
 msgstr ""
-"Налаштовано для швидших ігор і більш чутливого робочого столу. Чудово "
-"підходить для щоденного використання, якщо ви хочете додаткову "
-"продуктивність."
-#
+"Налаштовано для швидших ігор і більш чутливого робочого столу. Чудово підходить для щоденного "
+"використання, якщо ви хочете додаткову продуктивність."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
 msgid "Performance optimized by CachyOS"
 msgstr "Оптимізація продуктивності від CachyOS"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
 msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
-"gaming and desktop responsiveness."
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
 msgstr ""
-"Планувальник EEVDF з LTO, AutoFDO та оптимізаціями Propeller. Відмінно "
-"підходить для ігор і швидкості реакції робочого столу."
+"Планувальник EEVDF з LTO, AutoFDO та оптимізаціями Propeller. Відмінно підходить для ігор і "
+"швидкості реакції робочого столу."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
@@ -1571,46 +1583,48 @@ msgstr "Останні функції та драйвери"
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Завжди оновлений з найновішими функціями та підтримкою обладнання."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Ядра"
-#
+# 
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Встановлені драйвери"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
-msgid ""
-"All drivers and firmware currently installed on your system, grouped by "
-"category."
-msgstr ""
-"Усі драйвери та мікропрограми, встановлені у вашій системі, згруповані за "
-"категоріями."
-#
+msgid "All drivers and firmware currently installed on your system, grouped by category."
+msgstr "Усі драйвери та мікропрограми, встановлені у вашій системі, згруповані за категоріями."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "No extra drivers installed"
 msgstr "Додаткові драйвери не встановлені"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 #: usr/share/big-driver-manager/ui/installed_page.py:106
 msgid "Your system is using only default drivers."
 msgstr "Ваша система використовує лише стандартні драйвери."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #: usr/share/big-driver-manager/ui/installed_page.py:279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} встановлених драйверів у {cats} категоріях"
-#
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "Встановлено {n}"
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 #: usr/share/big-driver-manager/ui/installed_page.py:311
 msgid "Running"
 msgstr "Працює"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 #: usr/share/big-driver-manager/ui/installed_page.py:317
 msgid "MHWD driver"
@@ -1627,8 +1641,8 @@ msgstr "Активний"
 #: usr/share/big-driver-manager/ui/installed_page.py:333
 msgid "Detected"
 msgstr ""
-"Отримує оновлення безпеки роками. Найкращий вибір для більшості користувачів "
-"— надійний і добре перевірений."
+"Отримує оновлення безпеки роками. Найкращий вибір для більшості користувачів — надійний і добре "
+"перевірений."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 #: usr/share/big-driver-manager/ui/category_page.py:643
 #: usr/share/big-driver-manager/ui/installed_page.py:395
@@ -1659,26 +1673,22 @@ msgstr "Відеодрайвери"
 # 127
 #: usr/share/big-driver-manager/ui/mesa_page.py:129
 msgid ""
-"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
-"are built into a single project called <b>Mesa</b>. Below you can choose a "
-"Mesa variant and manage extra packages for gaming, video playback, compute "
-"and AI."
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) are built into a single "
+"project called <b>Mesa</b>. Below you can choose a Mesa variant and manage extra packages for "
+"gaming, video playback, compute and AI."
 msgstr ""
-"У Linux відеодрайвери для AMD, Intel та NVIDIA (вільне програмне "
-"забезпечення Nouveau) об’єднані в один проєкт під назвою <b>Mesa</b>. Нижче "
-"ви можете обрати варіант Mesa та керувати додатковими пакетами для ігор, "
-"відтворення відео, обчислень та штучного інтелекту."
+"У Linux відеодрайвери для AMD, Intel та NVIDIA (вільне програмне забезпечення Nouveau) об’єднані в "
+"один проєкт під назвою <b>Mesa</b>. Нижче ви можете обрати варіант Mesa та керувати додатковими "
+"пакетами для ігор, відтворення відео, обчислень та штучного інтелекту."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 #: usr/share/big-driver-manager/ui/mesa_page.py:152
 msgid ""
-"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
-"official proprietary driver for the best performance in gaming, AI and "
-"professional applications."
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the official proprietary driver "
+"for the best performance in gaming, AI and professional applications."
 msgstr ""
-"Ваш комп’ютер має графічну карту <b>NVIDIA</b>. Ви можете встановити "
-"офіційний пропрієтарний драйвер для найкращої продуктивності в іграх, ШІ та "
-"професійних застосунках."
+"Ваш комп’ютер має графічну карту <b>NVIDIA</b>. Ви можете встановити офіційний пропрієтарний "
+"драйвер для найкращої продуктивності в іграх, ШІ та професійних застосунках."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 #: usr/share/big-driver-manager/ui/mesa_page.py:185
@@ -1687,23 +1697,19 @@ msgstr "Варіант Mesa"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 #: usr/share/big-driver-manager/ui/mesa_page.py:196
-msgid ""
-"Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Виберіть, яку збірку Mesa використовувати. Активним може бути лише один "
-"варіант одночасно."
+msgid "Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "Виберіть, яку збірку Mesa використовувати. Активним може бути лише один варіант одночасно."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 #: usr/share/big-driver-manager/ui/mesa_page.py:209
 msgid ""
-"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
-"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
-"— other versions will not improve performance and may cause instabilities."
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used for minor tasks in this "
+"case. We recommend keeping the <b>Stable</b> variant — other versions will not improve performance "
+"and may cause instabilities."
 msgstr ""
-"<b>Примітка:</b> Ви використовуєте пропрієтарний драйвер NVIDIA. Mesa у "
-"цьому випадку використовується лише для незначних завдань. Рекомендуємо "
-"залишатися на варіанті <b>Stable</b> — інші версії не покращать "
-"продуктивність і можуть спричинити нестабільність."
+"<b>Примітка:</b> Ви використовуєте пропрієтарний драйвер NVIDIA. Mesa у цьому випадку "
+"використовується лише для незначних завдань. Рекомендуємо залишатися на варіанті <b>Stable</b> — "
+"інші версії не покращать продуктивність і можуть спричинити нестабільність."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 #: usr/share/big-driver-manager/ui/mesa_page.py:380
@@ -1791,12 +1797,8 @@ msgstr "Власний драйвер NVIDIA"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 #: usr/share/big-driver-manager/ui/mesa_page.py:701
-msgid ""
-"Official closed-source driver with the best performance for gaming, AI, and "
-"professional workloads."
-msgstr ""
-"Офіційний закритий драйвер з найкращою продуктивністю для ігор, AI та "
-"професійних завдань."
+msgid "Official closed-source driver with the best performance for gaming, AI, and professional workloads."
+msgstr "Офіційний закритий драйвер з найкращою продуктивністю для ігор, AI та професійних завдань."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 #: usr/share/big-driver-manager/ui/mesa_page.py:713
@@ -1839,11 +1841,8 @@ msgstr "Інші драйвери"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 #: usr/share/big-driver-manager/ui/mesa_page.py:941
-msgid ""
-"Additional drivers for special hardware configurations like virtual machines."
-msgstr ""
-"Додаткові драйвери для спеціальних апаратних конфігурацій, таких як "
-"віртуальні машини."
+msgid "Additional drivers for special hardware configurations like virtual machines."
+msgstr "Додаткові драйвери для спеціальних апаратних конфігурацій, таких як віртуальні машини."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 #: usr/share/big-driver-manager/ui/mesa_page.py:1026
 msgid "Compatible"
@@ -1869,8 +1868,13 @@ msgstr "⚠ Підтримка Wayland відсутня · Більше не п�
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Перейти з {} на {}"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
+#, python-brace-format
+msgid "Install {} unavailable"
+msgstr "Встановлення {} недоступне"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 951
 # File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
@@ -2006,18 +2010,16 @@ msgstr ""
 "Встановити <b>{}</b>?\n"
 "\n"
 "{}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Недоступно"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
-msgid ""
-"Not available in the enabled repositories. 32-bit (lib32) packages require "
-"the multilib repository."
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
 msgstr ""
-"No disponible en los repositorios habilitados. Los paquetes de 32 bits "
-"(lib32) requieren el repositorio multilib."
+"No disponible en los repositorios habilitados. Los paquetes de 32 bits (lib32) requieren el "
+"repositorio multilib."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -2037,11 +2039,11 @@ msgstr "Видалення пакета..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} було успішно {}!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "Пакетна операція не вдалася."
-#
+# 
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
 msgstr "Відкрийте сторінку пакета драйвера та запропонуйте його встановити."
@@ -2054,6 +2056,11 @@ msgstr "Пошук драйверів..."
 #: usr/share/big-driver-manager/ui/category_page.py:135
 msgid "Search drivers"
 msgstr "Пошук драйверів"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
+msgid "Searching for printers on the network"
+msgstr "Пошук принтерів у мережі"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 #: usr/share/big-driver-manager/ui/category_page.py:160
@@ -2063,8 +2070,7 @@ msgstr "Пошук принтерів у мережі…"
 # line: 162
 #: usr/share/big-driver-manager/ui/category_page.py:179
 msgid "No more automatically detected compatible drivers in this category."
-msgstr ""
-"У цій категорії більше немає автоматично визначених сумісних драйверів."
+msgstr "У цій категорії більше немає автоматично визначених сумісних драйверів."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -2084,38 +2090,30 @@ msgstr "Драйвери для цієї категорії не потрібн�
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 #: usr/share/big-driver-manager/ui/category_page.py:202
-msgid ""
-"No drivers in this category were automatically detected as compatible with "
-"your hardware."
-msgstr ""
-"Драйвери в цій категорії не були автоматично виявлені як сумісні з вашим "
-"обладнанням."
-#
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "Драйвери в цій категорії не були автоматично виявлені як сумісні з вашим обладнанням."
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Адаптер {} — працює (драйвер {})"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "невідомий"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Кабель підключено"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Інтерфейс вимкнено"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
-msgid ""
-"No cable or link detected. Check the cable and the router/switch port — no "
-"extra driver is needed."
-msgstr ""
-"No cable or link detected. Check the cable and the router/switch port — no "
-"extra driver is needed."
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
+msgstr "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 #: usr/share/big-driver-manager/ui/category_page.py:257
@@ -2124,12 +2122,10 @@ msgstr "Помилка виявлення"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 #: usr/share/big-driver-manager/ui/category_page.py:281
-msgid ""
-"No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"У цій категорії не виявлено драйверів, необхідних для вашого обладнання."
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "У цій категорії не виявлено драйверів, необхідних для вашого обладнання."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 339
 # File: big-driver-manager/usr/share/big-driver-
@@ -2160,7 +2156,7 @@ msgstr "{} встановлено"
 #: usr/share/big-driver-manager/ui/category_page.py:426
 msgid "Not installed"
 msgstr "Не встановлено"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
@@ -2180,20 +2176,17 @@ msgstr "Останній драйвер NVIDIA — найкраща продук
 # 40
 #: usr/share/big-driver-manager/ui/mesa_data.py:40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
-msgstr ""
-"Серія NVIDIA 575 — використовуйте, якщо останній драйвер викликає проблеми"
+msgstr "Серія NVIDIA 575 — використовуйте, якщо останній драйвер викликає проблеми"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 43
 #: usr/share/big-driver-manager/ui/mesa_data.py:43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
-msgstr ""
-"Серія NVIDIA 570 — використовуйте, якщо останній драйвер викликає проблеми"
+msgstr "Серія NVIDIA 570 — використовуйте, якщо останній драйвер викликає проблеми"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 47
 #: usr/share/big-driver-manager/ui/mesa_data.py:47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Для ноутбуків Intel + NVIDIA — перемикається між GPU для економії батареї"
+msgstr "Для ноутбуків Intel + NVIDIA — перемикається між GPU для економії батареї"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 50
 #: usr/share/big-driver-manager/ui/mesa_data.py:50
@@ -2218,8 +2211,7 @@ msgstr "Для ноутбуків Intel + NVIDIA — NVIDIA 390 (тільки д
 # 63
 #: usr/share/big-driver-manager/ui/mesa_data.py:63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Для ноутбуків AMD + NVIDIA — перемикання між GPU для економії заряду батареї"
+msgstr "Для ноутбуків AMD + NVIDIA — перемикання між GPU для економії заряду батареї"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 66
 #: usr/share/big-driver-manager/ui/mesa_data.py:66
@@ -2239,8 +2231,7 @@ msgstr "Для ноутбуків AMD + NVIDIA — NVIDIA 470 (спадщина,
 # 76
 #: usr/share/big-driver-manager/ui/mesa_data.py:76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Оптимізований дисплей для віртуальних машин (VirtualBox, VMware, QEMU/KVM)"
+msgstr "Оптимізований дисплей для віртуальних машин (VirtualBox, VMware, QEMU/KVM)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 #: usr/share/big-driver-manager/ui/mesa_data.py:90
@@ -2249,12 +2240,8 @@ msgstr "Ігри та 3D-графіка"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 #: usr/share/big-driver-manager/ui/mesa_data.py:93
-msgid ""
-"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
-"applications."
-msgstr ""
-"Бібліотеки Vulkan та OpenGL, необхідні для ігор, Steam, Wine/Proton та 3D-"
-"додатків."
+msgid "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D applications."
+msgstr "Бібліотеки Vulkan та OpenGL, необхідні для ігор, Steam, Wine/Proton та 3D-додатків."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 #: usr/share/big-driver-manager/ui/mesa_data.py:99
@@ -2264,8 +2251,7 @@ msgstr "Vulkan для GPU AMD Radeon"
 # 106
 #: usr/share/big-driver-manager/ui/mesa_data.py:106
 msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-бітний Vulkan (AMD) — потрібен для Steam, Wine/Proton та старіших ігор"
+msgstr "32-бітний Vulkan (AMD) — потрібен для Steam, Wine/Proton та старіших ігор"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 114
 #: usr/share/big-driver-manager/ui/mesa_data.py:114
@@ -2275,20 +2261,17 @@ msgstr "Vulkan для GPU Intel"
 # 121
 #: usr/share/big-driver-manager/ui/mesa_data.py:121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-бітний Vulkan (Intel) — потрібен для Steam, Wine/Proton та старіших ігор"
+msgstr "32-бітний Vulkan (Intel) — потрібен для Steam, Wine/Proton та старіших ігор"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 130
 #: usr/share/big-driver-manager/ui/mesa_data.py:130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr ""
-"Відкритий Vulkan для NVIDIA (Nouveau) — не потрібен пропрієтарний драйвер"
+msgstr "Відкритий Vulkan для NVIDIA (Nouveau) — не потрібен пропрієтарний драйвер"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 #: usr/share/big-driver-manager/ui/mesa_data.py:139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
-msgstr ""
-"32-бітний OpenGL — потрібен для Steam, Wine/Proton та старіших 32-бітних ігор"
+msgstr "32-бітний OpenGL — потрібен для Steam, Wine/Proton та старіших 32-бітних ігор"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 149
 #: usr/share/big-driver-manager/ui/mesa_data.py:149
@@ -2298,11 +2281,11 @@ msgstr "Відтворення відео"
 # 152
 #: usr/share/big-driver-manager/ui/mesa_data.py:152
 msgid ""
-"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
-"and video calls smoother while reducing CPU and power usage."
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming and video calls smoother "
+"while reducing CPU and power usage."
 msgstr ""
-"Апаратне прискорене декодування відео (VAAPI/VDPAU). Робить відео, стріми та "
-"відеодзвінки плавнішими, знижуючи навантаження на CPU та енергоспоживання."
+"Апаратне прискорене декодування відео (VAAPI/VDPAU). Робить відео, стріми та відеодзвінки "
+"плавнішими, знижуючи навантаження на CPU та енергоспоживання."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 #: usr/share/big-driver-manager/ui/mesa_data.py:159
@@ -2327,11 +2310,11 @@ msgstr "VAAPI для відкритих драйверів AMD та NVIDIA (Nouv
 # 186
 #: usr/share/big-driver-manager/ui/mesa_data.py:186
 msgid ""
-"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
-"Vulkan. Probably not needed."
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and Vulkan. Probably not "
+"needed."
 msgstr ""
-"VDPAU для відкритих драйверів AMD/NVIDIA — застарілий API, який замінюється "
-"VAAPI та Vulkan. Ймовірно, не потрібен."
+"VDPAU для відкритих драйверів AMD/NVIDIA — застарілий API, який замінюється VAAPI та Vulkan. "
+"Ймовірно, не потрібен."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 #: usr/share/big-driver-manager/ui/mesa_data.py:197
@@ -2341,22 +2324,19 @@ msgstr "GPU обчислення (AI / ML)"
 # 200
 #: usr/share/big-driver-manager/ui/mesa_data.py:200
 msgid ""
-"Your graphics card can do more than display images — it can also help with "
-"heavy processing tasks. These libraries allow programs to use the GPU for "
-"things like artificial intelligence, video editing, 3D rendering, image "
-"processing and scientific simulations. Examples: running local AI assistants "
-"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
-"Blender, applying filters in GIMP or Darktable, generating images with "
-"Stable Diffusion, and running physics simulations."
+"Your graphics card can do more than display images — it can also help with heavy processing tasks. "
+"These libraries allow programs to use the GPU for things like artificial intelligence, video "
+"editing, 3D rendering, image processing and scientific simulations. Examples: running local AI "
+"assistants (Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in Blender, "
+"applying filters in GIMP or Darktable, generating images with Stable Diffusion, and running physics "
+"simulations."
 msgstr ""
-"Ваша відеокарта може робити більше, ніж просто відображати зображення — вона "
-"також може допомагати з важкими обчислювальними завданнями. Ці бібліотеки "
-"дозволяють програмам використовувати GPU для таких речей, як штучний "
-"інтелект, відеомонтаж, 3D-візуалізація, обробка зображень та наукові "
-"симуляції. Приклади: запуск локальних AI-помічників (Ollama, LocalAI), "
-"транскрибування аудіо за допомогою Whisper, рендеринг 3D-сцен у Blender, "
-"застосування фільтрів у GIMP або Darktable, генерація зображень за допомогою "
-"Stable Diffusion та запуск фізичних симуляцій."
+"Ваша відеокарта може робити більше, ніж просто відображати зображення — вона також може допомагати "
+"з важкими обчислювальними завданнями. Ці бібліотеки дозволяють програмам використовувати GPU для "
+"таких речей, як штучний інтелект, відеомонтаж, 3D-візуалізація, обробка зображень та наукові "
+"симуляції. Приклади: запуск локальних AI-помічників (Ollama, LocalAI), транскрибування аудіо за "
+"допомогою Whisper, рендеринг 3D-сцен у Blender, застосування фільтрів у GIMP або Darktable, "
+"генерація зображень за допомогою Stable Diffusion та запуск фізичних симуляцій."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 #: usr/share/big-driver-manager/ui/mesa_data.py:215
@@ -2386,11 +2366,11 @@ msgstr "Стабільний"
 # 272
 #: usr/share/big-driver-manager/ui/mesa_data.py:281
 msgid ""
-"Officially tested by the Mesa team. The safest and most reliable choice for "
-"everyday use, gaming, and video playback."
+"Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
+"and video playback."
 msgstr ""
-"Офіційно протестований командою Mesa. Найбезпечніший і найнадійніший вибір "
-"для щоденного використання, ігор та відтворення відео."
+"Офіційно протестований командою Mesa. Найбезпечніший і найнадійніший вибір для щоденного "
+"використання, ігор та відтворення відео."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
 #: usr/share/big-driver-manager/ui/mesa_data.py:284
@@ -2405,11 +2385,11 @@ msgstr "Виконання"
 # 281
 #: usr/share/big-driver-manager/ui/mesa_data.py:290
 msgid ""
-"Modified version with gaming optimizations for extra performance. Reliable "
-"for most users but may rarely cause instabilities."
+"Modified version with gaming optimizations for extra performance. Reliable for most users but may "
+"rarely cause instabilities."
 msgstr ""
-"Модифікована версія з ігровими оптимізаціями для додаткової продуктивності. "
-"Надійна для більшості користувачів, але іноді може викликати нестабільність."
+"Модифікована версія з ігровими оптимізаціями для додаткової продуктивності. Надійна для більшості "
+"користувачів, але іноді може викликати нестабільність."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 #: usr/share/big-driver-manager/ui/mesa_data.py:298
@@ -2419,13 +2399,11 @@ msgstr "розвиток"
 # 291
 #: usr/share/big-driver-manager/ui/mesa_data.py:300
 msgid ""
-"Built from the very latest source code with cutting-edge features. Offers "
-"the best gaming performance but is the least tested — only for advanced "
-"users."
+"Built from the very latest source code with cutting-edge features. Offers the best gaming "
+"performance but is the least tested — only for advanced users."
 msgstr ""
-"Зібрано з найновішого вихідного коду з передовими функціями. Забезпечує "
-"найкращу ігрову продуктивність, але найменш протестований — лише для "
-"досвідчених користувачів."
+"Зібрано з найновішого вихідного коду з передовими функціями. Забезпечує найкращу ігрову "
+"продуктивність, але найменш протестований — лише для досвідчених користувачів."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 #: usr/share/big-driver-manager/ui/mesa_data.py:308
 #: usr/share/big-driver-manager/ui/mesa_data.py:314
@@ -2435,11 +2413,11 @@ msgstr "Застарілий"
 # 301
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
 msgid ""
-"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
-"install this if newer Mesa versions don't work with your hardware."
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
+"Mesa versions don't work with your hardware."
 msgstr ""
-"Для дуже старих відеокарт, які підтримують лише OpenGL 2.1 або раніше. "
-"Встановлюйте лише якщо новіші версії Mesa не працюють з вашим обладнанням."
+"Для дуже старих відеокарт, які підтримують лише OpenGL 2.1 або раніше. Встановлюйте лише якщо "
+"новіші версії Mesa не працюють з вашим обладнанням."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #: usr/share/big-driver-manager/core/mesa_manager.py:116
@@ -2456,66 +2434,6 @@ msgstr "Застосування драйвера {}..."
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Початок встановлення драйвера {}..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Перевірка конфліктуючих пакетів..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Видалення конфліктів: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "Перевірка {} пакетів..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ Пакет {} недоступний, пропускаємо..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ Немає доступних пакетів для встановлення."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
-#, python-brace-format
-msgid "Installing: {}"
-msgstr "Встановлення: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Видалення конфліктуючих пакетів..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "Не вдалося видалити конфліктні пакети."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "Встановлення драйвера {}..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "Не вдалося застосувати драйвер."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "Драйвер успішно застосовано!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ Драйвер {} успішно застосовано!"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #: usr/share/big-driver-manager/core/base_manager.py:205
 #: usr/share/big-driver-manager/core/mesa_manager.py:262
@@ -2527,11 +2445,71 @@ msgstr "Помилка: {}"
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Помилка: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "Не вдалося видалити конфліктні пакети."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
 #, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ Операція не вдалася (код виходу: {})"
+msgid "Removing conflicts: {}"
+msgstr "Видалення конфліктів: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Видалення конфліктуючих пакетів..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
+msgid "Removing conflicting packages"
+msgstr "Видалення конфліктуючих пакетів"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Перевірка конфліктуючих пакетів..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "Перевірка {} пакетів..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ Немає доступних пакетів для встановлення."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ Пакет {} недоступний, пропускаємо..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Встановлення: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "Встановлення драйвера {}..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "Драйвер успішно застосовано!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Драйвер {} успішно застосовано!"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Встановлення драйвера {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #: usr/share/big-driver-manager/core/base_manager.py:181
 #: usr/share/big-driver-manager/core/mhwd_manager.py:310
@@ -2550,12 +2528,17 @@ msgstr "Запуск {}..."
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 msgid "Completed"
 msgstr "Завершено"
-#
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "Продовжіть встановлення у вікні pamac, яке було відкрито."
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Встановлення попередніх умов збірки: {}"
-#
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "Встановлення попередніх умов збірки"
@@ -2565,16 +2548,17 @@ msgstr "Встановлення попередніх умов збірки"
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer не знайдено. Неможливо встановити пакет AUR {}."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "Продовжіть встановлення у вікні pamac, яке було відкрито."
-#
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
+msgid ""
+"Continue the installation in the pamac window that was opened. This dialog is only monitoring the "
+"result."
+msgstr "Продовжте встановлення у вікні pamac, яке було відкрито. Цей діалог лише контролює результат."
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Встановлення пакетів"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Видалення пакетів"
@@ -2629,41 +2613,37 @@ msgstr "{}  не вдалося."
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} не вдалося (код виходу: {})"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
-"Package not available in the enabled repositories. It may come from the AUR, "
-"belong to a disabled repository (such as multilib), or the package database "
-"may be outdated.\n"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
 "Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"Пакет недоступний у ввімкнених репозиторіях. Він може походити з AUR, "
-"належати до вимкненого репозиторію (такого як multilib) або база даних "
-"пакетів може бути застарілою.  \n"
-"Пропозиція: Оновіть всю систему за допомогою 'sudo pacman -Syu' і спробуйте "
-"ще раз."
+"Пакет недоступний у ввімкнених репозиторіях. Він може походити з AUR, належати до вимкненого "
+"репозиторію (такого як multilib) або база даних пакетів може бути застарілою.  \n"
+"Пропозиція: Оновіть всю систему за допомогою 'sudo pacman -Syu' і спробуйте ще раз."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 #: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
 "A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
-"'sudo pacman -Syyu'."
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
 "Конфлікт завадив завершенню операції.\n"
-"Рекомендація: Очистіть кеш і оновіть систему командами 'sudo pacman -Scc', а "
-"потім 'sudo pacman -Syyu'."
+"Рекомендація: Очистіть кеш і оновіть систему командами 'sudo pacman -Scc', а потім 'sudo pacman "
+"-Syyu'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 #: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
 "Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
-"and resolve the conflict."
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
 "Деякі файли з цього пакету вже існують у системі.\n"
-"Рекомендація: Перевірте, який пакет володіє файлом за допомогою 'pacman -Qo "
-"<file_path>' і вирішіть конфлікт."
+"Рекомендація: Перевірте, який пакет володіє файлом за допомогою 'pacman -Qo <file_path>' і вирішіть "
+"конфлікт."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 #: usr/share/big-driver-manager/core/base_manager.py:338
@@ -2678,23 +2658,20 @@ msgstr ""
 #: usr/share/big-driver-manager/core/base_manager.py:345
 msgid ""
 "Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
 "Не вдалося перевірити підпис пакета.\n"
-"Рекомендація: Оновіть свої ключі за допомогою 'sudo pacman -S archlinux-"
-"keyring manjaro-keyring'."
+"Рекомендація: Оновіть свої ключі за допомогою 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 #: usr/share/big-driver-manager/core/base_manager.py:353
 msgid ""
 "The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
 "Базу даних пакетів заблоковано іншим процесом.\n"
-"Якщо інший менеджер пакетів не працює, видаліть блокування за допомогою "
-"'sudo rm /var/lib/pacman/db.lck'."
+"Якщо інший менеджер пакетів не працює, видаліть блокування за допомогою 'sudo rm "
+"/var/lib/pacman/db.lck'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 #: usr/share/big-driver-manager/core/base_manager.py:361
@@ -2703,19 +2680,17 @@ msgid ""
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
 "Недостатньо місця на диску для завершення операції.\n"
-"Рекомендація: Звільніть місце, очистивши кеш пакетів командою 'sudo pacman "
-"-Scc'."
+"Рекомендація: Звільніть місце, очистивши кеш пакетів командою 'sudo pacman -Scc'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try "
-"updating your mirror list."
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
 "Не вдалося завантажити необхідні файли.\n"
-"Рекомендація: Перевірте ваше інтернет-з’єднання. Якщо проблема не зникає, "
-"спробуйте оновити список дзеркал."
+"Рекомендація: Перевірте ваше інтернет-з’єднання. Якщо проблема не зникає, спробуйте оновити список "
+"дзеркал."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 #: usr/share/big-driver-manager/core/base_manager.py:377
@@ -2759,186 +2734,3 @@ msgstr "Перевірка залежностей..."
 #: usr/share/big-driver-manager/core/base_manager.py:403
 msgid "Synchronizing package databases..."
 msgstr "Синхронізація баз даних пакетів..."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
-msgid "Operation in progress"
-msgstr "Операція в процесі"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
-msgid "Hardware detection for this category failed. Try refreshing later."
-msgstr ""
-"Виявлення апаратного забезпечення для цієї категорії не вдалося. Спробуйте "
-"оновити пізніше."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
-#, python-brace-format
-msgid "{n} installed"
-msgstr "Встановлено {n}"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
-msgid "Searching for printers on the network"
-msgstr "Пошук принтерів у мережі"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
-msgid "Checking your system"
-msgstr "Перевірка вашої системи"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "Доступні сумісні драйвери"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
-#, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr "{} — драйвер не завантажено, встановіть {} для цього пристрою"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually "
-"the most stable and recommended option. If you experience issues, you can "
-"try a driver detected as compatible that may improve performance or add "
-"features."
-msgstr ""
-"Ваші пристрої вже працюють із вбудованим драйвером, який зазвичай є "
-"найстабільнішим і рекомендованим варіантом. Якщо виникають проблеми, ви "
-"можете спробувати драйвер, виявлений як сумісний, який може покращити "
-"продуктивність або додати функції."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Не вдалося встановити пакет.\n"
-"Перевірте вивід терміналу для деталей."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
-msgid "Installed {}"
-msgstr "Встановлено {}"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Всі драйвера встановлені"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Усі необхідні драйвери вже встановлені у вашій системі."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Виявлення обладнання"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Виявлення обладнання..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
-#, python-brace-format
-msgid "{n} drivers"
-msgstr "Драйвери {n}"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 встановлено"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
-#, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "Доступні для встановлення драйвери {n}"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr "Встановіть рекомендовані драйвери для кращої підтримки обладнання."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Драйвер встановлено успішно."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "Встановлення не вдалося. Перевірте журнали для деталей."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
-msgid "Install {} unavailable"
-msgstr "Встановлення {} недоступне"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Операція з пакетом не вдалася.\n"
-"Перевірте вивід терміналу для деталей."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
-msgid ""
-"Continue the installation in the pamac window that was opened. This dialog "
-"is only monitoring the result."
-msgstr ""
-"Продовжте встановлення у вікні pamac, яке було відкрито. Цей діалог лише "
-"контролює результат."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
-msgid "Removing conflicting packages"
-msgstr "Видалення конфліктуючих пакетів"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
-msgid "Installing {} driver"
-msgstr "Встановлення драйвера {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been "
-"removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
-"for the correct name."
-msgstr ""
-"Пакет не знайдено в репозиторіях. Ім’я пакету могло змінитися або бути "
-"видалене.\n"
-"Рекомендація: Спробуйте оновити базу даних командою 'sudo pacman -Sy' та "
-"пошукати правильне ім’я."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
-msgid "Open Driver Manager to review and install this firmware."
-msgstr ""
-"Відкрийте Диспетчер драйверів, щоб переглянути та встановити це програмне "
-"забезпечення."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
-msgid "Open Driver Manager to review and install this driver."
-msgstr ""
-"Відкрийте Диспетчер драйверів, щоб переглянути та встановити цей драйвер."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
-msgid "Driver Manager"
-msgstr "Менеджер драйверів"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
-msgid "Don't alert for this firmware again"
-msgstr "Не сповіщати про це програмне забезпечення знову"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
-msgid "Open Driver Manager"
-msgstr "Відкрити Менеджер драйверів"

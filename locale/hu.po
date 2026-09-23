@@ -2,7 +2,8 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,6 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Még mindig betöltés… Ellenőrizze a hálózati kapcsolatot."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "Telepítés"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "A műveletet a felhasználó törölte."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "Törölve"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:606
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
@@ -42,6 +76,22 @@ msgstr "Szkenner illesztőprogram elérhető"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:95
 msgid "Driver available"
 msgstr "Illesztőprogram elérhető"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
+msgid "Open Driver Manager to review and install this firmware."
+msgstr "Nyissa meg a Vezérlőprogram-kezelőt ennek a firmware-nek a felülvizsgálatához és telepítéséhez."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
+msgid "Open Driver Manager to review and install this driver."
+msgstr "Nyissa meg a Vezérlőprogram-kezelőt ennek a vezérlőprogramnak a felülvizsgálatához és telepítéséhez."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
+msgid "Driver Manager"
+msgstr "Illesztőprogram-kezelő"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
+msgid "Don't alert for this firmware again"
+msgstr "Ne figyelmeztessen erre a firmware-re többé."
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
@@ -51,164 +101,120 @@ msgstr "Illesztőprogram elérhető"
 msgid "Don't alert for this device again"
 msgstr "Ne figyelmeztessen erre az eszközre újra"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "Mégse"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "Telepítés"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Bezárás"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
+msgid "Open Driver Manager"
+msgstr "Nyisd meg a Vezérlőprogram-kezelőt"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:28
 msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the "
-"best option. Install an alternative only if you have connection problems."
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
 msgstr ""
-"Ha a Wi-Fi már működik, a beépített kernel-illesztő általában a legjobb "
-"választás. Csak akkor telepíts alternatívát, ha kapcsolatproblémáid vannak."
+"Ha a Wi-Fi már működik, a beépített kernel-illesztő általában a legjobb választás. Csak akkor "
+"telepíts alternatívát, ha kapcsolatproblémáid vannak."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:33
 msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is "
-"only needed for very new or rare hardware."
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
 msgstr ""
-"A vezetékes hálózati adapterek szinte mindig azonnal működnek. Extra "
-"illesztő csak nagyon új vagy ritka hardverhez szükséges."
+"A vezetékes hálózati adapterek szinte mindig azonnal működnek. Extra illesztő csak nagyon új vagy "
+"ritka hardverhez szükséges."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:37
 msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, "
-"installing the firmware for your adapter may solve the problem."
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
 msgstr ""
-"Néhány Bluetooth adapterhez extra firmware kell a működéshez. Ha a párosítás "
-"sikertelen, az adapter firmware-ének telepítése megoldhatja a problémát."
+"Néhány Bluetooth adapterhez extra firmware kell a működéshez. Ha a párosítás sikertelen, az adapter "
+"firmware-ének telepítése megoldhatja a problémát."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:42
 msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device "
-"won't be recognized by the system."
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
 msgstr ""
-"A digitális TV tuner-ek általában speciális firmware-t igényelnek. Enélkül "
-"az eszközt a rendszer nem ismeri fel."
+"A digitális TV tuner-ek általában speciális firmware-t igényelnek. Enélkül az eszközt a rendszer "
+"nem ismeri fel."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:46
 msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is "
-"only needed for specific USB audio interfaces."
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
 msgstr ""
-"A legtöbb hangkészülék az ALSA kernelbe épített támogatásával működik. Extra "
-"firmware csak bizonyos USB hanginterfészekhez szükséges."
+"A legtöbb hangkészülék az ALSA kernelbe épített támogatásával működik. Extra firmware csak bizonyos "
+"USB hanginterfészekhez szükséges."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:50
 msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or "
-"enable additional features."
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
 msgstr ""
-"A legtöbb webkamera automatikusan működik. Extra firmware javíthatja a "
-"képminőséget vagy engedélyezhet további funkciókat."
+"A legtöbb webkamera automatikusan működik. Extra firmware javíthatja a képminőséget vagy "
+"engedélyezhet további funkciókat."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid ""
-"If your touchscreen doesn't respond, installing the matching firmware "
-"usually fixes it."
-msgstr ""
-"Ha az érintőképernyőd nem reagál, a megfelelő firmware telepítése általában "
-"megoldja a problémát."
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "Ha az érintőképernyőd nem reagál, a megfelelő firmware telepítése általában megoldja a problémát."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:58
 msgid ""
-"Printer drivers let the system communicate with your model. If the printer "
-"was detected on your network or USB, installing the matching driver is "
-"recommended."
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
 msgstr ""
-"A nyomtató-illesztők lehetővé teszik a rendszer számára, hogy kommunikáljon "
-"a modelleddel. Ha a nyomtatót észlelte a hálózatodon vagy USB-n, a megfelelő "
-"illesztő telepítése ajánlott."
+"A nyomtató-illesztők lehetővé teszik a rendszer számára, hogy kommunikáljon a modelleddel. Ha a "
+"nyomtatót észlelte a hálózatodon vagy USB-n, a megfelelő illesztő telepítése ajánlott."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid ""
-"3D printer firmware enables communication between the slicer and the printer "
-"hardware."
-msgstr ""
-"A 3D nyomtató firmware-je lehetővé teszi a szeletelő és a nyomtató hardver "
-"közötti kommunikációt."
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "A 3D nyomtató firmware-je lehetővé teszi a szeletelő és a nyomtató hardver közötti kommunikációt."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid ""
-"Scanner drivers (SANE backends) allow scanning applications to communicate "
-"with your scanner model."
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
 msgstr ""
-"A szkenner-illesztők (SANE backend-ek) lehetővé teszik a szkennelő "
-"alkalmazások számára, hogy kommunikáljanak a szkenner modelleddel."
+"A szkenner-illesztők (SANE backend-ek) lehetővé teszik a szkennelő alkalmazások számára, hogy "
+"kommunikáljanak a szkenner modelleddel."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "További firmware csomagok speciális hardverekhez."
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Csomag"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Állapot"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Felfedezve és telepítve"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Felfedezve — még nincs telepítve"
@@ -226,11 +232,11 @@ msgstr "Felfedezve — még nincs telepítve"
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
 msgstr "Telepítve"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Elérhető a tárolóban"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
 msgstr "Eszköz"
@@ -263,9 +269,7 @@ msgstr "Illesztőprogram készlet (nyomtatás és szkennelés) a következőhöz
 # manager/utils/desc_translate.py, line: 178
 #: usr/share/big-driver-manager/utils/desc_translate.py:178
 msgid "Complete stand-alone driver set (printing and scanning) for"
-msgstr ""
-"Teljes önálló illesztőprogram készlet (nyomtatás és szkennelés) a "
-"következőhöz"
+msgstr "Teljes önálló illesztőprogram készlet (nyomtatás és szkennelés) a következőhöz"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 179
 #: usr/share/big-driver-manager/utils/desc_translate.py:179
@@ -672,7 +676,7 @@ msgstr "Nyomtatók a hálózatodon"
 msgid "(proprietary)"
 msgstr "(proprietárius)"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 36
@@ -719,7 +723,7 @@ msgstr "Bluetooth"
 msgid "Bluetooth adapter drivers."
 msgstr "Bluetooth adapter illesztőprogramok."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 40
@@ -816,6 +820,12 @@ msgstr "Más"
 msgid "Additional firmware packages."
 msgstr "További firmware csomagok."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "Kategóriák"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 #: usr/share/big-driver-manager/ui/window.py:198
 msgid "Home"
@@ -829,12 +839,6 @@ msgstr "Kernel"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "Videó"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "Kategóriák"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -852,8 +856,7 @@ msgstr "Tartalom"
 #: usr/share/big-driver-manager/ui/window.py:338
 #: usr/share/big-driver-manager/ui/window.py:656
 msgid "Showing drivers detected as compatible with your computer"
-msgstr ""
-"A számítógépével kompatibilisnek észlelt illesztőprogramok megjelenítése"
+msgstr "A számítógépével kompatibilisnek észlelt illesztőprogramok megjelenítése"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 327
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
@@ -878,8 +881,11 @@ msgstr "Rólunk"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 #: usr/share/big-driver-manager/ui/window.py:515
 msgid "Hardware detection failed. Check system logs for details."
-msgstr ""
-"Hardverészlelés sikertelen. Részletekért ellenőrizze a rendszer naplóit."
+msgstr "Hardverészlelés sikertelen. Részletekért ellenőrizze a rendszer naplóit."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
+msgid "Hardware detection for this category failed. Try refreshing later."
+msgstr "A hardver észlelése ebben a kategóriában meghiúsult. Próbálja meg később frissíteni."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #: usr/share/big-driver-manager/ui/window.py:627
@@ -891,22 +897,25 @@ msgstr "Elavult kernel: {} — már nem kap biztonsági frissítéseket"
 #: usr/share/big-driver-manager/ui/window.py:631
 msgid "Manage"
 msgstr "Kezelése"
-#
+# 
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
 msgid ""
-"The package database was last updated {} days ago. Update your system before "
-"installing drivers to avoid download failures and missing packages."
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
 msgstr ""
-"A csomagadatbázis utoljára {} nappal ezelőtt lett frissítve. Frissítse a "
-"rendszerét a meghajtók telepítése előtt, hogy elkerülje a letöltési hibákat "
-"és a hiányzó csomagokat."
+"A csomagadatbázis utoljára {} nappal ezelőtt lett frissítve. Frissítse a rendszerét a meghajtók "
+"telepítése előtt, hogy elkerülje a letöltési hibákat és a hiányzó csomagokat."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 #: usr/share/big-driver-manager/ui/window.py:652
 msgid "Showing all drivers, including incompatible ones"
-msgstr ""
-"Az összes illesztőprogram megjelenítése, beleértve a nem kompatibiliseket is"
+msgstr "Az összes illesztőprogram megjelenítése, beleértve a nem kompatibiliseket is"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
+msgid "Operation in progress"
+msgstr "Művelet folyamatban"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 #: usr/share/big-driver-manager/ui/progress_dialog.py:117
@@ -917,15 +926,32 @@ msgstr "Műszaki részletek"
 msgid "Terminal output"
 msgstr "Terminál kimenet"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Bezárás"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "Mégse"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 #: usr/share/big-driver-manager/ui/category_page.py:627
 #: usr/share/big-driver-manager/ui/category_page.py:665
@@ -963,19 +989,10 @@ msgstr "Befejezve!"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:374
 msgid "Failed"
 msgstr "Sikertelen"
-#
+# 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr "Ez a lépés már nem törölhető biztonságosan. Várakozás a befejezésére…"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "A műveletet a felhasználó törölte."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "Törölve"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 #: usr/share/big-driver-manager/ui/kernel_page.py:107
 msgid "Installed Kernels"
@@ -1004,7 +1021,7 @@ msgstr "Használatban"
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Elavult kernelfájlok – eltávolítás javasolt"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1054,38 +1071,34 @@ msgstr "Legalább egy tartalék kernelnek telepítve kell maradnia"
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
 msgid ""
-"Recommended for most users. These kernels receive security updates for years "
-"and are thoroughly tested."
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
 msgstr ""
-"Ajánlott a legtöbb felhasználónak. Ezek a kernel verziók évekig kapnak "
-"biztonsági frissítéseket és alaposan teszteltek."
+"Ajánlott a legtöbb felhasználónak. Ezek a kernel verziók évekig kapnak biztonsági frissítéseket és "
+"alaposan teszteltek."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 #: usr/share/big-driver-manager/ui/kernel_page.py:449
 msgid ""
-"Always up to date with the latest features and hardware support. Good if you "
-"need the newest drivers."
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
 msgstr ""
-"Mindig naprakész a legújabb funkciókkal és hardvertámogatással. Jó "
-"választás, ha a legújabb driverekre van szükséged."
+"Mindig naprakész a legújabb funkciókkal és hardvertámogatással. Jó választás, ha a legújabb "
+"driverekre van szükséged."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 #: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid ""
-"Tuned for gaming and desktop responsiveness. A good option for daily use "
-"with extra performance."
-msgstr ""
-"Játékra és asztali válaszkészségre hangolva. Jó opció napi használatra extra "
-"teljesítménnyel."
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
+msgstr "Játékra és asztali válaszkészségre hangolva. Jó opció napi használatra extra teljesítménnyel."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:457
 msgid ""
-"Built for audio/video production needing precise timing. May be incompatible "
-"with some drivers (e.g. NVIDIA). Only for advanced users."
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
 msgstr ""
-"Hang- és videóprodukcióhoz készült, pontos időzítéssel. Előfordulhat, hogy "
-"néhány driverrel (pl. NVIDIA) inkompatibilis. Csak haladó felhasználóknak."
+"Hang- és videóprodukcióhoz készült, pontos időzítéssel. Előfordulhat, hogy néhány driverrel (pl. "
+"NVIDIA) inkompatibilis. Csak haladó felhasználóknak."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 #: usr/share/big-driver-manager/ui/kernel_page.py:498
@@ -1182,9 +1195,7 @@ msgstr "A futó rendszermag nem távolítható el"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
 #: usr/share/big-driver-manager/ui/kernel_page.py:747
 msgid "This kernel is currently in use. Boot into a different kernel first."
-msgstr ""
-"Ez a kernel jelenleg használatban van. Először indíts be egy másik kernel "
-"verziót."
+msgstr "Ez a kernel jelenleg használatban van. Először indíts be egy másik kernel verziót."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:463
@@ -1196,17 +1207,16 @@ msgstr ""
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Eltávolítás {}"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 #: usr/share/big-driver-manager/ui/kernel_page.py:770
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will "
-"have no fallback.\n"
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Ez az utolsó biztonsági mentési kernelje. Ha a futó kernel meghibásodik, "
-"nem lesz visszaesési lehetősége.\n"
+"⚠ Ez az utolsó biztonsági mentési kernelje. Ha a futó kernel meghibásodik, nem lesz visszaesési "
+"lehetősége.\n"
 "\n"
 "A következő csomagok kerülnek eltávolításra:"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1291,28 +1301,25 @@ msgstr "Minden elavult kernel sikeresen eltávolítva."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Mi újság a Linux {} verzióban"
-#
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
-"This package is not in the official repositories. It will be built from the "
-"AUR on your computer, which can take several minutes and is not reviewed by "
-"the distribution."
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
 msgstr ""
-"Ez a csomag nem található a hivatalos tárolókban. Az AUR-ból lesz felépítve "
-"a számítógépeden, ami több percet is igénybe vehet, és nem lett átnézve a "
-"disztribúció által."
-#
+"Ez a csomag nem található a hivatalos tárolókban. Az AUR-ból lesz felépítve a számítógépeden, ami "
+"több percet is igénybe vehet, és nem lett átnézve a disztribúció által."
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
 msgid ""
-"Your device already works with the built-in driver {}, which is the "
-"recommended option. Only install this third-party driver to work around a "
-"specific problem — it may conflict with the built-in one."
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
 msgstr ""
-"Az eszköze már működik a beépített illesztőprogrammal {}, amely a javasolt "
-"lehetőség. Csak akkor telepítse ezt a harmadik féltől származó "
-"illesztőprogramot, ha egy konkrét problémát szeretne megkerülni — ütközhet a "
-"beépített illesztőprogrammal."
+"Az eszköze már működik a beépített illesztőprogrammal {}, amely a javasolt lehetőség. Csak akkor "
+"telepítse ezt a harmadik féltől származó illesztőprogramot, ha egy konkrét problémát szeretne "
+"megkerülni — ütközhet a beépített illesztőprogrammal."
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 #: usr/share/big-driver-manager/ui/base_page.py:39
 #: usr/share/big-driver-manager/ui/base_page.py:44
@@ -1322,11 +1329,6 @@ msgstr "Betöltés..."
 #: usr/share/big-driver-manager/ui/base_page.py:40
 msgid "Loading"
 msgstr "Terhelés"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Még mindig betöltés… Ellenőrizze a hálózati kapcsolatot."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1336,13 +1338,11 @@ msgstr "Mi az a Kernel?"
 # 72
 #: usr/share/big-driver-manager/ui/home_page.py:72
 msgid ""
-"The kernel is the heart of your operating system. It controls your "
-"processor, memory, and all hardware. Most drivers already come built-in with "
-"the kernel."
+"The kernel is the heart of your operating system. It controls your processor, memory, and all "
+"hardware. Most drivers already come built-in with the kernel."
 msgstr ""
-"A kernel az operációs rendszer szíve. Ez vezérli a processzort, a memóriát "
-"és az összes hardvert. A legtöbb illesztőprogram már be van építve a "
-"kernellel."
+"A kernel az operációs rendszer szíve. Ez vezérli a processzort, a memóriát és az összes hardvert. A "
+"legtöbb illesztőprogram már be van építve a kernellel."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 #: usr/share/big-driver-manager/ui/home_page.py:83
 msgid "What are Drivers?"
@@ -1351,13 +1351,17 @@ msgstr "Mik azok a driverek?"
 # 85
 #: usr/share/big-driver-manager/ui/home_page.py:85
 msgid ""
-"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
-"communicate with the system. If everything is already working, you probably "
-"don't need to change anything."
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to communicate with the system. "
+"If everything is already working, you probably don't need to change anything."
 msgstr ""
-"A driverek lehetővé teszik, hogy minden eszköz — például a videokártya, Wi-"
-"Fi vagy hangkártya — kommunikáljon a rendszerrel. Ha minden már működik, "
-"valószínűleg nincs szükség semmilyen változtatásra."
+"A driverek lehetővé teszik, hogy minden eszköz — például a videokártya, Wi-Fi vagy hangkártya — "
+"kommunikáljon a rendszerrel. Ha minden már működik, valószínűleg nincs szükség semmilyen "
+"változtatásra."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
+msgid "Checking your system"
+msgstr "A rendszered ellenőrzése"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 #: usr/share/big-driver-manager/ui/home_page.py:113
@@ -1377,13 +1381,11 @@ msgstr "Hardveréhez ajánlott"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Ajánlott telepítése"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
-msgstr ""
-"{}-nak nincs betöltve illesztőprogramja. Egy kompatibilis illesztőprogram "
-"elérhető: {}"
+msgstr "{}-nak nincs betöltve illesztőprogramja. Egy kompatibilis illesztőprogram elérhető: {}"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #: usr/share/big-driver-manager/ui/home_page.py:277
 msgid "Go to drivers"
@@ -1461,7 +1463,7 @@ msgstr "{} csomag telepítése folyamatban"
 msgid "Installing recommended packages"
 msgstr "Ajánlott csomagok telepítése"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 643
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -1475,7 +1477,7 @@ msgstr "Csomagok letöltése..."
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "Minden ajánlott csomag sikeresen telepítve!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "A csomag telepítése meghiúsult."
@@ -1487,7 +1489,7 @@ msgstr "A csomag telepítése meghiúsult."
 msgid "Install Driver"
 msgstr "Illesztőprogram telepítése"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1212
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1496,6 +1498,11 @@ msgstr "Illesztőprogram telepítése"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1371
 msgid "Downloading package..."
 msgstr "Csomag letöltése..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
+#, python-brace-format
+msgid "Installed {}"
+msgstr "Telepítve {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/ui/home_page.py:733
 #, python-brace-format
@@ -1519,12 +1526,10 @@ msgstr "Stabil, hosszú távú támogatás"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid ""
-"Receives security updates for years. Best choice for most users — reliable "
-"and well-tested."
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
 msgstr ""
-"Évekig kap biztonsági frissítéseket. A legtöbb felhasználó számára a legjobb "
-"választás — megbízható és jól tesztelt."
+"Évekig kap biztonsági frissítéseket. A legtöbb felhasználó számára a legjobb választás — megbízható "
+"és jól tesztelt."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
@@ -1534,13 +1539,11 @@ msgstr "Alacsony késleltetésű, valós idejű"
 # manager/ui/kernel_card_builder.py, line: 52
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
 msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be "
-"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
-"users."
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
 msgstr ""
-"Hang- és videógyártásra, valamint pontos időzítést igénylő feladatokra "
-"tervezve. Előfordulhat, hogy nem kompatibilis bizonyos illesztőprogramokkal "
-"(pl. NVIDIA). Csak haladó felhasználóknak ajánlott."
+"Hang- és videógyártásra, valamint pontos időzítést igénylő feladatokra tervezve. Előfordulhat, hogy "
+"nem kompatibilis bizonyos illesztőprogramokkal (pl. NVIDIA). Csak haladó felhasználóknak ajánlott."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
@@ -1550,25 +1553,25 @@ msgstr "Játékra és teljesítményre optimalizálva"
 # manager/ui/kernel_card_builder.py, line: 62
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
 msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use "
-"if you want extra performance."
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
 msgstr ""
-"Gyorsabb játékra és érzékenyebb asztali élményre hangolva. Napi használatra "
-"is kiváló, ha extra teljesítményt szeretne."
-#
+"Gyorsabb játékra és érzékenyebb asztali élményre hangolva. Napi használatra is kiváló, ha extra "
+"teljesítményt szeretne."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
 msgid "Performance optimized by CachyOS"
 msgstr "Teljesítmény optimalizálva a CachyOS által"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
 msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
-"gaming and desktop responsiveness."
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
 msgstr ""
-"EEVDF ütemező LTO-val, AutoFDO-val és Propeller optimalizációkkal. Kiváló "
-"játékhoz és asztali válaszkészséghez."
+"EEVDF ütemező LTO-val, AutoFDO-val és Propeller optimalizációkkal. Kiváló játékhoz és asztali "
+"válaszkészséghez."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
@@ -1579,46 +1582,48 @@ msgstr "Legújabb szolgáltatások és illesztőprogramok"
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Mindig naprakész a legújabb funkciókkal és hardvertámogatással."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Kernelek"
-#
+# 
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Telepített illesztőprogramok"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
-msgid ""
-"All drivers and firmware currently installed on your system, grouped by "
-"category."
-msgstr ""
-"A rendszerére telepített összes illesztőprogram és firmware, kategóriánként "
-"csoportosítva."
-#
+msgid "All drivers and firmware currently installed on your system, grouped by category."
+msgstr "A rendszerére telepített összes illesztőprogram és firmware, kategóriánként csoportosítva."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "No extra drivers installed"
 msgstr "Nincsenek további illesztőprogramok telepítve"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 #: usr/share/big-driver-manager/ui/installed_page.py:106
 msgid "Your system is using only default drivers."
 msgstr "A rendszere csak az alapértelmezett illesztőprogramokat használja."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #: usr/share/big-driver-manager/ui/installed_page.py:279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} telepített illesztőprogram {cats} kategóriában"
-#
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "{n} telepítve"
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 #: usr/share/big-driver-manager/ui/installed_page.py:311
 msgid "Running"
 msgstr "Fut"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 #: usr/share/big-driver-manager/ui/installed_page.py:317
 msgid "MHWD driver"
@@ -1665,27 +1670,23 @@ msgstr "Videó illesztőprogramok"
 # 127
 #: usr/share/big-driver-manager/ui/mesa_page.py:129
 msgid ""
-"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
-"are built into a single project called <b>Mesa</b>. Below you can choose a "
-"Mesa variant and manage extra packages for gaming, video playback, compute "
-"and AI."
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) are built into a single "
+"project called <b>Mesa</b>. Below you can choose a Mesa variant and manage extra packages for "
+"gaming, video playback, compute and AI."
 msgstr ""
-"Linuxon az AMD, Intel és NVIDIA (ingyenes Nouveau) videómeghajtók egyetlen "
-"projekten, a <b>Mesa</b>-n belül vannak integrálva. Az alábbiakban "
-"választhat egy Mesa változatot, és kezelheti a játékhoz, videólejátszáshoz, "
-"számításhoz és AI-hoz szükséges extra csomagokat."
+"Linuxon az AMD, Intel és NVIDIA (ingyenes Nouveau) videómeghajtók egyetlen projekten, a "
+"<b>Mesa</b>-n belül vannak integrálva. Az alábbiakban választhat egy Mesa változatot, és kezelheti "
+"a játékhoz, videólejátszáshoz, számításhoz és AI-hoz szükséges extra csomagokat."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 #: usr/share/big-driver-manager/ui/mesa_page.py:152
 msgid ""
-"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
-"official proprietary driver for the best performance in gaming, AI and "
-"professional applications."
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the official proprietary driver "
+"for the best performance in gaming, AI and professional applications."
 msgstr ""
-"A számítógépében <b>NVIDIA</b> grafikus kártya található. A legjobb "
-"teljesítmény érdekében játékokban, mesterséges intelligenciában és "
-"professzionális alkalmazásokban telepítheti a hivatalos, zárt forráskódú "
-"illesztőprogramot."
+"A számítógépében <b>NVIDIA</b> grafikus kártya található. A legjobb teljesítmény érdekében "
+"játékokban, mesterséges intelligenciában és professzionális alkalmazásokban telepítheti a "
+"hivatalos, zárt forráskódú illesztőprogramot."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 #: usr/share/big-driver-manager/ui/mesa_page.py:185
@@ -1694,23 +1695,19 @@ msgstr "Mesa Variant"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 #: usr/share/big-driver-manager/ui/mesa_page.py:196
-msgid ""
-"Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Válassza ki, melyik Mesa buildet szeretné használni. Egyszerre csak egy "
-"változat lehet aktív."
+msgid "Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "Válassza ki, melyik Mesa buildet szeretné használni. Egyszerre csak egy változat lehet aktív."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 #: usr/share/big-driver-manager/ui/mesa_page.py:209
 msgid ""
-"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
-"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
-"— other versions will not improve performance and may cause instabilities."
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used for minor tasks in this "
+"case. We recommend keeping the <b>Stable</b> variant — other versions will not improve performance "
+"and may cause instabilities."
 msgstr ""
-"<b>Megjegyzés:</b> Az NVIDIA saját meghajtóját használja. Ebben az esetben a "
-"Mesa csak kisebb feladatokhoz kerül használatra. Ajánljuk a <b>Stabil</b> "
-"változat megtartását — a többi verzió nem javítja a teljesítményt, és "
-"instabilitást okozhat."
+"<b>Megjegyzés:</b> Az NVIDIA saját meghajtóját használja. Ebben az esetben a Mesa csak kisebb "
+"feladatokhoz kerül használatra. Ajánljuk a <b>Stabil</b> változat megtartását — a többi verzió nem "
+"javítja a teljesítményt, és instabilitást okozhat."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 #: usr/share/big-driver-manager/ui/mesa_page.py:380
@@ -1798,12 +1795,10 @@ msgstr "NVIDIA szabadalmaztatott illesztőprogram"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 #: usr/share/big-driver-manager/ui/mesa_page.py:701
-msgid ""
-"Official closed-source driver with the best performance for gaming, AI, and "
-"professional workloads."
+msgid "Official closed-source driver with the best performance for gaming, AI, and professional workloads."
 msgstr ""
-"Hivatalos zárt forráskódú meghajtó, amely a legjobb teljesítményt nyújtja "
-"játékhoz, AI-hoz és professzionális munkákhoz."
+"Hivatalos zárt forráskódú meghajtó, amely a legjobb teljesítményt nyújtja játékhoz, AI-hoz és "
+"professzionális munkákhoz."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 #: usr/share/big-driver-manager/ui/mesa_page.py:713
@@ -1846,11 +1841,8 @@ msgstr "Egyéb illesztőprogramok"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 #: usr/share/big-driver-manager/ui/mesa_page.py:941
-msgid ""
-"Additional drivers for special hardware configurations like virtual machines."
-msgstr ""
-"További illesztőprogramok speciális hardverkonfigurációkhoz, például "
-"virtuális gépekhez."
+msgid "Additional drivers for special hardware configurations like virtual machines."
+msgstr "További illesztőprogramok speciális hardverkonfigurációkhoz, például virtuális gépekhez."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 #: usr/share/big-driver-manager/ui/mesa_page.py:1026
 msgid "Compatible"
@@ -1876,8 +1868,13 @@ msgstr "⚠ Nincs Wayland támogatás · Már nem karbantartott"
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Váltás {}-ról {}-ra"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
+#, python-brace-format
+msgid "Install {} unavailable"
+msgstr "A {} telepítése nem elérhető"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 951
 # File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
@@ -2013,18 +2010,14 @@ msgstr ""
 "Telepíti a <b>{}</b>-t?\n"
 "\n"
 "{}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Nem elérhető"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
-msgid ""
-"Not available in the enabled repositories. 32-bit (lib32) packages require "
-"the multilib repository."
-msgstr ""
-"Nem elérhető a bekapcsolt tárolókban. A 32 bites (lib32) csomagokhoz a "
-"multilib tároló szükséges."
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
+msgstr "Nem elérhető a bekapcsolt tárolókban. A 32 bites (lib32) csomagokhoz a multilib tároló szükséges."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -2044,15 +2037,14 @@ msgstr "Csomag eltávolítása..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} sikeresen {}!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "A csomag művelet nem sikerült."
-#
+# 
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
-msgstr ""
-"Nyissa meg egy illesztőprogram-csomag oldalát, és ajánlja fel a telepítését."
+msgstr "Nyissa meg egy illesztőprogram-csomag oldalát, és ajánlja fel a telepítését."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 128
 #: usr/share/big-driver-manager/ui/category_page.py:131
@@ -2062,6 +2054,11 @@ msgstr "Illesztőprogramok keresése..."
 #: usr/share/big-driver-manager/ui/category_page.py:135
 msgid "Search drivers"
 msgstr "Illesztőprogramok keresése"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
+msgid "Searching for printers on the network"
+msgstr "Nyomtatók keresése a hálózaton"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 #: usr/share/big-driver-manager/ui/category_page.py:160
@@ -2071,9 +2068,7 @@ msgstr "Nyomtatók keresése a hálózaton…"
 # line: 162
 #: usr/share/big-driver-manager/ui/category_page.py:179
 msgid "No more automatically detected compatible drivers in this category."
-msgstr ""
-"Nincs több automatikusan észlelt kompatibilis illesztőprogram ebben a "
-"kategóriában."
+msgstr "Nincs több automatikusan észlelt kompatibilis illesztőprogram ebben a kategóriában."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -2093,38 +2088,32 @@ msgstr "Ehhez a kategóriához nem szükséges illesztőprogram"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 #: usr/share/big-driver-manager/ui/category_page.py:202
-msgid ""
-"No drivers in this category were automatically detected as compatible with "
-"your hardware."
-msgstr ""
-"Ehhez a kategóriához nem észleltünk automatikusan kompatibilis "
-"illesztőprogramot az Ön hardveréhez."
-#
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "Ehhez a kategóriához nem észleltünk automatikusan kompatibilis illesztőprogramot az Ön hardveréhez."
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Adapter {} — működik (illesztőprogram {})"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "ismeretlen"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Kábel csatlakoztatva"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Felület letiltva"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
-msgid ""
-"No cable or link detected. Check the cable and the router/switch port — no "
-"extra driver is needed."
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 msgstr ""
-"Nincs kábel vagy kapcsolat észlelve. Ellenőrizze a kábelt és a router/switch "
-"portot — nincs szükség extra illesztőprogramra."
+"Nincs kábel vagy kapcsolat észlelve. Ellenőrizze a kábelt és a router/switch portot — nincs szükség "
+"extra illesztőprogramra."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 #: usr/share/big-driver-manager/ui/category_page.py:257
@@ -2133,13 +2122,10 @@ msgstr "Észlelési hiba"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 #: usr/share/big-driver-manager/ui/category_page.py:281
-msgid ""
-"No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"Ehhez a kategóriához nem észleltünk szükséges illesztőprogramot az Ön "
-"hardveréhez."
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "Ehhez a kategóriához nem észleltünk szükséges illesztőprogramot az Ön hardveréhez."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 339
 # File: big-driver-manager/usr/share/big-driver-
@@ -2170,7 +2156,7 @@ msgstr "{} telepítve"
 #: usr/share/big-driver-manager/ui/category_page.py:426
 msgid "Not installed"
 msgstr "Nincs telepítve"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
@@ -2185,29 +2171,22 @@ msgstr "{total} illesztőprogram · {detected} észlelve · {installed} telepít
 # 37
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
 msgid "Latest NVIDIA driver — best performance and newest features"
-msgstr ""
-"Legújabb NVIDIA illesztőprogram — legjobb teljesítmény és legújabb funkciók"
+msgstr "Legújabb NVIDIA illesztőprogram — legjobb teljesítmény és legújabb funkciók"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 40
 #: usr/share/big-driver-manager/ui/mesa_data.py:40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
-msgstr ""
-"NVIDIA 575 sorozat — használja, ha a legújabb illesztőprogram problémákat "
-"okoz"
+msgstr "NVIDIA 575 sorozat — használja, ha a legújabb illesztőprogram problémákat okoz"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 43
 #: usr/share/big-driver-manager/ui/mesa_data.py:43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
-msgstr ""
-"NVIDIA 570 sorozat — használja, ha a legújabb illesztőprogram problémákat "
-"okoz"
+msgstr "NVIDIA 570 sorozat — használja, ha a legújabb illesztőprogram problémákat okoz"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 47
 #: usr/share/big-driver-manager/ui/mesa_data.py:47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"Intel + NVIDIA laptopokhoz — vált a GPU-k között az akkumulátor "
-"megtakarításához"
+msgstr "Intel + NVIDIA laptopokhoz — vált a GPU-k között az akkumulátor megtakarításához"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 50
 #: usr/share/big-driver-manager/ui/mesa_data.py:50
@@ -2222,8 +2201,7 @@ msgstr "Intel + NVIDIA laptopokhoz — NVIDIA 570 sorozat"
 # 56
 #: usr/share/big-driver-manager/ui/mesa_data.py:56
 msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr ""
-"Intel + NVIDIA laptopokhoz — NVIDIA 470 (régi, nem támogatja a Waylandot)"
+msgstr "Intel + NVIDIA laptopokhoz — NVIDIA 470 (régi, nem támogatja a Waylandot)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 59
 #: usr/share/big-driver-manager/ui/mesa_data.py:59
@@ -2233,9 +2211,7 @@ msgstr "Intel + NVIDIA laptopokhoz — NVIDIA 390 (csak nagyon régi GPU-k)"
 # 63
 #: usr/share/big-driver-manager/ui/mesa_data.py:63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
-msgstr ""
-"AMD + NVIDIA laptopokhoz — GPU-k közötti váltás az akkumulátor kímélése "
-"érdekében"
+msgstr "AMD + NVIDIA laptopokhoz — GPU-k közötti váltás az akkumulátor kímélése érdekében"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 66
 #: usr/share/big-driver-manager/ui/mesa_data.py:66
@@ -2250,14 +2226,12 @@ msgstr "AMD + NVIDIA laptopokhoz — NVIDIA 570 sorozat"
 # 72
 #: usr/share/big-driver-manager/ui/mesa_data.py:72
 msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr ""
-"AMD + NVIDIA laptopokhoz — NVIDIA 470 (régi, nem támogatja a Waylandot)"
+msgstr "AMD + NVIDIA laptopokhoz — NVIDIA 470 (régi, nem támogatja a Waylandot)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 76
 #: usr/share/big-driver-manager/ui/mesa_data.py:76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Optimalizált megjelenítés virtuális gépekhez (VirtualBox, VMware, QEMU/KVM)"
+msgstr "Optimalizált megjelenítés virtuális gépekhez (VirtualBox, VMware, QEMU/KVM)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 #: usr/share/big-driver-manager/ui/mesa_data.py:90
@@ -2266,12 +2240,10 @@ msgstr "Játék és 3D grafika"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 #: usr/share/big-driver-manager/ui/mesa_data.py:93
-msgid ""
-"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
-"applications."
+msgid "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D applications."
 msgstr ""
-"Vulkan és OpenGL könyvtárak, amelyek elengedhetetlenek játékokhoz, Steamhez, "
-"Wine/Protonhoz és 3D alkalmazásokhoz."
+"Vulkan és OpenGL könyvtárak, amelyek elengedhetetlenek játékokhoz, Steamhez, Wine/Protonhoz és 3D "
+"alkalmazásokhoz."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 #: usr/share/big-driver-manager/ui/mesa_data.py:99
@@ -2281,9 +2253,7 @@ msgstr "Vulkan AMD Radeon GPU-khoz"
 # 106
 #: usr/share/big-driver-manager/ui/mesa_data.py:106
 msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-bites Vulkan (AMD) — szükséges a Steamhez, Wine/Protonhoz és régebbi "
-"játékokhoz"
+msgstr "32-bites Vulkan (AMD) — szükséges a Steamhez, Wine/Protonhoz és régebbi játékokhoz"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 114
 #: usr/share/big-driver-manager/ui/mesa_data.py:114
@@ -2293,23 +2263,17 @@ msgstr "Vulkan Intel GPU-khoz"
 # 121
 #: usr/share/big-driver-manager/ui/mesa_data.py:121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-bites Vulkan (Intel) — szükséges a Steamhez, Wine/Protonhoz és régebbi "
-"játékokhoz"
+msgstr "32-bites Vulkan (Intel) — szükséges a Steamhez, Wine/Protonhoz és régebbi játékokhoz"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 130
 #: usr/share/big-driver-manager/ui/mesa_data.py:130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr ""
-"Nyílt forráskódú Vulkan NVIDIA-hoz (Nouveau) — nem szükséges tulajdonosi "
-"illesztőprogram"
+msgstr "Nyílt forráskódú Vulkan NVIDIA-hoz (Nouveau) — nem szükséges tulajdonosi illesztőprogram"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 #: usr/share/big-driver-manager/ui/mesa_data.py:139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
-msgstr ""
-"32-bites OpenGL — szükséges a Steamhez, Wine/Protonhoz és régebbi 32-bites "
-"játékokhoz"
+msgstr "32-bites OpenGL — szükséges a Steamhez, Wine/Protonhoz és régebbi 32-bites játékokhoz"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 149
 #: usr/share/big-driver-manager/ui/mesa_data.py:149
@@ -2319,12 +2283,11 @@ msgstr "Videó lejátszás"
 # 152
 #: usr/share/big-driver-manager/ui/mesa_data.py:152
 msgid ""
-"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
-"and video calls smoother while reducing CPU and power usage."
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming and video calls smoother "
+"while reducing CPU and power usage."
 msgstr ""
-"Hardveresen gyorsított videódekódolás (VAAPI/VDPAU). Simábbá teszi a "
-"videókat, a streamelést és a videóhívásokat, miközben csökkenti a CPU és az "
-"energiafogyasztást."
+"Hardveresen gyorsított videódekódolás (VAAPI/VDPAU). Simábbá teszi a videókat, a streamelést és a "
+"videóhívásokat, miközben csökkenti a CPU és az energiafogyasztást."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 #: usr/share/big-driver-manager/ui/mesa_data.py:159
@@ -2349,11 +2312,11 @@ msgstr "VAAPI AMD és NVIDIA nyílt forráskódú (Nouveau) számára"
 # 186
 #: usr/share/big-driver-manager/ui/mesa_data.py:186
 msgid ""
-"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
-"Vulkan. Probably not needed."
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and Vulkan. Probably not "
+"needed."
 msgstr ""
-"VDPAU AMD/NVIDIA nyílt forráskódúhoz — régi API, melyet a VAAPI és Vulkan "
-"vált fel. Valószínűleg nincs rá szükség."
+"VDPAU AMD/NVIDIA nyílt forráskódúhoz — régi API, melyet a VAAPI és Vulkan vált fel. Valószínűleg "
+"nincs rá szükség."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 #: usr/share/big-driver-manager/ui/mesa_data.py:197
@@ -2363,22 +2326,19 @@ msgstr "GPU számítás (AI / ML)"
 # 200
 #: usr/share/big-driver-manager/ui/mesa_data.py:200
 msgid ""
-"Your graphics card can do more than display images — it can also help with "
-"heavy processing tasks. These libraries allow programs to use the GPU for "
-"things like artificial intelligence, video editing, 3D rendering, image "
-"processing and scientific simulations. Examples: running local AI assistants "
-"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
-"Blender, applying filters in GIMP or Darktable, generating images with "
-"Stable Diffusion, and running physics simulations."
+"Your graphics card can do more than display images — it can also help with heavy processing tasks. "
+"These libraries allow programs to use the GPU for things like artificial intelligence, video "
+"editing, 3D rendering, image processing and scientific simulations. Examples: running local AI "
+"assistants (Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in Blender, "
+"applying filters in GIMP or Darktable, generating images with Stable Diffusion, and running physics "
+"simulations."
 msgstr ""
-"A grafikus kártyája nemcsak képek megjelenítésére képes — nehéz feldolgozási "
-"feladatokban is segíthet. Ezek a könyvtárak lehetővé teszik a programok "
-"számára, hogy a GPU-t használják olyan feladatokra, mint a mesterséges "
-"intelligencia, videószerkesztés, 3D renderelés, képfeldolgozás és tudományos "
-"szimulációk. Példák: helyi AI asszisztensek futtatása (Ollama, LocalAI), "
-"hang átirat készítése Whisper-rel, 3D jelenetek renderelése Blenderben, "
-"szűrők alkalmazása GIMP-ben vagy Darktable-ben, képgenerálás Stable "
-"Diffusion-nel, és fizikai szimulációk futtatása."
+"A grafikus kártyája nemcsak képek megjelenítésére képes — nehéz feldolgozási feladatokban is "
+"segíthet. Ezek a könyvtárak lehetővé teszik a programok számára, hogy a GPU-t használják olyan "
+"feladatokra, mint a mesterséges intelligencia, videószerkesztés, 3D renderelés, képfeldolgozás és "
+"tudományos szimulációk. Példák: helyi AI asszisztensek futtatása (Ollama, LocalAI), hang átirat "
+"készítése Whisper-rel, 3D jelenetek renderelése Blenderben, szűrők alkalmazása GIMP-ben vagy "
+"Darktable-ben, képgenerálás Stable Diffusion-nel, és fizikai szimulációk futtatása."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 #: usr/share/big-driver-manager/ui/mesa_data.py:215
@@ -2408,12 +2368,11 @@ msgstr "Stabil"
 # 272
 #: usr/share/big-driver-manager/ui/mesa_data.py:281
 msgid ""
-"Officially tested by the Mesa team. The safest and most reliable choice for "
-"everyday use, gaming, and video playback."
+"Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
+"and video playback."
 msgstr ""
-"Hivatalosan a Mesa csapat által tesztelt. A legbiztonságosabb és "
-"legmegbízhatóbb választás mindennapi használatra, játékhoz és "
-"videólejátszáshoz."
+"Hivatalosan a Mesa csapat által tesztelt. A legbiztonságosabb és legmegbízhatóbb választás "
+"mindennapi használatra, játékhoz és videólejátszáshoz."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
 #: usr/share/big-driver-manager/ui/mesa_data.py:284
@@ -2428,11 +2387,11 @@ msgstr "Teljesítmény"
 # 281
 #: usr/share/big-driver-manager/ui/mesa_data.py:290
 msgid ""
-"Modified version with gaming optimizations for extra performance. Reliable "
-"for most users but may rarely cause instabilities."
+"Modified version with gaming optimizations for extra performance. Reliable for most users but may "
+"rarely cause instabilities."
 msgstr ""
-"Módosított verzió játékoptimalizációkkal a jobb teljesítményért. Többnyire "
-"megbízható a legtöbb felhasználó számára, de ritkán okozhat instabilitást."
+"Módosított verzió játékoptimalizációkkal a jobb teljesítményért. Többnyire megbízható a legtöbb "
+"felhasználó számára, de ritkán okozhat instabilitást."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 #: usr/share/big-driver-manager/ui/mesa_data.py:298
@@ -2442,12 +2401,11 @@ msgstr "Fejlesztés"
 # 291
 #: usr/share/big-driver-manager/ui/mesa_data.py:300
 msgid ""
-"Built from the very latest source code with cutting-edge features. Offers "
-"the best gaming performance but is the least tested — only for advanced "
-"users."
+"Built from the very latest source code with cutting-edge features. Offers the best gaming "
+"performance but is the least tested — only for advanced users."
 msgstr ""
-"A legfrissebb forráskódból építve, élvonalbeli funkciókkal. A legjobb "
-"játékélményt nyújtja, de a legkevésbé tesztelt — csak haladó felhasználóknak."
+"A legfrissebb forráskódból építve, élvonalbeli funkciókkal. A legjobb játékélményt nyújtja, de a "
+"legkevésbé tesztelt — csak haladó felhasználóknak."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 #: usr/share/big-driver-manager/ui/mesa_data.py:308
 #: usr/share/big-driver-manager/ui/mesa_data.py:314
@@ -2457,12 +2415,11 @@ msgstr "Régi"
 # 301
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
 msgid ""
-"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
-"install this if newer Mesa versions don't work with your hardware."
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
+"Mesa versions don't work with your hardware."
 msgstr ""
-"Nagyon régi grafikus kártyákhoz, amelyek csak OpenGL 2.1-et vagy korábbi "
-"verziót támogatnak. Csak akkor telepítse, ha az újabb Mesa verziók nem "
-"működnek a hardverével."
+"Nagyon régi grafikus kártyákhoz, amelyek csak OpenGL 2.1-et vagy korábbi verziót támogatnak. Csak "
+"akkor telepítse, ha az újabb Mesa verziók nem működnek a hardverével."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #: usr/share/big-driver-manager/core/mesa_manager.py:116
@@ -2479,66 +2436,6 @@ msgstr "{} illesztőprogram alkalmazása..."
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "{} illesztőprogram telepítésének indítása..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Ütköző csomagok keresése..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Ütközések eltávolítása: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "{} csomag ellenőrzése..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ A(z) {} csomag nem elérhető, kihagyás..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ Nincs telepíthető csomag."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
-#, python-brace-format
-msgid "Installing: {}"
-msgstr "Telepítés: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Ütköző csomagok eltávolítása..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "Nem sikerült eltávolítani az ütköző csomagokat."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "{} illesztőprogram telepítése..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "Nem sikerült az illesztőprogram alkalmazása."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "Illesztőprogram sikeresen alkalmazva!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ {} illesztőprogram sikeresen alkalmazva!"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #: usr/share/big-driver-manager/core/base_manager.py:205
 #: usr/share/big-driver-manager/core/mesa_manager.py:262
@@ -2550,11 +2447,71 @@ msgstr "Hiba: {}"
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Hiba: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "Nem sikerült eltávolítani az ütköző csomagokat."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
 #, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ Művelet sikertelen (kilépési kód: {})"
+msgid "Removing conflicts: {}"
+msgstr "Ütközések eltávolítása: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Ütköző csomagok eltávolítása..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
+msgid "Removing conflicting packages"
+msgstr "Ütköző csomagok eltávolítása"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Ütköző csomagok keresése..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "{} csomag ellenőrzése..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ Nincs telepíthető csomag."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ A(z) {} csomag nem elérhető, kihagyás..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Telepítés: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "{} illesztőprogram telepítése..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "Illesztőprogram sikeresen alkalmazva!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} illesztőprogram sikeresen alkalmazva!"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "{} illesztőprogram telepítése"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #: usr/share/big-driver-manager/core/base_manager.py:181
 #: usr/share/big-driver-manager/core/mhwd_manager.py:310
@@ -2573,12 +2530,17 @@ msgstr "Indítás: {}..."
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 msgid "Completed"
 msgstr "Befejezve"
-#
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "Folytassa a telepítést a megnyílt pamac ablakban."
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "A build előfeltételeinek telepítése: {}"
-#
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "A build előfeltételeinek telepítése"
@@ -2587,18 +2549,18 @@ msgstr "A build előfeltételeinek telepítése"
 #: usr/share/big-driver-manager/core/driver_installer.py:99
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
-msgstr ""
-"A pamac-installer nem található. Nem lehet telepíteni az AUR csomagot {}."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "Folytassa a telepítést a megnyílt pamac ablakban."
-#
+msgstr "A pamac-installer nem található. Nem lehet telepíteni az AUR csomagot {}."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
+msgid ""
+"Continue the installation in the pamac window that was opened. This dialog is only monitoring the "
+"result."
+msgstr "Folytassa a telepítést a megnyitott pamac ablakban. Ez a párbeszédablak csak az eredményt figyeli."
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Csomagok telepítése"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Csomagok eltávolítása"
@@ -2653,41 +2615,37 @@ msgstr "{} nem sikerült."
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} sikertelen (kilépési kód: {})"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
-"Package not available in the enabled repositories. It may come from the AUR, "
-"belong to a disabled repository (such as multilib), or the package database "
-"may be outdated.\n"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
 "Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"A csomag nem elérhető az engedélyezett tárolókban. Lehet, hogy az AUR-ból "
-"származik, egy letiltott tárolóhoz (például multilib) tartozik, vagy a "
-"csomagadatbázis elavult.\n"
-"Javaslat: Frissítse az egész rendszert a 'sudo pacman -Syu' paranccsal, és "
-"próbálja újra."
+"A csomag nem elérhető az engedélyezett tárolókban. Lehet, hogy az AUR-ból származik, egy letiltott "
+"tárolóhoz (például multilib) tartozik, vagy a csomagadatbázis elavult.\n"
+"Javaslat: Frissítse az egész rendszert a 'sudo pacman -Syu' paranccsal, és próbálja újra."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 #: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
 "A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
-"'sudo pacman -Syyu'."
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
 "Ütközés miatt a művelet nem fejeződött be.\n"
-"Javaslat: Tisztítsa meg a gyorsítótárat és frissítsen a 'sudo pacman -Scc' "
-"majd 'sudo pacman -Syyu' parancsokkal."
+"Javaslat: Tisztítsa meg a gyorsítótárat és frissítsen a 'sudo pacman -Scc' majd 'sudo pacman -Syyu' "
+"parancsokkal."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 #: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
 "Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
-"and resolve the conflict."
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
 "A csomag néhány fájlja már létezik a rendszeren.\n"
-"Javaslat: Ellenőrizze, melyik csomag birtokolja a fájlt a 'pacman -Qo "
-"<file_path>' paranccsal, és oldja fel az ütközést."
+"Javaslat: Ellenőrizze, melyik csomag birtokolja a fájlt a 'pacman -Qo <file_path>' paranccsal, és "
+"oldja fel az ütközést."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 #: usr/share/big-driver-manager/core/base_manager.py:338
@@ -2696,30 +2654,26 @@ msgid ""
 "Suggestion: Update the full system first with 'sudo pacman -Syu'."
 msgstr ""
 "A szükséges függőségek nem oldhatók meg.\n"
-"Javaslat: Először frissítse a teljes rendszert a 'sudo pacman -Syu' "
-"paranccsal."
+"Javaslat: Először frissítse a teljes rendszert a 'sudo pacman -Syu' paranccsal."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 342
 #: usr/share/big-driver-manager/core/base_manager.py:345
 msgid ""
 "Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
 "A csomag aláírása nem ellenőrizhető.\n"
-"Javaslat: Frissítse a kulcstartókat a 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring' paranccsal."
+"Javaslat: Frissítse a kulcstartókat a 'sudo pacman -S archlinux-keyring manjaro-keyring' paranccsal."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 #: usr/share/big-driver-manager/core/base_manager.py:353
 msgid ""
 "The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
 "A csomagadatbázist egy másik folyamat zárolja.\n"
-"Ha nincs más csomagkezelő futtatva, távolítsa el a zárolást a 'sudo rm /var/"
-"lib/pacman/db.lck' paranccsal."
+"Ha nincs más csomagkezelő futtatva, távolítsa el a zárolást a 'sudo rm /var/lib/pacman/db.lck' "
+"paranccsal."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 #: usr/share/big-driver-manager/core/base_manager.py:361
@@ -2728,19 +2682,17 @@ msgid ""
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
 "Nincs elegendő lemezterület a művelet befejezéséhez.\n"
-"Javaslat: Szabadítson fel helyet a csomaggyorsítótár törlésével a 'sudo "
-"pacman -Scc' paranccsal."
+"Javaslat: Szabadítson fel helyet a csomaggyorsítótár törlésével a 'sudo pacman -Scc' paranccsal."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try "
-"updating your mirror list."
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
 "Nem sikerült letölteni a szükséges fájlokat.\n"
-"Javaslat: Ellenőrizze az internetkapcsolatát. Ha a probléma továbbra is "
-"fennáll, próbálja meg frissíteni a tükörlistát."
+"Javaslat: Ellenőrizze az internetkapcsolatát. Ha a probléma továbbra is fennáll, próbálja meg "
+"frissíteni a tükörlistát."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 #: usr/share/big-driver-manager/core/base_manager.py:377
@@ -2749,8 +2701,7 @@ msgid ""
 "Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
 msgstr ""
 "A letöltött csomag sérült.\n"
-"Javaslat: Törölje a gyorsítótárat a 'sudo pacman -Scc' paranccsal, majd "
-"próbálja újra."
+"Javaslat: Törölje a gyorsítótárat a 'sudo pacman -Scc' paranccsal, majd próbálja újra."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 391
 #: usr/share/big-driver-manager/core/base_manager.py:394
@@ -2785,188 +2736,3 @@ msgstr "Függőségek ellenőrzése..."
 #: usr/share/big-driver-manager/core/base_manager.py:403
 msgid "Synchronizing package databases..."
 msgstr "Csomagadatbázisok szinkronizálása..."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
-msgid "Operation in progress"
-msgstr "Művelet folyamatban"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
-msgid "Hardware detection for this category failed. Try refreshing later."
-msgstr ""
-"A hardver észlelése ebben a kategóriában meghiúsult. Próbálja meg később "
-"frissíteni."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
-#, python-brace-format
-msgid "{n} installed"
-msgstr "{n} telepítve"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
-msgid "Searching for printers on the network"
-msgstr "Nyomtatók keresése a hálózaton"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
-msgid "Checking your system"
-msgstr "A rendszered ellenőrzése"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "Kompatibilis illesztőprogramok állnak rendelkezésre"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
-#, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr "{} — nincs betöltött driver, telepítse a {} ehhez az eszközhöz"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually "
-"the most stable and recommended option. If you experience issues, you can "
-"try a driver detected as compatible that may improve performance or add "
-"features."
-msgstr ""
-"Az eszközei már a beépített illesztőprogrammal működnek, amely általában a "
-"legstabilabb és ajánlott megoldás. Ha problémákat tapasztal, kipróbálhat egy "
-"kompatibilisnek észlelt illesztőprogramot, amely javíthatja a teljesítményt "
-"vagy további funkciókat adhat hozzá."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"A csomag telepítése sikertelen.\n"
-"Részletekért ellenőrizze a terminál kimenetét."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
-msgid "Installed {}"
-msgstr "Telepítve {}"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Minden illesztőprogram telepítve van"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Az összes szükséges illesztőprogram már telepítve van a rendszeren."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Hardver észlelése"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Hardver észlelése..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
-#, python-brace-format
-msgid "{n} drivers"
-msgstr "{n} illesztőprogramok"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 telepítve"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
-#, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "Telepíthető {n} illesztőprogramok"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr ""
-"Telepítse a javasolt illesztőprogramokat a jobb hardvertámogatás érdekében."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Az illesztőprogram sikeresen telepítve."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "A telepítés sikertelen. Részletekért ellenőrizze a naplókat."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
-msgid "Install {} unavailable"
-msgstr "A {} telepítése nem elérhető"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"A csomagművelet sikertelen.\n"
-"Részletekért ellenőrizze a terminál kimenetét."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
-msgid ""
-"Continue the installation in the pamac window that was opened. This dialog "
-"is only monitoring the result."
-msgstr ""
-"Folytassa a telepítést a megnyitott pamac ablakban. Ez a párbeszédablak csak "
-"az eredményt figyeli."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
-msgid "Removing conflicting packages"
-msgstr "Ütköző csomagok eltávolítása"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
-msgid "Installing {} driver"
-msgstr "{} illesztőprogram telepítése"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been "
-"removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
-"for the correct name."
-msgstr ""
-"A csomag nem található a tárolókban. A csomag neve megváltozhatott vagy "
-"eltávolították.\n"
-"Javaslat: Próbálja meg frissíteni az adatbázist a 'sudo pacman -Sy' "
-"paranccsal, majd keresse meg a helyes nevet."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
-msgid "Open Driver Manager to review and install this firmware."
-msgstr ""
-"Nyissa meg a Vezérlőprogram-kezelőt ennek a firmware-nek a "
-"felülvizsgálatához és telepítéséhez."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
-msgid "Open Driver Manager to review and install this driver."
-msgstr ""
-"Nyissa meg a Vezérlőprogram-kezelőt ennek a vezérlőprogramnak a "
-"felülvizsgálatához és telepítéséhez."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
-msgid "Driver Manager"
-msgstr "Illesztőprogram-kezelő"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
-msgid "Don't alert for this firmware again"
-msgstr "Ne figyelmeztessen erre a firmware-re többé."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
-msgid "Open Driver Manager"
-msgstr "Nyisd meg a Vezérlőprogram-kezelőt"

@@ -2,7 +2,8 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the big-driver-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
@@ -13,6 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
+# 55
+#: usr/share/big-driver-manager/ui/base_page.py:55
+msgid "Still loading… Check your network connection."
+msgstr "Stále sa načítava... Skontrolujte pripojenie k sieti."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/udev-driver-dialog.py:184
+#: usr/share/big-driver-manager/ui/category_page.py:453
+#: usr/share/big-driver-manager/ui/category_page.py:608
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
+#: usr/share/big-driver-manager/ui/home_page.py:333
+#: usr/share/big-driver-manager/ui/home_page.py:432
+#: usr/share/big-driver-manager/ui/home_page.py:695
+#: usr/share/big-driver-manager/ui/kernel_page.py:647
+#: usr/share/big-driver-manager/ui/kernel_page.py:680
+#: usr/share/big-driver-manager/ui/mesa_page.py:900
+#: usr/share/big-driver-manager/ui/mesa_page.py:1076
+#: usr/share/big-driver-manager/ui/mesa_page.py:1123
+#: usr/share/big-driver-manager/ui/mesa_page.py:1331
+#: usr/share/big-driver-manager/ui/mesa_page.py:1356
+msgid "Install"
+msgstr "Inštalácia"
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
+#: usr/share/big-driver-manager/core/base_manager.py:233
+#: usr/share/big-driver-manager/ui/progress_dialog.py:414
+msgid "Operation cancelled by user."
+msgstr "Operácia zrušená používateľom."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
+#: usr/share/big-driver-manager/ui/progress_dialog.py:415
+msgid "Cancelled"
+msgstr "Zrušené"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #: usr/share/big-driver-manager/ui/category_page.py:606
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:364
@@ -42,6 +76,22 @@ msgstr "Ovládač skenera dostupný"
 #: usr/share/big-driver-manager/udev-driver-dialog.py:95
 msgid "Driver available"
 msgstr "Ovládač dostupný"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
+msgid "Open Driver Manager to review and install this firmware."
+msgstr "Otvorenie správcu ovládačov na preskúmanie a inštaláciu tohto firmvéru."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
+msgid "Open Driver Manager to review and install this driver."
+msgstr "Otvorenie správcu ovládačov na preskúmanie a inštaláciu tohto ovládača."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
+msgid "Driver Manager"
+msgstr "Správca ovládačov"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
+msgid "Don't alert for this firmware again"
+msgstr "Nechojte na túto firmvér znova."
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
@@ -51,164 +101,118 @@ msgstr "Ovládač dostupný"
 msgid "Don't alert for this device again"
 msgstr "Už neupozorňovať na toto zariadenie"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
-#: usr/share/big-driver-manager/udev-driver-dialog.py:180
-#: usr/share/big-driver-manager/ui/category_page.py:607
-#: usr/share/big-driver-manager/ui/category_page.py:645
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
-#: usr/share/big-driver-manager/ui/home_page.py:629
-#: usr/share/big-driver-manager/ui/home_page.py:694
-#: usr/share/big-driver-manager/ui/installed_page.py:397
-#: usr/share/big-driver-manager/ui/kernel_page.py:679
-#: usr/share/big-driver-manager/ui/kernel_page.py:782
-#: usr/share/big-driver-manager/ui/kernel_page.py:850
-#: usr/share/big-driver-manager/ui/mesa_page.py:564
-#: usr/share/big-driver-manager/ui/mesa_page.py:1122
-#: usr/share/big-driver-manager/ui/mesa_page.py:1164
-#: usr/share/big-driver-manager/ui/mesa_page.py:1200
-#: usr/share/big-driver-manager/ui/mesa_page.py:1355
-#: usr/share/big-driver-manager/ui/mesa_page.py:1393
-#: usr/share/big-driver-manager/ui/progress_dialog.py:145
-msgid "Cancel"
-msgstr "Zrušiť"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/udev-driver-dialog.py:184
-#: usr/share/big-driver-manager/ui/category_page.py:453
-#: usr/share/big-driver-manager/ui/category_page.py:608
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:245
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:366
-#: usr/share/big-driver-manager/ui/home_page.py:333
-#: usr/share/big-driver-manager/ui/home_page.py:432
-#: usr/share/big-driver-manager/ui/home_page.py:695
-#: usr/share/big-driver-manager/ui/kernel_page.py:647
-#: usr/share/big-driver-manager/ui/kernel_page.py:680
-#: usr/share/big-driver-manager/ui/mesa_page.py:900
-#: usr/share/big-driver-manager/ui/mesa_page.py:1076
-#: usr/share/big-driver-manager/ui/mesa_page.py:1123
-#: usr/share/big-driver-manager/ui/mesa_page.py:1331
-#: usr/share/big-driver-manager/ui/mesa_page.py:1356
-msgid "Install"
-msgstr "Inštalácia"
+# 
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
+# File: usr/share/big-driver-manager/ui/window.py, line: 463
+#: usr/share/big-driver-manager/ui/progress_dialog.py:151
+msgid "Close"
+msgstr "Zatvoriť"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
+msgid "Open Driver Manager"
+msgstr "Otvorenie správcu ovládačov"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:28
 msgid ""
-"If your Wi-Fi is already working, the built-in kernel driver is usually the "
-"best option. Install an alternative only if you have connection problems."
+"If your Wi-Fi is already working, the built-in kernel driver is usually the best option. Install an "
+"alternative only if you have connection problems."
 msgstr ""
-"Ak vaša Wi-Fi už funguje, vstavaný kernelový ovládač je zvyčajne najlepšou "
-"voľbou. Nainštalujte alternatívu len v prípade problémov s pripojením."
+"Ak vaša Wi-Fi už funguje, vstavaný kernelový ovládač je zvyčajne najlepšou voľbou. Nainštalujte "
+"alternatívu len v prípade problémov s pripojením."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:33
 msgid ""
-"Wired network adapters almost always work out of the box. An extra driver is "
-"only needed for very new or rare hardware."
+"Wired network adapters almost always work out of the box. An extra driver is only needed for very "
+"new or rare hardware."
 msgstr ""
-"Káblové sieťové adaptéry takmer vždy fungujú hneď po vybalení. Dodatočný "
-"ovládač je potrebný iba pre veľmi nový alebo zriedkavý hardvér."
+"Káblové sieťové adaptéry takmer vždy fungujú hneď po vybalení. Dodatočný ovládač je potrebný iba "
+"pre veľmi nový alebo zriedkavý hardvér."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:37
 msgid ""
-"Some Bluetooth adapters need extra firmware to work. If pairing fails, "
-"installing the firmware for your adapter may solve the problem."
+"Some Bluetooth adapters need extra firmware to work. If pairing fails, installing the firmware for "
+"your adapter may solve the problem."
 msgstr ""
-"Niektoré Bluetooth adaptéry potrebujú na fungovanie dodatočný firmware. Ak "
-"párovanie zlyhá, inštalácia firmvéru pre váš adaptér môže problém vyriešiť."
+"Niektoré Bluetooth adaptéry potrebujú na fungovanie dodatočný firmware. Ak párovanie zlyhá, "
+"inštalácia firmvéru pre váš adaptér môže problém vyriešiť."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:42
 msgid ""
-"Digital TV tuners usually need specific firmware. Without it the device "
-"won't be recognized by the system."
-msgstr ""
-"Digitálne TV tunery zvyčajne potrebujú špecifický firmware. Bez neho systém "
-"zariadenie nerozpozná."
+"Digital TV tuners usually need specific firmware. Without it the device won't be recognized by the "
+"system."
+msgstr "Digitálne TV tunery zvyčajne potrebujú špecifický firmware. Bez neho systém zariadenie nerozpozná."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:46
 msgid ""
-"Most audio devices work with ALSA built into the kernel. Extra firmware is "
-"only needed for specific USB audio interfaces."
+"Most audio devices work with ALSA built into the kernel. Extra firmware is only needed for specific "
+"USB audio interfaces."
 msgstr ""
-"Väčšina audio zariadení funguje s ALSA zabudovaným v jadre. Dodatočný "
-"firmware je potrebný iba pre konkrétne USB audio rozhrania."
+"Väčšina audio zariadení funguje s ALSA zabudovaným v jadre. Dodatočný firmware je potrebný iba pre "
+"konkrétne USB audio rozhrania."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:50
 msgid ""
-"Most webcams work automatically. Extra firmware may improve image quality or "
-"enable additional features."
+"Most webcams work automatically. Extra firmware may improve image quality or enable additional "
+"features."
 msgstr ""
-"Väčšina webkamier funguje automaticky. Dodatočný firmware môže zlepšiť "
-"kvalitu obrazu alebo povoliť ďalšie funkcie."
+"Väčšina webkamier funguje automaticky. Dodatočný firmware môže zlepšiť kvalitu obrazu alebo povoliť "
+"ďalšie funkcie."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:54
-msgid ""
-"If your touchscreen doesn't respond, installing the matching firmware "
-"usually fixes it."
-msgstr ""
-"Ak váš dotykový displej neodpovedá, inštalácia zodpovedajúceho firmvéru to "
-"zvyčajne opraví."
+msgid "If your touchscreen doesn't respond, installing the matching firmware usually fixes it."
+msgstr "Ak váš dotykový displej neodpovedá, inštalácia zodpovedajúceho firmvéru to zvyčajne opraví."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:58
 msgid ""
-"Printer drivers let the system communicate with your model. If the printer "
-"was detected on your network or USB, installing the matching driver is "
-"recommended."
+"Printer drivers let the system communicate with your model. If the printer was detected on your "
+"network or USB, installing the matching driver is recommended."
 msgstr ""
-"Ovládače tlačiarní umožňujú systému komunikovať s vaším modelom. Ak bola "
-"tlačiareň zistená v sieti alebo cez USB, odporúča sa nainštalovať "
-"zodpovedajúci ovládač."
+"Ovládače tlačiarní umožňujú systému komunikovať s vaším modelom. Ak bola tlačiareň zistená v sieti "
+"alebo cez USB, odporúča sa nainštalovať zodpovedajúci ovládač."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:63
-msgid ""
-"3D printer firmware enables communication between the slicer and the printer "
-"hardware."
-msgstr ""
-"Firmware 3D tlačiarne umožňuje komunikáciu medzi slicerom a hardvérom "
-"tlačiarne."
+msgid "3D printer firmware enables communication between the slicer and the printer hardware."
+msgstr "Firmware 3D tlačiarne umožňuje komunikáciu medzi slicerom a hardvérom tlačiarne."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:67
-msgid ""
-"Scanner drivers (SANE backends) allow scanning applications to communicate "
-"with your scanner model."
+msgid "Scanner drivers (SANE backends) allow scanning applications to communicate with your scanner model."
 msgstr ""
-"Ovládače skenerov (SANE backendy) umožňujú skenovacím aplikáciám komunikovať "
-"s vaším modelom skenera."
+"Ovládače skenerov (SANE backendy) umožňujú skenovacím aplikáciám komunikovať s vaším modelom "
+"skenera."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Dodatočné balíky firmvéru pre špecializovaný hardvér."
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Balík"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 107
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Stav"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Zistené a nainštalované"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Zistené — ešte nie je nainštalované"
@@ -226,11 +230,11 @@ msgstr "Zistené — ešte nie je nainštalované"
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
 msgstr "Nainštalované"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Dostupné v repozitári"
-#
+# 
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
 msgstr "Zariadenie"
@@ -670,7 +674,7 @@ msgstr "tlačiarní vo vašej sieti"
 msgid "(proprietary)"
 msgstr "(vlastné)"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 36
@@ -717,7 +721,7 @@ msgstr "Bluetooth"
 msgid "Bluetooth adapter drivers."
 msgstr "Ovládače adaptéra Bluetooth."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 40
@@ -814,6 +818,12 @@ msgstr "Iné"
 msgid "Additional firmware packages."
 msgstr "Ďalšie balíky firmvéru."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
+# 218
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
+#: usr/share/big-driver-manager/ui/window.py:229
+msgid "Categories"
+msgstr "kategórie"
+# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 #: usr/share/big-driver-manager/ui/window.py:198
 msgid "Home"
@@ -827,12 +837,6 @@ msgstr "Jadro"
 #: usr/share/big-driver-manager/ui/window.py:201
 msgid "Video"
 msgstr "Video"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
-# 218
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:122
-#: usr/share/big-driver-manager/ui/window.py:229
-msgid "Categories"
-msgstr "kategórie"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 #: usr/share/big-driver-manager/ui/window.py:242
@@ -875,8 +879,11 @@ msgstr "O nás"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 #: usr/share/big-driver-manager/ui/window.py:515
 msgid "Hardware detection failed. Check system logs for details."
-msgstr ""
-"Zlyhalo zistenie hardvéru. Skontrolujte systémové logy pre podrobnosti."
+msgstr "Zlyhalo zistenie hardvéru. Skontrolujte systémové logy pre podrobnosti."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
+msgid "Hardware detection for this category failed. Try refreshing later."
+msgstr "Zistenie hardvéru pre túto kategóriu zlyhalo. Skúste to znova neskôr."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #: usr/share/big-driver-manager/ui/window.py:627
@@ -888,21 +895,25 @@ msgstr "Zastaralé jadro: {} — už nedostáva bezpečnostné aktualizácie"
 #: usr/share/big-driver-manager/ui/window.py:631
 msgid "Manage"
 msgstr "Spravovať"
-#
+# 
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
 msgid ""
-"The package database was last updated {} days ago. Update your system before "
-"installing drivers to avoid download failures and missing packages."
+"The package database was last updated {} days ago. Update your system before installing drivers to "
+"avoid download failures and missing packages."
 msgstr ""
-"Databáza balíkov bola naposledy aktualizovaná pred {} dňami. Aktualizujte "
-"svoj systém pred inštaláciou ovládačov, aby ste predišli zlyhaniam "
-"sťahovania a chýbajúcim balíkom."
+"Databáza balíkov bola naposledy aktualizovaná pred {} dňami. Aktualizujte svoj systém pred "
+"inštaláciou ovládačov, aby ste predišli zlyhaniam sťahovania a chýbajúcim balíkom."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 #: usr/share/big-driver-manager/ui/window.py:652
 msgid "Showing all drivers, including incompatible ones"
 msgstr "Zobrazenie všetkých ovládačov vrátane nekompatibilných"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
+msgid "Operation in progress"
+msgstr "Operácia prebieha"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 #: usr/share/big-driver-manager/ui/progress_dialog.py:117
@@ -913,15 +924,32 @@ msgstr "Technické detaily"
 msgid "Terminal output"
 msgstr "Výstup terminálu"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 169
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 390
-# File: usr/share/big-driver-manager/ui/window.py, line: 463
-#: usr/share/big-driver-manager/ui/progress_dialog.py:151
-msgid "Close"
-msgstr "Zatvoriť"
+# 
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 306
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 374
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 161
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
+#: usr/share/big-driver-manager/udev-driver-dialog.py:180
+#: usr/share/big-driver-manager/ui/category_page.py:607
+#: usr/share/big-driver-manager/ui/category_page.py:645
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:365
+#: usr/share/big-driver-manager/ui/home_page.py:629
+#: usr/share/big-driver-manager/ui/home_page.py:694
+#: usr/share/big-driver-manager/ui/installed_page.py:397
+#: usr/share/big-driver-manager/ui/kernel_page.py:679
+#: usr/share/big-driver-manager/ui/kernel_page.py:782
+#: usr/share/big-driver-manager/ui/kernel_page.py:850
+#: usr/share/big-driver-manager/ui/mesa_page.py:564
+#: usr/share/big-driver-manager/ui/mesa_page.py:1122
+#: usr/share/big-driver-manager/ui/mesa_page.py:1164
+#: usr/share/big-driver-manager/ui/mesa_page.py:1200
+#: usr/share/big-driver-manager/ui/mesa_page.py:1355
+#: usr/share/big-driver-manager/ui/mesa_page.py:1393
+#: usr/share/big-driver-manager/ui/progress_dialog.py:145
+msgid "Cancel"
+msgstr "Zrušiť"
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 #: usr/share/big-driver-manager/ui/category_page.py:627
 #: usr/share/big-driver-manager/ui/category_page.py:665
@@ -959,19 +987,10 @@ msgstr "Hotovo!"
 #: usr/share/big-driver-manager/ui/progress_dialog.py:374
 msgid "Failed"
 msgstr "Neúspešný"
-#
+# 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr "Tento krok už nie je možné bezpečne zrušiť. Čakám, kým sa dokončí…"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
-#: usr/share/big-driver-manager/core/base_manager.py:233
-#: usr/share/big-driver-manager/ui/progress_dialog.py:414
-msgid "Operation cancelled by user."
-msgstr "Operácia zrušená používateľom."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
-#: usr/share/big-driver-manager/ui/progress_dialog.py:415
-msgid "Cancelled"
-msgstr "Zrušené"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 #: usr/share/big-driver-manager/ui/kernel_page.py:107
 msgid "Installed Kernels"
@@ -1000,7 +1019,7 @@ msgstr "V použití"
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Zastaralé jadrá — odporúča sa odstránenie"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1050,39 +1069,34 @@ msgstr "Aspoň jedno záložné jadro musí zostať nainštalované"
 # line: 439
 #: usr/share/big-driver-manager/ui/kernel_page.py:445
 msgid ""
-"Recommended for most users. These kernels receive security updates for years "
-"and are thoroughly tested."
+"Recommended for most users. These kernels receive security updates for years and are thoroughly "
+"tested."
 msgstr ""
-"Odporúčané pre väčšinu používateľov. Tieto kernely dostávajú bezpečnostné "
-"aktualizácie po mnoho rokov a sú dôkladne testované."
+"Odporúčané pre väčšinu používateľov. Tieto kernely dostávajú bezpečnostné aktualizácie po mnoho "
+"rokov a sú dôkladne testované."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 #: usr/share/big-driver-manager/ui/kernel_page.py:449
 msgid ""
-"Always up to date with the latest features and hardware support. Good if you "
-"need the newest drivers."
-msgstr ""
-"Vždy aktuálne s najnovšími funkciami a podporou hardvéru. Dobré, ak "
-"potrebujete najnovšie ovládače."
+"Always up to date with the latest features and hardware support. Good if you need the newest "
+"drivers."
+msgstr "Vždy aktuálne s najnovšími funkciami a podporou hardvéru. Dobré, ak potrebujete najnovšie ovládače."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 #: usr/share/big-driver-manager/ui/kernel_page.py:453
-msgid ""
-"Tuned for gaming and desktop responsiveness. A good option for daily use "
-"with extra performance."
+msgid "Tuned for gaming and desktop responsiveness. A good option for daily use with extra performance."
 msgstr ""
-"Optimalizované pre hranie hier a odozvu na pracovnej ploche. Dobrá voľba na "
-"každodenné použitie s extra výkonom."
+"Optimalizované pre hranie hier a odozvu na pracovnej ploche. Dobrá voľba na každodenné použitie s "
+"extra výkonom."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 #: usr/share/big-driver-manager/ui/kernel_page.py:457
 msgid ""
-"Built for audio/video production needing precise timing. May be incompatible "
-"with some drivers (e.g. NVIDIA). Only for advanced users."
+"Built for audio/video production needing precise timing. May be incompatible with some drivers "
+"(e.g. NVIDIA). Only for advanced users."
 msgstr ""
-"Vytvorené pre audio/video produkciu vyžadujúcu presné časovanie. Môže byť "
-"nekompatibilný s niektorými ovládačmi (napr. NVIDIA). Len pre pokročilých "
-"používateľov."
+"Vytvorené pre audio/video produkciu vyžadujúcu presné časovanie. Môže byť nekompatibilný s "
+"niektorými ovládačmi (napr. NVIDIA). Len pre pokročilých používateľov."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 #: usr/share/big-driver-manager/ui/kernel_page.py:498
@@ -1179,8 +1193,7 @@ msgstr "Nie je možné odstrániť spustené jadro"
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
 #: usr/share/big-driver-manager/ui/kernel_page.py:747
 msgid "This kernel is currently in use. Boot into a different kernel first."
-msgstr ""
-"Tento kernel je momentálne používaný. Najprv nabootujte do iného kernelu."
+msgstr "Tento kernel je momentálne používaný. Najprv nabootujte do iného kernelu."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #: usr/share/big-driver-manager/ui/category_page.py:463
@@ -1192,17 +1205,15 @@ msgstr ""
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Odstrániť {}"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 #: usr/share/big-driver-manager/ui/kernel_page.py:770
 msgid ""
-"⚠ This is your last backup kernel. If the running kernel fails, you will "
-"have no fallback.\n"
+"⚠ This is your last backup kernel. If the running kernel fails, you will have no fallback.\n"
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Toto je váš posledný záložný kernel. Ak bežiaci kernel zlyhá, nebudete mať "
-"žiadnu zálohu.\n"
+"⚠ Toto je váš posledný záložný kernel. Ak bežiaci kernel zlyhá, nebudete mať žiadnu zálohu.\n"
 "\n"
 "Nasledujúce balíky budú odstránené:"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1287,26 +1298,25 @@ msgstr "Všetky zastarané jadrá boli úspešne odstránené."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Čo je nové v Linuxe {}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
-"This package is not in the official repositories. It will be built from the "
-"AUR on your computer, which can take several minutes and is not reviewed by "
-"the distribution."
+"This package is not in the official repositories. It will be built from the AUR on your computer, "
+"which can take several minutes and is not reviewed by the distribution."
 msgstr ""
-"Tento balík nie je v oficiálnych repozitároch. Bude zostavený z AUR na vašom "
-"počítači, čo môže trvať niekoľko minút a nie je kontrolovaný distribúciou."
-#
+"Tento balík nie je v oficiálnych repozitároch. Bude zostavený z AUR na vašom počítači, čo môže "
+"trvať niekoľko minút a nie je kontrolovaný distribúciou."
+# 
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
 msgid ""
-"Your device already works with the built-in driver {}, which is the "
-"recommended option. Only install this third-party driver to work around a "
-"specific problem — it may conflict with the built-in one."
+"Your device already works with the built-in driver {}, which is the recommended option. Only "
+"install this third-party driver to work around a specific problem — it may conflict with the "
+"built-in one."
 msgstr ""
-"Vaše zariadenie už funguje s predinštalovaným ovládačom {}, ktorý je "
-"odporúčanou voľbou. Tento ovládač tretej strany nainštalujte iba na obídenie "
-"konkrétneho problému — môže byť v konflikte s predinštalovaným."
+"Vaše zariadenie už funguje s predinštalovaným ovládačom {}, ktorý je odporúčanou voľbou. Tento "
+"ovládač tretej strany nainštalujte iba na obídenie konkrétneho problému — môže byť v konflikte s "
+"predinštalovaným."
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 #: usr/share/big-driver-manager/ui/base_page.py:39
 #: usr/share/big-driver-manager/ui/base_page.py:44
@@ -1316,11 +1326,6 @@ msgstr "Načítanie..."
 #: usr/share/big-driver-manager/ui/base_page.py:40
 msgid "Loading"
 msgstr "Načítava sa"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
-# 55
-#: usr/share/big-driver-manager/ui/base_page.py:55
-msgid "Still loading… Check your network connection."
-msgstr "Stále sa načítava... Skontrolujte pripojenie k sieti."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 #: usr/share/big-driver-manager/ui/home_page.py:70
@@ -1330,12 +1335,11 @@ msgstr "Čo je Kernel?"
 # 72
 #: usr/share/big-driver-manager/ui/home_page.py:72
 msgid ""
-"The kernel is the heart of your operating system. It controls your "
-"processor, memory, and all hardware. Most drivers already come built-in with "
-"the kernel."
+"The kernel is the heart of your operating system. It controls your processor, memory, and all "
+"hardware. Most drivers already come built-in with the kernel."
 msgstr ""
-"Jadro je srdcom vášho operačného systému. Ovláda váš procesor, pamäť a "
-"všetok hardvér. Väčšina ovládačov je už zabudovaná v jadre."
+"Jadro je srdcom vášho operačného systému. Ovláda váš procesor, pamäť a všetok hardvér. Väčšina "
+"ovládačov je už zabudovaná v jadre."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 #: usr/share/big-driver-manager/ui/home_page.py:83
 msgid "What are Drivers?"
@@ -1344,13 +1348,16 @@ msgstr "Čo sú ovládače?"
 # 85
 #: usr/share/big-driver-manager/ui/home_page.py:85
 msgid ""
-"Drivers allow each device — like your video card, Wi-Fi, or sound — to "
-"communicate with the system. If everything is already working, you probably "
-"don't need to change anything."
+"Drivers allow each device — like your video card, Wi-Fi, or sound — to communicate with the system. "
+"If everything is already working, you probably don't need to change anything."
 msgstr ""
-"Ovládače umožňujú každému zariadeniu — ako je vaša grafická karta, Wi-Fi "
-"alebo zvuk — komunikovať so systémom. Ak všetko už funguje, pravdepodobne "
-"nemusíte nič meniť."
+"Ovládače umožňujú každému zariadeniu — ako je vaša grafická karta, Wi-Fi alebo zvuk — komunikovať "
+"so systémom. Ak všetko už funguje, pravdepodobne nemusíte nič meniť."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
+msgid "Checking your system"
+msgstr "Kontrola vášho systému"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 #: usr/share/big-driver-manager/ui/home_page.py:113
@@ -1370,7 +1377,7 @@ msgstr "Odporúčané pre váš hardvér"
 #: usr/share/big-driver-manager/ui/home_page.py:197
 msgid "Install recommended"
 msgstr "Nainštalovať odporúčané"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
@@ -1384,9 +1391,7 @@ msgstr "Prejsť na ovládače"
 #: usr/share/big-driver-manager/ui/home_page.py:377
 #, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
-msgstr ""
-"Všetky {} odporúčané video balíky pre vaše {} hardvérové zariadenie sú "
-"nainštalované."
+msgstr "Všetky {} odporúčané video balíky pre vaše {} hardvérové zariadenie sú nainštalované."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 386
 #: usr/share/big-driver-manager/ui/home_page.py:387
@@ -1454,7 +1459,7 @@ msgstr "Inštalujem balíky {}"
 msgid "Installing recommended packages"
 msgstr "Inštalácia odporúčaných balíkov"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 643
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
@@ -1468,7 +1473,7 @@ msgstr "Sťahovanie balíkov..."
 #: usr/share/big-driver-manager/ui/home_page.py:671
 msgid "All recommended packages installed successfully!"
 msgstr "Všetky odporúčané balíky boli úspešne nainštalované!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "Inštalácia balíka zlyhala."
@@ -1480,7 +1485,7 @@ msgstr "Inštalácia balíka zlyhala."
 msgid "Install Driver"
 msgstr "Nainštalujte ovládač"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1212
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -1489,6 +1494,11 @@ msgstr "Nainštalujte ovládač"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1371
 msgid "Downloading package..."
 msgstr "Sťahujem balík..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
+#, python-brace-format
+msgid "Installed {}"
+msgstr "Nainštalované {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #: usr/share/big-driver-manager/ui/home_page.py:733
 #, python-brace-format
@@ -1512,12 +1522,10 @@ msgstr "Stabilná, dlhodobá podpora"
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:45
-msgid ""
-"Receives security updates for years. Best choice for most users — reliable "
-"and well-tested."
+msgid "Receives security updates for years. Best choice for most users — reliable and well-tested."
 msgstr ""
-"Prijíma bezpečnostné aktualizácie po roky. Najlepšia voľba pre väčšinu "
-"používateľov — spoľahlivá a dobre otestovaná."
+"Prijíma bezpečnostné aktualizácie po roky. Najlepšia voľba pre väčšinu používateľov — spoľahlivá a "
+"dobre otestovaná."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:51
@@ -1527,13 +1535,11 @@ msgstr "Nízka latencia, v reálnom čase"
 # manager/ui/kernel_card_builder.py, line: 52
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:54
 msgid ""
-"Designed for audio/video production and tasks needing precise timing. May be "
-"incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
-"users."
+"Designed for audio/video production and tasks needing precise timing. May be incompatible with some "
+"drivers (e.g. NVIDIA). Only recommended for advanced users."
 msgstr ""
-"Navrhnuté pre audio/video produkciu a úlohy vyžadujúce presné časovanie. "
-"Môže byť nekompatibilné s niektorými ovládačmi (napr. NVIDIA). Odporúčané "
-"iba pre pokročilých používateľov."
+"Navrhnuté pre audio/video produkciu a úlohy vyžadujúce presné časovanie. Môže byť nekompatibilné s "
+"niektorými ovládačmi (napr. NVIDIA). Odporúčané iba pre pokročilých používateľov."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:61
@@ -1543,25 +1549,25 @@ msgstr "Optimalizované pre hry a výkon"
 # manager/ui/kernel_card_builder.py, line: 62
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:64
 msgid ""
-"Tuned for faster gaming and a more responsive desktop. Great for daily use "
-"if you want extra performance."
+"Tuned for faster gaming and a more responsive desktop. Great for daily use if you want extra "
+"performance."
 msgstr ""
-"Ladené pre rýchlejšie hranie a responzívnejší desktop. Skvelé pre každodenné "
-"použitie, ak chcete extra výkon."
-#
+"Ladené pre rýchlejšie hranie a responzívnejší desktop. Skvelé pre každodenné použitie, ak chcete "
+"extra výkon."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:70
 msgid "Performance optimized by CachyOS"
 msgstr "Výkon optimalizovaný CachyOS"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:73
 msgid ""
-"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
-"gaming and desktop responsiveness."
+"EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for gaming and desktop "
+"responsiveness."
 msgstr ""
-"Plánovač EEVDF s LTO, AutoFDO a optimalizáciami Propeller. Výborný pre "
-"hranie hier a odozvu pracovnej plochy."
+"Plánovač EEVDF s LTO, AutoFDO a optimalizáciami Propeller. Výborný pre hranie hier a odozvu "
+"pracovnej plochy."
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:79
@@ -1572,46 +1578,48 @@ msgstr "Najnovšie funkcie a ovládače"
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:83
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Vždy aktuálne s najnovšími funkciami a podporou hardvéru."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 #: usr/share/big-driver-manager/ui/installed_page.py:26
 msgid "Kernels"
 msgstr "Jadrá"
-#
+# 
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Nainštalované ovládače"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 #: usr/share/big-driver-manager/ui/installed_page.py:75
-msgid ""
-"All drivers and firmware currently installed on your system, grouped by "
-"category."
-msgstr ""
-"Všetky ovládače a firmvér aktuálne nainštalované vo vašom systéme, zoskupené "
-"podľa kategórie."
-#
+msgid "All drivers and firmware currently installed on your system, grouped by category."
+msgstr "Všetky ovládače a firmvér aktuálne nainštalované vo vašom systéme, zoskupené podľa kategórie."
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "No extra drivers installed"
 msgstr "Nie sú nainštalované žiadne ďalšie ovládače"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 #: usr/share/big-driver-manager/ui/installed_page.py:106
 msgid "Your system is using only default drivers."
 msgstr "Váš systém používa iba predvolené ovládače."
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #: usr/share/big-driver-manager/ui/installed_page.py:279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} nainštalovaných ovládačov v {cats} kategóriách"
-#
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
+#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
+#, python-brace-format
+msgid "{n} installed"
+msgstr "Nainštalované {n}"
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 #: usr/share/big-driver-manager/ui/installed_page.py:311
 msgid "Running"
 msgstr "Beží"
-#
+# 
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 #: usr/share/big-driver-manager/ui/installed_page.py:317
 msgid "MHWD driver"
@@ -1658,26 +1666,22 @@ msgstr "Ovládače videa"
 # 127
 #: usr/share/big-driver-manager/ui/mesa_page.py:129
 msgid ""
-"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) "
-"are built into a single project called <b>Mesa</b>. Below you can choose a "
-"Mesa variant and manage extra packages for gaming, video playback, compute "
-"and AI."
+"On Linux, video drivers for AMD, Intel and NVIDIA (free software Nouveau) are built into a single "
+"project called <b>Mesa</b>. Below you can choose a Mesa variant and manage extra packages for "
+"gaming, video playback, compute and AI."
 msgstr ""
-"Na Linuxe sú video ovládače pre AMD, Intel a NVIDIA (voľne dostupný softvér "
-"Nouveau) sústredené v jednom projekte nazývanom <b>Mesa</b>. Nižšie si "
-"môžete vybrať variant Mesa a spravovať doplnkové balíky pre hranie hier, "
-"prehrávanie videa, výpočty a AI."
+"Na Linuxe sú video ovládače pre AMD, Intel a NVIDIA (voľne dostupný softvér Nouveau) sústredené v "
+"jednom projekte nazývanom <b>Mesa</b>. Nižšie si môžete vybrať variant Mesa a spravovať doplnkové "
+"balíky pre hranie hier, prehrávanie videa, výpočty a AI."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 #: usr/share/big-driver-manager/ui/mesa_page.py:152
 msgid ""
-"Your computer has an <b>NVIDIA</b> graphics card. You can install the "
-"official proprietary driver for the best performance in gaming, AI and "
-"professional applications."
+"Your computer has an <b>NVIDIA</b> graphics card. You can install the official proprietary driver "
+"for the best performance in gaming, AI and professional applications."
 msgstr ""
-"Váš počítač má grafickú kartu <b>NVIDIA</b>. Môžete nainštalovať oficiálny "
-"proprietárny ovládač pre najlepší výkon v hrách, AI a profesionálnych "
-"aplikáciách."
+"Váš počítač má grafickú kartu <b>NVIDIA</b>. Môžete nainštalovať oficiálny proprietárny ovládač pre "
+"najlepší výkon v hrách, AI a profesionálnych aplikáciách."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 #: usr/share/big-driver-manager/ui/mesa_page.py:185
@@ -1686,22 +1690,19 @@ msgstr "Mesa Variant"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 #: usr/share/big-driver-manager/ui/mesa_page.py:196
-msgid ""
-"Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Vyberte, ktorú zostavu Mesa chcete použiť. Aktívna môže byť iba jedna "
-"varianta naraz."
+msgid "Choose which Mesa build to use. Only one variant can be active at a time."
+msgstr "Vyberte, ktorú zostavu Mesa chcete použiť. Aktívna môže byť iba jedna varianta naraz."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 #: usr/share/big-driver-manager/ui/mesa_page.py:209
 msgid ""
-"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used "
-"for minor tasks in this case. We recommend keeping the <b>Stable</b> variant "
-"— other versions will not improve performance and may cause instabilities."
+"<b>Note:</b> You are using the NVIDIA proprietary driver. Mesa is only used for minor tasks in this "
+"case. We recommend keeping the <b>Stable</b> variant — other versions will not improve performance "
+"and may cause instabilities."
 msgstr ""
-"<b>Poznámka:</b> Používate proprietárny ovládač NVIDIA. Mesa sa v tomto "
-"prípade používa len na menšie úlohy. Odporúčame ponechať variant <b>Stable</"
-"b> — ostatné verzie výkon nezlepšia a môžu spôsobiť nestability."
+"<b>Poznámka:</b> Používate proprietárny ovládač NVIDIA. Mesa sa v tomto prípade používa len na "
+"menšie úlohy. Odporúčame ponechať variant <b>Stable</b> — ostatné verzie výkon nezlepšia a môžu "
+"spôsobiť nestability."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 #: usr/share/big-driver-manager/ui/mesa_page.py:380
@@ -1786,17 +1787,13 @@ msgstr ""
 #: usr/share/big-driver-manager/ui/mesa_page.py:689
 msgid "NVIDIA Proprietary Driver"
 msgstr ""
-"Oficiálny ovládač s uzavretým zdrojom s najlepším výkonom pre hranie hier, "
-"AI a profesionálnu záťaž. Naraz môže byť aktívna iba jedna verzia."
+"Oficiálny ovládač s uzavretým zdrojom s najlepším výkonom pre hranie hier, AI a profesionálnu "
+"záťaž. Naraz môže byť aktívna iba jedna verzia."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 #: usr/share/big-driver-manager/ui/mesa_page.py:701
-msgid ""
-"Official closed-source driver with the best performance for gaming, AI, and "
-"professional workloads."
-msgstr ""
-"Oficiálny uzavretý ovládač s najlepším výkonom pre hry, AI a profesionálne "
-"pracovné zaťaženia."
+msgid "Official closed-source driver with the best performance for gaming, AI, and professional workloads."
+msgstr "Oficiálny uzavretý ovládač s najlepším výkonom pre hry, AI a profesionálne pracovné zaťaženia."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 #: usr/share/big-driver-manager/ui/mesa_page.py:713
@@ -1839,11 +1836,8 @@ msgstr "Iné ovládače"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 #: usr/share/big-driver-manager/ui/mesa_page.py:941
-msgid ""
-"Additional drivers for special hardware configurations like virtual machines."
-msgstr ""
-"Dodatočné ovládače pre špeciálne hardvérové konfigurácie ako virtuálne "
-"stroje."
+msgid "Additional drivers for special hardware configurations like virtual machines."
+msgstr "Dodatočné ovládače pre špeciálne hardvérové konfigurácie ako virtuálne stroje."
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 #: usr/share/big-driver-manager/ui/mesa_page.py:1026
 msgid "Compatible"
@@ -1869,8 +1863,13 @@ msgstr "⚠ Žiadna podpora Wayland · Už sa neudržuje"
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Prepnúť z {} na {}"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
+#, python-brace-format
+msgid "Install {} unavailable"
+msgstr "Inštalácia {} nie je k dispozícii"
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 951
 # File: big-driver-manager/usr/share/big-driver-manager/core/mhwd_manager.py,
@@ -2006,18 +2005,14 @@ msgstr ""
 "Inštalovať <b>{}</b>?\n"
 "\n"
 "{}"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Nedostupné"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
-msgid ""
-"Not available in the enabled repositories. 32-bit (lib32) packages require "
-"the multilib repository."
-msgstr ""
-"Nie je k dispozícii v povolených repozitároch. 32-bitové (lib32) balíky "
-"vyžadujú multilib repozitár."
+msgid "Not available in the enabled repositories. 32-bit (lib32) packages require the multilib repository."
+msgstr "Nie je k dispozícii v povolených repozitároch. 32-bitové (lib32) balíky vyžadujú multilib repozitár."
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #: usr/share/big-driver-manager/ui/mesa_page.py:1388
 msgid "Remove Package"
@@ -2037,11 +2032,11 @@ msgstr "Odstraňuje sa balík..."
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} bol úspešne {}!"
-#
+# 
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "Operácia balíka zlyhala."
-#
+# 
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
 msgstr "Otvor stránku balíka ovládača a ponúknite jeho inštaláciu."
@@ -2054,6 +2049,11 @@ msgstr "Vyhľadať ovládače..."
 #: usr/share/big-driver-manager/ui/category_page.py:135
 msgid "Search drivers"
 msgstr "Vyhľadajte ovládače"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
+msgid "Searching for printers on the network"
+msgstr "Hľadanie tlačiarní v sieti"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 #: usr/share/big-driver-manager/ui/category_page.py:160
@@ -2063,8 +2063,7 @@ msgstr "Hľadanie tlačiarní v sieti…"
 # line: 162
 #: usr/share/big-driver-manager/ui/category_page.py:179
 msgid "No more automatically detected compatible drivers in this category."
-msgstr ""
-"V tejto kategórii už žiadne automaticky detekované kompatibilné ovládače."
+msgstr "V tejto kategórii už žiadne automaticky detekované kompatibilné ovládače."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -2084,38 +2083,32 @@ msgstr "Pre túto kategóriu nie sú potrebné žiadne ovládače"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 #: usr/share/big-driver-manager/ui/category_page.py:202
-msgid ""
-"No drivers in this category were automatically detected as compatible with "
-"your hardware."
-msgstr ""
-"V tejto kategórii neboli automaticky detekované žiadne ovládače kompatibilné "
-"s vaším hardvérom."
-#
+msgid "No drivers in this category were automatically detected as compatible with your hardware."
+msgstr "V tejto kategórii neboli automaticky detekované žiadne ovládače kompatibilné s vaším hardvérom."
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Adaptér {} — funguje (ovládač {})"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "neznáme"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Kábel pripojený"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Rozhranie je zakázané"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
-msgid ""
-"No cable or link detected. Check the cable and the router/switch port — no "
-"extra driver is needed."
+msgid "No cable or link detected. Check the cable and the router/switch port — no extra driver is needed."
 msgstr ""
-"Nebol zistený žiadny kábel ani spojenie. Skontrolujte kábel a port smerovača/"
-"prepínača — nie je potrebný žiadny ďalší ovládač."
+"Nebol zistený žiadny kábel ani spojenie. Skontrolujte kábel a port smerovača/prepínača — nie je "
+"potrebný žiadny ďalší ovládač."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 #: usr/share/big-driver-manager/ui/category_page.py:257
@@ -2124,12 +2117,10 @@ msgstr "Chyba detekcie"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 #: usr/share/big-driver-manager/ui/category_page.py:281
-msgid ""
-"No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"V tejto kategórii neboli detekované žiadne ovládače potrebné pre váš hardvér."
+msgid "No drivers in this category were detected as necessary for your hardware."
+msgstr "V tejto kategórii neboli detekované žiadne ovládače potrebné pre váš hardvér."
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
-#
+# 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 339
 # File: big-driver-manager/usr/share/big-driver-
@@ -2160,7 +2151,7 @@ msgstr "{} nainštalovaný"
 #: usr/share/big-driver-manager/ui/category_page.py:426
 msgid "Not installed"
 msgstr "Nie je nainštalované"
-#
+# 
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
@@ -2170,8 +2161,7 @@ msgstr "Nie je potrebné: zariadenie už funguje s integrovaným ovládačom {}"
 #: usr/share/big-driver-manager/ui/category_page.py:530
 #, python-brace-format
 msgid "{total} drivers · {detected} detected · {installed} installed"
-msgstr ""
-"{total} ovládačov · {detected} detekovaných · {installed} nainštalovaných"
+msgstr "{total} ovládačov · {detected} detekovaných · {installed} nainštalovaných"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
@@ -2236,8 +2226,7 @@ msgstr "Pre laptopy AMD + NVIDIA — NVIDIA 470 (legacy, bez Wayland)"
 # 76
 #: usr/share/big-driver-manager/ui/mesa_data.py:76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Optimalizované zobrazenie pre virtuálne stroje (VirtualBox, VMware, QEMU/KVM)"
+msgstr "Optimalizované zobrazenie pre virtuálne stroje (VirtualBox, VMware, QEMU/KVM)"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 #: usr/share/big-driver-manager/ui/mesa_data.py:90
@@ -2246,12 +2235,8 @@ msgstr "Hry a 3D grafika"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 #: usr/share/big-driver-manager/ui/mesa_data.py:93
-msgid ""
-"Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
-"applications."
-msgstr ""
-"Knižnice Vulkan a OpenGL nevyhnutné pre hry, Steam, Wine/Proton a 3D "
-"aplikácie."
+msgid "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D applications."
+msgstr "Knižnice Vulkan a OpenGL nevyhnutné pre hry, Steam, Wine/Proton a 3D aplikácie."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 #: usr/share/big-driver-manager/ui/mesa_data.py:99
@@ -2271,21 +2256,17 @@ msgstr "Vulkan pre Intel GPU"
 # 121
 #: usr/share/big-driver-manager/ui/mesa_data.py:121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-bitový Vulkan (Intel) — potrebný pre Steam, Wine/Proton a staršie hry"
+msgstr "32-bitový Vulkan (Intel) — potrebný pre Steam, Wine/Proton a staršie hry"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 130
 #: usr/share/big-driver-manager/ui/mesa_data.py:130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr ""
-"Open-source Vulkan pre NVIDIA (Nouveau) — nie je potrebný proprietárny "
-"ovládač"
+msgstr "Open-source Vulkan pre NVIDIA (Nouveau) — nie je potrebný proprietárny ovládač"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 #: usr/share/big-driver-manager/ui/mesa_data.py:139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
-msgstr ""
-"32-bitový OpenGL — potrebný pre Steam, Wine/Proton a staršie 32-bitové hry"
+msgstr "32-bitový OpenGL — potrebný pre Steam, Wine/Proton a staršie 32-bitové hry"
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 149
 #: usr/share/big-driver-manager/ui/mesa_data.py:149
@@ -2295,12 +2276,11 @@ msgstr "Prehrávanie videa"
 # 152
 #: usr/share/big-driver-manager/ui/mesa_data.py:152
 msgid ""
-"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
-"and video calls smoother while reducing CPU and power usage."
+"Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming and video calls smoother "
+"while reducing CPU and power usage."
 msgstr ""
-"Hardvérovo akcelerované dekódovanie videa (VAAPI/VDPAU). Zabezpečuje "
-"plynulejšie videá, streamovanie a videohovory a zároveň znižuje zaťaženie "
-"CPU a spotrebu energie."
+"Hardvérovo akcelerované dekódovanie videa (VAAPI/VDPAU). Zabezpečuje plynulejšie videá, "
+"streamovanie a videohovory a zároveň znižuje zaťaženie CPU a spotrebu energie."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 #: usr/share/big-driver-manager/ui/mesa_data.py:159
@@ -2325,11 +2305,11 @@ msgstr "VAAPI pre AMD a open-source NVIDIA (Nouveau)"
 # 186
 #: usr/share/big-driver-manager/ui/mesa_data.py:186
 msgid ""
-"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
-"Vulkan. Probably not needed."
+"VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and Vulkan. Probably not "
+"needed."
 msgstr ""
-"VDPAU pre AMD/NVIDIA open-source — staršia API nahrádzaná VAAPI a Vulkanom. "
-"Pravdepodobne nie je potrebné."
+"VDPAU pre AMD/NVIDIA open-source — staršia API nahrádzaná VAAPI a Vulkanom. Pravdepodobne nie je "
+"potrebné."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 #: usr/share/big-driver-manager/ui/mesa_data.py:197
@@ -2339,22 +2319,19 @@ msgstr "GPU výpočty (AI / ML)"
 # 200
 #: usr/share/big-driver-manager/ui/mesa_data.py:200
 msgid ""
-"Your graphics card can do more than display images — it can also help with "
-"heavy processing tasks. These libraries allow programs to use the GPU for "
-"things like artificial intelligence, video editing, 3D rendering, image "
-"processing and scientific simulations. Examples: running local AI assistants "
-"(Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in "
-"Blender, applying filters in GIMP or Darktable, generating images with "
-"Stable Diffusion, and running physics simulations."
+"Your graphics card can do more than display images — it can also help with heavy processing tasks. "
+"These libraries allow programs to use the GPU for things like artificial intelligence, video "
+"editing, 3D rendering, image processing and scientific simulations. Examples: running local AI "
+"assistants (Ollama, LocalAI), transcribing audio with Whisper, rendering 3D scenes in Blender, "
+"applying filters in GIMP or Darktable, generating images with Stable Diffusion, and running physics "
+"simulations."
 msgstr ""
-"Vaša grafická karta dokáže viac než len zobrazovať obrázky — môže tiež "
-"pomôcť s náročnými výpočtovými úlohami. Tieto knižnice umožňujú programom "
-"využívať GPU na veci ako umelá inteligencia, úprava videa, 3D rendering, "
-"spracovanie obrázkov a vedecké simulácie. Príklady: spúšťanie lokálnych AI "
-"asistentov (Ollama, LocalAI), prepisovanie zvuku pomocou Whisper, "
-"renderovanie 3D scén v Blenderi, aplikovanie filtrov v GIMP alebo Darktable, "
-"generovanie obrázkov pomocou Stable Diffusion a spúšťanie fyzikálnych "
-"simulácií."
+"Vaša grafická karta dokáže viac než len zobrazovať obrázky — môže tiež pomôcť s náročnými "
+"výpočtovými úlohami. Tieto knižnice umožňujú programom využívať GPU na veci ako umelá inteligencia, "
+"úprava videa, 3D rendering, spracovanie obrázkov a vedecké simulácie. Príklady: spúšťanie lokálnych "
+"AI asistentov (Ollama, LocalAI), prepisovanie zvuku pomocou Whisper, renderovanie 3D scén v "
+"Blenderi, aplikovanie filtrov v GIMP alebo Darktable, generovanie obrázkov pomocou Stable Diffusion "
+"a spúšťanie fyzikálnych simulácií."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 #: usr/share/big-driver-manager/ui/mesa_data.py:215
@@ -2384,11 +2361,11 @@ msgstr "Stabilná"
 # 272
 #: usr/share/big-driver-manager/ui/mesa_data.py:281
 msgid ""
-"Officially tested by the Mesa team. The safest and most reliable choice for "
-"everyday use, gaming, and video playback."
+"Officially tested by the Mesa team. The safest and most reliable choice for everyday use, gaming, "
+"and video playback."
 msgstr ""
-"Oficiálne testovaná tímom Mesa. Najbezpečnejšia a najspoľahlivejšia voľba "
-"pre každodenné použitie, hranie hier a prehrávanie videa."
+"Oficiálne testovaná tímom Mesa. Najbezpečnejšia a najspoľahlivejšia voľba pre každodenné použitie, "
+"hranie hier a prehrávanie videa."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 #: usr/share/big-driver-manager/ui/drivers_hub_page.py:105
 #: usr/share/big-driver-manager/ui/mesa_data.py:284
@@ -2403,11 +2380,11 @@ msgstr "Výkon"
 # 281
 #: usr/share/big-driver-manager/ui/mesa_data.py:290
 msgid ""
-"Modified version with gaming optimizations for extra performance. Reliable "
-"for most users but may rarely cause instabilities."
+"Modified version with gaming optimizations for extra performance. Reliable for most users but may "
+"rarely cause instabilities."
 msgstr ""
-"Upravená verzia s hernými optimalizáciami pre vyšší výkon. Spoľahlivá pre "
-"väčšinu používateľov, ale zriedka môže spôsobiť nestability."
+"Upravená verzia s hernými optimalizáciami pre vyšší výkon. Spoľahlivá pre väčšinu používateľov, ale "
+"zriedka môže spôsobiť nestability."
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 #: usr/share/big-driver-manager/ui/mesa_data.py:298
@@ -2417,13 +2394,11 @@ msgstr "rozvoj"
 # 291
 #: usr/share/big-driver-manager/ui/mesa_data.py:300
 msgid ""
-"Built from the very latest source code with cutting-edge features. Offers "
-"the best gaming performance but is the least tested — only for advanced "
-"users."
+"Built from the very latest source code with cutting-edge features. Offers the best gaming "
+"performance but is the least tested — only for advanced users."
 msgstr ""
-"Postavená z najnovšieho zdrojového kódu s najmodernejšími funkciami. Ponúka "
-"najlepší herný výkon, ale je najmenej testovaná — iba pre pokročilých "
-"používateľov."
+"Postavená z najnovšieho zdrojového kódu s najmodernejšími funkciami. Ponúka najlepší herný výkon, "
+"ale je najmenej testovaná — iba pre pokročilých používateľov."
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 #: usr/share/big-driver-manager/ui/mesa_data.py:308
 #: usr/share/big-driver-manager/ui/mesa_data.py:314
@@ -2433,12 +2408,11 @@ msgstr "Staršia verzia"
 # 301
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
 msgid ""
-"For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
-"install this if newer Mesa versions don't work with your hardware."
+"For very old graphics cards that only support OpenGL 2.1 or earlier. Only install this if newer "
+"Mesa versions don't work with your hardware."
 msgstr ""
-"Pre veľmi staré grafické karty, ktoré podporujú iba OpenGL 2.1 alebo "
-"staršie. Inštalujte len v prípade, že novšie verzie Mesa nefungujú s vaším "
-"hardvérom."
+"Pre veľmi staré grafické karty, ktoré podporujú iba OpenGL 2.1 alebo staršie. Inštalujte len v "
+"prípade, že novšie verzie Mesa nefungujú s vaším hardvérom."
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #: usr/share/big-driver-manager/core/mesa_manager.py:116
@@ -2455,66 +2429,6 @@ msgstr "Použitie ovládača {}..."
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Spúšťa sa inštalácia ovládača {}..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 161
-#: usr/share/big-driver-manager/core/mesa_manager.py:164
-msgid "Checking for conflicting packages..."
-msgstr "Kontrolujú sa konfliktné balíky..."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
-#: usr/share/big-driver-manager/core/mesa_manager.py:176
-#, python-brace-format
-msgid "Removing conflicts: {}"
-msgstr "Odstraňovanie konfliktov: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 178
-#: usr/share/big-driver-manager/core/mesa_manager.py:185
-#, python-brace-format
-msgid "Checking {} packages..."
-msgstr "Kontroluje sa {} balíkov..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:195
-#, python-brace-format
-msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ Balík {} nie je dostupný, preskakujem..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 191
-#: usr/share/big-driver-manager/core/mesa_manager.py:199
-msgid "❌ No packages available to install."
-msgstr "❌ Žiadne balíky na inštaláciu nie sú dostupné."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
-#: usr/share/big-driver-manager/core/mesa_manager.py:206
-#, python-brace-format
-msgid "Installing: {}"
-msgstr "Inštalujem: {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 205
-#: usr/share/big-driver-manager/core/mesa_manager.py:212
-msgid "Removing conflicting packages..."
-msgstr "Odstraňovanie konfliktných balíkov..."
-# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
-# line: 237
-#: usr/share/big-driver-manager/core/mesa_manager.py:225
-msgid "Failed to remove conflicting packages."
-msgstr "Nepodarilo sa odstrániť konfliktné balíky."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
-#: usr/share/big-driver-manager/core/mesa_manager.py:235
-#, python-brace-format
-msgid "Installing {} driver..."
-msgstr "Inštaluje sa ovládač {}..."
-# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
-#: usr/share/big-driver-manager/core/mesa_manager.py:245
-msgid "Failed to apply driver."
-msgstr "Nepodarilo sa použiť ovládač."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/core/mesa_manager.py:251
-msgid "Driver applied successfully!"
-msgstr "Ovládač bol úspešne aplikovaný!"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
-#: usr/share/big-driver-manager/core/mesa_manager.py:254
-#, python-brace-format
-msgid "✅ {} driver applied successfully!"
-msgstr "✅ Ovládač {} bol úspešne aplikovaný!"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #: usr/share/big-driver-manager/core/base_manager.py:205
 #: usr/share/big-driver-manager/core/mesa_manager.py:262
@@ -2526,11 +2440,71 @@ msgstr "Chyba: {}"
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Chyba: {}"
-# File: usr/share/big-driver-manager/core/base_manager.py, line: 197
-#: usr/share/big-driver-manager/core/mesa_manager.py:296
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 237
+#: usr/share/big-driver-manager/core/mesa_manager.py:225
+msgid "Failed to remove conflicting packages."
+msgstr "Nepodarilo sa odstrániť konfliktné balíky."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
+#: usr/share/big-driver-manager/core/mesa_manager.py:176
 #, python-brace-format
-msgid "❌ Operation failed (exit code: {})"
-msgstr "❌ Operácia zlyhala (kód ukončenia: {})"
+msgid "Removing conflicts: {}"
+msgstr "Odstraňovanie konfliktov: {}"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 205
+#: usr/share/big-driver-manager/core/mesa_manager.py:212
+msgid "Removing conflicting packages..."
+msgstr "Odstraňovanie konfliktných balíkov..."
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
+msgid "Removing conflicting packages"
+msgstr "Odstraňovanie konfliktujúcich balíkov"
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 161
+#: usr/share/big-driver-manager/core/mesa_manager.py:164
+msgid "Checking for conflicting packages..."
+msgstr "Kontrolujú sa konfliktné balíky..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 178
+#: usr/share/big-driver-manager/core/mesa_manager.py:185
+#, python-brace-format
+msgid "Checking {} packages..."
+msgstr "Kontroluje sa {} balíkov..."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 191
+#: usr/share/big-driver-manager/core/mesa_manager.py:199
+msgid "❌ No packages available to install."
+msgstr "❌ Žiadne balíky na inštaláciu nie sú dostupné."
+# File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
+# line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:195
+#, python-brace-format
+msgid "⚠️ Package {} not available, skipping..."
+msgstr "⚠️ Balík {} nie je dostupný, preskakujem..."
+# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
+#: usr/share/big-driver-manager/core/mesa_manager.py:206
+#, python-brace-format
+msgid "Installing: {}"
+msgstr "Inštalujem: {}"
+# File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
+#: usr/share/big-driver-manager/core/mesa_manager.py:235
+#, python-brace-format
+msgid "Installing {} driver..."
+msgstr "Inštaluje sa ovládač {}..."
+# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
+#: usr/share/big-driver-manager/core/mesa_manager.py:251
+msgid "Driver applied successfully!"
+msgstr "Ovládač bol úspešne aplikovaný!"
+# File: usr/share/big-driver-manager/core/base_manager.py, line: 187
+#: usr/share/big-driver-manager/core/mesa_manager.py:254
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Ovládač {} bol úspešne aplikovaný!"
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Inštalácia ovládača {}"
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #: usr/share/big-driver-manager/core/base_manager.py:181
 #: usr/share/big-driver-manager/core/mhwd_manager.py:310
@@ -2549,12 +2523,17 @@ msgstr "Spúšťanie {}..."
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 msgid "Completed"
 msgstr "Dokončené"
-#
+# File: big-driver-manager/usr/share/big-driver-
+# manager/core/driver_installer.py, line: 113
+#: usr/share/big-driver-manager/core/driver_installer.py:113
+msgid "Continue the installation in the pamac window that was opened."
+msgstr "Pokračujte v inštalácii v okne pamac, ktoré sa otvorilo."
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Inštalácia predpokladov pre zostavenie: {}"
-#
+# 
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "Inštalácia predpokladov pre zostavenie"
@@ -2564,16 +2543,17 @@ msgstr "Inštalácia predpokladov pre zostavenie"
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer nebol nájdený. Nie je možné nainštalovať AUR balík {}."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/core/driver_installer.py, line: 113
-#: usr/share/big-driver-manager/core/driver_installer.py:113
-msgid "Continue the installation in the pamac window that was opened."
-msgstr "Pokračujte v inštalácii v okne pamac, ktoré sa otvorilo."
-#
+# 
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
+msgid ""
+"Continue the installation in the pamac window that was opened. This dialog is only monitoring the "
+"result."
+msgstr "Pokračujte v inštalácii v okne pamac, ktoré sa otvorilo. Tento dialóg iba monitoruje výsledok."
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Inštalovanie balíkov"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Odstraňovanie balíkov"
@@ -2628,40 +2608,36 @@ msgstr "{} zlyhalo."
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} zlyhalo (kód ukončenia: {})"
-#
+# 
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
-"Package not available in the enabled repositories. It may come from the AUR, "
-"belong to a disabled repository (such as multilib), or the package database "
-"may be outdated.\n"
+"Package not available in the enabled repositories. It may come from the AUR, belong to a disabled "
+"repository (such as multilib), or the package database may be outdated.\n"
 "Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"Balík nie je k dispozícii v povolených repozitároch. Môže pochádzať z AUR, "
-"patriť do zakázaného repozitára (napríklad multilib) alebo môže byť databáza "
-"balíkov zastaraná.  \n"
+"Balík nie je k dispozícii v povolených repozitároch. Môže pochádzať z AUR, patriť do zakázaného "
+"repozitára (napríklad multilib) alebo môže byť databáza balíkov zastaraná.  \n"
 "Návrh: Aktualizujte celý systém pomocou 'sudo pacman -Syu' a skúste to znova."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 #: usr/share/big-driver-manager/core/base_manager.py:322
 msgid ""
 "A conflict prevented the operation from completing.\n"
-"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
-"'sudo pacman -Syyu'."
+"Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
 "Konflikt zabránil dokončeniu operácie.\n"
-"Odporúčanie: Vyčistite cache a aktualizujte príkazmi 'sudo pacman -Scc' a "
-"potom 'sudo pacman -Syyu'."
+"Odporúčanie: Vyčistite cache a aktualizujte príkazmi 'sudo pacman -Scc' a potom 'sudo pacman -Syyu'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 #: usr/share/big-driver-manager/core/base_manager.py:330
 msgid ""
 "Some files from this package already exist on the system.\n"
-"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
-"and resolve the conflict."
+"Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the "
+"conflict."
 msgstr ""
 "Niektoré súbory z tohto balíka už existujú v systéme.\n"
-"Odporúčanie: Skontrolujte, ktorý balík vlastní súbor príkazom 'pacman -Qo "
-"<file_path>' a vyriešte konflikt."
+"Odporúčanie: Skontrolujte, ktorý balík vlastní súbor príkazom 'pacman -Qo <file_path>' a vyriešte "
+"konflikt."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 #: usr/share/big-driver-manager/core/base_manager.py:338
@@ -2676,23 +2652,20 @@ msgstr ""
 #: usr/share/big-driver-manager/core/base_manager.py:345
 msgid ""
 "Package signature could not be verified.\n"
-"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring'."
+"Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
 "Podpis balíka sa nepodarilo overiť.\n"
-"Odporúčanie: Aktualizujte svoje kľúčenky príkazom 'sudo pacman -S archlinux-"
-"keyring manjaro-keyring'."
+"Odporúčanie: Aktualizujte svoje kľúčenky príkazom 'sudo pacman -S archlinux-keyring "
+"manjaro-keyring'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 #: usr/share/big-driver-manager/core/base_manager.py:353
 msgid ""
 "The package database is locked by another process.\n"
-"If no other package manager is running, remove the lock with 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
 "Databáza balíkov je zablokovaná iným procesom.\n"
-"Ak žiadny iný správca balíkov nebeží, odstráňte zámok príkazom 'sudo rm /var/"
-"lib/pacman/db.lck'."
+"Ak žiadny iný správca balíkov nebeží, odstráňte zámok príkazom 'sudo rm /var/lib/pacman/db.lck'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 #: usr/share/big-driver-manager/core/base_manager.py:361
@@ -2701,19 +2674,17 @@ msgid ""
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
 "Nedostatok miesta na disku na dokončenie operácie.\n"
-"Odporúčanie: Uvoľnite miesto vyčistením cache balíčkov príkazom 'sudo pacman "
-"-Scc'."
+"Odporúčanie: Uvoľnite miesto vyčistením cache balíčkov príkazom 'sudo pacman -Scc'."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Could not download required files.\n"
-"Suggestion: Check your internet connection. If the problem persists, try "
-"updating your mirror list."
+"Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
 "Nepodarilo sa stiahnuť požadované súbory.\n"
-"Odporúčanie: Skontrolujte svoje internetové pripojenie. Ak problém "
-"pretrváva, skúste aktualizovať zoznam zrkadiel."
+"Odporúčanie: Skontrolujte svoje internetové pripojenie. Ak problém pretrváva, skúste aktualizovať "
+"zoznam zrkadiel."
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 #: usr/share/big-driver-manager/core/base_manager.py:377
@@ -2757,184 +2728,3 @@ msgstr "Kontrolujú sa závislosti..."
 #: usr/share/big-driver-manager/core/base_manager.py:403
 msgid "Synchronizing package databases..."
 msgstr "Synchronizácia databáz balíčkov..."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
-msgid "Operation in progress"
-msgstr "Operácia prebieha"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
-msgid "Hardware detection for this category failed. Try refreshing later."
-msgstr "Zistenie hardvéru pre túto kategóriu zlyhalo. Skúste to znova neskôr."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:290
-#, python-brace-format
-msgid "{n} installed"
-msgstr "Nainštalované {n}"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
-msgid "Searching for printers on the network"
-msgstr "Hľadanie tlačiarní v sieti"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
-msgid "Checking your system"
-msgstr "Kontrola vášho systému"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 227
-#: usr/share/big-driver-manager/ui/home_page.py:227
-msgid "Compatible drivers available"
-msgstr "K dispozícii sú kompatibilné ovládače"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 273
-#: usr/share/big-driver-manager/ui/home_page.py:273
-#, python-brace-format
-msgid "{} — no driver loaded, install {} for this device"
-msgstr ""
-"{} — žiadny ovládač nie je načítaný, nainštalujte {} pre toto zariadenie"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
-# 287
-#: usr/share/big-driver-manager/ui/home_page.py:287
-msgid ""
-"Your devices are already working with the built-in driver, which is usually "
-"the most stable and recommended option. If you experience issues, you can "
-"try a driver detected as compatible that may improve performance or add "
-"features."
-msgstr ""
-"Vaše zariadenia už pracujú s vstavaným ovládačom, ktorý je zvyčajne "
-"najstabilnejšou a odporúčanou voľbou. Ak máte problémy, môžete vyskúšať "
-"ovládač zistený ako kompatibilný, ktorý môže zlepšiť výkon alebo pridať "
-"funkcie."
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
-#: usr/share/big-driver-manager/ui/home_page.py:681
-msgid ""
-"Package installation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Inštalácia balíka zlyhala.\n"
-"Skontrolujte výstup terminálu pre podrobnosti."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
-msgid "Installed {}"
-msgstr "Nainštalované {}"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 93
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 329
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:93
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:329
-msgid "All drivers are installed"
-msgstr "Všetky ovládače sú nainštalované"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 95
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 331
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:95
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:331
-msgid "All necessary drivers are already installed on your system."
-msgstr "Všetky potrebné ovládače sú už nainštalované vo vašom systéme."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 152
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:152
-msgid "Detecting hardware"
-msgstr "Zisťovanie hardvéru"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 155
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:155
-msgid "Detecting hardware..."
-msgstr "Detekcia hardvéru..."
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 285
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:285
-#, python-brace-format
-msgid "{n} drivers"
-msgstr "Ovládače {n}"
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
-# File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:288
-msgid "1 installed"
-msgstr "1 nainštalovaný"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 320
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:320
-#, python-brace-format
-msgid "{n} drivers available to install"
-msgstr "K dispozícii na inštaláciu {n} ovládačov"
-# File: big-driver-manager/usr/share/big-driver-
-# manager/ui/drivers_hub_page.py, line: 323
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:323
-msgid "Install recommended drivers for better hardware support."
-msgstr "Nainštalujte odporúčané ovládače pre lepšiu podporu hardvéru."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:411
-msgid "Driver installed successfully."
-msgstr "Ovládač úspešne nainštalovaný."
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/drivers_hub_page.py:415
-msgid "Installation failed. Check logs for details."
-msgstr "Inštalácia zlyhala. Skontrolujte logy pre podrobnosti."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
-msgid "Install {} unavailable"
-msgstr "Inštalácia {} nie je k dispozícii"
-# File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
-#: usr/share/big-driver-manager/ui/mesa_page.py:1436
-msgid ""
-"Package operation failed.\n"
-"Check the terminal output for details."
-msgstr ""
-"Operácia balíka zlyhala.\n"
-"Skontrolujte výstup v termináli pre podrobnosti."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
-msgid ""
-"Continue the installation in the pamac window that was opened. This dialog "
-"is only monitoring the result."
-msgstr ""
-"Pokračujte v inštalácii v okne pamac, ktoré sa otvorilo. Tento dialóg iba "
-"monitoruje výsledok."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
-msgid "Removing conflicting packages"
-msgstr "Odstraňovanie konfliktujúcich balíkov"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
-msgid "Installing {} driver"
-msgstr "Inštalácia ovládača {}"
-# File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
-# line: 310
-#: usr/share/big-driver-manager/core/base_manager.py:313
-msgid ""
-"Package not found in repositories. The package name may have changed or been "
-"removed.\n"
-"Suggestion: Try refreshing the database with 'sudo pacman -Sy' and search "
-"for the correct name."
-msgstr ""
-"Balík nebol nájdený v repozitároch. Názov balíka sa mohol zmeniť alebo bol "
-"odstránený.\n"
-"Odporúčanie: Skúste obnoviť databázu príkazom 'sudo pacman -Sy' a vyhľadať "
-"správny názov."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
-msgid "Open Driver Manager to review and install this firmware."
-msgstr ""
-"Otvorenie správcu ovládačov na preskúmanie a inštaláciu tohto firmvéru."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
-msgid "Open Driver Manager to review and install this driver."
-msgstr ""
-"Otvorenie správcu ovládačov na preskúmanie a inštaláciu tohto ovládača."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
-msgid "Driver Manager"
-msgstr "Správca ovládačov"
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
-msgid "Don't alert for this firmware again"
-msgstr "Nechojte na túto firmvér znova."
-#
-# File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
-msgid "Open Driver Manager"
-msgstr "Otvorenie správcu ovládačov"
