@@ -76,6 +76,28 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
         )
         badges.append(("CachyOS", "purple"))
 
+    # Origin: kernels that don't come from the enabled repositories
+    source = kernel.get("source", "")
+    if source == "local":
+        type_parts.append(_("Package from outside the official repositories"))
+        full_parts.append(
+            _(
+                "Installed from a package that the enabled repositories don't "
+                "provide (community or self-built). It is updated by whoever "
+                "provides the package, not by system updates."
+            )
+        )
+        badges.append((_("Local"), "accent"))
+    elif source == "manual":
+        type_parts.append(_("Installed manually, outside the package manager"))
+        full_parts.append(
+            _(
+                "This kernel was not installed by a package, so it can't be "
+                "updated or removed here. Manage it the same way it was installed."
+            )
+        )
+        badges.append((_("Manual"), "warning"))
+
     type_desc = " · ".join(type_parts) if type_parts else _("Latest features & drivers")
     full_desc = (
         " ".join(full_parts)

@@ -428,6 +428,21 @@ class KernelSection(BaseSection):
             safe_lbl.set_valign(Gtk.Align.CENTER)
             row.append(safe_lbl)
 
+        if kernel.get("source") == "manual":
+            # pacman can't remove what it didn't install
+            manual_lbl = Gtk.Label(label=_("Not removable here"))
+            manual_lbl.add_css_class("dim-label")
+            manual_lbl.add_css_class("caption")
+            manual_lbl.set_tooltip_text(
+                _(
+                    "Installed outside the package manager. Remove its files "
+                    "from /boot and /usr/lib/modules the same way it was installed."
+                )
+            )
+            manual_lbl.set_valign(Gtk.Align.CENTER)
+            row.append(manual_lbl)
+            return row
+
         btn = Gtk.Button(label=_("Remove"))
         btn.add_css_class("destructive-action")
         btn.set_valign(Gtk.Align.CENTER)
