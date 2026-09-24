@@ -599,5 +599,250 @@ class TestKernelDetectionByModules(unittest.TestCase):
         self.assertIn("warning", [style for _t, style in manual.badge_entries])
 
 
+class TestBigKernel(unittest.TestCase):
+    """linux-big: fixed name, "-big" release suffix, strict module plan."""
+
+    def _km(self, tmp: Path, installed: dict[str, str], modules: dict[str, str]):
+        """KernelManager over a fake /usr/lib/modules ({kver: pkgbase})."""
+        from core.kernel_manager import KernelManager
+
+        for kver, pkgbase in modules.items():
+            d = tmp / kver
+            d.mkdir(parents=True)
+            (d / "vmlinuz").write_text("")
+            if pkgbase:
+                (d / "pkgbase").write_text(pkgbase)
+        pm = MagicMock()
+        pm.get_installed_packages.return_value = [
+            {"name": n, "version": v} for n, v in installed.items()
+        ]
+        km = KernelManager(package_manager=pm)
+        km._modules_dir = tmp
+        km._lts_versions = ["618", "612"]
+        return km
+
+    def _nvidia_machine(self, tmp: Path, driver="nvidia-open"):
+        installed = {
+            "linux71": "7.1.8-1",
+            "linux71-headers": "7.1.8-1",
+            f"linux71-{driver}": "7.1.8-1",
+            "nvidia-utils": "580.95.05-1",
+        }
+        km = self._km(tmp, installed, {"7.1.8-1-MANJARO": "linux71"})
+        km.get_running_kernel = lambda: "7.1.8-1-MANJARO"
+        return km
+
+    def test_listed_only_when_in_repos(self):
+        with TemporaryDirectory() as t:
+            km = self._km(Path(t), {}, {})
+            km._search_kernel_packages = lambda _p: [
+                {
+                    "name": "linux-big",
+                    "version": "7.2.7-2",
+                    "repository": "community-testing",
+                },
+                {"name": "linux612", "version": "6.12.1-1", "repository": "core"},
+            ]
+            big = [k for k in km.get_available_kernels() if k["name"] == "linux-big"]
+            self.assertEqual(big[0]["version"], "7.2.7-2")
+            self.assertTrue(big[0]["big"])
+
+            km._search_kernel_packages = lambda _p: [
+                {"name": "linux612", "version": "6.12.1-1", "repository": "core"}
+            ]
+            names = {k["name"] for k in km.get_available_kernels()}
+            self.assertNotIn("linux-big", names)
+
+    def test_search_recognizes_linux_big_name(self):
+        from core.kernel_manager import KernelManager
+
+        km = KernelManager(package_manager=MagicMock())
+        self.assertTrue(km._is_kernel_package("linux-big"))
+        for module in (
+            "linux-big-headers",
+            "linux-big-nvidia-open",
+            "linux-big-bbswitch",
+        ):
+            self.assertFalse(km._is_kernel_package(module))
+
+    def test_running_detected_by_pkgbase_and_suffix(self):
+        with TemporaryDirectory() as t:
+            km = self._km(
+                Path(t),
+                {"linux-big": "7.2.7-2", "linux72": "7.2.7-1"},
+                {"7.2.7-2-big": "linux-big", "7.2.7-1-MANJARO": "linux72"},
+            )
+            km.get_running_kernel = lambda: "7.2.7-2-big"
+            self.assertEqual(km.get_running_kernel_package(), "linux-big")
+
+        with TemporaryDirectory() as t:
+            # No pkgbase for it: the "-big" suffix still wins over the version
+            # match that would otherwise answer linux72 (same 7.2.7 version)
+            km = self._km(Path(t), {"linux-big": "7.2.7-2", "linux72": "7.2.7-1"}, {})
+            km.get_running_kernel = lambda: "7.2.7-2-big"
+            self.assertEqual(km.get_running_kernel_package(), "linux-big")
+
+    def test_installed_outside_repos_is_local_not_obsolete(self):
+        from core.kernel_manager import KernelManager
+
+        with TemporaryDirectory() as t:
+            km = self._km(
+                Path(t),
+                {"linux-big": "7.2.7-2", "linux612": "6.12.1-1"},
+                {"7.2.7-2-big": "linux-big", "6.12.1-1-MANJARO": "linux612"},
+            )
+            km.get_running_kernel = lambda: "6.12.1-1-MANJARO"
+            km._search_kernel_packages = lambda _p: [
+                {"name": "linux612", "version": "6.12.1-1", "repository": "core"}
+            ]
+            available = km.get_available_kernels()
+            obsolete = KernelManager.compute_obsolete_kernels(
+                km.get_installed_kernels(), available, "linux612"
+            )
+        big = [k for k in available if k["name"] == "linux-big"][0]
+        self.assertEqual(big["source"], "local")
+        self.assertEqual(obsolete, [])
+
+    @staticmethod
+    def _pacman(returncode: int, stdout: str = "", stderr: str = ""):
+        """Fake ``subprocess.run`` result of ``pacman -Sp``."""
+        return MagicMock(returncode=returncode, stdout=stdout, stderr=stderr)
+
+    @patch("core.kernel_manager.subprocess.run")
+    @patch("core.kernel_manager.fetch_repo_package_set")
+    def test_plan_installs_kernel_headers_and_matching_nvidia(self, repo, run):
+        repo.return_value = {"linux-big", "linux-big-headers", "linux-big-nvidia-open"}
+        run.return_value = self._pacman(
+            0,
+            "linux-big 7.2.7-2\nlinux-big-headers 7.2.7-2\n"
+            "linux-big-nvidia-open 7.2.7-2\n",
+        )
+        with TemporaryDirectory() as t:
+            km = self._nvidia_machine(Path(t))
+            plan = km.plan_kernel_install("linux-big")
+        self.assertTrue(plan.allowed, plan.blocked_reason)
+        self.assertEqual(
+            plan.packages, ["linux-big", "linux-big-headers", "linux-big-nvidia-open"]
+        )
+
+    @patch("core.kernel_manager.fetch_repo_package_set")
+    def test_missing_nvidia_module_blocks_install(self, repo):
+        repo.return_value = {"linux-big", "linux-big-headers", "linux-big-nvidia-open"}
+        with TemporaryDirectory() as t:
+            km = self._nvidia_machine(Path(t), driver="nvidia-580xx")
+            plan = km.plan_kernel_install("linux-big")
+        self.assertFalse(plan.allowed)
+        self.assertIn("linux-big-nvidia-580xx", plan.blocked_reason)
+
+    @patch("core.kernel_manager.fetch_repo_package_set")
+    def test_broadcom_and_bbswitch_follow_the_current_kernel(self, repo):
+        repo.return_value = {"linux-big", "linux-big-headers", "linux-big-broadcom-wl"}
+        with TemporaryDirectory() as t:
+            installed = {
+                "linux71": "7.1.8-1",
+                "linux71-broadcom-wl": "1",
+                "linux71-bbswitch": "1",
+            }
+            km = self._km(Path(t), installed, {"7.1.8-1-MANJARO": "linux71"})
+            km.get_running_kernel = lambda: "7.1.8-1-MANJARO"
+            plan = km.plan_kernel_install("linux-big")
+        self.assertFalse(plan.allowed)  # bbswitch has no linux-big build
+        self.assertIn("linux-big-bbswitch", plan.blocked_reason)
+
+    @patch("core.kernel_manager.subprocess.run")
+    @patch("core.kernel_manager.fetch_repo_package_set")
+    def test_resolvable_set_is_offered(self, repo, run):
+        """pacman -Sp resolves the set: installation is allowed."""
+        repo.return_value = {"linux-big", "linux-big-headers", "linux-big-nvidia-open"}
+        run.return_value = self._pacman(
+            0,
+            "linux-big 7.2.7-3\nlinux-big-headers 7.2.7-3\n"
+            "linux-big-nvidia-open 7.2.7-3\n",
+        )
+        with TemporaryDirectory() as t:
+            plan = self._nvidia_machine(Path(t)).plan_kernel_install("linux-big")
+        self.assertTrue(plan.allowed, plan.blocked_reason)
+        cmd = run.call_args.args[0]
+        self.assertEqual(cmd[:4], ["pacman", "-Sp", "--print-format", "%n %v"])
+        self.assertEqual(
+            cmd[4:], ["linux-big", "linux-big-headers", "linux-big-nvidia-open"]
+        )
+
+    @patch("core.kernel_manager.subprocess.run")
+    @patch("core.kernel_manager.fetch_repo_package_set")
+    def test_unresolvable_set_is_blocked(self, repo, run):
+        """Repo has linux-big 7.2.7-3 but the module is still for 7.2.7-2."""
+        repo.return_value = {"linux-big", "linux-big-headers", "linux-big-nvidia-open"}
+        run.return_value = self._pacman(
+            1,
+            stderr=(
+                "error: failed to prepare transaction "
+                "(could not satisfy dependencies)\n"
+                ":: unable to satisfy dependency 'linux-big=7.2.7-2' "
+                "required by linux-big-nvidia-open\n"
+            ),
+        )
+        with TemporaryDirectory() as t:
+            plan = self._nvidia_machine(Path(t)).plan_kernel_install("linux-big")
+        self.assertFalse(plan.allowed)
+        self.assertIn("still being published", plan.blocked_reason)
+        self.assertIn("linux-big=7.2.7-2", plan.blocked_reason)
+
+    @patch("core.kernel_manager.fetch_repo_package_set")
+    def test_headers_always_required(self, repo):
+        repo.return_value = {"linux-big"}
+        with TemporaryDirectory() as t:
+            km = self._km(Path(t), {}, {})
+            km.get_running_kernel = lambda: "x"
+            plan = km.plan_kernel_install("linux-big")
+        self.assertFalse(plan.allowed)
+        self.assertIn("linux-big-headers", plan.blocked_reason)
+
+    def test_install_command_keeps_current_kernel(self):
+        with TemporaryDirectory() as t:
+            km = self._km(Path(t), {}, {})
+            with patch.object(km, "run_pacman_command") as run:
+                km.install_kernel(
+                    {"name": "linux-big"}, packages=["linux-big", "linux-big-headers"]
+                )
+        args = run.call_args.kwargs["args"]
+        self.assertEqual(args[:2], ["-S", "--noconfirm"])
+        self.assertNotIn("-R", " ".join(args))
+
+    def test_removal_never_takes_another_kernel(self):
+        """Removing linux72 must not take linux72-comm (maybe the running one)."""
+        with TemporaryDirectory() as t:
+            installed = {
+                "linux72": "7.2.4-1",
+                "linux72-headers": "7.2.4-1",
+                "linux72-comm": "7.2.4-1",
+                "linux72-comm-headers": "7.2.4-1",
+                "linux-big": "7.2.7-2",
+                "linux-big-headers": "7.2.7-2",
+                "linux-big-nvidia-open": "7.2.7-2",
+            }
+            km = self._km(
+                Path(t),
+                installed,
+                {
+                    "7.2.4-1-MANJARO": "linux72",
+                    "7.2.4-1-MANJARO-COMM": "linux72-comm",
+                    "7.2.7-2-big": "linux-big",
+                },
+            )
+            self.assertEqual(km.get_modules_for_remove("linux72"), ["linux72-headers"])
+            self.assertEqual(
+                sorted(km.get_modules_for_remove("linux-big")),
+                ["linux-big-headers", "linux-big-nvidia-open"],
+            )
+
+    def test_bigcommunity_badge_and_group(self):
+        from ui.kernel_card_builder import classify_kernel
+
+        info = classify_kernel({"name": "linux-big", "big": True})
+        self.assertTrue(info.is_big)
+        self.assertIn(("BigCommunity", "accent"), info.badge_entries)
+
+
 if __name__ == "__main__":
     unittest.main()

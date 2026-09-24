@@ -354,6 +354,36 @@ msgstr ""
 "Continue a instalação na janela do pamac que foi aberta. Este diálogo apenas "
 "monitora o resultado."
 
+#, python-brace-format
+msgid "{} is not available in the configured repositories."
+msgstr "{} não está disponível nos repositórios configurados."
+
+#, python-brace-format
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"Seu kernel atual usa módulos de driver que ainda não estão disponíveis para "
+"o linux-big:\n"
+"{}\n"
+"\n"
+"Sem eles, o linux-big iniciaria sem esses drivers (por exemplo, sem o driver "
+"NVIDIA), por isso ele não está sendo oferecido no momento."
+
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr ""
+"Os módulos do linux-big para esta versão ainda estão sendo publicados. Tente "
+"novamente em alguns minutos."
+
+msgid "pacman reported:"
+msgstr "O pacman informou:"
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #, python-brace-format
@@ -1298,6 +1328,22 @@ msgstr ""
 "Agendador EEVDF com LTO, AutoFDO e otimizações Propeller. Excelente para "
 "jogos e responsividade na área de trabalho."
 
+msgid ""
+"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes)"
+msgstr ""
+"Kernel BigCommunity (big-kernel), otimizado para jogos e uso geral (BORE, "
+"Clang ThinLTO, correções para Intel)"
+
+msgid ""
+"Official kernel.org kernel with Manjaro's configuration and patches, plus "
+"the BORE scheduler, Clang + ThinLTO build and fixes for recent Intel GPUs "
+"(Arrow Lake / Meteor Lake)."
+msgstr ""
+"Kernel oficial do kernel.org com a configuração e os patches do Manjaro, "
+"além do escalonador BORE, compilação com Clang + ThinLTO e correções para "
+"GPUs Intel recentes (Arrow Lake / Meteor Lake)."
+
 msgid "Package from outside the official repositories"
 msgstr "Pacote fora dos repositórios oficiais"
 
@@ -1394,6 +1440,15 @@ msgstr ""
 "Instalado fora do gerenciador de pacotes. Remova seus arquivos de /boot e /"
 "usr/lib/modules da mesma forma que foi instalado."
 
+msgid ""
+"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
+"kernel."
+msgstr ""
+"O kernel BigCommunity (big-kernel), otimizado para jogos e uso geral (BORE, "
+"Clang ThinLTO, correções para Intel). Ele é instalado junto com o seu kernel "
+"atual."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 439
 msgid ""
@@ -1472,10 +1527,20 @@ msgstr "Ocultar kernels disponíveis"
 msgid "Install kernel {}"
 msgstr "Instalar kernel {}"
 
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 661
-msgid "The following packages will be installed:"
-msgstr "Os seguintes pacotes serão instalados:"
+#, python-brace-format
+msgid "{} can't be installed yet"
+msgstr "{} ainda não pode ser instalado"
+
+msgid ""
+"Your current kernel stays installed; you can choose between them in the boot "
+"menu (GRUB).\n"
+"\n"
+"The following packages will be installed:"
+msgstr ""
+"Seu kernel atual continua instalado; você pode escolher entre eles no menu "
+"de inicialização (GRUB).\n"
+"\n"
+"Os seguintes pacotes serão instalados:"
 
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #

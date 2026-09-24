@@ -13,14 +13,19 @@ import os
 import platform
 import re
 import subprocess
+from dataclasses import dataclass, field
 from pathlib import Path
 from urllib.request import urlopen, Request
 from xml.etree import ElementTree
 from typing import Callable, TypedDict
 
 from core.base_manager import BaseManager
-from core.package_manager import PackageManager
+from core.package_manager import PackageManager, fetch_repo_package_set
+from core.subprocess_env import subprocess_env
 from core.constants import (
+    BIG_KERNEL,
+    BIG_KERNEL_RELEASE_SUFFIX,
+    REQUIRED_MODULE_SUFFIX_RE,
     KERNEL_PATTERNS,
     EXCLUDED_PATTERNS,
     KERNEL_ORG_FEED_URL,
@@ -28,6 +33,7 @@ from core.constants import (
     CACHYOS_PATTERNS,
 )
 from core.logging_config import get_logger
+from utils.i18n import _
 
 
 class KernelInfo(TypedDict, total=False):
@@ -47,6 +53,20 @@ class KernelInfo(TypedDict, total=False):
     # "manual": kernel installed outside pacman (no package at all)
     source: str
     kver: str
+    big: bool
+
+
+@dataclass(frozen=True)
+class KernelInstallPlan:
+    """What installing a kernel will do, or why it must not be offered."""
+
+    kernel: str
+    packages: list[str] = field(default_factory=list)
+    blocked_reason: str = ""
+
+    @property
+    def allowed(self) -> bool:
+        return not self.blocked_reason
 
 
 def lts_cache_path() -> Path:
@@ -139,8 +159,14 @@ class KernelManager(BaseManager):
             if entry["kver"] == running_version:
                 return entry["pkgbase"] or running_version
 
-        # Get installed kernels and match by version
         installed = self.get_installed_kernels()
+
+        # linux-big has a fixed name: identify it by package + "-big" release
+        # suffix, never by version (7.2.7-2-big would otherwise match linux72)
+        if running_version.endswith(BIG_KERNEL_RELEASE_SUFFIX):
+            return BIG_KERNEL if any(k["name"] == BIG_KERNEL for k in installed) else ""
+
+        # Match by version
         for kernel in installed:
             pkg_version = kernel.get("version", "")
             # The running kernel version often starts with the package version
@@ -232,7 +258,7 @@ class KernelManager(BaseManager):
             List of installed kernels with their information.
         """
         installed_packages = self.package_manager.get_installed_packages()
-        versions = {p["name"]: p["version"] for p in installed_packages}
+        versions = {p["name"]: p.get("version", "") for p in installed_packages}
 
         kernels: list[KernelInfo] = []
         seen: set[str] = set()
@@ -316,8 +342,12 @@ class KernelManager(BaseManager):
             if kernel["name"] in repo_names:
                 continue
             if kernel.get("source") != "manual":
-                if self._is_kernel_package(kernel["name"]):
+                if (
+                    self._is_kernel_package(kernel["name"])
+                    and kernel["name"] != BIG_KERNEL
+                ):
                     continue  # EOL official kernel -> obsolete alert
+                # Third-party/self-built, or linux-big with its repo disabled
                 kernel = {**kernel, "source": "local"}
             filtered_kernels.append(kernel)
 
@@ -407,6 +437,10 @@ class KernelManager(BaseManager):
         if any(re.match(p, kernel_name) for p in CACHYOS_PATTERNS):
             kernel["cachyos"] = True
 
+        # BigCommunity kernel (big-kernel)
+        if kernel_name == BIG_KERNEL:
+            kernel["big"] = True
+
         # Optimized build flags
         match = re.search(r"-x64v(\d)", kernel_name)
         if match:
@@ -452,20 +486,14 @@ class KernelManager(BaseManager):
 
         self._logger.info(f"Detecting modules from running kernel: {running_kernel}")
 
-        # Get all installed packages that are modules of the running kernel
-        installed = self.package_manager.get_installed_packages()
+        # Installed module packages of the running kernel
+        # (e.g. linux618-headers, linux618-nvidia-550xx)
         modules = []
-
-        for pkg in installed:
-            pkg_name = pkg["name"]
-            # Check if package is a module of the running kernel (e.g. linux618-headers, linux618-nvidia-550xx)
-            if pkg_name.startswith(f"{running_kernel}-"):
-                suffix = pkg_name[
-                    len(running_kernel) :
-                ]  # e.g., "-headers", "-nvidia-550xx"
-                target_module = f"{kernel_name}{suffix}"
-                modules.append(target_module)
-                self._logger.debug(f"Detected module: {pkg_name} -> {target_module}")
+        for pkg_name in self._kernel_module_packages(running_kernel):
+            suffix = pkg_name[len(running_kernel) :]  # "-headers", "-nvidia-550xx"
+            target_module = f"{kernel_name}{suffix}"
+            modules.append(target_module)
+            self._logger.debug(f"Detected module: {pkg_name} -> {target_module}")
 
         # Always ensure headers are included
         headers_pkg = f"{kernel_name}-headers"
@@ -536,7 +564,7 @@ class KernelManager(BaseManager):
                 continue
             # Not from the repos is not the same as end-of-life: third-party
             # and manual kernels are listed with their origin instead.
-            if kernel.get("source") in ("local", "manual"):
+            if kernel.get("source") in ("local", "manual") or name == BIG_KERNEL:
                 continue
             if name not in available_names:
                 kernel = {**kernel, "obsolete": True}
@@ -599,9 +627,133 @@ class KernelManager(BaseManager):
         name starts with ``<kernel_name>-``.  This is much faster and is the
         right approach for *remove* operations.
         """
-        installed = self.package_manager.get_installed_packages()
+        return self._kernel_module_packages(kernel_name)
+
+    def _kernel_module_packages(self, kernel_name: str) -> list[str]:
+        """Installed packages that are modules of *kernel_name*.
+
+        A plain ``<kernel>-`` prefix match also catches *other kernels* that
+        share it: linux72 would take linux72-comm and linux72-comm-headers
+        (possibly the running kernel) on removal. Those are excluded.
+        """
         prefix = f"{kernel_name}-"
-        return [p["name"] for p in installed if p["name"].startswith(prefix)]
+        others = [
+            k["name"]
+            for k in self.get_installed_kernels()
+            if k["name"] != kernel_name and k["name"].startswith(prefix)
+        ]
+        return [
+            name
+            for name in (
+                p["name"] for p in self.package_manager.get_installed_packages()
+            )
+            if name.startswith(prefix)
+            and not any(name == o or name.startswith(f"{o}-") for o in others)
+        ]
+
+    def plan_kernel_install(self, kernel_name: str) -> KernelInstallPlan:
+        """Return the packages to install with *kernel_name*.
+
+        linux-big gets stricter rules (see _plan_big_kernel); other kernels
+        keep the historical best-effort module mapping.
+        """
+        if kernel_name == BIG_KERNEL:
+            return self._plan_big_kernel()
+        return KernelInstallPlan(
+            kernel_name, [kernel_name] + self._get_kernel_modules(kernel_name)
+        )
+
+    def _plan_big_kernel(self) -> KernelInstallPlan:
+        """linux-big + linux-big-headers + the running kernel's modules.
+
+        Modules the machine depends on (NVIDIA, broadcom-wl, bbswitch) must
+        exist for linux-big, otherwise it would boot without the driver: in
+        that case installation is not offered. NVIDIA modules also require
+        the exact installed nvidia-utils version.
+        """
+        repo = fetch_repo_package_set()
+        headers = f"{BIG_KERNEL}-headers"
+        for pkg in (BIG_KERNEL, headers):
+            if pkg not in repo:
+                return KernelInstallPlan(
+                    BIG_KERNEL,
+                    blocked_reason=_(
+                        "{} is not available in the configured repositories."
+                    ).format(pkg),
+                )
+
+        packages = [BIG_KERNEL, headers]
+        missing: list[str] = []
+        running = self.get_running_kernel_package()
+        if running and running != BIG_KERNEL:
+            for module in self._kernel_module_packages(running):
+                suffix = module[len(running) :]
+                if suffix == "-headers":
+                    continue
+                target = f"{BIG_KERNEL}{suffix}"
+                if target in repo:
+                    packages.append(target)
+                elif re.fullmatch(REQUIRED_MODULE_SUFFIX_RE, suffix):
+                    missing.append(f"{module} → {target}")
+        elif not running:
+            self._logger.warning(
+                "Running kernel unknown; linux-big without extra modules"
+            )
+
+        if missing:
+            return KernelInstallPlan(
+                BIG_KERNEL,
+                packages,
+                _(
+                    "Your current kernel uses driver modules that are not "
+                    "available for linux-big yet:\n{}\n\nWithout them "
+                    "linux-big would start without these drivers (for example "
+                    "without the NVIDIA driver), so it is not offered for now."
+                ).format("\n".join(missing)),
+            )
+
+        # Each module pins an exact linux-big (and nvidia-utils) version. Right
+        # after a new kernel is published its modules may lag behind, so let
+        # pacman resolve the whole set without installing anything.
+        details = self._pacman_resolve_error(packages)
+        if details is not None:
+            reason = _(
+                "The linux-big modules for this version are still being "
+                "published. Try again in a few minutes."
+            )
+            if details:
+                reason += "\n\n" + _("pacman reported:") + "\n" + details
+            return KernelInstallPlan(BIG_KERNEL, packages, reason)
+        return KernelInstallPlan(BIG_KERNEL, packages)
+
+    @staticmethod
+    def _pacman_resolve_error(packages: list[str]) -> str | None:
+        """Dry-run ``pacman -Sp`` on *packages*.
+
+        Returns None when pacman can resolve the transaction, otherwise the
+        relevant lines of its error output ("" if there were none). Nothing
+        is installed and no root is needed.
+        """
+        cmd = ["pacman", "-Sp", "--print-format", "%n %v", *packages]
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=30,
+                stdin=subprocess.DEVNULL,
+                env=subprocess_env(),
+            )
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            return str(exc)
+        if result.returncode == 0:
+            return None
+        lines = [
+            line.strip()
+            for line in (result.stderr + "\n" + result.stdout).splitlines()
+            if line.strip().startswith(("error:", "::"))
+        ]
+        return "\n".join(lines[:6])
 
     def remove_kernel(
         self,

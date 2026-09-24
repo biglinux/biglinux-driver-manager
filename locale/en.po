@@ -662,7 +662,7 @@ msgstr "No longer receives security updates"
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 368
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 446
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 804
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 827
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 321
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 349
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 553
@@ -708,6 +708,17 @@ msgstr ""
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 460
 msgid ""
+"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
+"kernel."
+msgstr ""
+"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
+"kernel."
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 465
+msgid ""
 "Recommended for most users. These kernels receive security updates for years "
 "and are thoroughly tested."
 msgstr ""
@@ -715,7 +726,7 @@ msgstr ""
 "and are thoroughly tested."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 464
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 469
 msgid ""
 "Always up to date with the latest features and hardware support. Good if you "
 "need the newest drivers."
@@ -724,7 +735,7 @@ msgstr ""
 "need the newest drivers."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 468
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 473
 msgid ""
 "Tuned for gaming and desktop responsiveness. A good option for daily use "
 "with extra performance."
@@ -733,7 +744,7 @@ msgstr ""
 "with extra performance."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 472
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 477
 msgid ""
 "Built for audio/video production needing precise timing. May be incompatible "
 "with some drivers (e.g. NVIDIA). Only for advanced users."
@@ -742,33 +753,33 @@ msgstr ""
 "with some drivers (e.g. NVIDIA). Only for advanced users."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 513
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 523
 msgid "LTS — Long Term Support (Recommended)"
 msgstr "LTS — Long Term Support (Recommended)"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 514
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 524
 msgid "Standard"
 msgstr "Standard"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 515
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 525
 msgid "Xanmod (Performance)"
 msgstr "Xanmod (Performance)"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 516
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 526
 msgid "Real-Time (Advanced)"
 msgstr "Real-Time (Advanced)"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 587
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 615
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 597
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 625
 msgid "Show {} available"
 msgstr "Show {} available"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 618
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 628
 msgid "Hide available kernels"
 msgstr "Hide available kernels"
 
@@ -781,8 +792,8 @@ msgstr "Hide available kernels"
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 665
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 698
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 675
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 721
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 557
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 717
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 919
@@ -797,10 +808,15 @@ msgid "Install"
 msgstr "Install"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 668
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 671
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 678
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 681
 msgid "Install kernel {}"
 msgstr "Install kernel {}"
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 697
+msgid "{} can't be installed yet"
+msgstr "{} can't be installed yet"
 
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
@@ -809,7 +825,7 @@ msgstr "Install kernel {}"
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 689
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 706
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 566
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 921
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1110
@@ -819,9 +835,17 @@ msgid "Install {}"
 msgstr "Install {}"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 690
-msgid "The following packages will be installed:"
-msgstr "The following packages will be installed:"
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 709
+msgid ""
+"Your current kernel stays installed; you can choose between them in the boot "
+"menu (GRUB).\n"
+"\n"
+"The following packages will be installed:"
+msgstr ""
+"Your current kernel stays installed; you can choose between them in the boot "
+"menu (GRUB).\n"
+"\n"
+"The following packages will be installed:"
 
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
@@ -834,9 +858,9 @@ msgstr "The following packages will be installed:"
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 697
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 803
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 871
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 720
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 826
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 894
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 158
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 348
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 716
@@ -861,7 +885,7 @@ msgstr "Cancel"
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 717
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 740
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 736
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1174
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1430
@@ -875,13 +899,13 @@ msgstr "Installing {}"
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 718
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 741
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1175
 msgid "Preparing installation..."
 msgstr "Preparing installation..."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 742
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 765
 msgid ""
 "Kernel installed successfully.\n"
 "You may need to reboot to use it."
@@ -890,7 +914,7 @@ msgstr ""
 "You may need to reboot to use it."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 749
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 772
 msgid ""
 "Kernel installation failed.\n"
 "Check the terminal output for details."
@@ -899,12 +923,12 @@ msgstr ""
 "Check the terminal output for details."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 763
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 786
 msgid "Cannot Remove Running Kernel"
 msgstr "Cannot Remove Running Kernel"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 765
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 788
 msgid "This kernel is currently in use. Boot into a different kernel first."
 msgstr "This kernel is currently in use. Boot into a different kernel first."
 
@@ -915,7 +939,7 @@ msgstr "This kernel is currently in use. Boot into a different kernel first."
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 785
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 808
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 327
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 568
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 914
@@ -925,7 +949,7 @@ msgid "Remove {}"
 msgstr "Remove {}"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 790
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 813
 msgid ""
 "⚠ This is your last backup kernel. If the running kernel fails, you will "
 "have no fallback.\n"
@@ -938,7 +962,7 @@ msgstr ""
 "The following packages will be removed:"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 796
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 819
 msgid "The following packages will be removed:"
 msgstr "The following packages will be removed:"
 
@@ -951,8 +975,8 @@ msgstr "The following packages will be removed:"
 #
 # #-#-#-#-#  biglinux-driver-manager.pot (biglinux-driver-manager)  #-#-#-#-#
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 824
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 894
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 847
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 917
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 367
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 778
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1252
@@ -963,17 +987,17 @@ msgid "Removing {}"
 msgstr "Removing {}"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 825
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 848
 msgid "Preparing removal…"
 msgstr "Preparing removal…"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 846
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 869
 msgid "Kernel removed successfully."
 msgstr "Kernel removed successfully."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 849
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 872
 msgid ""
 "Kernel removal failed.\n"
 "Check the terminal output for details."
@@ -982,12 +1006,12 @@ msgstr ""
 "Check the terminal output for details."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 863
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 886
 msgid "Remove Obsolete Kernels"
 msgstr "Remove Obsolete Kernels"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 867
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 890
 msgid ""
 "Remove all obsolete kernels?\n"
 "\n"
@@ -1002,38 +1026,38 @@ msgstr ""
 "These kernels no longer receive security updates."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 872
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 895
 msgid "Remove All"
 msgstr "Remove All"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 895
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 918
 msgid "Removing kernel {} ({}/{})..."
 msgstr "Removing kernel {} ({}/{})..."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 913
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 936
 msgid "Failed to remove {}. Stopping."
 msgstr "Failed to remove {}. Stopping."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 924
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 947
 msgid "All obsolete kernels removed successfully."
 msgstr "All obsolete kernels removed successfully."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 963
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 966
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 986
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 989
 msgid "What's new in Linux {}"
 msgstr "What's new in Linux {}"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 42
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 44
 msgid "Stable, long-term support"
 msgstr "Stable, long-term support"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 45
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 47
 msgid ""
 "Receives security updates for years. Best choice for most users — reliable "
 "and well-tested."
@@ -1042,12 +1066,12 @@ msgstr ""
 "and well-tested."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 51
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 53
 msgid "Low-latency, real-time"
 msgstr "Low-latency, real-time"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 54
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 56
 msgid ""
 "Designed for audio/video production and tasks needing precise timing. May be "
 "incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced "
@@ -1058,12 +1082,12 @@ msgstr ""
 "users."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 61
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 63
 msgid "Gaming & performance optimized"
 msgstr "Gaming & performance optimized"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 64
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 66
 msgid ""
 "Tuned for faster gaming and a more responsive desktop. Great for daily use "
 "if you want extra performance."
@@ -1072,12 +1096,12 @@ msgstr ""
 "if you want extra performance."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 72
 msgid "Performance optimized by CachyOS"
 msgstr "Performance optimized by CachyOS"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 75
 msgid ""
 "EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for "
 "gaming and desktop responsiveness."
@@ -1086,12 +1110,32 @@ msgstr ""
 "gaming and desktop responsiveness."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 82
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 84
+msgid ""
+"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes)"
+msgstr ""
+"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes)"
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 90
+msgid ""
+"Official kernel.org kernel with Manjaro's configuration and patches, plus "
+"the BORE scheduler, Clang + ThinLTO build and fixes for recent Intel GPUs "
+"(Arrow Lake / Meteor Lake)."
+msgstr ""
+"Official kernel.org kernel with Manjaro's configuration and patches, plus "
+"the BORE scheduler, Clang + ThinLTO build and fixes for recent Intel GPUs "
+"(Arrow Lake / Meteor Lake)."
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 100
 msgid "Package from outside the official repositories"
 msgstr "Package from outside the official repositories"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 85
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 103
 msgid ""
 "Installed from a package that the enabled repositories don't provide "
 "(community or self-built). It is updated by whoever provides the package, "
@@ -1102,17 +1146,17 @@ msgstr ""
 "not by system updates."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 90
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 108
 msgid "Local"
 msgstr "Local"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 92
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 110
 msgid "Installed manually, outside the package manager"
 msgstr "Installed manually, outside the package manager"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 95
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 113
 msgid ""
 "This kernel was not installed by a package, so it can't be updated or "
 "removed here. Manage it the same way it was installed."
@@ -1121,17 +1165,17 @@ msgstr ""
 "removed here. Manage it the same way it was installed."
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 99
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 117
 msgid "Manual"
 msgstr "Manual"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 101
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 119
 msgid "Latest features & drivers"
 msgstr "Latest features & drivers"
 
 #
-# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 105
+# File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 123
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Always up to date with the newest features and hardware support."
 
@@ -2950,3 +2994,39 @@ msgstr "Checking dependencies..."
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/base_manager.py, line: 465
 msgid "Synchronizing package databases..."
 msgstr "Synchronizing package databases..."
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/kernel_manager.py, line: 681
+msgid "{} is not available in the configured repositories."
+msgstr "{} is not available in the configured repositories."
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/kernel_manager.py, line: 708
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/kernel_manager.py, line: 721
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+
+#
+# File: biglinux-driver-manager/usr/share/big-driver-manager/core/kernel_manager.py, line: 725
+msgid "pacman reported:"
+msgstr "pacman reported:"
