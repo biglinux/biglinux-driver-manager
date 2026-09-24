@@ -273,6 +273,12 @@ button.sidebar-nav-btn:checked image {
 }
 
 /* Available group cards — by type */
+.kernel-group-big {
+    padding: 0;
+    border-radius: 14px;
+    background: @card_bg_color;
+        border-left: 3px solid alpha(#c061cb, 0.35);
+}
 .kernel-group-lts {
     padding: 0;
     border-radius: 14px;
