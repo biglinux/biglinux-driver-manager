@@ -7,77 +7,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-23 23:51-0300\n"
 "Language-Team: Greek <el@li.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
+
 #
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Εγκατάσταση πακέτων"
+
 #
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Αφαίρεση πακέτων"
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 137
 #, python-brace-format
 msgid "Database locked. Retrying in {} seconds..."
 msgstr "Η βάση δεδομένων είναι κλειδωμένη. Επανάληψη σε {} δευτερόλεπτα..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 142
 #, python-brace-format
 msgid "Waiting {} s before retry..."
 msgstr "Αναμονή {} δ πριν από την επανάληψη..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 147
 #, python-brace-format
 msgid "Retry attempt {} of {}..."
 msgstr "Προσπάθεια επανάληψης {} από {}..."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 105
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 108
 #, python-brace-format
 msgid "Starting {}..."
 msgstr "Εκκίνηση {}..."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #, python-brace-format
 msgid "Command: {}"
 msgstr "Εντολή: {}"
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #, python-brace-format
 msgid "Error: {}"
 msgstr "Σφάλμα: {}"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
 msgid "Operation cancelled by user."
 msgstr "Η λειτουργία ακυρώθηκε από τον χρήστη."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 160
 #, python-brace-format
 msgid "Still working... ({:.0%} complete)"
 msgstr "Εργασία σε εξέλιξη... ({:.0%} ολοκληρώθηκε)"
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 177
 msgid "Operation cancelled"
 msgstr "Η λειτουργία ακυρώθηκε"
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 178
 msgid "Operation was cancelled."
 msgstr "Η λειτουργία ακυρώθηκε."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 183
 #, python-brace-format
 msgid "{}  complete!"
 msgstr "Ολοκληρώθηκε {}!"
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #, python-brace-format
 msgid "{}  completed successfully."
 msgstr "Το {} ολοκληρώθηκε με επιτυχία."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 193
 #, python-brace-format
 msgid "{}  failed."
 msgstr "{} απέτυχε."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 197
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "Το {} απέτυχε (κωδικός εξόδου: {})"
+
 #
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
@@ -91,6 +109,7 @@ msgstr ""
 "multilib) ή η βάση δεδομένων πακέτων μπορεί να είναι παλιά.  \n"
 "Πρόταση: Ενημερώστε ολόκληρο το σύστημα με 'sudo pacman -Syu' και δοκιμάστε "
 "ξανά."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 msgid ""
@@ -101,6 +120,7 @@ msgstr ""
 "Μια σύγκρουση εμπόδισε την ολοκλήρωση της λειτουργίας.\n"
 "Πρόταση: Καθαρίστε την προσωρινή μνήμη και ενημερώστε με 'sudo pacman -Scc' "
 "και στη συνέχεια 'sudo pacman -Syyu'."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 msgid ""
@@ -111,6 +131,7 @@ msgstr ""
 "Ορισμένα αρχεία από αυτό το πακέτο υπάρχουν ήδη στο σύστημα.\n"
 "Πρόταση: Ελέγξτε ποιο πακέτο κατέχει το αρχείο με 'pacman -Qo <file_path>' "
 "και επιλύστε τη σύγκρουση."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 msgid ""
@@ -119,6 +140,7 @@ msgid ""
 msgstr ""
 "Απαιτούμενες εξαρτήσεις δεν μπόρεσαν να επιλυθούν.\n"
 "Πρόταση: Ενημερώστε πρώτα ολόκληρο το σύστημα με 'sudo pacman -Syu'."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 342
 msgid ""
@@ -129,6 +151,7 @@ msgstr ""
 "Η υπογραφή του πακέτου δεν μπόρεσε να επαληθευτεί.\n"
 "Πρόταση: Ενημερώστε τα keyrings σας με 'sudo pacman -S archlinux-keyring "
 "manjaro-keyring'."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 msgid ""
@@ -139,6 +162,7 @@ msgstr ""
 "Η βάση δεδομένων πακέτων είναι κλειδωμένη από άλλη διαδικασία.\n"
 "Αν δεν τρέχει άλλος διαχειριστής πακέτων, αφαιρέστε το κλείδωμα με 'sudo rm /"
 "var/lib/pacman/db.lck'."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 msgid ""
@@ -148,6 +172,7 @@ msgstr ""
 "Δεν υπάρχει αρκετός χώρος στο δίσκο για να ολοκληρωθεί η λειτουργία.\n"
 "Πρόταση: Απελευθερώστε χώρο καθαρίζοντας την προσωρινή μνήμη πακέτων με "
 "'sudo pacman -Scc'."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 msgid ""
@@ -158,6 +183,7 @@ msgstr ""
 "Δεν ήταν δυνατή η λήψη των απαιτούμενων αρχείων.\n"
 "Πρόταση: Ελέγξτε τη σύνδεσή σας στο διαδίκτυο. Εάν το πρόβλημα συνεχίζεται, "
 "δοκιμάστε να ενημερώσετε τη λίστα καθρεφτών σας."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 msgid ""
@@ -167,33 +193,41 @@ msgstr ""
 "Ένα ληφθέν πακέτο είναι κατεστραμμένο.\n"
 "Πρόταση: Καθαρίστε την προσωρινή μνήμη με 'sudo pacman -Scc' και δοκιμάστε "
 "ξανά."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 391
 msgid "Generating GRUB configuration..."
 msgstr "Δημιουργία διαμόρφωσης GRUB..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 392
 msgid "Running post-transaction hooks..."
 msgstr "Εκτέλεση hooks μετά τη συναλλαγή..."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 msgid "Installing packages..."
 msgstr "Εγκατάσταση πακέτων..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 394
 msgid "Removing packages..."
 msgstr "Αφαίρεση πακέτων..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 395
 msgid "Checking for file conflicts..."
 msgstr "Συγχρονισμός βάσεων δεδομένων πακέτων..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 396
 msgid "Checking dependencies..."
 msgstr "Έλεγχος εξαρτήσεων..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 400
 msgid "Synchronizing package databases..."
 msgstr "Συγχρονισμός βάσεων δεδομένων πακέτων..."
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -202,30 +236,37 @@ msgstr "Συγχρονισμός βάσεων δεδομένων πακέτων.
 # line: 423
 msgid "Downloading packages..."
 msgstr "Λήψη πακέτων..."
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 msgid "Please wait..."
 msgstr "Παρακαλώ περιμένετε..."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 113
 msgid "Continue the installation in the pamac window that was opened."
 msgstr "Συνεχίστε την εγκατάσταση στο παράθυρο του pamac που άνοιξε."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Installing {}"
 msgstr "Εγκατάσταση {}"
+
 #
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Εγκατάσταση προαπαιτούμενων για την κατασκευή: {}"
+
 #
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "Εγκατάσταση προαπαιτούμενων για την κατασκευή"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #, python-brace-format
 msgid "Removing {}"
 msgstr "Κατάργηση {}"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 99
 #, python-brace-format
@@ -233,6 +274,7 @@ msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr ""
 "Το pamac-installer δεν βρέθηκε. Δεν είναι δυνατή η εγκατάσταση του πακέτου "
 "AUR {}."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
 msgid ""
@@ -241,77 +283,125 @@ msgid ""
 msgstr ""
 "Συνεχίστε την εγκατάσταση στο παράθυρο pamac που άνοιξε. Αυτή η διαλογική "
 "οθόνη παρακολουθεί μόνο το αποτέλεσμα."
+
+#, python-brace-format
+msgid "{} is not available in the configured repositories."
+msgstr "Το {} δεν είναι διαθέσιμο στα ρυθμισμένα αποθετήρια."
+
+#, python-brace-format
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"Ο τρέχων πυρήνας σας χρησιμοποιεί μονάδες οδηγών που δεν είναι ακόμη "
+"διαθέσιμες για το linux-big:\n"
+"{}\n"
+"\n"
+"Χωρίς αυτές, το linux-big θα ξεκινούσε χωρίς αυτούς τους οδηγούς (για "
+"παράδειγμα χωρίς τον οδηγό NVIDIA), επομένως δεν προσφέρεται προς το παρόν."
+
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr ""
+"Οι μονάδες linux-big για αυτήν την έκδοση εξακολουθούν να δημοσιεύονται. "
+"Δοκιμάστε ξανά σε λίγα λεπτά."
+
+msgid "pacman reported:"
+msgstr "Το pacman ανέφερε:"
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #, python-brace-format
 msgid "Driver not found: {}"
 msgstr "Δεν βρέθηκε πρόγραμμα οδήγησης: {}"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
 #, python-brace-format
 msgid "Applying {} driver..."
 msgstr "Εφαρμογή προγράμματος οδήγησης {}..."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Έναρξη εγκατάστασης προγράμματος οδήγησης {}..."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Σφάλμα: {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 237
 msgid "Failed to remove conflicting packages."
 msgstr "Αποτυχία κατάργησης πακέτων σε διένεξη."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #, python-brace-format
 msgid "Removing conflicts: {}"
 msgstr "Αφαίρεση συγκρούσεων: {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 205
 msgid "Removing conflicting packages..."
 msgstr "Αφαίρεση συγκρουόμενων πακέτων..."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
 msgid "Removing conflicting packages"
 msgstr "Αφαίρεση συγκρουόμενων πακέτων"
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 161
 msgid "Checking for conflicting packages..."
 msgstr "Έλεγχος για πακέτα σε διένεξη..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 178
 #, python-brace-format
 msgid "Checking {} packages..."
 msgstr "Έλεγχος {} πακέτων..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 191
 msgid "❌ No packages available to install."
 msgstr "❌ Δεν υπάρχουν διαθέσιμα πακέτα για εγκατάσταση."
+
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 187
 #, python-brace-format
 msgid "⚠️ Package {} not available, skipping..."
 msgstr "⚠️ Το πακέτο {} δεν είναι διαθέσιμο, παράλειψη..."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Installing: {}"
 msgstr "Εγκατάσταση: {}"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
 #, python-brace-format
 msgid "Installing {} driver..."
 msgstr "Εγκατάσταση προγράμματος οδήγησης {}..."
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 msgid "Driver applied successfully!"
 msgstr "Ο οδηγός εγκαταστάθηκε με επιτυχία!"
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #, python-brace-format
 msgid "✅ {} driver applied successfully!"
 msgstr "✅ Ο οδηγός {} εγκαταστάθηκε με επιτυχία!"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
 #, python-brace-format
 msgid "Installing {} driver"
 msgstr "Εγκατάσταση οδηγού {}"
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -321,56 +411,68 @@ msgstr "Εγκατάσταση οδηγού {}"
 #, python-brace-format
 msgid "Remove the installed NVIDIA driver ({}) first."
 msgstr "Καταργήστε πρώτα τον εγκατεστημένο οδηγό NVIDIA ({})"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 msgid "Completed"
 msgstr "Ολοκληρώθηκε"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
 msgid "Failed"
 msgstr "Αποτυχία"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 591
 msgid "Firmware available"
 msgstr "Διαθέσιμο υλικολογισμικό"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 msgid "Printer driver available"
 msgstr "Διαθέσιμο πρόγραμμα οδήγησης εκτυπωτή"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 msgid "Scanner driver available"
 msgstr "Διαθέσιμο πρόγραμμα οδήγησης σαρωτή"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 msgid "Driver available"
 msgstr "Διαθέσιμο πρόγραμμα οδήγησης"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
 msgid "Open Driver Manager to review and install this firmware."
 msgstr ""
 "Ανοίξτε τον Διαχειριστή Οδηγών για να ελέγξετε και να εγκαταστήσετε αυτό το "
 "υλικολογισμικό."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
 msgid "Open Driver Manager to review and install this driver."
 msgstr ""
 "Ανοίξτε τον Διαχειριστή Οδηγών για να ελέγξετε και να εγκαταστήσετε αυτόν "
 "τον οδηγό."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
 msgid "Driver Manager"
 msgstr "Διαχειριστής Οδηγών"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
 msgid "Don't alert for this firmware again"
 msgstr "Μην ειδοποιείτε ξανά για αυτό το υλικολογισμικό."
+
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 166
 msgid "Don't alert for this device again"
 msgstr "Μην ειδοποιείτε ξανά για αυτή τη συσκευή"
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -380,18 +482,22 @@ msgstr "Μην ειδοποιείτε ξανά για αυτή τη συσκευ
 # File: usr/share/big-driver-manager/ui/window.py, line: 463
 msgid "Close"
 msgstr "Κλείσιμο"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
 msgid "Open Driver Manager"
 msgstr "Άνοιγμα Διαχειριστή Οδηγών"
+
 #
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
 msgstr ""
 "Ανοίξτε τη σελίδα ενός πακέτου οδηγού και προσφέρετε να το εγκαταστήσετε."
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 msgid "Error"
 msgstr "Σφάλμα"
+
 #
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
@@ -402,10 +508,12 @@ msgstr ""
 "Αυτό το πακέτο δεν είναι στα επίσημα αποθετήρια. Θα κατασκευαστεί από το AUR "
 "στον υπολογιστή σας, κάτι που μπορεί να διαρκέσει αρκετά λεπτά και δεν έχει "
 "ελεγχθεί από τη διανομή."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Install {}?"
 msgstr "Εγκατάσταση {};"
+
 #
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
@@ -418,56 +526,68 @@ msgstr ""
 "προτεινόμενη επιλογή. Εγκαταστήστε αυτόν τον οδηγό τρίτου μέρους μόνο για να "
 "παρακάμψετε ένα συγκεκριμένο πρόβλημα — μπορεί να έρχεται σε σύγκρουση με "
 "τον ενσωματωμένο."
+
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 msgid "Loading..."
 msgstr "Φόρτωση..."
+
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 msgid "Loading"
 msgstr "Φόρτωση"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
 # 55
 msgid "Still loading… Check your network connection."
 msgstr "Ακόμα φορτώνεται… Ελέγξτε τη σύνδεσή σας στο δίκτυο."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 67
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 277
 msgid "Other"
 msgstr "Αλλος"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 128
 msgid "Search drivers..."
 msgstr "Αναζήτηση προγραμμάτων οδήγησης..."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
 msgid "Search drivers"
 msgstr "Αναζήτηση προγραμμάτων οδήγησης"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
 msgid "Searching for printers on the network"
 msgstr "Αναζητώντας εκτυπωτές στο δίκτυο"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 msgid "Searching for printers on the network…"
 msgstr "Αναζήτηση εκτυπωτών στο δίκτυο…"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 162
 msgid "No more automatically detected compatible drivers in this category."
 msgstr ""
 "Δεν υπάρχουν άλλα αυτόματα εντοπισμένα συμβατά προγράμματα οδήγησης σε αυτήν "
 "την κατηγορία."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 211
 msgid "Show drivers without detected compatibility"
 msgstr "Εμφάνιση οδηγών χωρίς ανιχνευόμενη συμβατότητα"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 260
 msgid "No drivers needed for this category"
 msgstr "Δεν απαιτούνται drivers για αυτή την κατηγορία"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 msgid ""
@@ -476,24 +596,29 @@ msgid ""
 msgstr ""
 "Δεν ανιχνεύθηκαν αυτόματα drivers σε αυτή την κατηγορία που να είναι "
 "συμβατοί με το υλικό σας."
+
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Προσαρμογέας {} — λειτουργεί (οδηγός {})"
+
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "άγνωστο"
+
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Καλώδιο συνδεδεμένο"
+
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Διεπαφή απενεργοποιημένη"
+
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
 msgid ""
@@ -502,10 +627,12 @@ msgid ""
 msgstr ""
 "Δεν ανιχνεύθηκε καλώδιο ή σύνδεση. Ελέγξτε το καλώδιο και τη θύρα του "
 "δρομολογητή/διακόπτη — δεν απαιτείται επιπλέον οδηγός."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 msgid "Detection Error"
 msgstr "Σφάλμα ανίχνευσης"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 msgid ""
@@ -513,6 +640,7 @@ msgid ""
 msgstr ""
 "Δεν ανιχνεύθηκαν drivers σε αυτή την κατηγορία που να είναι απαραίτητοι για "
 "το υλικό σας."
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -521,54 +649,66 @@ msgstr ""
 # manager/ui/drivers_hub_page.py, line: 283
 msgid "1 driver"
 msgstr "1 driver"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #, python-brace-format
 msgid "{} drivers"
 msgstr "{} προγράμματα οδήγησης"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 341
 #, python-brace-format
 msgid "{} detected"
 msgstr "Ανιχνεύθηκε {}"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #, python-brace-format
 msgid "{} installed"
 msgstr "Εγκαταστάθηκε {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 405
 msgid "Detected"
 msgstr "Εντοπίστηκε"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Installed"
 msgstr "Δεν έχει εγκατασταθεί"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Not installed"
 msgstr "Δεν έχει εγκατασταθεί"
+
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
 msgstr "Δεν απαιτείται: η συσκευή λειτουργεί ήδη με τον ενσωματωμένο οδηγό {}"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 msgid "Remove"
 msgstr "Κατάργηση"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Install"
 msgstr "Εγκατάσταση"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Install {}"
 msgstr "Εγκατάσταση {}"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Αφαίρεση {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 503
 #, python-brace-format
@@ -576,9 +716,11 @@ msgid "{total} drivers · {detected} detected · {installed} installed"
 msgstr ""
 "{total} προγράμματα οδήγησης · ​​{detected} εντοπίστηκαν · {installed} "
 "εγκαταστάθηκαν"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
 msgid "Install Driver"
 msgstr "Εγκαταστήστε το πρόγραμμα οδήγησης"
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -589,23 +731,29 @@ msgstr "Εγκαταστήστε το πρόγραμμα οδήγησης"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
 msgid "Cancel"
 msgstr "Ακύρωση"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 msgid "Remove Driver"
 msgstr "Κατάργηση προγράμματος οδήγησης"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #, python-brace-format
 msgid "Remove {}?"
 msgstr "Αφαίρεση {};"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 msgid "Operation completed successfully."
 msgstr "Η λειτουργία ολοκληρώθηκε με επιτυχία."
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid "Operation failed. Check logs for details."
 msgstr "Η λειτουργία απέτυχε. Ελέγξτε τα αρχεία καταγραφής για λεπτομέρειες."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 msgid "What is Kernel?"
 msgstr "Τι είναι ο Πυρήνας (Kernel);"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 72
 msgid ""
@@ -616,9 +764,11 @@ msgstr ""
 "Ο πυρήνας είναι η καρδιά του λειτουργικού σας συστήματος. Ελέγχει τον "
 "επεξεργαστή, τη μνήμη και όλο το υλικό. Τα περισσότερα προγράμματα οδήγησης "
 "είναι ήδη ενσωματωμένα με τον πυρήνα."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 msgid "What are Drivers?"
 msgstr "Τι είναι οι Οδηγοί (Drivers);"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 85
 msgid ""
@@ -629,55 +779,67 @@ msgstr ""
 "Οι οδηγοί επιτρέπουν σε κάθε συσκευή — όπως η κάρτα γραφικών, το Wi-Fi ή ο "
 "ήχος — να επικοινωνεί με το σύστημα. Αν όλα λειτουργούν ήδη, πιθανότατα δεν "
 "χρειάζεται να αλλάξετε τίποτα."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
 msgid "Checking your system"
 msgstr "Έλεγχος του συστήματός σας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 msgid "Checking your system…"
 msgstr "Έλεγχος του συστήματός σας…"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 119
 msgid "Detecting hardware and installed drivers."
 msgstr "Ανίχνευση υλικού και εγκατεστημένων προγραμμάτων οδήγησης."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 149
 msgid "Recommended for your hardware"
 msgstr "Συνιστάται για το υλικό σας"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 msgid "Install recommended"
 msgstr "Εγκατάσταση προτεινόμενων"
+
 #
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
 msgstr "{} δεν έχει φορτωμένο οδηγό. Ένας συμβατός οδηγός είναι διαθέσιμος: {}"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 msgid "Go to drivers"
 msgstr "Πηγαίνετε στους οδηγούς"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 376
 #, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
 msgstr ""
 "Όλα τα προτεινόμενα πακέτα βίντεο {} για το υλικό {} είναι εγκατεστημένα."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 386
 #, python-brace-format
 msgid "{} of {} recommended packages are not installed."
 msgstr "{} από τα {} προτεινόμενα πακέτα δεν είναι εγκατεστημένα."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 396
 #, python-brace-format
 msgid "Install all {} recommended"
 msgstr "Εγκατάσταση όλων των προτεινόμενων {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 457
 #, python-brace-format
 msgid "Already installed ({})"
 msgstr "Ήδη εγκατεστημένος ({})"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 469
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -686,14 +848,17 @@ msgstr "Ήδη εγκατεστημένος ({})"
 # 608
 msgid "Show installed packages"
 msgstr "Εμφάνιση εγκατεστημένων πακέτων"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 605
 msgid "Hide installed packages"
 msgstr "Απόκρυψη εγκατεστημένων πακέτων"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 620
 msgid "Install Recommended Packages"
 msgstr "Εγκατάσταση Προτεινόμενων Πακέτων"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 623
 #, python-brace-format
@@ -705,26 +870,32 @@ msgstr ""
 "Εγκατάσταση πακέτων <b>{}</b>;\n"
 "\n"
 "{}"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Install All"
 msgstr "Εγκατάσταση όλων"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Installing {} packages"
 msgstr "Εγκατάσταση πακέτων {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 653
 msgid "Installing recommended packages"
 msgstr "Εγκατάσταση προτεινόμενων πακέτων"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 670
 msgid "All recommended packages installed successfully!"
 msgstr "Όλα τα προτεινόμενα πακέτα εγκαταστάθηκαν με επιτυχία!"
+
 #
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "Η εγκατάσταση του πακέτου απέτυχε."
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -733,19 +904,23 @@ msgstr "Η εγκατάσταση του πακέτου απέτυχε."
 # 713
 msgid "Downloading package..."
 msgstr "Λήψη πακέτου..."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
 #, python-brace-format
 msgid "Installed {}"
 msgstr "Εγκαταστάθηκε {}"
+
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #, python-brace-format
 msgid "{} installed successfully!"
 msgstr "Το {} εγκαταστάθηκε με επιτυχία!"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
 #, python-brace-format
 msgid "Installation of {} failed."
 msgstr "Η εγκατάσταση του {} απέτυχε."
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -754,14 +929,17 @@ msgstr "Η εγκατάσταση του {} απέτυχε."
 # line: 347
 msgid "Warning"
 msgstr "Προειδοποίηση"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 msgid "Information"
 msgstr "Πληροφορίες"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 msgid "Kernels"
 msgstr "Πυρήνες"
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
@@ -769,18 +947,22 @@ msgstr "Πυρήνες"
 # manager/ui/drivers_hub_page.py, line: 36
 msgid "Video / GPU"
 msgstr "Βίντεο / GPU"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 37
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 38
 msgid "Ethernet"
 msgstr "Ethernet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 39
 msgid "Bluetooth"
 msgstr "Bluetooth"
+
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
@@ -788,34 +970,42 @@ msgstr "Bluetooth"
 # manager/ui/drivers_hub_page.py, line: 40
 msgid "DVB / TV"
 msgstr "DVB / TV"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 41
 msgid "Audio"
 msgstr "Ήχος"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 42
 msgid "Webcam"
 msgstr "Κάμερα ιστού"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 43
 msgid "Touchscreen"
 msgstr "Οθόνη αφής"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 44
 msgid "Printers"
 msgstr "Εκτυπωτές"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 45
 msgid "3D Printers"
 msgstr "Εκτυπωτές 3D"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 46
 msgid "Scanners"
 msgstr "Σαρωτές"
+
 #
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Εγκατεστημένοι Οδηγοί"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 msgid ""
@@ -824,39 +1014,48 @@ msgid ""
 msgstr ""
 "Όλοι οι οδηγοί και υλικολογισμικό που είναι εγκατεστημένα στο σύστημά σας, "
 "ομαδοποιημένα κατά κατηγορία."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 msgid "No extra drivers installed"
 msgstr "Δεν υπάρχουν εγκατεστημένοι επιπλέον οδηγοί"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 msgid "Your system is using only default drivers."
 msgstr "Το σύστημά σας χρησιμοποιεί μόνο προεπιλεγμένους οδηγούς."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} εγκατεστημένοι οδηγοί σε {cats} κατηγορίες"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #, python-brace-format
 msgid "{n} installed"
 msgstr "Εγκατεστημένοι οδηγοί {n}"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 msgid "Running"
 msgstr "Εκτελείται"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 msgid "MHWD driver"
 msgstr "Οδηγός MHWD"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
 msgid "Active"
 msgstr "Ενεργός"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 40
 msgid "Stable, long-term support"
 msgstr "Σταθερό, μακροχρόνια υποστήριξη"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 msgid ""
@@ -865,10 +1064,12 @@ msgid ""
 msgstr ""
 "Λαμβάνει ενημερώσεις ασφαλείας για χρόνια. Η καλύτερη επιλογή για τους "
 "περισσότερους χρήστες — αξιόπιστο και καλά δοκιμασμένο."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 msgid "Low-latency, real-time"
 msgstr "Χαμηλή καθυστέρηση, σε πραγματικό χρόνο"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 52
 msgid ""
@@ -879,10 +1080,12 @@ msgstr ""
 "Σχεδιασμένο για παραγωγή ήχου/βίντεο και εργασίες που απαιτούν ακριβή "
 "χρονισμό. Μπορεί να είναι ασύμβατο με ορισμένους drivers (π.χ. NVIDIA). "
 "Συνιστάται μόνο για προχωρημένους χρήστες."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 msgid "Gaming & performance optimized"
 msgstr "Βελτιστοποιημένο για παιχνίδια και απόδοση"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 62
 msgid ""
@@ -891,10 +1094,12 @@ msgid ""
 msgstr ""
 "Ρυθμισμένο για ταχύτερα παιχνίδια και πιο ευαίσθητο desktop. Ιδανικό για "
 "καθημερινή χρήση αν θέλετε επιπλέον απόδοση."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 msgid "Performance optimized by CachyOS"
 msgstr "Βελτιστοποιημένη απόδοση από CachyOS"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 msgid ""
@@ -903,8 +1108,27 @@ msgid ""
 msgstr ""
 "Προγραμματιστής EEVDF με LTO, AutoFDO και βελτιστοποιήσεις Propeller. "
 "Εξαιρετικό για παιχνίδια και απόκριση επιφάνειας εργασίας."
+
+msgid ""
+"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes)"
+msgstr ""
+"Πυρήνας BigCommunity (big-kernel), βελτιστοποιημένος για παιχνίδια και "
+"γενική χρήση (BORE, Clang ThinLTO, διορθώσεις Intel)"
+
+msgid ""
+"Official kernel.org kernel with Manjaro's configuration and patches, plus "
+"the BORE scheduler, Clang + ThinLTO build and fixes for recent Intel GPUs "
+"(Arrow Lake / Meteor Lake)."
+msgstr ""
+"Επίσημος πυρήνας kernel.org με τη διαμόρφωση και τις επιδιορθώσεις του "
+"Manjaro, καθώς και τον προγραμματιστή BORE, τη μεταγλώττιση Clang + ThinLTO "
+"και διορθώσεις για πρόσφατες κάρτες γραφικών Intel (Arrow Lake / Meteor "
+"Lake)."
+
 msgid "Package from outside the official repositories"
 msgstr "Πακέτο εκτός των επίσημων αποθετηρίων"
+
 msgid ""
 "Installed from a package that the enabled repositories don't provide "
 "(community or self-built). It is updated by whoever provides the package, "
@@ -913,10 +1137,13 @@ msgstr ""
 "Εγκαταστάθηκε από πακέτο που δεν παρέχεται από τα ενεργοποιημένα αποθετήρια "
 "(κοινότητα ή αυτο-χτισμένο). Ενημερώνεται από όποιον παρέχει το πακέτο, όχι "
 "από τις ενημερώσεις του συστήματος."
+
 msgid "Local"
 msgstr "Τοπικό"
+
 msgid "Installed manually, outside the package manager"
 msgstr "Εγκαταστάθηκε χειροκίνητα, εκτός του διαχειριστή πακέτων"
+
 msgid ""
 "This kernel was not installed by a package, so it can't be updated or "
 "removed here. Manage it the same way it was installed."
@@ -924,58 +1151,82 @@ msgstr ""
 "Αυτός ο πυρήνας δεν εγκαταστάθηκε από πακέτο, επομένως δεν μπορεί να "
 "ενημερωθεί ή να καταργηθεί εδώ. Διαχειριστείτε τον με τον ίδιο τρόπο που "
 "εγκαταστάθηκε."
+
 msgid "Manual"
 msgstr "Χειροκίνητο"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 msgid "Latest features & drivers"
 msgstr "Τελευταία χαρακτηριστικά και προγράμματα οδήγησης"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 72
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Πάντα ενημερωμένο με τις νεότερες λειτουργίες και υποστήριξη υλικού."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 msgid "Installed Kernels"
 msgstr "Εγκατεστημένοι Πυρήνες"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 msgid "Remove all obsolete kernels"
 msgstr "Αφαίρεση όλων των παρωχημένων πυρήνων"
+
 # File: usr/share/big-driver-manager/ui/window.py, line: 89
 msgid "Kernel in use"
 msgstr "Πυρήνας σε χρήση"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
 msgid "In Use"
 msgstr "Σε Χρήση"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 331
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Παρωχημένοι Πυρήνες — Συνιστάται Αφαίρεση"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 360
 msgid "No longer receives security updates"
 msgstr "Δεν λαμβάνει πλέον ενημερώσεις ασφαλείας"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #, python-brace-format
 msgid "Remove kernel {}"
 msgstr "Αφαίρεση πυρήνα {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 416
 msgid "Last backup"
 msgstr "Τελευταίο αντίγραφο ασφαλείας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 420
 msgid "At least one backup kernel must remain installed"
 msgstr ""
 "Πρέπει να παραμείνει εγκατεστημένος τουλάχιστον ένας πυρήνας αντιγράφων "
 "ασφαλείας"
+
 msgid "Not removable here"
 msgstr "Δεν μπορεί να καταργηθεί εδώ"
+
 msgid ""
 "Installed outside the package manager. Remove its files from /boot and /usr/"
 "lib/modules the same way it was installed."
 msgstr ""
 "Εγκαταστάθηκε εκτός του διαχειριστή πακέτων. Καταργήστε τα αρχεία του από "
 "τα /boot και /usr/lib/modules με τον ίδιο τρόπο που εγκαταστάθηκε."
+
+msgid ""
+"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
+"kernel."
+msgstr ""
+"Ο πυρήνας BigCommunity (big-kernel), βελτιστοποιημένος για παιχνίδια και "
+"γενική χρήση (BORE, Clang ThinLTO, διορθώσεις Intel). Εγκαθίσταται παράλληλα "
+"με τον τρέχοντα πυρήνα σας."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 439
 msgid ""
@@ -984,6 +1235,7 @@ msgid ""
 msgstr ""
 "Συνιστάται για τους περισσότερους χρήστες. Αυτοί οι πυρήνες λαμβάνουν "
 "ενημερώσεις ασφαλείας για χρόνια και έχουν δοκιμαστεί διεξοδικά."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 msgid ""
@@ -992,6 +1244,7 @@ msgid ""
 msgstr ""
 "Πάντα ενημερωμένος με τις τελευταίες λειτουργίες και υποστήριξη υλικού. Καλή "
 "επιλογή αν χρειάζεστε τους νεότερους οδηγούς."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 msgid ""
@@ -1000,6 +1253,7 @@ msgid ""
 msgstr ""
 "Βελτιστοποιημένος για παιχνίδια και απόκριση επιφάνειας εργασίας. Μια καλή "
 "επιλογή για καθημερινή χρήση με επιπλέον απόδοση."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 msgid ""
@@ -1009,21 +1263,26 @@ msgstr ""
 "Κατασκευασμένος για παραγωγή ήχου/βίντεο που απαιτεί ακριβή χρονισμό. Μπορεί "
 "να είναι ασύμβατος με ορισμένους οδηγούς (π.χ. NVIDIA). Μόνο για "
 "προχωρημένους χρήστες."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 msgid "LTS — Long Term Support (Recommended)"
 msgstr "LTS — Μακροχρόνια Υποστήριξη (Συνιστάται)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 493
 msgid "Standard"
 msgstr "Πρότυπο"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 msgid "Xanmod (Performance)"
 msgstr "Xanmod (Απόδοση)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 495
 msgid "Real-Time (Advanced)"
 msgstr "Πραγματικού Χρόνου (Προχωρημένο)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1031,20 +1290,35 @@ msgstr "Πραγματικού Χρόνου (Προχωρημένο)"
 #, python-brace-format
 msgid "Show {} available"
 msgstr "Εμφάνιση {} διαθέσιμων"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
 msgid "Hide available kernels"
 msgstr "Απόκρυψη διαθέσιμων πυρήνων"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
 #, python-brace-format
 msgid "Install kernel {}"
 msgstr "Εγκατάσταση πυρήνα {}"
-# File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
-# line: 661
-msgid "The following packages will be installed:"
-msgstr "Τα ακόλουθα πακέτα θα εγκατασταθούν:"
+
+#, python-brace-format
+msgid "{} can't be installed yet"
+msgstr "Το {} δεν μπορεί να εγκατασταθεί ακόμη"
+
+msgid ""
+"Your current kernel stays installed; you can choose between them in the boot "
+"menu (GRUB).\n"
+"\n"
+"The following packages will be installed:"
+msgstr ""
+"Ο τρέχων πυρήνας σας παραμένει εγκατεστημένος· μπορείτε να επιλέξετε μεταξύ "
+"τους στο μενού εκκίνησης (GRUB).\n"
+"\n"
+"Θα εγκατασταθούν τα παρακάτω πακέτα:"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
 msgid "Preparing installation..."
 msgstr "Προετοιμασία εγκατάστασης..."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
 msgid ""
 "Kernel installed successfully.\n"
@@ -1052,6 +1326,7 @@ msgid ""
 msgstr ""
 "Ο πυρήνας εγκαταστάθηκε με επιτυχία.\n"
 "Ενδέχεται να χρειαστεί επανεκκίνηση για να τον χρησιμοποιήσετε."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
 msgid ""
 "Kernel installation failed.\n"
@@ -1059,14 +1334,17 @@ msgid ""
 msgstr ""
 "Η εγκατάσταση του πυρήνα απέτυχε.\n"
 "Ελέγξτε την έξοδο του τερματικού για λεπτομέρειες."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
 msgid "Cannot Remove Running Kernel"
 msgstr "Δεν είναι δυνατή η κατάργηση του εκτελούμενου πυρήνα"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
 msgid "This kernel is currently in use. Boot into a different kernel first."
 msgstr ""
 "Αυτή τη στιγμή χρησιμοποιείται αυτός ο πυρήνας. Εκκινήστε πρώτα σε "
 "διαφορετικό πυρήνα."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 msgid ""
@@ -1079,16 +1357,20 @@ msgstr ""
 "αποτύχει, δεν θα έχετε εναλλακτική.\n"
 "\n"
 "Τα παρακάτω πακέτα θα αφαιρεθούν:"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 749
 msgid "The following packages will be removed:"
 msgstr "Τα ακόλουθα πακέτα θα αφαιρεθούν:"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
 msgid "Preparing removal…"
 msgstr "Προετοιμασία αφαίρεσης…"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 msgid "Kernel removed successfully."
 msgstr "Ο πυρήνας καταργήθηκε με επιτυχία."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
 msgid ""
 "Kernel removal failed.\n"
@@ -1096,9 +1378,11 @@ msgid ""
 msgstr ""
 "Η αφαίρεση του πυρήνα απέτυχε.\n"
 "Ελέγξτε την έξοδο του τερματικού για λεπτομέρειες."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 msgid "Remove Obsolete Kernels"
 msgstr "Αφαιρέστε τους απαρχαιωμένους πυρήνες"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 820
 #, python-brace-format
@@ -1114,22 +1398,27 @@ msgstr ""
 "<b>{}</b>\n"
 "\n"
 "Αυτοί οι πυρήνες δεν λαμβάνουν πλέον ενημερώσεις ασφαλείας."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 msgid "Remove All"
 msgstr "Αφαίρεση όλων"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #, python-brace-format
 msgid "Removing kernel {} ({}/{})..."
 msgstr "Αφαίρεση πυρήνα {} ({}/{})..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 866
 #, python-brace-format
 msgid "Failed to remove {}. Stopping."
 msgstr "Η κατάργηση του {} απέτυχε. Στάθμευση."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 msgid "All obsolete kernels removed successfully."
 msgstr "Όλοι οι παρωχημένοι πυρήνες αφαιρέθηκαν επιτυχώς."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 916
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1137,69 +1426,84 @@ msgstr "Όλοι οι παρωχημένοι πυρήνες αφαιρέθηκα
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Τι νέο υπάρχει στο Linux {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 msgid "Latest NVIDIA driver — best performance and newest features"
 msgstr "Τελευταίος οδηγός NVIDIA — καλύτερη απόδοση και νεότερα χαρακτηριστικά"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
 msgstr ""
 "NVIDIA σειρά 575 — χρησιμοποιήστε αν ο τελευταίος οδηγός προκαλεί προβλήματα"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
 msgstr ""
 "NVIDIA σειρά 570 — χρησιμοποιήστε αν ο τελευταίος οδηγός προκαλεί προβλήματα"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
 msgstr ""
 "Για φορητούς Intel + NVIDIA — εναλλαγή μεταξύ GPU για εξοικονόμηση μπαταρίας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 50
 msgid "For Intel + NVIDIA laptops — NVIDIA 575 series"
 msgstr "Για φορητούς Intel + NVIDIA — NVIDIA σειρά 575"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 53
 msgid "For Intel + NVIDIA laptops — NVIDIA 570 series"
 msgstr "Για φορητούς Intel + NVIDIA — NVIDIA σειρά 570"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 56
 msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
 msgstr "Για φορητούς Intel + NVIDIA — NVIDIA 470 (παλιός, χωρίς Wayland)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 59
 msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
 msgstr "Για φορητούς Intel + NVIDIA — NVIDIA 390 (μόνο πολύ παλιές GPU)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
 msgstr ""
 "Για φορητούς AMD + NVIDIA — εναλλαγή μεταξύ GPU για εξοικονόμηση μπαταρίας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 66
 msgid "For AMD + NVIDIA laptops — NVIDIA 575 series"
 msgstr "Για φορητούς υπολογιστές AMD + NVIDIA — σειρά NVIDIA 575"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 69
 msgid "For AMD + NVIDIA laptops — NVIDIA 570 series"
 msgstr "Για φορητούς υπολογιστές AMD + NVIDIA — σειρά NVIDIA 570"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 72
 msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
 msgstr ""
 "Για φορητούς υπολογιστές AMD + NVIDIA — NVIDIA 470 (παλαιότερο, χωρίς "
 "Wayland)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
 msgstr ""
 "Βελτιστοποιημένη οθόνη για εικονικές μηχανές (VirtualBox, VMware, QEMU/KVM)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 msgid "Gaming & 3D Graphics"
 msgstr "Παιχνίδια και τρισδιάστατα γραφικά"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 msgid ""
@@ -1208,42 +1512,50 @@ msgid ""
 msgstr ""
 "Οι βιβλιοθήκες Vulkan και OpenGL είναι απαραίτητες για παιχνίδια, Steam, "
 "Wine/Proton και εφαρμογές 3D."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 msgid "Vulkan for AMD Radeon GPUs"
 msgstr "Vulkan για κάρτες γραφικών AMD Radeon"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 106
 msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
 msgstr ""
 "32-bit Vulkan (AMD) — απαραίτητο για Steam, Wine/Proton και παλαιότερα "
 "παιχνίδια"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 114
 msgid "Vulkan for Intel GPUs"
 msgstr "Vulkan για κάρτες γραφικών Intel"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
 msgstr ""
 "32-bit Vulkan (Intel) — απαραίτητο για Steam, Wine/Proton και παλαιότερα "
 "παιχνίδια"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
 msgstr ""
 "Ανοιχτού κώδικα Vulkan για NVIDIA (Nouveau) — δεν απαιτείται ιδιόκτητος "
 "οδηγός"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
 msgstr ""
 "32-bit OpenGL — απαραίτητο για Steam, Wine/Proton και παλαιότερα 32-bit "
 "παιχνίδια"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 149
 msgid "Video Playback"
 msgstr "Αναπαραγωγή βίντεο"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 152
 msgid ""
@@ -1253,22 +1565,27 @@ msgstr ""
 "Επιταχυνόμενη από υλικό αποκωδικοποίηση βίντεο (VAAPI/VDPAU). Κάνει τα "
 "βίντεο, το streaming και τις βιντεοκλήσεις πιο ομαλές μειώνοντας τη χρήση "
 "CPU και ενέργειας."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 msgid "VAAPI for NVIDIA proprietary driver"
 msgstr "VAAPI για ιδιόκτητο οδηγό NVIDIA"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 165
 msgid "VAAPI for Intel (Broadwell / Gen 8 and newer)"
 msgstr "VAAPI για Intel (Broadwell / Gen 8 και νεότερη έκδοση)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 172
 msgid "VAAPI for older Intel (Haswell to Coffee Lake / Gen 4–9)"
 msgstr "VAAPI για παλαιότερα Intel (Haswell έως Coffee Lake / Gen 4–9)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 179
 msgid "VAAPI for AMD and NVIDIA open-source (Nouveau)"
 msgstr "VAAPI για AMD και NVIDIA ανοιχτού κώδικα (Nouveau)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 186
 msgid ""
@@ -1277,10 +1594,12 @@ msgid ""
 msgstr ""
 "VDPAU για AMD/NVIDIA open-source — παλαιός API που αντικαθίσταται από VAAPI "
 "και Vulkan. Πιθανώς δεν είναι απαραίτητο."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 msgid "GPU Compute (AI / ML)"
 msgstr "GPU Compute (AI / ML)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 200
 msgid ""
@@ -1300,26 +1619,32 @@ msgstr ""
 "(Ollama, LocalAI), μεταγραφή ήχου με Whisper, απόδοση 3D σκηνών στο Blender, "
 "εφαρμογή φίλτρων στο GIMP ή Darktable, δημιουργία εικόνων με Stable "
 "Diffusion και εκτέλεση φυσικών προσομοιώσεων."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 msgid "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
 msgstr "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 222
 msgid "OpenCL for NVIDIA — Blender, GIMP, Darktable"
 msgstr "OpenCL για NVIDIA — Blender, GIMP, Darktable"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 228
 msgid "OpenCL for AMD — Blender, GIMP, Darktable"
 msgstr "OpenCL για AMD — Blender, GIMP, Darktable"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 234
 msgid "OpenCL for Intel — Blender, GIMP, Darktable"
 msgstr "OpenCL για Intel — Blender, GIMP, Darktable"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 270
 msgid "Stable"
 msgstr "Σταθερό"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 272
 msgid ""
@@ -1328,12 +1653,15 @@ msgid ""
 msgstr ""
 "Επίσημα δοκιμασμένο από την ομάδα Mesa. Η πιο ασφαλής και αξιόπιστη επιλογή "
 "για καθημερινή χρήση, παιχνίδια και αναπαραγωγή βίντεο."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 msgid "Recommended"
 msgstr "Συνιστώμενο"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 msgid "Performance"
 msgstr "Απόδοση"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 281
 msgid ""
@@ -1343,10 +1671,12 @@ msgstr ""
 "Τροποποιημένη έκδοση με βελτιστοποιήσεις για παιχνίδια για επιπλέον απόδοση. "
 "Αξιόπιστο για τους περισσότερους χρήστες αλλά μπορεί σπάνια να προκαλέσει "
 "αστάθειες."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 msgid "Development"
 msgstr "Ανάπτυξη"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 291
 msgid ""
@@ -1357,9 +1687,11 @@ msgstr ""
 "Κατασκευασμένο από τον πιο πρόσφατο πηγαίο κώδικα με προηγμένα "
 "χαρακτηριστικά. Προσφέρει την καλύτερη απόδοση στα παιχνίδια αλλά είναι η "
 "λιγότερο δοκιμασμένη — μόνο για προχωρημένους χρήστες."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 msgid "Legacy"
 msgstr "Παλιό"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 301
 msgid ""
@@ -1369,9 +1701,11 @@ msgstr ""
 "Για πολύ παλιές κάρτες γραφικών που υποστηρίζουν μόνο OpenGL 2.1 ή "
 "παλαιότερο. Εγκαταστήστε το μόνο αν οι νεότερες εκδόσεις Mesa δεν "
 "λειτουργούν με το υλικό σας."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 msgid "Video Drivers"
 msgstr "Οδηγοί βίντεο"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 127
 msgid ""
@@ -1384,6 +1718,7 @@ msgstr ""
 "Nouveau) είναι ενσωματωμένοι σε ένα ενιαίο έργο που ονομάζεται <b>Mesa</b>. "
 "Παρακάτω μπορείτε να επιλέξετε μια παραλλαγή Mesa και να διαχειριστείτε "
 "επιπλέον πακέτα για παιχνίδια, αναπαραγωγή βίντεο, υπολογισμούς και AI."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 msgid ""
@@ -1394,10 +1729,12 @@ msgstr ""
 "Ο υπολογιστής σας διαθέτει κάρτα γραφικών <b>NVIDIA</b>. Μπορείτε να "
 "εγκαταστήσετε τον επίσημο ιδιόκτητο οδηγό για την καλύτερη απόδοση στα "
 "παιχνίδια, AI και επαγγελματικές εφαρμογές."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 msgid "Mesa Variant"
 msgstr "Μέσα Παραλλαγή"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 msgid ""
@@ -1405,6 +1742,7 @@ msgid ""
 msgstr ""
 "Επιλέξτε ποια έκδοση Mesa θα χρησιμοποιήσετε. Μόνο μία παραλλαγή μπορεί να "
 "είναι ενεργή κάθε φορά."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 msgid ""
@@ -1416,18 +1754,22 @@ msgstr ""
 "χρησιμοποιείται μόνο για μικρές εργασίες σε αυτή την περίπτωση. Συνιστούμε "
 "να κρατήσετε την έκδοση <b>Stable</b> — άλλες εκδόσεις δεν θα βελτιώσουν την "
 "απόδοση και μπορεί να προκαλέσουν αστάθειες."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 msgid "Detected graphics cards:"
 msgstr "Ανιχνεύτηκαν κάρτες γραφικών:"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 384
 msgid "NVIDIA proprietary driver (not Mesa)"
 msgstr "Ιδιόκτητος οδηγός NVIDIA (όχι Mesa)"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 389
 msgid "Mesa driver"
 msgstr "Οδηγός Mesa"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 427
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1436,14 +1778,17 @@ msgstr "Οδηγός Mesa"
 # 1014
 msgid "Switch"
 msgstr "Αλλαγή"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 431
 #, python-brace-format
 msgid "Switch to {}"
 msgstr "Αλλαγή σε {}"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 msgid "Change Video Driver"
 msgstr "Αλλαγή προγράμματος οδήγησης βίντεο"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
 #, python-brace-format
 msgid ""
@@ -1454,16 +1799,20 @@ msgstr ""
 "Να γίνει αλλαγή σε <b>{}</b>;\n"
 "\n"
 "Απαιτείται επανεκκίνηση του συστήματος για να εφαρμοστεί η αλλαγή."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
 msgid "Apply"
 msgstr "Εφαρμογή"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 413
 #, python-brace-format
 msgid "Applying {}"
 msgstr "Εφαρμογή {}"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
 msgid "Preparing to apply driver..."
 msgstr "Προετοιμασία εφαρμογής προγράμματος οδήγησης..."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 337
 msgid ""
 "Video driver changed successfully!\n"
@@ -1473,6 +1822,7 @@ msgstr ""
 "Η αλλαγή προγράμματος οδήγησης βίντεο ολοκληρώθηκε με επιτυχία!\n"
 "\n"
 "Πρέπει να επανεκκινήσετε το σύστημά σας για να ενεργοποιηθεί ο νέος οδηγός."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 451
 msgid ""
 "Driver change failed.\n"
@@ -1480,10 +1830,12 @@ msgid ""
 msgstr ""
 "Η αλλαγή προγράμματος οδήγησης απέτυχε.\n"
 "Ελέγξτε την έξοδο του τερματικού για λεπτομέρειες."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 589
 msgid "NVIDIA Proprietary Driver"
 msgstr "NVIDIA ιδιόκτητο πρόγραμμα οδήγησης"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 msgid ""
@@ -1492,75 +1844,91 @@ msgid ""
 msgstr ""
 "Επίσημος κλειστός οδηγός με την καλύτερη απόδοση για παιχνίδια, AI και "
 "επαγγελματικά φορτία εργασίας."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 msgid "Only one version can be active at a time."
 msgstr "Μόνο μία έκδοση μπορεί να είναι ενεργή κάθε φορά."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 677
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 680
 msgid "All recommended packages installed"
 msgstr "Όλα τα προτεινόμενα πακέτα εγκαταστάθηκαν"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 686
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 689
 msgid "Some packages not installed"
 msgstr "Ορισμένα πακέτα δεν εγκαταστάθηκαν"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 747
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1163
 msgid "Included"
 msgstr "Συμπεριλαμβάνεται"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 754
 #, python-brace-format
 msgid "Already included in your Mesa version ({})"
 msgstr "Περιλαμβάνεται ήδη στην έκδοση Mesa ({})"
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 msgid "Other Drivers"
 msgstr "Άλλα προγράμματα οδήγησης"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 msgid ""
 "Additional drivers for special hardware configurations like virtual machines."
 msgstr ""
 "Επιπλέον οδηγοί για ειδικές διαμορφώσεις υλικού όπως εικονικές μηχανές."
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 msgid "Compatible"
 msgstr "Σύμφωνος"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 888
 msgid "Open Source"
 msgstr "Ανοιχτού Κώδικα"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 888
 msgid "Proprietary"
 msgstr "Ιδιόκτητος"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 895
 msgid "⚠ No Wayland support · No longer maintained"
 msgstr "⚠ Χωρίς υποστήριξη Wayland · Δεν συντηρείται πλέον"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 920
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Εναλλαγή από {} σε {}"
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
 #, python-brace-format
 msgid "Install {} unavailable"
 msgstr "Η εγκατάσταση {} δεν είναι διαθέσιμη."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 961
 msgid "open-source"
 msgstr "ανοιχτού κώδικα"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 961
 msgid "proprietary"
 msgstr "ιδιόκτητος"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 967
 #, python-brace-format
@@ -1572,10 +1940,12 @@ msgstr ""
 "Εγκατάσταση <b>{}</b> ({} οδηγός);\n"
 "\n"
 "Ενδέχεται να απαιτηθεί επανεκκίνηση του συστήματος μετά την εγκατάσταση."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1001
 msgid "Switch NVIDIA Driver"
 msgstr "Εναλλαγή προγράμματος οδήγησης NVIDIA"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1005
 #, python-brace-format
@@ -1589,15 +1959,18 @@ msgstr ""
 "\n"
 "Ο τρέχων οδηγός θα αντικατασταθεί αυτόματα.\n"
 "Θα απαιτηθεί επανεκκίνηση του συστήματος."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1027
 #, python-brace-format
 msgid "Switching to {}"
 msgstr "Εναλλαγή σε {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1028
 msgid "Replacing current NVIDIA driver..."
 msgstr "Αντικατάσταση του τρέχοντος οδηγού NVIDIA..."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1046
 #, python-brace-format
@@ -1609,20 +1982,25 @@ msgstr ""
 "Κατάργηση <b>{}</b>;\n"
 "\n"
 "Ενδέχεται να απαιτηθεί επανεκκίνηση του συστήματος μετά την κατάργηση."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
 msgid "Preparing removal..."
 msgstr "Προετοιμασία κατάργησης..."
+
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
 msgid "activated"
 msgstr "ενεργοποιήθηκε"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "installed"
 msgstr "εγκατασταθεί"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 msgid "removed"
 msgstr "αφαιρέθηκε"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1091
 #, python-brace-format
@@ -1634,6 +2012,7 @@ msgstr ""
 "Το {} ήταν {} με επιτυχία!\n"
 "\n"
 "Ενδέχεται να απαιτηθεί επανεκκίνηση του συστήματος."
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid ""
 "Driver operation failed.\n"
@@ -1641,14 +2020,17 @@ msgid ""
 msgstr ""
 "Η λειτουργία του οδηγού απέτυχε.\n"
 "Ελέγξτε την έξοδο του τερματικού για λεπτομέρειες."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1146
 msgid "Already included in your Mesa version"
 msgstr "Ήδη περιλαμβάνεται στην έκδοση Mesa που έχετε"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Install Package"
 msgstr "Εγκατάσταση πακέτου"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1191
 #, python-brace-format
@@ -1660,10 +2042,12 @@ msgstr ""
 "Εγκατάσταση <b>{}</b>;\n"
 "\n"
 "{}"
+
 #
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Μη διαθέσιμο"
+
 #
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
 msgid ""
@@ -1672,168 +2056,211 @@ msgid ""
 msgstr ""
 "Δεν είναι διαθέσιμο στα ενεργοποιημένα αποθετήρια. Τα πακέτα 32-bit (lib32) "
 "απαιτούν το αποθετήριο multilib."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 msgid "Remove Package"
 msgstr "Κατάργηση πακέτου"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1232
 #, python-brace-format
 msgid "Remove <b>{}</b>?"
 msgstr "Αφαίρεση <b>{}</b>;"
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 msgid "Removing package..."
 msgstr "Αφαίρεση πακέτου..."
+
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "Το {} ήταν {} με επιτυχία!"
+
 #
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "Η λειτουργία του πακέτου απέτυχε."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
 msgid "Operation in progress"
 msgstr "Η διαδικασία είναι σε εξέλιξη"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 msgid "Technical details"
 msgstr "Τεχνικές λεπτομέρειες"
+
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 67
 msgid "Terminal output"
 msgstr "Έξοδος τερματικού"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 229
 #, python-brace-format
 msgid "Step {} of {}: {}"
 msgstr "Βήμα {} από {}: {}"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 231
 #, python-brace-format
 msgid "Step {} of {}"
 msgstr "Βήμα {} από {}"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 msgid "Operation completed successfully!"
 msgstr "Η λειτουργία ολοκληρώθηκε με επιτυχία!"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid "Operation failed. Check terminal output for details."
 msgstr "Η λειτουργία απέτυχε. Ελέγξτε την έξοδο τερματικού για λεπτομέρειες."
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 msgid "Completed!"
 msgstr "Ολοκληρώθηκε!"
+
 #
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr ""
 "Αυτό το βήμα δεν μπορεί πλέον να ακυρωθεί με ασφάλεια. Περιμένοντας να "
 "ολοκληρωθεί…"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
 msgid "Cancelled"
 msgstr "Ακυρώθηκε"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
 msgid "Mesa, NVIDIA, and GPU drivers."
 msgstr "Προγράμματα οδήγησης Mesa, NVIDIA και GPU."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
 msgid "Wireless network adapter drivers."
 msgstr "Οδηγοί ασύρματων προσαρμογέων δικτύου."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
 msgid "Wired network adapter drivers."
 msgstr "Οδηγοί ενσύρματων προσαρμογέων δικτύου."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
 msgid "Bluetooth adapter drivers."
 msgstr "Προγράμματα οδήγησης προσαρμογέα Bluetooth."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
 msgid "Digital TV tuner firmware."
 msgstr "Λογισμικό ψηφιακού δέκτη τηλεόρασης."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
 msgid "Audio device firmware."
 msgstr "Λογισμικό συσκευής ήχου."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
 msgid "Webcam device firmware."
 msgstr "Λογισμικό συσκευής κάμερας web."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
 msgid "Touchscreen device firmware."
 msgstr "Λογισμικό συσκευής οθόνης αφής."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
 msgid "Printer drivers and support packages."
 msgstr "Προγράμματα οδήγησης εκτυπωτή και πακέτα υποστήριξης."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
 msgid "3D printer firmware."
 msgstr "Firmware 3D εκτυπωτή."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 105
 msgid "Scanner drivers and SANE backends."
 msgstr "Προγράμματα οδήγησης σαρωτή και συστήματα υποστήριξης SANE."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 msgid "Additional firmware packages."
 msgstr "Επιπλέον πακέτα firmware."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 218
 msgid "Categories"
 msgstr "Κατηγορίες"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 msgid "Home"
 msgstr "Αρχική"
+
 # File: usr/share/big-driver-manager/ui/window.py, line: 89
 msgid "Kernel"
 msgstr "Πυρήνας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 191
 msgid "Video"
 msgstr "Βίντεο"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 msgid "A system reboot is recommended to apply changes."
 msgstr "Συνιστάται επανεκκίνηση συστήματος για την εφαρμογή αλλαγών."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 269
 msgid "Content"
 msgstr "Περιεχόμενο"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 328
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 623
 msgid "Showing drivers detected as compatible with your computer"
 msgstr "Εμφάνιση οδηγών που ανιχνεύτηκαν ως συμβατοί με τον υπολογιστή σας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 327
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 329
 msgid "Show all drivers"
 msgstr "Εμφάνιση όλων των προγραμμάτων οδήγησης"
+
 # File: usr/share/big-driver-manager/ui/window.py, line: 129
 msgid "Menu"
 msgstr "Μενού"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 318
 msgid "Application menu"
 msgstr "Μενού εφαρμογής"
+
 # File: usr/share/big-driver-manager/ui/window.py, line: 134
 msgid "About"
 msgstr "Σχετικά"
+
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid "Hardware detection failed. Check system logs for details."
 msgstr ""
 "Η ανίχνευση υλικού απέτυχε. Ελέγξτε τα αρχεία καταγραφής συστήματος για "
 "λεπτομέρειες."
+
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
 msgid "Hardware detection for this category failed. Try refreshing later."
 msgstr ""
 "Η ανίχνευση υλικού για αυτή την κατηγορία απέτυχε. Δοκιμάστε να ανανεώσετε "
 "αργότερα."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #, python-brace-format
 msgid "Obsolete kernel: {} — no longer receives security updates"
 msgstr "Παρωχημένος πυρήνας: {} — δεν λαμβάνει πλέον ενημερώσεις ασφαλείας"
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 538
 msgid "Manage"
 msgstr "Διαχειρίζομαι"
+
 #
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
@@ -1844,359 +2271,448 @@ msgstr ""
 "Η βάση δεδομένων πακέτων ενημερώθηκε τελευταία φορά {} ημέρες πριν. "
 "Ενημερώστε το σύστημά σας πριν εγκαταστήσετε τους οδηγούς για να αποφύγετε "
 "αποτυχίες λήψης και ελλείποντα πακέτα."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 msgid "Showing all drivers, including incompatible ones"
 msgstr ""
 "Εμφάνιση όλων των προγραμμάτων οδήγησης, συμπεριλαμβανομένων των μη συμβατών"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 173
 msgid "Printing driver for"
 msgstr "Πρόγραμμα οδήγησης εκτύπωσης για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 174
 msgid "Printer driver for"
 msgstr "Πρόγραμμα οδήγησης εκτυπωτή για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 175
 msgid "Driver for the"
 msgstr "Πρόγραμμα οδήγησης για το"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 176
 msgid "Driver for"
 msgstr "Πρόγραμμα οδήγησης για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 177
 msgid "Driver set (printing and scanning) for"
 msgstr "Σετ προγραμμάτων οδήγησης (εκτύπωση και σάρωση) για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 178
 msgid "Complete stand-alone driver set (printing and scanning) for"
 msgstr "Πλήρες αυτόνομο σετ προγραμμάτων οδήγησης (εκτύπωση και σάρωση) για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 179
 msgid "LPR and CUPS driver for the"
 msgstr "Πρόγραμμα οδήγησης LPR και CUPS για το"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 180
 msgid "LPR and CUPS driver for"
 msgstr "Πρόγραμμα οδήγησης LPR και CUPS για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 181
 msgid "LPR driver and CUPS wrapper for"
 msgstr "Πρόγραμμα οδήγησης LPR και περιτύλιγμα CUPS για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 182
 msgid "LPR driver for"
 msgstr "Πρόγραμμα οδήγησης LPR για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 183
 msgid "CUPS wrapper for"
 msgstr "Περιτύλιγμα CUPS για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 184
 msgid "CUPS driver for the"
 msgstr "Ο οδηγός CUPS για το"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 185
 msgid "CUPS driver for"
 msgstr "Ο οδηγός CUPS για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 186
 msgid "CUPS and LPR drivers for the"
 msgstr "Οδηγοί CUPS και LPR για το"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 187
 msgid "CUPS printer driver"
 msgstr "Οδηγός εκτυπωτή CUPS"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 188
 msgid "CUPS driver"
 msgstr "Οδηγός CUPS"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 189
 msgid "color multifunction printer"
 msgstr "έγχρωμος πολυλειτουργικός εκτυπωτής"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 190
 msgid "multifunction printer"
 msgstr "πολυλειτουργικός εκτυπωτής"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 191
 msgid "ink tank multifunction printer"
 msgstr "πολυλειτουργικός εκτυπωτής με δοχείο μελάνης"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 192
 msgid "Wi-Fi multifunction printer"
 msgstr "πολυλειτουργικός εκτυπωτής Wi-Fi"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 193
 msgid "color laser printer"
 msgstr "έγχρωμος εκτυπωτής λέιζερ"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 194
 msgid "laser printer driver"
 msgstr "οδηγός εκτυπωτή λέιζερ"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 195
 msgid "laser printer"
 msgstr "εκτυπωτής λέιζερ"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 196
 msgid "inkjet printer driver"
 msgstr "οδηγός εκτυπωτή inkjet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 197
 msgid "inkjet printer"
 msgstr "εκτυπωτής inkjet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 198
 msgid "inkjet printers"
 msgstr "εκτυπωτές inkjet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 199
 msgid "label and receipt printer"
 msgstr "εκτυπωτής ετικετών και αποδείξεων"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 200
 msgid "label printer"
 msgstr "εκτυπωτής ετικετών"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 201
 msgid "laser printers"
 msgstr "εκτυπωτές λέιζερ"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 202
 msgid "printer communication"
 msgstr "επικοινωνία εκτυπωτή"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 203
 msgid "print system integration"
 msgstr "ενσωμάτωση συστήματος εκτύπωσης"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 204
 msgid "series inkjet printer"
 msgstr "σειρά εκτυπωτών inkjet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 205
 msgid "multifunction inkjet"
 msgstr "πολυλειτουργικός εκτυπωτής inkjet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 206
 msgid "(printer communication)"
 msgstr "(επικοινωνία εκτυπωτή)"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 207
 msgid "(print system integration)"
 msgstr "(ενσωμάτωση συστήματος εκτύπωσης)"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 208
 msgid "Wi-Fi driver for"
 msgstr "οδηγός Wi-Fi για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 209
 msgid "DKMS driver for"
 msgstr "οδηγός DKMS για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 210
 msgid "Wired network driver for"
 msgstr "οδηγός ενσύρματου δικτύου για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 211
 msgid "Bluetooth driver for"
 msgstr "οδηγός Bluetooth για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 212
 msgid "Kernel driver module for"
 msgstr "μονάδα οδηγού πυρήνα για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 213
 msgid "wireless driver"
 msgstr "ασύρματος οδηγός"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 214
 msgid "wireless adapters"
 msgstr "ασύρματοι προσαρμογείς"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 215
 msgid "USB wireless adapters"
 msgstr "ασύρματοι προσαρμογείς USB"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 216
 msgid "USB dual-band wireless adapters"
 msgstr "ασύρματοι προσαρμογείς USB διπλής ζώνης"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 217
 msgid "USB tri-band wireless adapters"
 msgstr "ασύρματοι προσαρμογείς USB τριπλής ζώνης"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 218
 msgid "Ethernet driver"
 msgstr "οδηγός Ethernet"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 219
 msgid "monitor mode & frame injection support"
 msgstr "υποστήριξη λειτουργίας παρακολούθησης & εισαγωγής πλαισίων"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 220
 msgid "Firmware for"
 msgstr "Firmware για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 221
 msgid "Bluetooth firmware for"
 msgstr "Firmware Bluetooth για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 222
 msgid "Firmware files for"
 msgstr "αρχεία Firmware για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 223
 msgid "digital TV (DVB) receivers"
 msgstr "ψηφιακοί δέκτες TV (DVB)"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 224
 msgid "digital TV (DVB) tuners"
 msgstr "ψηφιακοί δέκτες TV (DVB)"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 225
 msgid "digital TV tuner"
 msgstr "ψηφιακός δέκτης TV"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 226
 msgid "wireless networking chips"
 msgstr "τσιπ ασύρματου δικτύου"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 227
 msgid "Wi-Fi chips"
 msgstr "τσιπ Wi-Fi"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 228
 msgid "wireless cards"
 msgstr "ασύρματες κάρτες"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 229
 msgid "network adapters"
 msgstr "προσαρμογείς δικτύου"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 230
 msgid "touchscreen controllers"
 msgstr "ελεγκτές οθόνης αφής"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 231
 msgid "USB audio interfaces"
 msgstr "διεπαφές ήχου USB"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 232
 msgid "USB logic analyzers"
 msgstr "αναλυτές λογικής USB"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 233
 msgid "USB MIDI interfaces"
 msgstr "διεπαφές MIDI USB"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 234
 msgid "controller cards"
 msgstr "κάρτες ελεγκτή"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 235
 msgid "controller chips"
 msgstr "τσιπ ελεγκτή"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 236
 msgid "SCSI controllers"
 msgstr "ελεγκτές SCSI"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 237
 msgid "legacy devices only"
 msgstr "μόνο παλαιές συσκευές"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 238
 msgid "stable tested version"
 msgstr "σταθερή δοκιμασμένη έκδοση"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 239
 msgid "latest release"
 msgstr "τελευταία έκδοση"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 240
 msgid "Scanner software for"
 msgstr "Λογισμικό σαρωτή για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 241
 msgid "Scanner driver for"
 msgstr "Οδηγός σαρωτή για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 242
 msgid "SANE scanner driver for"
 msgstr "Οδηγός σαρωτή SANE για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 243
 msgid "scanner plugin for Image Scan!"
 msgstr "πρόσθετο σαρωτή για το Image Scan!"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 244
 msgid "Image Scan! plugin for"
 msgstr "Πρόσθετο Image Scan! για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 245
 msgid "Image Scan! frontend for"
 msgstr "Πρόσοψη Image Scan! για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 246
 msgid "Data files required by"
 msgstr "Αρχεία δεδομένων που απαιτούνται από"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 247
 msgid "scanners and multifunction printers"
 msgstr "σαρωτές και πολυλειτουργικούς εκτυπωτές"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 248
 msgid "multifunction printers"
 msgstr "πολυλειτουργικούς εκτυπωτές"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 249
 msgid "flatbed and all-in-one scanners"
 msgstr "σαρωτές επιπέδου και all-in-one"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 250
 msgid "USB and network scanners"
 msgstr "σαρωτές USB και δικτύου"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 251
 msgid "network and USB scanners"
 msgstr "σαρωτές δικτύου και USB"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 252
 msgid "portable document scanner"
 msgstr "φορητός σαρωτής εγγράφων"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 253
 msgid "one-touch scanning"
 msgstr "σάρωση με ένα άγγιγμα"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 254
 msgid "scanner panel button"
 msgstr "κουμπί πίνακα σαρωτή"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 255
 msgid "printers, supplied by"
 msgstr "εκτυπωτές, παρεχόμενοι από"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 256
 msgid "PPD files for"
 msgstr "αρχεία PPD για"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 257
 msgid "Administration tool for managing"
 msgstr "Εργαλείο διαχείρισης για τη διαχείριση"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 258
 msgid "printers on your network"
 msgstr "εκτυπωτές στο δίκτυό σας"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 259
 msgid "(proprietary)"
 msgstr "(ιδιόκτητο)"
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 msgid ""
@@ -2206,6 +2722,7 @@ msgstr ""
 "Αν το Wi-Fi σας λειτουργεί ήδη, ο ενσωματωμένος οδηγός πυρήνα είναι συνήθως "
 "η καλύτερη επιλογή. Εγκαταστήστε μια εναλλακτική μόνο αν αντιμετωπίζετε "
 "προβλήματα σύνδεσης."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 msgid ""
@@ -2214,6 +2731,7 @@ msgid ""
 msgstr ""
 "Οι ενσύρματοι προσαρμογείς δικτύου σχεδόν πάντα λειτουργούν αμέσως. Ένας "
 "επιπλέον οδηγός χρειάζεται μόνο για πολύ νέο ή σπάνιο υλικό."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 msgid ""
@@ -2223,6 +2741,7 @@ msgstr ""
 "Ορισμένοι προσαρμογείς Bluetooth χρειάζονται επιπλέον firmware για να "
 "λειτουργήσουν. Αν η σύζευξη αποτύχει, η εγκατάσταση του firmware για τον "
 "προσαρμογέα σας μπορεί να λύσει το πρόβλημα."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 msgid ""
@@ -2231,6 +2750,7 @@ msgid ""
 msgstr ""
 "Οι ψηφιακοί δέκτες TV συνήθως χρειάζονται συγκεκριμένο firmware. Χωρίς αυτό, "
 "η συσκευή δεν θα αναγνωρίζεται από το σύστημα."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 msgid ""
@@ -2240,6 +2760,7 @@ msgstr ""
 "Οι περισσότερες συσκευές ήχου λειτουργούν με το ALSA που είναι ενσωματωμένο "
 "στον πυρήνα. Επιπλέον firmware χρειάζεται μόνο για συγκεκριμένα USB ηχητικά "
 "interfaces."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 msgid ""
@@ -2248,6 +2769,7 @@ msgid ""
 msgstr ""
 "Οι περισσότερες κάμερες web λειτουργούν αυτόματα. Επιπλέον firmware μπορεί "
 "να βελτιώσει την ποιότητα εικόνας ή να ενεργοποιήσει πρόσθετες λειτουργίες."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 msgid ""
@@ -2256,6 +2778,7 @@ msgid ""
 msgstr ""
 "Αν η οθόνη αφής σας δεν ανταποκρίνεται, η εγκατάσταση του αντίστοιχου "
 "firmware συνήθως το διορθώνει."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 msgid ""
@@ -2266,6 +2789,7 @@ msgstr ""
 "Οι οδηγοί εκτυπωτή επιτρέπουν στο σύστημα να επικοινωνεί με το μοντέλο σας. "
 "Αν ο εκτυπωτής ανιχνεύτηκε στο δίκτυό σας ή μέσω USB, συνιστάται η "
 "εγκατάσταση του αντίστοιχου οδηγού."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 msgid ""
@@ -2274,6 +2798,7 @@ msgid ""
 msgstr ""
 "Το firmware εκτυπωτή 3D επιτρέπει την επικοινωνία μεταξύ του slicer και του "
 "υλικού του εκτυπωτή."
+
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 msgid ""
@@ -2282,14 +2807,17 @@ msgid ""
 msgstr ""
 "Οι οδηγοί σαρωτή (SANE backends) επιτρέπουν στις εφαρμογές σάρωσης να "
 "επικοινωνούν με το μοντέλο του σαρωτή σας."
+
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Επιπλέον πακέτα υλικολογισμικού για εξειδικευμένο υλικό."
+
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Πακέτο"
+
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
@@ -2297,18 +2825,22 @@ msgstr "Πακέτο"
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Κατάσταση"
+
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Ανιχνεύθηκε και εγκαταστάθηκε"
+
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Ανιχνεύθηκε — δεν έχει εγκατασταθεί ακόμη"
+
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Διαθέσιμο στο αποθετήριο"
+
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
