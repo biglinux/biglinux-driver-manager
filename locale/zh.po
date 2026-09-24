@@ -115,8 +115,8 @@ msgid ""
 "Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by "
 "'sudo pacman -Syyu'."
 msgstr ""
-"冲突阻止操作完成。<NL> 建议：清理缓存并使用 'sudo pacman -Scc'，然后执行 "
-"'sudo pacman -Syyu' 更新。"
+"冲突阻止操作完成。\n"
+"建议：清理缓存并使用 'sudo pacman -Scc'，然后执行 'sudo pacman -Syyu' 更新。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
@@ -125,8 +125,8 @@ msgid ""
 "Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' "
 "and resolve the conflict."
 msgstr ""
-"系统中已存在此软件包的一些文件。<NL> 建议：使用 'pacman -Qo <file_path>' 检查"
-"文件所属的软件包并解决冲突。"
+"系统中已存在此软件包的一些文件。\n"
+"建议：使用 'pacman -Qo <file_path>' 检查文件所属的软件包并解决冲突。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
@@ -134,7 +134,8 @@ msgid ""
 "Required dependencies could not be resolved.\n"
 "Suggestion: Update the full system first with 'sudo pacman -Syu'."
 msgstr ""
-"无法解析所需依赖项。<NL> 建议：先使用 'sudo pacman -Syu' 更新整个系统。"
+"无法解析所需依赖项。\n"
+"建议：先使用 'sudo pacman -Syu' 更新整个系统。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 342
@@ -143,8 +144,8 @@ msgid ""
 "Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring "
 "manjaro-keyring'."
 msgstr ""
-"无法验证软件包签名。<NL> 建议：使用 'sudo pacman -S archlinux-keyring "
-"manjaro-keyring' 更新密钥环。"
+"无法验证软件包签名。\n"
+"建议：使用 'sudo pacman -S archlinux-keyring manjaro-keyring' 更新密钥环。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
@@ -153,8 +154,9 @@ msgid ""
 "If no other package manager is running, remove the lock with 'sudo rm /var/"
 "lib/pacman/db.lck'."
 msgstr ""
-"软件包数据库被另一个进程锁定。<NL> 如果没有其他包管理器运行，请使用 'sudo "
-"rm /var/lib/pacman/db.lck' 删除锁文件。"
+"软件包数据库被另一个进程锁定。\n"
+"如果没有其他包管理器运行，请使用 'sudo rm /var/lib/pacman/db.lck' 删除锁文"
+"件。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
@@ -162,8 +164,8 @@ msgid ""
 "Not enough disk space to complete the operation.\n"
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
-"磁盘空间不足，无法完成操作。<NL> 建议：通过运行 'sudo pacman -Scc' 清理软件包"
-"缓存以释放空间。"
+"磁盘空间不足，无法完成操作。\n"
+"建议：通过运行 'sudo pacman -Scc' 清理软件包缓存以释放空间。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
@@ -172,8 +174,8 @@ msgid ""
 "Suggestion: Check your internet connection. If the problem persists, try "
 "updating your mirror list."
 msgstr ""
-"无法下载所需文件。<NL> 建议：检查您的网络连接。如果问题仍然存在，尝试更新镜像"
-"列表。"
+"无法下载所需文件。\n"
+"建议：检查您的网络连接。如果问题仍然存在，尝试更新镜像列表。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
@@ -181,7 +183,8 @@ msgid ""
 "A downloaded package is corrupted.\n"
 "Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
 msgstr ""
-"下载的软件包已损坏。<NL> 建议：运行 'sudo pacman -Scc' 清理缓存后重试。"
+"下载的软件包已损坏。\n"
+"建议：运行 'sudo pacman -Scc' 清理缓存后重试。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 391
@@ -1264,13 +1267,17 @@ msgstr "正在准备安装..."
 msgid ""
 "Kernel installed successfully.\n"
 "You may need to reboot to use it."
-msgstr "内核安装成功。<NL>您可能需要重启以使用它。"
+msgstr ""
+"内核安装成功。\n"
+"您可能需要重启以使用它。"
 
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
 msgid ""
 "Kernel installation failed.\n"
 "Check the terminal output for details."
-msgstr "内核安装失败。<NL>请检查终端输出以获取详细信息。"
+msgstr ""
+"内核安装失败。\n"
+"请检查终端输出以获取详细信息。"
 
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
 msgid "Cannot Remove Running Kernel"
@@ -1288,7 +1295,8 @@ msgid ""
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ 这是您的最后一个备份内核。如果正在运行的内核失败，您将没有备用内核。<NL> \n"
+"⚠ 这是您的最后一个备份内核。如果正在运行的内核失败，您将没有备用内核。\n"
+"\n"
 "以下软件包将被移除："
 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1308,7 +1316,9 @@ msgstr "内核删除成功。"
 msgid ""
 "Kernel removal failed.\n"
 "Check the terminal output for details."
-msgstr "内核移除失败。<NL> 请检查终端输出以获取详细信息。"
+msgstr ""
+"内核移除失败。\n"
+"请检查终端输出以获取详细信息。"
 
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 msgid "Remove Obsolete Kernels"
@@ -1324,7 +1334,8 @@ msgid ""
 "\n"
 "These kernels no longer receive security updates."
 msgstr ""
-"是否移除所有过时的内核？<NL> \n"
+"是否移除所有过时的内核？\n"
+"\n"
 "<b>{}</b>\n"
 "\n"
 "这些内核已不再接收安全更新。"
@@ -1828,7 +1839,8 @@ msgid ""
 "\n"
 "A system reboot may be required after installation."
 msgstr ""
-"安装 <b>{}</b> ({} 驱动程序)？<NL> \n"
+"安装 <b>{}</b> ({} 驱动程序)？\n"
+"\n"
 "安装后可能需要重启系统。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1845,8 +1857,10 @@ msgid ""
 "The current driver will be replaced automatically.\n"
 "A system reboot will be required."
 msgstr ""
-"从 <b>{}</b> 切换到 <b>{}</b>？<NL> \n"
-"当前驱动程序将被自动替换。<NL> 需要重启系统。"
+"从 <b>{}</b> 切换到 <b>{}</b>？\n"
+"\n"
+"当前驱动程序将被自动替换。\n"
+"需要重启系统。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1027
@@ -1867,7 +1881,8 @@ msgid ""
 "\n"
 "A system reboot may be required after removal."
 msgstr ""
-"移除 <b>{}</b>？<NL> \n"
+"移除 <b>{}</b>？\n"
+"\n"
 "移除后可能需要重启系统。"
 
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
@@ -1896,14 +1911,17 @@ msgid ""
 "\n"
 "A system reboot may be required."
 msgstr ""
-"{} 已成功 {}！<NL> \n"
+"{} 已成功 {}！\n"
+"\n"
 "可能需要重启系统。"
 
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid ""
 "Driver operation failed.\n"
 "Check the terminal output for details."
-msgstr "驱动操作失败。<NL> 请检查终端输出以获取详细信息。"
+msgstr ""
+"驱动操作失败。\n"
+"请检查终端输出以获取详细信息。"
 
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1146
@@ -1923,7 +1941,8 @@ msgid ""
 "\n"
 "{}"
 msgstr ""
-"安装 <b>{}</b>？<NL> \n"
+"安装 <b>{}</b>？\n"
+"\n"
 "{}"
 
 #
