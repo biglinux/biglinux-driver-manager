@@ -7,95 +7,77 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-23 23:51-0300\n"
 "Language-Team: Icelandic <is@li.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 #
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 128
 msgid "Installing packages"
 msgstr "Að setja upp pakka"
-
 #
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 145
 msgid "Removing packages"
 msgstr "Að fjarlægja pakka"
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 137
 #, python-brace-format
 msgid "Database locked. Retrying in {} seconds..."
 msgstr "Gagnagrunnur læstur. Reynir aftur eftir {} sekúndur..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 142
 #, python-brace-format
 msgid "Waiting {} s before retry..."
 msgstr "Bíð eftir {} s áður en reynt er aftur..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 147
 #, python-brace-format
 msgid "Retry attempt {} of {}..."
 msgstr "Endurtekningartilraun {} af {}..."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 105
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 108
 #, python-brace-format
 msgid "Starting {}..."
 msgstr "Byrjar {}..."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 106
 #, python-brace-format
 msgid "Command: {}"
 msgstr "Skipta: {}"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #, python-brace-format
 msgid "Error: {}"
 msgstr "Villa: {}"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 333
 msgid "Operation cancelled by user."
 msgstr "Notandi hætti við aðgerð."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 160
 #, python-brace-format
 msgid "Still working... ({:.0%} complete)"
 msgstr "Vinnur enn... ({:.0%} lokið)"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 177
 msgid "Operation cancelled"
 msgstr "Aðgerð aflýst"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 178
 msgid "Operation was cancelled."
 msgstr "Aðgerð var aflýst."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 183
 #, python-brace-format
 msgid "{}  complete!"
 msgstr "{} lokið!"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #, python-brace-format
 msgid "{}  completed successfully."
 msgstr "{} lokið."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 193
 #, python-brace-format
 msgid "{}  failed."
 msgstr "{} misheppnað."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 197
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
 msgstr "{} mistókst (útgöngukóði: {})"
-
 #
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 366
 msgid ""
@@ -108,7 +90,6 @@ msgstr ""
 "tilheyrt óvirkum geymslu (svo sem multilib), eða pakkagagnagrunnurinn gæti "
 "verið úreltur.  \n"
 "Tillaga: Uppfærðu allt kerfið með 'sudo pacman -Syu' og reyndu aftur."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 319
 msgid ""
@@ -119,7 +100,6 @@ msgstr ""
 "Árekstur kom í veg fyrir að aðgerðin kláraðist.\n"
 "Tillaga: Hreinsaðu skyndiminnið og uppfærðu með 'sudo pacman -Scc' og síðan "
 "'sudo pacman -Syyu'."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 327
 msgid ""
@@ -130,7 +110,6 @@ msgstr ""
 "Sumir skrár úr þessum pakka eru þegar til á kerfinu.\n"
 "Tillaga: Athugaðu hvaða pakki á skrána með 'pacman -Qo <file_path>' og "
 "leystu áreksturinn."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 335
 msgid ""
@@ -139,7 +118,6 @@ msgid ""
 msgstr ""
 "Nauðsynlegar háðar einingar gátu ekki verið leystar.\n"
 "Tillaga: Uppfærðu allt kerfið fyrst með 'sudo pacman -Syu'."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 342
 msgid ""
@@ -150,7 +128,6 @@ msgstr ""
 "Undirskrift pakkans gat ekki verið staðfest.\n"
 "Tillaga: Uppfærðu lykilhringi með 'sudo pacman -S archlinux-keyring manjaro-"
 "keyring'."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 350
 msgid ""
@@ -161,7 +138,6 @@ msgstr ""
 "Pakkagagnagrunnurinn er læstur af annarri keyrslu.\n"
 "Ef enginn annar pakkastjóri er í gangi, fjarlægðu læsinguna með 'sudo rm /"
 "var/lib/pacman/db.lck'."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 358
 msgid ""
@@ -171,7 +147,6 @@ msgstr ""
 "Ekki næg pláss á disknum til að klára aðgerðina.\n"
 "Tillaga: Losaðu pláss með því að hreinsa pakkaskyndiminnið með 'sudo pacman "
 "-Scc'."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 366
 msgid ""
@@ -182,7 +157,6 @@ msgstr ""
 "Gat ekki sótt nauðsynleg skrár.\n"
 "Tillaga: Athugaðu nettengingu þína. Ef vandamálið heldur áfram, reyndu að "
 "uppfæra spegillista þinn."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 374
 msgid ""
@@ -191,41 +165,33 @@ msgid ""
 msgstr ""
 "Niðurhalaður pakki er skemmdur.\n"
 "Tillaga: Hreinsaðu skyndiminnið með 'sudo pacman -Scc' og reyndu aftur."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 391
 msgid "Generating GRUB configuration..."
 msgstr "Býr til GRUB stillingar..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 392
 msgid "Running post-transaction hooks..."
 msgstr "Keyri eftir-viðskipta kroka..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 msgid "Installing packages..."
 msgstr "Set upp pakka..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 394
 msgid "Removing packages..."
 msgstr "Fjarlægja pakka..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 395
 msgid "Checking for file conflicts..."
 msgstr "Leitar að skráarárekstrum..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 396
 msgid "Checking dependencies..."
 msgstr "Athugar ósjálfstæði..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/base_manager.py,
 # line: 400
 msgid "Synchronizing package databases..."
 msgstr "Samstilla pakkagagnagrunna..."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -234,54 +200,44 @@ msgstr "Samstilla pakkagagnagrunna..."
 # line: 423
 msgid "Downloading packages..."
 msgstr "Sæki pakkana..."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 200
 msgid "Please wait..."
 msgstr "Vinsamlegast bíddu..."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 113
 msgid "Continue the installation in the pamac window that was opened."
 msgstr "Halda áfram uppsetningu í pamac glugganum sem opnaðist."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Installing {}"
 msgstr "Set upp {}"
-
 #
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 105
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
 msgstr "Að setja upp byggingarforsendur: {}"
-
 #
 # File: usr/share/big-driver-manager/core/driver_installer.py, line: 112
 msgid "Installing build prerequisites"
 msgstr "Að setja upp byggingarforkröfur"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #, python-brace-format
 msgid "Removing {}"
 msgstr "Er að fjarlægja {}"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/core/driver_installer.py, line: 99
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
 msgstr "pamac-installer fannst ekki. Ekki er hægt að setja upp AUR pakkann {}."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/driver_installer.py, line: 145
 msgid ""
 "Continue the installation in the pamac window that was opened. This dialog "
 "is only monitoring the result."
 msgstr "Fyrirgefðu, ég get ekki aðstoðað við það."
-
 #, python-brace-format
 msgid "{} is not available in the configured repositories."
 msgstr "{} er ekki tiltækt í stilltum geymslum."
-
 #, python-brace-format
 msgid ""
 "Your current kernel uses driver modules that are not available for linux-big "
@@ -297,105 +253,85 @@ msgstr ""
 "\n"
 "Án þeirra myndi linux-big ræsast án þessara rekla (til dæmis án NVIDIA-"
 "reklsins), svo hann er ekki í boði í bili."
-
 msgid ""
 "The linux-big modules for this version are still being published. Try again "
 "in a few minutes."
 msgstr ""
 "Reklaeiningar linux-big fyrir þessa útgáfu eru enn í útgáfuferli. Reyndu "
 "aftur eftir nokkrar mínútur."
-
 msgid "pacman reported:"
 msgstr "pacman skilaði:"
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 116
 #, python-brace-format
 msgid "Driver not found: {}"
 msgstr "Stýrir fannst ekki: {}"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
 #, python-brace-format
 msgid "Applying {} driver..."
 msgstr "Beiti {} stýri..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
 #, python-brace-format
 msgid "Starting {} driver installation..."
 msgstr "Ræsir uppsetningu bílstjóra fyrir {}..."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 #, python-brace-format
 msgid "❌ Error: {}"
 msgstr "❌ Villa: {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 237
 msgid "Failed to remove conflicting packages."
 msgstr "Mistókst að fjarlægja pakka sem stangast á."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #, python-brace-format
 msgid "Removing conflicts: {}"
 msgstr "Fjarlægi árekstra: {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 205
 msgid "Removing conflicting packages..."
 msgstr "Fjarlægi árekstrarpakka..."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 253
 msgid "Removing conflicting packages"
 msgstr "Að fjarlægja árekstrarpakka"
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 161
 msgid "Checking for conflicting packages..."
 msgstr "Athugar hvort pakkar stangist á..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 178
 #, python-brace-format
 msgid "Checking {} packages..."
 msgstr "Athugar {} pakka..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 191
 msgid "❌ No packages available to install."
 msgstr "❌ Engir pakkar í boði til að setja upp."
-
 # File: big-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py,
 # line: 187
 #, python-brace-format
 msgid "⚠️ Package {} not available, skipping..."
 msgstr "⚠️ Pakki {} ekki í boði, sleppt..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Installing: {}"
 msgstr "Set upp: {}"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 419
 #, python-brace-format
 msgid "Installing {} driver..."
 msgstr "Setur upp {} bílstjóri..."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 msgid "Driver applied successfully!"
 msgstr "Stýrikerfi beitt með góðum árangri!"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #, python-brace-format
 msgid "✅ {} driver applied successfully!"
 msgstr "✅ {} stýrikerfi beitt með góðum árangri!"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/core/mesa_manager.py, line: 366
 #, python-brace-format
 msgid "Installing {} driver"
 msgstr "Installing {} drifta"
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -405,64 +341,52 @@ msgstr "Installing {} drifta"
 #, python-brace-format
 msgid "Remove the installed NVIDIA driver ({}) first."
 msgstr "Fjarlægðu fyrst uppsettan NVIDIA stýringarbúnað ({})."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 msgid "Completed"
 msgstr "Lokið"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 308
 msgid "Failed"
 msgstr "Mistókst"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 591
 msgid "Firmware available"
 msgstr "Fastbúnaður í boði"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 msgid "Printer driver available"
 msgstr "Prentara stýrir í boði"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 msgid "Scanner driver available"
 msgstr "Skanna stýrir í boði"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 227
 msgid "Driver available"
 msgstr "Stýrir í boði"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 102
 msgid "Open Driver Manager to review and install this firmware."
 msgstr "Opna Driftaumsjón til að skoða og setja upp þessa vélbúnaðar."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 103
 msgid "Open Driver Manager to review and install this driver."
 msgstr "Opnaðu Drifara Stjórnanda til að skoða og setja upp þennan drifara."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 132
 msgid "Driver Manager"
 msgstr "Drifta Stjórnandi"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 185
 msgid "Don't alert for this firmware again"
 msgstr "Ekki vara við þessari fastbúnaði aftur"
-
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 164
 # File: big-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py,
 # line: 166
 msgid "Don't alert for this device again"
 msgstr "Ekki minna mig á þennan búnað aftur"
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -472,21 +396,17 @@ msgstr "Ekki minna mig á þennan búnað aftur"
 # File: usr/share/big-driver-manager/ui/window.py, line: 463
 msgid "Close"
 msgstr "Loka"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/udev-driver-dialog.py, line: 205
 msgid "Open Driver Manager"
 msgstr "Opna Drifara Stjórnanda"
-
 #
 # File: usr/share/big-driver-manager/ui/application.py, line: 80
 msgid "Open the page of a driver package and offer to install it"
 msgstr "Opnaðu síðu ökumannapakkans og bjóðaðu að setja það upp."
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 206
 msgid "Error"
 msgstr "Villa"
-
 #
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 23
 msgid ""
@@ -497,12 +417,10 @@ msgstr ""
 "Þetta pakki er ekki í opinberu geymslunum. Það verður byggt úr AUR á "
 "tölvunni þinni, sem getur tekið nokkrar mínútur og er ekki skoðað af "
 "dreifingunni."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Install {}?"
 msgstr "Setja upp {}?"
-
 #
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 61
 #, python-brace-format
@@ -514,66 +432,54 @@ msgstr ""
 "Tæki þitt er þegar í notkun með innbyggða drifinu {}, sem er mælt með. Settu "
 "aðeins upp þetta þriðja aðila drif til að komast hjá ákveðnu vandamáli — það "
 "gæti verið í mótsögn við innbyggða drifið."
-
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 msgid "Loading..."
 msgstr "Hlaða..."
-
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 56
 msgid "Loading"
 msgstr "Hleðsla"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/base_page.py, line:
 # 55
 msgid "Still loading… Check your network connection."
 msgstr "Enn að hlaða... Athugaðu nettenginguna þína."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 67
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 277
 msgid "Other"
 msgstr "Annað"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 128
 msgid "Search drivers..."
 msgstr "Leitaðu að ökumönnum..."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 184
 msgid "Search drivers"
 msgstr "Leita að ökumönnum"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 159
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/category_page.py, line: 162
 msgid "Searching for printers on the network"
 msgstr "Leita að prenturum á netinu"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 160
 msgid "Searching for printers on the network…"
 msgstr "Leita að prenturum á netinu…"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 162
 msgid "No more automatically detected compatible drivers in this category."
 msgstr "Ekki fleiri sjálfkrafa greindir samhæfðir ökumenn í þessum flokki."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 211
 msgid "Show drivers without detected compatibility"
 msgstr "Sýna stýringar án greindrar samhæfis"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 187
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 260
 msgid "No drivers needed for this category"
 msgstr "Engin stýritæki nauðsynleg fyrir þennan flokk"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 191
 msgid ""
@@ -582,29 +488,24 @@ msgid ""
 msgstr ""
 "Engin stýritæki í þessum flokki fundust sjálfkrafa sem samhæf við vélbúnað "
 "þinn."
-
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 278
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
 msgstr "Aðlögun {} — starfandi (drif {} )"
-
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 279
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 526
 msgid "unknown"
 msgstr "óþekkt"
-
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 287
 msgid "Cable connected"
 msgstr "Snúru tengd"
-
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 291
 msgid "Interface disabled"
 msgstr "Viðmót óvirkt"
-
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 294
 msgid ""
@@ -613,19 +514,16 @@ msgid ""
 msgstr ""
 "Engin snúru eða tengingu fundið. Athugaðu snúruna og rútann/switch portinn — "
 "engin auka drif er nauðsynleg."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 238
 msgid "Detection Error"
 msgstr "Uppgötvunarvilla"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 264
 msgid ""
 "No drivers in this category were detected as necessary for your hardware."
 msgstr ""
 "Engin stýritæki í þessum flokki fundust sem nauðsynleg fyrir vélbúnað þinn."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
@@ -634,76 +532,62 @@ msgstr ""
 # manager/ui/drivers_hub_page.py, line: 283
 msgid "1 driver"
 msgstr "1 stýritæki"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 #, python-brace-format
 msgid "{} drivers"
 msgstr "{} ökumenn"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 341
 #, python-brace-format
 msgid "{} detected"
 msgstr "{} fundið"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #, python-brace-format
 msgid "{} installed"
 msgstr "{} uppsett"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 405
 msgid "Detected"
 msgstr "Greinist"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Installed"
 msgstr "Uppsett"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Not installed"
 msgstr "Ekki uppsett"
-
 #
 # File: usr/share/big-driver-manager/ui/category_page.py, line: 525
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
 msgstr "Ekki nauðsynlegt: tækið virkar þegar með innbyggðum drifurum {}"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 msgid "Remove"
 msgstr "Fjarlægja"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Install"
 msgstr "Settu upp"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Install {}"
 msgstr "Settu upp {}"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 #, python-brace-format
 msgid "Remove {}"
 msgstr "Fjarlægja {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/category_page.py,
 # line: 503
 #, python-brace-format
 msgid "{total} drivers · {detected} detected · {installed} installed"
 msgstr "{total} reklar · {detected} fundust · {installed} uppsettir"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 299
 msgid "Install Driver"
 msgstr "Settu upp bílstjóri"
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
@@ -714,29 +598,23 @@ msgstr "Settu upp bílstjóri"
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 218
 msgid "Cancel"
 msgstr "Hætta við"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 msgid "Remove Driver"
 msgstr "Fjarlægja bílstjóri"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 #, python-brace-format
 msgid "Remove {}?"
 msgstr "Fjarlægja {}?"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 msgid "Operation completed successfully."
 msgstr "Aðgerð lokið með góðum árangri."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid "Operation failed. Check logs for details."
 msgstr "Aðgerð mistókst. Athugaðu skráningar fyrir nánari upplýsingar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 70
 msgid "What is Kernel?"
 msgstr "Hvað er kjarni?"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 72
 msgid ""
@@ -746,11 +624,9 @@ msgid ""
 msgstr ""
 "Kjarninn er hjarta stýrikerfisins þíns. Það stjórnar örgjörvanum þínum, "
 "minni og öllum vélbúnaði. Flestir reklar eru þegar innbyggðir með kjarnanum."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 msgid "What are Drivers?"
 msgstr "Hvað eru drifarar?"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 85
 msgid ""
@@ -761,66 +637,54 @@ msgstr ""
 "Drifarar leyfa hverju tæki — eins og skjákorti, þráðlausu neti eða hljóði — "
 "að eiga samskipti við kerfið. Ef allt virkar þegar, þarftu líklega ekki að "
 "breyta neinu."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 112
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 115
 msgid "Checking your system"
 msgstr "Athugun kerfið þitt"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 113
 msgid "Checking your system…"
 msgstr "Athugar kerfið þitt..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 119
 msgid "Detecting hardware and installed drivers."
 msgstr "Uppgötvun vélbúnaðar og uppsettra rekla."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 149
 msgid "Recommended for your hardware"
 msgstr "Mælt með fyrir vélbúnaðinn þinn"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 msgid "Install recommended"
 msgstr "Setja upp ráðlagða"
-
 #
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 224
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
 msgstr "{} hefur enga drifara hlaðið. Samhæfður drifari er tiltækur: {}"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 msgid "Go to drivers"
 msgstr "Farðu til bílstjóra"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 376
 #, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
 msgstr "Öll {} ráðlögð myndbandsforrit fyrir {} vélbúnaðinn þinn eru uppsett."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 386
 #, python-brace-format
 msgid "{} of {} recommended packages are not installed."
 msgstr "{} af {} ráðlögðum pakkningum eru ekki uppsettar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 396
 #, python-brace-format
 msgid "Install all {} recommended"
 msgstr "Setja upp allar {} ráðlagðar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 457
 #, python-brace-format
 msgid "Already installed ({})"
 msgstr "Þegar uppsett ({})"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 469
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -829,17 +693,14 @@ msgstr "Þegar uppsett ({})"
 # 608
 msgid "Show installed packages"
 msgstr "Sýna uppsettar pakkningar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 605
 msgid "Hide installed packages"
 msgstr "Fela uppsettar pakkningar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 620
 msgid "Install Recommended Packages"
 msgstr "Setja upp ráðlagðar pakkningar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 623
 #, python-brace-format
@@ -851,32 +712,26 @@ msgstr ""
 "Setja upp <b>{}</b> pakkningar?\n"
 "\n"
 "{}"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Install All"
 msgstr "Setja upp allt"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 326
 #, python-brace-format
 msgid "Installing {} packages"
 msgstr "Set upp {} pakkningar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 653
 msgid "Installing recommended packages"
 msgstr "Set upp ráðlagða pakka"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 670
 msgid "All recommended packages installed successfully!"
 msgstr "Allir ráðlagðir pakkar settir upp með góðum árangri!"
-
 #
 # File: usr/share/big-driver-manager/ui/home_page.py, line: 541
 msgid "Package installation failed."
 msgstr "Pakkningarsins uppsetning mistókst."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -885,23 +740,19 @@ msgstr "Pakkningarsins uppsetning mistókst."
 # 713
 msgid "Downloading package..."
 msgstr "Sæki pakkann..."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line: 755
 #, python-brace-format
 msgid "Installed {}"
 msgstr "Installed {}"
-
 # File: usr/share/big-driver-manager/core/base_manager.py, line: 187
 #, python-brace-format
 msgid "{} installed successfully!"
 msgstr "{} settur upp með góðum árangri!"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 335
 #, python-brace-format
 msgid "Installation of {} failed."
 msgstr "Uppsetning á {} mistókst."
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
@@ -910,17 +761,14 @@ msgstr "Uppsetning á {} mistókst."
 # line: 347
 msgid "Warning"
 msgstr "Viðvörun"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/home_page.py, line:
 # 770
 msgid "Information"
 msgstr "Upplýsingar"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 26
 msgid "Kernels"
 msgstr "Kjarnar"
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 44
@@ -928,22 +776,18 @@ msgstr "Kjarnar"
 # manager/ui/drivers_hub_page.py, line: 36
 msgid "Video / GPU"
 msgstr "Myndband / GPU"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 37
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 38
 msgid "Ethernet"
 msgstr "Ethernet"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 39
 msgid "Bluetooth"
 msgstr "Bluetooth"
-
 # #-#-#-#-#  big-driver-manager.pot (big-driver-manager)  #-#-#-#-#
 #
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 68
@@ -951,42 +795,34 @@ msgstr "Bluetooth"
 # manager/ui/drivers_hub_page.py, line: 40
 msgid "DVB / TV"
 msgstr "DVB / TV"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 41
 msgid "Audio"
 msgstr "Hljóð"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 42
 msgid "Webcam"
 msgstr "Vefmyndavél"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 43
 msgid "Touchscreen"
 msgstr "Snertiskjár"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 44
 msgid "Printers"
 msgstr "Prentarar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 45
 msgid "3D Printers"
 msgstr "Skannar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/drivers_hub_page.py, line: 46
 msgid "Scanners"
 msgstr "Skannar"
-
 #
 # File: usr/share/big-driver-manager/ui/installed_page.py, line: 68
 msgid "Installed Drivers"
 msgstr "Uppsettar drifrar"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 75
 msgid ""
@@ -995,48 +831,39 @@ msgid ""
 msgstr ""
 "Allir reklar og fastbúnaður sem nú eru uppsettir á kerfinu þínu, flokkaðir "
 "eftir flokkum."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 104
 msgid "No extra drivers installed"
 msgstr "Engir aukareklarar uppsettir"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 106
 msgid "Your system is using only default drivers."
 msgstr "Kerfið þitt notar aðeins sjálfgefna rekla."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 279
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
 msgstr "{total} uppsettir reklar í {cats} flokkum"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 #, python-brace-format
 msgid "{n} installed"
 msgstr "{n} uppsett"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 311
 msgid "Running"
 msgstr "Í gangi"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/installed_page.py, line: 317
 msgid "MHWD driver"
 msgstr "MHWD rekill"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
 msgid "Active"
 msgstr "Virkur"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 40
 msgid "Stable, long-term support"
 msgstr "Stöðug, langtíma stuðningur"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 43
 msgid ""
@@ -1045,12 +872,10 @@ msgid ""
 msgstr ""
 "Fær öryggisuppfærslur í mörg ár. Besti kosturinn fyrir flesta notendur — "
 "áreiðanlegt og vel prófað."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 49
 msgid "Low-latency, real-time"
 msgstr "Lítil seinkun, rauntími"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 52
 msgid ""
@@ -1061,12 +886,10 @@ msgstr ""
 "Hannað fyrir hljóð-/myndvinnslu og verkefni sem krefjast nákvæmrar "
 "tímasetningar. Getur verið ósamrýmanlegt við suma stýritæki (t.d. NVIDIA). "
 "Mælt aðeins með fyrir háþróaða notendur."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 59
 msgid "Gaming & performance optimized"
 msgstr "Leikja- og afkastabætt"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 62
 msgid ""
@@ -1075,12 +898,10 @@ msgid ""
 msgstr ""
 "Stillt fyrir hraðari leiki og viðbragðsfljótari skjáborð. Frábært fyrir "
 "daglega notkun ef þú vilt auka afköst."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 70
 msgid "Performance optimized by CachyOS"
 msgstr "Frammistöðu hagrætt af CachyOS"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_card_builder.py, line: 73
 msgid ""
@@ -1089,14 +910,12 @@ msgid ""
 msgstr ""
 "EEVDF tímasetjari með LTO, AutoFDO og Propeller hagræðingum. Frábært fyrir "
 "spilun og svörun við skjáborði."
-
 msgid ""
 "BigCommunity kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
 "BigCommunity kjarni (big-kernel), fínstilltur fyrir leiki og almenna notkun "
 "(BORE, Clang ThinLTO, Intel lagfæringar)"
-
 msgid ""
 "Official kernel.org kernel with Manjaro's configuration and patches, plus "
 "the BORE scheduler, Clang + ThinLTO build and fixes for recent Intel GPUs "
@@ -1105,10 +924,8 @@ msgstr ""
 "Opinber kernel.org kjarni með stillingum og lagfæringum (patches) frá "
 "Manjaro, ásamt BORE verkefnastjóranum, Clang + ThinLTO smíði og lagfæringum "
 "fyrir nýlegar Intel skjákort (Arrow Lake / Meteor Lake)."
-
 msgid "Package from outside the official repositories"
 msgstr "Pakki utan opinberu gagnahirslanna"
-
 msgid ""
 "Installed from a package that the enabled repositories don't provide "
 "(community or self-built). It is updated by whoever provides the package, "
@@ -1117,88 +934,70 @@ msgstr ""
 "Sett upp úr pakka sem virku gagnahirslurnar bjóða ekki upp á (samfélag eða "
 "sjálfsmíðað). Það er uppfært af þeim sem býður pakkann, ekki af "
 "kerfisuppfærslum."
-
 msgid "Local"
 msgstr "Staðbundið"
-
 msgid "Installed manually, outside the package manager"
 msgstr "Sett upp handvirkt, utan pakkastjórans"
-
 msgid ""
 "This kernel was not installed by a package, so it can't be updated or "
 "removed here. Manage it the same way it was installed."
 msgstr ""
 "Þessi kjarni var ekki settur upp úr pakka, svo hann er ekki hægt að uppfæra "
 "eða fjarlægja hér. Sýslaðu með hann á sama hátt og hann var settur upp."
-
 msgid "Manual"
 msgstr "Handvirkt"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 68
 msgid "Latest features & drivers"
 msgstr "Nýjustu eiginleikar og ökumenn"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/ui/kernel_card_builder.py, line: 72
 msgid "Always up to date with the newest features and hardware support."
 msgstr "Alltaf uppfært með nýjustu eiginleikana og stuðning við vélbúnað."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 146
 msgid "Installed Kernels"
 msgstr "Uppsettir kjarnar"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 msgid "Remove all obsolete kernels"
 msgstr "Fjarlægðu alla úrelda kjarnana"
-
 # File: usr/share/big-driver-manager/ui/window.py, line: 89
 msgid "Kernel in use"
 msgstr "Kjarni í notkun"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 240
 msgid "In Use"
 msgstr "Í notkun"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 331
 msgid "Obsolete Kernels — Removal Recommended"
 msgstr "Úreltir kjarnar — Mælt er með að fjarlægja"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 360
 msgid "No longer receives security updates"
 msgstr "Fær ekki lengur öryggisuppfærslur"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #, python-brace-format
 msgid "Remove kernel {}"
 msgstr "Fjarlægja kjarna {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 416
 msgid "Last backup"
 msgstr ""
 "Mælt með fyrir flesta notendur. Þessir kjarnar fá öryggisuppfærslur í mörg "
 "ár og eru vandlega prófaðir."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 420
 msgid "At least one backup kernel must remain installed"
 msgstr ""
 "Mælt með fyrir flesta notendur. Þessir kjarnar fá öryggisuppfærslur í mörg "
 "ár og eru vandlega prófaðir."
-
 msgid "Not removable here"
 msgstr "Ekki hægt að fjarlægja hér"
-
 msgid ""
 "Installed outside the package manager. Remove its files from /boot and /usr/"
 "lib/modules the same way it was installed."
 msgstr ""
 "Sett upp utan pakkastjórans. Fjarlægðu skrár þess úr /boot og /usr/lib/"
 "modules á sama hátt og það var sett upp."
-
 msgid ""
 "The BigCommunity kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
@@ -1207,7 +1006,6 @@ msgstr ""
 "BigCommunity kjarninn (big-kernel), fínstilltur fyrir leiki og almenna "
 "notkun (BORE, Clang ThinLTO, Intel lagfæringar). Hann er settur upp samhliða "
 "núverandi kjarna."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 439
 msgid ""
@@ -1216,7 +1014,6 @@ msgid ""
 msgstr ""
 "Mælt með fyrir flesta notendur. Þessir kjarna fá öryggisuppfærslur í mörg ár "
 "og eru vandlega prófaðir."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 443
 msgid ""
@@ -1225,7 +1022,6 @@ msgid ""
 msgstr ""
 "Alltaf uppfærður með nýjustu eiginleika og stuðning við vélbúnað. Góður ef "
 "þú þarft nýjustu driverana."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 447
 msgid ""
@@ -1234,7 +1030,6 @@ msgid ""
 msgstr ""
 "Stilltur fyrir spilun og viðbragðsfljótleika á skjáborði. Góð valkostur "
 "fyrir daglega notkun með auknum afköstum."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 451
 msgid ""
@@ -1244,26 +1039,21 @@ msgstr ""
 "Hannaður fyrir hljóð-/myndvinnslu sem krefst nákvæmrar tímasetningar. Getur "
 "verið ósamrýmanlegur sumum driverum (t.d. NVIDIA). Aðeins fyrir lengra komna "
 "notendur."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 492
 msgid "LTS — Long Term Support (Recommended)"
 msgstr "LTS — Langtíma Stuðningur (Mælt með)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 493
 msgid "Standard"
 msgstr "Standard"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 msgid "Xanmod (Performance)"
 msgstr "Xanmod (Afköst)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 495
 msgid "Real-Time (Advanced)"
 msgstr "Rauntími (Lengra komnir)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 566
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1271,20 +1061,16 @@ msgstr "Rauntími (Lengra komnir)"
 #, python-brace-format
 msgid "Show {} available"
 msgstr "Sýna {} í boði"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 155
 msgid "Hide available kernels"
 msgstr "Settu upp"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 295
 #, python-brace-format
 msgid "Install kernel {}"
 msgstr "Install kernel {}"
-
 #, python-brace-format
 msgid "{} can't be installed yet"
 msgstr "Ekki er hægt að setja {} upp ennþá"
-
 msgid ""
 "Your current kernel stays installed; you can choose between them in the boot "
 "menu (GRUB).\n"
@@ -1295,11 +1081,9 @@ msgstr ""
 "ræsivalmyndinni (GRUB).\n"
 "\n"
 "Eftirfarandi pakkar verða settir upp:"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 327
 msgid "Preparing installation..."
 msgstr "Undirbýr uppsetningu..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 433
 msgid ""
 "Kernel installed successfully.\n"
@@ -1307,7 +1091,6 @@ msgid ""
 msgstr ""
 "Kjarni settur upp með góðum árangri.\n"
 "Þú gætir þurft að endurræsa til að nota hann."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 437
 msgid ""
 "Kernel installation failed.\n"
@@ -1315,15 +1098,12 @@ msgid ""
 msgstr ""
 "Uppsetning kjarna mistókst.\n"
 "Skoðaðu úttak í flugstöð fyrir nánari upplýsingar."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 359
 msgid "Cannot Remove Running Kernel"
 msgstr "Get ekki fjarlægt keyrandi kjarna"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 360
 msgid "This kernel is currently in use. Boot into a different kernel first."
 msgstr "Þessi kjarni er nú þegar í notkun. Ræstu í annan kjarna fyrst."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py, line: 770
 msgid ""
@@ -1336,20 +1116,16 @@ msgstr ""
 "engin varakjarna lausn til staðar.\n"
 "\n"
 "Eftirfarandi pakkar verða fjarlægðir:"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 749
 msgid "The following packages will be removed:"
 msgstr "Eftirfarandi pakkar verða fjarlægðir:"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
 msgid "Preparing removal…"
 msgstr "Undirbý fjarlægingu…"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 msgid "Kernel removed successfully."
 msgstr "Kjarni fjarlægður."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 455
 msgid ""
 "Kernel removal failed.\n"
@@ -1357,11 +1133,9 @@ msgid ""
 msgstr ""
 "Fjarlæging kjarna mistókst.\n"
 "Skoðaðu úttak í flugstöð fyrir nánari upplýsingar."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 367
 msgid "Remove Obsolete Kernels"
 msgstr "Fjarlægðu úrelta kjarna"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 820
 #, python-brace-format
@@ -1377,27 +1151,22 @@ msgstr ""
 "<b>{}</b>\n"
 "\n"
 "Þessir kjarna fá ekki lengur öryggisuppfærslur."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 msgid "Remove All"
 msgstr "Fjarlægja alla"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 #, python-brace-format
 msgid "Removing kernel {} ({}/{})..."
 msgstr "Fjarlægir kjarna {} ({}/{})..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 866
 #, python-brace-format
 msgid "Failed to remove {}. Stopping."
 msgstr "Mistókst að fjarlægja {}. Hætta."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 msgid "All obsolete kernels removed successfully."
 msgstr "Allir úreltir kjarna voru fjarlægðir."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
 # line: 916
 # File: big-driver-manager/usr/share/big-driver-manager/ui/kernel_page.py,
@@ -1405,81 +1174,66 @@ msgstr "Allir úreltir kjarna voru fjarlægðir."
 #, python-brace-format
 msgid "What's new in Linux {}"
 msgstr "Nýtt í Linux {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 37
 msgid "Latest NVIDIA driver — best performance and newest features"
 msgstr "Nýjasti NVIDIA bílstjóri — besta frammistaða og nýjustu eiginleikar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
 msgstr "NVIDIA 575 röð — notaðu ef nýjasti bílstjórinn veldur vandræðum"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
 msgstr "NVIDIA 570 röð — notaðu ef nýjasti bílstjórinn veldur vandræðum"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
 msgstr ""
 "Fyrir Intel + NVIDIA fartölvur — skiptir á milli GPU til að spara rafhlöðu"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 50
 msgid "For Intel + NVIDIA laptops — NVIDIA 575 series"
 msgstr "Fyrir Intel + NVIDIA fartölvur — NVIDIA 575 röð"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 53
 msgid "For Intel + NVIDIA laptops — NVIDIA 570 series"
 msgstr "Fyrir Intel + NVIDIA fartölvur — NVIDIA 570 röð"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 56
 msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
 msgstr "Fyrir Intel + NVIDIA fartölvur — NVIDIA 470 (gömul, engin Wayland)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 59
 msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
 msgstr "Fyrir Intel + NVIDIA fartölvur — NVIDIA 390 (aðeins mjög gömul GPU)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
 msgstr ""
 "Fyrir AMD + NVIDIA fartölvur — skiptir á milli GPU til að spara rafhlöðu"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 66
 msgid "For AMD + NVIDIA laptops — NVIDIA 575 series"
 msgstr "Fyrir AMD + NVIDIA fartölvur — NVIDIA 575 röð"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 69
 msgid "For AMD + NVIDIA laptops — NVIDIA 570 series"
 msgstr "Fyrir AMD + NVIDIA fartölvur — NVIDIA 570 röð"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 72
 msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
 msgstr "Fyrir AMD + NVIDIA fartölvur — NVIDIA 470 (eldri, enginn Wayland)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
 msgstr "Hagrætt skjámynd fyrir sýndarvélar (VirtualBox, VMware, QEMU/KVM)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 90
 msgid "Gaming & 3D Graphics"
 msgstr ""
 "Vulkan og OpenGL bókasöfn nauðsynleg fyrir leiki, Steam, Wine/Proton og 3D "
 "forrit."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 93
 msgid ""
@@ -1488,78 +1242,65 @@ msgid ""
 msgstr ""
 "Vulkan og OpenGL bókasöfn nauðsynleg fyrir leiki, Steam, Wine/Proton og 3D "
 "forrit.| ||NEXT|||Vulkan fyrir AMD Radeon skjákort"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 99
 msgid "Vulkan for AMD Radeon GPUs"
 msgstr ""
 "32-bita Vulkan (AMD) — nauðsynlegt fyrir Steam, Wine/Proton og eldri leiki"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 106
 msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
 msgstr "Vulkan fyrir Intel skjákort"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 114
 msgid "Vulkan for Intel GPUs"
 msgstr ""
 "32-bita Vulkan (Intel) — nauðsynlegt fyrir Steam, Wine/Proton og eldri leiki"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
 msgstr ""
 "Opinn Vulkan fyrir NVIDIA (Nouveau) — enginn einkarekin bílstjóri "
 "nauðsynlegur"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
 msgstr ""
 "32-bita OpenGL — nauðsynlegt fyrir Steam, Wine/Proton og eldri 32-bita leiki"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
 msgstr ""
 "Hraðaður myndbandsafkóðun vélbúnaðar (VAAPI/VDPAU). Gerir myndbönd, streymi "
 "og myndsímtöl mýkri á meðan það dregur úr CPU og orkunotkun."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 149
 msgid "Video Playback"
 msgstr "Myndbandsspilun"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 152
 msgid ""
 "Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
 "and video calls smoother while reducing CPU and power usage."
 msgstr "VAAPI fyrir einkarekin NVIDIA bílstjóra"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 159
 msgid "VAAPI for NVIDIA proprietary driver"
 msgstr "VAAPI fyrir eldri Intel (Haswell til Coffee Lake / Gen 4–9)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 165
 msgid "VAAPI for Intel (Broadwell / Gen 8 and newer)"
 msgstr "VAAPI fyrir Intel (Broadwell / Gen 8 og nýrri)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 172
 msgid "VAAPI for older Intel (Haswell to Coffee Lake / Gen 4–9)"
 msgstr "VAAPI fyrir AMD og NVIDIA opinn bílstjóra (Nouveau)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 179
 msgid "VAAPI for AMD and NVIDIA open-source (Nouveau)"
 msgstr ""
 "VDPAU fyrir AMD/NVIDIA opinn bílstjóra — eldri API sem er að verða úreltur "
 "og er að vera skipt út fyrir VAAPI og Vulkan. Sennilega ekki nauðsynlegt."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 186
 msgid ""
@@ -1568,12 +1309,10 @@ msgid ""
 msgstr ""
 "VDPAU fyrir AMD/NVIDIA opinn hugbúnað — gamaldags API sem er að verða skipt "
 "út fyrir VAAPI og Vulkan. Sennilega ekki nauðsynlegt."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 197
 msgid "GPU Compute (AI / ML)"
 msgstr "GPU útreikningur (AI / ML)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 200
 msgid ""
@@ -1592,32 +1331,26 @@ msgstr ""
 "LocalAI), skrifa niður hljóð með Whisper, búa til 3D senur í Blender, nota "
 "síur í GIMP eða Darktable, búa til myndir með Stable Diffusion, og keyra "
 "eðlisfræðilegar hermir."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 215
 msgid "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
 msgstr "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 222
 msgid "OpenCL for NVIDIA — Blender, GIMP, Darktable"
 msgstr "OpenCL fyrir NVIDIA — Blender, GIMP, Darktable"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 228
 msgid "OpenCL for AMD — Blender, GIMP, Darktable"
 msgstr "OpenCL fyrir AMD — Blender, GIMP, Darktable"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 234
 msgid "OpenCL for Intel — Blender, GIMP, Darktable"
 msgstr "OpenCL fyrir Intel — Blender, GIMP, Darktable"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 270
 msgid "Stable"
 msgstr "Stöðugt"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 272
 msgid ""
@@ -1626,15 +1359,12 @@ msgid ""
 msgstr ""
 "Opinberlega prófað af Mesa teyminu. Öruggasta og áreiðanlegasta valið fyrir "
 "daglega notkun, leikjaspilun og myndbandsútsendingu."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 285
 msgid "Recommended"
 msgstr "Mælt með"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 295
 msgid "Performance"
 msgstr "Frammistaðla"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 281
 msgid ""
@@ -1643,12 +1373,10 @@ msgid ""
 msgstr ""
 "Breytt útgáfa með leikjafínstillingum fyrir aukna frammistöðu. Áreiðanlegt "
 "fyrir flesta notendur en getur sjaldan valdið óstöðugleika."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 289
 msgid "Development"
 msgstr "Þróun"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 291
 msgid ""
@@ -1658,11 +1386,9 @@ msgid ""
 msgstr ""
 "Byggt á nýjustu kóðauppfærslu með nýjustu eiginleikum. Býður upp á bestu "
 "leikjaframmistöðu en er minnst prófað — aðeins fyrir lengra komna notendur."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 276
 msgid "Legacy"
 msgstr "Arfleifðar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_data.py, line:
 # 301
 msgid ""
@@ -1671,11 +1397,9 @@ msgid ""
 msgstr ""
 "Fyrir mjög gömul skjákort sem styðja aðeins OpenGL 2.1 eða eldri. Settu "
 "þetta aðeins upp ef nýrri Mesa útgáfur virka ekki með vélbúnaðinum þínum."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 msgid "Video Drivers"
 msgstr "Skjástýringar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 127
 msgid ""
@@ -1688,7 +1412,6 @@ msgstr ""
 "Nouveau) innbyggður í eitt verkefni sem kallast <b>Mesa</b>. Hér fyrir neðan "
 "getur þú valið Mesa útgáfu og stjórnað aukapökkum fyrir leikjaspilun, "
 "myndbandsútsendingu, útreikninga og AI."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 150
 msgid ""
@@ -1699,12 +1422,10 @@ msgstr ""
 "Tölvan þín er með <b>NVIDIA</b> skjákort. Þú getur sett upp opinbera "
 "einkaleyfisrekilinn fyrir bestu frammistöðu í leikjum, AI og faglegum "
 "forritum."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 183
 msgid "Mesa Variant"
 msgstr "Mesa afbrigði"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 194
 msgid ""
@@ -1712,7 +1433,6 @@ msgid ""
 msgstr ""
 "Veldu hvaða Mesa byggingu á að nota. Aðeins ein útgáfa getur verið virk í "
 "einu."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 209
 msgid ""
@@ -1724,22 +1444,18 @@ msgstr ""
 "notað fyrir minni verkefni í þessu tilfelli. Við mælum með að halda í "
 "<b>Stable</b> útgáfuna — aðrar útgáfur bæta ekki frammistöðu og geta valdið "
 "óstöðugleika."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 282
 msgid "Detected graphics cards:"
 msgstr "Uppgötvuð skjákort:"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 384
 msgid "NVIDIA proprietary driver (not Mesa)"
 msgstr "NVIDIA einkaréttarstýri (ekki Mesa)"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 389
 msgid "Mesa driver"
 msgstr "Mesa stýri"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 427
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
@@ -1748,17 +1464,14 @@ msgstr "Mesa stýri"
 # 1014
 msgid "Switch"
 msgstr "Skipta"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 431
 #, python-brace-format
 msgid "Switch to {}"
 msgstr "Skipta yfir í {}"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 259
 msgid "Change Video Driver"
 msgstr "Breyta myndbandsstýringu"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
 #, python-brace-format
 msgid ""
@@ -1769,20 +1482,16 @@ msgstr ""
 "Skipta yfir í <b>{}</b>?\n"
 "\n"
 "Kerfisbúnaður þarf að endurræsa til að breytingin taki gildi."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 267
 msgid "Apply"
 msgstr "Beita"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 413
 #, python-brace-format
 msgid "Applying {}"
 msgstr "Beita {}"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 414
 msgid "Preparing to apply driver..."
 msgstr "Undirbýr að sækja um ökumann..."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 337
 msgid ""
 "Video driver changed successfully!\n"
@@ -1792,7 +1501,6 @@ msgstr ""
 "Myndbandsstýring breytt með góðum árangri!\n"
 "\n"
 "Þú verður að endurræsa kerfið til að nýi stýringin taki gildi."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 451
 msgid ""
 "Driver change failed.\n"
@@ -1800,12 +1508,10 @@ msgid ""
 msgstr ""
 "Mistókst að breyta stýringu.\n"
 "Skoðaðu úttak í skipanalínu fyrir nánari upplýsingar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 589
 msgid "NVIDIA Proprietary Driver"
 msgstr "Bílstjóri fyrir NVIDIA"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 701
 msgid ""
@@ -1814,91 +1520,75 @@ msgid ""
 msgstr ""
 "Opinbert lokuð kóðastýri með bestu frammistöðu fyrir leiki, AI og fagleg "
 "verkefni."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 713
 msgid "Only one version can be active at a time."
 msgstr "Aðeins ein útgáfa getur verið virk í einu."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 677
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 680
 msgid "All recommended packages installed"
 msgstr "Allar ráðlagðar pakkar uppsettar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 686
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 689
 msgid "Some packages not installed"
 msgstr "Sumir pakkar ekki uppsettir"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 747
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1163
 msgid "Included"
 msgstr "Innifalið"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 754
 #, python-brace-format
 msgid "Already included in your Mesa version ({})"
 msgstr "Þegar innifalinn í Mesa útgáfunni þinni ({})"
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 65
 msgid "Other Drivers"
 msgstr "Aðrir ökumenn"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 808
 msgid ""
 "Additional drivers for special hardware configurations like virtual machines."
 msgstr ""
 "Viðbótarstýringar fyrir sérstakar vélbúnaðaruppsetningar eins og sýndarvélar."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 msgid "Compatible"
 msgstr "Samhæft"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 888
 msgid "Open Source"
 msgstr "Opinn hugbúnaður"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 888
 msgid "Proprietary"
 msgstr "Eignaréttur"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 895
 msgid "⚠ No Wayland support · No longer maintained"
 msgstr "⚠ Engin Wayland stuðningur · Ekki lengur viðhaldið"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 920
 #, python-brace-format
 msgid "Switch from {} to {}"
 msgstr "Skiptu úr {} í {}"
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line: 1115
 #, python-brace-format
 msgid "Install {} unavailable"
 msgstr "Install {} ekki í boði"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 961
 msgid "open-source"
 msgstr "opinn uppspretta"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 961
 msgid "proprietary"
 msgstr "séreign"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 967
 #, python-brace-format
@@ -1910,12 +1600,10 @@ msgstr ""
 "Setja upp <b>{}</b> ({} driver)?\n"
 "\n"
 "Kerfisbúnaðarendurræsing gæti þurft eftir uppsetningu."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1001
 msgid "Switch NVIDIA Driver"
 msgstr "Skiptu um NVIDIA bílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1005
 #, python-brace-format
@@ -1929,18 +1617,15 @@ msgstr ""
 "\n"
 "Núverandi driver verður sjálfkrafa skipt út.\n"
 "Kerfisbúnaðarendurræsing verður nauðsynleg."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1027
 #, python-brace-format
 msgid "Switching to {}"
 msgstr "Skiptir yfir í {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1028
 msgid "Replacing current NVIDIA driver..."
 msgstr "Er að skipta út núverandi NVIDIA driver..."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1046
 #, python-brace-format
@@ -1952,25 +1637,20 @@ msgstr ""
 "Fjarlægja <b>{}</b>?\n"
 "\n"
 "Kerfisbúnaðarendurræsing gæti þurft eftir fjarlægingu."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 395
 msgid "Preparing removal..."
 msgstr "Undirbúa fjarlægingu..."
-
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 190
 msgid "activated"
 msgstr "virkjaður"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "installed"
 msgstr "uppsett"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 267
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 375
 msgid "removed"
 msgstr "fjarlægð"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1091
 #, python-brace-format
@@ -1982,7 +1662,6 @@ msgstr ""
 "{} var {} með góðum árangri!\n"
 "\n"
 "Kerfisbúnaðarendurræsing gæti þurft."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid ""
 "Driver operation failed.\n"
@@ -1990,17 +1669,14 @@ msgid ""
 msgstr ""
 "Driver aðgerð mistókst.\n"
 "Athugaðu úttak í flugstöðinni fyrir nánari upplýsingar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1146
 msgid "Already included in your Mesa version"
 msgstr "Þetta er þegar innifalið í þinni Mesa útgáfu"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 280
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 307
 msgid "Install Package"
 msgstr "Setja upp pakkann"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1191
 #, python-brace-format
@@ -2012,12 +1688,10 @@ msgstr ""
 "Setja upp <b>{}</b>?\n"
 "\n"
 "{}"
-
 #
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1381
 msgid "Unavailable"
 msgstr "Ófært"
-
 #
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1385
 msgid ""
@@ -2026,210 +1700,167 @@ msgid ""
 msgstr ""
 "Ekki tiltækt í virku geymslunum. 32-bita (lib32) pakka krafist multilib "
 "geymslunnar."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 278
 msgid "Remove Package"
 msgstr "Fjarlægðu pakka"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/mesa_page.py, line:
 # 1232
 #, python-brace-format
 msgid "Remove <b>{}</b>?"
 msgstr "Fjarlægja <b>{}</b>?"
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 394
 msgid "Removing package..."
 msgstr "Fjarlægir pakka..."
-
 # File: usr/share/big-driver-manager/ui/kernel_page.py, line: 451
 #, python-brace-format
 msgid "{} was {} successfully!"
 msgstr "{} var {} með góðum árangri!"
-
 #
 # File: usr/share/big-driver-manager/ui/mesa_page.py, line: 1456
 msgid "Package operation failed."
 msgstr "Pakkningaraðgerð mistókst."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 81
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py, line: 84
 msgid "Operation in progress"
 msgstr "Aðgerð í gangi"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 117
 msgid "Technical details"
 msgstr "Tæknilegar upplýsingar"
-
 # File: usr/share/big-driver-manager/ui/base_page.py, line: 67
 msgid "Terminal output"
 msgstr "Úttak úr skipanalínu"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 229
 #, python-brace-format
 msgid "Step {} of {}: {}"
 msgstr "Skref {} af {}: {}"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/progress_dialog.py,
 # line: 231
 #, python-brace-format
 msgid "Step {} of {}"
 msgstr "Skref {} af {}"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 279
 msgid "Operation completed successfully!"
 msgstr "Aðgerð lokið með góðum árangri!"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid "Operation failed. Check terminal output for details."
 msgstr ""
 "Aðgerð mistókst. Skoðaðu úttak úr skipanalínu fyrir frekari upplýsingar."
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 305
 msgid "Completed!"
 msgstr "Lokið!"
-
 #
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 424
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
 msgstr ""
 "Þetta skref er ekki lengur hægt að aflýsa örugglega. Bíða eftir að það "
 "klárist…"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 334
 msgid "Cancelled"
 msgstr "Hætt við"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 45
 msgid "Mesa, NVIDIA, and GPU drivers."
 msgstr "Mesa, NVIDIA og GPU bílstjóri."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 51
 msgid "Wireless network adapter drivers."
 msgstr "Stýrikerfi þráðlausra netaðlaga."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 57
 msgid "Wired network adapter drivers."
 msgstr "Stýrikerfi fyrir þráðbundna netaðlaga."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 63
 msgid "Bluetooth adapter drivers."
 msgstr "Bílstjóri fyrir Bluetooth millistykki."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 69
 msgid "Digital TV tuner firmware."
 msgstr "Stýrikerfi stafræns sjónvarpstækis."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 75
 msgid "Audio device firmware."
 msgstr "Stýrikerfi hljóðtækis."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 81
 msgid "Webcam device firmware."
 msgstr "Stýrikerfi vefmyndavélar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 87
 msgid "Touchscreen device firmware."
 msgstr "Stýrikerfi snertiskjás."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 93
 msgid "Printer drivers and support packages."
 msgstr "Prentarareklar og stuðningspakkar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 99
 msgid "3D printer firmware."
 msgstr "Stýrikerfi 3D prentara."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 105
 msgid "Scanner drivers and SANE backends."
 msgstr "Skannareklar og SANE bakenda."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 msgid "Additional firmware packages."
 msgstr "Viðbótar stýrikerfispakkar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 218
 msgid "Categories"
 msgstr "Flokkar"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 189
 msgid "Home"
 msgstr "Heim"
-
 # File: usr/share/big-driver-manager/ui/window.py, line: 89
 msgid "Kernel"
 msgstr "Kjarni"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 191
 msgid "Video"
 msgstr "Myndband"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 231
 msgid "A system reboot is recommended to apply changes."
 msgstr "Mælt er með endurræsingu kerfisins til að beita breytingum."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 269
 msgid "Content"
 msgstr "Efni"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 328
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 623
 msgid "Showing drivers detected as compatible with your computer"
 msgstr "Sýnir drifara sem greindir eru sem samhæfir tölvunni þinni"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 327
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 329
 msgid "Show all drivers"
 msgstr "Sýna alla ökumenn"
-
 # File: usr/share/big-driver-manager/ui/window.py, line: 129
 msgid "Menu"
 msgstr "Matseðill"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 318
 msgid "Application menu"
 msgstr "Forritavalmynd"
-
 # File: usr/share/big-driver-manager/ui/window.py, line: 134
 msgid "About"
 msgstr "Um"
-
 # File: usr/share/big-driver-manager/ui/progress_dialog.py, line: 290
 msgid "Hardware detection failed. Check system logs for details."
 msgstr ""
 "Uppgötvun vélbúnaðar mistókst. Skoðaðu kerfisskrár fyrir nánari upplýsingar."
-
 #
 # File: biglinux-driver-manager/usr/share/big-driver-manager/ui/window.py, line: 696
 msgid "Hardware detection for this category failed. Try refreshing later."
 msgstr ""
 "Hugbúnaðaruppgötvun fyrir þessa flokk mistókst. Reyndu að endurnýja síðar."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 534
 #, python-brace-format
 msgid "Obsolete kernel: {} — no longer receives security updates"
 msgstr "Úreltur kjarni: {} — fær ekki lengur öryggisuppfærslur"
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 538
 msgid "Manage"
 msgstr "Stjórna"
-
 #
 # File: usr/share/big-driver-manager/ui/window.py, line: 674
 #, python-brace-format
@@ -2239,447 +1870,358 @@ msgid ""
 msgstr ""
 "Gagnagrunnurinn var síðast uppfærður {} dögum síðan. Uppfærðu kerfið þitt "
 "áður en þú setur upp drif til að forðast niðurhalsvillur og vanta pakka."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 619
 msgid "Showing all drivers, including incompatible ones"
 msgstr "Sýnir alla drifara, þar með talda ósamhæfa"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 173
 msgid "Printing driver for"
 msgstr "Prentdrifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 174
 msgid "Printer driver for"
 msgstr "Prentdrifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 175
 msgid "Driver for the"
 msgstr "Drifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 176
 msgid "Driver for"
 msgstr "Drifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 177
 msgid "Driver set (printing and scanning) for"
 msgstr "Drifarsett (prentun og skönnun) fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 178
 msgid "Complete stand-alone driver set (printing and scanning) for"
 msgstr "Fullkomið sjálfstætt drifarsett (prentun og skönnun) fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 179
 msgid "LPR and CUPS driver for the"
 msgstr "LPR og CUPS drifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 180
 msgid "LPR and CUPS driver for"
 msgstr "LPR og CUPS drifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 181
 msgid "LPR driver and CUPS wrapper for"
 msgstr "LPR drifari og CUPS umbúðir fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 182
 msgid "LPR driver for"
 msgstr "LPR drifari fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 183
 msgid "CUPS wrapper for"
 msgstr "CUPS umbúðir fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 184
 msgid "CUPS driver for the"
 msgstr "CUPS drifari fyrir þann"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 185
 msgid "CUPS driver for"
 msgstr "CUPS bílstjóri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 186
 msgid "CUPS and LPR drivers for the"
 msgstr "CUPS og LPR bílstjórar fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 187
 msgid "CUPS printer driver"
 msgstr "CUPS prentbílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 188
 msgid "CUPS driver"
 msgstr "CUPS bílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 189
 msgid "color multifunction printer"
 msgstr "litprentari með fjölvirkni"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 190
 msgid "multifunction printer"
 msgstr "fjölvirkur prentari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 191
 msgid "ink tank multifunction printer"
 msgstr "fjölvirkur prentari með blekstöð"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 192
 msgid "Wi-Fi multifunction printer"
 msgstr "Wi-Fi fjölvirkur prentari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 193
 msgid "color laser printer"
 msgstr "litlaserprentari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 194
 msgid "laser printer driver"
 msgstr "laserprentbílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 195
 msgid "laser printer"
 msgstr "laserprentari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 196
 msgid "inkjet printer driver"
 msgstr "bleksprautuprentbílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 197
 msgid "inkjet printer"
 msgstr "bleksprautuprentari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 198
 msgid "inkjet printers"
 msgstr "bleksprautuprentarar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 199
 msgid "label and receipt printer"
 msgstr "merkimiða- og kvittanaprinter"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 200
 msgid "label printer"
 msgstr "merkimiðaprentari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 201
 msgid "laser printers"
 msgstr "leysi prentarar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 202
 msgid "printer communication"
 msgstr "prentarasamskipti"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 203
 msgid "print system integration"
 msgstr "prentsystems samþætting"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 204
 msgid "series inkjet printer"
 msgstr "röð bleksprautuprentara"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 205
 msgid "multifunction inkjet"
 msgstr "fjölnota bleksprauta"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 206
 msgid "(printer communication)"
 msgstr "(prentarasamskipti)"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 207
 msgid "(print system integration)"
 msgstr "(prentsystems samþætting)"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 208
 msgid "Wi-Fi driver for"
 msgstr "Wi-Fi bílstjóri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 209
 msgid "DKMS driver for"
 msgstr "DKMS bílstjóri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 210
 msgid "Wired network driver for"
 msgstr "Kapalsnetbílstjóri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 211
 msgid "Bluetooth driver for"
 msgstr "Bluetooth bílstjóri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 212
 msgid "Kernel driver module for"
 msgstr "Kjarna bílstjóri módule fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 213
 msgid "wireless driver"
 msgstr "þráðlaus bílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 214
 msgid "wireless adapters"
 msgstr "þráðlausir aðlögunarbúnaður|||"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 215
 msgid "USB wireless adapters"
 msgstr "USB þráðlausir aðlögunartæki"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 216
 msgid "USB dual-band wireless adapters"
 msgstr "USB tvíband þráðlausir aðlögunartæki"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 217
 msgid "USB tri-band wireless adapters"
 msgstr "USB þríbands þráðlausir aðlögunartæki"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 218
 msgid "Ethernet driver"
 msgstr "Ethernet bílstjóri"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 219
 msgid "monitor mode & frame injection support"
 msgstr "stuðningur við eftirlitsstillingu og rammainnsprengingu"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 220
 msgid "Firmware for"
 msgstr "Firmware fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 221
 msgid "Bluetooth firmware for"
 msgstr "Bluetooth firmware fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 222
 msgid "Firmware files for"
 msgstr "Firmware skrár fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 223
 msgid "digital TV (DVB) receivers"
 msgstr "stafræn sjónvarpsmóttakara (DVB)"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 224
 msgid "digital TV (DVB) tuners"
 msgstr "stafræn sjónvarpstúnara (DVB)"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 225
 msgid "digital TV tuner"
 msgstr "stafræn sjónvarpstúnari"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 226
 msgid "wireless networking chips"
 msgstr "þráðlaus netkort flísar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 227
 msgid "Wi-Fi chips"
 msgstr "Wi-Fi flísar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 228
 msgid "wireless cards"
 msgstr "þráðlaus kort"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 229
 msgid "network adapters"
 msgstr "netaðlögunartæki"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 230
 msgid "touchscreen controllers"
 msgstr "snertiskjárstýringar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 231
 msgid "USB audio interfaces"
 msgstr "USB hljóðviðmót"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 232
 msgid "USB logic analyzers"
 msgstr "USB rökgreiningartæki"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 233
 msgid "USB MIDI interfaces"
 msgstr "USB MIDI viðmót"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 234
 msgid "controller cards"
 msgstr "stýrikort"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 235
 msgid "controller chips"
 msgstr "stýrisflögur"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 236
 msgid "SCSI controllers"
 msgstr "SCSI stýringar"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 237
 msgid "legacy devices only"
 msgstr "aðeins eldri tæki"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 238
 msgid "stable tested version"
 msgstr "stöðug prófuð útgáfa"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 239
 msgid "latest release"
 msgstr "nýjasta útgáfa"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 240
 msgid "Scanner software for"
 msgstr "Skannaforrit fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 241
 msgid "Scanner driver for"
 msgstr "Skannastýri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 242
 msgid "SANE scanner driver for"
 msgstr "SANE skannastýri fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 243
 msgid "scanner plugin for Image Scan!"
 msgstr "skannaviðbót fyrir Image Scan!"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 244
 msgid "Image Scan! plugin for"
 msgstr "Image Scan! viðbót fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 245
 msgid "Image Scan! frontend for"
 msgstr "Image Scan! framendi fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 246
 msgid "Data files required by"
 msgstr "Gagnaskrár sem þarf fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 247
 msgid "scanners and multifunction printers"
 msgstr "skanna og margmiðlunarprentara"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 248
 msgid "multifunction printers"
 msgstr "margmiðlunarprentara"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 249
 msgid "flatbed and all-in-one scanners"
 msgstr "flatar- og allt í einu skanna"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 250
 msgid "USB and network scanners"
 msgstr "USB- og netskanna"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 251
 msgid "network and USB scanners"
 msgstr "net- og USB-skanna"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 252
 msgid "portable document scanner"
 msgstr "flytjanlegur skjalskanni"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 253
 msgid "one-touch scanning"
 msgstr "einn-snertiskönnun"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 254
 msgid "scanner panel button"
 msgstr "skannahnappar á spjaldi"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 255
 msgid "printers, supplied by"
 msgstr "prentara, afhent af"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 256
 msgid "PPD files for"
 msgstr "PPD skrár fyrir"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 257
 msgid "Administration tool for managing"
 msgstr "Stjórnunarverkfæri til að stjórna"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 258
 msgid "printers on your network"
 msgstr "prenturum á netinu þínu"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/desc_translate.py, line: 259
 msgid "(proprietary)"
 msgstr "(einkaleyfis)"
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 28
 msgid ""
@@ -2689,7 +2231,6 @@ msgstr ""
 "Ef Wi-Fi tengingin þín virkar þegar, er innbyggður kjarna bílstjóri "
 "venjulega besti kosturinn. Settu aðeins upp annan bílstjóra ef þú lendir í "
 "tengingarvandamálum."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 33
 msgid ""
@@ -2698,7 +2239,6 @@ msgid ""
 msgstr ""
 "Þráðbundnir netaðilar virka næstum alltaf strax. Auka bílstjóri er aðeins "
 "nauðsynlegur fyrir mjög nýja eða sjaldgæfa vélbúnað."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 37
 msgid ""
@@ -2707,7 +2247,6 @@ msgid ""
 msgstr ""
 "Sumir Bluetooth aðilar þurfa aukafirmvöru til að virka. Ef pörun mistakast, "
 "gæti uppsetning firmvélar fyrir aðilann þinn leyst vandamálið."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 42
 msgid ""
@@ -2716,7 +2255,6 @@ msgid ""
 msgstr ""
 "Stafræn sjónvarpsmóttakarar þurfa venjulega sérstaka firmvöru. Án hennar "
 "verður tækið ekki viðurkennt af kerfinu."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 46
 msgid ""
@@ -2725,7 +2263,6 @@ msgid ""
 msgstr ""
 "Flest hljóðtæki virka með ALSA sem er innbyggt í kjarnann. Auka firmvara er "
 "aðeins nauðsynleg fyrir sérstaka USB hljóðviðmót."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 50
 msgid ""
@@ -2734,7 +2271,6 @@ msgid ""
 msgstr ""
 "Flestar vefmyndavélar virka sjálfkrafa. Auka firmvara getur bætt myndgæði "
 "eða virkjað viðbótar eiginleika."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 54
 msgid ""
@@ -2743,7 +2279,6 @@ msgid ""
 msgstr ""
 "Ef snertiskjárinn þinn svarar ekki, lagast það venjulega með því að setja "
 "upp samsvarandi firmvöru."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 58
 msgid ""
@@ -2754,7 +2289,6 @@ msgstr ""
 "Prentbílstjórar leyfa kerfinu að eiga samskipti við prentunarmódel þitt. Ef "
 "prentari var uppgötvaður á netinu þínu eða USB, er mælt með að setja upp "
 "samsvarandi bílstjóra."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 63
 msgid ""
@@ -2763,7 +2297,6 @@ msgid ""
 msgstr ""
 "Firmvara fyrir 3D prentara gerir kleift að eiga samskipti milli sneiðarans "
 "og prentara vélbúnaðarins."
-
 # File: big-driver-manager/usr/share/big-driver-
 # manager/utils/tooltip_helper.py, line: 67
 msgid ""
@@ -2772,17 +2305,14 @@ msgid ""
 msgstr ""
 "Skannar bílstjórar (SANE bakendarnir) leyfa skönnunarforskriftum að eiga "
 "samskipti við skannaramódel þitt."
-
 # File: big-driver-manager/usr/share/big-driver-manager/ui/window.py, line:
 # 111
 msgid "Additional firmware packages for specialized hardware."
 msgstr "Viðbótar fastbúnaðar pakkar fyrir sérhæfðan búnað."
-
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 97
 msgid "Package"
 msgstr "Pakkage"
-
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
@@ -2790,22 +2320,18 @@ msgstr "Pakkage"
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Status"
 msgstr "Staða"
-
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 103
 msgid "Detected and installed"
 msgstr "Greint og uppsett"
-
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 105
 msgid "Detected — not yet installed"
 msgstr "Greint — ekki ennþá uppsett"
-
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 109
 msgid "Available in repository"
 msgstr "Tiltan í geymslu"
-
 #
 # File: usr/share/big-driver-manager/utils/tooltip_helper.py, line: 114
 msgid "Device"
