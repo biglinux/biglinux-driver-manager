@@ -456,6 +456,11 @@ class KernelSection(BaseSection):
         return row
 
     _GROUP_DESCRIPTIONS = {
+        "kernel-group-big": _(
+            "The BigCommunity kernel (big-kernel), optimized for gaming and general "
+            "use (BORE, Clang ThinLTO, Intel fixes). It is installed alongside "
+            "your current kernel."
+        ),
         "kernel-group-lts": _(
             "Recommended for most users. These kernels receive "
             "security updates for years and are thoroughly tested."
@@ -476,6 +481,7 @@ class KernelSection(BaseSection):
     }
 
     _GROUP_ICONS = {
+        "kernel-group-big": "icon_kernel_xanmod.svg",
         "kernel-group-lts": "icon_kernel_lts.svg",
         "kernel-group-standard": "icon_kernel_standard.svg",
         "kernel-group-xanmod": "icon_kernel_xanmod.svg",
@@ -493,6 +499,7 @@ class KernelSection(BaseSection):
 
         # Classify kernels by type
         buckets: dict[str, list[dict]] = {
+            "kernel-group-big": [],
             "kernel-group-lts": [],
             "kernel-group-standard": [],
             "kernel-group-xanmod": [],
@@ -500,7 +507,9 @@ class KernelSection(BaseSection):
         }
         for k in available:
             ktype = classify_kernel(k)
-            if ktype.is_rt:
+            if ktype.is_big:
+                buckets["kernel-group-big"].append(k)
+            elif ktype.is_rt:
                 buckets["kernel-group-rt"].append(k)
             elif ktype.is_xanmod:
                 buckets["kernel-group-xanmod"].append(k)
@@ -510,6 +519,7 @@ class KernelSection(BaseSection):
                 buckets["kernel-group-standard"].append(k)
 
         groups = [
+            ("BigCommunity", "kernel-group-big"),
             (_("LTS — Long Term Support (Recommended)"), "kernel-group-lts"),
             (_("Standard"), "kernel-group-standard"),
             (_("Xanmod (Performance)"), "kernel-group-xanmod"),
@@ -681,13 +691,26 @@ class KernelSection(BaseSection):
 
     def _on_install_clicked(self, button: Gtk.Button, kernel: dict) -> None:
         kernel_name = kernel["name"]
-        modules = self.kernel_manager.get_modules_for_install(kernel_name)
-        packages = [kernel_name] + modules
+        plan = self.kernel_manager.plan_kernel_install(kernel_name)
+        if not plan.allowed:
+            self._show_completion_dialog(
+                _("{} can't be installed yet").format(kernel_name),
+                plan.blocked_reason,
+                status="warning",
+            )
+            return
+        packages = plan.packages
 
         pkg_list = "\n".join(f"  • {p}" for p in packages)
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Install {}").format(kernel_name))
-        dialog.set_body(_("The following packages will be installed:"))
+        dialog.set_body(
+            _(
+                "Your current kernel stays installed; you can choose between "
+                "them in the boot menu (GRUB).\n\n"
+                "The following packages will be installed:"
+            )
+        )
 
         pkg_label = Gtk.Label(label=pkg_list)
         pkg_label.set_halign(Gtk.Align.START)
@@ -982,7 +1005,7 @@ class KernelSection(BaseSection):
     @staticmethod
     def _row_type_icon(ktype: KernelTypeInfo) -> Gtk.Image:
         """Return an SVG icon matching the kernel type."""
-        if ktype.is_xanmod or ktype.is_cachyos:
+        if ktype.is_xanmod or ktype.is_cachyos or ktype.is_big:
             key = "xanmod"
         elif ktype.is_lts:
             key = "lts"

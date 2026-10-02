@@ -21,6 +21,7 @@ class KernelTypeInfo:
     is_rt: bool = False
     is_xanmod: bool = False
     is_cachyos: bool = False
+    is_big: bool = False
     type_desc: str = ""
     full_desc: str = ""
     badge_entries: list[tuple[str, str]] = field(default_factory=list)
@@ -33,6 +34,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
     is_rt = kernel.get("rt", False) or "-rt" in name
     is_xanmod = kernel.get("xanmod", False) or "xanmod" in name
     is_cachyos = kernel.get("cachyos", False) or "cachyos" in name
+    is_big = kernel.get("big", False) or name == "linux-big"
 
     type_parts: list[str] = []
     full_parts: list[str] = []
@@ -76,6 +78,22 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
         )
         badges.append(("CachyOS", "purple"))
 
+    if is_big:
+        type_parts.append(
+            _(
+                "BigCommunity kernel (big-kernel), optimized for gaming and general "
+                "use (BORE, Clang ThinLTO, Intel fixes)"
+            )
+        )
+        full_parts.append(
+            _(
+                "Official kernel.org kernel with Manjaro's configuration and "
+                "patches, plus the BORE scheduler, Clang + ThinLTO build and "
+                "fixes for recent Intel GPUs (Arrow Lake / Meteor Lake)."
+            )
+        )
+        badges.append(("BigCommunity", "accent"))
+
     # Origin: kernels that don't come from the enabled repositories
     source = kernel.get("source", "")
     if source == "local":
@@ -110,6 +128,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
         is_rt=is_rt,
         is_xanmod=is_xanmod,
         is_cachyos=is_cachyos,
+        is_big=is_big,
         type_desc=type_desc,
         full_desc=full_desc,
         badge_entries=badges,

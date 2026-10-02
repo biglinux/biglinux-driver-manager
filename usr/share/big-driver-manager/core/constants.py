@@ -47,7 +47,19 @@ KERNEL_PATTERNS = [
     r"^linux-xanmod-lts-x64v\d$",  # Xanmod LTS optimized builds
     r"^linux-cachyos$",  # CachyOS kernel
     r"^linux-cachyos-lts$",  # CachyOS LTS kernel
+    r"^linux-big$",  # BigCommunity kernel (big-kernel), see BIG_KERNEL
 ]
+
+# BigCommunity kernel (big-kernel project). Unlike Manjaro's linuxNN it has a
+# fixed name, modules are "linux-big-<module>" and ``uname -r`` ends with
+# "-big" (7.2.7-2-big).
+BIG_KERNEL = "linux-big"
+BIG_KERNEL_RELEASE_SUFFIX = "-big"
+
+# Kernel module packages a machine can't boot/work without when the running
+# kernel uses them (display, Wi-Fi, power). A kernel whose repo lacks the
+# matching module must not be offered — it would boot without the driver.
+REQUIRED_MODULE_SUFFIX_RE = r"-(nvidia(-\d+xx)?(-open)?|broadcom-wl|bbswitch)$"
 
 # CachyOS kernels — detected when installed but NOT shown as installable
 CACHYOS_PATTERNS = [
