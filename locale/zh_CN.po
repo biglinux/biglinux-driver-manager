@@ -7,197 +7,197 @@ msgstr ""
 "POT-Creation-Date: 2026-10-03 00:00+0000\n"
 "PO-Revision-Date: 2026-10-03 00:00+0000\n"
 "Last-Translator: Codex (AI-assisted translation and review)\n"
-"Language-Team: Norwegian <no@li.org>\n"
-"Language: no\n"
+"Language-Team: Chinese (Simplified, China)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: usr/share/big-driver-manager/core/base_manager.py:131
 msgid "Installing packages"
-msgstr "Installerer pakker"
+msgstr "正在安装软件包"
 
 #: usr/share/big-driver-manager/core/base_manager.py:148
 msgid "Removing packages"
-msgstr "Fjerner pakker"
+msgstr "正在移除软件包"
 
 #: usr/share/big-driver-manager/core/base_manager.py:196
 #, python-brace-format
 msgid "Database locked. Retrying in {} seconds..."
-msgstr "Database låst. Prøver på nytt om {} sekunder..."
+msgstr "数据库已锁定。 {} 秒后重试..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:201
 #, python-brace-format
 msgid "Waiting {} s before retry..."
-msgstr "Venter {} s før ny forsøk..."
+msgstr "等待 {} 秒后重试..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:206
 #, python-brace-format
 msgid "Retry attempt {} of {}..."
-msgstr "Forsøk {} av {}..."
+msgstr "重试第 {} 次，共 {} 次..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:236
 #: usr/share/big-driver-manager/core/base_manager.py:239
 #: usr/share/big-driver-manager/core/mhwd_manager.py:312
 #, python-brace-format
 msgid "Starting {}..."
-msgstr "Starter {}..."
+msgstr "正在启动 {}..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:237
 #: usr/share/big-driver-manager/core/mhwd_manager.py:310
 #, python-brace-format
 msgid "Command: {}"
-msgstr "Kommando: {}"
+msgstr "命令: {}"
 
 #: usr/share/big-driver-manager/core/base_manager.py:261
 #: usr/share/big-driver-manager/core/mesa_manager.py:202
 #, python-brace-format
 msgid "Error: {}"
-msgstr "Feil: {}"
+msgstr "错误：{}"
 
 #: usr/share/big-driver-manager/core/base_manager.py:289
 #: usr/share/big-driver-manager/ui/progress_dialog.py:454
 msgid "Operation cancelled by user."
-msgstr "Operasjonen avbrutt av brukeren."
+msgstr "操作被用户取消。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:312
 #, python-brace-format
 msgid "Still working... ({:.0%} complete)"
-msgstr "Jobber fortsatt... ({:.0%} fullført)"
+msgstr "仍在运行...（{:.0%} 完成）"
 
 #: usr/share/big-driver-manager/core/base_manager.py:338
 msgid "Operation cancelled"
-msgstr "Operasjon avbrutt"
+msgstr "操作已取消"
 
 #: usr/share/big-driver-manager/core/base_manager.py:339
 msgid "Operation was cancelled."
-msgstr "Operasjonen ble avbrutt."
+msgstr "操作已取消。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:344
 #, python-brace-format
 msgid "{}  complete!"
-msgstr "{} fullført!"
+msgstr "{} 完成！"
 
 #: usr/share/big-driver-manager/core/base_manager.py:348
 #, python-brace-format
 msgid "{}  completed successfully."
-msgstr "{} fullført."
+msgstr "{} 已成功完成。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:354
 #, python-brace-format
 msgid "{}  failed."
-msgstr "{} mislyktes."
+msgstr "{} 失败。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:358
 #, python-brace-format
 msgid "{}  failed (exit code: {})"
-msgstr "{} mislyktes (utgangskode: {})"
+msgstr "{} 失败（退出代码：{}）"
 
 #: usr/share/big-driver-manager/core/base_manager.py:369
 msgid ""
 "Package not available in the enabled repositories. It may come from the AUR, belong to a disabled repository (such as multilib), or the package database may be outdated.\n"
 "Suggestion: Update the whole system with 'sudo pacman -Syu' and try again."
 msgstr ""
-"Pakken er ikke tilgjengelig i de aktiverte repositoriene. Den kan komme fra AUR, tilhøre et deaktivert repository (som multilib), eller pakkedatabasen kan være utdatert.  \n"
-"Forslag: Oppdater hele systemet med 'sudo pacman -Syu' og prøv igjen."
+"在启用的仓库中找不到软件包。它可能来自 AUR，属于禁用的仓库（例如 multilib），或者软件包数据库可能已过时。  \n"
+"建议：使用 'sudo pacman -Syu' 更新整个系统，然后再试一次。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:379
 msgid ""
 "A conflict prevented the operation from completing.\n"
 "Suggestion: Clean the cache and update with 'sudo pacman -Scc' followed by 'sudo pacman -Syyu'."
 msgstr ""
-"En konflikt hindret operasjonen fra å fullføres.\n"
-"Forslag: Rens cachen og oppdater med 'sudo pacman -Scc' etterfulgt av 'sudo pacman -Syyu'."
+"冲突阻止操作完成。\n"
+"建议：清理缓存并使用 'sudo pacman -Scc'，然后执行 'sudo pacman -Syyu' 更新。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:387
 msgid ""
 "Some files from this package already exist on the system.\n"
 "Suggestion: Check which package owns the file with 'pacman -Qo <file_path>' and resolve the conflict."
 msgstr ""
-"Noen filer fra denne pakken finnes allerede på systemet.\n"
-"Forslag: Sjekk hvilken pakke som eier filen med 'pacman -Qo <file_path>' og løs konflikten."
+"系统中已存在此软件包的一些文件。\n"
+"建议：使用 'pacman -Qo <file_path>' 检查文件所属的软件包并解决冲突。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:395
 msgid ""
 "Required dependencies could not be resolved.\n"
 "Suggestion: Update the full system first with 'sudo pacman -Syu'."
 msgstr ""
-"Nødvendige avhengigheter kunne ikke løses.\n"
-"Forslag: Oppdater hele systemet først med 'sudo pacman -Syu'."
+"无法解析所需依赖项。\n"
+"建议：先使用 'sudo pacman -Syu' 更新整个系统。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:402
 msgid ""
 "Package signature could not be verified.\n"
 "Suggestion: Update your keyrings with 'sudo pacman -S archlinux-keyring manjaro-keyring'."
 msgstr ""
-"Pakke-signaturen kunne ikke verifiseres.\n"
-"Forslag: Oppdater nøkkelringene dine med 'sudo pacman -S archlinux-keyring manjaro-keyring'."
+"无法验证软件包签名。\n"
+"建议：使用 'sudo pacman -S archlinux-keyring manjaro-keyring' 更新密钥环。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:410
 msgid ""
 "The package database is locked by another process.\n"
 "If no other package manager is running, remove the lock with 'sudo rm /var/lib/pacman/db.lck'."
 msgstr ""
-"Pakkedatabasen er låst av en annen prosess.\n"
-"Hvis ingen annen pakkebehandler kjører, fjern låsen med 'sudo rm /var/lib/pacman/db.lck'."
+"软件包数据库被另一个进程锁定。\n"
+"如果没有其他包管理器运行，请使用 'sudo rm /var/lib/pacman/db.lck' 删除锁文件。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:418
 msgid ""
 "Not enough disk space to complete the operation.\n"
 "Suggestion: Free space by clearing the package cache with 'sudo pacman -Scc'."
 msgstr ""
-"Ikke nok diskplass til å fullføre operasjonen.\n"
-"Forslag: Frigjør plass ved å tømme pakkecachen med 'sudo pacman -Scc'."
+"磁盘空间不足，无法完成操作。\n"
+"建议：通过运行 'sudo pacman -Scc' 清理软件包缓存以释放空间。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:426
 msgid ""
 "Could not download required files.\n"
 "Suggestion: Check your internet connection. If the problem persists, try updating your mirror list."
 msgstr ""
-"Kunne ikke laste ned nødvendige filer.\n"
-"Forslag: Sjekk internettforbindelsen din. Hvis problemet vedvarer, prøv å oppdatere speillisten din."
+"无法下载所需文件。\n"
+"建议：检查您的网络连接。如果问题仍然存在，尝试更新镜像列表。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:434
 msgid ""
 "A downloaded package is corrupted.\n"
 "Suggestion: Clear the cache with 'sudo pacman -Scc' and try again."
 msgstr ""
-"En nedlastet pakke er korrupt.\n"
-"Forslag: Tøm cachen med 'sudo pacman -Scc' og prøv igjen."
+"下载的软件包已损坏。\n"
+"建议：运行 'sudo pacman -Scc' 清理缓存后重试。"
 
 #: usr/share/big-driver-manager/core/base_manager.py:456
 msgid "Generating GRUB configuration..."
-msgstr "Genererer GRUB-konfigurasjon ..."
+msgstr "正在生成 GRUB 配置..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:457
 msgid "Running post-transaction hooks..."
-msgstr "Kjører post-transaksjonskroker..."
+msgstr "正在运行事务后钩子..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:458
 msgid "Installing packages..."
-msgstr "Installerer pakker..."
+msgstr "正在安装软件包..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:459
 msgid "Removing packages..."
-msgstr "Fjerner pakker..."
+msgstr "正在删除软件包..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:460
 msgid "Checking for file conflicts..."
-msgstr "Ser etter filkonflikter..."
+msgstr "正在检查文件冲突..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:461
 msgid "Checking dependencies..."
-msgstr "Sjekker avhengigheter..."
+msgstr "检查依赖关系..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:465
 msgid "Synchronizing package databases..."
-msgstr "Synkroniserer pakkedatabaser..."
+msgstr "正在同步软件包数据库..."
 
 #: usr/share/big-driver-manager/core/base_manager.py:488
 #: usr/share/big-driver-manager/ui/home_page.py:553
 msgid "Downloading packages..."
-msgstr "Laster ned pakker..."
+msgstr "正在下载软件包..."
 
 #: usr/share/big-driver-manager/core/driver_installer.py:75
 #: usr/share/big-driver-manager/ui/base_page.py:95
@@ -205,11 +205,11 @@ msgstr "Laster ned pakker..."
 #: usr/share/big-driver-manager/ui/installed_page.py:368
 #: usr/share/big-driver-manager/ui/progress_dialog.py:221
 msgid "Please wait..."
-msgstr "Vennligst vent..."
+msgstr "请稍候..."
 
 #: usr/share/big-driver-manager/core/driver_installer.py:82
 msgid "Continue the installation in the pamac window that was opened."
-msgstr "Fortsett installasjonen i pamac-vinduet som ble åpnet."
+msgstr "请在打开的 pamac 窗口中继续安装。"
 
 #: usr/share/big-driver-manager/core/driver_installer.py:105
 #: usr/share/big-driver-manager/ui/category_page.py:736
@@ -221,16 +221,16 @@ msgstr "Fortsett installasjonen i pamac-vinduet som ble åpnet."
 #: usr/share/big-driver-manager/ui/mesa_page.py:1434
 #, python-brace-format
 msgid "Installing {}"
-msgstr "Installerer {}"
+msgstr "正在安装 {}"
 
 #: usr/share/big-driver-manager/core/driver_installer.py:136
 #, python-brace-format
 msgid "Installing build prerequisites: {}"
-msgstr "Installerer byggeforutsetninger: {}"
+msgstr "安装构建前提条件：{}"
 
 #: usr/share/big-driver-manager/core/driver_installer.py:143
 msgid "Installing build prerequisites"
-msgstr "Installerer byggeforutsetninger"
+msgstr "安装构建前提条件"
 
 #: usr/share/big-driver-manager/core/driver_installer.py:160
 #: usr/share/big-driver-manager/ui/category_page.py:778
@@ -242,25 +242,23 @@ msgstr "Installerer byggeforutsetninger"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1469
 #, python-brace-format
 msgid "Removing {}"
-msgstr "Fjerner {}"
+msgstr "正在移除 {}"
 
 #: usr/share/big-driver-manager/core/driver_installer.py:174
 #, python-brace-format
 msgid "pamac-installer not found. Cannot install AUR package {}."
-msgstr "pamac-installer ikke funnet. Kan ikke installere AUR-pakken {}."
+msgstr "未找到 pamac-installer。无法安装 AUR 软件包 {}。"
 
 #: usr/share/big-driver-manager/core/driver_installer.py:190
 msgid ""
 "Continue the installation in the pamac window that was opened. This dialog "
 "is only monitoring the result."
-msgstr ""
-"Fortsett installasjonen i pamac-vinduet som ble åpnet. Denne dialogboksen "
-"overvåker bare resultatet."
+msgstr "在打开的 pamac 窗口中继续安装。此对话框仅监控结果。"
 
 #: usr/share/big-driver-manager/core/kernel_manager.py:681
 #, python-brace-format
 msgid "{} is not available in the configured repositories."
-msgstr "{} er ikke tilgjengelig i de konfigurerte repositoriene."
+msgstr "{} 在已配置的仓库中不可用。"
 
 #: usr/share/big-driver-manager/core/kernel_manager.py:708
 #, python-brace-format
@@ -270,188 +268,183 @@ msgid ""
 "\n"
 "Without them linux-big would start without these drivers (for example without the NVIDIA driver), so it is not offered for now."
 msgstr ""
-"Din nåværende kjerne bruker drivermoduler som ennå ikke er tilgjengelige for linux-big:\n"
+"您当前的内核使用的驱动模块尚未提供 linux-big 版本：\n"
 "{}\n"
 "\n"
-"Uten dem ville linux-big startet uten disse driverne (for eksempel uten NVIDIA-driveren), så den tilbys ikke foreløpig."
+"缺少这些模块时，linux-big 将无法加载这些驱动（例如 NVIDIA 驱动），因此目前暂不提供安装。"
 
 #: usr/share/big-driver-manager/core/kernel_manager.py:721
 msgid ""
 "The linux-big modules for this version are still being published. Try again "
 "in a few minutes."
-msgstr ""
-"linux-big-modulene for denne versjonen blir fortsatt publisert. Prøv igjen "
-"om noen minutter."
+msgstr "此版本的 linux-big 模块仍在发布中。请几分钟后再试。"
 
 #: usr/share/big-driver-manager/core/kernel_manager.py:725
 msgid "pacman reported:"
-msgstr "pacman rapporterte:"
+msgstr "pacman 报告："
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:141
 #, python-brace-format
 msgid "Driver not found: {}"
-msgstr "Driver ikke funnet: {}"
+msgstr "未找到驱动：{}"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:191
 #, python-brace-format
 msgid "Applying {} driver..."
-msgstr "Bruker {} driver..."
+msgstr "正在应用 {} 驱动…"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:195
 #, python-brace-format
 msgid "Starting {} driver installation..."
-msgstr "Starter installering av {} driver..."
+msgstr "开始安装 {} 驱动程序..."
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:203
 #, python-brace-format
 msgid "❌ Error: {}"
-msgstr "❌ Feil: {}"
+msgstr "❌ 错误：{}"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:222
 msgid "Failed to remove conflicting packages."
-msgstr "Kunne ikke fjerne motstridende pakker."
+msgstr "无法删除冲突的包。"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:238
 #, python-brace-format
 msgid "Removing conflicts: {}"
-msgstr "Fjerner konflikter: {}"
+msgstr "正在移除冲突：{}"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:243
 msgid "Removing conflicting packages..."
-msgstr "Fjerner konflikterende pakker..."
+msgstr "正在移除冲突的软件包..."
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:253
 msgid "Removing conflicting packages"
-msgstr "Fjerner konfliktende pakker"
+msgstr "正在移除冲突的包"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:278
 msgid "Checking for conflicting packages..."
-msgstr "Ser etter motstridende pakker..."
+msgstr "检查冲突的包..."
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:289
 #, python-brace-format
 msgid "Checking {} packages..."
-msgstr "Kontrollerer {} pakker..."
+msgstr "正在检查 {} 个包..."
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:294
 #: usr/share/big-driver-manager/core/mesa_manager.py:305
 msgid "❌ No packages available to install."
-msgstr "❌ Ingen pakker tilgjengelig for installasjon."
+msgstr "❌ 没有可安装的软件包。"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:301
 #, python-brace-format
 msgid "⚠️ Package {} not available, skipping..."
-msgstr "⚠️ Pakke {} ikke tilgjengelig, hopper over..."
+msgstr "⚠️ 软件包 {} 不可用，跳过…"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:326
 #, python-brace-format
 msgid "Installing: {}"
-msgstr "Installerer: {}"
+msgstr "正在安装：{}"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:331
 #, python-brace-format
 msgid "Installing {} driver..."
-msgstr "Installerer {}-driveren..."
+msgstr "正在安装 {} 驱动程序..."
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:352
 msgid "Driver applied successfully!"
-msgstr "Driver brukt uten problemer!"
+msgstr "驱动程序应用成功！"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:356
 #, python-brace-format
 msgid "✅ {} driver applied successfully!"
-msgstr "✅ {} driver brukt uten problemer!"
+msgstr "✅ {} 驱动程序应用成功！"
 
 #: usr/share/big-driver-manager/core/mesa_manager.py:366
 #, python-brace-format
 msgid "Installing {} driver"
-msgstr "Installerer {} driver"
+msgstr "正在安装 {} 驱动程序"
 
 #: usr/share/big-driver-manager/core/mhwd_manager.py:213
 #: usr/share/big-driver-manager/ui/mesa_page.py:1140
 #, python-brace-format
 msgid "Remove the installed NVIDIA driver ({}) first."
-msgstr "Fjern først den installerte NVIDIA-driveren ({})."
+msgstr "请先卸载已安装的 NVIDIA 驱动程序 ({})。"
 
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 msgid "Completed"
-msgstr "Fullført"
+msgstr "完成"
 
 #: usr/share/big-driver-manager/core/mhwd_manager.py:335
 #: usr/share/big-driver-manager/ui/progress_dialog.py:399
 msgid "Failed"
-msgstr "Mislykket"
+msgstr "失败"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:108
 msgid "Firmware available"
-msgstr "Firmware tilgjengelig"
+msgstr "有可用固件"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:109
 msgid "Printer driver available"
-msgstr "Skriverdriver tilgjengelig"
+msgstr "有可用的打印机驱动程序"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:110
 msgid "Scanner driver available"
-msgstr "Skannerdriver tilgjengelig"
+msgstr "有可用的扫描仪驱动程序"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:112
 msgid "Driver available"
-msgstr "Driver tilgjengelig"
+msgstr "有可用驱动程序"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:117
 msgid "Open Driver Manager to review and install this firmware."
-msgstr "Åpne Driver Manager for å gjennomgå og installere denne fastvaren."
+msgstr "打开驱动程序管理器以查看和安装此固件。"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:118
 msgid "Open Driver Manager to review and install this driver."
-msgstr "Åpne Driverbehandler for å gjennomgå og installere denne driveren."
+msgstr "打开驱动程序管理器以查看和安装此驱动程序。"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:147
 msgid "Driver Manager"
-msgstr "Driverbehandler"
+msgstr "驱动程序管理器"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:200
 msgid "Don't alert for this firmware again"
-msgstr "Ikke varsle om denne fastvaren igjen"
+msgstr "不再提醒此固件"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:202
 msgid "Don't alert for this device again"
-msgstr "Ikke varsle for denne enheten igjen"
+msgstr "不再提醒此设备"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:216
 #: usr/share/big-driver-manager/ui/progress_dialog.py:164
 msgid "Close"
-msgstr "Lukk"
+msgstr "关闭"
 
 #: usr/share/big-driver-manager/udev-driver-dialog.py:220
 msgid "Open Driver Manager"
-msgstr "Åpne Driverbehandler"
+msgstr "打开驱动程序管理器"
 
 #: usr/share/big-driver-manager/ui/application.py:157
 msgid "Open the page of a driver package and offer to install it"
-msgstr "Åpne siden til en driverpakke og tilby å installere den"
+msgstr "打开驱动程序包页面并提供安装选项"
 
 #: usr/share/big-driver-manager/ui/application.py:246
 #: usr/share/big-driver-manager/ui/kernel_page.py:162
 #: usr/share/big-driver-manager/ui/mesa_page.py:431
 msgid "Error"
-msgstr "Feil"
+msgstr "错误"
 
 #: usr/share/big-driver-manager/ui/base_page.py:23
 msgid ""
 "This package is not in the official repositories. It will be built from the "
 "AUR on your computer, which can take several minutes and is not reviewed by "
 "the distribution."
-msgstr ""
-"Denne pakken er ikke i de offisielle repositoriene. Den vil bli bygget fra "
-"AUR på datamaskinen din, noe som kan ta flere minutter og ikke er "
-"gjennomgått av distribusjonen."
+msgstr "此软件包不在官方软件源中。它将在您的计算机上从 AUR 构建，这可能需要几分钟，并且未经过发行版审核。"
 
 #: usr/share/big-driver-manager/ui/base_page.py:58
 #: usr/share/big-driver-manager/ui/home_page.py:573
 #, python-brace-format
 msgid "Install {}?"
-msgstr "Installer {}?"
+msgstr "安装 {}？"
 
 #: usr/share/big-driver-manager/ui/base_page.py:61
 #, python-brace-format
@@ -459,131 +452,121 @@ msgid ""
 "Your device already works with the built-in driver {}, which is the "
 "recommended option. Only install this third-party driver to work around a "
 "specific problem — it may conflict with the built-in one."
-msgstr ""
-"Enheten din fungerer allerede med den innebygde driveren {}, som er det "
-"anbefalte alternativet. Installer kun denne tredjepartsdriveren for å omgå "
-"et spesifikt problem — den kan komme i konflikt med den innebygde."
+msgstr "您的设备已经可以使用内置驱动程序{}，这是推荐的选项。仅在遇到特定问题时安装此第三方驱动程序——它可能与内置驱动程序发生冲突。"
 
 #: usr/share/big-driver-manager/ui/base_page.py:159
 #: usr/share/big-driver-manager/ui/base_page.py:164
 msgid "Loading..."
-msgstr "Laster..."
+msgstr "加载中..."
 
 #: usr/share/big-driver-manager/ui/base_page.py:160
 msgid "Loading"
-msgstr "Laster"
+msgstr "加载中"
 
 #: usr/share/big-driver-manager/ui/base_page.py:175
 msgid "Still loading… Check your network connection."
-msgstr "Laster fortsatt... Sjekk nettverkstilkoblingen."
+msgstr "仍在加载...检查您的网络连接。"
 
 #: usr/share/big-driver-manager/ui/category_page.py:90
 #: usr/share/big-driver-manager/ui/category_page.py:389
 #: usr/share/big-driver-manager/ui/installed_page.py:39
 #: usr/share/big-driver-manager/ui/window.py:126
 msgid "Other"
-msgstr "Andre"
+msgstr "其他"
 
 #: usr/share/big-driver-manager/ui/category_page.py:152
 msgid "Search drivers..."
-msgstr "Søk etter drivere..."
+msgstr "搜索驱动程序..."
 
 #: usr/share/big-driver-manager/ui/category_page.py:156
 msgid "Search drivers"
-msgstr "Søk etter drivere"
+msgstr "搜索驱动程序"
 
 #: usr/share/big-driver-manager/ui/category_page.py:186
 #: usr/share/big-driver-manager/ui/category_page.py:189
 msgid "Searching for printers on the network"
-msgstr "Søker etter skrivere på nettverket"
+msgstr "正在网络上搜索打印机"
 
 #: usr/share/big-driver-manager/ui/category_page.py:192
 msgid "Searching for printers on the network…"
-msgstr "Søker etter skrivere på nettverket…"
+msgstr "正在搜索网络上的打印机…"
 
 #: usr/share/big-driver-manager/ui/category_page.py:211
 msgid "No more automatically detected compatible drivers in this category."
-msgstr ""
-"Ingen flere automatisk oppdagede kompatible drivere i denne kategorien."
+msgstr "此类别中没有更多自动检测到的兼容驱动程序。"
 
 #: usr/share/big-driver-manager/ui/category_page.py:219
 #: usr/share/big-driver-manager/ui/category_page.py:243
 msgid "Show drivers without detected compatibility"
-msgstr "Vis drivere uten oppdaget kompatibilitet"
+msgstr "显示未检测到兼容性的驱动"
 
 #: usr/share/big-driver-manager/ui/category_page.py:231
 #: usr/share/big-driver-manager/ui/category_page.py:373
 msgid "No drivers needed for this category"
-msgstr "Ingen drivere nødvendig for denne kategorien"
+msgstr "此类别无需驱动程序"
 
 #: usr/share/big-driver-manager/ui/category_page.py:234
 msgid ""
 "No drivers in this category were automatically detected as compatible with "
 "your hardware."
-msgstr ""
-"Ingen drivere i denne kategorien ble automatisk oppdaget som kompatible med "
-"maskinvaren din."
+msgstr "此类别中未自动检测到与您的硬件兼容的驱动程序。"
 
 #: usr/share/big-driver-manager/ui/category_page.py:281
 #, python-brace-format
 msgid "Adapter {} — working (driver {})"
-msgstr "Adapter {} — fungerer (driver {})"
+msgstr "适配器 {} — 正在工作 (驱动程序 {})"
 
 #: usr/share/big-driver-manager/ui/category_page.py:282
 #: usr/share/big-driver-manager/ui/category_page.py:529
 msgid "unknown"
-msgstr "ukjent"
+msgstr "未知"
 
 #: usr/share/big-driver-manager/ui/category_page.py:290
 msgid "Cable connected"
-msgstr "Kabel tilkoblet"
+msgstr "已连接电缆"
 
 #: usr/share/big-driver-manager/ui/category_page.py:294
 msgid "Interface disabled"
-msgstr "Grensesnitt deaktivert"
+msgstr "接口已禁用"
 
 #: usr/share/big-driver-manager/ui/category_page.py:297
 msgid ""
 "No cable or link detected. Check the cable and the router/switch port — no "
 "extra driver is needed."
-msgstr ""
-"Ingen kabel eller lenke oppdaget. Sjekk kabelen og router/switch-porten — "
-"ingen ekstra driver er nødvendig."
+msgstr "未检测到电缆或链接。请检查电缆和路由器/交换机端口 — 无需额外的驱动程序。"
 
 #: usr/share/big-driver-manager/ui/category_page.py:352
 msgid "Detection Error"
-msgstr "Deteksjonsfeil"
+msgstr "检测错误"
 
 #: usr/share/big-driver-manager/ui/category_page.py:376
 msgid ""
 "No drivers in this category were detected as necessary for your hardware."
-msgstr ""
-"Ingen drivere i denne kategorien ble oppdaget som nødvendige for maskinvaren"
-" din."
+msgstr "此类别中未检测到您的硬件所需的驱动程序。"
 
 #: usr/share/big-driver-manager/ui/category_page.py:450
 msgid "1 driver"
-msgstr "1 driver"
+msgstr "1 个驱动程序"
 
 #: usr/share/big-driver-manager/ui/category_page.py:450
 #, python-brace-format
 msgid "{} drivers"
-msgstr "{} drivere"
+msgstr "{} 个驱动程序"
 
 #: usr/share/big-driver-manager/ui/category_page.py:452
 #, python-brace-format
 msgid "{} detected"
-msgstr "{} oppdaget"
+msgstr "检测到 {}"
 
 #: usr/share/big-driver-manager/ui/category_page.py:454
 #, python-brace-format
 msgid "{} installed"
-msgstr "{} installert"
+msgstr "已安装 {}"
 
 #: usr/share/big-driver-manager/ui/category_page.py:516
 #: usr/share/big-driver-manager/ui/installed_page.py:290
 msgid "Detected"
-msgstr "Oppdaget"
+msgstr "已检测"
 
 #: usr/share/big-driver-manager/ui/category_page.py:518
 #: usr/share/big-driver-manager/ui/home_page.py:386
@@ -597,16 +580,16 @@ msgstr "Oppdaget"
 #: usr/share/big-driver-manager/ui/window.py:336
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 msgid "Installed"
-msgstr "Operasjonen er fullført."
+msgstr "已安装"
 
 #: usr/share/big-driver-manager/ui/category_page.py:520
 msgid "Not installed"
-msgstr "Ikke installert"
+msgstr "未安装"
 
 #: usr/share/big-driver-manager/ui/category_page.py:528
 #, python-brace-format
 msgid "Not needed: device already works with built-in driver {}"
-msgstr "Ikke nødvendig: enheten fungerer allerede med innebygd driver {}"
+msgstr "不需要：设备已经可以使用内置驱动程序 {}"
 
 #: usr/share/big-driver-manager/ui/category_page.py:553
 #: usr/share/big-driver-manager/ui/category_page.py:760
@@ -621,7 +604,7 @@ msgstr "Ikke nødvendig: enheten fungerer allerede med innebygd driver {}"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1359
 #: usr/share/big-driver-manager/ui/mesa_page.py:1450
 msgid "Remove"
-msgstr "Fjern"
+msgstr "移除"
 
 #: usr/share/big-driver-manager/ui/category_page.py:557
 #: usr/share/big-driver-manager/ui/category_page.py:717
@@ -635,7 +618,7 @@ msgstr "Fjern"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1374
 #: usr/share/big-driver-manager/ui/mesa_page.py:1399
 msgid "Install"
-msgstr "Installer"
+msgstr "安装"
 
 #: usr/share/big-driver-manager/ui/category_page.py:566
 #: usr/share/big-driver-manager/ui/home_page.py:333
@@ -645,7 +628,7 @@ msgstr "Installer"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1379
 #, python-brace-format
 msgid "Install {}"
-msgstr "Installer {}"
+msgstr "安装 {}"
 
 #: usr/share/big-driver-manager/ui/category_page.py:568
 #: usr/share/big-driver-manager/ui/installed_page.py:327
@@ -655,18 +638,18 @@ msgstr "Installer {}"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1364
 #, python-brace-format
 msgid "Remove {}"
-msgstr "Fjern {}"
+msgstr "移除 {}"
 
 #: usr/share/big-driver-manager/ui/category_page.py:634
 #, python-brace-format
 msgid "{total} drivers · {detected} detected · {installed} installed"
-msgstr "{total} drivere · {detected} oppdaget · {installed} installert"
+msgstr "{total} 个驱动程序 · {detected} 已检测 · {installed} 已安装"
 
 #: usr/share/big-driver-manager/ui/category_page.py:709
 #: usr/share/big-driver-manager/ui/home_page.py:572
 #: usr/share/big-driver-manager/ui/mesa_page.py:1152
 msgid "Install Driver"
-msgstr "Installer driveren"
+msgstr "安装驱动程序"
 
 #: usr/share/big-driver-manager/ui/category_page.py:716
 #: usr/share/big-driver-manager/ui/category_page.py:759
@@ -684,122 +667,116 @@ msgstr "Installer driveren"
 #: usr/share/big-driver-manager/ui/mesa_page.py:1449
 #: usr/share/big-driver-manager/ui/progress_dialog.py:158
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr "取消"
 
 #: usr/share/big-driver-manager/ui/category_page.py:757
 #: usr/share/big-driver-manager/ui/installed_page.py:346
 #: usr/share/big-driver-manager/ui/mesa_page.py:1231
 msgid "Remove Driver"
-msgstr "Fjern driveren"
+msgstr "删除驱动程序"
 
 #: usr/share/big-driver-manager/ui/category_page.py:758
 #: usr/share/big-driver-manager/ui/installed_page.py:347
 #, python-brace-format
 msgid "Remove {}?"
-msgstr "Fjern {}?"
+msgstr "移除 {}？"
 
 #: usr/share/big-driver-manager/ui/category_page.py:808
 #: usr/share/big-driver-manager/ui/installed_page.py:417
 msgid "Operation completed successfully."
-msgstr "Operasjonen er fullført."
+msgstr "操作成功完成。"
 
 #: usr/share/big-driver-manager/ui/category_page.py:811
 #: usr/share/big-driver-manager/ui/installed_page.py:420
 msgid "Operation failed. Check logs for details."
-msgstr "Operasjonen mislyktes. Sjekk logger for detaljer."
+msgstr "操作失败。请查看日志了解详情。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:73
 msgid "What is Kernel?"
-msgstr "Hva er kjernen?"
+msgstr "什么是内核？"
 
 #: usr/share/big-driver-manager/ui/home_page.py:75
 msgid ""
 "The kernel is the heart of your operating system. It controls your "
 "processor, memory, and all hardware. Most drivers already come built-in with"
 " the kernel."
-msgstr ""
-"Kjernen er hjertet i operativsystemet ditt. Den kontrollerer prosessoren, "
-"minnet og all maskinvare. De fleste drivere er allerede innebygd med "
-"kjernen."
+msgstr "内核是操作系统的核心。它控制您的处理器、内存和所有硬件。大多数驱动程序已内置于内核中。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:86
 msgid "What are Drivers?"
-msgstr "Hva er drivere?"
+msgstr "什么是驱动程序？"
 
 #: usr/share/big-driver-manager/ui/home_page.py:88
 msgid ""
 "Drivers allow each device — like your video card, Wi-Fi, or sound — to "
 "communicate with the system. If everything is already working, you probably "
 "don't need to change anything."
-msgstr ""
-"Drivere gjør det mulig for hver enhet — som videokortet, Wi-Fi eller lyd — å"
-" kommunisere med systemet. Hvis alt allerede fungerer, trenger du "
-"sannsynligvis ikke å endre noe."
+msgstr "驱动程序允许每个设备——如您的显卡、Wi-Fi 或声音设备——与系统通信。如果一切正常工作，您可能无需更改任何内容。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:113
 #: usr/share/big-driver-manager/ui/home_page.py:116
 msgid "Checking your system"
-msgstr "Sjekker systemet ditt"
+msgstr "检查您的系统"
 
 #: usr/share/big-driver-manager/ui/home_page.py:120
 msgid "Checking your system…"
-msgstr "Sjekker systemet ditt …"
+msgstr "正在检查您的系统..."
 
 #: usr/share/big-driver-manager/ui/home_page.py:126
 msgid "Detecting hardware and installed drivers."
-msgstr "Finner maskinvare og installerte drivere."
+msgstr "正在检测硬件和已安装的驱动程序。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:156
 msgid "Recommended for your hardware"
-msgstr "Anbefalt for maskinvaren din"
+msgstr "适合您硬件的推荐项"
 
 #: usr/share/big-driver-manager/ui/home_page.py:209
 #: usr/share/big-driver-manager/ui/home_page.py:213
 msgid "Install recommended"
-msgstr "Installer anbefalt"
+msgstr "安装推荐项"
 
 #: usr/share/big-driver-manager/ui/home_page.py:239
 #, python-brace-format
 msgid "{} has no driver loaded. A compatible driver is available: {}"
-msgstr "{} har ingen driver lastet. En kompatibel driver er tilgjengelig: {}"
+msgstr "{} 没有加载驱动程序。可用的兼容驱动程序为：{}"
 
 #: usr/share/big-driver-manager/ui/home_page.py:242
 msgid "Go to drivers"
-msgstr "Gå til drivere"
+msgstr "前往驱动程序"
 
 #: usr/share/big-driver-manager/ui/home_page.py:271
 #, python-brace-format
 msgid "All {} recommended video packages for your {} hardware are installed."
-msgstr "Alle {} anbefalte videopakker for din {} maskinvare er installert."
+msgstr "已为您的硬件安装全部 {} 个推荐视频软件包（硬件：{}）。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:281
 #, python-brace-format
 msgid "{} of {} recommended packages are not installed."
-msgstr "{} av {} anbefalte pakker er ikke installert."
+msgstr "有 {} 个推荐软件包尚未安装（共 {} 个）。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:291
 #, python-brace-format
 msgid "Install all {} recommended"
-msgstr "Installer alle {} anbefalte"
+msgstr "安装全部 {} 个推荐软件包"
 
 #: usr/share/big-driver-manager/ui/home_page.py:356
 #, python-brace-format
 msgid "Already installed ({})"
-msgstr "Allerede installert ({})"
+msgstr "已安装（{}）"
 
 #: usr/share/big-driver-manager/ui/home_page.py:368
 #: usr/share/big-driver-manager/ui/home_page.py:371
 #: usr/share/big-driver-manager/ui/home_page.py:509
 msgid "Show installed packages"
-msgstr "Vis installerte pakker"
+msgstr "显示已安装的软件包"
 
 #: usr/share/big-driver-manager/ui/home_page.py:506
 msgid "Hide installed packages"
-msgstr "Skjul installerte pakker"
+msgstr "隐藏已安装的软件包"
 
 #: usr/share/big-driver-manager/ui/home_page.py:521
 msgid "Install Recommended Packages"
-msgstr "Installer anbefalte pakker"
+msgstr "安装推荐的软件包"
 
 #: usr/share/big-driver-manager/ui/home_page.py:524
 #, python-brace-format
@@ -808,68 +785,68 @@ msgid ""
 "\n"
 "{}"
 msgstr ""
-"Installer <b>{}</b> pakker?\n"
+"安装 <b>{}</b> 个软件包？\n"
 "\n"
 "{}"
 
 #: usr/share/big-driver-manager/ui/home_page.py:530
 msgid "Install All"
-msgstr "Installer alle"
+msgstr "全部安装"
 
 #: usr/share/big-driver-manager/ui/home_page.py:546
 #, python-brace-format
 msgid "Installing {} packages"
-msgstr "Installerer {} pakker"
+msgstr "正在安装 {} 个软件包"
 
 #: usr/share/big-driver-manager/ui/home_page.py:550
 msgid "Installing recommended packages"
-msgstr "Installerer anbefalte pakker"
+msgstr "正在安装推荐的软件包"
 
 #: usr/share/big-driver-manager/ui/home_page.py:564
 msgid "All recommended packages installed successfully!"
-msgstr "Alle anbefalte pakker ble installert uten problemer!"
+msgstr "所有推荐的软件包已成功安装！"
 
 #: usr/share/big-driver-manager/ui/home_page.py:565
 msgid "Package installation failed."
-msgstr "Pakkeinstallasjonen mislyktes."
+msgstr "软件包安装失败。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:596
 #: usr/share/big-driver-manager/ui/mesa_page.py:1437
 msgid "Downloading package..."
-msgstr "Laster ned pakke..."
+msgstr "正在下载软件包..."
 
 #: usr/share/big-driver-manager/ui/home_page.py:606
 #, python-brace-format
 msgid "Installed {}"
-msgstr "Installert {}"
+msgstr "已安装 {}"
 
 #: usr/share/big-driver-manager/ui/home_page.py:613
 #, python-brace-format
 msgid "{} installed successfully!"
-msgstr "{} installert uten problemer!"
+msgstr "{} 安装成功！"
 
 #: usr/share/big-driver-manager/ui/home_page.py:614
 #, python-brace-format
 msgid "Installation of {} failed."
-msgstr "Installasjon av {} mislyktes."
+msgstr "{} 的安装失败。"
 
 #: usr/share/big-driver-manager/ui/home_page.py:644
 msgid "Information"
-msgstr "Informasjon"
+msgstr "信息"
 
 #: usr/share/big-driver-manager/ui/home_page.py:644
 #: usr/share/big-driver-manager/ui/kernel_page.py:348
 msgid "Warning"
-msgstr "Advarsel"
+msgstr "警告"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:27
 msgid "Kernels"
-msgstr "Kjerner"
+msgstr "内核"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:28
 #: usr/share/big-driver-manager/ui/window.py:60
 msgid "Video / GPU"
-msgstr "Video / GPU"
+msgstr "视频 / GPU"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:29
 #: usr/share/big-driver-manager/ui/window.py:66
@@ -879,149 +856,137 @@ msgstr "Wi-Fi"
 #: usr/share/big-driver-manager/ui/installed_page.py:30
 #: usr/share/big-driver-manager/ui/window.py:72
 msgid "Ethernet"
-msgstr "Ethernet"
+msgstr "以太网"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:31
 #: usr/share/big-driver-manager/ui/window.py:78
 msgid "Bluetooth"
-msgstr "Bluetooth"
+msgstr "蓝牙"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:32
 #: usr/share/big-driver-manager/ui/window.py:84
 msgid "DVB / TV"
-msgstr "DVB / TV"
+msgstr "DVB / 电视"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:33
 #: usr/share/big-driver-manager/ui/window.py:90
 msgid "Audio"
-msgstr "Lyd"
+msgstr "音频"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:34
 #: usr/share/big-driver-manager/ui/window.py:96
 msgid "Webcam"
-msgstr "Webkamera"
+msgstr "网络摄像头"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:35
 #: usr/share/big-driver-manager/ui/window.py:102
 msgid "Touchscreen"
-msgstr "Berøringsskjerm"
+msgstr "触摸屏"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:36
 #: usr/share/big-driver-manager/ui/window.py:108
 msgid "Printers"
-msgstr "Skrivere"
+msgstr "打印机"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:37
 #: usr/share/big-driver-manager/ui/window.py:114
 msgid "3D Printers"
-msgstr "3D-skrivere"
+msgstr "3D打印机"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:38
 #: usr/share/big-driver-manager/ui/window.py:120
 msgid "Scanners"
-msgstr "Skannere"
+msgstr "扫描仪"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:64
 msgid "Installed Drivers"
-msgstr "Installerte drivere"
+msgstr "已安装的驱动程序"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:74
 msgid ""
 "All drivers and firmware currently installed on your system, grouped by "
 "category."
-msgstr ""
-"Alle drivere og fastvare som er installert på systemet ditt, gruppert etter "
-"kategori."
+msgstr "系统上当前安装的所有驱动程序和固件，按类别分组。"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:102
 msgid "No extra drivers installed"
-msgstr "Ingen ekstra drivere installert"
+msgstr "未安装额外的驱动程序"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:104
 msgid "Your system is using only default drivers."
-msgstr "Systemet ditt bruker bare standarddrivere."
+msgstr "您的系统仅使用默认驱动程序。"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:234
 #, python-brace-format
 msgid "{total} installed drivers across {cats} categories"
-msgstr "{total} installerte drivere i {cats} kategorier"
+msgstr "{cats} 个类别中已安装 {total} 个驱动程序"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:256
 #, python-brace-format
 msgid "{n} installed"
-msgstr "{n} installert"
+msgstr "已安装 {n}"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:273
 msgid "Running"
-msgstr "Kjører"
+msgstr "运行中"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:278
 msgid "MHWD driver"
-msgstr "MHWD-driver"
+msgstr "MHWD 驱动程序"
 
 #: usr/share/big-driver-manager/ui/installed_page.py:281
 #: usr/share/big-driver-manager/ui/mesa_page.py:536
 #: usr/share/big-driver-manager/ui/mesa_page.py:542
 msgid "Active"
-msgstr "Aktiv"
+msgstr "已启用"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:44
 msgid "Stable, long-term support"
-msgstr "Stabil, langsiktig støtte"
+msgstr "稳定，长期支持"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:47
 msgid ""
 "Receives security updates for years. Best choice for most users — reliable "
 "and well-tested."
-msgstr ""
-"Mottar sikkerhetsoppdateringer i flere år. Beste valg for de fleste brukere "
-"— pålitelig og godt testet."
+msgstr "多年接收安全更新。大多数用户的最佳选择——可靠且经过充分测试。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:53
 msgid "Low-latency, real-time"
-msgstr "Lav latens, sanntid"
+msgstr "低延迟、实时"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:56
 msgid ""
 "Designed for audio/video production and tasks needing precise timing. May be"
 " incompatible with some drivers (e.g. NVIDIA). Only recommended for advanced"
 " users."
-msgstr ""
-"Designet for lyd-/videoproduksjon og oppgaver som krever presis timing. Kan "
-"være inkompatibel med noen drivere (f.eks. NVIDIA). Anbefales kun for "
-"avanserte brukere."
+msgstr "专为音视频制作和需要精确时序的任务设计。可能与某些驱动（如 NVIDIA）不兼容。仅推荐给高级用户。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:63
 msgid "Gaming & performance optimized"
-msgstr "Optimalisert for spill og ytelse"
+msgstr "游戏与性能优化"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:66
 msgid ""
 "Tuned for faster gaming and a more responsive desktop. Great for daily use "
 "if you want extra performance."
-msgstr ""
-"Justert for raskere spilling og et mer responsivt skrivebord. Flott for "
-"daglig bruk hvis du ønsker ekstra ytelse."
+msgstr "针对更快的游戏体验和更灵敏的桌面响应进行了调优。如果您想要额外性能，适合日常使用。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:72
 msgid "Performance optimized by CachyOS"
-msgstr "Ytelsesoptimalisert av CachyOS"
+msgstr "由CachyOS优化性能"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:75
 msgid ""
 "EEVDF scheduler with LTO, AutoFDO and Propeller optimizations. Excellent for"
 " gaming and desktop responsiveness."
-msgstr ""
-"EEVDF-planlegger med LTO, AutoFDO og Propeller-optimaliseringer. Utmerket "
-"for gaming og skrivebordsrespons."
+msgstr "EEVDF调度器，集成LTO、AutoFDO和Propeller优化。非常适合游戏和桌面响应速度。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
 "BigCommunity kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"BigCommunity-kjerne (big-kernel), optimalisert for spilling og generell bruk"
-" (BORE, Clang ThinLTO, Intel-fikser)"
+"BigCommunity 内核（big-kernel），针对游戏和日常使用进行了优化（BORE、Clang ThinLTO、Intel 修复）"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
 msgid ""
@@ -1029,101 +994,93 @@ msgid ""
 "the BORE scheduler, Clang + ThinLTO build and fixes for recent Intel GPUs "
 "(Arrow Lake / Meteor Lake)."
 msgstr ""
-"Offisiell kernel.org-kjerne med Manjaros konfigurasjon og patcher, pluss "
-"BORE-planleggeren, et Clang + ThinLTO-bygg og fikser for nyere Intel-GPU-er "
-"(Arrow Lake / Meteor Lake)."
+"官方 kernel.org 内核，包含 Manjaro 的配置和补丁，以及 BORE 调度器、Clang + ThinLTO 构建和针对最新 Intel"
+" 显卡（Arrow Lake / Meteor Lake）的修复。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:100
 msgid "Package from outside the official repositories"
-msgstr "Pakke utenfor de offisielle repositoriene"
+msgstr "来自官方仓库之外的软件包"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:103
 msgid ""
 "Installed from a package that the enabled repositories don't provide "
 "(community or self-built). It is updated by whoever provides the package, "
 "not by system updates."
-msgstr ""
-"Installert fra en pakke som de aktiverte repositoriene ikke tilbyr "
-"(community eller selvbygget). Den oppdateres av den som leverer pakken, ikke"
-" av systemoppdateringer."
+msgstr "从启用的仓库未提供的软件包安装（社区版或自行构建）。由提供该软件包的人负责更新，而非通过系统更新。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:108
 msgid "Local"
-msgstr "Lokal"
+msgstr "本地"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:110
 msgid "Installed manually, outside the package manager"
-msgstr "Installert manuelt, utenom pakkebehandleren"
+msgstr "手动安装，未通过包管理器"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:113
 msgid ""
 "This kernel was not installed by a package, so it can't be updated or "
 "removed here. Manage it the same way it was installed."
-msgstr ""
-"Denne kjernen ble ikke installert via en pakke, så den kan ikke oppdateres "
-"eller fjernes her. Administrer den på samme måte som den ble installert."
+msgstr "此内核不是通过软件包安装的，因此无法在此处更新或删除。请按照安装时的方式进行管理。"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:117
 msgid "Manual"
-msgstr "Manuell"
+msgstr "手动"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:119
 msgid "Latest features & drivers"
-msgstr "Siste funksjoner og drivere"
+msgstr "最新功能和驱动程序"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:123
 msgid "Always up to date with the newest features and hardware support."
-msgstr "Alltid oppdatert med de nyeste funksjonene og maskinvarestøtte."
+msgstr "始终保持最新，支持最新功能和硬件。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:108
 msgid "Installed Kernels"
-msgstr "Installerte kjerner"
+msgstr "已安装的内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:120
 msgid "Remove all obsolete kernels"
-msgstr "Fjern alle utdaterte kjerner"
+msgstr "移除所有过时的内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:262
 msgid "Kernel in use"
-msgstr "Kjerne i bruk"
+msgstr "正在使用的内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:268
 msgid "In Use"
-msgstr "I bruk"
+msgstr "使用中"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:332
 msgid "Obsolete Kernels — Removal Recommended"
-msgstr "Utdaterte kjerner — anbefalt å fjerne dem"
+msgstr "过时内核 — 建议移除"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:361
 msgid "No longer receives security updates"
-msgstr "Mottar ikke lenger sikkerhetsoppdateringer"
+msgstr "不再接收安全更新"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:373
 #: usr/share/big-driver-manager/ui/kernel_page.py:451
 #, python-brace-format
 msgid "Remove kernel {}"
-msgstr "Fjern kjerne {}"
+msgstr "移除内核 {}"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:422
 msgid "Last backup"
-msgstr "Siste reservekjerne"
+msgstr "最后一个备用内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:426
 msgid "At least one backup kernel must remain installed"
-msgstr "Minst én reservekjerne må forbli installert"
+msgstr "必须保留至少一个已安装的备用内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:433
 msgid "Not removable here"
-msgstr "Kan ikke fjernes her"
+msgstr "无法在此处删除"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:438
 msgid ""
 "Installed outside the package manager. Remove its files from /boot and "
 "/usr/lib/modules the same way it was installed."
-msgstr ""
-"Installert utenom pakkebehandleren. Fjern filene fra /boot og "
-"/usr/lib/modules på samme måte som den ble installert."
+msgstr "未通过包管理器安装。请按照安装时的方式，从 /boot 和 /usr/lib/modules 中删除其文件。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
@@ -1131,78 +1088,69 @@ msgid ""
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"BigCommunity-kjernen (big-kernel), optimalisert for spilling og generell "
-"bruk (BORE, Clang ThinLTO, Intel-fikser). Den installeres i tillegg til din "
-"nåværende kjerne."
+"BigCommunity 内核（big-kernel），针对游戏和日常使用进行了优化（BORE、Clang ThinLTO、Intel "
+"修复）。它将与您当前的内核一起安装。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:465
 msgid ""
 "Recommended for most users. These kernels receive security updates for years"
 " and are thoroughly tested."
-msgstr ""
-"Anbefalt for de fleste brukere. Disse kjernene mottar "
-"sikkerhetsoppdateringer i flere år og er grundig testet."
+msgstr "推荐大多数用户使用。这些内核多年接收安全更新且经过充分测试。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:469
 msgid ""
 "Always up to date with the latest features and hardware support. Good if you"
 " need the newest drivers."
-msgstr ""
-"Alltid oppdatert med de nyeste funksjonene og maskinvarestøtte. Bra hvis du "
-"trenger de nyeste driverne."
+msgstr "始终保持最新功能和硬件支持。如果需要最新驱动，这是不错的选择。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:473
 msgid ""
 "Tuned for gaming and desktop responsiveness. A good option for daily use "
 "with extra performance."
-msgstr ""
-"Optimalisert for spilling og skrivebordsrespons. Et godt valg for daglig "
-"bruk med ekstra ytelse."
+msgstr "针对游戏和桌面响应性进行了优化。日常使用的好选择，性能更佳。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:477
 msgid ""
 "Built for audio/video production needing precise timing. May be incompatible"
 " with some drivers (e.g. NVIDIA). Only for advanced users."
-msgstr ""
-"Bygget for lyd-/videoproduksjon som krever presis timing. Kan være "
-"inkompatibel med noen drivere (f.eks. NVIDIA). Kun for avanserte brukere."
+msgstr "为需要精确时序的音视频制作而构建。可能与某些驱动（如 NVIDIA）不兼容。仅适合高级用户。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:523
 msgid "LTS — Long Term Support (Recommended)"
-msgstr "LTS — Langtidsstøtte (Anbefalt)"
+msgstr "LTS — 长期支持（推荐）"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:524
 msgid "Standard"
-msgstr "Standard"
+msgstr "标准"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:525
 msgid "Xanmod (Performance)"
-msgstr "Xanmod (Ytelse)"
+msgstr "Xanmod（性能）"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:526
 msgid "Real-Time (Advanced)"
-msgstr "Sanntid (Avansert)"
+msgstr "实时（高级）"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:597
 #: usr/share/big-driver-manager/ui/kernel_page.py:625
 #, python-brace-format
 msgid "Show {} available"
-msgstr "Vis {} tilgjengelig"
+msgstr "显示 {} 个可用内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:628
 msgid "Hide available kernels"
-msgstr "Skjul tilgjengelige kjerner"
+msgstr "隐藏可用内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:678
 #: usr/share/big-driver-manager/ui/kernel_page.py:681
 #, python-brace-format
 msgid "Install kernel {}"
-msgstr "Installer kjerne {}"
+msgstr "安装内核 {}"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:697
 #, python-brace-format
 msgid "{} can't be installed yet"
-msgstr "{} kan ikke installeres ennå"
+msgstr "{} 尚无法安装"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:709
 msgid ""
@@ -1210,38 +1158,38 @@ msgid ""
 "\n"
 "The following packages will be installed:"
 msgstr ""
-"Din nåværende kjerne forblir installert; du kan velge mellom dem i oppstartsmenyen (GRUB).\n"
+"您当前的内核将保持已安装状态；您可以在启动菜单（GRUB）中在两者之间选择。\n"
 "\n"
-"Følgende pakker vil bli installert:"
+"将安装以下软件包："
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:741
 #: usr/share/big-driver-manager/ui/mesa_page.py:1175
 msgid "Preparing installation..."
-msgstr "Forbereder installasjon..."
+msgstr "正在准备安装..."
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:765
 msgid ""
 "Kernel installed successfully.\n"
 "You may need to reboot to use it."
 msgstr ""
-"Kjernen ble installert vellykket.\n"
-"Du må kanskje starte på nytt for å bruke den."
+"内核安装成功。\n"
+"您可能需要重启以使用它。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:772
 msgid ""
 "Kernel installation failed.\n"
 "Check the terminal output for details."
 msgstr ""
-"Kjerneinstallasjon mislyktes.\n"
-"Sjekk terminalutgangen for detaljer."
+"内核安装失败。\n"
+"请检查终端输出以获取详细信息。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:786
 msgid "Cannot Remove Running Kernel"
-msgstr "Kan ikke fjerne kjernen som kjører"
+msgstr "无法移除正在运行的内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:788
 msgid "This kernel is currently in use. Boot into a different kernel first."
-msgstr "Denne kjernen er i bruk nå. Start opp med en annen kjerne først."
+msgstr "该内核当前正在使用中。请先启动到其他内核。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:813
 msgid ""
@@ -1249,33 +1197,33 @@ msgid ""
 "\n"
 "The following packages will be removed:"
 msgstr ""
-"⚠ Dette er din siste sikkerhetskopikjerne. Hvis den kjørende kjernen feiler, vil du ikke ha noen reserve.\n"
+"⚠ 这是您的最后一个备用内核。如果正在运行的内核发生故障，您将没有备用选择。\n"
 "\n"
-"Følgende pakker vil bli fjernet:"
+"将移除以下软件包："
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:819
 msgid "The following packages will be removed:"
-msgstr "Følgende pakker vil bli fjernet:"
+msgstr "以下软件包将被移除："
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:848
 msgid "Preparing removal…"
-msgstr "Forbereder fjerning…"
+msgstr "正在准备移除…"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:869
 msgid "Kernel removed successfully."
-msgstr "Kjernen ble fjernet."
+msgstr "内核删除成功。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:872
 msgid ""
 "Kernel removal failed.\n"
 "Check the terminal output for details."
 msgstr ""
-"Fjerning av kjerne mislyktes.\n"
-"Sjekk terminalutgangen for detaljer."
+"内核移除失败。\n"
+"请检查终端输出以获取详细信息。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:886
 msgid "Remove Obsolete Kernels"
-msgstr "Fjern foreldede kjerner"
+msgstr "移除过时的内核"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:890
 #, python-brace-format
@@ -1286,168 +1234,157 @@ msgid ""
 "\n"
 "These kernels no longer receive security updates."
 msgstr ""
-"Fjern alle utdaterte kjerner?\n"
+"是否移除所有过时的内核？\n"
 "\n"
 "<b>{}</b>\n"
 "\n"
-"Disse kjernene mottar ikke lenger sikkerhetsoppdateringer."
+"这些内核已不再接收安全更新。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:895
 msgid "Remove All"
-msgstr "Fjern alle"
+msgstr "全部移除"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:918
 #, python-brace-format
 msgid "Removing kernel {} ({}/{})..."
-msgstr "Fjerner kjernen {} ({}/{})..."
+msgstr "正在删除内核 {} ({}/{})..."
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:936
 #, python-brace-format
 msgid "Failed to remove {}. Stopping."
-msgstr "Kunne ikke fjerne {}. Stopper."
+msgstr "移除 {} 失败，操作已停止。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:947
 msgid "All obsolete kernels removed successfully."
-msgstr "Alle foreldede kjerner ble fjernet."
+msgstr "所有过时的内核均已成功删除。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:986
 #: usr/share/big-driver-manager/ui/kernel_page.py:989
 #, python-brace-format
 msgid "What's new in Linux {}"
-msgstr "Hva er nytt i Linux {}"
+msgstr "Linux {} 的新功能"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:37
 msgid "Latest NVIDIA driver — best performance and newest features"
-msgstr "Nyeste NVIDIA-driver — best ytelse og nyeste funksjoner"
+msgstr "最新NVIDIA驱动 — 最佳性能和最新功能"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:40
 msgid "NVIDIA 575 series — use if the latest driver causes issues"
-msgstr "NVIDIA 575-serie — bruk hvis nyeste driver forårsaker problemer"
+msgstr "NVIDIA 575系列 — 如果最新驱动有问题，请使用"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:43
 msgid "NVIDIA 570 series — use if the latest driver causes issues"
-msgstr "NVIDIA 570-serie — bruk hvis nyeste driver forårsaker problemer"
+msgstr "NVIDIA 570系列 — 如果最新驱动有问题，请使用"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:47
 msgid "For Intel + NVIDIA laptops — switches between GPUs to save battery"
-msgstr "For Intel + NVIDIA-bærbare — bytter mellom GPU-er for å spare batteri"
+msgstr "适用于Intel + NVIDIA笔记本 — 在GPU之间切换以节省电池"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:50
 msgid "For Intel + NVIDIA laptops — NVIDIA 575 series"
-msgstr "For Intel + NVIDIA-bærbare — NVIDIA 575-serie"
+msgstr "适用于Intel + NVIDIA笔记本 — NVIDIA 575系列"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:53
 msgid "For Intel + NVIDIA laptops — NVIDIA 570 series"
-msgstr "For Intel + NVIDIA-bærbare — NVIDIA 570-serie"
+msgstr "适用于Intel + NVIDIA笔记本 — NVIDIA 570系列"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:56
 msgid "For Intel + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr "For Intel + NVIDIA-bærbare — NVIDIA 470 (eldre, ingen Wayland)"
+msgstr "适用于Intel + NVIDIA笔记本 — NVIDIA 470（旧版，不支持Wayland）"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:59
 msgid "For Intel + NVIDIA laptops — NVIDIA 390 (very old GPUs only)"
-msgstr "For Intel + NVIDIA-bærbare — NVIDIA 390 (kun veldig gamle GPU-er)"
+msgstr "适用于Intel + NVIDIA笔记本 — NVIDIA 390（仅非常旧的GPU）"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:63
 msgid "For AMD + NVIDIA laptops — switches between GPUs to save battery"
-msgstr "For AMD + NVIDIA-bærbare — bytter mellom GPU-er for å spare batteri"
+msgstr "适用于AMD + NVIDIA笔记本 — 在GPU之间切换以节省电池"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:66
 msgid "For AMD + NVIDIA laptops — NVIDIA 575 series"
-msgstr "For AMD + NVIDIA-bærbare — NVIDIA 575-serie"
+msgstr "适用于 AMD + NVIDIA 笔记本 — NVIDIA 575 系列"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:69
 msgid "For AMD + NVIDIA laptops — NVIDIA 570 series"
-msgstr "For AMD + NVIDIA bærbare — NVIDIA 570-serien"
+msgstr "适用于 AMD + NVIDIA 笔记本 — NVIDIA 570 系列"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:72
 msgid "For AMD + NVIDIA laptops — NVIDIA 470 (legacy, no Wayland)"
-msgstr "For AMD + NVIDIA bærbare — NVIDIA 470 (legacy, ikke Wayland)"
+msgstr "适用于 AMD + NVIDIA 笔记本 — NVIDIA 470（旧版，无 Wayland 支持）"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:76
 msgid "Optimized display for virtual machines (VirtualBox, VMware, QEMU/KVM)"
-msgstr ""
-"Optimalisert skjerm for virtuelle maskiner (VirtualBox, VMware, QEMU/KVM)"
+msgstr "针对虚拟机（VirtualBox、VMware、QEMU/KVM）优化的显示"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:90
 msgid "Gaming & 3D Graphics"
-msgstr "Gaming og 3D-grafikk"
+msgstr "游戏和 3D 图形"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:93
 msgid ""
 "Vulkan and OpenGL libraries essential for games, Steam, Wine/Proton and 3D "
 "applications."
-msgstr ""
-"Vulkan- og OpenGL-biblioteker essensielle for spill, Steam, Wine/Proton og "
-"3D-applikasjoner."
+msgstr "Vulkan 和 OpenGL 库，游戏、Steam、Wine/Proton 及 3D 应用必备"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:99
 msgid "Vulkan for AMD Radeon GPUs"
-msgstr "Vulkan for AMD Radeon GPUer"
+msgstr "适用于 AMD Radeon GPU 的 Vulkan"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:106
 msgid "32-bit Vulkan (AMD) — needed by Steam, Wine/Proton and older games"
-msgstr "32-bit Vulkan (AMD) — nødvendig for Steam, Wine/Proton og eldre spill"
+msgstr "32 位 Vulkan（AMD）— Steam、Wine/Proton 和旧游戏所需"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:114
 msgid "Vulkan for Intel GPUs"
-msgstr "Vulkan for Intel GPUer"
+msgstr "适用于 Intel GPU 的 Vulkan"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:121
 msgid "32-bit Vulkan (Intel) — needed by Steam, Wine/Proton and older games"
-msgstr ""
-"32-bit Vulkan (Intel) — nødvendig for Steam, Wine/Proton og eldre spill"
+msgstr "32 位 Vulkan（Intel）— Steam、Wine/Proton 和旧游戏所需"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:130
 msgid "Open-source Vulkan for NVIDIA (Nouveau) — no proprietary driver needed"
-msgstr ""
-"Åpen kildekode Vulkan for NVIDIA (Nouveau) — ingen proprietær driver "
-"nødvendig"
+msgstr "适用于 NVIDIA 的开源 Vulkan（Nouveau）— 无需专有驱动"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:139
 msgid "32-bit OpenGL — needed by Steam, Wine/Proton and older 32-bit games"
-msgstr ""
-"32-bit OpenGL — nødvendig for Steam, Wine/Proton og eldre 32-bit spill"
+msgstr "32 位 OpenGL — Steam、Wine/Proton 和旧 32 位游戏所需"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:149
 msgid "Video Playback"
-msgstr "Videoavspilling"
+msgstr "视频播放"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:152
 msgid ""
 "Hardware-accelerated video decoding (VAAPI/VDPAU). Makes videos, streaming "
 "and video calls smoother while reducing CPU and power usage."
-msgstr ""
-"Maskinvareakselerert videodekoding (VAAPI/VDPAU). Gjør videoer, streaming og"
-" videosamtaler jevnere samtidig som CPU- og strømforbruk reduseres."
+msgstr "硬件加速视频解码（VAAPI/VDPAU）。让视频、流媒体和视频通话更流畅，同时降低 CPU 占用率和耗电量。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:159
 msgid "VAAPI for NVIDIA proprietary driver"
-msgstr "VAAPI for NVIDIA proprietær driver"
+msgstr "适用于 NVIDIA 专有驱动的 VAAPI"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:165
 msgid "VAAPI for Intel (Broadwell / Gen 8 and newer)"
-msgstr "VAAPI for Intel (Broadwell / Gen 8 og nyere)"
+msgstr "适用于 Intel 的 VAAPI（Broadwell/Gen 8 及更新版本）"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:172
 msgid "VAAPI for older Intel (Haswell to Coffee Lake / Gen 4–9)"
-msgstr "VAAPI for eldre Intel (Haswell til Coffee Lake / Gen 4–9)"
+msgstr "适用于较旧 Intel（Haswell 至 Coffee Lake / Gen 4–9）的 VAAPI"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:179
 msgid "VAAPI for AMD and NVIDIA open-source (Nouveau)"
-msgstr "VAAPI for AMD og NVIDIA åpen kildekode (Nouveau)"
+msgstr "适用于 AMD 和 NVIDIA 开源（Nouveau）的 VAAPI"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:186
 msgid ""
 "VDPAU for AMD/NVIDIA open-source — legacy API being replaced by VAAPI and "
 "Vulkan. Probably not needed."
-msgstr ""
-"VDPAU for AMD/NVIDIA åpen kildekode — legacy API som erstattes av VAAPI og "
-"Vulkan. Sannsynligvis ikke nødvendig."
+msgstr "AMD/NVIDIA开源的VDPAU——传统API，正在被VAAPI和Vulkan取代。可能不需要。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:197
 msgid "GPU Compute (AI / ML)"
-msgstr "GPU-beregning (AI / ML)"
+msgstr "GPU计算（AI / 机器学习）"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:200
 msgid ""
@@ -1459,89 +1396,75 @@ msgid ""
 "Blender, applying filters in GIMP or Darktable, generating images with "
 "Stable Diffusion, and running physics simulations."
 msgstr ""
-"Grafikkortet ditt kan gjøre mer enn å vise bilder — det kan også hjelpe med "
-"tunge prosesseringsoppgaver. Disse bibliotekene lar programmer bruke GPU-en "
-"til ting som kunstig intelligens, videoredigering, 3D-rendering, "
-"bildebehandling og vitenskapelige simuleringer. Eksempler: kjøre lokale AI-"
-"assistenter (Ollama, LocalAI), transkribere lyd med Whisper, rendre "
-"3D-scener i Blender, bruke filtre i GIMP eller Darktable, generere bilder "
-"med Stable Diffusion, og kjøre fysikksimuleringer."
+"您的显卡不仅能显示图像，还能协助处理繁重的计算任务。这些库允许程序利用GPU进行人工智能、视频编辑、3D渲染、图像处理和科学模拟等操作。例如：运行本地AI助手（Ollama、LocalAI）、使用Whisper转录音频、在Blender中渲染3D场景、在GIMP或Darktable中应用滤镜、使用Stable"
+" Diffusion生成图像，以及运行物理模拟。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:215
 msgid "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
-msgstr "NVIDIA CUDA — Ollama, Whisper, Stable Diffusion, Blender"
+msgstr "NVIDIA CUDA — Ollama、Whisper、Stable Diffusion、Blender"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:222
 msgid "OpenCL for NVIDIA — Blender, GIMP, Darktable"
-msgstr "OpenCL for NVIDIA – Blender, GIMP, Darktable"
+msgstr "NVIDIA的OpenCL — Blender、GIMP、Darktable"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:228
 msgid "OpenCL for AMD — Blender, GIMP, Darktable"
-msgstr "OpenCL for AMD – Blender, GIMP, Darktable"
+msgstr "AMD的OpenCL — Blender、GIMP、Darktable"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:234
 msgid "OpenCL for Intel — Blender, GIMP, Darktable"
-msgstr "OpenCL for Intel – Blender, GIMP, Darktable"
+msgstr "Intel的OpenCL — Blender、GIMP、Darktable"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:279
 msgid "Stable"
-msgstr "Stabil"
+msgstr "稳定版"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:281
 msgid ""
 "Officially tested by the Mesa team. The safest and most reliable choice for "
 "everyday use, gaming, and video playback."
-msgstr ""
-"Offisielt testet av Mesa-teamet. Det tryggeste og mest pålitelige valget for"
-" daglig bruk, spilling og videovisning."
+msgstr "由Mesa团队官方测试。日常使用、游戏和视频播放的最安全可靠选择。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:284
 msgid "Recommended"
-msgstr "Anbefalt"
+msgstr "推荐"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:288
 #: usr/share/big-driver-manager/ui/mesa_data.py:294
 msgid "Performance"
-msgstr "Ytelse"
+msgstr "性能"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:290
 msgid ""
 "Modified version with gaming optimizations for extra performance. Reliable "
 "for most users but may rarely cause instabilities."
-msgstr ""
-"Modifisert versjon med optimaliseringer for spilling for ekstra ytelse. "
-"Pålitelig for de fleste brukere, men kan sjelden forårsake ustabilitet."
+msgstr "经过游戏优化的修改版本，性能更佳。对大多数用户可靠，但偶尔可能导致不稳定。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:298
 msgid "Development"
-msgstr "Utvikling"
+msgstr "开发版"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:300
 msgid ""
 "Built from the very latest source code with cutting-edge features. Offers "
 "the best gaming performance but is the least tested — only for advanced "
 "users."
-msgstr ""
-"Bygget fra den aller nyeste kildekoden med banebrytende funksjoner. Gir best"
-" spillytelse, men er minst testet — kun for avanserte brukere."
+msgstr "基于最新源码构建，具备前沿功能。提供最佳游戏性能，但测试最少——仅适合高级用户。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:308
 #: usr/share/big-driver-manager/ui/mesa_data.py:314
 msgid "Legacy"
-msgstr "For eldre maskinvare"
+msgstr "旧版"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
 msgid ""
 "For very old graphics cards that only support OpenGL 2.1 or earlier. Only "
 "install this if newer Mesa versions don't work with your hardware."
-msgstr ""
-"For svært gamle grafikkort som kun støtter OpenGL 2.1 eller tidligere. "
-"Installer dette kun hvis nyere Mesa-versjoner ikke fungerer med maskinvaren "
-"din."
+msgstr "适用于仅支持OpenGL 2.1或更早版本的非常老旧显卡。只有当新版Mesa无法兼容您的硬件时才安装此版本。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:135
 msgid "Video Drivers"
-msgstr "Videodrivere"
+msgstr "视频驱动程序"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:147
 msgid ""
@@ -1550,31 +1473,24 @@ msgid ""
 "Mesa variant and manage extra packages for gaming, video playback, compute "
 "and AI."
 msgstr ""
-"På Linux er videodrivere for AMD, Intel og NVIDIA (fri programvare Nouveau) "
-"samlet i et enkelt prosjekt kalt <b>Mesa</b>. Nedenfor kan du velge en Mesa-"
-"variant og administrere ekstra pakker for spilling, videovisning, beregning "
-"og AI."
+"在 Linux 上，AMD、Intel 和 NVIDIA（自由软件 Nouveau）的显卡驱动集成在一个名为 <b>Mesa</b> "
+"的项目中。您可以在下方选择 Mesa 变体，并管理用于游戏、视频播放、计算和 AI 的额外软件包。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:170
 msgid ""
 "Your computer has an <b>NVIDIA</b> graphics card. You can install the "
 "official proprietary driver for the best performance in gaming, AI and "
 "professional applications."
-msgstr ""
-"Datamaskinen din har et <b>NVIDIA</b> grafikkort. Du kan installere den "
-"offisielle proprietære driveren for best ytelse i spilling, AI og "
-"profesjonelle applikasjoner."
+msgstr "您的电脑配备了<b>NVIDIA</b>显卡。您可以安装官方专有驱动，以获得游戏、AI和专业应用的最佳性能。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:203
 msgid "Mesa Variant"
-msgstr "Mesa-variant"
+msgstr "Mesa 变体"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:214
 msgid ""
 "Choose which Mesa build to use. Only one variant can be active at a time."
-msgstr ""
-"Velg hvilken Mesa-versjon som skal brukes. Kun én variant kan være aktiv om "
-"gangen."
+msgstr "选择要使用的Mesa版本。一次只能激活一个版本。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:227
 msgid ""
@@ -1582,38 +1498,36 @@ msgid ""
 "for minor tasks in this case. We recommend keeping the <b>Stable</b> variant"
 " — other versions will not improve performance and may cause instabilities."
 msgstr ""
-"<b>Merk:</b> Du bruker NVIDIA sin proprietære driver. Mesa brukes kun til "
-"mindre oppgaver i dette tilfellet. Vi anbefaler å beholde "
-"<b>Stabil</b>-varianten — andre versjoner vil ikke forbedre ytelsen og kan "
-"forårsake ustabilitet."
+"<b>注意：</b>您正在使用 NVIDIA 专有驱动程序。在这种情况下，Mesa "
+"仅用于次要任务。建议保留<b>稳定版</b>变体——其他版本不会提升性能，并可能导致不稳定。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:397
 msgid "Detected graphics cards:"
-msgstr "Oppdagede grafikkort:"
+msgstr "检测到的显卡："
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:401
 msgid "NVIDIA proprietary driver (not Mesa)"
-msgstr "NVIDIA proprietær driver (ikke Mesa)"
+msgstr "NVIDIA专有驱动（非Mesa）"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:406
 msgid "Mesa driver"
-msgstr "Mesa-driver"
+msgstr "Mesa驱动"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:546
 #: usr/share/big-driver-manager/ui/mesa_page.py:1087
 #: usr/share/big-driver-manager/ui/mesa_page.py:1203
 msgid "Switch"
-msgstr "Bytt"
+msgstr "切换"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:549
 #: usr/share/big-driver-manager/ui/mesa_page.py:1098
 #, python-brace-format
 msgid "Switch to {}"
-msgstr "Bytt til {}"
+msgstr "切换到 {}"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:573
 msgid "Change Video Driver"
-msgstr "Endre videodriver"
+msgstr "更改视频驱动"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:577
 #, python-brace-format
@@ -1622,22 +1536,22 @@ msgid ""
 "\n"
 "A system reboot will be required for the change to take effect."
 msgstr ""
-"Bytt til <b>{}</b>?\n"
+"切换到 <b>{}</b>？\n"
 "\n"
-"Systemet må startes på nytt for at endringen skal tre i kraft."
+"需要重启系统才能使更改生效。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:582
 msgid "Apply"
-msgstr "Bruk"
+msgstr "应用"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:598
 #, python-brace-format
 msgid "Applying {}"
-msgstr "Bruker {}"
+msgstr "正在应用 {}"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:599
 msgid "Preparing to apply driver..."
-msgstr "Forbereder bruk av driver..."
+msgstr "正在准备应用驱动程序..."
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:620
 msgid ""
@@ -1645,99 +1559,95 @@ msgid ""
 "\n"
 "You must reboot your system for the new driver to become active."
 msgstr ""
-"Videodriver endret!\n"
+"视频驱动更改成功！\n"
 "\n"
-"Du må starte systemet på nytt for at den nye driveren skal bli aktiv."
+"您必须重启系统以使新驱动生效。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:626
 msgid ""
 "Driver change failed.\n"
 "Check the terminal output for details."
 msgstr ""
-"Endring av driver mislyktes.\n"
-"Sjekk terminalutgangen for detaljer."
+"驱动更改失败。\n"
+"请检查终端输出以获取详细信息。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:706
 msgid "NVIDIA Proprietary Driver"
-msgstr "NVIDIA proprietær driver"
+msgstr "NVIDIA 专有驱动程序"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:718
 msgid ""
 "Official closed-source driver with the best performance for gaming, AI, and "
 "professional workloads."
-msgstr ""
-"Offisiell lukket kildekode-driver med best ytelse for gaming, AI og "
-"profesjonelle arbeidsoppgaver."
+msgstr "官方闭源驱动，提供最佳的游戏、AI和专业工作负载性能。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:730
 msgid "Only one version can be active at a time."
-msgstr "Kun én versjon kan være aktiv om gangen."
+msgstr "一次只能激活一个版本。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:827
 #: usr/share/big-driver-manager/ui/mesa_page.py:830
 msgid "All recommended packages installed"
-msgstr "Alle anbefalte pakker installert"
+msgstr "所有推荐的软件包已安装"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:836
 #: usr/share/big-driver-manager/ui/mesa_page.py:839
 msgid "Some packages not installed"
-msgstr "Noen pakker ikke installert"
+msgstr "部分软件包未安装"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:897
 #: usr/share/big-driver-manager/ui/mesa_page.py:1352
 msgid "Included"
-msgstr "Inkludert"
+msgstr "已包含"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:904
 #, python-brace-format
 msgid "Already included in your Mesa version ({})"
-msgstr "Allerede inkludert i din Mesa-versjon ({})"
+msgstr "已包含在您的 Mesa 版本 ({}) 中"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:948
 msgid "Other Drivers"
-msgstr "Andre drivere"
+msgstr "其他驱动程序"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:960
 msgid ""
 "Additional drivers for special hardware configurations like virtual "
 "machines."
-msgstr ""
-"Ekstra drivere for spesielle maskinvarekonfigurasjoner som virtuelle "
-"maskiner."
+msgstr "适用于虚拟机等特殊硬件配置的附加驱动。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1054
 msgid "Compatible"
-msgstr "Kompatibel"
+msgstr "兼容"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1055
 msgid "Open Source"
-msgstr "Åpen kildekode"
+msgstr "开源"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1055
 msgid "Proprietary"
-msgstr "Proprietær"
+msgstr "专有"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1062
 msgid "⚠ No Wayland support · No longer maintained"
-msgstr "⚠ Ingen Wayland-støtte · Ikke lenger vedlikeholdt"
+msgstr "⚠ 不支持Wayland · 不再维护"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1091
 #, python-brace-format
 msgid "Switch from {} to {}"
-msgstr "Bytt fra {} til {}"
+msgstr "从 {} 切换到 {}"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1122
 #, python-brace-format
 msgid "Install {} unavailable"
-msgstr "Installer {} utilgjengelig"
+msgstr "安装 {} 不可用"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1150
 msgid "open-source"
-msgstr "åpen kildekode"
+msgstr "开源"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1150
 msgid "proprietary"
-msgstr "proprietær"
+msgstr "专有"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1156
 #, python-brace-format
@@ -1746,13 +1656,13 @@ msgid ""
 "\n"
 "A system reboot may be required after installation."
 msgstr ""
-"Installere <b>{}</b> ({} driver)?\n"
+"安装 <b>{}</b> ({} 驱动程序)？\n"
 "\n"
-"En systemomstart kan være nødvendig etter installasjonen."
+"安装后可能需要重启系统。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1190
 msgid "Switch NVIDIA Driver"
-msgstr "Bytt NVIDIA-driver"
+msgstr "切换 NVIDIA 驱动程序"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1194
 #, python-brace-format
@@ -1762,19 +1672,19 @@ msgid ""
 "The current driver will be replaced automatically.\n"
 "A system reboot will be required."
 msgstr ""
-"Bytte fra <b>{}</b> til <b>{}</b>?\n"
+"从 <b>{}</b> 切换到 <b>{}</b>？\n"
 "\n"
-"Den nåværende driveren vil bli erstattet automatisk.\n"
-"En systemomstart vil være nødvendig."
+"当前驱动程序将被自动替换。\n"
+"需要重启系统。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1216
 #, python-brace-format
 msgid "Switching to {}"
-msgstr "Bytter til {}"
+msgstr "正在切换到 {}"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1217
 msgid "Replacing current NVIDIA driver..."
-msgstr "Erstatter nåværende NVIDIA-driver..."
+msgstr "正在替换当前的 NVIDIA 驱动程序..."
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1235
 #, python-brace-format
@@ -1783,27 +1693,27 @@ msgid ""
 "\n"
 "A system reboot may be required after removal."
 msgstr ""
-"Fjerne <b>{}</b>?\n"
+"移除 <b>{}</b>？\n"
 "\n"
-"En systemomstart kan være nødvendig etter fjerning."
+"移除后可能需要重启系统。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1253
 msgid "Preparing removal..."
-msgstr "Forbereder fjerning..."
+msgstr "准备移除..."
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1273
 msgid "activated"
-msgstr "aktivert"
+msgstr "激活"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1275
 #: usr/share/big-driver-manager/ui/mesa_page.py:1483
 msgid "installed"
-msgstr "installert"
+msgstr "安装"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1277
 #: usr/share/big-driver-manager/ui/mesa_page.py:1483
 msgid "removed"
-msgstr "fjernet"
+msgstr "移除"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1280
 #, python-brace-format
@@ -1812,25 +1722,25 @@ msgid ""
 "\n"
 "A system reboot may be required."
 msgstr ""
-"{} ble {} vellykket!\n"
+"{} 已成功{}！\n"
 "\n"
-"En systemomstart kan være nødvendig."
+"可能需要重启系统。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1286
 msgid ""
 "Driver operation failed.\n"
 "Check the terminal output for details."
 msgstr ""
-"Driveroperasjonen mislyktes.\n"
-"Sjekk terminalutgangen for detaljer."
+"驱动操作失败。\n"
+"请检查终端输出以获取详细信息。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1335
 msgid "Already included in your Mesa version"
-msgstr "Allerede inkludert i din Mesa-versjon"
+msgstr "已包含在您的 Mesa 版本中"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1390
 msgid "Install Package"
-msgstr "Installer pakke"
+msgstr "安装软件包"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1393
 #, python-brace-format
@@ -1839,677 +1749,647 @@ msgid ""
 "\n"
 "{}"
 msgstr ""
-"Installere <b>{}</b>?\n"
+"安装 <b>{}</b>？\n"
 "\n"
 "{}"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1412
 msgid "Unavailable"
-msgstr "Utilgjengelig"
+msgstr "不可用"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1416
 msgid ""
 "Not available in the enabled repositories. 32-bit (lib32) packages require "
 "the multilib repository."
-msgstr ""
-"Ikke tilgjengelig i de aktiverte repositoriene. 32-bit (lib32) pakker krever"
-" multilib-repositoriet."
+msgstr "在启用的仓库中不可用。32位（lib32）软件包需要 multilib 仓库。"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1444
 msgid "Remove Package"
-msgstr "Fjern pakken"
+msgstr "移除软件包"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1447
 #, python-brace-format
 msgid "Remove <b>{}</b>?"
-msgstr "Fjerne <b>{}</b>?"
+msgstr "移除 <b>{}</b>？"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1472
 msgid "Removing package..."
-msgstr "Fjerner pakken ..."
+msgstr "正在移除软件包..."
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1486
 #, python-brace-format
 msgid "{} was {} successfully!"
-msgstr "{} ble {} vellykket!"
+msgstr "{} 已成功{}！"
 
 #: usr/share/big-driver-manager/ui/mesa_page.py:1487
 msgid "Package operation failed."
-msgstr "Pakkeoperasjonen mislyktes."
+msgstr "软件包操作失败。"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:81
 #: usr/share/big-driver-manager/ui/progress_dialog.py:84
 msgid "Operation in progress"
-msgstr "Operasjon pågår"
+msgstr "操作进行中"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:130
 msgid "Technical details"
-msgstr "Tekniske detaljer"
+msgstr "技术细节"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:144
 msgid "Terminal output"
-msgstr "Terminalutgang"
+msgstr "终端输出"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:244
 #, python-brace-format
 msgid "Step {} of {}: {}"
-msgstr "Steg {} av {}: {}"
+msgstr "第 {} 步，共 {} 步：{}"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:246
 #, python-brace-format
 msgid "Step {} of {}"
-msgstr "Steg {} av {}"
+msgstr "第 {} 步，共 {} 步"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:363
 msgid "Operation completed successfully!"
-msgstr "Operasjonen fullført!"
+msgstr "操作已成功完成！"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:368
 msgid "Operation failed. Check terminal output for details."
-msgstr "Operasjonen mislyktes. Sjekk terminalutgangen for detaljer."
+msgstr "操作失败。请检查终端输出以获取详细信息。"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:396
 msgid "Completed!"
-msgstr "Ferdig!"
+msgstr "完成！"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:442
 msgid "This step can no longer be cancelled safely. Waiting for it to finish…"
-msgstr ""
-"Dette trinnet kan ikke lenger avbrytes trygt. Venter på at det skal bli "
-"ferdig…"
+msgstr "此步骤无法安全取消。正在等待其完成…"
 
 #: usr/share/big-driver-manager/ui/progress_dialog.py:455
 msgid "Cancelled"
-msgstr "Avbrutt"
+msgstr "已取消"
 
 #: usr/share/big-driver-manager/ui/window.py:61
 msgid "Mesa, NVIDIA, and GPU drivers."
-msgstr "Mesa-, NVIDIA- og GPU-drivere."
+msgstr "Mesa、NVIDIA 和 GPU 驱动程序。"
 
 #: usr/share/big-driver-manager/ui/window.py:67
 msgid "Wireless network adapter drivers."
-msgstr "Trådløse nettverksadapterdrivere."
+msgstr "无线网络适配器驱动程序。"
 
 #: usr/share/big-driver-manager/ui/window.py:73
 msgid "Wired network adapter drivers."
-msgstr "Kablede nettverksadapterdrivere."
+msgstr "有线网络适配器驱动程序。"
 
 #: usr/share/big-driver-manager/ui/window.py:79
 msgid "Bluetooth adapter drivers."
-msgstr "Drivere for Bluetooth-adapter."
+msgstr "蓝牙适配器驱动程序。"
 
 #: usr/share/big-driver-manager/ui/window.py:85
 msgid "Digital TV tuner firmware."
-msgstr "Fastvare for digital TV-tuner."
+msgstr "数字电视调谐器固件。"
 
 #: usr/share/big-driver-manager/ui/window.py:91
 msgid "Audio device firmware."
-msgstr "Fastvare for lyd-enhet."
+msgstr "音频设备固件。"
 
 #: usr/share/big-driver-manager/ui/window.py:97
 msgid "Webcam device firmware."
-msgstr "Fastvare for webkamera."
+msgstr "网络摄像头设备固件。"
 
 #: usr/share/big-driver-manager/ui/window.py:103
 msgid "Touchscreen device firmware."
-msgstr "Fastvare for berøringsskjerm-enhet."
+msgstr "触摸屏设备固件。"
 
 #: usr/share/big-driver-manager/ui/window.py:109
 msgid "Printer drivers and support packages."
-msgstr "Skriverdrivere og støttepakker."
+msgstr "打印机驱动程序和支持包。"
 
 #: usr/share/big-driver-manager/ui/window.py:115
 msgid "3D printer firmware."
-msgstr "Fastvare for 3D-printer."
+msgstr "3D打印机固件。"
 
 #: usr/share/big-driver-manager/ui/window.py:121
 msgid "Scanner drivers and SANE backends."
-msgstr "Skannerdrivere og SANE-backends."
+msgstr "扫描仪驱动程序和 SANE 后端。"
 
 #: usr/share/big-driver-manager/ui/window.py:127
 msgid "Additional firmware packages."
-msgstr "Ekstra firmwarepakker."
+msgstr "附加固件包。"
 
 #: usr/share/big-driver-manager/ui/window.py:258
 #: usr/share/big-driver-manager/ui/window.py:300
 msgid "Categories"
-msgstr "Kategorier"
+msgstr "类别"
 
 #: usr/share/big-driver-manager/ui/window.py:262
 #: usr/share/big-driver-manager/ui/window.py:329
 msgid "Home"
-msgstr "Hjem"
+msgstr "主页"
 
 #: usr/share/big-driver-manager/ui/window.py:264
 #: usr/share/big-driver-manager/ui/window.py:343
 msgid "Kernel"
-msgstr "Kjerne"
+msgstr "内核"
 
 #: usr/share/big-driver-manager/ui/window.py:265
 #: usr/share/big-driver-manager/ui/window.py:350
 msgid "Video"
-msgstr "Video"
+msgstr "视频"
 
 #: usr/share/big-driver-manager/ui/window.py:313
 msgid "A system reboot is recommended to apply changes."
-msgstr "En omstart av systemet anbefales for å bruke endringer."
+msgstr "建议重新启动系统以应用更改。"
 
 #: usr/share/big-driver-manager/ui/window.py:368
 msgid "Content"
-msgstr "Innhold"
+msgstr "内容"
 
 #: usr/share/big-driver-manager/ui/window.py:421
 #: usr/share/big-driver-manager/ui/window.py:892
 msgid "Showing drivers detected as compatible with your computer"
-msgstr "Viser drivere oppdaget som kompatible med datamaskinen din"
+msgstr "显示检测为与您的计算机兼容的驱动"
 
 #: usr/share/big-driver-manager/ui/window.py:431
 #: usr/share/big-driver-manager/ui/window.py:433
 msgid "Show all drivers"
-msgstr "Vis alle drivere"
+msgstr "显示所有驱动程序"
 
 #: usr/share/big-driver-manager/ui/window.py:445
 msgid "Menu"
-msgstr "Meny"
+msgstr "菜单"
 
 #: usr/share/big-driver-manager/ui/window.py:447
 msgid "Application menu"
-msgstr "Applikasjonsmeny"
+msgstr "应用菜单"
 
 #: usr/share/big-driver-manager/ui/window.py:450
 msgid "About"
-msgstr "Om"
+msgstr "关于"
 
 #: usr/share/big-driver-manager/ui/window.py:677
 msgid "Hardware detection failed. Check system logs for details."
-msgstr "Maskinvaredeteksjon mislyktes. Sjekk systemlogger for detaljer."
+msgstr "硬件检测失败。请检查系统日志以获取详细信息。"
 
 #: usr/share/big-driver-manager/ui/window.py:736
 msgid "Hardware detection for this category failed. Try refreshing later."
-msgstr ""
-"Maskinvaredeteksjon for denne kategorien feilet. Prøv å oppdatere senere."
+msgstr "此类别的硬件检测失败。请稍后刷新。"
 
 #: usr/share/big-driver-manager/ui/window.py:828
 #, python-brace-format
 msgid "Obsolete kernel: {} — no longer receives security updates"
-msgstr "Utdatert kjerne: {} — mottar ikke lenger sikkerhetsoppdateringer"
+msgstr "过时的内核：{} — 不再接收安全更新"
 
 #: usr/share/big-driver-manager/ui/window.py:832
 msgid "Manage"
-msgstr "Administrer"
+msgstr "管理"
 
 #: usr/share/big-driver-manager/ui/window.py:838
 #, python-brace-format
 msgid ""
 "The package database was last updated {} days ago. Update your system before"
 " installing drivers to avoid download failures and missing packages."
-msgstr ""
-"Pakkedatabasen ble sist oppdatert for {} dager siden. Oppdater systemet ditt"
-" før du installerer drivere for å unngå nedlastingsfeil og manglende pakker."
+msgstr "软件包数据库上次更新是在 {} 天前。请在安装驱动程序之前更新系统，以避免下载失败或找不到软件包。"
 
 #: usr/share/big-driver-manager/ui/window.py:888
 msgid "Showing all drivers, including incompatible ones"
-msgstr "Viser alle drivere, inkludert inkompatible"
+msgstr "显示所有驱动，包括不兼容的驱动"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:173
 msgid "Printing driver for"
-msgstr "Utskriftsdriver for"
+msgstr "打印驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:174
 msgid "Printer driver for"
-msgstr "Skriverdriver for"
+msgstr "打印机驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:175
 msgid "Driver for the"
-msgstr "Driver for"
+msgstr "驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:176
 msgid "Driver for"
-msgstr "Driver for"
+msgstr "驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:177
 msgid "Driver set (printing and scanning) for"
-msgstr "Driversett (utskrift og skanning) for"
+msgstr "驱动程序套装（打印和扫描）用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:178
 msgid "Complete stand-alone driver set (printing and scanning) for"
-msgstr "Fullstendig frittstående driversett (utskrift og skanning) for"
+msgstr "完整独立驱动程序套装（打印和扫描）用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:179
 msgid "LPR and CUPS driver for the"
-msgstr "LPR- og CUPS-driver for"
+msgstr "LPR 和 CUPS 驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:180
 msgid "LPR and CUPS driver for"
-msgstr "LPR- og CUPS-driver for"
+msgstr "LPR 和 CUPS 驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:181
 msgid "LPR driver and CUPS wrapper for"
-msgstr "LPR-driver og CUPS-innpakning for"
+msgstr "LPR 驱动程序和 CUPS 包装器用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:182
 msgid "LPR driver for"
-msgstr "LPR-driver for"
+msgstr "LPR 驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:183
 msgid "CUPS wrapper for"
-msgstr "CUPS-innpakning for"
+msgstr "CUPS 包装器用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:184
 msgid "CUPS driver for the"
-msgstr "CUPS-driver for"
+msgstr "CUPS 驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:185
 msgid "CUPS driver for"
-msgstr "CUPS-driver for"
+msgstr "CUPS 驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:186
 msgid "CUPS and LPR drivers for the"
-msgstr "CUPS- og LPR-drivere for"
+msgstr "CUPS 和 LPR 驱动程序用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:187
 msgid "CUPS printer driver"
-msgstr "CUPS-skriverdriver"
+msgstr "CUPS 打印机驱动"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:188
 msgid "CUPS driver"
-msgstr "CUPS-driver"
+msgstr "CUPS 驱动"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:189
 msgid "color multifunction printer"
-msgstr "fargemultifunksjonsskriver"
+msgstr "彩色多功能打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:190
 msgid "multifunction printer"
-msgstr "multifunksjonsskriver"
+msgstr "多功能打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:191
 msgid "ink tank multifunction printer"
-msgstr "blekktank-multifunksjonsskriver"
+msgstr "墨仓多功能打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:192
 msgid "Wi-Fi multifunction printer"
-msgstr "Wi-Fi-multifunksjonsskriver"
+msgstr "Wi-Fi 多功能打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:193
 msgid "color laser printer"
-msgstr "fargelaserprinter"
+msgstr "彩色激光打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:194
 msgid "laser printer driver"
-msgstr "laserprinterdriver"
+msgstr "激光打印机驱动"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:195
 msgid "laser printer"
-msgstr "laserprinter"
+msgstr "激光打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:196
 msgid "inkjet printer driver"
-msgstr "blekkskriverdriver"
+msgstr "喷墨打印机驱动"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:197
 msgid "inkjet printer"
-msgstr "blekkskriver"
+msgstr "喷墨打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:198
 msgid "inkjet printers"
-msgstr "blekkskrivere"
+msgstr "喷墨打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:199
 msgid "label and receipt printer"
-msgstr "etikett- og kvitteringsskriver"
+msgstr "标签和收据打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:200
 msgid "label printer"
-msgstr "etikettskriver"
+msgstr "标签打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:201
 msgid "laser printers"
-msgstr "laserskrivere"
+msgstr "激光打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:202
 msgid "printer communication"
-msgstr "skriverkommunikasjon"
+msgstr "打印机通信"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:203
 msgid "print system integration"
-msgstr "integrasjon med utskriftssystem"
+msgstr "打印系统集成"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:204
 msgid "series inkjet printer"
-msgstr "serie blekkskriver"
+msgstr "系列喷墨打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:205
 msgid "multifunction inkjet"
-msgstr "multifunksjon blekkskriver"
+msgstr "多功能喷墨打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:206
 msgid "(printer communication)"
-msgstr "(skriverkommunikasjon)"
+msgstr "(打印机通信)"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:207
 msgid "(print system integration)"
-msgstr "(integrasjon med utskriftssystem)"
+msgstr "(打印系统集成)"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:208
 msgid "Wi-Fi driver for"
-msgstr "Wi-Fi-driver for"
+msgstr "Wi-Fi 驱动程序"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:209
 msgid "DKMS driver for"
-msgstr "DKMS-driver for"
+msgstr "DKMS 驱动程序"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:210
 msgid "Wired network driver for"
-msgstr "Kablet nettverksdriver for"
+msgstr "有线网络驱动程序"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:211
 msgid "Bluetooth driver for"
-msgstr "Bluetooth-driver for"
+msgstr "蓝牙驱动程序"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:212
 msgid "Kernel driver module for"
-msgstr "Kjernemodul for driver"
+msgstr "内核驱动模块"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:213
 msgid "wireless driver"
-msgstr "trådløs driver"
+msgstr "无线驱动程序"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:214
 msgid "wireless adapters"
-msgstr "trådløse adaptere"
+msgstr "无线适配器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:215
 msgid "USB wireless adapters"
-msgstr "USB trådløse adaptere"
+msgstr "USB 无线适配器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:216
 msgid "USB dual-band wireless adapters"
-msgstr "USB trådløse adaptere med dobbel bånd"
+msgstr "USB 双频无线适配器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:217
 msgid "USB tri-band wireless adapters"
-msgstr "USB trådløse adaptere med trippel bånd"
+msgstr "USB三频无线适配器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:218
 msgid "Ethernet driver"
-msgstr "Ethernet-driver"
+msgstr "以太网驱动程序"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:219
 msgid "monitor mode & frame injection support"
-msgstr "støtte for monitor-modus og rammeinjeksjon"
+msgstr "支持监控模式和帧注入"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:220
 msgid "Firmware for"
-msgstr "Fastvare for"
+msgstr "固件用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:221
 msgid "Bluetooth firmware for"
-msgstr "Bluetooth-fastvare for"
+msgstr "蓝牙固件用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:222
 msgid "Firmware files for"
-msgstr "Fastvarefiler for"
+msgstr "固件文件用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:223
 msgid "digital TV (DVB) receivers"
-msgstr "digitale TV-mottakere (DVB)"
+msgstr "数字电视（DVB）接收器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:224
 msgid "digital TV (DVB) tuners"
-msgstr "digitale TV-tunere (DVB)"
+msgstr "数字电视（DVB）调谐器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:225
 msgid "digital TV tuner"
-msgstr "digital TV-tuner"
+msgstr "数字电视调谐器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:226
 msgid "wireless networking chips"
-msgstr "trådløse nettverksbrikker"
+msgstr "无线网络芯片"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:227
 msgid "Wi-Fi chips"
-msgstr "Wi-Fi-brikker"
+msgstr "Wi-Fi芯片"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:228
 msgid "wireless cards"
-msgstr "trådløse kort"
+msgstr "无线网卡"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:229
 msgid "network adapters"
-msgstr "nettverksadaptere"
+msgstr "网络适配器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:230
 msgid "touchscreen controllers"
-msgstr "berøringsskjermkontrollere"
+msgstr "触摸屏控制器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:231
 msgid "USB audio interfaces"
-msgstr "USB lydgrensesnitt"
+msgstr "USB音频接口"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:232
 msgid "USB logic analyzers"
-msgstr "USB logikanalysatorer"
+msgstr "USB 逻辑分析仪"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:233
 msgid "USB MIDI interfaces"
-msgstr "USB MIDI-grensesnitt"
+msgstr "USB MIDI 接口"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:234
 msgid "controller cards"
-msgstr "kontrollerkort"
+msgstr "控制卡"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:235
 msgid "controller chips"
-msgstr "kontrollerbrikker"
+msgstr "控制芯片"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:236
 msgid "SCSI controllers"
-msgstr "SCSI-kontrollere"
+msgstr "SCSI 控制器"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:237
 msgid "legacy devices only"
-msgstr "kun eldre enheter"
+msgstr "仅限旧设备"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:238
 msgid "stable tested version"
-msgstr "stabil testet versjon"
+msgstr "稳定测试版本"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:239
 msgid "latest release"
-msgstr "nyeste utgivelse"
+msgstr "最新发布"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:240
 msgid "Scanner software for"
-msgstr "Skannerprogramvare for"
+msgstr "扫描仪软件，用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:241
 msgid "Scanner driver for"
-msgstr "Skannerdriver for"
+msgstr "扫描仪驱动，用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:242
 msgid "SANE scanner driver for"
-msgstr "SANE-skannerdriver for"
+msgstr "SANE 扫描仪驱动，用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:243
 msgid "scanner plugin for Image Scan!"
-msgstr "skannerplugin for Image Scan!"
+msgstr "Image Scan! 的扫描仪插件"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:244
 msgid "Image Scan! plugin for"
-msgstr "Image Scan!-plugin for"
+msgstr "Image Scan! 插件，用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:245
 msgid "Image Scan! frontend for"
-msgstr "Image Scan!-grensesnitt for"
+msgstr "Image Scan! 前端，用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:246
 msgid "Data files required by"
-msgstr "Datafiler som kreves av"
+msgstr "数据文件，供以下软件使用："
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:247
 msgid "scanners and multifunction printers"
-msgstr "skannere og multifunksjonsskrivere"
+msgstr "扫描仪和多功能打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:248
 msgid "multifunction printers"
-msgstr "multifunksjonsskrivere"
+msgstr "多功能打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:249
 msgid "flatbed and all-in-one scanners"
-msgstr "flatbed- og alt-i-ett-skannere"
+msgstr "平板和一体式扫描仪"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:250
 msgid "USB and network scanners"
-msgstr "USB- og nettverksskannere"
+msgstr "USB和网络扫描仪"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:251
 msgid "network and USB scanners"
-msgstr "nettverks- og USB-skannere"
+msgstr "网络和USB扫描仪"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:252
 msgid "portable document scanner"
-msgstr "bærbar dokumentskanner"
+msgstr "便携式文档扫描仪"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:253
 msgid "one-touch scanning"
-msgstr "enkel skanning"
+msgstr "一键扫描"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:254
 msgid "scanner panel button"
-msgstr "skannerpanelknapp"
+msgstr "扫描仪面板按钮"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:255
 msgid "printers, supplied by"
-msgstr "skrivere, levert av"
+msgstr "打印机，供应商"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:256
 msgid "PPD files for"
-msgstr "PPD-filer for"
+msgstr "PPD 文件，用于"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:257
 msgid "Administration tool for managing"
-msgstr "Administrasjonsverktøy for å administrere"
+msgstr "管理工具，用于管理"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:258
 msgid "printers on your network"
-msgstr "skrivere på nettverket ditt"
+msgstr "您网络上的打印机"
 
 #: usr/share/big-driver-manager/utils/desc_translate.py:259
 msgid "(proprietary)"
-msgstr "(proprietær)"
+msgstr "(专有)"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:28
 msgid ""
 "If your Wi-Fi is already working, the built-in kernel driver is usually the "
 "best option. Install an alternative only if you have connection problems."
-msgstr ""
-"Hvis Wi-Fi-en din allerede fungerer, er den innebygde kjørerdelen vanligvis "
-"det beste alternativet. Installer et alternativ bare hvis du har "
-"tilkoblingsproblemer."
+msgstr "如果您的 Wi-Fi 已能正常工作，内核内置驱动通常是最佳选择。仅在连接出现问题时才安装替代驱动。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:33
 msgid ""
 "Wired network adapters almost always work out of the box. An extra driver is"
 " only needed for very new or rare hardware."
-msgstr ""
-"Kablede nettverksadaptere fungerer nesten alltid uten ekstra oppsett. En "
-"ekstra driver trengs bare for veldig ny eller sjelden maskinvare."
+msgstr "有线网络适配器几乎开箱即用。只有非常新或罕见的硬件才需要额外驱动。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:37
 msgid ""
 "Some Bluetooth adapters need extra firmware to work. If pairing fails, "
 "installing the firmware for your adapter may solve the problem."
-msgstr ""
-"Noen Bluetooth-adaptere trenger ekstra firmware for å fungere. Hvis "
-"sammenkoblingen mislykkes, kan installasjon av firmware for adapteren løse "
-"problemet."
+msgstr "某些蓝牙适配器需要额外的固件才能工作。如果配对失败，安装适配器的固件可能解决问题。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:42
 msgid ""
 "Digital TV tuners usually need specific firmware. Without it the device "
 "won't be recognized by the system."
-msgstr ""
-"Digitale TV-tunere trenger vanligvis spesifikk firmware. Uten den vil ikke "
-"enheten bli gjenkjent av systemet."
+msgstr "数字电视调谐器通常需要特定的固件。没有它，系统无法识别设备。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:46
 msgid ""
 "Most audio devices work with ALSA built into the kernel. Extra firmware is "
 "only needed for specific USB audio interfaces."
-msgstr ""
-"De fleste lyd-enheter fungerer med ALSA som er innebygd i kjernen. Ekstra "
-"firmware trengs bare for spesifikke USB-lydgrensesnitt."
+msgstr "大多数音频设备使用内核内置的ALSA。只有特定的USB音频接口才需要额外的固件。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:50
 msgid ""
 "Most webcams work automatically. Extra firmware may improve image quality or"
 " enable additional features."
-msgstr ""
-"De fleste webkameraer fungerer automatisk. Ekstra firmware kan forbedre "
-"bildekvaliteten eller aktivere flere funksjoner."
+msgstr "大多数摄像头可自动工作。额外的固件可能提升图像质量或启用附加功能。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:54
 msgid ""
 "If your touchscreen doesn't respond, installing the matching firmware "
 "usually fixes it."
-msgstr ""
-"Hvis berøringsskjermen din ikke reagerer, løser vanligvis installasjon av "
-"matchende firmware problemet."
+msgstr "如果触摸屏无响应，安装匹配的固件通常可以修复问题。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:58
 msgid ""
 "Printer drivers let the system communicate with your model. If the printer "
 "was detected on your network or USB, installing the matching driver is "
 "recommended."
-msgstr ""
-"Skriverdrivere lar systemet kommunisere med din modell. Hvis skriveren ble "
-"oppdaget på nettverket eller USB, anbefales det å installere matchende "
-"driver."
+msgstr "打印机驱动程序使系统能够与您的打印机型号通信。如果已通过网络或 USB 检测到打印机，建议安装对应的驱动程序。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:63
 msgid ""
 "3D printer firmware enables communication between the slicer and the printer"
 " hardware."
-msgstr ""
-"Firmware for 3D-skrivere muliggjør kommunikasjon mellom sliceren og "
-"skriverens maskinvare."
+msgstr "3D打印机固件实现切片软件与打印机硬件之间的通信。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:67
 msgid ""
 "Scanner drivers (SANE backends) allow scanning applications to communicate "
 "with your scanner model."
-msgstr ""
-"Skannerdrivere (SANE-backender) lar skanneprogrammer kommunisere med din "
-"skannermodell."
+msgstr "扫描仪驱动程序（SANE后端）允许扫描应用程序与您的扫描仪型号通信。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:70
 msgid "Additional firmware packages for specialized hardware."
-msgstr "Ekstra firmwarepakker for spesialisert maskinvare."
+msgstr "用于专用硬件的附加固件包。"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:97
 msgid "Package"
-msgstr "Pakke"
+msgstr "软件包"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:103
 msgid "Detected and installed"
-msgstr "Oppdaget og installert"
+msgstr "已检测并安装"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:103
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:105
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:107
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:109
 msgid "Status"
-msgstr "Status"
+msgstr "状态"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:105
 msgid "Detected — not yet installed"
-msgstr "Oppdaget — ikke installert ennå"
+msgstr "已检测 — 尚未安装"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:109
 msgid "Available in repository"
-msgstr "Tilgjengelig i depot"
+msgstr "可在仓库中获取"
 
 #: usr/share/big-driver-manager/utils/tooltip_helper.py:114
 msgid "Device"
-msgstr "Enhet"
+msgstr "设备"
