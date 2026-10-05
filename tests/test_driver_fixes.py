@@ -653,6 +653,26 @@ class TestBigKernel(unittest.TestCase):
             names = {k["name"] for k in km.get_available_kernels()}
             self.assertNotIn("linux-big", names)
 
+    def test_same_package_in_two_repos_listed_once(self):
+        """testing + stable: only the one pacman -S would install (first)."""
+        with TemporaryDirectory() as t:
+            km = self._km(Path(t), {}, {})
+            km._search_kernel_packages = lambda _p: [
+                {
+                    "name": "linux-big",
+                    "version": "7.2.9-1",
+                    "repository": "community-testing",
+                },
+                {
+                    "name": "linux-big",
+                    "version": "7.2.8-1",
+                    "repository": "community-stable",
+                },
+            ]
+            big = [k for k in km.get_available_kernels() if k["name"] == "linux-big"]
+        self.assertEqual(len(big), 1)
+        self.assertEqual(big[0]["version"], "7.2.9-1")
+
     def test_search_recognizes_linux_big_name(self):
         from core.kernel_manager import KernelManager
 

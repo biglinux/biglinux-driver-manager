@@ -658,7 +658,10 @@ class KernelSection(BaseSection):
             title_row.append(self._create_badge(badge_text, badge_style))
         text_col.append(title_row)
 
-        sub_lbl = Gtk.Label(label=ktype.type_desc)
+        subtitle_parts = [kernel["version"]]
+        if ktype.type_desc:
+            subtitle_parts.append(ktype.type_desc)
+        sub_lbl = Gtk.Label(label=" · ".join(subtitle_parts))
         sub_lbl.set_xalign(0)
         sub_lbl.set_wrap(True)
         sub_lbl.add_css_class("dim-label")
