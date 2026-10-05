@@ -324,11 +324,14 @@ class KernelManager(BaseManager):
             ):
                 continue
 
-            kernel_key = f"{kernel_name}-{kernel['version']}"
-            if kernel_key in seen_kernels:
+            # The same package can come from several repos (e.g. linux-big in
+            # community-testing and community-stable). pacman -S installs from
+            # the first repo in pacman.conf, which is also the first -Ss hit,
+            # so only that one is offered.
+            if kernel_name in seen_kernels:
                 continue
 
-            seen_kernels.add(kernel_key)
+            seen_kernels.add(kernel_name)
             kernel["installed"] = kernel_name in installed_names
             self._add_kernel_flags(kernel)
             filtered_kernels.append(kernel)
