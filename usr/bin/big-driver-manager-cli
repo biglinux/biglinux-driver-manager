@@ -1,0 +1,118 @@
+#!/usr/bin/python3 -I
+"""big-driver-manager-cli - the part of Big Driver Manager that changes the system.
+
+Runs as root, directly (live session, installer) or through pkexec from the
+graphical interface. Every request is validated before pacman or mhwd runs.
+"""
+
+import argparse
+import os
+import sys
+from pathlib import Path
+
+_HERE = Path(__file__).resolve().parent
+for _candidate in (
+    os.environ.get("BDM_CLI_DIR"),
+    "/usr/share/big-driver-manager-cli",
+    str(_HERE.parent / "share" / "big-driver-manager-cli"),
+):
+    if _candidate and (Path(_candidate) / "core").is_dir():
+        sys.path.insert(0, _candidate)
+        break
+else:
+    sys.exit("big-driver-manager-cli: installation directory not found")
+
+from core.constants import APP_VERSION  # noqa: E402
+from core.privileged import (  # noqa: E402
+    MHWD,
+    MHWD_BUSES,
+    PACMAN,
+    PrivilegedRequestError,
+    cli_to_pacman,
+    is_root,
+    mhwd_args,
+)
+
+EXIT_USAGE = 2
+EXIT_NOT_ROOT = 77
+
+
+def _parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="big-driver-manager-cli",
+        description="Install and remove drivers, kernels and Mesa for Big Driver Manager.",
+    )
+    parser.add_argument("--version", action="version", version=APP_VERSION)
+    verbs = parser.add_subparsers(dest="verb", required=True)
+
+    install = verbs.add_parser("install", help="install packages from the repositories")
+    mode = install.add_mutually_exclusive_group()
+    mode.add_argument(
+        "--reinstall",
+        action="store_true",
+        help="reinstall packages that are already installed",
+    )
+    mode.add_argument(
+        "--overwrite-all",
+        action="store_true",
+        help="overwrite conflicting files (Mesa variant switch)",
+    )
+    install.add_argument("packages", nargs="+", metavar="PACKAGE")
+
+    remove = verbs.add_parser("remove", help="remove packages")
+    mode = remove.add_mutually_exclusive_group()
+    mode.add_argument(
+        "--recursive",
+        action="store_true",
+        help="also remove dependencies nothing else needs",
+    )
+    mode.add_argument(
+        "--cascade",
+        action="store_true",
+        help="also remove packages that depend on them",
+    )
+    remove.add_argument("packages", nargs="+", metavar="PACKAGE")
+
+    mhwd = verbs.add_parser("mhwd", help="install or remove an mhwd configuration")
+    mhwd.add_argument("action", choices=("install", "remove"))
+    mhwd.add_argument("bus", choices=MHWD_BUSES)
+    mhwd.add_argument("config")
+    mhwd.add_argument(
+        "--force", action="store_true", help="replace a conflicting configuration"
+    )
+    return parser
+
+
+def _flags(args: argparse.Namespace) -> list[str]:
+    names = ("reinstall", "overwrite_all", "recursive", "cascade")
+    return [
+        "--" + name.replace("_", "-") for name in names if getattr(args, name, False)
+    ]
+
+
+def _command(args: argparse.Namespace) -> list[str]:
+    if args.verb == "mhwd":
+        return [MHWD, *mhwd_args(args.action, args.bus, args.config, args.force)]
+    return [PACMAN, *cli_to_pacman(args.verb, _flags(args), args.packages)]
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = _parser().parse_args(argv)
+    try:
+        command = _command(args)
+    except PrivilegedRequestError as error:
+        print(f"big-driver-manager-cli: {error}", file=sys.stderr)
+        return EXIT_USAGE
+    if not is_root():
+        print("big-driver-manager-cli: must run as root (use pkexec)", file=sys.stderr)
+        return EXIT_NOT_ROOT
+    # The interface follows progress by reading pacman's English output.
+    env = {key: value for key, value in os.environ.items() if not key.startswith("LC_")}
+    env.update(LANG="C", LC_ALL="C")
+    sys.stdout.flush()
+    os.execve(command[0], command, env)
+    return 1  # not reached
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,14 +1,14 @@
-# Maintainer: Your Name <your@email.com>
+# Maintainer: Bruno Goncalves <bigbruno@gmail.com>
+# Maintainer: Tales A. Mendonça <talesam@gmail.com>
 
-pkgname=pkgbuild-template
-pkgdesc="Package template for BigLinux"
-# Uncomment and edit the following lines as needed
-#depends=('')
-#makedepends=('')
-#optdepends=('')
-#conflicts=('')
-#provides=('')
-#replaces=('')
+pkgname=big-driver-manager-cli
+pkgdesc="Command line and core of Big Driver Manager: detects hardware and installs drivers, kernels and Mesa"
+depends=('python' 'pacman' 'polkit' 'pciutils' 'usbutils')
+optdepends=(
+    'mhwd: install video drivers through mhwd configurations'
+    'avahi: discover network printers and scanners'
+    'pamac-gtk: build drivers that only exist in the AUR'
+)
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
 arch=('any')

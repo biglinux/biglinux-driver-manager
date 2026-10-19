@@ -1,37 +1,61 @@
-# pkgbuild-template
+# big-driver-manager-cli
 
-Package description
+The part of [Big Driver Manager](https://github.com/biglinux/biglinux-driver-manager)
+that changes the system: hardware detection, the driver database and the
+installation of drivers, kernels and Mesa. The graphical interface only draws
+and asks this package to act.
 
 ---
 
-## Using this template
+## How the two packages fit together
 
-This repository is a GitHub template for new BigLinux packages. Click
-**Use this template → Create a new repository**, choose the `biglinux`
-organization and name the repository after the package (the name becomes the
-`pkgname`). Then:
+```
+biglinux-driver-manager      the GTK interface (ui/, utils/, icons, notifications)
+        │  imports core/ from /usr/share/big-driver-manager-cli
+        │  pkexec big-driver-manager-cli <verb>   for anything that needs root
+        ▼
+big-driver-manager-cli       core/, assets/ (device IDs, firmware, printers,
+                             scanners, Mesa variants), the device-ID cache
+```
 
-1. Edit `pkgbuild/PKGBUILD`:
-   - set `pkgname` to the repository name and write the `pkgdesc`;
-   - fill in the maintainer line and uncomment `depends`, `makedepends`… as needed;
-   - `pkgver` and `pkgrel` come from the build date, so every build is a new version.
-2. Put the files to install in `usr/`, `etc/` or `opt/` at the root of the
-   repository, with the same layout they have on the system
-   (for example `usr/bin/my-tool`). `package()` copies those folders as they are.
-3. If the package needs to run something when it is installed, upgraded or
-   removed, edit `pkgbuild/pkgbuild.install`: uncomment the functions you need
-   and replace `PACKAGE_NAME` with the package name. If not, delete the file.
-4. Replace this section with the package description.
+The interface never asks polkit for pacman itself. It asks for one of the verbs
+below, with its own polkit action (`br.com.biglinux.drivermanager.cli`), and the
+command line refuses anything it does not know before running pacman or mhwd.
+The live session and the installer, already root, use the same command.
+
+## Usage
+
+```bash
+big-driver-manager-cli install [--reinstall | --overwrite-all] -- PACKAGE...
+big-driver-manager-cli remove  [--recursive | --cascade]       -- PACKAGE...
+big-driver-manager-cli mhwd install|remove pci|usb CONFIG [--force]
+```
+
+| Verb | pacman |
+|---|---|
+| `install` | `-S --noconfirm --needed` |
+| `install --reinstall` | `-S --noconfirm` |
+| `install --overwrite-all` | `-S --noconfirm --needed --overwrite '*'` (Mesa variant switch) |
+| `remove` | `-R --noconfirm` |
+| `remove --recursive` | `-Rns --noconfirm` |
+| `remove --cascade` | `-Rnc --noconfirm` |
+
+Exit codes: `2` invalid request, `77` not running as root.
+
+## Development
+
+The two repositories are expected side by side; the interface finds the core in
+`../big-driver-manager-cli` (or `$BDM_CLI_DIR`, or the installed path).
+
+```bash
+python -m pytest
+ruff check . && ruff format --check .
+```
 
 ### Building and publishing
 
 Build the package with [gitrepo](https://github.com/big-comm/gitrepo), choosing
-**BigLinux** as the destination and the `testing` or `stable` repository. The
-[biglinux/build-package](https://github.com/biglinux/build-package) robot
-builds, signs and publishes it in
-[packages.biglinux.com.br](https://packages.biglinux.com.br).
-
-To test locally:
+**BigLinux** as the destination. To test locally:
 
 ```bash
 cd pkgbuild && makepkg -si
