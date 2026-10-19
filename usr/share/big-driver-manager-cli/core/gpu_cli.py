@@ -261,9 +261,24 @@ def _pacman_remove(
     return cmd + packages
 
 
+def _sync_offline_repository(args: argparse.Namespace) -> bool:
+    """The offline repository ships only mhwd.db.tar.gz next to its packages:
+    pacman must sync it before it can list or install from it. The
+    configuration names no other repository, so nothing else is refreshed."""
+    if not getattr(args, "pmconfig", None):
+        return True
+    cmd = ["pacman", "-Sy", "--noconfirm", "--config", str(args.pmconfig)]
+    if _pacman_root(args):
+        cmd += ["--root", str(_pacman_root(args))]
+    return _run(cmd)
+
+
 def _install(args: argparse.Namespace) -> int:
     root = _target_root(args)
     pacman_root = _pacman_root(args)
+    if not _sync_offline_repository(args):
+        _error("reading the offline repository failed")
+        return EXIT_FAILED
     installed = gpu.installed_packages(pacman_root)
     kernels = gpu.installed_kernels(root)
     try:

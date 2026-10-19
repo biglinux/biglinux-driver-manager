@@ -116,7 +116,12 @@ def _hex(value: str) -> str:
     return value.lower().removeprefix("0x")
 
 
-def scan_pci(sys_root: Path = Path("/sys")) -> list[PciDevice]:
+# Tests point this at a fake sysfs; pkexec clears the environment.
+SYS_ROOT = Path(os.environ.get("BDM_SYS_ROOT", "/sys"))
+
+
+def scan_pci(sys_root: Path | None = None) -> list[PciDevice]:
+    sys_root = sys_root or SYS_ROOT
     devices = []
     base = sys_root / "bus" / "pci" / "devices"
     try:

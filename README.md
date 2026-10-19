@@ -106,6 +106,15 @@ python -m pytest
 ruff check . && ruff format --check .
 ```
 
+End to end against the real pacman, in a throwaway container (never on a real
+system -- it installs and removes packages):
+
+```bash
+docker run --rm -v "$PWD":/src:ro \
+    -v /usr/share/nvidia-driver-assistant/supported-gpus:/nvda:ro \
+    manjarolinux/base:latest bash /src/tests/e2e/gpu-flow.sh
+```
+
 ### Building and publishing
 
 Build the package with [gitrepo](https://github.com/big-comm/gitrepo), choosing

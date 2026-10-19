@@ -202,9 +202,22 @@ class TestCli(unittest.TestCase):
                 run.return_value.returncode = 0
                 self.assertEqual(gpu_cli._install(args), 0)
             commands = [c.args[0] for c in run.call_args_list]
-            self.assertEqual(commands[0][:2], ["pacman", "-S"])
-            self.assertIn("--root", commands[0])
-            self.assertEqual(commands[1][:3], ["systemctl", "--root", t])
+            # The offline repository is synced first, then installed from
+            self.assertEqual(
+                commands[0],
+                [
+                    "pacman",
+                    "-Sy",
+                    "--noconfirm",
+                    "--config",
+                    "/opt/mhwd/pacman-mhwd.conf",
+                    "--root",
+                    t,
+                ],
+            )
+            self.assertEqual(commands[1][:2], ["pacman", "-S"])
+            self.assertIn("--root", commands[1])
+            self.assertEqual(commands[2][:3], ["systemctl", "--root", t])
             self.assertTrue((Path(t) / gpu.NVIDIA_MODULES_LOAD).is_file())
 
     def test_failed_pacman_stops_before_files(self):
