@@ -24,7 +24,7 @@ from gi.repository import Gtk, Adw, GLib
 
 from utils.ui_constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
 from core.mesa_manager import MesaManager
-from core.mhwd_manager import MhwdManager, MhwdDriver
+from core.gpu_drivers import GpuDriverManager, VideoDriver
 from core.package_manager import PackageManager
 from core.subprocess_env import subprocess_env
 from ui.base_page import BaseSection, PackageOperationMixin
@@ -49,12 +49,13 @@ class MesaSection(PackageOperationMixin, BaseSection):
     def __init__(self) -> None:
         super().__init__(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         self.mesa_manager = MesaManager()
-        self.mhwd_manager = MhwdManager()
+        # Video drivers through big-driver-manager-cli (no mhwd)
+        self.mhwd_manager = GpuDriverManager()
         self.pkg_manager = PackageManager.get_default()
         self.progress_dialog = None
         self._show_all = False
-        self._mhwd_all_drivers: list[MhwdDriver] = []
-        self._mhwd_row_widgets: list[tuple[Gtk.Box, MhwdDriver]] = []
+        self._mhwd_all_drivers: list[VideoDriver] = []
+        self._mhwd_row_widgets: list[tuple[Gtk.Box, VideoDriver]] = []
         self._gpu_vendors: set[str] = set()
         self._active_mesa: str = ""
         self._has_nvidia_proprietary: bool = False
@@ -97,7 +98,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         self,
         drivers: list[dict],
         gpu_info: dict | None,
-        mhwd_drivers: list[MhwdDriver],
+        mhwd_drivers: list[VideoDriver],
         repo_set: set[str] | None = None,
     ) -> None:
         """Receive pre-computed data from window (skip redundant queries)."""
@@ -431,7 +432,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
             GLib.idle_add(self._show_completion_dialog, _("Error"), str(e), "error")
 
     def _populate_all(
-        self, drivers: list[dict], gpu_info: dict | None, mhwd_drivers: list[MhwdDriver]
+        self, drivers: list[dict], gpu_info: dict | None, mhwd_drivers: list[VideoDriver]
     ) -> bool:
         self._hide_loading()
         self._update_gpu_card(gpu_info)
@@ -646,7 +647,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         }
     )
 
-    def _build_vendor_sections(self, mhwd_drivers: list[MhwdDriver]) -> None:
+    def _build_vendor_sections(self, mhwd_drivers: list[VideoDriver]) -> None:
         """Build sections by purpose (gaming, video, compute) + NVIDIA proprietary."""
         _init_purpose_sections()
         self._clear_box(self._vendor_container)
@@ -657,8 +658,8 @@ class MesaSection(PackageOperationMixin, BaseSection):
         self.pkg_manager.invalidate_cache()
 
         # Classify MHWD drivers
-        nvidia_drv: list[MhwdDriver] = []
-        other_drv: list[MhwdDriver] = []
+        nvidia_drv: list[VideoDriver] = []
+        other_drv: list[VideoDriver] = []
         for d in mhwd_drivers:
             if d.name in self._HIDDEN_MHWD:
                 continue
@@ -683,7 +684,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         if other_drv:
             self._build_other_section(other_drv)
 
-    def _build_nvidia_section(self, nvidia_drv: list[MhwdDriver]) -> None:
+    def _build_nvidia_section(self, nvidia_drv: list[VideoDriver]) -> None:
         card = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         card.add_css_class("card")
         card.add_css_class("purpose-card-nvidia")
@@ -927,7 +928,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
 
         return row
 
-    def _build_other_section(self, drivers: list[MhwdDriver]) -> None:
+    def _build_other_section(self, drivers: list[VideoDriver]) -> None:
         card = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         card.add_css_class("card")
         card.set_margin_top(20)
@@ -1008,8 +1009,9 @@ class MesaSection(PackageOperationMixin, BaseSection):
                 show = True
             elif drv.compatible:
                 if drv.is_nvidia:
-                    # Default view: only show the latest (video-nvidia)
-                    show = drv.name == "video-nvidia"
+                    # Default view: only the driver NVIDIA recommends for
+                    # this GPU (580xx on Pascal, the current one on Turing+)
+                    show = getattr(drv, "recommended", drv.name == "video-nvidia")
                 else:
                     show = True
             else:
@@ -1021,7 +1023,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         if hasattr(self, "_nvidia_one_version_lbl"):
             self._nvidia_one_version_lbl.set_visible(visible_nvidia_count > 1)
 
-    def _build_mhwd_row(self, driver: MhwdDriver) -> Gtk.Box:
+    def _build_mhwd_row(self, driver: VideoDriver) -> Gtk.Box:
         """Build a card-style row for an MHWD driver."""
         row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         row.set_valign(Gtk.Align.CENTER)
@@ -1040,10 +1042,9 @@ class MesaSection(PackageOperationMixin, BaseSection):
         title_lbl.set_xalign(0)
         text_col.append(title_lbl)
 
-        # MHWD reports a "date-version" (e.g. 2025.09.29) for non-NVIDIA
-        # configs, which is confusing. Only show the version when it looks
-        # like a real semver-ish package version (resolved by
-        # MhwdManager._resolve_nvidia_versions for NVIDIA drivers). We
+        # Only show the version when it looks like a real semver-ish package
+        # version (the repository version of the NVIDIA userspace, see
+        # core.gpu_drivers); never a date-like value such as 2025.09.29. We
         # restrict the major to 1–3 digits so a four-digit year is rejected.
         subtitle_parts: list[str] = []
         if driver.version and re.match(
@@ -1146,7 +1147,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
     # MHWD actions
     # ------------------------------------------------------------------
 
-    def _on_mhwd_install_clicked(self, _button: Gtk.Button, driver: MhwdDriver) -> None:
+    def _on_mhwd_install_clicked(self, _button: Gtk.Button, driver: VideoDriver) -> None:
         free_label = _("open-source") if driver.free_driver else _("proprietary")
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Install Driver"))
@@ -1166,7 +1167,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         dialog.present(self.get_root())
 
     def _on_mhwd_install_confirm(
-        self, _dialog: Adw.AlertDialog, response: str, driver: MhwdDriver
+        self, _dialog: Adw.AlertDialog, response: str, driver: VideoDriver
     ) -> None:
         if response != "install" or not self.progress_dialog:
             return
@@ -1184,7 +1185,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
             ),
         )
 
-    def _on_mhwd_switch_clicked(self, _button: Gtk.Button, driver: MhwdDriver) -> None:
+    def _on_mhwd_switch_clicked(self, _button: Gtk.Button, driver: VideoDriver) -> None:
         current_name = (self._nvidia_installed_name or "").replace("-", " ")
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Switch NVIDIA Driver"))
@@ -1208,7 +1209,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         dialog.present(self.get_root())
 
     def _on_mhwd_switch_confirm(
-        self, _dialog: Adw.AlertDialog, response: str, driver: MhwdDriver
+        self, _dialog: Adw.AlertDialog, response: str, driver: VideoDriver
     ) -> None:
         if response != "switch" or not self.progress_dialog:
             return
@@ -1226,7 +1227,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
             ),
         )
 
-    def _on_mhwd_remove_clicked(self, _button: Gtk.Button, driver: MhwdDriver) -> None:
+    def _on_mhwd_remove_clicked(self, _button: Gtk.Button, driver: VideoDriver) -> None:
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Remove Driver"))
         dialog.set_body_use_markup(True)
@@ -1244,7 +1245,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
         dialog.present(self.get_root())
 
     def _on_mhwd_remove_confirm(
-        self, _dialog: Adw.AlertDialog, response: str, driver: MhwdDriver
+        self, _dialog: Adw.AlertDialog, response: str, driver: VideoDriver
     ) -> None:
         if response != "remove" or not self.progress_dialog:
             return

@@ -35,7 +35,7 @@ from core.package_manager import fetch_repo_package_set, last_sync_age_days
 from core.kernel_manager import KernelManager
 from core.logging_config import get_logger
 from core.mesa_manager import MesaManager
-from core.mhwd_manager import MhwdManager
+from core.gpu_drivers import GpuDriverManager
 from ui.home_page import HomePage
 from ui.installed_page import InstalledPage
 from ui.mesa_page import MesaSection
@@ -538,7 +538,7 @@ class KernelManagerWindow(Adw.ApplicationWindow):
                 fut_installed = pool.submit(fetch_installed_set)
                 fut_repo = pool.submit(fetch_repo_package_set)
                 fut_links = pool.submit(detect_wired_links)
-                fut_mhwd = pool.submit(MhwdManager().get_video_drivers)
+                fut_mhwd = pool.submit(GpuDriverManager().get_video_drivers)
                 fut_gpu = pool.submit(MesaSection._detect_gpu_info)
                 fut_vm = pool.submit(MesaSection._detect_virtual_machine)
 
