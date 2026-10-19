@@ -1,0 +1,12 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = mhwd
+Target = mhwd-db
+Target = big-driver-manager-cli
+
+[Action]
+Description = Teaching mhwd the linux-big and linux-xanmod kernels...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/big-driver-manager-mhwd-compat

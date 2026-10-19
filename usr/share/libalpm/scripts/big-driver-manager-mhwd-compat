@@ -1,0 +1,56 @@
+#!/bin/bash
+# The sed scripts below write a literal $ into other scripts.
+# shellcheck disable=SC2016
+#
+# Keeps mhwd usable while it is still installed (BigLinux live media and
+# installer use it): big-driver-manager-cli replaced mhwd-biglinux, which
+# used to patch mhwd's list of kernels. Taken from mhwd-biglinux unchanged.
+# Nothing here runs once mhwd is gone.
+
+[[ -f /var/lib/mhwd/scripts/mhwd ]] || exit 0
+
+# nvidia 580xx profiles: mhwd-db now ships these natively. Until that landed we
+# synthesised them from 575xx as *-big copies; remove those stale copies.
+gpudb='/var/lib/mhwd/db/pci/graphic_drivers'
+if [[ -e "$gpudb/nvidia-580xx" ]]; then
+    rm -Rf "$gpudb/nvidia-580xx-big" \
+        "$gpudb/hybrid-amd-nvidia-580xx-prime-big" \
+        "$gpudb/hybrid-intel-nvidia-580xx-prime-big"
+fi
+
+# Kernels mhwd installs driver modules for: each one becomes <kernel>-<module>
+# (linux-big-nvidia-open, linux-xanmod-nvidia, ...). Upstream mhwd only knows
+# the Manjaro linuxNN kernels; add xanmod and the BigCommunity kernel, linux-big.
+# Each edit rewrites the whole expression, so it is idempotent and also repairs
+# a file an older version of this hook patched with a shorter list.
+kernel_regex='^linux[0-9][0-9]?([0-9])$|^linux-xanmod$|^linux-xanmod-lts$|^linux-big$'
+
+sed -i -E 's#^KERNELS=\$\(pacman -Qqs "[^"]*"\)$#KERNELS=$(pacman -Qqs "'"$kernel_regex"'")#' \
+    /var/lib/mhwd/scripts/mhwd
+
+# mhwd-kernel: list the same kernels (not the -rt pattern) and recognise the
+# running one, which it refuses to remove.
+sed -i -E 's#"\^linux\[0-9\]\[0-9\]\?\(\[0-9\]\)\$(\|[^"]*)?"#"'"$kernel_regex"'"#g' \
+    /usr/bin/mhwd-kernel
+sed -i '/current="linux$major$minor"/c\
+case "$(uname -r)" in *xanmod*lts*) current="linux-xanmod-lts" ;; *xanmod*) current="linux-xanmod" ;; *-big) current="linux-big" ;; *) current="linux$major$minor" ;; esac' \
+    /usr/bin/mhwd-kernel
+
+# Folder with scripts
+cd /var/lib/mhwd/db/pci/graphic_drivers/ || exit 0
+
+# Folders with MHWDCONFIG to change
+Folders="hybrid-amd-nvidia-470xx-prime
+hybrid-amd-nvidia-580xx-prime
+hybrid-amd-nvidia-prime
+hybrid-intel-nvidia-470xx-prime
+hybrid-intel-nvidia-580xx-prime
+hybrid-intel-nvidia-prime"
+
+for folder in $Folders; do
+    [[ -f $folder/MHWDCONFIG ]] || continue
+    # Add switcheroo-control to files
+    if ! grep -q 'switcheroo-control' "$folder/MHWDCONFIG"; then
+        sed -i 's|^DEPENDS="|DEPENDS="switcheroo-control |g' "$folder/MHWDCONFIG"
+    fi
+done

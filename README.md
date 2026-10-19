@@ -91,6 +91,11 @@ manager; `big-driver-manager-live.service` installs the drivers on live media
 from `/opt/mhwd/pacman-mhwd.conf`, honouring `driver=free|nonfree` and
 `bdm.gpu=MODE` (or the older `bignvidia=`) on the kernel command line.
 
+While mhwd is still installed (BigLinux media keep mhwd-live and the mhwdcfg
+installer job), `big-driver-manager-mhwd-compat.hook` keeps patching mhwd's
+kernel list for linux-big and linux-xanmod, as mhwd-biglinux did, and
+`big-driver-manager-live.service` stays out of the way of mhwd-live.
+
 A pacman hook (`big-driver-manager-kernel.hook`) runs `gpu check` whenever a
 kernel is installed or upgraded: on machines using the NVIDIA proprietary
 driver it names the module package the new kernel still lacks (pacman cannot

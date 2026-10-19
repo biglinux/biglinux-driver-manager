@@ -4,9 +4,10 @@
 Description=Big Driver Manager: install the drivers of this machine (live session)
 ConditionPathExists=/livefs-pkgs.txt
 ConditionPathExists=/opt/mhwd/pacman-mhwd.conf
+# Media that still ship mhwd (BigLinux) install their drivers with mhwd-live.
+ConditionPathExists=!/usr/bin/mhwd
 After=livecd-tweaks.service local-fs.target
 Before=big-driver-manager-gpu.service display-manager.service systemd-user-sessions.service
-Conflicts=mhwd-live.service
 
 [Service]
 Type=oneshot
