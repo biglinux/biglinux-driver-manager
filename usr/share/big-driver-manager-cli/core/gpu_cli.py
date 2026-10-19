@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import stat
 import subprocess
 import sys
 from pathlib import Path
@@ -113,12 +114,44 @@ def _target_root(args: argparse.Namespace) -> Path:
     return args.root if getattr(args, "root", None) else Path("/")
 
 
+def _untrusted(path: Path) -> str | None:
+    """Why ``path`` could be controlled by someone other than root, or None."""
+    try:
+        info = os.lstat(path)
+    except OSError as error:
+        return f"{path}: {error.strerror}"
+    if stat.S_ISLNK(info.st_mode):
+        return f"{path} is a symbolic link"
+    if info.st_uid != 0:
+        return f"{path} is not owned by root"
+    if info.st_mode & 0o022:
+        return f"{path} is writable by group or others"
+    return None
+
+
+# Paths of a target system whose owner decides what runs inside it: pacman
+# --root runs install scriptlets and hooks chrooted there, as root.
+_ROOT_SKELETON = ("", "etc", "usr", "usr/bin", "usr/lib")
+
+
 def _refuse_redirection(args: argparse.Namespace) -> str | None:
-    """--root/--pmconfig only for real root: through pkexec they would let a
-    user point pacman at a repository of their own and install it as root."""
-    redirected = getattr(args, "root", None) or getattr(args, "pmconfig", None)
-    if redirected and "PKEXEC_UID" in os.environ:
-        return "--root and --pmconfig are not accepted through pkexec"
+    """--root and --pmconfig let pacman install, as root, from a configuration
+    and into a tree chosen by the caller. They are honoured only when both are
+    root's alone -- the installer's target, the live medium's /opt/mhwd --
+    whoever asks (pkexec reaches here too, and so does the installer, which
+    the live session starts through pkexec)."""
+    root = getattr(args, "root", None)
+    if root:
+        for relative in _ROOT_SKELETON:
+            reason = _untrusted(root / relative)
+            if reason:
+                return f"--root refused: {reason}"
+    pmconfig = getattr(args, "pmconfig", None)
+    if pmconfig:
+        for path in (pmconfig, pmconfig.parent):
+            reason = _untrusted(path)
+            if reason:
+                return f"--pmconfig refused: {reason}"
     return None
 
 

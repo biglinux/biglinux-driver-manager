@@ -63,8 +63,12 @@ What `install` decides, and from where:
 | Virtual machine | VirtualBox, VMware or QEMU/KVM guest tools and their services |
 | Broadcom wl Wi-Fi | `<pkgbase>-broadcom-wl` per kernel |
 
-`--root` and `--pmconfig` are for the live session and the installer (already
-root) and are refused through pkexec.
+`--root` and `--pmconfig` are for the live session and the installer. pacman
+runs install scriptlets inside `--root`, as root, so both are honoured only when
+they belong to root alone (the target and its `etc`, `usr`, `usr/bin`, `usr/lib`;
+the configuration file and its directory: owned by root, not group/other
+writable, not symbolic links) -- a tree or repository a user prepared is refused,
+whoever runs the command.
 
 GPU modes on an integrated + NVIDIA machine: `hybrid` (default: the integrated
 GPU drives the screen, NVIDIA on demand and asleep otherwise), `nvidia` (NVIDIA

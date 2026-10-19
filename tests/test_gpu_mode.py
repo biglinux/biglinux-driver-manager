@@ -116,12 +116,35 @@ class TestCli(unittest.TestCase):
             with self.subTest(args=args):
                 self.assertEqual(gpu_cli.requested_mode(list(args)), expected)
 
-    def test_redirection_is_refused_through_pkexec(self):
-        args = argparse.Namespace(root=Path("/mnt"), pmconfig=None)
-        with patch.dict(os.environ, {"PKEXEC_UID": "1000"}):
-            self.assertIsNotNone(gpu_cli._refuse_redirection(args))
-        with patch.dict(os.environ, {}, clear=True):
+    def test_redirection_into_a_user_tree_is_refused(self):
+        with TemporaryDirectory() as t:  # owned by the user running the tests
+            for args in (
+                argparse.Namespace(root=Path(t), pmconfig=None),
+                argparse.Namespace(root=None, pmconfig=Path(t) / "pacman.conf"),
+                argparse.Namespace(root=Path(t) / "missing", pmconfig=None),
+            ):
+                with self.subTest(args=args):
+                    self.assertIsNotNone(gpu_cli._refuse_redirection(args))
+
+    def test_redirection_to_root_owned_paths_is_accepted(self):
+        def lstat(path):
+            return os.stat_result((stat.S_IFDIR | 0o755, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+
+        args = argparse.Namespace(root=Path("/mnt"), pmconfig=Path("/opt/mhwd/x.conf"))
+        with patch.object(gpu_cli.os, "lstat", side_effect=lstat):
             self.assertIsNone(gpu_cli._refuse_redirection(args))
+
+    def test_group_writable_or_symlinked_paths_are_refused(self):
+        modes = {"/mnt/usr": stat.S_IFDIR | 0o775, "/mnt/etc": stat.S_IFLNK | 0o777}
+
+        def lstat(path):
+            mode = modes.get(str(path), stat.S_IFDIR | 0o755)
+            return os.stat_result((mode, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+
+        args = argparse.Namespace(root=Path("/mnt"), pmconfig=None)
+        with patch.object(gpu_cli.os, "lstat", side_effect=lstat):
+            reason = gpu_cli._refuse_redirection(args)
+        self.assertIn("/mnt/etc", reason)
 
     def test_free_from_cmdline(self):
         args = argparse.Namespace(free=False, from_cmdline=True)
