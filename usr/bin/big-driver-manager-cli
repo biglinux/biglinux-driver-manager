@@ -22,6 +22,7 @@ for _candidate in (
 else:
     sys.exit("big-driver-manager-cli: installation directory not found")
 
+from core import gpu_cli  # noqa: E402
 from core.constants import APP_VERSION  # noqa: E402
 from core.privileged import (  # noqa: E402
     MHWD,
@@ -40,7 +41,7 @@ EXIT_NOT_ROOT = 77
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="big-driver-manager-cli",
-        description="Install and remove drivers, kernels and Mesa for Big Driver Manager.",
+        description="Detect hardware and install drivers, kernels and Mesa for Big Driver Manager.",
     )
     parser.add_argument("--version", action="version", version=APP_VERSION)
     verbs = parser.add_subparsers(dest="verb", required=True)
@@ -80,6 +81,8 @@ def _parser() -> argparse.ArgumentParser:
     mhwd.add_argument(
         "--force", action="store_true", help="replace a conflicting configuration"
     )
+
+    gpu_cli.add_parser(verbs)
     return parser
 
 
@@ -98,6 +101,8 @@ def _command(args: argparse.Namespace) -> list[str]:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    if args.verb == "gpu":
+        return gpu_cli.run(args)
     try:
         command = _command(args)
     except PrivilegedRequestError as error:

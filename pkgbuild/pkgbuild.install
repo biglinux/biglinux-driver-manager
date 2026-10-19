@@ -7,12 +7,22 @@ _build_cache() {
     fi
 }
 
+# big-driver-manager-gpu: before the display manager on every boot (replaces
+# nvidia-manager-verify). big-driver-manager-live: live media only, guarded by
+# its own conditions (replaces mhwd-live).
+_units=(big-driver-manager-gpu.service big-driver-manager-live.service)
+
 post_install() {
     _build_cache
+    systemctl enable "${_units[@]}" 2>/dev/null || true
 }
 
 post_upgrade() {
-    _build_cache
+    post_install
+}
+
+pre_remove() {
+    systemctl disable "${_units[@]}" 2>/dev/null || true
 }
 
 post_remove() {

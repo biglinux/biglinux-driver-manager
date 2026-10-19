@@ -3,12 +3,20 @@
 
 pkgname=big-driver-manager-cli
 pkgdesc="Command line and core of Big Driver Manager: detects hardware and installs drivers, kernels and Mesa"
-depends=('python' 'pacman' 'polkit' 'pciutils' 'usbutils')
+depends=('python' 'pacman' 'polkit' 'pciutils' 'usbutils' 'nvidia-driver-assistant')
 optdepends=(
-    'mhwd: install video drivers through mhwd configurations'
+    'switcheroo-control: launch applications on the other GPU of a hybrid machine'
+    'nvidia-prime: prime-run, render offload to the NVIDIA GPU'
+    'xorg-xrandr: NVIDIA as the primary GPU in Xorg sessions'
+    'mhwd: the old mhwd video configurations (still listed by the interface)'
     'avahi: discover network printers and scanners'
     'pamac-gtk: build drivers that only exist in the AUR'
 )
+# Graphics drivers and hybrid GPU modes moved here from mhwd-biglinux
+# (biglinux-gpu-manager, nvidia-manager-verify.service).
+provides=('mhwd-biglinux')
+conflicts=('mhwd-biglinux')
+replaces=('mhwd-biglinux')
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
 arch=('any')

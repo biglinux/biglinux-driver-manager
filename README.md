@@ -42,6 +42,42 @@ big-driver-manager-cli mhwd install|remove pci|usb CONFIG [--force]
 
 Exit codes: `2` invalid request, `77` not running as root.
 
+## Graphics drivers (replaces mhwd and mhwd-biglinux)
+
+```bash
+big-driver-manager-cli gpu detect [--json]           # display controllers, kernels, VM
+big-driver-manager-cli gpu plan   [--free] [--json]  # what install would do
+big-driver-manager-cli gpu install [--free | --from-cmdline] [--root DIR] [--pmconfig FILE]
+big-driver-manager-cli gpu mode hybrid|nvidia|integrated
+big-driver-manager-cli gpu status [--json]
+```
+
+What `install` decides, and from where:
+
+| Question | Answer from |
+|---|---|
+| Which GPUs | `/sys/bus/pci/devices`, PCI class 0x03xx, by vendor ID |
+| Which NVIDIA driver | NVIDIA's `supported-gpus.json` (nvidia-driver-assistant): no legacy branch → current driver with the open module; `580.xx` → `nvidia-580xx`; `470.xx` → `nvidia-470xx` (X11 only); older → nouveau. Several chips: the oldest branch, open module only if all support it |
+| Which module package | every installed kernel's `pkgbase` → `<pkgbase>-nvidia[-open\|-580xx\|-470xx]`; a kernel without one gets the `-dkms` driver and its headers. linux-big, linux-xanmod, linux-xanmod-lts and linuxNN(-comm) need nothing special |
+| Hybrid laptop | `nvidia-prime`, `switcheroo-control`; RTD3 power management when the chip supports it |
+| Virtual machine | VirtualBox, VMware or QEMU/KVM guest tools and their services |
+| Broadcom wl Wi-Fi | `<pkgbase>-broadcom-wl` per kernel |
+
+`--root` and `--pmconfig` are for the live session and the installer (already
+root) and are refused through pkexec.
+
+GPU modes on an integrated + NVIDIA machine: `hybrid` (default: the integrated
+GPU drives the screen, NVIDIA on demand and asleep otherwise), `nvidia` (NVIDIA
+stays awake and is the Xorg primary GPU; the greeter of LightDM, SDDM or GDM and
+X11 sessions get the xrandr PRIME setup, Wayland is unaffected), `integrated`
+(NVIDIA modules never load). `biglinux-gpu-manager` is kept as a compatibility
+command.
+
+Services: `big-driver-manager-gpu.service` runs `gpu boot` before the display
+manager; `big-driver-manager-live.service` installs the drivers on live media
+from `/opt/mhwd/pacman-mhwd.conf`, honouring `driver=free|nonfree` and
+`bdm.gpu=MODE` (or the older `bignvidia=`) on the kernel command line.
+
 ## Development
 
 The two repositories are expected side by side; the interface finds the core in
