@@ -20,7 +20,7 @@ from core.constants import (
     PROGRESS_UPDATE_INTERVAL,
     STATUS_UPDATE_INTERVAL,
 )
-from core.privileged import pacman_command
+from core.privileged import cli_command, pacman_command
 from core.logging_config import get_logger
 from core.subprocess_env import subprocess_env
 from core.i18n import _
@@ -115,6 +115,29 @@ class BaseManager:
             ),
         )
 
+    def run_cli_command(
+        self,
+        args: list[str],
+        progress_callback: Callable | None = None,
+        output_callback: Callable | None = None,
+        complete_callback: Callable | None = None,
+        operation_name: str = "Operation",
+    ) -> None:
+        """Run a big-driver-manager-cli verb (e.g. ``["gpu", "install"]``) in
+        the background, with the same progress, retry and cancel handling as
+        a pacman operation: the command prints pacman's output."""
+        self._thread_launcher(
+            self._execute_command_thread,
+            (
+                args,
+                progress_callback,
+                output_callback,
+                complete_callback,
+                operation_name,
+                cli_command(args),
+            ),
+        )
+
     def install_repo_packages(
         self,
         packages: list[str],
@@ -159,6 +182,7 @@ class BaseManager:
         output_callback: Callable | None,
         complete_callback: Callable | None,
         operation_name: str,
+        command: list[str] | None = None,
     ) -> None:
         """
         Thread function for executing pacman commands.
@@ -176,7 +200,7 @@ class BaseManager:
         self._cancelled = False
         self.last_error_hint = None
         try:
-            cmd = pacman_command(args)
+            cmd = command or pacman_command(args)
         except ValueError as e:
             self._output(output_callback, _("Error: {}").format(str(e)))
             if complete_callback:

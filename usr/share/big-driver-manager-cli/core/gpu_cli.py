@@ -67,6 +67,14 @@ def add_parser(verbs: argparse._SubParsersAction) -> None:
     )
     driver_options(install)
     target_options(install)
+    for sub in (plan, install):
+        sub.add_argument(
+            "--nvidia-branch",
+            choices=list(gpu.BRANCHES),
+            help="instead of the recommended NVIDIA driver (must drive the GPU)",
+        )
+
+    actions.add_parser("remove", help="remove the NVIDIA proprietary driver")
 
     mode = actions.add_parser("mode", help="choose which GPU drives a hybrid machine")
     mode.add_argument("mode", choices=gpu_mode.MODES)
@@ -164,18 +172,51 @@ def _env() -> dict[str, str]:
     return env
 
 
-def _build_plan(args: argparse.Namespace) -> gpu.GpuPlan:
+def _pacman_root(args: argparse.Namespace) -> Path | None:
     root = _target_root(args)
-    pacman_root = root if root != Path("/") else None
+    return root if root != Path("/") else None
+
+
+def _build_plan(
+    args: argparse.Namespace,
+    installed: set[str] | None = None,
+    kernels: list[str] | None = None,
+) -> gpu.GpuPlan:
+    """Raises ValueError when --nvidia-branch does not drive the GPU."""
+    pacman_root = _pacman_root(args)
     return gpu.build_plan(
         gpu.scan_pci(),
-        gpu.installed_kernels(root),
+        kernels if kernels is not None else gpu.installed_kernels(_target_root(args)),
         gpu.repo_packages(args.pmconfig, pacman_root),
         nonfree=_nonfree(args),
         virtualization=gpu.detect_virtualization(),
         chips=gpu.load_supported_gpus(),
-        installed=gpu.installed_packages(pacman_root),
+        installed=installed
+        if installed is not None
+        else gpu.installed_packages(pacman_root),
+        nvidia_branch=getattr(args, "nvidia_branch", None),
     )
+
+
+def installed_nvidia_packages(installed: set[str], kernels: list[str]) -> list[str]:
+    """Every installed package of any NVIDIA branch."""
+    names: set[str] = set()
+    for branch in gpu.BRANCHES.values():
+        names.update(gpu.branch_packages(branch, installed, kernels))
+    return sorted(names)
+
+
+def packages_to_replace(
+    plan: gpu.GpuPlan, installed: set[str], kernels: list[str]
+) -> list[str]:
+    """NVIDIA packages installed now that the plan does not keep: another
+    branch, or the other module flavour (open/proprietary) of the same one.
+    They conflict with the plan's packages, and pacman --noconfirm answers
+    no to removing a conflicting package, so they go first."""
+    if not (plan.nvidia and plan.nvidia.branch):
+        return []
+    keep = set(plan.install)
+    return [p for p in installed_nvidia_packages(installed, kernels) if p not in keep]
 
 
 def _describe_plan(plan: gpu.GpuPlan) -> None:
@@ -209,15 +250,51 @@ def _run(cmd: list[str]) -> bool:
         return False
 
 
+def _pacman_remove(
+    packages: list[str], mode: str, args: argparse.Namespace
+) -> list[str]:
+    cmd = ["pacman", mode, "--noconfirm"]
+    if getattr(args, "pmconfig", None):
+        cmd += ["--config", str(args.pmconfig)]
+    if _pacman_root(args):
+        cmd += ["--root", str(_pacman_root(args))]
+    return cmd + packages
+
+
 def _install(args: argparse.Namespace) -> int:
     root = _target_root(args)
-    plan = _build_plan(args)
+    pacman_root = _pacman_root(args)
+    installed = gpu.installed_packages(pacman_root)
+    kernels = gpu.installed_kernels(root)
+    try:
+        plan = _build_plan(args, installed, kernels)
+    except ValueError as error:
+        _error(str(error))
+        return EXIT_USAGE
     _describe_plan(plan)
-    pacman_root = root if root != Path("/") else None
+
+    replaced = packages_to_replace(plan, installed, kernels)
+    if replaced:
+        if plan.unavailable:
+            _error(
+                "not replacing the installed NVIDIA driver: "
+                + " ".join(plan.unavailable)
+                + " missing from the repositories"
+            )
+            return EXIT_FAILED
+        _print("Replacing: " + " ".join(replaced))
+        # -dd: the new branch provides nvidia-utils again right after.
+        if not _run(_pacman_remove(replaced, "-Rdd", args)):
+            _error("removing the installed NVIDIA driver failed")
+            return EXIT_FAILED
+
     if plan.install and not _run(
         gpu.pacman_install_command(plan.install, args.pmconfig, pacman_root)
     ):
         _error("installing the drivers failed")
+        if replaced:
+            _print("Restoring the previous NVIDIA driver from the package cache")
+            _run(gpu.pacman_install_command(replaced, args.pmconfig, pacman_root))
         return EXIT_FAILED
     for path in gpu.write_files(plan.files, root):
         _print(f"Wrote {path}")
@@ -250,6 +327,31 @@ def _apply_mode(mode: str, root: Path, live: bool) -> int:
     for note in change.notes:
         _print(f"Note: {note}")
     _print(f"GPU mode: {change.mode}")
+    return EXIT_OK
+
+
+def _remove(args: argparse.Namespace) -> int:
+    installed = gpu.installed_packages()
+    packages = installed_nvidia_packages(installed, gpu.installed_kernels())
+    if not packages:
+        _print("The NVIDIA proprietary driver is not installed")
+        return EXIT_OK
+    if "nvidia-prime" in installed:
+        packages.append("nvidia-prime")  # depends on nvidia-utils
+    if not _run(_pacman_remove(packages, "-Rns", args)):
+        _error("removing the NVIDIA driver failed")
+        return EXIT_FAILED
+    files = [gpu.NVIDIA_MODULES_LOAD, gpu.NVIDIA_POWER_MODPROBE, gpu.NVIDIA_POWER_UDEV]
+    for relative in files:
+        target = Path("/") / relative
+        if target.is_file():
+            target.unlink()
+            _print(f"Removed {target}")
+    change = gpu_mode.clear_mode()
+    for relative in change.removed:
+        _print(f"Removed /{relative}")
+    if change.needs_initramfs and not LIVE_MARKER.exists():
+        _run(["mkinitcpio", "-P"])
     return EXIT_OK
 
 
@@ -370,7 +472,11 @@ def run(args: argparse.Namespace) -> int:
         _error(refusal)
         return EXIT_USAGE
     if action == "plan":
-        plan = _build_plan(args)
+        try:
+            plan = _build_plan(args)
+        except ValueError as error:
+            _error(str(error))
+            return EXIT_USAGE
         if args.json:
             _print(json.dumps(plan.to_dict(), indent=2))
         else:
@@ -382,6 +488,8 @@ def run(args: argparse.Namespace) -> int:
         return EXIT_NOT_ROOT
     if action == "install":
         return _install(args)
+    if action == "remove":
+        return _remove(args)
     if action == "mode":
         return _apply_mode(args.mode, _target_root(args), LIVE_MARKER.exists())
     if action == "boot":

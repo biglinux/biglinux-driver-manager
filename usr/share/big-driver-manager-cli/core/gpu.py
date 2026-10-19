@@ -267,6 +267,15 @@ class NvidiaChoice:
     runtime_pm: bool = False
     chips: list[str] = field(default_factory=list)
     unsupported: list[str] = field(default_factory=list)
+    # Every chip runs the open module (when the branch has one).
+    open_capable: bool = False
+    # Branches that drive every chip, newest first.
+    compatible: list[str] = field(default_factory=list)
+
+
+# Besides its own branch, a chip of the current driver still runs on 580xx,
+# the last branch with Maxwell, Pascal and Volta.
+_ALSO_COMPATIBLE = {"current": ("580xx",), "580xx": (), "470xx": ()}
 
 
 def _chip_branch(chip: NvidiaChip | None) -> tuple[str | None, bool, bool]:
@@ -305,10 +314,49 @@ def choose_nvidia(
         pm_flags.append(runtime_pm)
     if branches:
         choice.branch = max(branches, key=_BRANCH_ORDER.index)
+        choice.open_capable = all(open_flags)
         has_open = BRANCHES[choice.branch].open_module is not None
-        choice.open_module = has_open and all(open_flags)
+        choice.open_module = has_open and choice.open_capable
         choice.runtime_pm = all(pm_flags)
+        per_chip = [{b, *_ALSO_COMPATIBLE[b]} for b in branches]
+        common = set.intersection(*per_chip)
+        choice.compatible = [b for b in _BRANCH_ORDER if b in common]
     return choice
+
+
+def force_branch(choice: NvidiaChoice, branch: str) -> None:
+    """Use ``branch`` instead of the recommended one (the user chose it)."""
+    if branch not in choice.compatible:
+        raise ValueError(
+            f"NVIDIA {branch} does not drive this GPU "
+            f"(compatible: {', '.join(choice.compatible) or 'none'})"
+        )
+    choice.branch = branch
+    choice.open_module = (
+        BRANCHES[branch].open_module is not None and choice.open_capable
+    )
+
+
+def branch_packages(
+    branch: DriverBranch, installed: set[str], kernels: list[str]
+) -> list[str]:
+    """Installed packages of ``branch``: userspace, DKMS and the module package
+    of each kernel. Kernels by pkgbase, not by a "linux" prefix, which would
+    take linux-firmware-nvidia for a module."""
+    names = set(branch.utils) | set(branch.lib32) | {branch.dkms}
+    if branch.open_dkms:
+        names.add(branch.open_dkms)
+    modules = [branch.module] + ([branch.open_module] if branch.open_module else [])
+    names |= {f"{kernel}-{module}" for kernel in kernels for module in modules}
+    return sorted(names & installed)
+
+
+def installed_branch(installed: set[str]) -> str | None:
+    """The NVIDIA branch whose userspace is installed, if any."""
+    for name, branch in BRANCHES.items():
+        if branch.utils[0] in installed:
+            return name
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -335,7 +383,7 @@ class GpuPlan:
 
 
 # systemd-detect-virt answer -> guest packages and the units they need
-_VM_GUESTS: dict[str, tuple[tuple[str, ...], tuple[str, ...]]] = {
+VM_GUESTS: dict[str, tuple[tuple[str, ...], tuple[str, ...]]] = {
     "oracle": (("virtualbox-guest-utils",), ("vboxservice.service",)),
     "vmware": (("open-vm-tools", "xf86-input-vmmouse"), ("vmtoolsd.service",)),
     "kvm": (
@@ -389,12 +437,14 @@ def build_plan(
     chips: dict[str, NvidiaChip] | None = None,
     broadcom_wl_ids: set[str] | None = None,
     installed: set[str] | None = None,
+    nvidia_branch: str | None = None,
 ) -> GpuPlan:
     """Everything the machine needs, as packages, units and files.
 
     ``repo`` is the set of package names the configured repositories offer
     (``pacman -Slq``); a wanted package outside it is reported, not installed,
-    unless it is already in ``installed``.
+    unless it is already in ``installed``. ``nvidia_branch`` replaces the
+    recommended NVIDIA branch; ValueError when it does not drive the GPU.
     """
     display = display_devices(devices)
     nvidia = [d for d in display if d.vendor == VENDOR_NVIDIA]
@@ -407,9 +457,13 @@ def build_plan(
         kernels=list(kernels),
     )
     wanted: list[str] = []
+    if nvidia_branch and not nvidia:
+        raise ValueError("no NVIDIA GPU in this machine")
 
     if nvidia and nonfree:
         choice = choose_nvidia(devices, chips if chips is not None else {})
+        if nvidia_branch:
+            force_branch(choice, nvidia_branch)
         plan.nvidia = choice
         for label in choice.unsupported:
             plan.notes.append(f"{label}: no supported NVIDIA driver, keeping nouveau")
@@ -448,8 +502,8 @@ def build_plan(
                 kernels, "broadcom-wl", "broadcom-wl-dkms", repo, plan
             )
 
-    if virtualization in _VM_GUESTS:
-        packages, units = _VM_GUESTS[virtualization]
+    if virtualization in VM_GUESTS:
+        packages, units = VM_GUESTS[virtualization]
         wanted += packages
         plan.services += units
 

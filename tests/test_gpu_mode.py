@@ -195,6 +195,8 @@ class TestCli(unittest.TestCase):
             )
             with (
                 patch.object(gpu_cli, "_build_plan", return_value=plan),
+                patch.object(gpu_cli.gpu, "installed_packages", return_value=set()),
+                patch.object(gpu_cli.gpu, "installed_kernels", return_value=[]),
                 patch.object(gpu_cli.subprocess, "run") as run,
             ):
                 run.return_value.returncode = 0
@@ -213,11 +215,146 @@ class TestCli(unittest.TestCase):
             args = argparse.Namespace(root=Path(t), pmconfig=None)
             with (
                 patch.object(gpu_cli, "_build_plan", return_value=plan),
+                patch.object(gpu_cli.gpu, "installed_packages", return_value=set()),
+                patch.object(gpu_cli.gpu, "installed_kernels", return_value=[]),
                 patch.object(gpu_cli.subprocess, "run") as run,
             ):
                 run.return_value.returncode = 1
                 self.assertEqual(gpu_cli._install(args), gpu_cli.EXIT_FAILED)
             self.assertFalse((Path(t) / gpu.NVIDIA_MODULES_LOAD).exists())
+
+
+class TestBranchSwitching(unittest.TestCase):
+    KERNELS = ["linux-big", "linux-xanmod"]
+
+    def _plan(self, branch="580xx", install=None):
+        from core import gpu
+
+        choice = gpu.NvidiaChoice(branch=branch)
+        return gpu.GpuPlan(
+            nvidia=choice,
+            kernels=self.KERNELS,
+            install=install
+            or [
+                "nvidia-580xx-utils",
+                "nvidia-580xx-settings",
+                "linux-big-nvidia-580xx",
+                "linux-xanmod-nvidia-580xx",
+            ],
+        )
+
+    def test_another_branch_is_replaced(self):
+        installed = {
+            "nvidia-utils",
+            "nvidia-settings",
+            "lib32-nvidia-utils",
+            "linux-big-nvidia-open",
+            "linux-xanmod-nvidia-open",
+            "linux-firmware-nvidia",  # not a module of any kernel
+            "nvidia-prime",
+            "mesa",
+        }
+        self.assertEqual(
+            gpu_cli.packages_to_replace(self._plan(), installed, self.KERNELS),
+            [
+                "lib32-nvidia-utils",
+                "linux-big-nvidia-open",
+                "linux-xanmod-nvidia-open",
+                "nvidia-settings",
+                "nvidia-utils",
+            ],
+        )
+
+    def test_other_module_flavour_of_the_same_branch_is_replaced(self):
+        plan = self._plan(
+            "current",
+            ["nvidia-utils", "linux-big-nvidia-open", "linux-xanmod-nvidia-open"],
+        )
+        installed = {"nvidia-utils", "linux-big-nvidia", "linux-xanmod-nvidia"}
+        self.assertEqual(
+            gpu_cli.packages_to_replace(plan, installed, self.KERNELS),
+            ["linux-big-nvidia", "linux-xanmod-nvidia"],
+        )
+
+    def test_nothing_replaced_when_already_right_or_on_free_drivers(self):
+        from core import gpu
+
+        plan = self._plan()
+        self.assertEqual(
+            gpu_cli.packages_to_replace(plan, set(plan.install), self.KERNELS), []
+        )
+        self.assertEqual(
+            gpu_cli.packages_to_replace(gpu.GpuPlan(), {"nvidia-utils"}, self.KERNELS),
+            [],
+        )
+
+    def _install(self, plan, installed, results):
+        args = argparse.Namespace(root=None, pmconfig=None, nvidia_branch="580xx")
+        with (
+            patch.object(gpu_cli, "_build_plan", return_value=plan),
+            patch.object(gpu_cli.gpu, "installed_packages", return_value=installed),
+            patch.object(gpu_cli.gpu, "installed_kernels", return_value=self.KERNELS),
+            patch.object(gpu_cli.subprocess, "run") as run,
+        ):
+            run.side_effect = [
+                type("R", (), {"returncode": code})() for code in results
+            ]
+            code = gpu_cli._install(args)
+        return code, [c.args[0] for c in run.call_args_list]
+
+    def test_swap_removes_without_deps_then_installs(self):
+        code, commands = self._install(self._plan(), {"nvidia-utils"}, [0, 0])
+        self.assertEqual(code, 0)
+        self.assertEqual(commands[0], ["pacman", "-Rdd", "--noconfirm", "nvidia-utils"])
+        self.assertEqual(commands[1][:2], ["pacman", "-S"])
+
+    def test_failed_install_restores_the_previous_driver(self):
+        code, commands = self._install(self._plan(), {"nvidia-utils"}, [0, 1, 0])
+        self.assertEqual(code, gpu_cli.EXIT_FAILED)
+        self.assertEqual(commands[2][-1], "nvidia-utils")
+        self.assertEqual(commands[2][:2], ["pacman", "-S"])
+
+    def test_no_swap_when_the_new_driver_is_not_available(self):
+        plan = self._plan()
+        plan.unavailable = ["linux-xanmod-nvidia-580xx"]
+        code, commands = self._install(plan, {"nvidia-utils"}, [])
+        self.assertEqual(code, gpu_cli.EXIT_FAILED)
+        self.assertEqual(commands, [])
+
+    def test_remove_takes_prime_along_and_clears_the_mode(self):
+        installed = {"nvidia-utils", "linux-big-nvidia-open", "nvidia-prime", "mesa"}
+        with (
+            patch.object(gpu_cli.gpu, "installed_packages", return_value=installed),
+            patch.object(gpu_cli.gpu, "installed_kernels", return_value=["linux-big"]),
+            patch.object(gpu_cli.gpu_mode, "clear_mode") as clear,
+            patch.object(gpu_cli.subprocess, "run") as run,
+        ):
+            run.return_value.returncode = 0
+            clear.return_value = gpu_mode.ModeChange(mode="none")
+            code = gpu_cli._remove(argparse.Namespace())
+        self.assertEqual(code, 0)
+        self.assertEqual(
+            run.call_args_list[0].args[0],
+            [
+                "pacman",
+                "-Rns",
+                "--noconfirm",
+                "linux-big-nvidia-open",
+                "nvidia-utils",
+                "nvidia-prime",
+            ],
+        )
+        clear.assert_called_once()
+
+    def test_clear_mode_removes_every_mode_file(self):
+        with TemporaryDirectory() as t:
+            root = Path(t)
+            _with_display_managers(root, "lightdm")
+            gpu_mode.apply_mode("nvidia", HYBRID, root)
+            change = gpu_mode.clear_mode(root)
+            self.assertTrue(change.needs_initramfs)
+            self.assertIsNone(gpu_mode.read_mode(root))
+            self.assertFalse((root / gpu_mode.LIGHTDM_DROPIN).exists())
 
 
 class TestPrimeScripts(unittest.TestCase):

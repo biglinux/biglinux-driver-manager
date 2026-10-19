@@ -122,6 +122,43 @@ class TestNvidiaChoice(unittest.TestCase):
         )
 
 
+class TestBranchChoice(unittest.TestCase):
+    def test_compatible_branches(self):
+        self.assertEqual(choose_nvidia([ADA], CHIPS).compatible, ["current", "580xx"])
+        self.assertEqual(choose_nvidia([PASCAL], CHIPS).compatible, ["580xx"])
+        self.assertEqual(choose_nvidia([KEPLER], CHIPS).compatible, ["470xx"])
+        self.assertEqual(choose_nvidia([PASCAL, ADA], CHIPS).compatible, ["580xx"])
+
+    def test_forcing_580xx_on_a_current_chip_keeps_the_open_module(self):
+        plan = plan_for([INTEL, ADA], nvidia_branch="580xx")
+        self.assertEqual(plan.nvidia.branch, "580xx")
+        self.assertIn("linux-big-nvidia-580xx-open", plan.install)
+        self.assertIn("nvidia-580xx-utils", plan.install)
+        self.assertNotIn("nvidia-utils", plan.install)
+
+    def test_forcing_an_incompatible_branch_is_refused(self):
+        with self.assertRaises(ValueError):
+            plan_for([PASCAL], nvidia_branch="current")
+        with self.assertRaises(ValueError):
+            plan_for([INTEL], nvidia_branch="580xx")
+
+    def test_branch_packages_by_kernel_pkgbase(self):
+        installed = {
+            "nvidia-utils",
+            "linux-big-nvidia-open",
+            "linux-xanmod-lts-nvidia",
+            "linux-firmware-nvidia",
+            "linux-big-nvidia-580xx",
+        }
+        current = gpu.BRANCHES["current"]
+        self.assertEqual(
+            gpu.branch_packages(current, installed, ["linux-big", "linux-xanmod-lts"]),
+            ["linux-big-nvidia-open", "linux-xanmod-lts-nvidia", "nvidia-utils"],
+        )
+        self.assertEqual(gpu.installed_branch(installed), "current")
+        self.assertIsNone(gpu.installed_branch({"mesa"}))
+
+
 class TestPlan(unittest.TestCase):
     def test_intel_nvidia_laptop(self):
         plan = plan_for([INTEL, ADA, AUDIO])

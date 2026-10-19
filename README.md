@@ -47,7 +47,9 @@ Exit codes: `2` invalid request, `77` not running as root.
 ```bash
 big-driver-manager-cli gpu detect [--json]           # display controllers, kernels, VM
 big-driver-manager-cli gpu plan   [--free] [--json]  # what install would do
-big-driver-manager-cli gpu install [--free | --from-cmdline] [--root DIR] [--pmconfig FILE]
+big-driver-manager-cli gpu install [--free | --from-cmdline] [--nvidia-branch current|580xx|470xx]
+                                   [--root DIR] [--pmconfig FILE]
+big-driver-manager-cli gpu remove                 # the NVIDIA proprietary driver
 big-driver-manager-cli gpu mode hybrid|nvidia|integrated
 big-driver-manager-cli gpu status [--json]
 big-driver-manager-cli gpu check                  # pacman hook after a kernel install
@@ -63,6 +65,12 @@ What `install` decides, and from where:
 | Hybrid laptop | `nvidia-prime`, `switcheroo-control`; RTD3 power management when the chip supports it |
 | Virtual machine | VirtualBox, VMware or QEMU/KVM guest tools and their services |
 | Broadcom wl Wi-Fi | `<pkgbase>-broadcom-wl` per kernel |
+
+Choosing another NVIDIA branch (or the other module flavour) replaces the
+installed one: its packages are removed without dependency checks -- the new
+branch provides `nvidia-utils` again in the next step -- only after every new
+package was found in the repositories, and restored from the cache if the
+installation fails.
 
 `--root` and `--pmconfig` are for the live session and the installer. pacman
 runs install scriptlets inside `--root`, as root, so both are honoured only when

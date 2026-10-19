@@ -186,3 +186,14 @@ def apply_mode(
     if change.needs_initramfs:
         change.notes.append("the initramfs must be rebuilt (mkinitcpio -P)")
     return change
+
+
+def clear_mode(root: Path = Path("/")) -> ModeChange:
+    """Remove every mode file: the NVIDIA driver is gone."""
+    change = ModeChange(mode="none")
+    for relative in sorted(_ALL_FILES | {MODE_FILE, LEGACY_MODE_FILE}):
+        target = root / relative
+        if target.is_file():
+            target.unlink()
+            change.removed.append(relative)
+    return change

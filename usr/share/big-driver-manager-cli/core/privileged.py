@@ -116,3 +116,11 @@ def mhwd_command(action: str, bus: str, config: str, force: bool = False) -> lis
     if force:
         verb.append("--force")
     return [PKEXEC, CLI_BIN, *verb]
+
+
+def cli_command(args: list[str]) -> list[str]:
+    """The command line itself (it validates its arguments): directly when
+    already root, through pkexec otherwise."""
+    if is_root():
+        return [CLI_BIN, *args]
+    return [PKEXEC, CLI_BIN, *args]
