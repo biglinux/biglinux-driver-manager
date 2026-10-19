@@ -51,6 +51,18 @@ BROADCOM_WL_IDS = (
     / "pci.ids"
 )
 
+# Open drivers that claim the Broadcom cards wl drives.
+BROADCOM_OPEN_MODULES = (
+    "b43",
+    "b43legacy",
+    "ssb",
+    "bcm43xx",
+    "brcm80211",
+    "brcmfmac",
+    "brcmsmac",
+    "bcma",
+)
+
 # Files this module owns on the target system.
 NVIDIA_MODULES_LOAD = "etc/modules-load.d/big-driver-manager-nvidia.conf"
 NVIDIA_POWER_MODPROBE = "etc/modprobe.d/big-driver-manager-nvidia-power.conf"
@@ -381,6 +393,9 @@ class GpuPlan:
     unavailable: list[str] = field(default_factory=list)
     services: list[str] = field(default_factory=list)
     files: dict[str, str] = field(default_factory=dict)
+    # Commands that bring a freshly installed module up on the running system:
+    # udev met the device before its driver existed (live session, GUI).
+    load: list[list[str]] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -483,6 +498,8 @@ def build_plan(
                 module, dkms = branch.module, branch.dkms
             wanted += _kernel_module_packages(kernels, module, dkms, repo, plan)
             plan.files[NVIDIA_MODULES_LOAD] = NVIDIA_MODULES_LOAD_TEXT
+            # nvidia_drm pulls nvidia and nvidia_modeset in.
+            plan.load.append(["modprobe", "nvidia_drm"])
             if not branch.wayland:
                 plan.notes.append(
                     f"NVIDIA {branch.name} has no Wayland support: use an X11 session"
@@ -506,6 +523,9 @@ def build_plan(
             wanted += _kernel_module_packages(
                 kernels, "broadcom-wl", "broadcom-wl-dkms", repo, plan
             )
+            # As mhwd's broadcom-wl did: free the card from the open drivers.
+            plan.load += [["modprobe", "-r", m] for m in BROADCOM_OPEN_MODULES]
+            plan.load.append(["modprobe", "wl"])
 
     if virtualization in VM_GUESTS:
         packages, units = VM_GUESTS[virtualization]

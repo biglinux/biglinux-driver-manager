@@ -181,6 +181,13 @@ class TestPlan(unittest.TestCase):
         self.assertIn(gpu.NVIDIA_MODULES_LOAD, plan.files)
         self.assertEqual(plan.unavailable, [])
 
+    def test_new_drivers_are_loaded_on_the_running_system(self):
+        self.assertEqual(plan_for([INTEL, ADA]).load, [["modprobe", "nvidia_drm"]])
+        self.assertEqual(plan_for([INTEL, ADA], nonfree=False).load, [])
+        wl = plan_for([INTEL, BROADCOM]).load
+        self.assertEqual(wl[-1], ["modprobe", "wl"])
+        self.assertIn(["modprobe", "-r", "b43"], wl)
+
     def test_amd_pascal_laptop(self):
         plan = plan_for([AMD, PASCAL])
         self.assertTrue(plan.hybrid)

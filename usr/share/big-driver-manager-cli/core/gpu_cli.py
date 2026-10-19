@@ -316,6 +316,14 @@ def _install(args: argparse.Namespace) -> int:
     if plan.services and not _run(gpu.enable_units_command(plan.services, root)):
         _error("enabling services failed")
         return EXIT_FAILED
+    # The running system (live session, GUI): load the new driver now, as
+    # mhwd did. Another root boots it later. A failure is not fatal: the
+    # packages are in place and the next boot loads the module anyway.
+    if pacman_root is None:
+        for cmd in plan.load:
+            # Unloading a module that is not loaded "fails" too: not news.
+            if not _run(cmd) and "-r" not in cmd:
+                _print("Note: " + " ".join(cmd) + " failed; it loads on the next boot")
     return EXIT_OK
 
 

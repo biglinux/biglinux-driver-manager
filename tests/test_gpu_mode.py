@@ -220,6 +220,41 @@ class TestCli(unittest.TestCase):
             self.assertEqual(commands[2][:3], ["systemctl", "--root", t])
             self.assertTrue((Path(t) / gpu.NVIDIA_MODULES_LOAD).is_file())
 
+    def test_install_loads_the_driver_only_on_the_running_system(self):
+        from core import gpu
+
+        plan = gpu.GpuPlan(install=["nvidia-utils"], load=[["modprobe", "nvidia_drm"]])
+        for root, expected in ((None, True), (Path("/mnt"), False)):
+            args = argparse.Namespace(root=root, pmconfig=None)
+            with (
+                patch.object(gpu_cli, "_build_plan", return_value=plan),
+                patch.object(gpu_cli, "_refuse_redirection", return_value=None),
+                patch.object(gpu_cli.gpu, "installed_packages", return_value=set()),
+                patch.object(gpu_cli.gpu, "installed_kernels", return_value=[]),
+                patch.object(gpu_cli.gpu, "write_files", return_value=[]),
+                patch.object(gpu_cli.subprocess, "run") as run,
+            ):
+                run.return_value.returncode = 0
+                self.assertEqual(gpu_cli._install(args), 0)
+            commands = [c.args[0] for c in run.call_args_list]
+            with self.subTest(root=root):
+                self.assertEqual(["modprobe", "nvidia_drm"] in commands, expected)
+
+    def test_a_driver_that_does_not_load_now_is_not_a_failure(self):
+        from core import gpu
+
+        plan = gpu.GpuPlan(install=["nvidia-utils"], load=[["modprobe", "nvidia_drm"]])
+        args = argparse.Namespace(root=None, pmconfig=None)
+        with (
+            patch.object(gpu_cli, "_build_plan", return_value=plan),
+            patch.object(gpu_cli.gpu, "installed_packages", return_value=set()),
+            patch.object(gpu_cli.gpu, "installed_kernels", return_value=[]),
+            patch.object(gpu_cli.gpu, "write_files", return_value=[]),
+            patch.object(gpu_cli.subprocess, "run") as run,
+        ):
+            run.side_effect = [type("R", (), {"returncode": c})() for c in (0, 1)]
+            self.assertEqual(gpu_cli._install(args), 0)
+
     def test_failed_pacman_stops_before_files(self):
         from core import gpu
 

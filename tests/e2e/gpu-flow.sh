@@ -64,6 +64,7 @@ check '[ -f /etc/modules-load.d/big-driver-manager-nvidia.conf ]' "modules-load 
 check '[ -f /etc/udev/rules.d/80-big-driver-manager-nvidia-power.rules ] && [ -f /etc/modprobe.d/big-driver-manager-nvidia-power.conf ]' "RTD3 files written (Ada has runtimepm)"
 check '[ -e /etc/systemd/system/graphical.target.wants/switcheroo-control.service ]' "switcheroo enabled"
 check '[ -f /var/lib/pacman/sync/mhwd.db ]' "offline repository synced"
+check 'grep -q "^Command: modprobe nvidia_drm" /tmp/1.log' "driver loaded right after install (live session)"
 cat /tmp/1.log | grep -E '^(NVIDIA driver|Install|Hybrid)'
 
 echo "== 2. switch to 580xx (file conflicts with the installed branch)"
@@ -100,6 +101,7 @@ $CLI gpu install --root $T $PM >/tmp/7.log 2>&1; check '[ $? -eq 0 ]' "install i
 check 'pacman -Q --root $T nvidia-utils linux-big-nvidia-open >/dev/null' "drivers installed in the target"
 check '[ -f $T/etc/modules-load.d/big-driver-manager-nvidia.conf ]' "files written in the target"
 check '! pacman -Q linux-big-nvidia-open >/dev/null 2>&1' "live system untouched"
+check '! grep -q "Command: modprobe" /tmp/7.log' "no modprobe for another root (installer)"
 
 echo "== 8. a user-prepared --root is refused"
 U=/tmp/usertree; mkdir -p $U/etc $U/usr/bin $U/usr/lib $U/var/lib/pacman; chown -R b $U
