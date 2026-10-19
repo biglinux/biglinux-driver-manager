@@ -153,6 +153,34 @@ class TestCli(unittest.TestCase):
         with patch.object(gpu_cli, "_cmdline_args", return_value=["quiet"]):
             self.assertTrue(gpu_cli._nonfree(args))
 
+    def test_check_names_only_what_a_kernel_still_lacks(self):
+        from core import gpu
+
+        plan = gpu.GpuPlan(
+            kernels=["linux-big", "linux-xanmod"],
+            install=[
+                "nvidia-utils",
+                "linux-big-nvidia-open",
+                "linux-xanmod-nvidia-open",
+                "nvidia-open-dkms",
+                "linux-xanmod-headers",
+                "nvidia-prime",
+            ],
+        )
+        installed = {"nvidia-utils", "linux-big-nvidia-open", "nvidia-prime"}
+        self.assertEqual(
+            gpu_cli.kernel_packages_missing(plan, installed),
+            ["linux-xanmod-nvidia-open", "nvidia-open-dkms", "linux-xanmod-headers"],
+        )
+
+    def test_check_is_silent_without_the_proprietary_driver(self):
+        with (
+            patch.object(gpu_cli.gpu, "installed_packages", return_value={"mesa"}),
+            patch.object(gpu_cli.gpu, "build_plan") as build,
+        ):
+            self.assertEqual(gpu_cli._check(), 0)
+        build.assert_not_called()
+
     def test_install_runs_pacman_then_files_then_units(self):
         from core import gpu
 

@@ -50,6 +50,7 @@ big-driver-manager-cli gpu plan   [--free] [--json]  # what install would do
 big-driver-manager-cli gpu install [--free | --from-cmdline] [--root DIR] [--pmconfig FILE]
 big-driver-manager-cli gpu mode hybrid|nvidia|integrated
 big-driver-manager-cli gpu status [--json]
+big-driver-manager-cli gpu check                  # pacman hook after a kernel install
 ```
 
 What `install` decides, and from where:
@@ -81,6 +82,11 @@ Services: `big-driver-manager-gpu.service` runs `gpu boot` before the display
 manager; `big-driver-manager-live.service` installs the drivers on live media
 from `/opt/mhwd/pacman-mhwd.conf`, honouring `driver=free|nonfree` and
 `bdm.gpu=MODE` (or the older `bignvidia=`) on the kernel command line.
+
+A pacman hook (`big-driver-manager-kernel.hook`) runs `gpu check` whenever a
+kernel is installed or upgraded: on machines using the NVIDIA proprietary
+driver it names the module package the new kernel still lacks (pacman cannot
+install it from inside its own transaction).
 
 ## Development
 

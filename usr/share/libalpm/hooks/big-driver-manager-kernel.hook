@@ -1,0 +1,10 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/modules/*/pkgbase
+
+[Action]
+Description = Checking that every kernel has its NVIDIA driver module...
+When = PostTransaction
+Exec = /usr/bin/big-driver-manager-cli gpu check

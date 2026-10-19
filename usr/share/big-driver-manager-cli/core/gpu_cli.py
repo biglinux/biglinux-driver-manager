@@ -76,6 +76,9 @@ def add_parser(verbs: argparse._SubParsersAction) -> None:
     status.add_argument("--json", action="store_true")
 
     actions.add_parser("boot", help="run by big-driver-manager-gpu.service")
+    actions.add_parser(
+        "check", help="warn about kernels without their NVIDIA module (pacman hook)"
+    )
 
 
 # --------------------------------------------------------------------------
@@ -286,6 +289,47 @@ def _boot() -> int:
     return EXIT_OK
 
 
+_NVIDIA_UTILS = ("nvidia-utils", "nvidia-580xx-utils", "nvidia-470xx-utils")
+
+
+def kernel_packages_missing(plan: gpu.GpuPlan, installed: set[str]) -> list[str]:
+    """Driver packages a kernel of the plan still lacks (module, DKMS, headers)."""
+    return [
+        name
+        for name in plan.install
+        if name not in installed
+        and (
+            name.endswith("-dkms")
+            or any(name.startswith(kernel + "-") for kernel in plan.kernels)
+        )
+    ]
+
+
+def _check() -> int:
+    """After a kernel is installed: pacman cannot install from inside its own
+    transaction, so say which package the new kernel still needs. Silent on
+    machines without the NVIDIA proprietary driver. Never fails."""
+    installed = gpu.installed_packages()
+    if not any(name in installed for name in _NVIDIA_UTILS):
+        return EXIT_OK
+    plan = gpu.build_plan(
+        gpu.scan_pci(),
+        gpu.installed_kernels(),
+        gpu.repo_packages(),
+        chips=gpu.load_supported_gpus(),
+        installed=installed,
+    )
+    missing = kernel_packages_missing(plan, installed)
+    if missing:
+        _print(
+            "WARNING: a kernel has no NVIDIA driver module yet; it would start "
+            "without the NVIDIA driver."
+        )
+        _print("Install it with: sudo big-driver-manager-cli gpu install")
+        _print("  (" + " ".join(missing) + ")")
+    return EXIT_OK
+
+
 def run(args: argparse.Namespace) -> int:
     action = args.gpu_action
     if action == "detect":
@@ -317,6 +361,9 @@ def run(args: argparse.Namespace) -> int:
             else "\n".join(f"{k}={v}" for k, v in info.items())
         )
         return EXIT_OK
+
+    if action == "check":
+        return _check()
 
     refusal = _refuse_redirection(args)
     if refusal:
