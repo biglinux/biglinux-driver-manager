@@ -5,6 +5,7 @@ pkgname=biglinux-driver-manager
 pkgdesc="Application to manage kernel and mesa drivers for BigLinux"
 # Uncomment and edit the following lines as needed
 depends=(
+  'big-driver-manager-cli'
   'python>=3.10'
   'python-gobject'
   'gtk4'

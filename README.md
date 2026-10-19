@@ -62,17 +62,16 @@
 
 ## Architecture
 
+The interface only draws. Detection, the driver database and everything that
+changes the system live in [big-driver-manager-cli](https://github.com/biglinux/big-driver-manager-cli),
+which this package depends on: `core/` is imported from
+`/usr/share/big-driver-manager-cli`, and every operation that needs root runs
+as `pkexec big-driver-manager-cli <verb>`.
+
 ```
 usr/share/big-driver-manager/
 ├── main.py                  # Application entry point
-├── core/
-│   ├── constants.py         # App metadata and configuration
-│   ├── base_manager.py      # Base class for system managers
-│   ├── kernel_manager.py    # Kernel detection and operations
-│   ├── mesa_manager.py      # Mesa driver switching logic
-│   ├── package_manager.py   # Pacman wrapper for package operations
-│   ├── exceptions.py        # Custom exception classes
-│   └── logging_config.py    # Logging setup
+├── core_path.py             # Finds the core shipped by big-driver-manager-cli
 ├── ui/
 │   ├── application.py       # Adw.Application subclass
 │   ├── window.py            # Main window with tab navigation
@@ -81,10 +80,12 @@ usr/share/big-driver-manager/
 │   ├── mesa_page.py         # Mesa driver management interface
 │   └── progress_dialog.py   # Operation progress dialog
 ├── utils/
-│   └── i18n.py              # Internationalization setup
+│   ├── i18n.py              # Internationalization setup
+│   └── ui_constants.py      # Window and icon sizes
 └── assets/
-    └── css/
-        └── style.css        # Application stylesheet
+    ├── css/style.css        # Application stylesheet
+    ├── icons/
+    └── illustrations/
 ```
 
 ## Requirements
@@ -94,8 +95,7 @@ usr/share/big-driver-manager/
 | Python | ≥ 3.10 | Runtime |
 | GTK | 4.0 | UI toolkit |
 | libadwaita | ≥ 1.0 | Adwaita widgets and styling |
-| pacman | — | Package management (Arch Linux) |
-| pkexec | — | Privilege escalation for system operations |
+| big-driver-manager-cli | — | Hardware detection, driver database and every system change |
 
 ### Python Packages
 
@@ -116,7 +116,9 @@ sudo pacman -S big-driver-manager
 git clone https://github.com/communitybig/big-driver-manager.git
 cd big-driver-manager
 
-# Run directly (requires dependencies installed)
+# Run directly (requires dependencies installed). The core comes from
+# big-driver-manager-cli: installed, cloned next to this repository,
+# or pointed at with BDM_CLI_DIR=/path/to/usr/share/big-driver-manager-cli
 python usr/share/big-driver-manager/main.py
 ```
 
@@ -135,7 +137,7 @@ Launch from your application menu or via terminal:
 big-driver-manager
 ```
 
-> **Note:** Kernel and driver operations require administrator privileges. The application uses `pkexec` to request elevated permissions when needed.
+> **Note:** Kernel and driver operations require administrator privileges. The application asks for them through `pkexec big-driver-manager-cli`, never for pacman itself.
 
 ## Translation
 

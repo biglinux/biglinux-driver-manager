@@ -15,7 +15,7 @@ from gi.repository import Gtk, GLib, Adw
 
 from collections.abc import Sequence
 
-from core.constants import ICON_SIZE_ITEM
+from utils.ui_constants import ICON_SIZE_ITEM
 from core.driver_database import DriverModule, FirmwareEntry, PeripheralEntry
 from core.driver_installer import DriverInstaller
 from core.hardware_detect import WiredLink

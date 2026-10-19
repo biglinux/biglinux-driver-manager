@@ -12,6 +12,7 @@ Mesa drivers on Manjaro Linux.
 import signal
 import sys
 
+import core_path  # noqa: F401  (must precede the ui and core imports)
 from ui.application import KernelManagerApplication
 
 

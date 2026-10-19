@@ -17,7 +17,8 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gio, Adw, GLib, Gdk, Pango
 
-from core.constants import APP_NAME, WINDOW_DEFAULT_WIDTH, WINDOW_DEFAULT_HEIGHT
+from core.constants import APP_NAME
+from utils.ui_constants import WINDOW_DEFAULT_WIDTH, WINDOW_DEFAULT_HEIGHT
 from core.driver_database import DriverDatabase
 from core.hardware_detect import (
     detect_all_devices,

@@ -1,12 +1,7 @@
 #!/bin/bash
 # shellcheck shell=bash
 # Installation hooks for big-driver-manager
-
-_build_cache() {
-    if [[ -x /usr/share/big-driver-manager/build-ids-cache.sh ]]; then
-        /usr/share/big-driver-manager/build-ids-cache.sh
-    fi
-}
+# The device-ID cache belongs to big-driver-manager-cli, which builds it.
 
 _enable_user_timer() {
     # Enable the driver-check timer for all logged-in users
@@ -28,20 +23,17 @@ _disable_user_timer() {
 }
 
 post_install() {
-    _build_cache
     udevadm control --reload-rules 2>/dev/null || true
     _enable_user_timer
 }
 
 post_upgrade() {
-    _build_cache
     udevadm control --reload-rules 2>/dev/null || true
     systemctl --user daemon-reload 2>/dev/null || true
 }
 
 post_remove() {
     _disable_user_timer
-    rm -rf /var/cache/big-driver-manager
     rm -rf /tmp/bkm-udev-notify
     udevadm control --reload-rules 2>/dev/null || true
 }

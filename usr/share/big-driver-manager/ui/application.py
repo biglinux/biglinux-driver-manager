@@ -21,13 +21,15 @@ from core.constants import (
     APP_NAME,
     CONFIG_DIR,
     SETTINGS_FILE,
+)
+from core.logging_config import init_app_logging, get_logger
+from utils import _
+from utils.ui_constants import (
     WINDOW_DEFAULT_HEIGHT,
     WINDOW_DEFAULT_WIDTH,
     WINDOW_MIN_HEIGHT,
     WINDOW_MIN_WIDTH,
 )
-from core.logging_config import init_app_logging, get_logger
-from utils import _
 from utils.style_manager import StyleManager
 from ui.window import KernelManagerWindow
 

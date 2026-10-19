@@ -9,7 +9,6 @@ These tests run the scripts inside a sandboxed environment built from
 - H9: udev-notify respects MAX_CONCURRENT cap.
 - M10: udev rule filters hub devices (class 09) — covered by source test,
        but we also reconfirm the syntactic parity here.
-- cache building: build-ids-cache.sh produces a deterministic file.
 """
 
 from __future__ import annotations
@@ -28,7 +27,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = REPO_ROOT / "usr" / "share" / "big-driver-manager"
 LOGIN_CHECK = SCRIPTS_DIR / "login-check-drivers.sh"
 UDEV_NOTIFY = SCRIPTS_DIR / "udev-notify.sh"
-BUILD_CACHE = SCRIPTS_DIR / "build-ids-cache.sh"
 
 
 def _write(path: Path, content: str) -> None:
@@ -207,69 +205,6 @@ class TestLoginCheckBlacklist(unittest.TestCase):
             (intf / "driver").symlink_to(tmp / "drivers" / "r8152")
             log = self._run(tmp, state, sysfs_override=True)
             self.assertEqual(log, "", msg="no dialog for hardware that already works")
-
-
-class TestBuildIdsCache(unittest.TestCase):
-    """The cache builder must produce deterministic TSV output."""
-
-    def test_builds_cache_from_assets_fixture(self):
-        with tempfile.TemporaryDirectory() as td:
-            tmp = Path(td)
-            assets = tmp / "assets"
-            # Minimal fixture: one device-ids driver, one peripheral.
-            _write(assets / "device-ids" / "rtl8xxxu" / "pkg", "rtl8xxxu-dkms\n")
-            _write(
-                assets / "device-ids" / "rtl8xxxu" / "description",
-                "WiFi driver for Realtek RTL8xxx\n",
-            )
-            _write(
-                assets / "device-ids" / "rtl8xxxu" / "usb.ids",
-                "0bda:8178\n0bda:b82c  # another\n",
-            )
-            _write(
-                assets / "printer" / "brother-mfc-l" / "description",
-                "Brother mono laser\n",
-            )
-            _write(assets / "printer" / "brother-mfc-l" / "usb.ids", "04f9:0042\n")
-            _write(
-                assets / "firmware" / "alsa-sof-firmware" / "description",
-                "Intel Sound Open Firmware\n",
-            )
-            _write(
-                assets / "firmware" / "alsa-sof-firmware" / "alsa-sof-firmware",
-                "/usr/lib/firmware/intel/sof/example.ri\n",
-            )
-
-            # Redirect /var/cache target to tmp.
-            modified = tmp / "build.sh"
-            src = BUILD_CACHE.read_text(encoding="utf-8")
-            src = src.replace(
-                '"/var/cache/big-driver-manager"',
-                f'"{tmp / "cache"}"',
-            )
-            modified.write_text(src, encoding="utf-8")
-            modified.chmod(0o755)
-
-            result = subprocess.run(
-                ["bash", str(modified), str(assets)],
-                capture_output=True,
-                text=True,
-                timeout=30,
-            )
-            self.assertEqual(result.returncode, 0, msg=result.stderr)
-
-            ids_cache = (tmp / "cache" / "ids_cache.txt").read_text(encoding="utf-8")
-            fw_cache = (tmp / "cache" / "firmware_cache.txt").read_text(
-                encoding="utf-8"
-            )
-
-            # Device-ids entries are upper-cased VID:DID, tab-separated.
-            self.assertIn("0BDA:8178\tdevice-ids\trtl8xxxu\trtl8xxxu-dkms\t", ids_cache)
-            self.assertIn(
-                "04F9:0042\tprinter\tbrother-mfc-l\tbrother-mfc-l\t", ids_cache
-            )
-            # Firmware cache uses path-relative-to /usr/lib/firmware/.
-            self.assertIn("intel/sof/example.ri\talsa-sof-firmware\t", fw_cache)
 
 
 if __name__ == "__main__":

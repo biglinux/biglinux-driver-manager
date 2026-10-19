@@ -15,7 +15,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, GLib, Adw
 
-from core.constants import ICON_SIZE_ITEM
+from utils.ui_constants import ICON_SIZE_ITEM
 from core.driver_database import DriverModule, FirmwareEntry, PeripheralEntry
 from core.driver_installer import DriverInstaller
 from ui.base_page import BaseSection

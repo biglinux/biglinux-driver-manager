@@ -651,7 +651,6 @@ class TestShellScriptsValid(unittest.TestCase):
         REPO_ROOT / "usr" / "bin" / "big-driver-manager",
         REPO_ROOT / "usr" / "share" / "big-driver-manager" / "login-check-drivers.sh",
         REPO_ROOT / "usr" / "share" / "big-driver-manager" / "udev-notify.sh",
-        REPO_ROOT / "usr" / "share" / "big-driver-manager" / "build-ids-cache.sh",
         REPO_ROOT / "usr" / "share" / "big-driver-manager" / "test-udev-dialog.sh",
         REPO_ROOT / "pkgbuild" / "pkgbuild.install",
     ]
@@ -685,12 +684,6 @@ class TestShellScriptsValid(unittest.TestCase):
             REPO_ROOT / "usr" / "share" / "big-driver-manager" / "udev-notify.sh"
         ).read_text(encoding="utf-8")
         self.assertIn("MAX_CONCURRENT", text)
-
-    def test_build_cache_checks_writability(self):
-        text = (
-            REPO_ROOT / "usr" / "share" / "big-driver-manager" / "build-ids-cache.sh"
-        ).read_text(encoding="utf-8")
-        self.assertIn("[[ ! -w", text)
 
 
 class TestBinWrapperHandlesMissingInstall(unittest.TestCase):

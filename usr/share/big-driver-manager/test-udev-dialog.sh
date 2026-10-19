@@ -5,7 +5,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 readonly SCRIPT_DIR
-readonly ASSETS_DIR="${BDM_ASSETS_DIR:-${SCRIPT_DIR}/assets}"
+readonly ASSETS_DIR="${BDM_ASSETS_DIR:-/usr/share/big-driver-manager-cli/assets}"
 readonly CACHE_FILE="${BDM_CACHE_FILE:-/var/cache/big-driver-manager/ids_cache.txt}"
 readonly FW_CACHE_FILE="${BDM_FW_CACHE_FILE:-/var/cache/big-driver-manager/firmware_cache.txt}"
 readonly DIALOG_SCRIPT="${BDM_DIALOG_SCRIPT:-${SCRIPT_DIR}/udev-driver-dialog.py}"

@@ -17,11 +17,19 @@ can be audited afterwards.
 
 import os
 import shlex
+import sys
 import subprocess
 import tempfile
 from pathlib import Path
 
 import pytest
+
+# The core lives in big-driver-manager-cli; core_path finds it (installed, the
+# sibling clone, or $BDM_CLI_DIR) before any test imports from it.
+sys.path.insert(
+    0, str(Path(__file__).resolve().parent.parent / "usr/share/big-driver-manager")
+)
+import core_path  # noqa: E402,F401
 
 # Always refused, whatever the arguments
 _ALWAYS_BLOCKED = frozenset(

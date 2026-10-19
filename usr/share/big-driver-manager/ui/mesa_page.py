@@ -22,7 +22,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib
 
-from core.constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
+from utils.ui_constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
 from core.mesa_manager import MesaManager
 from core.mhwd_manager import MhwdManager, MhwdDriver
 from core.package_manager import PackageManager

@@ -19,7 +19,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib
 
-from core.constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
+from utils.ui_constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
 from core.kernel_manager import KernelManager
 from ui.base_page import BaseSection
 from ui.kernel_card_builder import KernelTypeInfo, classify_kernel, version_sort_key
