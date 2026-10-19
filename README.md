@@ -96,6 +96,15 @@ installer job), `big-driver-manager-mhwd-compat.hook` keeps patching mhwd's
 kernel list for linux-big and linux-xanmod, as mhwd-biglinux did, and
 `big-driver-manager-live.service` stays out of the way of mhwd-live.
 
+If the proprietary driver does not come up -- its install failed in the live
+session, or the module loaded but left an NVIDIA card without a driver -- the
+NVIDIA modules are unloaded and nouveau (Mesa's NVIDIA driver) is loaded before
+the display manager starts, instead of a black screen. This runs after `gpu
+install` on the running system and in `gpu boot` on every boot; the reason is
+kept in `/run/big-driver-manager/nvidia-fallback` and shown by `gpu status`.
+It needs nouveau to be loadable: `modprobe.blacklist=nouveau` (and modprobe.d)
+allow an explicit load, `module_blacklist=nouveau` does not.
+
 A pacman hook (`big-driver-manager-kernel.hook`) runs `gpu check` whenever a
 kernel is installed or upgraded: on machines using the NVIDIA proprietary
 driver it names the module package the new kernel still lacks (pacman cannot

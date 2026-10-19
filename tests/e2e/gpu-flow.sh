@@ -65,6 +65,10 @@ check '[ -f /etc/udev/rules.d/80-big-driver-manager-nvidia-power.rules ] && [ -f
 check '[ -e /etc/systemd/system/graphical.target.wants/switcheroo-control.service ]' "switcheroo enabled"
 check '[ -f /var/lib/pacman/sync/mhwd.db ]' "offline repository synced"
 check 'grep -q "^Command: modprobe nvidia_drm" /tmp/1.log' "driver loaded right after install (live session)"
+# The fake card never gets a driver here: exactly the black-screen case.
+check 'grep -q "falling back to nouveau" /tmp/1.log && grep -q "^Command: modprobe nouveau" /tmp/1.log' "driverless NVIDIA card falls back to nouveau"
+check 'grep -q "did not take the GPU" /run/big-driver-manager/nvidia-fallback' "fallback reason recorded"
+check '$CLI gpu status --json | grep -q "did not take the GPU"' "status shows the fallback"
 cat /tmp/1.log | grep -E '^(NVIDIA driver|Install|Hybrid)'
 
 echo "== 2. switch to 580xx (file conflicts with the installed branch)"
@@ -84,7 +88,7 @@ $CLI gpu mode nvidia >/tmp/4.log 2>&1; check '[ $? -eq 0 ]' "mode nvidia"
 check 'grep -q 0x00 /etc/modprobe.d/zz-big-driver-manager-gpu-mode.conf && [ -f /etc/X11/xorg.conf.d/99-big-driver-manager-nvidia-primary.conf ] && [ -f /etc/lightdm/lightdm.conf.d/zz-big-driver-manager-prime.conf ]' "nvidia mode files (modprobe, Xorg, LightDM)"
 check 'grep -q "stub. mkinitcpio -P" /tmp/4.log' "initramfs rebuilt"
 $CLI gpu mode hybrid >/dev/null 2>&1; check '[ ! -e /etc/X11/xorg.conf.d/99-big-driver-manager-nvidia-primary.conf ] && [ ! -e /etc/lightdm/lightdm.conf.d/zz-big-driver-manager-prime.conf ]' "hybrid removes the overrides"
-check '[ "$($CLI gpu status --json)" = "{\"mode\": \"hybrid\", \"hybrid\": true, \"nvidia\": true}" ]' "status reports hybrid"
+check '$CLI gpu status --json | python3 -c "import json,sys; d=json.load(sys.stdin); sys.exit(not (d[\"mode\"]==\"hybrid\" and d[\"hybrid\"]))"' "status reports hybrid"
 
 echo "== 5. remove"
 $CLI gpu remove >/tmp/5.log 2>&1; check '[ $? -eq 0 ]' "remove exit 0"

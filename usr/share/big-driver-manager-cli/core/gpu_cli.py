@@ -18,7 +18,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from core import gpu, gpu_mode
+from core import gpu, gpu_fallback, gpu_mode
 from core.privileged import is_root
 
 LIVE_MARKER = Path("/livefs-pkgs.txt")
@@ -310,6 +310,8 @@ def _install(args: argparse.Namespace) -> int:
         if replaced:
             _print("Restoring the previous NVIDIA driver from the package cache")
             _run(gpu.pacman_install_command(replaced, args.pmconfig, pacman_root))
+        elif pacman_root is None and plan.nvidia and plan.nvidia.branch:
+            _fall_back("the NVIDIA driver could not be installed")
         return EXIT_FAILED
     for path in gpu.write_files(plan.files, root):
         _print(f"Wrote {path}")
@@ -324,7 +326,47 @@ def _install(args: argparse.Namespace) -> int:
             # Unloading a module that is not loaded "fails" too: not news.
             if not _run(cmd) and "-r" not in cmd:
                 _print("Note: " + " ".join(cmd) + " failed; it loads on the next boot")
+        if plan.nvidia and plan.nvidia.branch:
+            _verify_nvidia()
     return EXIT_OK
+
+
+def _settle() -> None:
+    try:
+        subprocess.run(["udevadm", "settle", "--timeout=15"], timeout=20)
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+
+
+def _fall_back(reason: str) -> bool:
+    """Give the NVIDIA card to nouveau (Mesa) instead of a black screen."""
+    cmdline = _cmdline_args()
+    if gpu_fallback.nouveau_forbidden(cmdline):
+        _error(
+            f"{reason}, and module_blacklist= on the kernel command line forbids "
+            "nouveau: no driver for the NVIDIA GPU this boot"
+        )
+        return False
+    _error(f"{reason}: falling back to nouveau, the open source NVIDIA driver")
+    for cmd in gpu_fallback.fallback_commands(cmdline):
+        _run(cmd)
+    _settle()
+    try:
+        gpu_fallback.record(reason)
+    except OSError:
+        pass
+    return True
+
+
+def _verify_nvidia() -> bool:
+    """True when every NVIDIA card has a driver; otherwise fall back."""
+    _settle()
+    broken = gpu_fallback.driverless_nvidia(gpu.scan_pci())
+    if not broken:
+        return True
+    slots = ", ".join(d.slot for d in broken)
+    _fall_back(f"the NVIDIA driver did not take the GPU ({slots})")
+    return False
 
 
 def _apply_mode(mode: str, root: Path, live: bool) -> int:
@@ -404,6 +446,14 @@ def _boot() -> int:
                 node.chmod(0o666)
             except OSError:
                 pass
+    # The proprietary driver is installed and allowed: it must have taken the
+    # card by now (modules-load.d, udev), or the display manager would start
+    # on a card nobody drives.
+    integrated = gpu_mode.read_mode() == "integrated"
+    if gpu.installed_branch(gpu.installed_packages()) and not integrated:
+        if gpu_fallback.driverless_nvidia(devices):
+            _verify_nvidia()
+            devices = gpu.scan_pci()
     if not gpu_mode.is_hybrid(devices):
         return EXIT_OK
     requested = requested_mode(_cmdline_args())
@@ -475,6 +525,7 @@ def run(args: argparse.Namespace) -> int:
         devices = gpu.scan_pci()
         info = {
             "mode": gpu_mode.read_mode(),
+            "nvidia_fallback": gpu_fallback.recorded(),
             "hybrid": gpu_mode.is_hybrid(devices),
             "nvidia": any(
                 d.vendor == gpu.VENDOR_NVIDIA for d in gpu.display_devices(devices)

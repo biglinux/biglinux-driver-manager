@@ -342,6 +342,8 @@ class TestBranchSwitching(unittest.TestCase):
             patch.object(gpu_cli, "_build_plan", return_value=plan),
             patch.object(gpu_cli.gpu, "installed_packages", return_value=installed),
             patch.object(gpu_cli.gpu, "installed_kernels", return_value=self.KERNELS),
+            patch.object(gpu_cli, "_verify_nvidia", return_value=True),
+            patch.object(gpu_cli, "_fall_back", return_value=True),
             patch.object(gpu_cli.subprocess, "run") as run,
         ):
             run.side_effect = [
@@ -403,6 +405,117 @@ class TestBranchSwitching(unittest.TestCase):
             self.assertTrue(change.needs_initramfs)
             self.assertIsNone(gpu_mode.read_mode(root))
             self.assertFalse((root / gpu_mode.LIGHTDM_DROPIN).exists())
+
+
+class TestFallback(unittest.TestCase):
+    def test_only_driverless_nvidia_cards_count_as_failed(self):
+        from core import gpu_fallback
+
+        cards = [
+            PciDevice("a", "10de", "28a0", VGA, driver=None),
+            PciDevice("b", "10de", "28a0", VGA, driver="nouveau"),  # waits for reboot
+            PciDevice("c", "10de", "28a0", VGA, driver="nvidia"),
+            PciDevice("d", "8086", "a7a0", VGA, driver=None),
+            PciDevice("e", "10de", "22be", 0x040300, driver=None),  # HDMI audio
+        ]
+        self.assertEqual([d.slot for d in gpu_fallback.driverless_nvidia(cards)], ["a"])
+
+    def test_fallback_commands(self):
+        from core import gpu_fallback
+
+        plain = gpu_fallback.fallback_commands(["quiet"])
+        self.assertEqual(plain[0][:2], ["modprobe", "-r"])
+        self.assertIn("nvidia", plain[0])
+        self.assertEqual(plain[-1], ["modprobe", "nouveau"])
+        biglinux = gpu_fallback.fallback_commands(["nouveau.modeset=0"])
+        self.assertEqual(
+            biglinux[-2:],
+            [["modprobe", "-r", "nouveau"], ["modprobe", "nouveau", "modeset=1"]],
+        )
+
+    def test_module_blacklist_forbids_the_fallback_modprobe_blacklist_does_not(self):
+        from core import gpu_fallback
+
+        self.assertTrue(
+            gpu_fallback.nouveau_forbidden(["module_blacklist=nouveau,nova_core"])
+        )
+        self.assertFalse(
+            gpu_fallback.nouveau_forbidden(["modprobe.blacklist=nouveau,nova_core"])
+        )
+        self.assertFalse(gpu_fallback.nouveau_forbidden(["module_blacklist=nvidia"]))
+
+    def test_fall_back_runs_the_commands_and_records_why(self):
+        from core import gpu_fallback
+
+        with TemporaryDirectory() as t:
+            marker = Path(t) / "nvidia-fallback"
+            with (
+                patch.object(gpu_cli, "_cmdline_args", return_value=["quiet"]),
+                patch.object(gpu_fallback, "MARKER", marker),
+                patch.object(gpu_cli.subprocess, "run") as run,
+            ):
+                run.return_value.returncode = 0
+                self.assertTrue(gpu_cli._fall_back("GSP failed"))
+            commands = [c.args[0] for c in run.call_args_list]
+            self.assertIn(["modprobe", "nouveau"], commands)
+            self.assertEqual(gpu_fallback.recorded(marker), "GSP failed")
+
+    def test_fall_back_refuses_when_nouveau_is_forbidden(self):
+        with (
+            patch.object(
+                gpu_cli, "_cmdline_args", return_value=["module_blacklist=nouveau"]
+            ),
+            patch.object(gpu_cli.subprocess, "run") as run,
+        ):
+            self.assertFalse(gpu_cli._fall_back("x"))
+        run.assert_not_called()
+
+    def test_failed_live_install_falls_back(self):
+        from core import gpu
+
+        plan = gpu.GpuPlan(
+            install=["nvidia-utils"], nvidia=gpu.NvidiaChoice(branch="current")
+        )
+        args = argparse.Namespace(root=None, pmconfig=None)
+        with (
+            patch.object(gpu_cli, "_build_plan", return_value=plan),
+            patch.object(gpu_cli.gpu, "installed_packages", return_value=set()),
+            patch.object(gpu_cli.gpu, "installed_kernels", return_value=[]),
+            patch.object(gpu_cli, "_fall_back") as fall_back,
+            patch.object(gpu_cli.subprocess, "run") as run,
+        ):
+            run.return_value.returncode = 1
+            self.assertEqual(gpu_cli._install(args), gpu_cli.EXIT_FAILED)
+        fall_back.assert_called_once()
+
+    def test_driver_that_does_not_take_the_card_falls_back(self):
+        driverless = [PciDevice("0000:01:00.0", "10de", "28a0", VGA, driver=None)]
+        with (
+            patch.object(gpu_cli, "_settle"),
+            patch.object(gpu_cli.gpu, "scan_pci", return_value=driverless),
+            patch.object(gpu_cli, "_fall_back") as fall_back,
+        ):
+            self.assertFalse(gpu_cli._verify_nvidia())
+        self.assertIn("0000:01:00.0", fall_back.call_args.args[0])
+
+    def test_boot_checks_the_installed_driver_unless_integrated(self):
+        driverless = [
+            INTEL,
+            PciDevice("0000:01:00.0", "10de", "28a0", VGA, driver=None),
+        ]
+        for mode, expected in (("hybrid", 1), ("integrated", 0)):
+            with (
+                patch.object(gpu_cli, "LIVE_MARKER", Path("/nonexistent")),
+                patch.object(gpu_cli.gpu, "scan_pci", return_value=driverless),
+                patch.object(
+                    gpu_cli.gpu, "installed_packages", return_value={"nvidia-utils"}
+                ),
+                patch.object(gpu_cli.gpu_mode, "read_mode", return_value=mode),
+                patch.object(gpu_cli, "_verify_nvidia") as verify,
+            ):
+                gpu_cli._boot()
+            with self.subTest(mode=mode):
+                self.assertEqual(verify.call_count, expected)
 
 
 class TestPrimeScripts(unittest.TestCase):
