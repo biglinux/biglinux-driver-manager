@@ -1,0 +1,815 @@
+# Slovak translations for big-driver-manager-cli package.
+# Copyright (C) 2026 THE big-driver-manager-cli'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the big-driver-manager-cli package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: big-driver-manager-cli\n"
+"Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
+"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"PO-Revision-Date: 2026-10-20 00:31-0300\n"
+"Last-Translator: AI-assisted translation\n"
+"Language-Team: none\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: locale/extra_msgids.py:12
+msgid "usage: "
+msgstr "použitie: "
+
+#: locale/extra_msgids.py:13
+msgid "positional arguments"
+msgstr "pozičné argumenty"
+
+#: locale/extra_msgids.py:14
+msgid "options"
+msgstr "voľby"
+
+#: locale/extra_msgids.py:15
+msgid "show this help message and exit"
+msgstr "zobraziť tohto pomocníka a skončiť"
+
+#: locale/extra_msgids.py:16
+#, python-format
+msgid "the following arguments are required: %s"
+msgstr "nasledujúce argumenty sú povinné: %s"
+
+#: locale/extra_msgids.py:17
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr "nerozpoznané argumenty: %s"
+
+#: locale/extra_msgids.py:18
+#, python-format
+msgid "invalid choice: %(value)r (choose from %(choices)s)"
+msgstr "neplatná voľba: %(value)r (vyberte z %(choices)s)"
+
+#: locale/extra_msgids.py:19
+#, python-format
+msgid "argument %(argument_name)s: %(message)s"
+msgstr "argument %(argument_name)s: %(message)s"
+
+#: locale/extra_msgids.py:20
+#, python-format
+msgid "not allowed with argument %s"
+msgstr "nie je povolené s argumentom %s"
+
+#: locale/extra_msgids.py:21
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr "vyžaduje sa jeden z argumentov %s"
+
+#: locale/extra_msgids.py:22
+msgid "expected one argument"
+msgstr "očakáva sa jeden argument"
+
+#: locale/extra_msgids.py:23
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr "nejednoznačná voľba: %(option)s môže zodpovedať %(matches)s"
+
+#: locale/extra_msgids.py:24
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: chyba: %(message)s\n"
+
+#: locale/extra_msgids.py:28
+msgid "Install or remove drivers, kernels and Mesa"
+msgstr "Inštalovať alebo odstrániť ovládače, jadrá a Mesa"
+
+#: locale/extra_msgids.py:29
+msgid "Authentication is required to install or remove drivers"
+msgstr "Na inštaláciu alebo odstránenie ovládačov sa vyžaduje overenie"
+
+#: usr/bin/big-driver-manager-cli:53
+msgid "kernels you can install"
+msgstr "jadrá, ktoré možno nainštalovať"
+
+#: usr/bin/big-driver-manager-cli:54
+msgid "a kernel with its modules"
+msgstr "jadro s jeho modulmi"
+
+#: usr/bin/big-driver-manager-cli:55
+msgid "a kernel and its modules"
+msgstr "jadro a jeho moduly"
+
+#: usr/bin/big-driver-manager-cli:56
+msgid "graphics cards and their drivers"
+msgstr "grafické karty a ich ovládače"
+
+#: usr/bin/big-driver-manager-cli:57
+msgid "the drivers this machine needs"
+msgstr "ovládače, ktoré tento počítač potrebuje"
+
+#: usr/bin/big-driver-manager-cli:58
+msgid "which GPU draws the screen"
+msgstr "ktoré GPU vykresľuje obrazovku"
+
+#: usr/bin/big-driver-manager-cli:65
+msgid "examples:"
+msgstr "príklady:"
+
+#: usr/bin/big-driver-manager-cli:82
+msgid ""
+"Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
+"install the graphics drivers, install kernels together with their modules."
+msgstr ""
+"Ovládače a jadrá pre BigLinux a BigCommunity: rozpoznanie hardvéru, "
+"inštalácia grafických ovládačov, inštalácia jadier spolu s ich modulmi."
+
+#: usr/bin/big-driver-manager-cli:94
+msgid "show the version and exit"
+msgstr "zobraziť verziu a skončiť"
+
+#: usr/bin/big-driver-manager-cli:100
+msgid "colors: auto (terminal only), always or never; also --no-color"
+msgstr "farby: auto (iba v termináli), always alebo never; aj --no-color"
+
+#: usr/bin/big-driver-manager-cli:102
+msgid "COMMAND"
+msgstr "PRÍKAZ"
+
+#: usr/bin/big-driver-manager-cli:108
+msgid "install packages from the repositories"
+msgstr "inštalovať balíky z repozitárov"
+
+#: usr/bin/big-driver-manager-cli:114
+msgid "reinstall packages that are already installed"
+msgstr "preinštalovať už nainštalované balíky"
+
+#: usr/bin/big-driver-manager-cli:119
+msgid "overwrite conflicting files (Mesa variant switch)"
+msgstr "prepísať konfliktné súbory (prepnutie variantu Mesa)"
+
+#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+msgid "PACKAGE"
+msgstr "BALÍK"
+
+#: usr/bin/big-driver-manager-cli:123
+msgid "remove packages"
+msgstr "odstrániť balíky"
+
+#: usr/bin/big-driver-manager-cli:128
+msgid "also remove dependencies nothing else needs"
+msgstr "odstrániť aj závislosti, ktoré nič iné nepotrebuje"
+
+#: usr/bin/big-driver-manager-cli:133
+msgid "also remove packages that depend on them"
+msgstr "odstrániť aj balíky, ktoré od nich závisia"
+
+#: usr/bin/big-driver-manager-cli:137
+msgid "install or remove an mhwd configuration"
+msgstr "inštalovať alebo odstrániť konfiguráciu mhwd"
+
+#: usr/bin/big-driver-manager-cli:142
+msgid "replace a conflicting configuration"
+msgstr "nahradiť konfliktnú konfiguráciu"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:38
+msgid "graphics drivers (replaces mhwd)"
+msgstr "grafické ovládače (nahrádza mhwd)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+msgid "ACTION"
+msgstr "AKCIA"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:42
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:86
+msgid "target system (installer)"
+msgstr "cieľový systém (inštalátor)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:46
+msgid "pacman configuration, e.g. the live medium's offline repository"
+msgstr "konfigurácia pacman, napr. offline repozitár živého média"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:52
+msgid "open source drivers only"
+msgstr "iba ovládače s otvoreným zdrojovým kódom"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:57
+msgid "driver=free|nonfree from the kernel command line (live media)"
+msgstr "driver=free|nonfree z príkazového riadka jadra (živé médiá)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:60
+msgid "show the hardware"
+msgstr "zobraziť hardvér"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:61
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:66
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+msgid "JSON output"
+msgstr "výstup vo formáte JSON"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:63
+msgid "show what install would do"
+msgstr "ukázať, čo by urobil príkaz install"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:69
+msgid "install the drivers this machine needs"
+msgstr "nainštalovať ovládače, ktoré tento počítač potrebuje"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:77
+msgid "instead of the recommended NVIDIA driver (must drive the GPU)"
+msgstr "namiesto odporúčaného ovládača NVIDIA (musí ovládať GPU)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:80
+msgid "remove the NVIDIA proprietary driver"
+msgstr "odstrániť proprietárny ovládač NVIDIA"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:83
+msgid "choose which GPU drives a hybrid machine"
+msgstr "zvoliť, ktoré GPU riadi hybridný počítač"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:88
+msgid "recorded GPU mode and hardware"
+msgstr "zaznamenaný režim GPU a hardvér"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:91
+msgid "run by big-driver-manager-gpu.service"
+msgstr "spúšťa big-driver-manager-gpu.service"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:93
+msgid "warn about kernels without their NVIDIA module (pacman hook)"
+msgstr "upozorniť na jadrá bez ich modulu NVIDIA (hák pacman)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:97
+msgid "fall back to nouveau when no login screen appears (service)"
+msgstr "prejsť na nouveau, keď sa neobjaví prihlasovacia obrazovka (služba)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:101
+msgid "fall back to nouveau after the display manager failed (OnFailure)"
+msgstr "prejsť na nouveau po zlyhaní správcu displeja (OnFailure)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "no"
+msgstr "nie"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "yes"
+msgstr "áno"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:312
+msgid "boot display"
+msgstr "displej pri štarte"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:322
+msgid "no driver"
+msgstr "žiadny ovládač"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:330
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:867
+msgid "Graphics"
+msgstr "Grafika"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:332
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:870
+msgid "no display controller"
+msgstr "žiadny radič displeja"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Kernels"
+msgstr "Jadrá"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+msgid "none"
+msgstr "žiadny"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:337
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:876
+msgid "Virtual machine"
+msgstr "Virtuálny počítač"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:340
+msgid "open kernel module"
+msgstr "otvorený modul jadra"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:342
+msgid "proprietary kernel module"
+msgstr "proprietárny modul jadra"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:346
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:906
+msgid "NVIDIA driver"
+msgstr "Ovládač NVIDIA"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:350
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:873
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:901
+msgid "Hybrid"
+msgstr "Hybridný"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "Install"
+msgstr "Nainštalovať"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "nothing"
+msgstr "nič"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:356
+msgid "Not in the repositories"
+msgstr "Nie je v repozitároch"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:415
+msgid "Reading the offline repository failed."
+msgstr "Čítanie offline repozitára zlyhalo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:434
+#, python-brace-format
+msgid "NVIDIA driver packages missing from the repositories: {}"
+msgstr "Balíky ovládača NVIDIA chýbajúce v repozitároch: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:447
+msgid "Downloading the drivers failed."
+msgstr "Sťahovanie ovládačov zlyhalo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:454
+#, python-brace-format
+msgid "Replacing: {}"
+msgstr "Nahrádza sa: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:457
+msgid "Removing the installed NVIDIA driver failed."
+msgstr "Odstránenie nainštalovaného ovládača NVIDIA zlyhalo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:463
+msgid "Installing the drivers failed."
+msgstr "Inštalácia ovládačov zlyhala."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:467
+msgid "Restoring the previous NVIDIA driver from the package cache"
+msgstr ""
+"Obnovuje sa predchádzajúci ovládač NVIDIA z vyrovnávacej pamäte balíkov"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:476
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:550
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:713
+#, python-brace-format
+msgid "Wrote {}"
+msgstr "Zapísané: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:488
+#, python-brace-format
+msgid "{} failed; it loads on the next boot"
+msgstr "{} zlyhalo; načíta sa pri ďalšom štarte"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:496
+#, python-brace-format
+msgid "{} could not be enabled"
+msgstr "{} nemožno povoliť"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:497
+msgid "Graphics drivers ready."
+msgstr "Grafické ovládače sú pripravené."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:514
+#, python-brace-format
+msgid ""
+"{}, and module_blacklist= on the kernel command line forbids nouveau: no "
+"driver for the NVIDIA GPU this boot"
+msgstr ""
+"{} a module_blacklist= v príkazovom riadku jadra zakazuje nouveau: pri tomto "
+"štarte nie je pre GPU NVIDIA žiadny ovládač"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:520
+#, python-brace-format
+msgid "{}: falling back to nouveau, the open source NVIDIA driver"
+msgstr "{}: prechod na nouveau, ovládač NVIDIA s otvoreným zdrojovým kódom"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:552
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:589
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:592
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:595
+#, python-brace-format
+msgid "Removed {}"
+msgstr "Odstránené: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:563
+msgid "The initramfs is not rebuilt here"
+msgstr "Initramfs sa tu znova nezostavuje"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:565
+msgid "Rebuilding the initramfs failed."
+msgstr "Opätovné zostavenie initramfs zlyhalo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:569
+#, python-brace-format
+msgid "GPU mode: {}"
+msgstr "Režim GPU: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:577
+msgid "The NVIDIA proprietary driver is not installed"
+msgstr "Proprietárny ovládač NVIDIA nie je nainštalovaný"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:582
+msgid "Removing the NVIDIA driver failed."
+msgstr "Odstránenie ovládača NVIDIA zlyhalo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:598
+msgid "NVIDIA proprietary driver removed."
+msgstr "Proprietárny ovládač NVIDIA bol odstránený."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:606
+#, python-brace-format
+msgid "Removed {} (nouveau fallback)"
+msgstr "Odstránené: {} (záložný nouveau)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:699
+msgid ""
+"The display manager failed long after boot, not while the driver started"
+msgstr "Správca displeja zlyhal dlho po štarte, nie pri spúšťaní ovládača"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:719
+msgid "Rebuilding the initramfs failed; the next boot may load NVIDIA again."
+msgstr ""
+"Opätovné zostavenie initramfs zlyhalo; pri ďalšom štarte sa NVIDIA môže "
+"znova načítať."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:726
+msgid ""
+"The NVIDIA modules could not be unloaded; restart and choose the boot entry "
+"without proprietary drivers."
+msgstr ""
+"Moduly NVIDIA nemožno uvoľniť; reštartujte a zvoľte položku spustenia bez "
+"proprietárnych ovládačov."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:737
+msgid ""
+"NVIDIA still loads although the fallback blocks it; not restarting again. "
+"Rebuild the initramfs (mkinitcpio -P) or remove the NVIDIA driver from a "
+"text console."
+msgstr ""
+"NVIDIA sa stále načítava, hoci ju záložné riešenie blokuje; ďalší reštart sa "
+"nevykoná. Znova zostavte initramfs (mkinitcpio -P) alebo odstráňte ovládač "
+"NVIDIA z textovej konzoly."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:745
+msgid "Rebuilding the initramfs failed; not restarting into the same state."
+msgstr ""
+"Opätovné zostavenie initramfs zlyhalo; reštart do rovnakého stavu sa "
+"nevykoná."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:748
+msgid "Restarting once to start with nouveau"
+msgstr "Jednorazový reštart na spustenie s nouveau"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:831
+msgid ""
+"A kernel has no NVIDIA driver module yet; it would start without the NVIDIA "
+"driver."
+msgstr ""
+"Jedno z jadier zatiaľ nemá modul ovládača NVIDIA; spustilo by sa bez "
+"ovládača NVIDIA."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:837
+#, python-brace-format
+msgid "Install it with: {}"
+msgstr "Nainštalujte ho pomocou: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:850
+msgid "the integrated GPU draws the screen, NVIDIA on demand (prime-run)"
+msgstr "integrované GPU vykresľuje obrazovku, NVIDIA na požiadanie (prime-run)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:851
+msgid "NVIDIA draws the screen (Xorg sessions)"
+msgstr "NVIDIA vykresľuje obrazovku (relácie Xorg)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:852
+msgid "NVIDIA turned off"
+msgstr "NVIDIA vypnutá"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:894
+msgid "GPU status"
+msgstr "Stav GPU"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:899
+msgid "not set"
+msgstr "nenastavené"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:900
+msgid "Mode"
+msgstr "Režim"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:902
+msgid "NVIDIA GPU"
+msgstr "GPU NVIDIA"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:909
+msgid "not installed"
+msgstr "nenainštalované"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:914
+#, python-brace-format
+msgid "Using nouveau instead of the NVIDIA driver: {}"
+msgstr "Používa sa nouveau namiesto ovládača NVIDIA: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:938
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:963
+msgid "This needs administrator rights."
+msgstr "Vyžaduje to oprávnenia správcu."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:44
+msgid "list, install and remove kernels with their modules"
+msgstr "vypísať, inštalovať a odstraňovať jadrá s ich modulmi"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:46
+msgid ""
+"Install and remove kernels together with the modules the running kernel uses "
+"(NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+msgstr ""
+"Inštalácia a odstraňovanie jadier spolu s modulmi, ktoré používa bežiace "
+"jadro (NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:53
+msgid "kernels in the repositories, the installed ones marked"
+msgstr "jadrá v repozitároch, nainštalované sú označené"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:56
+msgid "only the installed kernels"
+msgstr "iba nainštalované jadrá"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:61
+msgid "install a kernel with its headers and modules"
+msgstr "nainštalovať jadro s hlavičkami a modulmi"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:63
+msgid "remove a kernel and its modules"
+msgstr "odstrániť jadro a jeho moduly"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:65
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:315
+msgid "KERNEL"
+msgstr "JADRO"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+msgid "do not ask for confirmation"
+msgstr "nepýtať sa na potvrdenie"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:73
+msgid "installed kernels that left the repositories"
+msgstr "nainštalované jadrá, ktoré zmizli z repozitárov"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:90
+msgid "'rmc' is ignored: the running kernel is never removed."
+msgstr "'rmc' sa ignoruje: bežiace jadro sa nikdy neodstraňuje."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:110
+msgid "This needs administrator rights: run it with sudo or pkexec."
+msgstr "Vyžaduje to oprávnenia správcu: spustite to pomocou sudo alebo pkexec."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:113
+msgid "Administrator rights are needed; asking for the password..."
+msgstr "Sú potrebné oprávnenia správcu; žiada sa o heslo..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:126
+msgid "There is no terminal to confirm in: add --yes."
+msgstr "Nie je k dispozícii terminál na potvrdenie: pridajte --yes."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[Y/n]"
+msgstr "[A/n]"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[y/N]"
+msgstr "[a/N]"
+
+#. Translators: the answer meaning "yes" at a [Y/n] prompt; only its first
+#. letter is compared. English "y" is always accepted too.
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:139
+msgid "y"
+msgstr "a"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:168
+msgid "running"
+msgstr "beží"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:174
+msgid "real-time"
+msgstr "reálny čas"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:182
+msgid "left the repositories"
+msgstr "zmizlo z repozitárov"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:184
+msgid "not from the repositories"
+msgstr "nie je z repozitárov"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:186
+msgid "installed without a package"
+msgstr "nainštalované bez balíka"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:360
+msgid "Kernel"
+msgstr "Jadro"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:362
+msgid "Version"
+msgstr "Verzia"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:202
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:364
+msgid "Repository"
+msgstr "Repozitár"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Installed kernels"
+msgstr "Nainštalované jadrá"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:293
+msgid "No kernels found."
+msgstr "Nenašli sa žiadne jadrá."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:296
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:366
+msgid "Running"
+msgstr "Beží"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "available"
+msgstr "dostupné"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "installed"
+msgstr "nainštalovaný"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:300
+msgid "Legend"
+msgstr "Legenda"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:304
+#, python-brace-format
+msgid "No longer in the repositories: {}"
+msgstr "Už nie sú v repozitároch: {}"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:305
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:337
+msgid "They receive no updates; remove them with:"
+msgstr "Nedostávajú žiadne aktualizácie; odstráňte ich pomocou:"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:314
+msgid "Install one with: "
+msgstr "Nainštalujte niektoré pomocou: "
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:330
+msgid "No obsolete kernels: every installed kernel is in the repositories."
+msgstr "Žiadne zastarané jadrá: každé nainštalované jadro je v repozitároch."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:334
+msgid "Kernels that left the repositories"
+msgstr "Jadrá, ktoré zmizli z repozitárov"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:352
+msgid "kernel"
+msgstr "jadro"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:354
+msgid "headers, to build modules (DKMS)"
+msgstr "hlavičky na zostavenie modulov (DKMS)"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:355
+msgid "module the running kernel uses"
+msgstr "modul, ktorý používa bežiace jadro"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:368
+msgid "Packages:"
+msgstr "Balíky:"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:388
+#, python-brace-format
+msgid "Looking for {} in the repositories..."
+msgstr "Hľadá sa {} v repozitároch..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:399
+#, python-brace-format
+msgid "{} is not a kernel in the configured repositories."
+msgstr "{} nie je jadro v nakonfigurovaných repozitároch."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:402
+msgid "See the kernels you can install with: "
+msgstr "Jadrá, ktoré možno nainštalovať, zobrazíte pomocou: "
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:409
+#, python-brace-format
+msgid "{} cannot be installed now."
+msgstr "{} teraz nemožno nainštalovať."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:419
+#, python-brace-format
+msgid "{} is already installed, with all its modules."
+msgstr "{} je už nainštalované, so všetkými modulmi."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:428
+msgid "Install a kernel"
+msgstr "Inštalovať jadro"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:429
+msgid "Install these packages?"
+msgstr "Nainštalovať tieto balíky?"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+msgid "Nothing was changed."
+msgstr "Nič sa nezmenilo."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:439
+#, python-brace-format
+msgid "Installing {name} failed (pacman exit code {code})."
+msgstr "Inštalácia {name} zlyhala (návratový kód pacman {code})."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:444
+#, python-brace-format
+msgid "{} installed."
+msgstr "{} nainštalované."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:445
+msgid "Restart to use it; the other kernels stay in the boot menu."
+msgstr ""
+"Na jeho použitie reštartujte; ostatné jadrá zostanú v ponuke spúšťania."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:460
+#, python-brace-format
+msgid "{} is not installed."
+msgstr "{} nie je nainštalované."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:464
+#, python-brace-format
+msgid "{} was installed without a package; remove its files by hand."
+msgstr "{} bolo nainštalované bez balíka; odstráňte jeho súbory ručne."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:473
+#, python-brace-format
+msgid ""
+"{} is the running kernel. Start the computer with another kernel to remove "
+"it."
+msgstr ""
+"{} je bežiace jadro. Na jeho odstránenie spustite počítač s iným jadrom."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:483
+#, python-brace-format
+msgid "{} is the only installed kernel."
+msgstr "{} je jediné nainštalované jadro."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:488
+msgid "Remove a kernel"
+msgstr "Odstrániť jadro"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:489
+msgid "Remove these packages?"
+msgstr "Odstrániť tieto balíky?"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:499
+#, python-brace-format
+msgid "Removing {name} failed (pacman exit code {code})."
+msgstr "Odstránenie {name} zlyhalo (návratový kód pacman {code})."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:504
+#, python-brace-format
+msgid "{} removed."
+msgstr "{} odstránené."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:684
+#, python-brace-format
+msgid "{} is not available in the configured repositories."
+msgstr "{} nie je k dispozícii v nakonfigurovaných repozitároch."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:711
+#, python-brace-format
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"Vaše aktuálne jadro používa moduly ovládačov, ktoré pre linux-big ešte nie "
+"sú k dispozícii:\n"
+"{}\n"
+"\n"
+"Bez nich by sa linux-big spustil bez týchto ovládačov (napríklad bez "
+"ovládača NVIDIA), takže zatiaľ nie je ponúkaný."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:724
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr ""
+"Moduly linux-big pre túto verziu sa stále zverejňujú. Skúste to znova o "
+"niekoľko minút."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
+msgid "pacman reported:"
+msgstr "pacman nahlásil:"

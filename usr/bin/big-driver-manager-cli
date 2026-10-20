@@ -1,11 +1,15 @@
 #!/usr/bin/python3 -I
-"""big-driver-manager-cli - the part of Big Driver Manager that changes the system.
+"""big-drivers (big-driver-manager-cli) - the part of Big Driver Manager that
+changes the system.
 
 Runs as root, directly (live session, installer) or through pkexec from the
-graphical interface. Every request is validated before pacman or mhwd runs.
+graphical interface; from a terminal, a request that needs root asks for the
+password through pkexec itself. Every request is validated before pacman or
+mhwd runs.
 """
 
 import argparse
+import logging
 import os
 import sys
 from pathlib import Path
@@ -24,8 +28,9 @@ for _candidate in (
 else:
     sys.exit("big-driver-manager-cli: installation directory not found")
 
-from core import gpu_cli  # noqa: E402
-from core.constants import APP_VERSION  # noqa: E402
+from core import gpu_cli, kernel_cli, term  # noqa: E402
+from core.constants import APP_NAME, APP_VERSION  # noqa: E402
+from core.i18n import _, use_for_argparse  # noqa: E402
 from core.privileged import (  # noqa: E402
     MHWD,
     MHWD_BUSES,
@@ -40,52 +45,124 @@ EXIT_USAGE = 2
 EXIT_NOT_ROOT = 77
 
 
-def _parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        prog="big-driver-manager-cli",
-        description="Detect hardware and install drivers, kernels and Mesa for Big Driver Manager.",
-    )
-    parser.add_argument("--version", action="version", version=APP_VERSION)
-    verbs = parser.add_subparsers(dest="verb", required=True)
+PROG_NAMES = ("big-drivers", "big-driver-manager-cli")
 
-    install = verbs.add_parser("install", help="install packages from the repositories")
+
+def _examples(prog: str) -> str:
+    lines = [
+        (f"{prog} kernel list", _("kernels you can install")),
+        (f"{prog} kernel install linux-big", _("a kernel with its modules")),
+        (f"{prog} kernel remove linux612", _("a kernel and its modules")),
+        (f"{prog} gpu", _("graphics cards and their drivers")),
+        (f"{prog} gpu install", _("the drivers this machine needs")),
+        (f"{prog} gpu mode hybrid", _("which GPU draws the screen")),
+    ]
+    width = max(term.width(command) for command, _text in lines)
+    body = "\n".join(
+        f"  {term.style(term.pad(command, width), 'cyan')}  {term.dim(text)}"
+        for command, text in lines
+    )
+    return f"{term.bold(_('examples:'))}\n{body}"
+
+
+class _Formatter(argparse.HelpFormatter):
+    """Wraps the description, keeps the examples' lines as they are."""
+
+    def _fill_text(self, text: str, width: int, indent: str) -> str:
+        if "\n" in text:
+            return "".join(indent + line for line in text.splitlines(keepends=True))
+        return super()._fill_text(text, width, indent)
+
+
+def _parser(prog: str = "big-drivers") -> argparse.ArgumentParser:
+    options = {"color": term.enabled()} if sys.version_info >= (3, 14) else {}
+    parser = argparse.ArgumentParser(
+        prog=prog,
+        description=_(
+            "Drivers and kernels for BigLinux and BigCommunity: detect the "
+            "hardware, install the graphics drivers, install kernels together "
+            "with their modules."
+        ),
+        epilog=_examples(prog),
+        formatter_class=_Formatter,
+        **options,
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=APP_VERSION,
+        help=_("show the version and exit"),
+    )
+    parser.add_argument(
+        "--color",
+        choices=("auto", "always", "never"),
+        default="auto",
+        help=_("colors: auto (terminal only), always or never; also --no-color"),
+    )
+    verbs = parser.add_subparsers(dest="verb", metavar=_("COMMAND"))
+
+    kernel_cli.add_parser(verbs)
+    gpu_cli.add_parser(verbs)
+
+    install = verbs.add_parser(
+        "install", help=_("install packages from the repositories")
+    )
     mode = install.add_mutually_exclusive_group()
     mode.add_argument(
         "--reinstall",
         action="store_true",
-        help="reinstall packages that are already installed",
+        help=_("reinstall packages that are already installed"),
     )
     mode.add_argument(
         "--overwrite-all",
         action="store_true",
-        help="overwrite conflicting files (Mesa variant switch)",
+        help=_("overwrite conflicting files (Mesa variant switch)"),
     )
-    install.add_argument("packages", nargs="+", metavar="PACKAGE")
+    install.add_argument("packages", nargs="+", metavar=_("PACKAGE"))
 
-    remove = verbs.add_parser("remove", help="remove packages")
+    remove = verbs.add_parser("remove", help=_("remove packages"))
     mode = remove.add_mutually_exclusive_group()
     mode.add_argument(
         "--recursive",
         action="store_true",
-        help="also remove dependencies nothing else needs",
+        help=_("also remove dependencies nothing else needs"),
     )
     mode.add_argument(
         "--cascade",
         action="store_true",
-        help="also remove packages that depend on them",
+        help=_("also remove packages that depend on them"),
     )
-    remove.add_argument("packages", nargs="+", metavar="PACKAGE")
+    remove.add_argument("packages", nargs="+", metavar=_("PACKAGE"))
 
-    mhwd = verbs.add_parser("mhwd", help="install or remove an mhwd configuration")
+    mhwd = verbs.add_parser("mhwd", help=_("install or remove an mhwd configuration"))
     mhwd.add_argument("action", choices=("install", "remove"))
     mhwd.add_argument("bus", choices=MHWD_BUSES)
     mhwd.add_argument("config")
     mhwd.add_argument(
-        "--force", action="store_true", help="replace a conflicting configuration"
+        "--force", action="store_true", help=_("replace a conflicting configuration")
     )
-
-    gpu_cli.add_parser(verbs)
     return parser
+
+
+def color_option(argv: list[str]) -> tuple[str, list[str]]:
+    """--color/--no-color wherever they are given (before a "--"), so they
+    also work after the command: big-drivers kernel list --no-color."""
+    mode, rest = "auto", []
+    for index, argument in enumerate(argv):
+        if argument == "--":
+            rest += argv[index:]
+            break
+        if argument == "--no-color":
+            mode = "never"
+        elif argument.startswith("--color=") and argument[8:] in (
+            "auto",
+            "always",
+            "never",
+        ):
+            mode = argument[8:]
+        else:
+            rest.append(argument)
+    return mode, rest
 
 
 def _flags(args: argparse.Namespace) -> list[str]:
@@ -101,18 +178,40 @@ def _command(args: argparse.Namespace) -> list[str]:
     return [PACMAN, *cli_to_pacman(args.verb, _flags(args), args.packages)]
 
 
+def _prog() -> str:
+    name = Path(sys.argv[0]).name
+    return name if name in PROG_NAMES else PROG_NAMES[0]
+
+
 def main(argv: list[str] | None = None) -> int:
-    args = _parser().parse_args(argv)
+    # Warnings of the shared core (an offline kernel.org) are not the user's
+    # business here: the interface logs them, the terminal stays clean.
+    logging.getLogger(APP_NAME).addHandler(logging.NullHandler())
+    logging.getLogger(APP_NAME).propagate = False
+    use_for_argparse()
+
+    color, argv = color_option(list(sys.argv[1:] if argv is None else argv))
+    term.set_mode(color)
+    argv = kernel_cli.from_mhwd_kernel(argv)
+    parser = _parser(_prog())
+    args = parser.parse_args(argv)
+    if args.color != "auto":
+        term.set_mode(args.color)
+    args.argv = argv
+    if args.verb is None:
+        parser.print_help()
+        return 0
+    if args.verb == "kernel":
+        return kernel_cli.run(args)
     if args.verb == "gpu":
         return gpu_cli.run(args)
     try:
         command = _command(args)
     except PrivilegedRequestError as error:
-        print(f"big-driver-manager-cli: {error}", file=sys.stderr)
+        print(term.fail(str(error)), file=sys.stderr)
         return EXIT_USAGE
     if not is_root():
-        print("big-driver-manager-cli: must run as root (use pkexec)", file=sys.stderr)
-        return EXIT_NOT_ROOT
+        return kernel_cli.elevate(argv)
     # The interface follows progress by reading pacman's English output.
     env = {key: value for key, value in os.environ.items() if not key.startswith("LC_")}
     env.update(LANG="C", LC_ALL="C")

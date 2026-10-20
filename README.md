@@ -23,6 +23,37 @@ below, with its own polkit action (`br.com.biglinux.drivermanager.cli`), and the
 command line refuses anything it does not know before running pacman or mhwd.
 The live session and the installer, already root, use the same command.
 
+## big-drivers, from the terminal
+
+`big-drivers` is the same program under a name meant for people
+(`big-driver-manager` opens the graphical interface):
+
+```bash
+big-drivers kernel list                 # kernels in the repositories, installed ones marked
+big-drivers kernel list --installed [--json]
+big-drivers kernel install linux-big    # + headers + the modules the running kernel uses
+big-drivers kernel remove linux612      # + its modules; never the running kernel
+big-drivers kernel obsolete             # installed kernels that left the repositories
+big-drivers gpu                         # graphics cards and their drivers
+big-drivers gpu install                 # the drivers this machine needs
+```
+
+- `kernel install` does what the interface does: the kernel, its headers and,
+  for every module package of the running kernel (NVIDIA, Broadcom Wi-Fi,
+  VirtualBox...), the same module for the new kernel. linux-big is not offered
+  while a module the machine needs is missing for it, or still being published.
+- It shows what it will do and asks first (`-y`/`--yes` skips the question;
+  without a terminal it does nothing unless given `--yes`).
+- Not root: it asks for the password through pkexec (polkit), in the terminal.
+- mhwd-kernel's options keep working: `big-drivers -li`, `-l`, `-i NAME`,
+  `-r NAME`.
+- Colours and emphasis only on a terminal: pipes, the interface and the journal
+  get plain text. `--no-color`, `--color=never|always` or `NO_COLOR=1` change it.
+- Messages, help and the polkit prompt are translated (`locale/*.po`, domain
+  `big-driver-manager-cli`). After changing a message, run
+  `scripts/update-translations.sh`: it refreshes the template, merges the
+  catalogs, compiles the `.mo` files and the polkit policy's translations.
+
 ## Usage
 
 ```bash

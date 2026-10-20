@@ -64,9 +64,9 @@ check '[ -f /etc/modules-load.d/big-driver-manager-nvidia.conf ]' "modules-load 
 check '[ -f /etc/udev/rules.d/80-big-driver-manager-nvidia-power.rules ] && [ -f /etc/modprobe.d/big-driver-manager-nvidia-power.conf ]' "RTD3 files written (Ada has runtimepm)"
 check '[ -e /etc/systemd/system/graphical.target.wants/switcheroo-control.service ]' "switcheroo enabled"
 check '[ -f /var/lib/pacman/sync/mhwd.db ]' "offline repository synced"
-check 'grep -q "^Command: modprobe nvidia_drm" /tmp/1.log' "driver loaded right after install (live session)"
+check 'grep -q "^\$ modprobe nvidia_drm" /tmp/1.log' "driver loaded right after install (live session)"
 # The fake card never gets a driver here: exactly the black-screen case.
-check 'grep -q "falling back to nouveau" /tmp/1.log && grep -q "^Command: modprobe nouveau" /tmp/1.log' "driverless NVIDIA card falls back to nouveau"
+check 'grep -q "falling back to nouveau" /tmp/1.log && grep -q "^\$ modprobe nouveau" /tmp/1.log' "driverless NVIDIA card falls back to nouveau"
 check 'grep -q "did not take the GPU" /run/big-driver-manager/nvidia-fallback' "fallback reason recorded"
 check '$CLI gpu status --json | grep -q "did not take the GPU"' "status shows the fallback"
 cat /tmp/1.log | grep -E '^(NVIDIA driver|Install|Hybrid)'
@@ -105,7 +105,7 @@ $CLI gpu install --root $T $PM >/tmp/7.log 2>&1; check '[ $? -eq 0 ]' "install i
 check 'pacman -Q --root $T nvidia-utils linux-big-nvidia-open >/dev/null' "drivers installed in the target"
 check '[ -f $T/etc/modules-load.d/big-driver-manager-nvidia.conf ]' "files written in the target"
 check '! pacman -Q linux-big-nvidia-open >/dev/null 2>&1' "live system untouched"
-check '! grep -q "Command: modprobe" /tmp/7.log' "no modprobe for another root (installer)"
+check '! grep -q "\$ modprobe" /tmp/7.log' "no modprobe for another root (installer)"
 
 echo "== 8. a user-prepared --root is refused"
 U=/tmp/usertree; mkdir -p $U/etc $U/usr/bin $U/usr/lib $U/var/lib/pacman; chown -R b $U
@@ -114,6 +114,13 @@ check '[ -z "$(ls -A $U/var/lib/pacman)" ]' "nothing installed there"
 
 echo "== free boot installs no NVIDIA driver"
 echo "driver=free" >/tmp/cmdline
-$CLI gpu plan --free $PM | grep -E '^Install'
+$CLI gpu plan --free $PM | grep -E 'Install:'
+
+echo "== big-drivers: kernels"
+BD="python3 /src/usr/bin/big-drivers"
+check '$BD kernel list --json | python3 -c "import json,sys; d=json.load(sys.stdin); sys.exit(not any(k[\"name\"]==\"linux612\" and not k[\"installed\"] for k in d[\"kernels\"]))"' "kernel list --json offers the repositories' kernels"
+check '$BD -l | grep -q linux612' "mhwd-kernel -l still works"
+$BD kernel install linux-does-not-exist --yes >/tmp/k1.log 2>&1; check '[ $? -eq 1 ]' "unknown kernel refused"
+check '! $BD kernel list | grep -q "$(printf "\033")"' "no colour without a terminal"
 
 [ $FAILED -eq 0 ] && echo "ALL PASSED" || { echo "SOME FAILED"; exit 1; }
