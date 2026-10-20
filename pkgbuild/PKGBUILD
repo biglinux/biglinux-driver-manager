@@ -13,7 +13,8 @@ epoch=1
 arch=('any')
 license=('MIT')
 url="https://github.com/biglinux/${pkgbase}"
-source=("git+${url}.git")
+# The build-package workflow exports the branch it builds (dev-* for testing).
+source=("git+${url}.git#branch=${BIGLINUX_GIT_BRANCH:-main}")
 md5sums=('SKIP')
 
 _install_tree() {
