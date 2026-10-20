@@ -22,7 +22,7 @@ touch /tmp/.mark
 pacman -Syu --noconfirm --needed python pciutils usbutils fakeroot >/dev/null 2>&1 || { echo "deps failed"; exit 2; }
 export BDM_CLI_DIR=/src/usr/share/big-driver-manager-cli
 export BDM_SUPPORTED_GPUS=/nvda/supported-gpus.json
-export BDM_SYS_ROOT=/tmp/sys
+export BDM_SYS_ROOT=/tmp/sys BDM_TEST=1
 CLI="python3 /src/usr/bin/big-driver-manager-cli"
 
 # fake sysfs: Intel iGPU + NVIDIA RTX 4060 Laptop (Ada: current driver, open module)

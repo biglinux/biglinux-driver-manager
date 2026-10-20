@@ -11,8 +11,10 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
+# BDM_CLI_DIR picks the code this program runs: never honoured as root, where
+# a kept environment (sudo -E) would make it run someone else's code.
 for _candidate in (
-    os.environ.get("BDM_CLI_DIR"),
+    os.environ.get("BDM_CLI_DIR") if os.geteuid() != 0 else None,
     "/usr/share/big-driver-manager-cli",
     str(_HERE.parent / "share" / "big-driver-manager-cli"),
 ):

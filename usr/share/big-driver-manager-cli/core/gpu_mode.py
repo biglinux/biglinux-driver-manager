@@ -21,7 +21,13 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from core.gpu import VENDOR_NVIDIA, PciDevice, display_devices
+from core.gpu import (
+    VENDOR_AMD,
+    VENDOR_INTEL,
+    VENDOR_NVIDIA,
+    PciDevice,
+    display_devices,
+)
 
 MODES = ("hybrid", "nvidia", "integrated")
 
@@ -124,9 +130,10 @@ class ModeChange:
 
 
 def is_hybrid(devices: list[PciDevice]) -> bool:
+    """An NVIDIA GPU next to an Intel or AMD one (not a server's BMC VGA)."""
     display = display_devices(devices)
     return any(d.vendor == VENDOR_NVIDIA for d in display) and any(
-        d.vendor != VENDOR_NVIDIA for d in display
+        d.vendor in (VENDOR_INTEL, VENDOR_AMD) for d in display
     )
 
 

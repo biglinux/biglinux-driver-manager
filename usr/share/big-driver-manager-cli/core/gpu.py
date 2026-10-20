@@ -37,11 +37,12 @@ _VENDOR_NAMES = {VENDOR_NVIDIA: "nvidia", VENDOR_INTEL: "intel", VENDOR_AMD: "am
 # Virtual GPUs: QEMU/virtio, Red Hat QXL, VirtualBox, VMware, Cirrus
 _VIRTUAL_VENDORS = frozenset({"1af4", "1b36", "80ee", "15ad", "1013"})
 
+# Test overrides (fake sysfs, NVIDIA table) only with BDM_TEST=1: they change
+# what gets installed as root, so they are not read by accident.
+_TESTING = os.environ.get("BDM_TEST") == "1"
 SUPPORTED_GPUS_JSON = Path(
-    os.environ.get(
-        "BDM_SUPPORTED_GPUS",
-        "/usr/share/nvidia-driver-assistant/supported-gpus/supported-gpus.json",
-    )
+    (_TESTING and os.environ.get("BDM_SUPPORTED_GPUS"))
+    or "/usr/share/nvidia-driver-assistant/supported-gpus/supported-gpus.json"
 )
 BROADCOM_WL_IDS = (
     Path(__file__).resolve().parent.parent
@@ -128,8 +129,7 @@ def _hex(value: str) -> str:
     return value.lower().removeprefix("0x")
 
 
-# Tests point this at a fake sysfs; pkexec clears the environment.
-SYS_ROOT = Path(os.environ.get("BDM_SYS_ROOT", "/sys"))
+SYS_ROOT = Path((_TESTING and os.environ.get("BDM_SYS_ROOT")) or "/sys")
 
 
 def scan_pci(sys_root: Path | None = None) -> list[PciDevice]:
@@ -319,6 +319,14 @@ def choose_nvidia(
     for device in devices:
         if device.vendor != VENDOR_NVIDIA or not device.is_display:
             continue
+        if not chips:
+            # Without NVIDIA's table every chip would look "newer than the
+            # table" and get the current open driver, which Maxwell, Pascal
+            # and Kepler do not run. Choose nothing rather than guess.
+            choice.unsupported.append(
+                f"NVIDIA [10de:{device.device}] (supported-gpus.json missing)"
+            )
+            continue
         chip = chips.get(device.device)
         label = f"{chip.name if chip else 'NVIDIA'} [10de:{device.device}]"
         branch, open_module, runtime_pm = _chip_branch(chip)
@@ -330,14 +338,20 @@ def choose_nvidia(
         open_flags.append(open_module)
         pm_flags.append(runtime_pm)
     if branches:
-        choice.branch = max(branches, key=_BRANCH_ORDER.index)
+        # The branches that drive every chip; the newest of them is chosen.
+        # Chips no single branch drives (an Ada next to a Kepler) get none.
+        per_chip = [{b, *_ALSO_COMPATIBLE[b]} for b in branches]
+        common = set.intersection(*per_chip)
+        choice.compatible = [b for b in _BRANCH_ORDER if b in common]
+        if not choice.compatible:
+            choice.unsupported += choice.chips
+            choice.chips = []
+            return choice
+        choice.branch = choice.compatible[0]
         choice.open_capable = all(open_flags)
         has_open = BRANCHES[choice.branch].open_module is not None
         choice.open_module = has_open and choice.open_capable
         choice.runtime_pm = all(pm_flags)
-        per_chip = [{b, *_ALSO_COMPATIBLE[b]} for b in branches]
-        common = set.intersection(*per_chip)
-        choice.compatible = [b for b in _BRANCH_ORDER if b in common]
     return choice
 
 
@@ -396,6 +410,8 @@ class GpuPlan:
     # Commands that bring a freshly installed module up on the running system:
     # udev met the device before its driver existed (live session, GUI).
     load: list[list[str]] = field(default_factory=list)
+    # Everything the machine should have, installed already or not.
+    wanted: list[str] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -468,7 +484,9 @@ def build_plan(
     """
     display = display_devices(devices)
     nvidia = [d for d in display if d.vendor == VENDOR_NVIDIA]
-    others = [d for d in display if d.vendor != VENDOR_NVIDIA]
+    # Hybrid means an Intel or AMD GPU next to the NVIDIA one; a server's BMC
+    # VGA (ASPEED, Matrox) is no second GPU to switch to.
+    others = [d for d in display if d.vendor in (VENDOR_INTEL, VENDOR_AMD)]
     plan = GpuPlan(
         gpus=[{**asdict(d), "vendor_name": d.vendor_name} for d in display],
         hybrid=bool(nvidia) and bool(others),
@@ -477,6 +495,7 @@ def build_plan(
         kernels=list(kernels),
     )
     wanted: list[str] = []
+    installed = installed or set()
     if nvidia_branch and not nvidia:
         raise ValueError("no NVIDIA GPU in this machine")
 
@@ -490,7 +509,9 @@ def build_plan(
         if choice.branch:
             branch = BRANCHES[choice.branch]
             wanted += branch.utils
-            if all(name in repo for name in branch.lib32):
+            # With multilib, or already installed (multilib since disabled):
+            # never dropped from under Steam and other 32-bit programs.
+            if all(name in repo or name in installed for name in branch.lib32):
                 wanted += branch.lib32
             if choice.open_module:
                 module, dkms = branch.open_module, branch.open_dkms
@@ -532,8 +553,8 @@ def build_plan(
         wanted += packages
         plan.services += units
 
-    installed = installed or set()
-    for name in dict.fromkeys(wanted):
+    plan.wanted = list(dict.fromkeys(wanted))
+    for name in plan.wanted:
         if name in repo:
             plan.install.append(name)
         elif name not in installed:

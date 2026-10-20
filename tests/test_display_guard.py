@@ -51,10 +51,28 @@ class TestHelpers(unittest.TestCase):
 
 
 class TestDisplayFailed(unittest.TestCase):
-    def _run(self, *, recorded=None, scans, live=False, fall_back=True):
+    def _run(
+        self,
+        *,
+        recorded=None,
+        scans,
+        live=False,
+        fall_back=True,
+        uptime=60.0,
+        persisted=None,
+        failing=(),
+    ):
         calls = []
+
+        def run(cmd):
+            calls.append(cmd)
+            return cmd not in failing
+
         with TemporaryDirectory() as t:
             with (
+                patch.object(gpu_cli, "LOCK", Path(t) / "lock"),
+                patch.object(gpu_cli, "_uptime", return_value=uptime),
+                patch.object(gpu_fallback, "persisted_reason", return_value=persisted),
                 patch.object(gpu_fallback, "recorded", return_value=recorded),
                 patch.object(gpu_cli.gpu, "scan_pci", side_effect=scans),
                 patch.object(
@@ -62,9 +80,7 @@ class TestDisplayFailed(unittest.TestCase):
                 ),
                 patch.object(gpu_cli, "_fall_back", return_value=fall_back) as fb,
                 patch.object(gpu_fallback, "persist", return_value=["p"]) as persist,
-                patch.object(
-                    gpu_cli, "_run", side_effect=lambda c: calls.append(c) or True
-                ),
+                patch.object(gpu_cli, "_run", side_effect=run),
             ):
                 if live:
                     (Path(t) / "live").touch()
@@ -114,6 +130,26 @@ class TestDisplayFailed(unittest.TestCase):
         code, calls, _, persist = self._run(scans=[ON_NVIDIA], fall_back=False)
         self.assertEqual(code, gpu_cli.EXIT_FAILED)
         persist.assert_not_called()
+
+
+class TestDisplayFailedSafety(TestDisplayFailed):
+    def test_a_late_failure_is_not_the_drivers_start(self):
+        code, calls, fb, persist = self._run(scans=[ON_NVIDIA], uptime=3600)
+        self.assertEqual((code, calls), (0, []))
+        fb.assert_not_called()
+        persist.assert_not_called()
+
+    def test_never_restarts_a_second_time(self):
+        code, calls, _, _ = self._run(scans=[ON_NVIDIA, ON_NVIDIA], persisted="earlier")
+        self.assertEqual(code, gpu_cli.EXIT_FAILED)
+        self.assertNotIn(["systemctl", "reboot"], calls)
+
+    def test_no_restart_when_the_initramfs_cannot_be_rebuilt(self):
+        code, calls, _, _ = self._run(
+            scans=[ON_NVIDIA, ON_NVIDIA], failing=(["mkinitcpio", "-P"],)
+        )
+        self.assertEqual(code, gpu_cli.EXIT_FAILED)
+        self.assertNotIn(["systemctl", "reboot"], calls)
 
 
 class TestDisplayCheck(unittest.TestCase):

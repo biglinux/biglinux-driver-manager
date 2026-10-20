@@ -215,9 +215,11 @@ class TestCli(unittest.TestCase):
                     t,
                 ],
             )
-            self.assertEqual(commands[1][:2], ["pacman", "-S"])
-            self.assertIn("--root", commands[1])
-            self.assertEqual(commands[2][:3], ["systemctl", "--root", t])
+            # Downloaded before anything is removed or installed
+            self.assertEqual(commands[1][:2], ["pacman", "-Sw"])
+            self.assertEqual(commands[2][:2], ["pacman", "-S"])
+            self.assertIn("--root", commands[2])
+            self.assertEqual(commands[3][:3], ["systemctl", "--root", t])
             self.assertTrue((Path(t) / gpu.NVIDIA_MODULES_LOAD).is_file())
 
     def test_install_loads_the_driver_only_on_the_running_system(self):
@@ -252,7 +254,7 @@ class TestCli(unittest.TestCase):
             patch.object(gpu_cli.gpu, "write_files", return_value=[]),
             patch.object(gpu_cli.subprocess, "run") as run,
         ):
-            run.side_effect = [type("R", (), {"returncode": c})() for c in (0, 1)]
+            run.side_effect = [type("R", (), {"returncode": c})() for c in (0, 0, 1)]
             self.assertEqual(gpu_cli._install(args), 0)
 
     def test_failed_pacman_stops_before_files(self):
@@ -353,16 +355,18 @@ class TestBranchSwitching(unittest.TestCase):
         return code, [c.args[0] for c in run.call_args_list]
 
     def test_swap_removes_without_deps_then_installs(self):
-        code, commands = self._install(self._plan(), {"nvidia-utils"}, [0, 0])
+        code, commands = self._install(self._plan(), {"nvidia-utils"}, [0, 0, 0])
         self.assertEqual(code, 0)
-        self.assertEqual(commands[0], ["pacman", "-Rdd", "--noconfirm", "nvidia-utils"])
-        self.assertEqual(commands[1][:2], ["pacman", "-S"])
+        # The new branch is downloaded before the old one goes
+        self.assertEqual(commands[0][:2], ["pacman", "-Sw"])
+        self.assertEqual(commands[1], ["pacman", "-Rdd", "--noconfirm", "nvidia-utils"])
+        self.assertEqual(commands[2][:2], ["pacman", "-S"])
 
     def test_failed_install_restores_the_previous_driver(self):
-        code, commands = self._install(self._plan(), {"nvidia-utils"}, [0, 1, 0])
+        code, commands = self._install(self._plan(), {"nvidia-utils"}, [0, 0, 1, 0])
         self.assertEqual(code, gpu_cli.EXIT_FAILED)
-        self.assertEqual(commands[2][-1], "nvidia-utils")
-        self.assertEqual(commands[2][:2], ["pacman", "-S"])
+        self.assertEqual(commands[3][-1], "nvidia-utils")
+        self.assertEqual(commands[3][:2], ["pacman", "-S"])
 
     def test_no_swap_when_the_new_driver_is_not_available(self):
         plan = self._plan()
@@ -481,7 +485,7 @@ class TestFallback(unittest.TestCase):
             patch.object(gpu_cli, "_build_plan", return_value=plan),
             patch.object(gpu_cli.gpu, "installed_packages", return_value=set()),
             patch.object(gpu_cli.gpu, "installed_kernels", return_value=[]),
-            patch.object(gpu_cli, "_fall_back") as fall_back,
+            patch.object(gpu_cli, "_fall_back_if_driverless") as fall_back,
             patch.object(gpu_cli.subprocess, "run") as run,
         ):
             run.return_value.returncode = 1

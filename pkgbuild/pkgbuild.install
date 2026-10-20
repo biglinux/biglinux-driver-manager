@@ -19,8 +19,10 @@ post_install() {
     systemctl enable "${_units[@]}" 2>/dev/null || true
 }
 
+# Units are enabled once, at install time (replacing mhwd-biglinux counts as
+# one): an upgrade must not re-enable what an administrator disabled.
 post_upgrade() {
-    post_install
+    _build_cache
 }
 
 pre_remove() {

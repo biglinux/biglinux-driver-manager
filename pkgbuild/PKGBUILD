@@ -3,9 +3,9 @@
 
 pkgname=big-driver-manager-cli
 pkgdesc="Command line and core of Big Driver Manager: detects hardware and installs drivers, kernels and Mesa"
-depends=('python' 'pacman' 'polkit' 'pciutils' 'usbutils' 'nvidia-driver-assistant')
+depends=('python' 'pacman' 'polkit' 'pciutils' 'usbutils' 'nvidia-driver-assistant'
+         'switcheroo-control')
 optdepends=(
-    'switcheroo-control: launch applications on the other GPU of a hybrid machine'
     'nvidia-prime: prime-run, render offload to the NVIDIA GPU'
     'xorg-xrandr: NVIDIA as the primary GPU in Xorg sessions'
     'mhwd: the old mhwd video configurations (still listed by the interface)'

@@ -11,6 +11,7 @@ boot     what runs before the display manager on every boot
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import stat
@@ -224,8 +225,25 @@ def packages_to_replace(
     no to removing a conflicting package, so they go first."""
     if not (plan.nvidia and plan.nvidia.branch):
         return []
-    keep = set(plan.install)
+    # What the plan wants, installed already or not (a lib32 package whose
+    # multilib repository is gone is wanted, not something to remove).
+    keep = set(plan.install) | set(plan.wanted)
     return [p for p in installed_nvidia_packages(installed, kernels) if p not in keep]
+
+
+def essential_missing(plan: gpu.GpuPlan) -> list[str]:
+    """NVIDIA packages the repositories lack and the driver cannot work
+    without: its userspace, and a module (or DKMS and headers) per kernel."""
+    if not (plan.nvidia and plan.nvidia.branch):
+        return []
+    branch = gpu.BRANCHES[plan.nvidia.branch]
+    essential = {branch.utils[0], branch.dkms, branch.open_dkms}
+    return [
+        name
+        for name in plan.unavailable
+        if name in essential
+        or any(name.startswith(kernel + "-") for kernel in plan.kernels)
+    ]
 
 
 def _describe_plan(plan: gpu.GpuPlan) -> None:
@@ -282,11 +300,28 @@ def _sync_offline_repository(args: argparse.Namespace) -> bool:
     return _run(cmd)
 
 
+def _integrated_mode(root: Path) -> bool:
+    """NVIDIA is meant to stay off: recorded, or asked for on a live boot."""
+    if gpu_mode.read_mode(root) == "integrated":
+        return True
+    return LIVE_MARKER.exists() and requested_mode(_cmdline_args()) == "integrated"
+
+
+def _fall_back_if_driverless(reason: str) -> None:
+    """After a failed install on the running system: only a card left with no
+    driver at all needs nouveau; a working NVIDIA driver is left alone."""
+    if gpu_fallback.driverless_nvidia(gpu.scan_pci()):
+        _fall_back(reason)
+
+
 def _install(args: argparse.Namespace) -> int:
     root = _target_root(args)
     pacman_root = _pacman_root(args)
+    running = pacman_root is None
     if not _sync_offline_repository(args):
         _error("reading the offline repository failed")
+        if running:
+            _fall_back_if_driverless("the offline driver repository could not be read")
         return EXIT_FAILED
     installed = gpu.installed_packages(pacman_root)
     kernels = gpu.installed_kernels(root)
@@ -296,16 +331,31 @@ def _install(args: argparse.Namespace) -> int:
         _error(str(error))
         return EXIT_USAGE
     _describe_plan(plan)
+    nvidia = bool(plan.nvidia and plan.nvidia.branch)
+
+    # Nothing is touched when the driver cannot be complete: a userspace
+    # without a module (or the reverse) is a black screen, not a driver.
+    missing = essential_missing(plan)
+    if missing:
+        _error(
+            "NVIDIA driver packages missing from the repositories: " + " ".join(missing)
+        )
+        if running:
+            _fall_back_if_driverless("the NVIDIA driver is not in the repositories")
+        return EXIT_FAILED
+
+    # Download first: the old branch only goes once the new one is at hand.
+    if plan.install:
+        download = gpu.pacman_install_command(plan.install, args.pmconfig, pacman_root)
+        download[1] = "-Sw"
+        if not _run(download):
+            _error("downloading the drivers failed")
+            if running and nvidia:
+                _fall_back_if_driverless("the NVIDIA driver could not be downloaded")
+            return EXIT_FAILED
 
     replaced = packages_to_replace(plan, installed, kernels)
     if replaced:
-        if plan.unavailable:
-            _error(
-                "not replacing the installed NVIDIA driver: "
-                + " ".join(plan.unavailable)
-                + " missing from the repositories"
-            )
-            return EXIT_FAILED
         _print("Replacing: " + " ".join(replaced))
         # -dd: the new branch provides nvidia-utils again right after.
         if not _run(_pacman_remove(replaced, "-Rdd", args)):
@@ -319,26 +369,32 @@ def _install(args: argparse.Namespace) -> int:
         if replaced:
             _print("Restoring the previous NVIDIA driver from the package cache")
             _run(gpu.pacman_install_command(replaced, args.pmconfig, pacman_root))
-        elif pacman_root is None and plan.nvidia and plan.nvidia.branch:
-            _fall_back("the NVIDIA driver could not be installed")
+        elif running and nvidia:
+            _fall_back_if_driverless("the NVIDIA driver could not be installed")
         return EXIT_FAILED
+
     for path in gpu.write_files(plan.files, root):
         _print(f"Wrote {path}")
-    if plan.nvidia and plan.nvidia.branch:
+    if nvidia:
         _clear_persisted_fallback(root)
-    if plan.services and not _run(gpu.enable_units_command(plan.services, root)):
-        _error("enabling services failed")
-        return EXIT_FAILED
+
     # The running system (live session, GUI): load the new driver now, as
-    # mhwd did. Another root boots it later. A failure is not fatal: the
-    # packages are in place and the next boot loads the module anyway.
-    if pacman_root is None:
+    # mhwd did, and make sure it took the card before anything else; another
+    # root boots it later. A module that does not load now is not fatal: the
+    # next boot loads it.
+    if running and not _integrated_mode(root):
         for cmd in plan.load:
             # Unloading a module that is not loaded "fails" too: not news.
             if not _run(cmd) and "-r" not in cmd:
                 _print("Note: " + " ".join(cmd) + " failed; it loads on the next boot")
-        if plan.nvidia and plan.nvidia.branch:
+        if nvidia:
             _verify_nvidia()
+
+    # One unit at a time, and never fatal: a service missing from the
+    # repositories must not cost the rest of the setup.
+    for unit in plan.services:
+        if not _run(gpu.enable_units_command([unit], root)):
+            _print(f"Note: {unit} could not be enabled")
     return EXIT_OK
 
 
@@ -392,6 +448,10 @@ def _apply_mode(mode: str, root: Path, live: bool) -> int:
         _print(f"Removed /{path}")
     if change.services:
         _run(gpu.enable_units_command(change.services, root))
+    if mode == "integrated" and root == Path("/"):
+        # Already loaded this boot (the live session installs and loads the
+        # driver first): unload now, the blacklist takes over from here.
+        _run(["modprobe", "-r", *gpu_fallback.NVIDIA_MODULES])
     if change.needs_initramfs:
         # The live system boots an initramfs from the medium; another root is
         # the installer's job.
@@ -499,17 +559,44 @@ def _restart_display_manager() -> None:
     _run(["systemctl", "restart", "--no-block", "display-manager.service"])
 
 
+# A display manager failing later than this is not a boot that never showed
+# a screen: the session was up, leave the driver alone.
+DISPLAY_FAILURE_WINDOW = 600  # seconds of uptime
+LOCK = Path("/run/big-driver-manager/display.lock")
+
+
+def _uptime() -> float:
+    try:
+        return float(Path("/proc/uptime").read_text().split()[0])
+    except (OSError, ValueError, IndexError):
+        return 0.0
+
+
 def _display_failed(cause: str = "the display manager failed") -> int:
     """The display did not come up while the proprietary driver drove the GPU:
     move to nouveau, once per boot. On an installed system the next boots
     use nouveau too, until the NVIDIA driver is installed again; when the
     NVIDIA modules cannot be unloaded now (the console holds nvidia_drm's
-    framebuffer), that takes one restart."""
+    framebuffer), that takes one restart -- never a second one."""
+    LOCK.parent.mkdir(parents=True, exist_ok=True)
+    # display-check and display-failed may both fire: one at a time.
+    with LOCK.open("w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        return _display_failed_locked(cause)
+
+
+def _display_failed_locked(cause: str) -> int:
     if gpu_fallback.recorded():
         return EXIT_OK  # already fell back this boot: never loop
+    if _uptime() > DISPLAY_FAILURE_WINDOW:
+        _print(
+            "Note: the display manager failed long after boot; not the driver's start"
+        )
+        return EXIT_OK
     if not gpu_fallback.nvidia_in_use(gpu.scan_pci()):
         return EXIT_OK  # not the NVIDIA driver's doing
     live = LIVE_MARKER.exists()
+    persisted_before = gpu_fallback.persisted_reason(Path("/"))
     reason = f"{cause} with the NVIDIA driver"
     if not _fall_back(reason):
         return EXIT_FAILED
@@ -519,8 +606,10 @@ def _display_failed(cause: str = "the display manager failed") -> int:
             _print(f"Wrote /{relative}")
     if switched:
         _restart_display_manager()
-        if not live:
-            _run(["mkinitcpio", "-P"])
+        if not live and not _run(["mkinitcpio", "-P"]):
+            _error(
+                "rebuilding the initramfs failed; the next boot may load NVIDIA again"
+            )
         return EXIT_OK
     if live:
         _error(
@@ -528,7 +617,19 @@ def _display_failed(cause: str = "the display manager failed") -> int:
             "the boot entry without proprietary drivers"
         )
         return EXIT_FAILED
-    _run(["mkinitcpio", "-P"])
+    if persisted_before:
+        # This boot already ran under the fallback and NVIDIA still came up
+        # (its modules in the initramfs, a stale image): restarting again
+        # would loop.
+        _error(
+            "NVIDIA still loads although the fallback blocks it; not restarting "
+            "again. Rebuild the initramfs (mkinitcpio -P) or remove the NVIDIA "
+            "driver from a text console."
+        )
+        return EXIT_FAILED
+    if not _run(["mkinitcpio", "-P"]):
+        _error("rebuilding the initramfs failed; not restarting into the same state")
+        return EXIT_FAILED
     _print("Restarting once to start with nouveau")
     _run(["systemctl", "reboot"])
     return EXIT_OK
