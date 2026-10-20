@@ -220,3 +220,51 @@ class TestEnvironmentAsRoot(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestRootRedirection(unittest.TestCase):
+    def _refusal(self, modes, owners=None, hooks=False):
+        """modes/owners by absolute path; anything else: root, 0755 directory."""
+        import stat as st
+
+        owners = owners or {}
+
+        def lstat(path):
+            path = str(path)
+            mode = modes.get(path, st.S_IFDIR | 0o755)
+            return os.stat_result((mode, 0, 0, 0, owners.get(path, 0), 0, 0, 0, 0, 0))
+
+        args = argparse.Namespace(
+            root=Path("/run/media/user/stick/root"), pmconfig=None
+        )
+        with (
+            patch.object(gpu_cli.os, "lstat", side_effect=lstat),
+            patch.object(gpu_cli.os.path, "lexists", return_value=hooks),
+        ):
+            return gpu_cli._refuse_redirection(args)
+
+    def test_a_user_owned_directory_above_the_target_is_refused(self):
+        reason = self._refusal({}, owners={"/run/media/user": 1000})
+        self.assertIn("/run/media/user is not owned by root", reason)
+
+    def test_a_world_writable_sticky_directory_above_is_fine(self):
+        import stat as st
+
+        self.assertIsNone(
+            self._refusal({"/run/media": st.S_IFDIR | st.S_ISVTX | 0o777})
+        )
+
+    def test_a_world_writable_directory_above_without_sticky_bit_is_refused(self):
+        import stat as st
+
+        reason = self._refusal({"/run/media": st.S_IFDIR | 0o777})
+        self.assertIn("/run/media is writable", reason)
+
+    def test_pacman_hook_directories_of_the_target_are_checked(self):
+        import stat as st
+
+        reason = self._refusal(
+            {"/run/media/user/stick/root/etc/pacman.d/hooks": st.S_IFDIR | 0o777},
+            hooks=True,
+        )
+        self.assertIn("pacman.d/hooks", reason)

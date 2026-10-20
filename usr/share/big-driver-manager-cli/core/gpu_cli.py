@@ -153,6 +153,23 @@ def _untrusted(path: Path) -> str | None:
 # Paths of a target system whose owner decides what runs inside it: pacman
 # --root runs install scriptlets and hooks chrooted there, as root.
 _ROOT_SKELETON = ("", "etc", "usr", "usr/bin", "usr/lib")
+_ROOT_HOOK_DIRS = ("usr/share/libalpm/hooks", "etc/pacman.d/hooks")
+
+
+def _untrusted_ancestor(path: Path) -> str | None:
+    """A directory above ``path`` someone else could swap it out of: owned by
+    another user, or writable by others without the sticky bit (/tmp, where
+    the installer mounts its target, has it)."""
+    for parent in Path(os.path.abspath(path)).parents:
+        try:
+            info = os.lstat(parent)
+        except OSError as error:
+            return f"{parent}: {error.strerror}"
+        if info.st_uid != 0:
+            return f"{parent} is not owned by root"
+        if info.st_mode & 0o022 and not info.st_mode & stat.S_ISVTX:
+            return f"{parent} is writable by group or others"
+    return None
 
 
 def _refuse_redirection(args: argparse.Namespace) -> str | None:
@@ -163,10 +180,14 @@ def _refuse_redirection(args: argparse.Namespace) -> str | None:
     the live session starts through pkexec)."""
     root = getattr(args, "root", None)
     if root:
+        reason = _untrusted_ancestor(root)
         for relative in _ROOT_SKELETON:
-            reason = _untrusted(root / relative)
-            if reason:
-                return f"--root refused: {reason}"
+            reason = reason or _untrusted(root / relative)
+        for relative in _ROOT_HOOK_DIRS:
+            if not reason and os.path.lexists(root / relative):
+                reason = _untrusted(root / relative)
+        if reason:
+            return f"--root refused: {reason}"
     pmconfig = getattr(args, "pmconfig", None)
     if pmconfig:
         for path in (pmconfig, pmconfig.parent):
