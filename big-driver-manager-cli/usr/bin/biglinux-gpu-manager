@@ -1,0 +1,24 @@
+#!/bin/bash
+# Compatibility for mhwd-biglinux's biglinux-gpu-manager, now part of
+# big-driver-manager-cli.
+#   biglinux-gpu-manager [hybrid|nvidia|integrated|status [--json]]
+# Without a mode: the recorded one, or hybrid.
+set -uo pipefail
+
+case "${1:-}" in
+status)
+    exec /usr/bin/big-driver-manager-cli gpu status ${2:+"$2"}
+    ;;
+hybrid | nvidia | integrated)
+    exec /usr/bin/big-driver-manager-cli gpu mode "$1"
+    ;;
+"")
+    mode=$(/usr/bin/big-driver-manager-cli gpu status --json 2>/dev/null |
+        sed -n 's/.*"mode": *"\([a-z]*\)".*/\1/p')
+    exec /usr/bin/big-driver-manager-cli gpu mode "${mode:-hybrid}"
+    ;;
+*)
+    echo "Usage: ${0##*/} [hybrid|nvidia|integrated|status [--json]]" >&2
+    exit 2
+    ;;
+esac

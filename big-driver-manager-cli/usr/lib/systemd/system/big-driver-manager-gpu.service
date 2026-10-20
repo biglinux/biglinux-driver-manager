@@ -1,0 +1,14 @@
+# Replaces nvidia-manager-verify.service (mhwd-biglinux).
+[Unit]
+Description=Big Driver Manager: keep a hybrid GPU in its mode
+After=big-driver-manager-live.service systemd-modules-load.service
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/big-driver-manager-cli gpu boot
+TimeoutStartSec=30s
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,827 @@
+# Croatian translations for big-driver-manager-cli package.
+# Copyright (C) 2026 THE big-driver-manager-cli'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the big-driver-manager-cli package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: big-driver-manager-cli\n"
+"Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
+"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"PO-Revision-Date: 2026-10-20 00:31-0300\n"
+"Last-Translator: AI-assisted translation\n"
+"Language-Team: none\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: locale/extra_msgids.py:12
+msgid "usage: "
+msgstr "upotreba: "
+
+#: locale/extra_msgids.py:13
+msgid "positional arguments"
+msgstr "pozicijski argumenti"
+
+#: locale/extra_msgids.py:14
+msgid "options"
+msgstr "opcije"
+
+#: locale/extra_msgids.py:15
+msgid "show this help message and exit"
+msgstr "prikaži ovu pomoć i izađi"
+
+#: locale/extra_msgids.py:16
+#, python-format
+msgid "the following arguments are required: %s"
+msgstr "sljedeći argumenti su obavezni: %s"
+
+#: locale/extra_msgids.py:17
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr "neprepoznati argumenti: %s"
+
+#: locale/extra_msgids.py:18
+#, python-format
+msgid "invalid choice: %(value)r (choose from %(choices)s)"
+msgstr "neispravan izbor: %(value)r (odaberite između %(choices)s)"
+
+#: locale/extra_msgids.py:19
+#, python-format
+msgid "argument %(argument_name)s: %(message)s"
+msgstr "argument %(argument_name)s: %(message)s"
+
+#: locale/extra_msgids.py:20
+#, python-format
+msgid "not allowed with argument %s"
+msgstr "nije dopušteno s argumentom %s"
+
+#: locale/extra_msgids.py:21
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr "potreban je jedan od argumenata %s"
+
+#: locale/extra_msgids.py:22
+msgid "expected one argument"
+msgstr "očekivan je jedan argument"
+
+#: locale/extra_msgids.py:23
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr "dvosmislena opcija: %(option)s može odgovarati %(matches)s"
+
+#: locale/extra_msgids.py:24
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: greška: %(message)s\n"
+
+#: locale/extra_msgids.py:28
+msgid "Install or remove drivers, kernels and Mesa"
+msgstr "Instaliraj ili ukloni upravljačke programe, jezgre i Mesa"
+
+#: locale/extra_msgids.py:29
+msgid "Authentication is required to install or remove drivers"
+msgstr ""
+"Za instalaciju ili uklanjanje upravljačkih programa potrebna je provjera "
+"autentičnosti"
+
+#: usr/bin/big-driver-manager-cli:53
+msgid "kernels you can install"
+msgstr "jezgre koje možete instalirati"
+
+#: usr/bin/big-driver-manager-cli:54
+msgid "a kernel with its modules"
+msgstr "jezgra s njezinim modulima"
+
+#: usr/bin/big-driver-manager-cli:55
+msgid "a kernel and its modules"
+msgstr "jezgra i njezini moduli"
+
+#: usr/bin/big-driver-manager-cli:56
+msgid "graphics cards and their drivers"
+msgstr "grafičke kartice i njihovi upravljački programi"
+
+#: usr/bin/big-driver-manager-cli:57
+msgid "the drivers this machine needs"
+msgstr "upravljački programi potrebni ovom računalu"
+
+#: usr/bin/big-driver-manager-cli:58
+msgid "which GPU draws the screen"
+msgstr "koji GPU iscrtava zaslon"
+
+#: usr/bin/big-driver-manager-cli:65
+msgid "examples:"
+msgstr "primjeri:"
+
+#: usr/bin/big-driver-manager-cli:82
+msgid ""
+"Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
+"install the graphics drivers, install kernels together with their modules."
+msgstr ""
+"Upravljački programi i jezgre za BigLinux i BigCommunity: prepoznavanje "
+"hardvera, instalacija grafičkih upravljačkih programa, instalacija jezgri "
+"zajedno s njihovim modulima."
+
+#: usr/bin/big-driver-manager-cli:94
+msgid "show the version and exit"
+msgstr "prikaži verziju i izađi"
+
+#: usr/bin/big-driver-manager-cli:100
+msgid "colors: auto (terminal only), always or never; also --no-color"
+msgstr "boje: auto (samo terminal), always ili never; također --no-color"
+
+#: usr/bin/big-driver-manager-cli:102
+msgid "COMMAND"
+msgstr "NAREDBA"
+
+#: usr/bin/big-driver-manager-cli:108
+msgid "install packages from the repositories"
+msgstr "instaliraj pakete iz repozitorija"
+
+#: usr/bin/big-driver-manager-cli:114
+msgid "reinstall packages that are already installed"
+msgstr "ponovno instaliraj već instalirane pakete"
+
+#: usr/bin/big-driver-manager-cli:119
+msgid "overwrite conflicting files (Mesa variant switch)"
+msgstr "prepiši datoteke u sukobu (promjena varijante Mesa)"
+
+#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+msgid "PACKAGE"
+msgstr "PAKET"
+
+#: usr/bin/big-driver-manager-cli:123
+msgid "remove packages"
+msgstr "ukloni pakete"
+
+#: usr/bin/big-driver-manager-cli:128
+msgid "also remove dependencies nothing else needs"
+msgstr "ukloni i ovisnosti koje ništa drugo ne treba"
+
+#: usr/bin/big-driver-manager-cli:133
+msgid "also remove packages that depend on them"
+msgstr "ukloni i pakete koji o njima ovise"
+
+#: usr/bin/big-driver-manager-cli:137
+msgid "install or remove an mhwd configuration"
+msgstr "instaliraj ili ukloni mhwd konfiguraciju"
+
+#: usr/bin/big-driver-manager-cli:142
+msgid "replace a conflicting configuration"
+msgstr "zamijeni konfiguraciju u sukobu"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:38
+msgid "graphics drivers (replaces mhwd)"
+msgstr "grafički upravljački programi (zamjenjuje mhwd)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+msgid "ACTION"
+msgstr "RADNJA"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:42
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:86
+msgid "target system (installer)"
+msgstr "ciljni sustav (instalacijski program)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:46
+msgid "pacman configuration, e.g. the live medium's offline repository"
+msgstr "pacman konfiguracija, npr. izvanmrežni repozitorij živog medija"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:52
+msgid "open source drivers only"
+msgstr "samo upravljački programi otvorenog koda"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:57
+msgid "driver=free|nonfree from the kernel command line (live media)"
+msgstr "driver=free|nonfree iz naredbenog retka jezgre (živi mediji)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:60
+msgid "show the hardware"
+msgstr "prikaži hardver"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:61
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:66
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+msgid "JSON output"
+msgstr "izlaz u formatu JSON"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:63
+msgid "show what install would do"
+msgstr "prikaži što bi učinila naredba install"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:69
+msgid "install the drivers this machine needs"
+msgstr "instaliraj upravljačke programe potrebne ovom računalu"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:77
+msgid "instead of the recommended NVIDIA driver (must drive the GPU)"
+msgstr ""
+"umjesto preporučenog NVIDIA upravljačkog programa (mora upravljati GPU-om)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:80
+msgid "remove the NVIDIA proprietary driver"
+msgstr "ukloni vlasnički NVIDIA upravljački program"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:83
+msgid "choose which GPU drives a hybrid machine"
+msgstr "odaberi koji GPU pokreće hibridno računalo"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:88
+msgid "recorded GPU mode and hardware"
+msgstr "zabilježeni GPU način rada i hardver"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:91
+msgid "run by big-driver-manager-gpu.service"
+msgstr "pokreće ga big-driver-manager-gpu.service"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:93
+msgid "warn about kernels without their NVIDIA module (pacman hook)"
+msgstr "upozori na jezgre bez njihovog NVIDIA modula (pacman hook)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:97
+msgid "fall back to nouveau when no login screen appears (service)"
+msgstr "prebaci na nouveau kada se zaslon za prijavu ne pojavi (usluga)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:101
+msgid "fall back to nouveau after the display manager failed (OnFailure)"
+msgstr "prebaci na nouveau nakon neuspjeha upravitelja zaslona (OnFailure)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "no"
+msgstr "ne"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "yes"
+msgstr "da"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:312
+msgid "boot display"
+msgstr "zaslon pri pokretanju"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:322
+msgid "no driver"
+msgstr "nema upravljačkog programa"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:330
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:867
+msgid "Graphics"
+msgstr "Grafika"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:332
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:870
+msgid "no display controller"
+msgstr "nema upravljača zaslona"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Kernels"
+msgstr "Jezgre"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+msgid "none"
+msgstr "nema"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:337
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:876
+msgid "Virtual machine"
+msgstr "Virtualno računalo"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:340
+msgid "open kernel module"
+msgstr "otvoreni modul jezgre"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:342
+msgid "proprietary kernel module"
+msgstr "vlasnički modul jezgre"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:346
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:906
+msgid "NVIDIA driver"
+msgstr "NVIDIA upravljački program"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:350
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:873
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:901
+msgid "Hybrid"
+msgstr "Hibridno"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "Install"
+msgstr "Instalirati"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "nothing"
+msgstr "ništa"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:356
+msgid "Not in the repositories"
+msgstr "Nije u repozitorijima"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:415
+msgid "Reading the offline repository failed."
+msgstr "Čitanje izvanmrežnog repozitorija nije uspjelo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:434
+#, python-brace-format
+msgid "NVIDIA driver packages missing from the repositories: {}"
+msgstr ""
+"Paketi NVIDIA upravljačkog programa koji nedostaju u repozitorijima: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:447
+msgid "Downloading the drivers failed."
+msgstr "Preuzimanje upravljačkih programa nije uspjelo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:454
+#, python-brace-format
+msgid "Replacing: {}"
+msgstr "Zamjenjuje se: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:457
+msgid "Removing the installed NVIDIA driver failed."
+msgstr "Uklanjanje instaliranog NVIDIA upravljačkog programa nije uspjelo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:463
+msgid "Installing the drivers failed."
+msgstr "Instalacija upravljačkih programa nije uspjela."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:467
+msgid "Restoring the previous NVIDIA driver from the package cache"
+msgstr ""
+"Vraćanje prethodnog NVIDIA upravljačkog programa iz predmemorije paketa"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:476
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:550
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:713
+#, python-brace-format
+msgid "Wrote {}"
+msgstr "Zapisano: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:488
+#, python-brace-format
+msgid "{} failed; it loads on the next boot"
+msgstr "{} nije uspjelo; učitat će se pri sljedećem pokretanju"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:496
+#, python-brace-format
+msgid "{} could not be enabled"
+msgstr "{} nije moguće omogućiti"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:497
+msgid "Graphics drivers ready."
+msgstr "Grafički upravljački programi su spremni."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:514
+#, python-brace-format
+msgid ""
+"{}, and module_blacklist= on the kernel command line forbids nouveau: no "
+"driver for the NVIDIA GPU this boot"
+msgstr ""
+"{}, a module_blacklist= u naredbenom retku jezgre zabranjuje nouveau: pri "
+"ovom pokretanju nema upravljačkog programa za NVIDIA GPU"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:520
+#, python-brace-format
+msgid "{}: falling back to nouveau, the open source NVIDIA driver"
+msgstr "{}: prebacivanje na nouveau, NVIDIA upravljački program otvorenog koda"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:552
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:589
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:592
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:595
+#, python-brace-format
+msgid "Removed {}"
+msgstr "Uklonjeno: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:563
+msgid "The initramfs is not rebuilt here"
+msgstr "Initramfs se ovdje ne izgrađuje ponovno"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:565
+msgid "Rebuilding the initramfs failed."
+msgstr "Ponovna izgradnja initramfs nije uspjela."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:569
+#, python-brace-format
+msgid "GPU mode: {}"
+msgstr "GPU način rada: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:577
+msgid "The NVIDIA proprietary driver is not installed"
+msgstr "Vlasnički NVIDIA upravljački program nije instaliran"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:582
+msgid "Removing the NVIDIA driver failed."
+msgstr "Uklanjanje NVIDIA upravljačkog programa nije uspjelo."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:598
+msgid "NVIDIA proprietary driver removed."
+msgstr "Vlasnički NVIDIA upravljački program je uklonjen."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:606
+#, python-brace-format
+msgid "Removed {} (nouveau fallback)"
+msgstr "Uklonjeno: {} (pričuvni nouveau)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:699
+msgid ""
+"The display manager failed long after boot, not while the driver started"
+msgstr ""
+"Upravitelj zaslona nije uspio dugo nakon pokretanja, a ne dok se upravljački "
+"program pokretao"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:719
+msgid "Rebuilding the initramfs failed; the next boot may load NVIDIA again."
+msgstr ""
+"Ponovna izgradnja initramfs nije uspjela; pri sljedećem pokretanju NVIDIA se "
+"može ponovno učitati."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:726
+msgid ""
+"The NVIDIA modules could not be unloaded; restart and choose the boot entry "
+"without proprietary drivers."
+msgstr ""
+"NVIDIA moduli se ne mogu isključiti; ponovno pokrenite računalo i odaberite "
+"unos za pokretanje bez vlasničkih upravljačkih programa."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:737
+msgid ""
+"NVIDIA still loads although the fallback blocks it; not restarting again. "
+"Rebuild the initramfs (mkinitcpio -P) or remove the NVIDIA driver from a "
+"text console."
+msgstr ""
+"NVIDIA se i dalje učitava iako ga pričuvno rješenje blokira; računalo se "
+"neće ponovno pokrenuti. Ponovno izgradite initramfs (mkinitcpio -P) ili "
+"uklonite NVIDIA upravljački program iz tekstne konzole."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:745
+msgid "Rebuilding the initramfs failed; not restarting into the same state."
+msgstr ""
+"Ponovna izgradnja initramfs nije uspjela; računalo se neće ponovno pokrenuti "
+"u isto stanje."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:748
+msgid "Restarting once to start with nouveau"
+msgstr "Jednokratno ponovno pokretanje radi pokretanja s nouveau"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:831
+msgid ""
+"A kernel has no NVIDIA driver module yet; it would start without the NVIDIA "
+"driver."
+msgstr ""
+"Jedna jezgra još nema modul NVIDIA upravljačkog programa; pokrenula bi se "
+"bez NVIDIA upravljačkog programa."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:837
+#, python-brace-format
+msgid "Install it with: {}"
+msgstr "Instalirajte ga pomoću: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:850
+msgid "the integrated GPU draws the screen, NVIDIA on demand (prime-run)"
+msgstr "integrirani GPU iscrtava zaslon, NVIDIA na zahtjev (prime-run)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:851
+msgid "NVIDIA draws the screen (Xorg sessions)"
+msgstr "NVIDIA iscrtava zaslon (Xorg sesije)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:852
+msgid "NVIDIA turned off"
+msgstr "NVIDIA isključena"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:894
+msgid "GPU status"
+msgstr "Stanje GPU-a"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:899
+msgid "not set"
+msgstr "nije postavljeno"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:900
+msgid "Mode"
+msgstr "Način rada"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:902
+msgid "NVIDIA GPU"
+msgstr "NVIDIA GPU"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:909
+msgid "not installed"
+msgstr "nije instalirano"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:914
+#, python-brace-format
+msgid "Using nouveau instead of the NVIDIA driver: {}"
+msgstr "Koristi se nouveau umjesto NVIDIA upravljačkog programa: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:938
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:963
+msgid "This needs administrator rights."
+msgstr "Za ovo su potrebna administratorska prava."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:44
+msgid "list, install and remove kernels with their modules"
+msgstr "prikaži, instaliraj i ukloni jezgre s njihovim modulima"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:46
+msgid ""
+"Install and remove kernels together with the modules the running kernel uses "
+"(NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+msgstr ""
+"Instalacija i uklanjanje jezgri zajedno s modulima koje koristi pokrenuta "
+"jezgra (NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:53
+msgid "kernels in the repositories, the installed ones marked"
+msgstr "jezgre u repozitorijima, instalirane su označene"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:56
+msgid "only the installed kernels"
+msgstr "samo instalirane jezgre"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:61
+msgid "install a kernel with its headers and modules"
+msgstr "instaliraj jezgru s njezinim zaglavljima i modulima"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:63
+msgid "remove a kernel and its modules"
+msgstr "ukloni jezgru i njezine module"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:65
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:315
+msgid "KERNEL"
+msgstr "JEZGRA"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+msgid "do not ask for confirmation"
+msgstr "ne traži potvrdu"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:73
+msgid "installed kernels that left the repositories"
+msgstr "instalirane jezgre koje su nestale iz repozitorija"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:90
+msgid "'rmc' is ignored: the running kernel is never removed."
+msgstr "'rmc' se zanemaruje: pokrenuta jezgra nikada se ne uklanja."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:110
+msgid "This needs administrator rights: run it with sudo or pkexec."
+msgstr ""
+"Za ovo su potrebna administratorska prava: pokrenite pomoću sudo ili pkexec."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:113
+msgid "Administrator rights are needed; asking for the password..."
+msgstr "Potrebna su administratorska prava; traži se lozinka..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:126
+msgid "There is no terminal to confirm in: add --yes."
+msgstr "Nema terminala za potvrdu: dodajte --yes."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[Y/n]"
+msgstr "[D/n]"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[y/N]"
+msgstr "[d/N]"
+
+#. Translators: the answer meaning "yes" at a [Y/n] prompt; only its first
+#. letter is compared. English "y" is always accepted too.
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:139
+msgid "y"
+msgstr "d"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:168
+msgid "running"
+msgstr "pokrenuta"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:174
+msgid "real-time"
+msgstr "stvarno vrijeme"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:182
+msgid "left the repositories"
+msgstr "nestala iz repozitorija"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:184
+msgid "not from the repositories"
+msgstr "nije iz repozitorija"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:186
+msgid "installed without a package"
+msgstr "instalirano bez paketa"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:360
+msgid "Kernel"
+msgstr "Jezgra"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:362
+msgid "Version"
+msgstr "Verzija"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:202
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:364
+msgid "Repository"
+msgstr "Repozitorij"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Installed kernels"
+msgstr "Instalirane jezgre"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:293
+msgid "No kernels found."
+msgstr "Nije pronađena nijedna jezgra."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:296
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:366
+msgid "Running"
+msgstr "Pokrenut"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "available"
+msgstr "dostupno"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "installed"
+msgstr "instaliran"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:300
+msgid "Legend"
+msgstr "Legenda"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:304
+#, python-brace-format
+msgid "No longer in the repositories: {}"
+msgstr "Više nisu u repozitorijima: {}"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:305
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:337
+msgid "They receive no updates; remove them with:"
+msgstr "Ne primaju ažuriranja; uklonite ih pomoću:"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:314
+msgid "Install one with: "
+msgstr "Instalirajte jednu pomoću: "
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:330
+msgid "No obsolete kernels: every installed kernel is in the repositories."
+msgstr ""
+"Nema zastarjelih jezgri: svaka instalirana jezgra nalazi se u repozitorijima."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:334
+msgid "Kernels that left the repositories"
+msgstr "Jezgre koje su nestale iz repozitorija"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:352
+msgid "kernel"
+msgstr "jezgra"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:354
+msgid "headers, to build modules (DKMS)"
+msgstr "zaglavlja, za izgradnju modula (DKMS)"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:355
+msgid "module the running kernel uses"
+msgstr "modul koji koristi pokrenuta jezgra"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:368
+msgid "Packages:"
+msgstr "Paketi:"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:388
+#, python-brace-format
+msgid "Looking for {} in the repositories..."
+msgstr "Traženje paketa {} u repozitorijima..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:399
+#, python-brace-format
+msgid "{} is not a kernel in the configured repositories."
+msgstr "{} nije jezgra u konfiguriranim repozitorijima."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:402
+msgid "See the kernels you can install with: "
+msgstr "Pogledajte jezgre koje možete instalirati pomoću: "
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:409
+#, python-brace-format
+msgid "{} cannot be installed now."
+msgstr "{} trenutno nije moguće instalirati."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:419
+#, python-brace-format
+msgid "{} is already installed, with all its modules."
+msgstr "{} je već instalirano, sa svim svojim modulima."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:428
+msgid "Install a kernel"
+msgstr "Instaliraj jezgru"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:429
+msgid "Install these packages?"
+msgstr "Instalirati ove pakete?"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+msgid "Nothing was changed."
+msgstr "Ništa nije promijenjeno."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:439
+#, python-brace-format
+msgid "Installing {name} failed (pacman exit code {code})."
+msgstr "Instalacija paketa {name} nije uspjela (pacman izlazni kôd {code})."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:444
+#, python-brace-format
+msgid "{} installed."
+msgstr "{} je instalirano."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:445
+msgid "Restart to use it; the other kernels stay in the boot menu."
+msgstr ""
+"Ponovno pokrenite računalo da biste je koristili; ostale jezgre ostaju u "
+"izborniku pokretanja."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:460
+#, python-brace-format
+msgid "{} is not installed."
+msgstr "{} nije instalirano."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:464
+#, python-brace-format
+msgid "{} was installed without a package; remove its files by hand."
+msgstr "{} je instalirano bez paketa; ručno uklonite njegove datoteke."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:473
+#, python-brace-format
+msgid ""
+"{} is the running kernel. Start the computer with another kernel to remove "
+"it."
+msgstr ""
+"{} je pokrenuta jezgra. Pokrenite računalo s drugom jezgrom da biste je "
+"uklonili."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:483
+#, python-brace-format
+msgid "{} is the only installed kernel."
+msgstr "{} je jedina instalirana jezgra."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:488
+msgid "Remove a kernel"
+msgstr "Ukloni jezgru"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:489
+msgid "Remove these packages?"
+msgstr "Ukloniti ove pakete?"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:499
+#, python-brace-format
+msgid "Removing {name} failed (pacman exit code {code})."
+msgstr "Uklanjanje paketa {name} nije uspjelo (pacman izlazni kôd {code})."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:504
+#, python-brace-format
+msgid "{} removed."
+msgstr "{} je uklonjeno."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:684
+#, python-brace-format
+msgid "{} is not available in the configured repositories."
+msgstr "{} nije dostupno u konfiguriranim repozitorijima."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:711
+#, python-brace-format
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"Vaš trenutni kernel koristi upravljačke module koji još nisu dostupni za "
+"linux-big:\n"
+"{}\n"
+"\n"
+"Bez njih linux-big bi se pokrenuo bez ovih upravljačkih programa (na primjer "
+"bez NVIDIA upravljačkog programa), stoga trenutno nije ponuđen."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:724
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr ""
+"Moduli za linux-big za ovu verziju se još uvijek objavljuju. Pokušajte "
+"ponovno za nekoliko minuta."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
+msgid "pacman reported:"
+msgstr "pacman je javio:"

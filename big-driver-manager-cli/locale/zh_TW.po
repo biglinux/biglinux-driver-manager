@@ -1,0 +1,801 @@
+# Chinese translations for big-driver-manager-cli package
+# big-driver-manager-cli 套件的正體中文翻譯.
+# Copyright (C) 2026 THE big-driver-manager-cli'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the big-driver-manager-cli package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: big-driver-manager-cli\n"
+"Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
+"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"PO-Revision-Date: 2026-10-20 00:31-0300\n"
+"Last-Translator: AI-assisted translation\n"
+"Language-Team: none\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: locale/extra_msgids.py:12
+msgid "usage: "
+msgstr "用法："
+
+#: locale/extra_msgids.py:13
+msgid "positional arguments"
+msgstr "位置參數"
+
+#: locale/extra_msgids.py:14
+msgid "options"
+msgstr "選項"
+
+#: locale/extra_msgids.py:15
+msgid "show this help message and exit"
+msgstr "顯示此說明訊息並離開"
+
+#: locale/extra_msgids.py:16
+#, python-format
+msgid "the following arguments are required: %s"
+msgstr "以下引數為必要：%s"
+
+#: locale/extra_msgids.py:17
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr "無法辨識的引數：%s"
+
+#: locale/extra_msgids.py:18
+#, python-format
+msgid "invalid choice: %(value)r (choose from %(choices)s)"
+msgstr "無效的選擇：%(value)r（可選：%(choices)s）"
+
+#: locale/extra_msgids.py:19
+#, python-format
+msgid "argument %(argument_name)s: %(message)s"
+msgstr "引數 %(argument_name)s：%(message)s"
+
+#: locale/extra_msgids.py:20
+#, python-format
+msgid "not allowed with argument %s"
+msgstr "不能與引數 %s 同時使用"
+
+#: locale/extra_msgids.py:21
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr "需要引數 %s 其中之一"
+
+#: locale/extra_msgids.py:22
+msgid "expected one argument"
+msgstr "需要一個引數"
+
+#: locale/extra_msgids.py:23
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr "選項不明確：%(option)s 可能符合 %(matches)s"
+
+#: locale/extra_msgids.py:24
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s：錯誤：%(message)s\n"
+
+#: locale/extra_msgids.py:28
+msgid "Install or remove drivers, kernels and Mesa"
+msgstr "安裝或移除驅動程式、核心與 Mesa"
+
+#: locale/extra_msgids.py:29
+msgid "Authentication is required to install or remove drivers"
+msgstr "安裝或移除驅動程式需要認證"
+
+#: usr/bin/big-driver-manager-cli:53
+msgid "kernels you can install"
+msgstr "可安裝的核心"
+
+#: usr/bin/big-driver-manager-cli:54
+msgid "a kernel with its modules"
+msgstr "核心及其模組"
+
+#: usr/bin/big-driver-manager-cli:55
+msgid "a kernel and its modules"
+msgstr "核心及其模組"
+
+#: usr/bin/big-driver-manager-cli:56
+msgid "graphics cards and their drivers"
+msgstr "顯示卡及其驅動程式"
+
+#: usr/bin/big-driver-manager-cli:57
+msgid "the drivers this machine needs"
+msgstr "本機所需的驅動程式"
+
+#: usr/bin/big-driver-manager-cli:58
+msgid "which GPU draws the screen"
+msgstr "由哪個 GPU 繪製畫面"
+
+#: usr/bin/big-driver-manager-cli:65
+msgid "examples:"
+msgstr "範例："
+
+#: usr/bin/big-driver-manager-cli:82
+msgid ""
+"Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
+"install the graphics drivers, install kernels together with their modules."
+msgstr ""
+"BigLinux 與 BigCommunity 的驅動程式與核心：偵測硬體、安裝顯示卡驅動程式，並連"
+"同模組一起安裝核心。"
+
+#: usr/bin/big-driver-manager-cli:94
+msgid "show the version and exit"
+msgstr "顯示版本並離開"
+
+#: usr/bin/big-driver-manager-cli:100
+msgid "colors: auto (terminal only), always or never; also --no-color"
+msgstr "色彩：auto（僅終端機）、always 或 never；亦可用 --no-color"
+
+#: usr/bin/big-driver-manager-cli:102
+msgid "COMMAND"
+msgstr "命令"
+
+#: usr/bin/big-driver-manager-cli:108
+msgid "install packages from the repositories"
+msgstr "從軟體庫安裝套件"
+
+#: usr/bin/big-driver-manager-cli:114
+msgid "reinstall packages that are already installed"
+msgstr "重新安裝已安裝的套件"
+
+#: usr/bin/big-driver-manager-cli:119
+msgid "overwrite conflicting files (Mesa variant switch)"
+msgstr "覆寫衝突的檔案（切換 Mesa 變體）"
+
+#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+msgid "PACKAGE"
+msgstr "套件"
+
+#: usr/bin/big-driver-manager-cli:123
+msgid "remove packages"
+msgstr "移除套件"
+
+#: usr/bin/big-driver-manager-cli:128
+msgid "also remove dependencies nothing else needs"
+msgstr "同時移除不再被需要的相依套件"
+
+#: usr/bin/big-driver-manager-cli:133
+msgid "also remove packages that depend on them"
+msgstr "同時移除相依於它們的套件"
+
+#: usr/bin/big-driver-manager-cli:137
+msgid "install or remove an mhwd configuration"
+msgstr "安裝或移除 mhwd 設定"
+
+#: usr/bin/big-driver-manager-cli:142
+msgid "replace a conflicting configuration"
+msgstr "取代衝突的設定"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:38
+msgid "graphics drivers (replaces mhwd)"
+msgstr "顯示卡驅動程式（取代 mhwd）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+msgid "ACTION"
+msgstr "動作"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:42
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:86
+msgid "target system (installer)"
+msgstr "目標系統（安裝程式）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:46
+msgid "pacman configuration, e.g. the live medium's offline repository"
+msgstr "pacman 設定，例如 Live 媒體的離線軟體庫"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:52
+msgid "open source drivers only"
+msgstr "僅開放原始碼驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:57
+msgid "driver=free|nonfree from the kernel command line (live media)"
+msgstr "來自核心命令列的 driver=free|nonfree（Live 媒體）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:60
+msgid "show the hardware"
+msgstr "顯示硬體"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:61
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:66
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+msgid "JSON output"
+msgstr "JSON 輸出"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:63
+msgid "show what install would do"
+msgstr "顯示 install 將執行的動作"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:69
+msgid "install the drivers this machine needs"
+msgstr "安裝本機所需的驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:77
+msgid "instead of the recommended NVIDIA driver (must drive the GPU)"
+msgstr "取代建議的 NVIDIA 驅動程式（必須支援該 GPU）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:80
+msgid "remove the NVIDIA proprietary driver"
+msgstr "移除 NVIDIA 專有驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:83
+msgid "choose which GPU drives a hybrid machine"
+msgstr "選擇混合顯示卡機器使用哪個 GPU"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:88
+msgid "recorded GPU mode and hardware"
+msgstr "已記錄的 GPU 模式與硬體"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:91
+msgid "run by big-driver-manager-gpu.service"
+msgstr "由 big-driver-manager-gpu.service 執行"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:93
+msgid "warn about kernels without their NVIDIA module (pacman hook)"
+msgstr "警告缺少 NVIDIA 模組的核心（pacman 掛鉤）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:97
+msgid "fall back to nouveau when no login screen appears (service)"
+msgstr "登入畫面未出現時退回 nouveau（服務）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:101
+msgid "fall back to nouveau after the display manager failed (OnFailure)"
+msgstr "顯示管理員失敗後退回 nouveau（OnFailure）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "no"
+msgstr "否"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "yes"
+msgstr "是"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:312
+msgid "boot display"
+msgstr "開機顯示"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:322
+msgid "no driver"
+msgstr "無驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:330
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:867
+msgid "Graphics"
+msgstr "顯示卡"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:332
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:870
+msgid "no display controller"
+msgstr "無顯示控制器"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Kernels"
+msgstr "核心"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+msgid "none"
+msgstr "無"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:337
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:876
+msgid "Virtual machine"
+msgstr "虛擬機器"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:340
+msgid "open kernel module"
+msgstr "開放核心模組"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:342
+msgid "proprietary kernel module"
+msgstr "專有核心模組"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:346
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:906
+msgid "NVIDIA driver"
+msgstr "NVIDIA 驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:350
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:873
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:901
+msgid "Hybrid"
+msgstr "混合"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "Install"
+msgstr "安裝"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "nothing"
+msgstr "無"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:356
+msgid "Not in the repositories"
+msgstr "不在軟體庫中"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:415
+msgid "Reading the offline repository failed."
+msgstr "讀取離線軟體庫失敗。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:434
+#, python-brace-format
+msgid "NVIDIA driver packages missing from the repositories: {}"
+msgstr "軟體庫中缺少的 NVIDIA 驅動程式套件：{}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:447
+msgid "Downloading the drivers failed."
+msgstr "下載驅動程式失敗。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:454
+#, python-brace-format
+msgid "Replacing: {}"
+msgstr "正在取代：{}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:457
+msgid "Removing the installed NVIDIA driver failed."
+msgstr "移除已安裝的 NVIDIA 驅動程式失敗。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:463
+msgid "Installing the drivers failed."
+msgstr "安裝驅動程式失敗。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:467
+msgid "Restoring the previous NVIDIA driver from the package cache"
+msgstr "正在從套件快取還原先前的 NVIDIA 驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:476
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:550
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:713
+#, python-brace-format
+msgid "Wrote {}"
+msgstr "已寫入 {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:488
+#, python-brace-format
+msgid "{} failed; it loads on the next boot"
+msgstr "{} 失敗；將在下次開機時載入"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:496
+#, python-brace-format
+msgid "{} could not be enabled"
+msgstr "無法啟用 {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:497
+msgid "Graphics drivers ready."
+msgstr "顯示卡驅動程式已就緒。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:514
+#, python-brace-format
+msgid ""
+"{}, and module_blacklist= on the kernel command line forbids nouveau: no "
+"driver for the NVIDIA GPU this boot"
+msgstr ""
+"{}，且核心命令列中的 module_blacklist= 禁用了 nouveau：本次開機 NVIDIA GPU 沒"
+"有驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:520
+#, python-brace-format
+msgid "{}: falling back to nouveau, the open source NVIDIA driver"
+msgstr "{}：退回開放原始碼 NVIDIA 驅動程式 nouveau"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:552
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:589
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:592
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:595
+#, python-brace-format
+msgid "Removed {}"
+msgstr "已移除 {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:563
+msgid "The initramfs is not rebuilt here"
+msgstr "此處不重建 initramfs"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:565
+msgid "Rebuilding the initramfs failed."
+msgstr "重建 initramfs 失敗。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:569
+#, python-brace-format
+msgid "GPU mode: {}"
+msgstr "GPU 模式：{}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:577
+msgid "The NVIDIA proprietary driver is not installed"
+msgstr "未安裝 NVIDIA 專有驅動程式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:582
+msgid "Removing the NVIDIA driver failed."
+msgstr "移除 NVIDIA 驅動程式失敗。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:598
+msgid "NVIDIA proprietary driver removed."
+msgstr "已移除 NVIDIA 專有驅動程式。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:606
+#, python-brace-format
+msgid "Removed {} (nouveau fallback)"
+msgstr "已移除 {}（nouveau 備援）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:699
+msgid ""
+"The display manager failed long after boot, not while the driver started"
+msgstr "顯示管理員在開機很久之後才失敗，而非在驅動程式啟動時"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:719
+msgid "Rebuilding the initramfs failed; the next boot may load NVIDIA again."
+msgstr "重建 initramfs 失敗；下次開機可能會再次載入 NVIDIA。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:726
+msgid ""
+"The NVIDIA modules could not be unloaded; restart and choose the boot entry "
+"without proprietary drivers."
+msgstr "無法卸載 NVIDIA 模組；請重新啟動並選擇不含專有驅動程式的開機項目。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:737
+msgid ""
+"NVIDIA still loads although the fallback blocks it; not restarting again. "
+"Rebuild the initramfs (mkinitcpio -P) or remove the NVIDIA driver from a "
+"text console."
+msgstr ""
+"儘管備援設定已封鎖，NVIDIA 仍被載入；不再重新啟動。請在文字主控台中重建 "
+"initramfs（mkinitcpio -P）或移除 NVIDIA 驅動程式。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:745
+msgid "Rebuilding the initramfs failed; not restarting into the same state."
+msgstr "重建 initramfs 失敗；不會以相同狀態重新啟動。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:748
+msgid "Restarting once to start with nouveau"
+msgstr "重新啟動一次以使用 nouveau 開機"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:831
+msgid ""
+"A kernel has no NVIDIA driver module yet; it would start without the NVIDIA "
+"driver."
+msgstr ""
+"有核心尚無 NVIDIA 驅動程式模組；它將在沒有 NVIDIA 驅動程式的情況下開機。"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:837
+#, python-brace-format
+msgid "Install it with: {}"
+msgstr "安裝指令：{}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:850
+msgid "the integrated GPU draws the screen, NVIDIA on demand (prime-run)"
+msgstr "內建 GPU 繪製畫面，NVIDIA 依需求使用（prime-run）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:851
+msgid "NVIDIA draws the screen (Xorg sessions)"
+msgstr "NVIDIA 繪製畫面（Xorg 工作階段）"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:852
+msgid "NVIDIA turned off"
+msgstr "NVIDIA 已關閉"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:894
+msgid "GPU status"
+msgstr "GPU 狀態"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:899
+msgid "not set"
+msgstr "未設定"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:900
+msgid "Mode"
+msgstr "模式"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:902
+msgid "NVIDIA GPU"
+msgstr "NVIDIA GPU"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:909
+msgid "not installed"
+msgstr "未安裝"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:914
+#, python-brace-format
+msgid "Using nouveau instead of the NVIDIA driver: {}"
+msgstr "正在使用 nouveau 取代 NVIDIA 驅動程式：{}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:938
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:963
+msgid "This needs administrator rights."
+msgstr "需要管理員權限。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:44
+msgid "list, install and remove kernels with their modules"
+msgstr "列出、安裝與移除核心及其模組"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:46
+msgid ""
+"Install and remove kernels together with the modules the running kernel uses "
+"(NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+msgstr ""
+"連同執行中核心所用的模組（NVIDIA、Broadcom Wi-Fi、VirtualBox...）一起安裝與移"
+"除核心。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:53
+msgid "kernels in the repositories, the installed ones marked"
+msgstr "軟體庫中的核心，已安裝者會標示"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:56
+msgid "only the installed kernels"
+msgstr "僅已安裝的核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:61
+msgid "install a kernel with its headers and modules"
+msgstr "安裝核心及其標頭檔與模組"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:63
+msgid "remove a kernel and its modules"
+msgstr "移除核心及其模組"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:65
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:315
+msgid "KERNEL"
+msgstr "核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+msgid "do not ask for confirmation"
+msgstr "不詢問確認"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:73
+msgid "installed kernels that left the repositories"
+msgstr "已從軟體庫移除的已安裝核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:90
+msgid "'rmc' is ignored: the running kernel is never removed."
+msgstr "'rmc' 已忽略：執行中的核心永遠不會被移除。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:110
+msgid "This needs administrator rights: run it with sudo or pkexec."
+msgstr "需要管理員權限：請使用 sudo 或 pkexec 執行。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:113
+msgid "Administrator rights are needed; asking for the password..."
+msgstr "需要管理員權限；正在要求密碼..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:126
+msgid "There is no terminal to confirm in: add --yes."
+msgstr "沒有可用於確認的終端機：請加上 --yes。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[Y/n]"
+msgstr "[Y/n]"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[y/N]"
+msgstr "[y/N]"
+
+#. Translators: the answer meaning "yes" at a [Y/n] prompt; only its first
+#. letter is compared. English "y" is always accepted too.
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:139
+msgid "y"
+msgstr "y"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:168
+msgid "running"
+msgstr "執行中"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:174
+msgid "real-time"
+msgstr "即時"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:182
+msgid "left the repositories"
+msgstr "已移出軟體庫"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:184
+msgid "not from the repositories"
+msgstr "非軟體庫來源"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:186
+msgid "installed without a package"
+msgstr "非套件安裝"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:360
+msgid "Kernel"
+msgstr "核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:362
+msgid "Version"
+msgstr "版本"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:202
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:364
+msgid "Repository"
+msgstr "軟體庫"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Installed kernels"
+msgstr "已安裝的核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:293
+msgid "No kernels found."
+msgstr "找不到核心。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:296
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:366
+msgid "Running"
+msgstr "執行中"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "available"
+msgstr "可用"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "installed"
+msgstr "安裝"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:300
+msgid "Legend"
+msgstr "圖例"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:304
+#, python-brace-format
+msgid "No longer in the repositories: {}"
+msgstr "已不在軟體庫中：{}"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:305
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:337
+msgid "They receive no updates; remove them with:"
+msgstr "它們不再獲得更新；使用以下指令移除："
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:314
+msgid "Install one with: "
+msgstr "安裝指令："
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:330
+msgid "No obsolete kernels: every installed kernel is in the repositories."
+msgstr "沒有過時的核心：所有已安裝的核心都在軟體庫中。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:334
+msgid "Kernels that left the repositories"
+msgstr "已移出軟體庫的核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:352
+msgid "kernel"
+msgstr "核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:354
+msgid "headers, to build modules (DKMS)"
+msgstr "標頭檔，用於建置模組（DKMS）"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:355
+msgid "module the running kernel uses"
+msgstr "執行中核心使用的模組"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:368
+msgid "Packages:"
+msgstr "套件："
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:388
+#, python-brace-format
+msgid "Looking for {} in the repositories..."
+msgstr "正在軟體庫中尋找 {}..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:399
+#, python-brace-format
+msgid "{} is not a kernel in the configured repositories."
+msgstr "{} 不是已設定軟體庫中的核心。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:402
+msgid "See the kernels you can install with: "
+msgstr "查看可安裝的核心："
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:409
+#, python-brace-format
+msgid "{} cannot be installed now."
+msgstr "{} 目前無法安裝。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:419
+#, python-brace-format
+msgid "{} is already installed, with all its modules."
+msgstr "{} 及其所有模組均已安裝。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:428
+msgid "Install a kernel"
+msgstr "安裝核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:429
+msgid "Install these packages?"
+msgstr "安裝這些套件嗎？"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+msgid "Nothing was changed."
+msgstr "未做任何變更。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:439
+#, python-brace-format
+msgid "Installing {name} failed (pacman exit code {code})."
+msgstr "安裝 {name} 失敗（pacman 結束代碼 {code}）。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:444
+#, python-brace-format
+msgid "{} installed."
+msgstr "{} 已安裝。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:445
+msgid "Restart to use it; the other kernels stay in the boot menu."
+msgstr "重新啟動後即可使用；其他核心仍保留在開機選單中。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:460
+#, python-brace-format
+msgid "{} is not installed."
+msgstr "{} 未安裝。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:464
+#, python-brace-format
+msgid "{} was installed without a package; remove its files by hand."
+msgstr "{} 並非透過套件安裝；請手動刪除其檔案。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:473
+#, python-brace-format
+msgid ""
+"{} is the running kernel. Start the computer with another kernel to remove "
+"it."
+msgstr "{} 是執行中的核心。請以其他核心啟動電腦後再移除它。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:483
+#, python-brace-format
+msgid "{} is the only installed kernel."
+msgstr "{} 是唯一已安裝的核心。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:488
+msgid "Remove a kernel"
+msgstr "移除核心"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:489
+msgid "Remove these packages?"
+msgstr "移除這些套件嗎？"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:499
+#, python-brace-format
+msgid "Removing {name} failed (pacman exit code {code})."
+msgstr "移除 {name} 失敗（pacman 結束代碼 {code}）。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:504
+#, python-brace-format
+msgid "{} removed."
+msgstr "{} 已移除。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:684
+#, python-brace-format
+msgid "{} is not available in the configured repositories."
+msgstr "{} 在已設定的套件庫中不可用。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:711
+#, python-brace-format
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"您目前的核心使用的驅動程式模組尚未提供 linux-big 版本：\n"
+"{}\n"
+"\n"
+"缺少這些模組時，linux-big 將無法載入這些驅動程式（例如 NVIDIA 驅動程式），因"
+"此目前暫不提供安裝。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:724
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr "此版本的 linux-big 模組仍在發佈中。請幾分鐘後再試。"
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
+msgid "pacman reported:"
+msgstr "pacman 報告："

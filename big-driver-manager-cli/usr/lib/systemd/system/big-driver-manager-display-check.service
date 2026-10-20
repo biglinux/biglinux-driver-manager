@@ -1,0 +1,14 @@
+# Black screen guard: when the proprietary driver drives an NVIDIA card and no
+# login screen nor session appears, fall back to nouveau (Mesa).
+[Unit]
+Description=Big Driver Manager: fall back to nouveau if the display does not come up
+After=display-manager.service
+ConditionPathExists=/etc/systemd/system/display-manager.service
+
+[Service]
+# simple, not oneshot: waiting must not hold graphical.target back.
+Type=simple
+ExecStart=/usr/bin/big-driver-manager-cli gpu display-check
+
+[Install]
+WantedBy=graphical.target

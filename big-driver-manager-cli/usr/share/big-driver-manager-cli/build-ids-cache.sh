@@ -1,0 +1,142 @@
+#!/bin/bash
+# build-ids-cache.sh — Build the unified device-ID cache for fast udev lookups.
+#
+# Output format (tab-separated):
+# VID:DID<TAB>category<TAB>driver_name<TAB>package<TAB>description
+#
+# Called by pkgbuild.install post_install/post_upgrade hooks.
+
+set -euo pipefail
+
+readonly ASSETS_DIR="${1:-/usr/share/big-driver-manager-cli/assets}"
+readonly CACHE_DIR="/var/cache/big-driver-manager"
+readonly CACHE_FILE="${CACHE_DIR}/ids_cache.txt"
+readonly FW_CACHE_FILE="${CACHE_DIR}/firmware_cache.txt"
+
+# Make sure the cache directory exists AND is writable. On upgrades that
+# come from older packages this directory might exist with the wrong
+# permissions — `install -d` normalises it.
+install -d -m 0755 "$CACHE_DIR"
+if [[ ! -w "$CACHE_DIR" ]]; then
+    echo "big-driver-manager: cannot write to $CACHE_DIR" >&2
+    exit 1
+fi
+
+# Temporary files for atomic writes (both cleaned on exit)
+TMPFILE=$(mktemp "${CACHE_DIR}/.ids_cache.XXXXXX")
+TMPFILE_FW=""
+trap 'rm -f "$TMPFILE" "$TMPFILE_FW"' EXIT
+
+# Trim leading and trailing whitespace from a string.
+# Bash %%/## with a bracket-expression pattern only strips a single
+# whitespace char; this idiom uses pattern subtraction to strip every
+# leading and trailing whitespace character in one go.
+trim() {
+    local v="$1"
+    v="${v#"${v%%[![:space:]]*}"}"
+    v="${v%"${v##*[![:space:]]}"}"
+    printf '%s' "$v"
+}
+
+{
+# Process device-ids (pci.ids, usb.ids, sdio.ids)
+if [[ -d "${ASSETS_DIR}/device-ids" ]]; then
+    for driver_dir in "${ASSETS_DIR}/device-ids"/*/; do
+        [[ -d "$driver_dir" ]] || continue
+        drv_name=$(basename "$driver_dir")
+        drv_pkg=$(cat "${driver_dir}/pkg" 2>/dev/null || echo "$drv_name")
+        drv_pkg=$(trim "$drv_pkg")
+        drv_desc=$(cat "${driver_dir}/description" 2>/dev/null || echo "$drv_name")
+        drv_desc=$(trim "$drv_desc")
+
+        for ids_file in "${driver_dir}"/*.ids; do
+            [[ -f "$ids_file" ]] || continue
+            fname=$(basename "$ids_file")
+            # Skip vendor-only files
+            [[ "$fname" == "usb_vendors.ids" ]] && continue
+
+            while IFS= read -r line; do
+                line="${line%%#*}"          # strip comments
+                line="${line// /}"          # strip spaces
+                [[ -z "$line" ]] && continue
+                [[ "$line" == *:* ]] || continue
+                printf '%s\t%s\t%s\t%s\t%s\n' \
+                    "${line^^}" "device-ids" "$drv_name" "$drv_pkg" "$drv_desc"
+            done < "$ids_file"
+        done
+    done
+fi
+
+# Process printers and scanners (usb.ids only, not usb_vendors.ids)
+for category in printer scanner; do
+    if [[ -d "${ASSETS_DIR}/${category}" ]]; then
+        for driver_dir in "${ASSETS_DIR}/${category}"/*/; do
+            [[ -d "$driver_dir" ]] || continue
+            drv_name=$(basename "$driver_dir")
+            drv_desc=$(cat "${driver_dir}/description" 2>/dev/null || echo "$drv_name")
+            drv_desc=$(trim "$drv_desc")
+
+            ids_file="${driver_dir}/usb.ids"
+            [[ -f "$ids_file" ]] || continue
+
+            while IFS= read -r line; do
+                line="${line%%#*}"
+                line="${line// /}"
+                [[ -z "$line" ]] && continue
+                [[ "$line" == *:* ]] || continue
+                printf '%s\t%s\t%s\t%s\t%s\n' \
+                    "${line^^}" "$category" "$drv_name" "$drv_name" "$drv_desc"
+            done < "$ids_file"
+        done
+    fi
+done
+} > "$TMPFILE"
+
+# Atomic replace
+mv -f "$TMPFILE" "$CACHE_FILE"
+chmod 644 "$CACHE_FILE"
+
+LINES=$(wc -l < "$CACHE_FILE")
+echo "Big Driver Manager: device ID cache built (${LINES} entries)"
+
+# ─── Firmware cache ───
+# Format: firmware_path<TAB>package<TAB>description
+# firmware_path is relative to /usr/lib/firmware/ (what dmesg shows)
+TMPFILE_FW=$(mktemp "${CACHE_DIR}/.fw_cache.XXXXXX")
+
+{
+if [[ -d "${ASSETS_DIR}/firmware" ]]; then
+    for fw_dir in "${ASSETS_DIR}/firmware"/*/; do
+        [[ -d "$fw_dir" ]] || continue
+        pkg=$(basename "$fw_dir")
+        fw_list="${fw_dir}/${pkg}"
+        [[ -f "$fw_list" ]] || continue
+
+        # Pipelines swallow the cat failure under pipefail (cat fails after
+        # redirecting stderr to /dev/null, tr/sed still succeed). Check the
+        # file first so the fallback actually runs when description is missing.
+        if [[ -f "${fw_dir}/description" ]]; then
+            desc=$(tr '\n' ' ' < "${fw_dir}/description" | sed 's/  */ /g;s/ *$//')
+            [[ -z "$desc" ]] && desc="$pkg"
+        else
+            desc="$pkg"
+        fi
+
+        while IFS= read -r fwpath; do
+            fwpath=$(trim "$fwpath")
+            [[ -z "$fwpath" ]] && continue
+            # Strip /usr/lib/firmware/ prefix to get the relative path
+            rel="${fwpath#/usr/lib/firmware/}"
+            # Skip non-kernel firmware (e.g. cura stuff in /usr/share/)
+            [[ "$rel" == "$fwpath" ]] && continue
+            printf '%s\t%s\t%s\n' "$rel" "$pkg" "$desc"
+        done < "$fw_list"
+    done
+fi
+} > "$TMPFILE_FW"
+
+mv -f "$TMPFILE_FW" "$FW_CACHE_FILE"
+chmod 644 "$FW_CACHE_FILE"
+
+FW_LINES=$(wc -l < "$FW_CACHE_FILE")
+echo "Big Driver Manager: firmware cache built (${FW_LINES} entries)"

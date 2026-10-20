@@ -1,53 +1,66 @@
 # Maintainer: Bruno Goncalves <bigbruno@gmail.com>
 # Maintainer: Tales A. Mendonça <talesam@gmail.com>
 
-pkgname=biglinux-driver-manager
+# One repository, two packages, each from its own directory:
+#   big-driver-manager-cli/   the command line (big-drivers) and the core
+#   biglinux-driver-manager/  the graphical interface, which imports that core
+pkgbase=biglinux-driver-manager
+pkgname=(big-driver-manager-cli biglinux-driver-manager)
 pkgdesc="Application to manage kernel and mesa drivers for BigLinux"
-# Uncomment and edit the following lines as needed
-depends=(
-  'big-driver-manager-cli'
-  'python>=3.10'
-  'python-gobject'
-  'gtk4'
-  'libadwaita'
-  'polkit'
-  'hicolor-icon-theme'
-  'avahi'
-  'nss-mdns'
-)
-#conflicts=('')
-#provides=('')
-#replaces=('')
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
 epoch=1
 arch=('any')
 license=('MIT')
-url="https://github.com/biglinux/${pkgname}"
+url="https://github.com/biglinux/${pkgbase}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 
-# Automatically detect and use the correct install file
-if [ -e "${pkgname}.install" ]; then
-    install=${pkgname}.install
-elif [ -e "pkgbuild.install" ]; then
-    install=pkgbuild.install
-fi
+_install_tree() {
+    cd "${srcdir}/${pkgbase}/${pkgname}"
 
-package() {
-    cd "${srcdir}/${pkgname}"
+    # The directory mirrors the final install prefix (usr/...)
+    cp -a usr "${pkgdir}/"
 
-    # Install tree directly: the repo layout already mirrors the final
-    # install prefix (usr/...), so a single cp -a is enough.
-    if [ -d usr ]; then
-        cp -a usr "${pkgdir}/"
-    fi
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}
 
-    # Install license and documentation if present
-    if [ -f LICENSE ]; then
-        install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-    fi
-    if [ -f README.md ]; then
-        install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-    fi
+package_big-driver-manager-cli() {
+    pkgdesc="Command line and core of Big Driver Manager: detects hardware and installs drivers, kernels and Mesa"
+    license=('GPL-3.0-or-later')
+    depends=('python' 'pacman' 'polkit' 'pciutils' 'usbutils' 'nvidia-driver-assistant'
+             'switcheroo-control')
+    optdepends=(
+        'nvidia-prime: prime-run, render offload to the NVIDIA GPU'
+        'xorg-xrandr: NVIDIA as the primary GPU in Xorg sessions'
+        'mhwd: the old mhwd video configurations (still listed by the interface)'
+        'avahi: discover network printers and scanners'
+        'pamac-gtk: build drivers that only exist in the AUR'
+    )
+    # Graphics drivers and hybrid GPU modes moved here from mhwd-biglinux
+    # (biglinux-gpu-manager, nvidia-manager-verify.service).
+    provides=('mhwd-biglinux')
+    conflicts=('mhwd-biglinux')
+    replaces=('mhwd-biglinux')
+    install=big-driver-manager-cli.install
+
+    _install_tree
+}
+
+package_biglinux-driver-manager() {
+    depends=(
+        'big-driver-manager-cli'
+        'python>=3.10'
+        'python-gobject'
+        'gtk4'
+        'libadwaita'
+        'polkit'
+        'hicolor-icon-theme'
+        'avahi'
+        'nss-mdns'
+    )
+    install=biglinux-driver-manager.install
+
+    _install_tree
 }

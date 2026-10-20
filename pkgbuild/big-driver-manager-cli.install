@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Installation hooks for big-driver-manager-cli
+
+_build_cache() {
+    if [[ -x /usr/share/big-driver-manager-cli/build-ids-cache.sh ]]; then
+        /usr/share/big-driver-manager-cli/build-ids-cache.sh || true
+    fi
+}
+
+# big-driver-manager-gpu: before the display manager on every boot (replaces
+# nvidia-manager-verify). big-driver-manager-live: live media only, guarded by
+# its own conditions (replaces mhwd-live). big-driver-manager-display-check:
+# falls back to nouveau when no login screen appears with the NVIDIA driver.
+_units=(big-driver-manager-gpu.service big-driver-manager-live.service
+    big-driver-manager-display-check.service)
+
+post_install() {
+    _build_cache
+    systemctl enable "${_units[@]}" 2>/dev/null || true
+}
+
+# Units are enabled once, at install time (replacing mhwd-biglinux counts as
+# one): an upgrade must not re-enable what an administrator disabled.
+post_upgrade() {
+    _build_cache
+}
+
+pre_remove() {
+    systemctl disable "${_units[@]}" 2>/dev/null || true
+}
+
+post_remove() {
+    rm -rf /var/cache/big-driver-manager
+}

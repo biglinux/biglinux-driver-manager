@@ -125,8 +125,8 @@ python usr/share/big-driver-manager/main.py
 ### Building the Package
 
 ```bash
-cd pkgbuild
-makepkg -si
+cd ../pkgbuild
+makepkg -si   # builds big-driver-manager-cli and the interface
 ```
 
 ## Usage

@@ -22,6 +22,8 @@ from unittest.mock import MagicMock, patch
 
 # Source roots
 REPO_ROOT = Path(__file__).resolve().parent.parent
+# pkgbuild/ is shared with big-driver-manager-cli, one level up
+PKGBUILD_DIR = REPO_ROOT.parent / "pkgbuild"
 APP_SRC = REPO_ROOT / "usr" / "share" / "big-driver-manager"
 sys.path.insert(0, str(APP_SRC))
 
@@ -190,8 +192,11 @@ class TestPackagingMetadata(unittest.TestCase):
     """C3: licence consistency. C4: Python>=3.10 declared."""
 
     def test_pkgbuild_declares_mit_license(self):
-        text = (REPO_ROOT / "pkgbuild" / "PKGBUILD").read_text(encoding="utf-8")
-        self.assertRegex(text, r"license=\(\s*'MIT'\s*\)")
+        text = (PKGBUILD_DIR / "PKGBUILD").read_text(encoding="utf-8")
+        # The interface takes pkgbase's MIT; big-driver-manager-cli overrides it.
+        self.assertRegex(
+            text.split("package_big-driver-manager-cli")[0], r"license=\(\s*'MIT'\s*\)"
+        )
 
     def test_license_file_is_mit(self):
         text = (REPO_ROOT / "LICENSE").read_text(encoding="utf-8")
@@ -203,13 +208,13 @@ class TestPackagingMetadata(unittest.TestCase):
         self.assertNotIn("Gtk.License.GPL_3_0", window)
 
     def test_pkgbuild_python_min_version_is_310(self):
-        text = (REPO_ROOT / "pkgbuild" / "PKGBUILD").read_text(encoding="utf-8")
+        text = (PKGBUILD_DIR / "PKGBUILD").read_text(encoding="utf-8")
         self.assertIn("python>=3.10", text)
         self.assertNotIn("python>=3.6", text)
 
     def test_pkgbuild_install_hook_has_shebang(self):
         first_line = (
-            (REPO_ROOT / "pkgbuild" / "pkgbuild.install")
+            (PKGBUILD_DIR / "biglinux-driver-manager.install")
             .read_text(encoding="utf-8")
             .splitlines()[0]
         )
@@ -652,12 +657,12 @@ class TestShellScriptsValid(unittest.TestCase):
         REPO_ROOT / "usr" / "share" / "big-driver-manager" / "login-check-drivers.sh",
         REPO_ROOT / "usr" / "share" / "big-driver-manager" / "udev-notify.sh",
         REPO_ROOT / "usr" / "share" / "big-driver-manager" / "test-udev-dialog.sh",
-        REPO_ROOT / "pkgbuild" / "pkgbuild.install",
+        PKGBUILD_DIR / "biglinux-driver-manager.install",
     ]
 
     def test_bash_syntax_all_scripts(self):
         for script in self.SCRIPTS:
-            with self.subTest(script=str(script.relative_to(REPO_ROOT))):
+            with self.subTest(script=str(script.relative_to(REPO_ROOT.parent))):
                 result = subprocess.run(
                     ["bash", "-n", str(script)],
                     capture_output=True,
@@ -759,11 +764,11 @@ class TestI18NSmoke(unittest.TestCase):
 
 class TestGitignoreSanity(unittest.TestCase):
     def test_ruff_toml_not_ignored(self):
-        text = (REPO_ROOT / ".gitignore").read_text(encoding="utf-8")
+        text = (REPO_ROOT.parent / ".gitignore").read_text(encoding="utf-8")
         self.assertNotIn("\nruff.toml\n", text)
 
     def test_pycache_ignored(self):
-        text = (REPO_ROOT / ".gitignore").read_text(encoding="utf-8")
+        text = (REPO_ROOT.parent / ".gitignore").read_text(encoding="utf-8")
         self.assertIn("__pycache__/", text)
 
 

@@ -1,0 +1,815 @@
+# Danish translations for big-driver-manager-cli package.
+# Copyright (C) 2026 THE big-driver-manager-cli'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the big-driver-manager-cli package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: big-driver-manager-cli\n"
+"Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
+"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"PO-Revision-Date: 2026-10-20 00:31-0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: locale/extra_msgids.py:12
+msgid "usage: "
+msgstr "brug: "
+
+#: locale/extra_msgids.py:13
+msgid "positional arguments"
+msgstr "positionelle argumenter"
+
+#: locale/extra_msgids.py:14
+msgid "options"
+msgstr "tilvalg"
+
+#: locale/extra_msgids.py:15
+msgid "show this help message and exit"
+msgstr "vis denne hjælpetekst og afslut"
+
+#: locale/extra_msgids.py:16
+#, python-format
+msgid "the following arguments are required: %s"
+msgstr "følgende argumenter er påkrævede: %s"
+
+#: locale/extra_msgids.py:17
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr "ukendte argumenter: %s"
+
+#: locale/extra_msgids.py:18
+#, python-format
+msgid "invalid choice: %(value)r (choose from %(choices)s)"
+msgstr "ugyldigt valg: %(value)r (vælg mellem %(choices)s)"
+
+#: locale/extra_msgids.py:19
+#, python-format
+msgid "argument %(argument_name)s: %(message)s"
+msgstr "argument %(argument_name)s: %(message)s"
+
+#: locale/extra_msgids.py:20
+#, python-format
+msgid "not allowed with argument %s"
+msgstr "ikke tilladt sammen med argumentet %s"
+
+#: locale/extra_msgids.py:21
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr "et af argumenterne %s er påkrævet"
+
+#: locale/extra_msgids.py:22
+msgid "expected one argument"
+msgstr "forventede ét argument"
+
+#: locale/extra_msgids.py:23
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr "flertydigt tilvalg: %(option)s kan matche %(matches)s"
+
+#: locale/extra_msgids.py:24
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: fejl: %(message)s\n"
+
+#: locale/extra_msgids.py:28
+msgid "Install or remove drivers, kernels and Mesa"
+msgstr "Installer eller fjern drivere, kerner og Mesa"
+
+#: locale/extra_msgids.py:29
+msgid "Authentication is required to install or remove drivers"
+msgstr "Godkendelse er påkrævet for at installere eller fjerne drivere"
+
+#: usr/bin/big-driver-manager-cli:53
+msgid "kernels you can install"
+msgstr "kerner, du kan installere"
+
+#: usr/bin/big-driver-manager-cli:54
+msgid "a kernel with its modules"
+msgstr "en kerne med dens moduler"
+
+#: usr/bin/big-driver-manager-cli:55
+msgid "a kernel and its modules"
+msgstr "en kerne og dens moduler"
+
+#: usr/bin/big-driver-manager-cli:56
+msgid "graphics cards and their drivers"
+msgstr "grafikkort og deres drivere"
+
+#: usr/bin/big-driver-manager-cli:57
+msgid "the drivers this machine needs"
+msgstr "de drivere, denne maskine har brug for"
+
+#: usr/bin/big-driver-manager-cli:58
+msgid "which GPU draws the screen"
+msgstr "hvilken GPU der tegner skærmen"
+
+#: usr/bin/big-driver-manager-cli:65
+msgid "examples:"
+msgstr "eksempler:"
+
+#: usr/bin/big-driver-manager-cli:82
+msgid ""
+"Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
+"install the graphics drivers, install kernels together with their modules."
+msgstr ""
+"Drivere og kerner til BigLinux og BigCommunity: registrer hardwaren, "
+"installer grafikdriverne, installer kerner sammen med deres moduler."
+
+#: usr/bin/big-driver-manager-cli:94
+msgid "show the version and exit"
+msgstr "vis versionen og afslut"
+
+#: usr/bin/big-driver-manager-cli:100
+msgid "colors: auto (terminal only), always or never; also --no-color"
+msgstr "farver: auto (kun terminal), always eller never; også --no-color"
+
+#: usr/bin/big-driver-manager-cli:102
+msgid "COMMAND"
+msgstr "KOMMANDO"
+
+#: usr/bin/big-driver-manager-cli:108
+msgid "install packages from the repositories"
+msgstr "installer pakker fra arkiverne"
+
+#: usr/bin/big-driver-manager-cli:114
+msgid "reinstall packages that are already installed"
+msgstr "geninstaller pakker, der allerede er installeret"
+
+#: usr/bin/big-driver-manager-cli:119
+msgid "overwrite conflicting files (Mesa variant switch)"
+msgstr "overskriv modstridende filer (skift af Mesa-variant)"
+
+#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+msgid "PACKAGE"
+msgstr "PAKKE"
+
+#: usr/bin/big-driver-manager-cli:123
+msgid "remove packages"
+msgstr "fjern pakker"
+
+#: usr/bin/big-driver-manager-cli:128
+msgid "also remove dependencies nothing else needs"
+msgstr "fjern også afhængigheder, som intet andet har brug for"
+
+#: usr/bin/big-driver-manager-cli:133
+msgid "also remove packages that depend on them"
+msgstr "fjern også pakker, der afhænger af dem"
+
+#: usr/bin/big-driver-manager-cli:137
+msgid "install or remove an mhwd configuration"
+msgstr "installer eller fjern en mhwd-konfiguration"
+
+#: usr/bin/big-driver-manager-cli:142
+msgid "replace a conflicting configuration"
+msgstr "erstat en modstridende konfiguration"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:38
+msgid "graphics drivers (replaces mhwd)"
+msgstr "grafikdrivere (erstatter mhwd)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+msgid "ACTION"
+msgstr "HANDLING"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:42
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:86
+msgid "target system (installer)"
+msgstr "målsystem (installationsprogram)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:46
+msgid "pacman configuration, e.g. the live medium's offline repository"
+msgstr "pacman-konfiguration, f.eks. live-mediets offline-arkiv"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:52
+msgid "open source drivers only"
+msgstr "kun open source-drivere"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:57
+msgid "driver=free|nonfree from the kernel command line (live media)"
+msgstr "driver=free|nonfree fra kernens kommandolinje (live-medier)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:60
+msgid "show the hardware"
+msgstr "vis hardwaren"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:61
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:66
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+msgid "JSON output"
+msgstr "JSON-output"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:63
+msgid "show what install would do"
+msgstr "vis, hvad install ville gøre"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:69
+msgid "install the drivers this machine needs"
+msgstr "installer de drivere, denne maskine har brug for"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:77
+msgid "instead of the recommended NVIDIA driver (must drive the GPU)"
+msgstr "i stedet for den anbefalede NVIDIA-driver (skal kunne styre GPU'en)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:80
+msgid "remove the NVIDIA proprietary driver"
+msgstr "fjern den proprietære NVIDIA-driver"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:83
+msgid "choose which GPU drives a hybrid machine"
+msgstr "vælg, hvilken GPU der driver en hybridmaskine"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:88
+msgid "recorded GPU mode and hardware"
+msgstr "registreret GPU-tilstand og hardware"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:91
+msgid "run by big-driver-manager-gpu.service"
+msgstr "køres af big-driver-manager-gpu.service"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:93
+msgid "warn about kernels without their NVIDIA module (pacman hook)"
+msgstr "advar om kerner uden deres NVIDIA-modul (pacman-hook)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:97
+msgid "fall back to nouveau when no login screen appears (service)"
+msgstr "fald tilbage til nouveau, når der ikke vises en loginskærm (tjeneste)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:101
+msgid "fall back to nouveau after the display manager failed (OnFailure)"
+msgstr ""
+"fald tilbage til nouveau, efter at skærmhåndteringen fejlede (OnFailure)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "no"
+msgstr "nej"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:301
+msgid "yes"
+msgstr "ja"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:312
+msgid "boot display"
+msgstr "opstartsskærm"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:322
+msgid "no driver"
+msgstr "ingen driver"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:330
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:867
+msgid "Graphics"
+msgstr "Grafik"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:332
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:870
+msgid "no display controller"
+msgstr "ingen skærmcontroller"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Kernels"
+msgstr "Kerner"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:335
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:874
+msgid "none"
+msgstr "ingen"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:337
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:876
+msgid "Virtual machine"
+msgstr "Virtuel maskine"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:340
+msgid "open kernel module"
+msgstr "åbent kernemodul"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:342
+msgid "proprietary kernel module"
+msgstr "proprietært kernemodul"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:346
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:906
+msgid "NVIDIA driver"
+msgstr "NVIDIA-driver"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:350
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:873
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:901
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "Install"
+msgstr "Installer"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+msgid "nothing"
+msgstr "intet"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:356
+msgid "Not in the repositories"
+msgstr "Ikke i arkiverne"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:415
+msgid "Reading the offline repository failed."
+msgstr "Læsning af offline-arkivet mislykkedes."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:434
+#, python-brace-format
+msgid "NVIDIA driver packages missing from the repositories: {}"
+msgstr "NVIDIA-driverpakker mangler i arkiverne: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:447
+msgid "Downloading the drivers failed."
+msgstr "Download af driverne mislykkedes."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:454
+#, python-brace-format
+msgid "Replacing: {}"
+msgstr "Erstatter: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:457
+msgid "Removing the installed NVIDIA driver failed."
+msgstr "Fjernelse af den installerede NVIDIA-driver mislykkedes."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:463
+msgid "Installing the drivers failed."
+msgstr "Installation af driverne mislykkedes."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:467
+msgid "Restoring the previous NVIDIA driver from the package cache"
+msgstr "Gendanner den forrige NVIDIA-driver fra pakkecachen"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:476
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:550
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:713
+#, python-brace-format
+msgid "Wrote {}"
+msgstr "Skrev {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:488
+#, python-brace-format
+msgid "{} failed; it loads on the next boot"
+msgstr "{} mislykkedes; indlæses ved næste opstart"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:496
+#, python-brace-format
+msgid "{} could not be enabled"
+msgstr "{} kunne ikke aktiveres"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:497
+msgid "Graphics drivers ready."
+msgstr "Grafikdrivere klar."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:514
+#, python-brace-format
+msgid ""
+"{}, and module_blacklist= on the kernel command line forbids nouveau: no "
+"driver for the NVIDIA GPU this boot"
+msgstr ""
+"{}, og module_blacklist= på kernens kommandolinje forbyder nouveau: ingen "
+"driver til NVIDIA-GPU'en ved denne opstart"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:520
+#, python-brace-format
+msgid "{}: falling back to nouveau, the open source NVIDIA driver"
+msgstr "{}: falder tilbage til nouveau, open source-driveren til NVIDIA"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:552
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:589
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:592
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:595
+#, python-brace-format
+msgid "Removed {}"
+msgstr "Fjernede {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:563
+msgid "The initramfs is not rebuilt here"
+msgstr "initramfs genopbygges ikke her"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:565
+msgid "Rebuilding the initramfs failed."
+msgstr "Genopbygning af initramfs mislykkedes."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:569
+#, python-brace-format
+msgid "GPU mode: {}"
+msgstr "GPU-tilstand: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:577
+msgid "The NVIDIA proprietary driver is not installed"
+msgstr "Den proprietære NVIDIA-driver er ikke installeret"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:582
+msgid "Removing the NVIDIA driver failed."
+msgstr "Fjernelse af NVIDIA-driveren mislykkedes."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:598
+msgid "NVIDIA proprietary driver removed."
+msgstr "Proprietær NVIDIA-driver fjernet."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:606
+#, python-brace-format
+msgid "Removed {} (nouveau fallback)"
+msgstr "Fjernede {} (nouveau-reserve)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:699
+msgid ""
+"The display manager failed long after boot, not while the driver started"
+msgstr ""
+"Skærmhåndteringen fejlede længe efter opstart, ikke mens driveren startede"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:719
+msgid "Rebuilding the initramfs failed; the next boot may load NVIDIA again."
+msgstr ""
+"Genopbygning af initramfs mislykkedes; næste opstart indlæser muligvis "
+"NVIDIA igen."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:726
+msgid ""
+"The NVIDIA modules could not be unloaded; restart and choose the boot entry "
+"without proprietary drivers."
+msgstr ""
+"NVIDIA-modulerne kunne ikke fjernes fra hukommelsen; genstart og vælg "
+"opstartspunktet uden proprietære drivere."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:737
+msgid ""
+"NVIDIA still loads although the fallback blocks it; not restarting again. "
+"Rebuild the initramfs (mkinitcpio -P) or remove the NVIDIA driver from a "
+"text console."
+msgstr ""
+"NVIDIA indlæses stadig, selvom reserveløsningen blokerer det; genstarter "
+"ikke igen. Genopbyg initramfs (mkinitcpio -P), eller fjern NVIDIA-driveren "
+"fra en tekstkonsol."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:745
+msgid "Rebuilding the initramfs failed; not restarting into the same state."
+msgstr ""
+"Genopbygning af initramfs mislykkedes; genstarter ikke ind i samme tilstand."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:748
+msgid "Restarting once to start with nouveau"
+msgstr "Genstarter én gang for at starte med nouveau"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:831
+msgid ""
+"A kernel has no NVIDIA driver module yet; it would start without the NVIDIA "
+"driver."
+msgstr ""
+"En kerne har endnu intet NVIDIA-drivermodul; den ville starte uden NVIDIA-"
+"driveren."
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:837
+#, python-brace-format
+msgid "Install it with: {}"
+msgstr "Installer det med: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:850
+msgid "the integrated GPU draws the screen, NVIDIA on demand (prime-run)"
+msgstr "den integrerede GPU tegner skærmen, NVIDIA efter behov (prime-run)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:851
+msgid "NVIDIA draws the screen (Xorg sessions)"
+msgstr "NVIDIA tegner skærmen (Xorg-sessioner)"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:852
+msgid "NVIDIA turned off"
+msgstr "NVIDIA slået fra"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:894
+msgid "GPU status"
+msgstr "GPU-status"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:899
+msgid "not set"
+msgstr "ikke angivet"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:900
+msgid "Mode"
+msgstr "Tilstand"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:902
+msgid "NVIDIA GPU"
+msgstr "NVIDIA-GPU"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:909
+msgid "not installed"
+msgstr "ikke installeret"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:914
+#, python-brace-format
+msgid "Using nouveau instead of the NVIDIA driver: {}"
+msgstr "Bruger nouveau i stedet for NVIDIA-driveren: {}"
+
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:938
+#: usr/share/big-driver-manager-cli/core/gpu_cli.py:963
+msgid "This needs administrator rights."
+msgstr "Dette kræver administratorrettigheder."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:44
+msgid "list, install and remove kernels with their modules"
+msgstr "vis, installer og fjern kerner med deres moduler"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:46
+msgid ""
+"Install and remove kernels together with the modules the running kernel uses "
+"(NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+msgstr ""
+"Installer og fjern kerner sammen med de moduler, den kørende kerne bruger "
+"(NVIDIA, Broadcom Wi-Fi, VirtualBox...)."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:53
+msgid "kernels in the repositories, the installed ones marked"
+msgstr "kerner i arkiverne, de installerede markeret"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:56
+msgid "only the installed kernels"
+msgstr "kun de installerede kerner"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:61
+msgid "install a kernel with its headers and modules"
+msgstr "installer en kerne med dens headers og moduler"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:63
+msgid "remove a kernel and its modules"
+msgstr "fjern en kerne og dens moduler"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:65
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:315
+msgid "KERNEL"
+msgstr "KERNE"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+msgid "do not ask for confirmation"
+msgstr "spørg ikke om bekræftelse"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:73
+msgid "installed kernels that left the repositories"
+msgstr "installerede kerner, der ikke længere er i arkiverne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:90
+msgid "'rmc' is ignored: the running kernel is never removed."
+msgstr "'rmc' ignoreres: den kørende kerne fjernes aldrig."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:110
+msgid "This needs administrator rights: run it with sudo or pkexec."
+msgstr "Dette kræver administratorrettigheder: kør det med sudo eller pkexec."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:113
+msgid "Administrator rights are needed; asking for the password..."
+msgstr "Der kræves administratorrettigheder; beder om adgangskoden..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:126
+msgid "There is no terminal to confirm in: add --yes."
+msgstr "Der er ingen terminal at bekræfte i: tilføj --yes."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[Y/n]"
+msgstr "[J/n]"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:128
+msgid "[y/N]"
+msgstr "[j/N]"
+
+#. Translators: the answer meaning "yes" at a [Y/n] prompt; only its first
+#. letter is compared. English "y" is always accepted too.
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:139
+msgid "y"
+msgstr "j"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:168
+msgid "running"
+msgstr "kører"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:174
+msgid "real-time"
+msgstr "realtid"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:182
+msgid "left the repositories"
+msgstr "ikke længere i arkiverne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:184
+msgid "not from the repositories"
+msgstr "ikke fra arkiverne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:186
+msgid "installed without a package"
+msgstr "installeret uden en pakke"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:360
+msgid "Kernel"
+msgstr "Kerne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:201
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:362
+msgid "Version"
+msgstr "Version"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:202
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:364
+msgid "Repository"
+msgstr "Arkiv"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:288
+msgid "Installed kernels"
+msgstr "Installerede kerner"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:293
+msgid "No kernels found."
+msgstr "Ingen kerner fundet."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:296
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:366
+msgid "Running"
+msgstr "Kører"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "available"
+msgstr "tilgængelig"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:299
+msgid "installed"
+msgstr "installeret"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:300
+msgid "Legend"
+msgstr "Forklaring"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:304
+#, python-brace-format
+msgid "No longer in the repositories: {}"
+msgstr "Ikke længere i arkiverne: {}"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:305
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:337
+msgid "They receive no updates; remove them with:"
+msgstr "De modtager ingen opdateringer; fjern dem med:"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:314
+msgid "Install one with: "
+msgstr "Installer en med: "
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:330
+msgid "No obsolete kernels: every installed kernel is in the repositories."
+msgstr "Ingen forældede kerner: alle installerede kerner er i arkiverne."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:334
+msgid "Kernels that left the repositories"
+msgstr "Kerner, der ikke længere er i arkiverne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:352
+msgid "kernel"
+msgstr "kerne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:354
+msgid "headers, to build modules (DKMS)"
+msgstr "headers, til at bygge moduler (DKMS)"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:355
+msgid "module the running kernel uses"
+msgstr "modul, som den kørende kerne bruger"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:368
+msgid "Packages:"
+msgstr "Pakker:"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:388
+#, python-brace-format
+msgid "Looking for {} in the repositories..."
+msgstr "Søger efter {} i arkiverne..."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:399
+#, python-brace-format
+msgid "{} is not a kernel in the configured repositories."
+msgstr "{} er ikke en kerne i de konfigurerede arkiver."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:402
+msgid "See the kernels you can install with: "
+msgstr "Se de kerner, du kan installere, med: "
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:409
+#, python-brace-format
+msgid "{} cannot be installed now."
+msgstr "{} kan ikke installeres nu."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:419
+#, python-brace-format
+msgid "{} is already installed, with all its modules."
+msgstr "{} er allerede installeret med alle sine moduler."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:428
+msgid "Install a kernel"
+msgstr "Installer en kerne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:429
+msgid "Install these packages?"
+msgstr "Installer disse pakker?"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+msgid "Nothing was changed."
+msgstr "Intet blev ændret."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:439
+#, python-brace-format
+msgid "Installing {name} failed (pacman exit code {code})."
+msgstr "Installation af {name} mislykkedes (pacman-afslutningskode {code})."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:444
+#, python-brace-format
+msgid "{} installed."
+msgstr "{} installeret."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:445
+msgid "Restart to use it; the other kernels stay in the boot menu."
+msgstr "Genstart for at bruge den; de andre kerner forbliver i opstartsmenuen."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:460
+#, python-brace-format
+msgid "{} is not installed."
+msgstr "{} er ikke installeret."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:464
+#, python-brace-format
+msgid "{} was installed without a package; remove its files by hand."
+msgstr "{} blev installeret uden en pakke; fjern dens filer manuelt."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:473
+#, python-brace-format
+msgid ""
+"{} is the running kernel. Start the computer with another kernel to remove "
+"it."
+msgstr ""
+"{} er den kørende kerne. Start computeren med en anden kerne for at fjerne "
+"den."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:483
+#, python-brace-format
+msgid "{} is the only installed kernel."
+msgstr "{} er den eneste installerede kerne."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:488
+msgid "Remove a kernel"
+msgstr "Fjern en kerne"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:489
+msgid "Remove these packages?"
+msgstr "Fjern disse pakker?"
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:499
+#, python-brace-format
+msgid "Removing {name} failed (pacman exit code {code})."
+msgstr "Fjernelse af {name} mislykkedes (pacman-afslutningskode {code})."
+
+#: usr/share/big-driver-manager-cli/core/kernel_cli.py:504
+#, python-brace-format
+msgid "{} removed."
+msgstr "{} fjernet."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:684
+#, python-brace-format
+msgid "{} is not available in the configured repositories."
+msgstr "{} er ikke tilgængelig i de konfigurerede repositories."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:711
+#, python-brace-format
+msgid ""
+"Your current kernel uses driver modules that are not available for linux-big "
+"yet:\n"
+"{}\n"
+"\n"
+"Without them linux-big would start without these drivers (for example "
+"without the NVIDIA driver), so it is not offered for now."
+msgstr ""
+"Din nuværende kerne bruger drivermoduler, der endnu ikke er tilgængelige for "
+"linux-big:\n"
+"{}\n"
+"\n"
+"Uden dem ville linux-big starte uden disse drivere (for eksempel uden NVIDIA-"
+"driveren), så den tilbydes ikke for nu."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:724
+msgid ""
+"The linux-big modules for this version are still being published. Try again "
+"in a few minutes."
+msgstr ""
+"linux-big-modulerne til denne version bliver stadig udgivet. Prøv igen om et "
+"par minutter."
+
+#: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
+msgid "pacman reported:"
+msgstr "pacman rapporterede:"

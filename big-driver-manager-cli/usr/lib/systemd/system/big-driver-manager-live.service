@@ -1,0 +1,22 @@
+# Live media only: install this machine's drivers from the medium's offline
+# repository (replaces mhwd-live.service).
+[Unit]
+Description=Big Driver Manager: install the drivers of this machine (live session)
+ConditionPathExists=/livefs-pkgs.txt
+ConditionPathExists=/opt/mhwd/pacman-mhwd.conf
+# Media that still ship mhwd (BigLinux) install their drivers with mhwd-live.
+ConditionPathExists=!/usr/bin/mhwd
+After=livecd-tweaks.service local-fs.target
+Before=big-driver-manager-gpu.service display-manager.service systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/big-driver-manager-cli gpu install --from-cmdline --pmconfig /opt/mhwd/pacman-mhwd.conf
+# The live system boots the initramfs of the medium; rebuilding it is wasted time.
+BindReadOnlyPaths=-/usr/lib/biglinux-livecd/shims/mkinitcpio:/usr/bin/mkinitcpio
+TimeoutStartSec=5min
+TimeoutStopSec=5s
+
+[Install]
+WantedBy=multi-user.target

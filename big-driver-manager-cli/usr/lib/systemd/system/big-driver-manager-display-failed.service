@@ -1,0 +1,7 @@
+# Started by the display manager's OnFailure= (drop-ins below).
+[Unit]
+Description=Big Driver Manager: fall back to nouveau after the display manager failed
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/big-driver-manager-cli gpu display-failed
