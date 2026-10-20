@@ -105,6 +105,20 @@ kept in `/run/big-driver-manager/nvidia-fallback` and shown by `gpu status`.
 It needs nouveau to be loadable: `modprobe.blacklist=nouveau` (and modprobe.d)
 allow an explicit load, `module_blacklist=nouveau` does not.
 
+The driver can also take the card and the display still never come up (the
+compositor or the greeter fails with it). Two guards cover that, both only
+when the proprietary driver drives an NVIDIA card and at most once per boot:
+`big-driver-manager-display-check.service` waits up to 2 minutes after the
+display manager for a login screen or session in logind, and drop-ins add
+`OnFailure=big-driver-manager-display-failed.service` to GDM, SDDM and LightDM.
+Either moves the card to nouveau and restarts the display manager. On an
+installed system the next boots use nouveau too (modprobe.d blocks the NVIDIA
+modules, modules-load.d loads nouveau, the reason is in
+`/var/lib/big-driver-manager/nvidia-fallback`) until the NVIDIA driver is
+installed, switched or removed again; when the NVIDIA modules cannot be
+unloaded right away (the console holds nvidia_drm's framebuffer) the system
+restarts once. In the live session nothing persists and it never restarts.
+
 A pacman hook (`big-driver-manager-kernel.hook`) runs `gpu check` whenever a
 kernel is installed or upgraded: on machines using the NVIDIA proprietary
 driver it names the module package the new kernel still lacks (pacman cannot

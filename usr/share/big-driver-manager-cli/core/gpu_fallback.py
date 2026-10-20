@@ -78,3 +78,78 @@ def recorded(marker: Path | None = None) -> str | None:
         return marker.read_text(encoding="utf-8").strip() or None
     except OSError:
         return None
+
+
+# --------------------------------------------------------------------------
+# When the display never comes up with the NVIDIA driver
+# --------------------------------------------------------------------------
+
+# Installed systems only: the next boots go straight to nouveau. Cleared when
+# the NVIDIA driver is installed, switched or removed again.
+PERSIST_REASON = "var/lib/big-driver-manager/nvidia-fallback"
+PERSIST_MODPROBE = "etc/modprobe.d/zz-big-driver-manager-nvidia-fallback.conf"
+PERSIST_MODULES_LOAD = "etc/modules-load.d/big-driver-manager-nouveau.conf"
+_PERSIST_HEADER = (
+    "# Managed by big-driver-manager-cli: the display did not come up with the\n"
+    "# NVIDIA driver, nouveau is used instead. Installing, switching or removing\n"
+    "# the NVIDIA driver (big-driver-manager-cli gpu install/remove) clears it.\n"
+)
+PERSIST_MODPROBE_TEXT = _PERSIST_HEADER + "".join(
+    f"blacklist {m}\ninstall {m} /bin/false\n" for m in NVIDIA_MODULES
+)
+# Explicit names load despite nvidia-utils' "blacklist nouveau" (aliases only).
+PERSIST_MODULES_LOAD_TEXT = _PERSIST_HEADER + "nouveau\n"
+
+GRAPHICAL_TYPES = frozenset({"x11", "wayland", "mir"})
+
+
+def nvidia_in_use(devices: list[PciDevice]) -> bool:
+    """An NVIDIA card is driven by the proprietary driver."""
+    return any(
+        d.vendor == VENDOR_NVIDIA and d.driver == "nvidia"
+        for d in display_devices(devices)
+    )
+
+
+def graphical_session(sessions: list[dict[str, str]]) -> bool:
+    """A greeter or user session drawing on a display (logind properties)."""
+    return any(
+        s.get("Type") in GRAPHICAL_TYPES
+        and s.get("Class") in ("greeter", "user")
+        and s.get("State") in ("active", "online")
+        and s.get("Remote") != "yes"
+        for s in sessions
+    )
+
+
+def persist(root: Path, reason: str) -> list[str]:
+    """Make the next boots use nouveau. Returns the files written."""
+    written = []
+    for relative, content in (
+        (PERSIST_MODPROBE, PERSIST_MODPROBE_TEXT),
+        (PERSIST_MODULES_LOAD, PERSIST_MODULES_LOAD_TEXT),
+        (PERSIST_REASON, reason + "\n"),
+    ):
+        target = root / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(content, encoding="utf-8")
+        written.append(relative)
+    return written
+
+
+def clear_persisted(root: Path) -> list[str]:
+    """Give the NVIDIA driver its chance again. Returns the files removed."""
+    removed = []
+    for relative in (PERSIST_MODPROBE, PERSIST_MODULES_LOAD, PERSIST_REASON):
+        target = root / relative
+        if target.is_file():
+            target.unlink()
+            removed.append(relative)
+    return removed
+
+
+def persisted_reason(root: Path) -> str | None:
+    try:
+        return (root / PERSIST_REASON).read_text(encoding="utf-8").strip() or None
+    except OSError:
+        return None

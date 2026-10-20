@@ -9,8 +9,10 @@ _build_cache() {
 
 # big-driver-manager-gpu: before the display manager on every boot (replaces
 # nvidia-manager-verify). big-driver-manager-live: live media only, guarded by
-# its own conditions (replaces mhwd-live).
-_units=(big-driver-manager-gpu.service big-driver-manager-live.service)
+# its own conditions (replaces mhwd-live). big-driver-manager-display-check:
+# falls back to nouveau when no login screen appears with the NVIDIA driver.
+_units=(big-driver-manager-gpu.service big-driver-manager-live.service
+    big-driver-manager-display-check.service)
 
 post_install() {
     _build_cache

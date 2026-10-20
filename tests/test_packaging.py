@@ -26,6 +26,27 @@ class TestUnits(unittest.TestCase):
         self.assertIn("ExecStart=/usr/bin/big-driver-manager-cli gpu boot", unit)
 
 
+class TestDisplayGuardUnits(unittest.TestCase):
+    def test_guard_does_not_hold_graphical_target_back(self):
+        unit = (UNITS / "big-driver-manager-display-check.service").read_text()
+        self.assertIn("Type=simple", unit)
+        self.assertIn("After=display-manager.service", unit)
+        self.assertIn("gpu display-check", unit)
+
+    def test_every_display_manager_reports_its_failure(self):
+        for dm in ("gdm", "sddm", "lightdm"):
+            drop_in = (UNITS / f"{dm}.service.d/big-driver-manager.conf").read_text()
+            self.assertIn(
+                "OnFailure=big-driver-manager-display-failed.service", drop_in
+            )
+        failed = (UNITS / "big-driver-manager-display-failed.service").read_text()
+        self.assertIn("gpu display-failed", failed)
+
+    def test_install_hook_enables_the_guard(self):
+        hook = (ROOT / "pkgbuild/pkgbuild.install").read_text()
+        self.assertIn("big-driver-manager-display-check.service", hook)
+
+
 class TestHooks(unittest.TestCase):
     def test_kernel_hook_checks_every_kernel_install(self):
         hook = (HOOKS / "big-driver-manager-kernel.hook").read_text()

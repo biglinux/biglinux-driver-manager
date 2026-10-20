@@ -16,6 +16,7 @@ import os
 import stat
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 from core import gpu, gpu_fallback, gpu_mode
@@ -86,6 +87,14 @@ def add_parser(verbs: argparse._SubParsersAction) -> None:
     actions.add_parser("boot", help="run by big-driver-manager-gpu.service")
     actions.add_parser(
         "check", help="warn about kernels without their NVIDIA module (pacman hook)"
+    )
+    actions.add_parser(
+        "display-check",
+        help="fall back to nouveau when no login screen appears (service)",
+    )
+    actions.add_parser(
+        "display-failed",
+        help="fall back to nouveau after the display manager failed (OnFailure)",
     )
 
 
@@ -315,6 +324,8 @@ def _install(args: argparse.Namespace) -> int:
         return EXIT_FAILED
     for path in gpu.write_files(plan.files, root):
         _print(f"Wrote {path}")
+    if plan.nvidia and plan.nvidia.branch:
+        _clear_persisted_fallback(root)
     if plan.services and not _run(gpu.enable_units_command(plan.services, root)):
         _error("enabling services failed")
         return EXIT_FAILED
@@ -415,8 +426,111 @@ def _remove(args: argparse.Namespace) -> int:
     change = gpu_mode.clear_mode()
     for relative in change.removed:
         _print(f"Removed /{relative}")
-    if change.needs_initramfs and not LIVE_MARKER.exists():
+    cleared = gpu_fallback.clear_persisted(Path("/"))
+    for relative in cleared:
+        _print(f"Removed /{relative}")
+    if (change.needs_initramfs or cleared) and not LIVE_MARKER.exists():
         _run(["mkinitcpio", "-P"])
+    return EXIT_OK
+
+
+def _clear_persisted_fallback(root: Path) -> None:
+    """The NVIDIA driver was installed again: let it try at the next boot."""
+    cleared = gpu_fallback.clear_persisted(root)
+    for relative in cleared:
+        _print(f"Removed {root / relative} (nouveau fallback)")
+    if cleared and root == Path("/") and not LIVE_MARKER.exists():
+        _run(["mkinitcpio", "-P"])
+
+
+DISPLAY_TIMEOUT = 120  # seconds for a login screen or session to appear
+DISPLAY_POLL = 5
+
+
+def _logind_sessions() -> list[dict[str, str]]:
+    def run(*args: str) -> str:
+        try:
+            return subprocess.run(
+                ["loginctl", *args], capture_output=True, text=True, timeout=10
+            ).stdout
+        except (OSError, subprocess.TimeoutExpired):
+            return ""
+
+    sessions = []
+    for line in run("list-sessions", "--no-legend").splitlines():
+        if not line.split():
+            continue
+        properties = run(
+            "show-session",
+            line.split()[0],
+            "-p",
+            "Type",
+            "-p",
+            "Class",
+            "-p",
+            "State",
+            "-p",
+            "Remote",
+        )
+        sessions.append(
+            dict(item.split("=", 1) for item in properties.splitlines() if "=" in item)
+        )
+    return sessions
+
+
+def _display_check() -> int:
+    """After the display manager starts: when the proprietary driver drives an
+    NVIDIA card and no login screen nor session shows up, treat it as the
+    black screen it is."""
+    if not gpu_fallback.nvidia_in_use(gpu.scan_pci()):
+        return EXIT_OK
+    deadline = time.monotonic() + DISPLAY_TIMEOUT
+    while time.monotonic() < deadline:
+        if gpu_fallback.graphical_session(_logind_sessions()):
+            return EXIT_OK
+        time.sleep(DISPLAY_POLL)
+    return _display_failed(
+        f"no login screen or session appeared within {DISPLAY_TIMEOUT} s"
+    )
+
+
+def _restart_display_manager() -> None:
+    _run(["systemctl", "reset-failed", "display-manager.service"])
+    _run(["systemctl", "restart", "--no-block", "display-manager.service"])
+
+
+def _display_failed(cause: str = "the display manager failed") -> int:
+    """The display did not come up while the proprietary driver drove the GPU:
+    move to nouveau, once per boot. On an installed system the next boots
+    use nouveau too, until the NVIDIA driver is installed again; when the
+    NVIDIA modules cannot be unloaded now (the console holds nvidia_drm's
+    framebuffer), that takes one restart."""
+    if gpu_fallback.recorded():
+        return EXIT_OK  # already fell back this boot: never loop
+    if not gpu_fallback.nvidia_in_use(gpu.scan_pci()):
+        return EXIT_OK  # not the NVIDIA driver's doing
+    live = LIVE_MARKER.exists()
+    reason = f"{cause} with the NVIDIA driver"
+    if not _fall_back(reason):
+        return EXIT_FAILED
+    switched = not gpu_fallback.nvidia_in_use(gpu.scan_pci())
+    if not live:
+        for relative in gpu_fallback.persist(Path("/"), reason):
+            _print(f"Wrote /{relative}")
+    if switched:
+        _restart_display_manager()
+        if not live:
+            _run(["mkinitcpio", "-P"])
+        return EXIT_OK
+    if live:
+        _error(
+            "the NVIDIA modules could not be unloaded; restart and choose "
+            "the boot entry without proprietary drivers"
+        )
+        return EXIT_FAILED
+    _run(["mkinitcpio", "-P"])
+    _print("Restarting once to start with nouveau")
+    _run(["systemctl", "reboot"])
     return EXIT_OK
 
 
@@ -526,6 +640,7 @@ def run(args: argparse.Namespace) -> int:
         info = {
             "mode": gpu_mode.read_mode(),
             "nvidia_fallback": gpu_fallback.recorded(),
+            "nvidia_fallback_persisted": gpu_fallback.persisted_reason(Path("/")),
             "hybrid": gpu_mode.is_hybrid(devices),
             "nvidia": any(
                 d.vendor == gpu.VENDOR_NVIDIA for d in gpu.display_devices(devices)
@@ -540,6 +655,13 @@ def run(args: argparse.Namespace) -> int:
 
     if action == "check":
         return _check()
+    if action in ("display-check", "display-failed") and not is_root():
+        _error("must run as root")
+        return EXIT_NOT_ROOT
+    if action == "display-check":
+        return _display_check()
+    if action == "display-failed":
+        return _display_failed()
 
     refusal = _refuse_redirection(args)
     if refusal:
