@@ -20,13 +20,13 @@ sys.path.insert(
     os.path.join(os.path.dirname(__file__), "..", "usr", "share", "big-driver-manager"),
 )
 
-_ASSETS = (
-    Path(__file__).resolve().parent.parent
-    / "usr"
-    / "share"
-    / "big-driver-manager"
-    / "assets"
-)
+# The driver data moved to big-driver-manager-cli (installed, the sibling
+# clone, or $BDM_CLI_DIR); conftest put core_path on the path.
+import core_path  # noqa: E402
+
+_ASSETS = core_path.core_dir() / "assets"
+_APP_DIR = Path(__file__).resolve().parent.parent / "usr/share/big-driver-manager"
+assert (_ASSETS / "device-ids").is_dir(), _ASSETS
 
 
 def _write(path: Path, text: str) -> None:
@@ -443,7 +443,7 @@ class TestNotificationIgnoreList(unittest.TestCase):
     def _load_dialog(self):
         import importlib.util
 
-        path = _ASSETS.parent / "udev-driver-dialog.py"
+        path = _APP_DIR / "udev-driver-dialog.py"
         spec = importlib.util.spec_from_file_location("udev_driver_dialog", path)
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
