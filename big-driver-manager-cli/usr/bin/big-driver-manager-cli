@@ -28,7 +28,7 @@ for _candidate in (
 else:
     sys.exit("big-driver-manager-cli: installation directory not found")
 
-from core import gpu_cli, kernel_cli, term  # noqa: E402
+from core import gpu_cli, kernel_cli, mesa_cli, term  # noqa: E402
 from core.constants import APP_NAME, APP_VERSION  # noqa: E402
 from core.i18n import _, use_for_argparse  # noqa: E402
 from core.privileged import (  # noqa: E402
@@ -56,6 +56,7 @@ def _examples(prog: str) -> str:
         (f"{prog} gpu", _("graphics cards and their drivers")),
         (f"{prog} gpu install", _("the drivers this machine needs")),
         (f"{prog} gpu mode hybrid", _("which GPU draws the screen")),
+        (f"{prog} mesa apply tkg-stable", _("switch the Mesa variant")),
     ]
     width = max(term.width(command) for command, _text in lines)
     body = "\n".join(
@@ -103,34 +104,23 @@ def _parser(prog: str = "big-drivers") -> argparse.ArgumentParser:
 
     kernel_cli.add_parser(verbs)
     gpu_cli.add_parser(verbs)
+    mesa_cli.add_parser(verbs)
 
     install = verbs.add_parser(
         "install", help=_("install packages from the repositories")
     )
-    mode = install.add_mutually_exclusive_group()
-    mode.add_argument(
+    install.add_argument(
         "--reinstall",
         action="store_true",
         help=_("reinstall packages that are already installed"),
     )
-    mode.add_argument(
-        "--overwrite-all",
-        action="store_true",
-        help=_("overwrite conflicting files (Mesa variant switch)"),
-    )
     install.add_argument("packages", nargs="+", metavar=_("PACKAGE"))
 
     remove = verbs.add_parser("remove", help=_("remove packages"))
-    mode = remove.add_mutually_exclusive_group()
-    mode.add_argument(
+    remove.add_argument(
         "--recursive",
         action="store_true",
         help=_("also remove dependencies nothing else needs"),
-    )
-    mode.add_argument(
-        "--cascade",
-        action="store_true",
-        help=_("also remove packages that depend on them"),
     )
     remove.add_argument("packages", nargs="+", metavar=_("PACKAGE"))
 
@@ -166,7 +156,7 @@ def color_option(argv: list[str]) -> tuple[str, list[str]]:
 
 
 def _flags(args: argparse.Namespace) -> list[str]:
-    names = ("reinstall", "overwrite_all", "recursive", "cascade")
+    names = ("reinstall", "recursive")
     return [
         "--" + name.replace("_", "-") for name in names if getattr(args, name, False)
     ]
@@ -205,6 +195,8 @@ def main(argv: list[str] | None = None) -> int:
         return kernel_cli.run(args)
     if args.verb == "gpu":
         return gpu_cli.run(args)
+    if args.verb == "mesa":
+        return mesa_cli.run(args)
     try:
         command = _command(args)
     except PrivilegedRequestError as error:

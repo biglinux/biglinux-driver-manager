@@ -19,6 +19,7 @@ xgettext --language=Python --from-code=UTF-8 \
     --output="locale/$domain.pot" \
     usr/bin/big-driver-manager-cli \
     "$core/kernel_cli.py" "$core/gpu_cli.py" "$core/kernel_manager.py" \
+    "$core/mesa_cli.py" "$core/mesa_manager.py" \
     locale/extra_msgids.py
 
 for po in locale/*.po; do

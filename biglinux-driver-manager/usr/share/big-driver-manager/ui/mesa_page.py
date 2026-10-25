@@ -569,25 +569,52 @@ class MesaSection(PackageOperationMixin, BaseSection):
             return  # already active, nothing to do
         human = _MESA_HUMAN_NAMES.get(driver.get("id", ""), {})
         name = human.get("title", driver["name"])
+        driver_id = driver.get("id", driver["name"])
+
+        # The plan queries pacman: off the main loop.
+        import threading
+
+        def plan_thread() -> None:
+            plan = self.mesa_manager.plan_switch(driver_id)
+            GLib.idle_add(self._present_mesa_dialog, driver_id, name, plan)
+
+        threading.Thread(target=plan_thread, daemon=True).start()
+
+    def _present_mesa_dialog(self, driver_id: str, name: str, plan) -> bool:
+        def packages(items: list[str]) -> str:
+            return ", ".join(GLib.markup_escape_text(p) for p in items)
+
+        if not plan.allowed:
+            self._show_completion_dialog(
+                _("Change Video Driver"),
+                _("{} cannot be applied now:").format(name)
+                + "\n\n"
+                + "\n".join(plan.problems),
+                "error",
+            )
+            return False
+
+        body = _("Switch to <b>{}</b>?").format(GLib.markup_escape_text(name))
+        body += "\n\n" + _("Install: {}").format(packages(plan.install))
+        replaced = plan.replaced + plan.remove_first
+        if replaced:
+            body += "\n" + _("Replaced: {}").format(packages(replaced))
+        body += "\n\n" + _(
+            "A system reboot will be required for the change to take effect."
+        )
 
         dialog = Adw.AlertDialog()
         dialog.set_heading(_("Change Video Driver"))
         dialog.set_body_use_markup(True)
-        dialog.set_body(
-            _(
-                "Switch to <b>{}</b>?\n\n"
-                "A system reboot will be required for the change to take effect."
-            ).format(name)
-        )
+        dialog.set_body(body)
         dialog.add_response("cancel", _("Cancel"))
         dialog.add_response("apply", _("Apply"))
         dialog.set_response_appearance("apply", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
-        dialog.connect(
-            "response", self._on_mesa_confirm_response, driver.get("id", driver["name"])
-        )
+        dialog.connect("response", self._on_mesa_confirm_response, driver_id)
         dialog.present(self.get_root())
+        return False
 
     def _on_mesa_confirm_response(
         self, _dialog: Adw.AlertDialog, response: str, driver_id: str

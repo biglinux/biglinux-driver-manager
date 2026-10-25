@@ -57,17 +57,8 @@ class TestExecution(unittest.TestCase):
     def test_each_mode(self):
         cases = {
             ("install", "--reinstall", "x"): ["-S", "--noconfirm", "x"],
-            ("install", "--overwrite-all", "mesa"): [
-                "-S",
-                "--noconfirm",
-                "--needed",
-                "--overwrite",
-                "*",
-                "mesa",
-            ],
             ("remove", "x"): ["-R", "--noconfirm", "x"],
             ("remove", "--recursive", "x"): ["-Rns", "--noconfirm", "x"],
-            ("remove", "--cascade", "x"): ["-Rnc", "--noconfirm", "x"],
         }
         for argv, expected in cases.items():
             with self.subTest(argv=argv):
@@ -96,10 +87,14 @@ class TestExecution(unittest.TestCase):
             self.assertEqual(cli.main(["remove", "x"]), cli.EXIT_NOT_ROOT)
         execve.assert_not_called()
 
-    def test_conflicting_modes_are_a_usage_error(self):
-        with self.assertRaises(SystemExit) as raised:
-            cli.main(["remove", "--recursive", "--cascade", "x"])
-        self.assertEqual(raised.exception.code, 2)
+    def test_cascade_and_overwrite_are_gone(self):
+        for argv in (
+            ["remove", "--cascade", "mesa"],
+            ["install", "--overwrite-all", "mesa"],
+        ):
+            with self.subTest(argv=argv), self.assertRaises(SystemExit) as raised:
+                cli.main(argv)
+            self.assertEqual(raised.exception.code, 2)
 
 
 class TestAsProcess(unittest.TestCase):

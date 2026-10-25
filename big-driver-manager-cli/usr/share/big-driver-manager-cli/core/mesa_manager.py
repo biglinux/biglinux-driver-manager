@@ -6,11 +6,20 @@ Big Driver Manager - Mesa Manager
 
 This module provides functionality for managing Mesa drivers
 including listing, installing, and switching between different versions.
+
+Switching variants never removes a package the desktop depends on: the new
+variant is installed in a single pacman transaction that replaces the old
+one (``--ask 4`` answers yes to removing the packages it conflicts with), so
+everything that needs ``mesa`` is satisfied by the new package's provides.
+pacman refuses the whole transaction, changing nothing, when it would leave
+a dependency unsatisfied. Never use ``-Rc``/``--cascade`` here: removing
+``mesa`` in cascade removes the whole desktop with it.
 """
 
 import json
+import re
 import subprocess
-import threading
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
@@ -22,13 +31,10 @@ from core.i18n import _
 
 _logger = get_logger("MesaManager")
 
+# pacman's --ask bit for "X and Y are in conflict. Remove Y?": answer yes.
+ASK_REMOVE_CONFLICTS = "4"
 
-# Phase weights for progress reporting when applying a driver.
-_PHASE_CHECK = 0.1
-_PHASE_RESOLVE = 0.2
-_PHASE_REMOVE_CONFLICTS = 0.35
-_PHASE_INSTALL = 0.5
-_PHASE_DONE = 1.0
+_VERSION_RE = re.compile(r"[<>=].*$")
 
 
 def _load_mesa_drivers() -> list[dict]:
@@ -50,6 +56,179 @@ def _load_mesa_drivers() -> list[dict]:
 
 
 MESA_DRIVERS: list[dict] = _load_mesa_drivers()
+
+
+def _is_lib32(package: str) -> bool:
+    return package.startswith("lib32-")
+
+
+def _bare_name(dependency: str) -> str:
+    """``mesa=26.0-1`` -> ``mesa``: provides and conflicts carry versions."""
+    return _VERSION_RE.sub("", dependency).strip()
+
+
+def parse_pacman_info(output: str) -> dict[str, dict[str, list[str]]]:
+    """Fields of ``pacman -Qi``/``-Si`` output (LANG=C), per package name.
+
+    Only list fields are kept (``Provides``, ``Conflicts With``,
+    ``Required By``...), split on whitespace; "None" is an empty list.
+    A package listed by several repositories keeps its first block, the
+    one pacman installs.
+    """
+    packages: dict[str, dict[str, list[str]]] = {}
+    current: dict[str, list[str]] | None = None
+    key = ""
+    for line in output.splitlines():
+        if not line.strip():
+            current, key = None, ""
+            continue
+        if line[0].isspace():  # a wrapped value continues the last field
+            if current is not None and key:
+                current[key].extend(line.split())
+            continue
+        name, sep, value = line.partition(":")
+        if not sep:
+            continue
+        key = name.strip()
+        value = value.strip()
+        if key == "Name":
+            if value in packages:
+                current, key = None, ""  # second repository: keep the first
+                continue
+            current = packages.setdefault(value, {})
+            continue
+        if current is not None:
+            current[key] = [] if value == "None" else value.split()
+    return packages
+
+
+@dataclass
+class MesaSwitchPlan:
+    """What switching to a Mesa variant does, computed before anything runs.
+
+    ``install``: the variant's packages, installed in one transaction.
+    ``replaced``: installed packages that transaction replaces (the new
+        packages conflict with them, so pacman removes them itself, and
+        their provides keep every dependent satisfied).
+    ``remove_first``: installed packages of the old variant the new one does
+        not declare a conflict with but cannot live with (same files, or a
+        dependency on the old ``mesa``). They are removed, without their
+        dependency checks, right before the transaction, and put back if it
+        fails.
+    The plan is refused when a package that stays installed would lose a
+    dependency (by name or provides) the new variant does not provide.
+    ``problems``: why the switch cannot be done; nothing runs when set.
+    """
+
+    driver_id: str
+    name: str
+    install: list[str] = field(default_factory=list)
+    replaced: list[str] = field(default_factory=list)
+    remove_first: list[str] = field(default_factory=list)
+    skipped: list[str] = field(default_factory=list)
+    problems: list[str] = field(default_factory=list)
+
+    @property
+    def allowed(self) -> bool:
+        return not self.problems and bool(self.install)
+
+    def to_dict(self) -> dict:
+        return {
+            "driver": self.driver_id,
+            "name": self.name,
+            "allowed": self.allowed,
+            "install": self.install,
+            "replaced": self.replaced,
+            "remove_first": self.remove_first,
+            "skipped": self.skipped,
+            "problems": self.problems,
+        }
+
+
+def plan_mesa_switch(
+    driver: dict,
+    installed: set[str],
+    available: set[str],
+    target_info: dict[str, dict[str, list[str]]],
+    installed_info: dict[str, dict[str, list[str]]],
+) -> MesaSwitchPlan:
+    """Pure planning step of a Mesa variant switch (see ``MesaSwitchPlan``).
+
+    Args:
+        driver: entry of ``mesa_drivers.json``.
+        installed: names of the installed packages (``pacman -Qq``).
+        available: the driver's packages found in the repositories.
+        target_info: ``pacman -Si`` fields of the available packages.
+        installed_info: ``pacman -Qi`` fields of the installed packages.
+    """
+    plan = MesaSwitchPlan(
+        driver_id=driver.get("id", ""), name=driver.get("name", driver.get("id", ""))
+    )
+    conflicts = [
+        p for p in dict.fromkeys(driver.get("conflicts") or []) if p in installed
+    ]
+    has_lib32 = any(_is_lib32(p) for p in installed if p in conflicts or "mesa" in p)
+
+    for package in dict.fromkeys(driver.get("packages") or []):
+        if package in available:
+            plan.install.append(package)
+        elif _is_lib32(package) and not has_lib32:
+            # No 32-bit Mesa here (or no multilib): nothing to keep in step.
+            plan.skipped.append(package)
+        else:
+            plan.problems.append(
+                _("{} is not in the configured repositories.").format(package)
+            )
+    if not plan.install:
+        plan.problems.append(_("No packages available to install."))
+    if plan.problems:
+        return plan
+
+    # What the new packages are, by name and by what they provide.
+    new_names: set[str] = set()
+    new_conflicts: set[str] = set()
+    for package in plan.install:
+        info = target_info.get(package, {})
+        new_names.add(package)
+        new_names.update(_bare_name(p) for p in info.get("Provides", []))
+        new_conflicts.update(_bare_name(c) for c in info.get("Conflicts With", []))
+
+    for package in conflicts:
+        info = installed_info.get(package, {})
+        old_names = {package, *(_bare_name(p) for p in info.get("Provides", []))}
+        old_conflicts = {_bare_name(c) for c in info.get("Conflicts With", [])}
+        if old_names & new_conflicts or old_conflicts & new_names:
+            plan.replaced.append(package)
+        else:
+            plan.remove_first.append(package)
+
+    # Refuse what would leave a package that stays without a dependency:
+    # pacman would refuse the transaction anyway (after remove_first went
+    # without dependency checks), and the user is better told why up front.
+    leaving = set(plan.replaced) | set(plan.remove_first)
+    leaving_names: set[str] = set()
+    for package in leaving:
+        leaving_names.add(package)
+        info = installed_info.get(package, {})
+        leaving_names.update(_bare_name(p) for p in info.get("Provides", []))
+    still_there = set(new_names)
+    for package in installed - leaving:
+        still_there.add(package)
+        info = installed_info.get(package, {})
+        still_there.update(_bare_name(p) for p in info.get("Provides", []))
+    broken: dict[str, list[str]] = {}
+    for package in sorted(installed - leaving):
+        for dependency in installed_info.get(package, {}).get("Depends On", []):
+            name = _bare_name(dependency)
+            if name in leaving_names and name not in still_there:
+                broken.setdefault(name, []).append(package)
+    for name, users in broken.items():
+        plan.problems.append(
+            _("{package} is needed by {users}, which would stop working.").format(
+                package=name, users=", ".join(users)
+            )
+        )
+    return plan
 
 
 class MesaManager(BaseManager):
@@ -113,6 +292,29 @@ class MesaManager(BaseManager):
 
         return "stable"
 
+    def find_driver(self, driver_id: str) -> dict | None:
+        """The ``mesa_drivers.json`` entry with this id."""
+        return next((d for d in self.drivers if d.get("id") == driver_id), None)
+
+    def plan_switch(self, driver_id: str) -> MesaSwitchPlan:
+        """Plan switching to *driver_id*; read-only, needs no root."""
+        driver = self.find_driver(driver_id)
+        if driver is None:
+            plan = MesaSwitchPlan(driver_id=driver_id, name=driver_id)
+            plan.problems.append(_("Driver not found: {}").format(driver_id))
+            return plan
+        # Every installed package: what stays must keep its dependencies.
+        installed_info = self._package_info(["-Qi"])
+        targets = list(dict.fromkeys(driver.get("packages") or []))
+        available = self._packages_available(targets)
+        return plan_mesa_switch(
+            driver,
+            set(installed_info),
+            available,
+            self._package_info(["-Si", *[p for p in targets if p in available]]),
+            installed_info,
+        )
+
     def apply_driver(
         self,
         driver_id: str,
@@ -121,7 +323,11 @@ class MesaManager(BaseManager):
         complete_callback: Callable | None = None,
     ) -> None:
         """
-        Apply a Mesa driver configuration.
+        Switch to a Mesa variant.
+
+        The whole switch (download, replace, roll back on failure) runs as
+        root in ``big-driver-manager-cli mesa apply``: one password prompt,
+        and no half-done state left by a second prompt the user cancels.
 
         Args:
             driver_id: ID of the driver to apply.
@@ -129,242 +335,36 @@ class MesaManager(BaseManager):
             output_callback: Callback function for command output.
             complete_callback: Callback function for completion notification.
         """
-        # Find the driver by ID
-        selected_driver = None
-        for driver in self.drivers:
-            if driver["id"] == driver_id:
-                selected_driver = driver
-                break
-
-        if not selected_driver:
+        driver = self.find_driver(driver_id)
+        if driver is None:
             self._logger.error(f"Driver not found: {driver_id}")
             self._output(output_callback, _("Driver not found: {}").format(driver_id))
             if complete_callback:
                 complete_callback(False)
             return
 
-        self._logger.info(f"Applying Mesa driver: {selected_driver['name']}")
-
-        # Start thread for applying driver
-        threading.Thread(
-            target=self._apply_driver_thread,
-            args=(
-                selected_driver,
-                progress_callback,
-                output_callback,
-                complete_callback,
-            ),
-            daemon=True,
-        ).start()
-
-    def _apply_driver_thread(
-        self,
-        driver: dict,
-        progress_callback: Callable | None,
-        output_callback: Callable | None,
-        complete_callback: Callable | None,
-    ) -> None:
-        """
-        Thread function for applying a driver.
-
-        Strategy (safe, atomic-ish):
-          1. Resolve installed conflicts and available target packages.
-          2. Remove conflicting packages with ``pacman -Rnc --noconfirm``
-             (respects dependencies; recursively removes unneeded deps).
-          3. Install the new Mesa variant with ``pacman -S --noconfirm
-             --needed --overwrite '*'`` to handle file conflicts with the
-             old variant that may have been carried over.
-
-        Both pacman calls go through the standard ``run_pacman_command``
-        path so they populate ``self._current_process`` and honour the
-        user cancel button.
-
-        Args:
-            driver: The driver configuration to apply.
-            progress_callback: Callback function for progress updates.
-            output_callback: Callback function for command output.
-            complete_callback: Callback function for completion notification.
-        """
-        self._cancelled = False
-        name = driver.get("name", driver.get("id", "mesa"))
-        self._progress(
-            progress_callback, _PHASE_CHECK, _("Applying {} driver...").format(name)
-        )
-        self._output(
+        self._logger.info(f"Applying Mesa driver: {driver['name']}")
+        self.run_cli_command(
+            ["mesa", "apply", driver_id, "--confirmed"],
+            progress_callback,
             output_callback,
-            _("Starting {} driver installation...").format(name),
+            complete_callback,
+            _("Installing {} driver").format(driver.get("name", driver_id)),
         )
 
-        try:
-            plan = self._plan_driver_apply(driver, output_callback, progress_callback)
-        except Exception as exc:
-            self._logger.error("Error planning driver apply: %s", exc)
-            self._progress(progress_callback, 0.0, _("Error: {}").format(str(exc)))
-            self._output(output_callback, _("❌ Error: {}").format(str(exc)))
-            if complete_callback:
-                complete_callback(False)
-            return
-
-        if plan is None:
-            if complete_callback:
-                complete_callback(False)
-            return
-
-        packages_to_install, installed_conflicts = plan
-
-        # Step A: remove conflicts (if any), then install. Either step can
-        # be cancelled by the user; we short-circuit on failure.
-        def _after_remove(success: bool) -> None:
-            if self._cancelled or not success:
-                self._progress(
-                    progress_callback,
-                    0.0,
-                    _("Failed to remove conflicting packages."),
-                )
-                if complete_callback:
-                    complete_callback(False)
-                return
-            self._install_driver_packages(
-                name,
-                packages_to_install,
-                progress_callback,
-                output_callback,
-                complete_callback,
-            )
-
-        if installed_conflicts:
-            self._output(
-                output_callback,
-                _("Removing conflicts: {}").format(", ".join(installed_conflicts)),
-            )
-            self._progress(
-                progress_callback,
-                _PHASE_REMOVE_CONFLICTS,
-                _("Removing conflicting packages..."),
-            )
-            # -Rnc: recursively remove unneeded deps, skip config backups.
-            # This is safer than -Rdd which forces through dependency
-            # violations and can corrupt the system.
-            self.run_pacman_command(
-                args=["-Rnc", "--noconfirm", *installed_conflicts],
-                progress_callback=progress_callback,
-                output_callback=output_callback,
-                complete_callback=_after_remove,
-                operation_name=_("Removing conflicting packages"),
-            )
-        else:
-            self._install_driver_packages(
-                name,
-                packages_to_install,
-                progress_callback,
-                output_callback,
-                complete_callback,
-            )
-
-    def _plan_driver_apply(
-        self,
-        driver: dict,
-        output_callback: Callable | None,
-        progress_callback: Callable | None,
-    ) -> tuple[list[str], list[str]] | None:
-        """Compute the (install, remove) plan for applying a Mesa variant.
-
-        Returns ``None`` (and notifies the UI) when there is nothing to
-        install, which is treated as a failure.
-        """
-        self._progress(
-            progress_callback,
-            _PHASE_RESOLVE,
-            _("Checking for conflicting packages..."),
+    def _package_info(self, args: list[str]) -> dict[str, dict[str, list[str]]]:
+        """``pacman -Qi``/``-Si`` fields: of the packages in *args*, or of
+        every installed package for a bare ``-Qi``."""
+        if args == ["-Si"]:
+            return {}
+        result = subprocess.run(
+            ["pacman", *args],
+            capture_output=True,
+            text=True,
+            check=False,
+            env=subprocess_env(),
         )
-        installed_conflicts = [
-            pkg
-            for pkg in driver.get("conflicts") or []
-            if self._is_real_package_installed(pkg)
-        ]
-
-        self._progress(
-            progress_callback,
-            _PHASE_RESOLVE + 0.05,
-            _("Checking {} packages...").format(driver.get("name", "")),
-        )
-        # Batch availability check for target packages.
-        target = list(driver.get("packages") or [])
-        if not target:
-            self._output(output_callback, _("❌ No packages available to install."))
-            return None
-        available_set = self._packages_available(target)
-        packages_to_install = [p for p in target if p in available_set]
-        for skipped in (p for p in target if p not in available_set):
-            self._output(
-                output_callback,
-                _("⚠️ Package {} not available, skipping...").format(skipped),
-            )
-
-        if not packages_to_install:
-            self._output(output_callback, _("❌ No packages available to install."))
-            return None
-
-        return packages_to_install, installed_conflicts
-
-    def _install_driver_packages(
-        self,
-        driver_name: str,
-        packages: list[str],
-        progress_callback: Callable | None,
-        output_callback: Callable | None,
-        complete_callback: Callable | None,
-    ) -> None:
-        """Install the packages for a Mesa variant through the safe path."""
-        if self._cancelled:
-            if complete_callback:
-                complete_callback(False)
-            return
-
-        self._output(
-            output_callback,
-            _("Installing: {}").format(", ".join(packages)),
-        )
-        self._progress(
-            progress_callback,
-            _PHASE_INSTALL,
-            _("Installing {} driver...").format(driver_name),
-        )
-
-        # --needed avoids reinstalls, --overwrite '*' handles file-level
-        # conflicts that can remain from the previous variant even after
-        # package removal (some Mesa builds ship the same file paths with
-        # different ownership). We deliberately do NOT pass --ask 4.
-        args = [
-            "-S",
-            "--noconfirm",
-            "--needed",
-            "--overwrite",
-            "*",
-            *packages,
-        ]
-
-        def _after_install(success: bool) -> None:
-            if success and not self._cancelled:
-                self._progress(
-                    progress_callback,
-                    _PHASE_DONE,
-                    _("Driver applied successfully!"),
-                )
-                self._output(
-                    output_callback,
-                    _("✅ {} driver applied successfully!").format(driver_name),
-                )
-            if complete_callback:
-                complete_callback(success and not self._cancelled)
-
-        self.run_pacman_command(
-            args=args,
-            progress_callback=progress_callback,
-            output_callback=output_callback,
-            complete_callback=_after_install,
-            operation_name=_("Installing {} driver").format(driver_name),
-        )
+        return parse_pacman_info(result.stdout)
 
     def _is_real_package_installed(self, package_name: str) -> bool:
         """

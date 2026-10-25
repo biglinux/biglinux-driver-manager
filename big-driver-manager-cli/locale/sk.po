@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager-cli\n"
 "Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
-"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"POT-Creation-Date: 2026-10-24 23:46-0300\n"
 "PO-Revision-Date: 2026-10-20 00:31-0300\n"
 "Last-Translator: AI-assisted translation\n"
 "Language-Team: none\n"
@@ -109,11 +109,15 @@ msgstr "ovládače, ktoré tento počítač potrebuje"
 msgid "which GPU draws the screen"
 msgstr "ktoré GPU vykresľuje obrazovku"
 
-#: usr/bin/big-driver-manager-cli:65
+#: usr/bin/big-driver-manager-cli:59
+msgid "switch the Mesa variant"
+msgstr "prepnúť variantu Mesa"
+
+#: usr/bin/big-driver-manager-cli:66
 msgid "examples:"
 msgstr "príklady:"
 
-#: usr/bin/big-driver-manager-cli:82
+#: usr/bin/big-driver-manager-cli:83
 msgid ""
 "Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
 "install the graphics drivers, install kernels together with their modules."
@@ -121,51 +125,43 @@ msgstr ""
 "Ovládače a jadrá pre BigLinux a BigCommunity: rozpoznanie hardvéru, "
 "inštalácia grafických ovládačov, inštalácia jadier spolu s ich modulmi."
 
-#: usr/bin/big-driver-manager-cli:94
+#: usr/bin/big-driver-manager-cli:95
 msgid "show the version and exit"
 msgstr "zobraziť verziu a skončiť"
 
-#: usr/bin/big-driver-manager-cli:100
+#: usr/bin/big-driver-manager-cli:101
 msgid "colors: auto (terminal only), always or never; also --no-color"
 msgstr "farby: auto (iba v termináli), always alebo never; aj --no-color"
 
-#: usr/bin/big-driver-manager-cli:102
+#: usr/bin/big-driver-manager-cli:103
 msgid "COMMAND"
 msgstr "PRÍKAZ"
 
-#: usr/bin/big-driver-manager-cli:108
+#: usr/bin/big-driver-manager-cli:110
 msgid "install packages from the repositories"
 msgstr "inštalovať balíky z repozitárov"
 
-#: usr/bin/big-driver-manager-cli:114
+#: usr/bin/big-driver-manager-cli:115
 msgid "reinstall packages that are already installed"
 msgstr "preinštalovať už nainštalované balíky"
 
-#: usr/bin/big-driver-manager-cli:119
-msgid "overwrite conflicting files (Mesa variant switch)"
-msgstr "prepísať konfliktné súbory (prepnutie variantu Mesa)"
-
-#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+#: usr/bin/big-driver-manager-cli:117 usr/bin/big-driver-manager-cli:125
 msgid "PACKAGE"
 msgstr "BALÍK"
 
-#: usr/bin/big-driver-manager-cli:123
+#: usr/bin/big-driver-manager-cli:119
 msgid "remove packages"
 msgstr "odstrániť balíky"
 
-#: usr/bin/big-driver-manager-cli:128
+#: usr/bin/big-driver-manager-cli:123
 msgid "also remove dependencies nothing else needs"
 msgstr "odstrániť aj závislosti, ktoré nič iné nepotrebuje"
 
-#: usr/bin/big-driver-manager-cli:133
-msgid "also remove packages that depend on them"
-msgstr "odstrániť aj balíky, ktoré od nich závisia"
-
-#: usr/bin/big-driver-manager-cli:137
+#: usr/bin/big-driver-manager-cli:127
 msgid "install or remove an mhwd configuration"
 msgstr "inštalovať alebo odstrániť konfiguráciu mhwd"
 
-#: usr/bin/big-driver-manager-cli:142
+#: usr/bin/big-driver-manager-cli:132
 msgid "replace a conflicting configuration"
 msgstr "nahradiť konfliktnú konfiguráciu"
 
@@ -175,6 +171,7 @@ msgstr "grafické ovládače (nahrádza mhwd)"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:37
 msgid "ACTION"
 msgstr "AKCIA"
 
@@ -204,6 +201,8 @@ msgstr "zobraziť hardvér"
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:40
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:44
 msgid "JSON output"
 msgstr "výstup vo formáte JSON"
 
@@ -309,6 +308,7 @@ msgid "Hybrid"
 msgstr "Hybridný"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:89
 msgid "Install"
 msgstr "Nainštalovať"
 
@@ -552,6 +552,7 @@ msgid "KERNEL"
 msgstr "JADRO"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:49
 msgid "do not ask for confirmation"
 msgstr "nepýtať sa na potvrdenie"
 
@@ -721,6 +722,8 @@ msgstr "Nainštalovať tieto balíky?"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:179
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:183
 msgid "Nothing was changed."
 msgstr "Nič sa nezmenilo."
 
@@ -813,3 +816,137 @@ msgstr ""
 #: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
 msgid "pacman reported:"
 msgstr "pacman nahlásil:"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:30
+msgid "switch between the Mesa variants (stable, tkg, amber)"
+msgstr "prepínanie medzi variantmi Mesa (stable, tkg, amber)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:32
+msgid ""
+"Switch the Mesa graphics stack between its variants. The old variant is "
+"replaced in a single transaction: nothing that depends on Mesa is removed."
+msgstr ""
+"Prepína grafický stack Mesa medzi jeho variantmi. Stará varianta sa nahradí "
+"v jedinej transakcii: nič, čo závisí od Mesa, sa neodstráni."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:39
+msgid "the variants, the one in use marked"
+msgstr "varianty, používaná je označená"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:42
+msgid "show what switching would do"
+msgstr "ukázať, čo by prepnutie urobilo"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:43
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:47
+msgid "VARIANT"
+msgstr "VARIANTA"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:46
+msgid "switch to a variant"
+msgstr "prepnúť na variantu"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:67
+msgid "Variant"
+msgstr "Varianta"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:68
+msgid "Package"
+msgstr "Balík"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:79
+msgid "in use"
+msgstr "používa sa"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:87
+#, python-brace-format
+msgid "Switch Mesa to {}"
+msgstr "Prepnúť Mesa na {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:90
+msgid "Replaced"
+msgstr "Nahradené"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:91
+msgid "Removed first, put back if the switch fails"
+msgstr "Odstránené vopred, vrátené, ak prepnutie zlyhá"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:92
+msgid "Skipped (no 32-bit Mesa installed)"
+msgstr "Preskočené (nie je nainštalovaná 32-bitová Mesa)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:128
+msgid "Downloading the packages failed. Nothing was changed."
+msgstr "Stiahnutie balíkov zlyhalo. Nič sa nezmenilo."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:138
+msgid "Removing the old packages failed. Nothing was changed."
+msgstr "Odstránenie starých balíkov zlyhalo. Nič sa nezmenilo."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:147
+#, python-brace-format
+msgid "Installing {} failed."
+msgstr "Inštalácia {} zlyhala."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:149
+msgid "Putting back the packages removed for the switch"
+msgstr "Vracanie balíkov odstránených kvôli prepnutiu"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:156
+#, python-brace-format
+msgid "Could not put back: {}. Install them again with pacman -S."
+msgstr "Nedá sa vrátiť: {}. Nainštalujte ich znova pomocou pacman -S."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:167
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:304
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:341
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "Ovládač sa nenašiel: {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:170
+msgid "See the variants with: "
+msgstr "Varianty zobrazíte príkazom: "
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:182
+msgid "Switch Mesa?"
+msgstr "Prepnúť Mesa?"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:192
+#, python-brace-format
+msgid "{} is not the Mesa in use after the switch."
+msgstr "{} po prepnutí nie je používaná Mesa."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:196
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Ovládač {} bol úspešne použitý!"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:197
+msgid "Restart the computer to use it."
+msgstr "Reštartujte počítač, aby ste ho mohli používať."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:180
+#, python-brace-format
+msgid "{} is not in the configured repositories."
+msgstr "{} nie je v nastavených repozitároch."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:183
+msgid "No packages available to install."
+msgstr "Žiadne balíky na inštaláciu."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:227
+#, python-brace-format
+msgid "{package} is needed by {users}, which would stop working."
+msgstr "{package} potrebuje {users}, ktorý by prestal fungovať."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:352
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Inštaluje sa ovládač {}"
+
+#~ msgid "overwrite conflicting files (Mesa variant switch)"
+#~ msgstr "prepísať konfliktné súbory (prepnutie variantu Mesa)"
+
+#~ msgid "also remove packages that depend on them"
+#~ msgstr "odstrániť aj balíky, ktoré od nich závisia"

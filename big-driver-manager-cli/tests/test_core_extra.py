@@ -283,82 +283,20 @@ class TestMesaManagerExtra(unittest.TestCase):
         self.assertIn("missing", outputs[0])
         self.assertEqual(completed, [False])
 
-    def test_apply_driver_thread_successfully_removes_conflicts_and_installs(self):
+    def test_apply_driver_runs_the_whole_switch_as_one_cli_request(self):
+        # One pkexec request: the switch (download, replace, roll back) runs
+        # as root in "mesa apply", never as separate remove/install steps.
         mgr = self._make_manager()
-        driver = mgr.drivers[1]
-        outputs = []
-        completed = []
-        captured_args: list[list[str]] = []
-
-        def fake_run_pacman(
-            args,
-            progress_callback=None,
-            output_callback=None,
-            complete_callback=None,
-            operation_name="",
-        ):
-            captured_args.append(list(args))
-            if complete_callback:
-                complete_callback(True)
-
+        captured = []
         with (
             patch.object(
-                mgr, "_is_real_package_installed", side_effect=lambda pkg: pkg == "mesa"
+                mgr, "run_cli_command", side_effect=lambda *a, **k: captured.append(a)
             ),
-            patch.object(mgr, "_packages_available", return_value={"mesa-tkg-stable"}),
-            patch.object(mgr, "run_pacman_command", side_effect=fake_run_pacman),
+            patch.object(mgr, "run_pacman_command") as run_pacman,
         ):
-            mgr._apply_driver_thread(
-                driver,
-                None,
-                outputs.append,
-                completed.append,
-            )
-
-        self.assertEqual(len(captured_args), 2)
-        # Step 1: remove the conflict safely with -Rnc, NOT -Rdd.
-        self.assertIn("-Rnc", captured_args[0])
-        self.assertNotIn("-Rdd", captured_args[0])
-        self.assertIn("mesa", captured_args[0])
-        # Step 2: install the target variant using --needed + --overwrite,
-        # without --ask 4.
-        self.assertIn("-S", captured_args[1])
-        self.assertIn("--needed", captured_args[1])
-        self.assertIn("--overwrite", captured_args[1])
-        self.assertNotIn("--ask", captured_args[1])
-        self.assertIn("mesa-tkg-stable", captured_args[1])
-        self.assertEqual(completed, [True])
-
-    def test_apply_driver_thread_aborts_install_if_remove_fails(self):
-        mgr = self._make_manager()
-        driver = mgr.drivers[1]
-        outputs: list[str] = []
-        completed: list[bool] = []
-        call_count = {"n": 0}
-
-        def fake_run_pacman(
-            args,
-            progress_callback=None,
-            output_callback=None,
-            complete_callback=None,
-            operation_name="",
-        ):
-            call_count["n"] += 1
-            # First call is the remove — simulate failure; second must not run.
-            if complete_callback:
-                complete_callback(False)
-
-        with (
-            patch.object(
-                mgr, "_is_real_package_installed", side_effect=lambda pkg: pkg == "mesa"
-            ),
-            patch.object(mgr, "_packages_available", return_value={"mesa-tkg-stable"}),
-            patch.object(mgr, "run_pacman_command", side_effect=fake_run_pacman),
-        ):
-            mgr._apply_driver_thread(driver, None, outputs.append, completed.append)
-
-        self.assertEqual(call_count["n"], 1)  # remove called, install aborted
-        self.assertEqual(completed, [False])
+            mgr.apply_driver("tkg-stable")
+        self.assertEqual(captured[0][0], ["mesa", "apply", "tkg-stable", "--confirmed"])
+        run_pacman.assert_not_called()
 
     def test_packages_available_parses_multiple_name_blocks(self):
         mgr = self._make_manager()

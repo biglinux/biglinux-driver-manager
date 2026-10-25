@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager-cli\n"
 "Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
-"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"POT-Creation-Date: 2026-10-24 23:46-0300\n"
 "PO-Revision-Date: 2026-10-20 00:31-0300\n"
 "Last-Translator: AI-assisted translation\n"
 "Language-Team: none\n"
@@ -109,11 +109,15 @@ msgstr "本机所需的驱动"
 msgid "which GPU draws the screen"
 msgstr "由哪个 GPU 绘制画面"
 
-#: usr/bin/big-driver-manager-cli:65
+#: usr/bin/big-driver-manager-cli:59
+msgid "switch the Mesa variant"
+msgstr "切换 Mesa 变体"
+
+#: usr/bin/big-driver-manager-cli:66
 msgid "examples:"
 msgstr "示例："
 
-#: usr/bin/big-driver-manager-cli:82
+#: usr/bin/big-driver-manager-cli:83
 msgid ""
 "Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
 "install the graphics drivers, install kernels together with their modules."
@@ -121,51 +125,43 @@ msgstr ""
 "BigLinux 和 BigCommunity 的驱动与内核：检测硬件，安装显卡驱动，连同模块一起安"
 "装内核。"
 
-#: usr/bin/big-driver-manager-cli:94
+#: usr/bin/big-driver-manager-cli:95
 msgid "show the version and exit"
 msgstr "显示版本并退出"
 
-#: usr/bin/big-driver-manager-cli:100
+#: usr/bin/big-driver-manager-cli:101
 msgid "colors: auto (terminal only), always or never; also --no-color"
 msgstr "颜色：auto（仅终端）、always 或 never；也可用 --no-color"
 
-#: usr/bin/big-driver-manager-cli:102
+#: usr/bin/big-driver-manager-cli:103
 msgid "COMMAND"
 msgstr "命令"
 
-#: usr/bin/big-driver-manager-cli:108
+#: usr/bin/big-driver-manager-cli:110
 msgid "install packages from the repositories"
 msgstr "从软件仓库安装软件包"
 
-#: usr/bin/big-driver-manager-cli:114
+#: usr/bin/big-driver-manager-cli:115
 msgid "reinstall packages that are already installed"
 msgstr "重新安装已安装的软件包"
 
-#: usr/bin/big-driver-manager-cli:119
-msgid "overwrite conflicting files (Mesa variant switch)"
-msgstr "覆盖冲突的文件（切换 Mesa 变体）"
-
-#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+#: usr/bin/big-driver-manager-cli:117 usr/bin/big-driver-manager-cli:125
 msgid "PACKAGE"
 msgstr "软件包"
 
-#: usr/bin/big-driver-manager-cli:123
+#: usr/bin/big-driver-manager-cli:119
 msgid "remove packages"
 msgstr "移除软件包"
 
-#: usr/bin/big-driver-manager-cli:128
+#: usr/bin/big-driver-manager-cli:123
 msgid "also remove dependencies nothing else needs"
 msgstr "同时移除不再被需要的依赖"
 
-#: usr/bin/big-driver-manager-cli:133
-msgid "also remove packages that depend on them"
-msgstr "同时移除依赖它们的软件包"
-
-#: usr/bin/big-driver-manager-cli:137
+#: usr/bin/big-driver-manager-cli:127
 msgid "install or remove an mhwd configuration"
 msgstr "安装或移除 mhwd 配置"
 
-#: usr/bin/big-driver-manager-cli:142
+#: usr/bin/big-driver-manager-cli:132
 msgid "replace a conflicting configuration"
 msgstr "替换冲突的配置"
 
@@ -175,6 +171,7 @@ msgstr "显卡驱动（取代 mhwd）"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:37
 msgid "ACTION"
 msgstr "操作"
 
@@ -204,6 +201,8 @@ msgstr "显示硬件"
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:40
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:44
 msgid "JSON output"
 msgstr "JSON 输出"
 
@@ -309,6 +308,7 @@ msgid "Hybrid"
 msgstr "混合"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:89
 msgid "Install"
 msgstr "安装"
 
@@ -542,6 +542,7 @@ msgid "KERNEL"
 msgstr "内核"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:49
 msgid "do not ask for confirmation"
 msgstr "不询问确认"
 
@@ -711,6 +712,8 @@ msgstr "安装这些软件包吗？"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:179
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:183
 msgid "Nothing was changed."
 msgstr "未做任何更改。"
 
@@ -798,3 +801,137 @@ msgstr "此版本的 linux-big 模块仍在发布中。请几分钟后再试。"
 #: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
 msgid "pacman reported:"
 msgstr "pacman 报告："
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:30
+msgid "switch between the Mesa variants (stable, tkg, amber)"
+msgstr "在 Mesa 变体之间切换（stable、tkg、amber）"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:32
+msgid ""
+"Switch the Mesa graphics stack between its variants. The old variant is "
+"replaced in a single transaction: nothing that depends on Mesa is removed."
+msgstr ""
+"在各变体之间切换 Mesa 图形栈。旧变体在单个事务中被替换：不会删除任何依赖 "
+"Mesa 的软件包。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:39
+msgid "the variants, the one in use marked"
+msgstr "变体列表，标记正在使用的"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:42
+msgid "show what switching would do"
+msgstr "显示切换将执行的操作"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:43
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:47
+msgid "VARIANT"
+msgstr "变体"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:46
+msgid "switch to a variant"
+msgstr "切换到某个变体"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:67
+msgid "Variant"
+msgstr "变体"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:68
+msgid "Package"
+msgstr "软件包"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:79
+msgid "in use"
+msgstr "使用中"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:87
+#, python-brace-format
+msgid "Switch Mesa to {}"
+msgstr "将 Mesa 切换为 {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:90
+msgid "Replaced"
+msgstr "被替换"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:91
+msgid "Removed first, put back if the switch fails"
+msgstr "先删除，切换失败时恢复"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:92
+msgid "Skipped (no 32-bit Mesa installed)"
+msgstr "已跳过（未安装 32 位 Mesa）"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:128
+msgid "Downloading the packages failed. Nothing was changed."
+msgstr "下载软件包失败。未做任何更改。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:138
+msgid "Removing the old packages failed. Nothing was changed."
+msgstr "删除旧软件包失败。未做任何更改。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:147
+#, python-brace-format
+msgid "Installing {} failed."
+msgstr "安装 {} 失败。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:149
+msgid "Putting back the packages removed for the switch"
+msgstr "正在恢复为切换而删除的软件包"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:156
+#, python-brace-format
+msgid "Could not put back: {}. Install them again with pacman -S."
+msgstr "无法恢复：{}。请使用 pacman -S 重新安装。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:167
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:304
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:341
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "未找到驱动：{}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:170
+msgid "See the variants with: "
+msgstr "查看变体："
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:182
+msgid "Switch Mesa?"
+msgstr "切换 Mesa？"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:192
+#, python-brace-format
+msgid "{} is not the Mesa in use after the switch."
+msgstr "切换后 {} 不是正在使用的 Mesa。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:196
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ {} 驱动已成功应用！"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:197
+msgid "Restart the computer to use it."
+msgstr "重启计算机后生效。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:180
+#, python-brace-format
+msgid "{} is not in the configured repositories."
+msgstr "{} 不在已配置的软件仓库中。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:183
+msgid "No packages available to install."
+msgstr "没有可安装的软件包。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:227
+#, python-brace-format
+msgid "{package} is needed by {users}, which would stop working."
+msgstr "{users} 需要 {package}，否则将无法工作。"
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:352
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "正在安装 {} 驱动"
+
+#~ msgid "overwrite conflicting files (Mesa variant switch)"
+#~ msgstr "覆盖冲突的文件（切换 Mesa 变体）"
+
+#~ msgid "also remove packages that depend on them"
+#~ msgstr "同时移除依赖它们的软件包"

@@ -17,13 +17,8 @@ from core.privileged import (
 MANAGER_FORMS = [
     (["-S", "--noconfirm", "--needed", "a", "b"], ["install", "--", "a", "b"]),
     (["-S", "--noconfirm", "linux-big"], ["install", "--reinstall", "--", "linux-big"]),
-    (
-        ["-S", "--noconfirm", "--needed", "--overwrite", "*", "mesa"],
-        ["install", "--overwrite-all", "--", "mesa"],
-    ),
     (["-R", "--noconfirm", "pkg"], ["remove", "--", "pkg"]),
     (["-Rns", "--noconfirm", "pkg"], ["remove", "--recursive", "--", "pkg"]),
-    (["-Rnc", "--noconfirm", "pkg"], ["remove", "--cascade", "--", "pkg"]),
 ]
 
 
@@ -42,10 +37,25 @@ class TestPacmanForms(unittest.TestCase):
                     cli_to_pacman(name, rest[:split], rest[split + 1 :]), args
                 )
 
-    def test_overwrite_form_is_not_taken_for_a_package_list(self):
-        # "-S --noconfirm --needed" is a prefix of the overwrite form.
-        verb = pacman_to_cli(["-S", "--noconfirm", "--needed", "--overwrite", "*", "x"])
-        self.assertEqual(verb[:2], ["install", "--overwrite-all"])
+    def test_cascade_removal_is_refused(self):
+        # -Rc with --noconfirm removes everything that depends on the
+        # packages: for mesa, the whole desktop.
+        for args in (
+            ["-Rnc", "--noconfirm", "mesa"],
+            ["-Rc", "--noconfirm", "mesa"],
+            ["-Rcns", "--noconfirm", "mesa"],
+        ):
+            with self.subTest(args=args), self.assertRaises(PrivilegedRequestError):
+                pacman_to_cli(args)
+        with self.assertRaises(PrivilegedRequestError):
+            cli_to_pacman("remove", ["--cascade"], ["mesa"])
+
+    def test_no_form_removes_in_cascade_or_overwrites_files(self):
+        for options in privileged._PACMAN_FORMS.values():
+            with self.subTest(options=options):
+                self.assertNotIn("--overwrite", options)
+                if options[0].startswith("-R"):
+                    self.assertNotIn("c", options[0][2:])
 
     def test_unknown_forms_are_refused(self):
         for args in (
@@ -82,7 +92,7 @@ class TestPacmanForms(unittest.TestCase):
         with self.assertRaises(PrivilegedRequestError):
             cli_to_pacman("install", ["--recursive"], ["x"])
         with self.assertRaises(PrivilegedRequestError):
-            cli_to_pacman("remove", ["--recursive", "--cascade"], ["x"])
+            cli_to_pacman("install", ["--overwrite-all"], ["x"])
 
 
 class TestMhwd(unittest.TestCase):

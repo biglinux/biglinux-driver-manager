@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager-cli\n"
 "Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
-"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"POT-Creation-Date: 2026-10-24 23:46-0300\n"
 "PO-Revision-Date: 2026-10-20 00:31-0300\n"
 "Last-Translator: AI-assisted translation\n"
 "Language-Team: none\n"
@@ -110,11 +110,15 @@ msgstr "tämän koneen tarvitsemat ajurit"
 msgid "which GPU draws the screen"
 msgstr "mikä GPU piirtää näytön"
 
-#: usr/bin/big-driver-manager-cli:65
+#: usr/bin/big-driver-manager-cli:59
+msgid "switch the Mesa variant"
+msgstr "vaihda Mesa-versio"
+
+#: usr/bin/big-driver-manager-cli:66
 msgid "examples:"
 msgstr "esimerkkejä:"
 
-#: usr/bin/big-driver-manager-cli:82
+#: usr/bin/big-driver-manager-cli:83
 msgid ""
 "Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
 "install the graphics drivers, install kernels together with their modules."
@@ -122,51 +126,43 @@ msgstr ""
 "Ajurit ja ytimet BigLinuxille ja BigCommunitylle: tunnista laitteisto, "
 "asenna näytönohjainten ajurit, asenna ytimet yhdessä niiden moduulien kanssa."
 
-#: usr/bin/big-driver-manager-cli:94
+#: usr/bin/big-driver-manager-cli:95
 msgid "show the version and exit"
 msgstr "näytä versio ja poistu"
 
-#: usr/bin/big-driver-manager-cli:100
+#: usr/bin/big-driver-manager-cli:101
 msgid "colors: auto (terminal only), always or never; also --no-color"
 msgstr "värit: auto (vain pääte), always tai never; myös --no-color"
 
-#: usr/bin/big-driver-manager-cli:102
+#: usr/bin/big-driver-manager-cli:103
 msgid "COMMAND"
 msgstr "KOMENTO"
 
-#: usr/bin/big-driver-manager-cli:108
+#: usr/bin/big-driver-manager-cli:110
 msgid "install packages from the repositories"
 msgstr "asenna paketteja repositorioista"
 
-#: usr/bin/big-driver-manager-cli:114
+#: usr/bin/big-driver-manager-cli:115
 msgid "reinstall packages that are already installed"
 msgstr "asenna jo asennetut paketit uudelleen"
 
-#: usr/bin/big-driver-manager-cli:119
-msgid "overwrite conflicting files (Mesa variant switch)"
-msgstr "korvaa ristiriitaiset tiedostot (Mesa-version vaihto)"
-
-#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+#: usr/bin/big-driver-manager-cli:117 usr/bin/big-driver-manager-cli:125
 msgid "PACKAGE"
 msgstr "PAKETTI"
 
-#: usr/bin/big-driver-manager-cli:123
+#: usr/bin/big-driver-manager-cli:119
 msgid "remove packages"
 msgstr "poista paketteja"
 
-#: usr/bin/big-driver-manager-cli:128
+#: usr/bin/big-driver-manager-cli:123
 msgid "also remove dependencies nothing else needs"
 msgstr "poista myös riippuvuudet, joita mikään muu ei tarvitse"
 
-#: usr/bin/big-driver-manager-cli:133
-msgid "also remove packages that depend on them"
-msgstr "poista myös niistä riippuvat paketit"
-
-#: usr/bin/big-driver-manager-cli:137
+#: usr/bin/big-driver-manager-cli:127
 msgid "install or remove an mhwd configuration"
 msgstr "asenna tai poista mhwd-määritys"
 
-#: usr/bin/big-driver-manager-cli:142
+#: usr/bin/big-driver-manager-cli:132
 msgid "replace a conflicting configuration"
 msgstr "korvaa ristiriitainen määritys"
 
@@ -176,6 +172,7 @@ msgstr "näytönohjainten ajurit (korvaa mhwd:n)"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:37
 msgid "ACTION"
 msgstr "TOIMINTO"
 
@@ -205,6 +202,8 @@ msgstr "näytä laitteisto"
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:40
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:44
 msgid "JSON output"
 msgstr "JSON-tuloste"
 
@@ -311,6 +310,7 @@ msgid "Hybrid"
 msgstr "Hybridi"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:89
 msgid "Install"
 msgstr "Asenna"
 
@@ -555,6 +555,7 @@ msgid "KERNEL"
 msgstr "YDIN"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:49
 msgid "do not ask for confirmation"
 msgstr "älä kysy vahvistusta"
 
@@ -724,6 +725,8 @@ msgstr "Asennetaanko nämä paketit?"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:179
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:183
 msgid "Nothing was changed."
 msgstr "Mitään ei muutettu."
 
@@ -818,3 +821,137 @@ msgstr ""
 #: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
 msgid "pacman reported:"
 msgstr "pacman ilmoitti:"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:30
+msgid "switch between the Mesa variants (stable, tkg, amber)"
+msgstr "vaihda Mesa-versioiden välillä (stable, tkg, amber)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:32
+msgid ""
+"Switch the Mesa graphics stack between its variants. The old variant is "
+"replaced in a single transaction: nothing that depends on Mesa is removed."
+msgstr ""
+"Vaihtaa Mesa-grafiikkapinon versioiden välillä. Vanha versio korvataan "
+"yhdessä transaktiossa: mitään Mesasta riippuvaa ei poisteta."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:39
+msgid "the variants, the one in use marked"
+msgstr "versiot, käytössä oleva merkittynä"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:42
+msgid "show what switching would do"
+msgstr "näytä, mitä vaihto tekisi"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:43
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:47
+msgid "VARIANT"
+msgstr "VERSIO"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:46
+msgid "switch to a variant"
+msgstr "vaihda versioon"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:67
+msgid "Variant"
+msgstr "Versio"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:68
+msgid "Package"
+msgstr "Paketti"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:79
+msgid "in use"
+msgstr "käytössä"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:87
+#, python-brace-format
+msgid "Switch Mesa to {}"
+msgstr "Vaihda Mesa versioon {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:90
+msgid "Replaced"
+msgstr "Korvatut"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:91
+msgid "Removed first, put back if the switch fails"
+msgstr "Poistettu ensin, palautetaan jos vaihto epäonnistuu"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:92
+msgid "Skipped (no 32-bit Mesa installed)"
+msgstr "Ohitettu (32-bittistä Mesaa ei ole asennettu)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:128
+msgid "Downloading the packages failed. Nothing was changed."
+msgstr "Pakettien lataus epäonnistui. Mitään ei muutettu."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:138
+msgid "Removing the old packages failed. Nothing was changed."
+msgstr "Vanhojen pakettien poisto epäonnistui. Mitään ei muutettu."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:147
+#, python-brace-format
+msgid "Installing {} failed."
+msgstr "Kohteen {} asennus epäonnistui."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:149
+msgid "Putting back the packages removed for the switch"
+msgstr "Palautetaan vaihtoa varten poistetut paketit"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:156
+#, python-brace-format
+msgid "Could not put back: {}. Install them again with pacman -S."
+msgstr "Ei voitu palauttaa: {}. Asenna ne uudelleen komennolla pacman -S."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:167
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:304
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:341
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "Ajuria ei löytynyt: {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:170
+msgid "See the variants with: "
+msgstr "Katso versiot komennolla: "
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:182
+msgid "Switch Mesa?"
+msgstr "Vaihdetaanko Mesa?"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:192
+#, python-brace-format
+msgid "{} is not the Mesa in use after the switch."
+msgstr "{} ei ole käytössä oleva Mesa vaihdon jälkeen."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:196
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Ajuri {} otettiin käyttöön!"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:197
+msgid "Restart the computer to use it."
+msgstr "Käynnistä tietokone uudelleen käyttääksesi sitä."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:180
+#, python-brace-format
+msgid "{} is not in the configured repositories."
+msgstr "{} ei ole määritetyissä ohjelmistolähteissä."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:183
+msgid "No packages available to install."
+msgstr "Ei asennettavia paketteja."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:227
+#, python-brace-format
+msgid "{package} is needed by {users}, which would stop working."
+msgstr "{package} tarvitaan kohteelle {users}, joka lakkaisi toimimasta."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:352
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Asennetaan ajuria {}"
+
+#~ msgid "overwrite conflicting files (Mesa variant switch)"
+#~ msgstr "korvaa ristiriitaiset tiedostot (Mesa-version vaihto)"
+
+#~ msgid "also remove packages that depend on them"
+#~ msgstr "poista myös niistä riippuvat paketit"

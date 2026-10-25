@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager-cli\n"
 "Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
-"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"POT-Creation-Date: 2026-10-24 23:46-0300\n"
 "PO-Revision-Date: 2026-10-20 00:31-0300\n"
 "Last-Translator: AI-assisted translation\n"
 "Language-Team: none\n"
@@ -110,11 +110,15 @@ msgstr "driverele de care are nevoie acest calculator"
 msgid "which GPU draws the screen"
 msgstr "ce GPU desenează ecranul"
 
-#: usr/bin/big-driver-manager-cli:65
+#: usr/bin/big-driver-manager-cli:59
+msgid "switch the Mesa variant"
+msgstr "schimbă varianta Mesa"
+
+#: usr/bin/big-driver-manager-cli:66
 msgid "examples:"
 msgstr "exemple:"
 
-#: usr/bin/big-driver-manager-cli:82
+#: usr/bin/big-driver-manager-cli:83
 msgid ""
 "Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
 "install the graphics drivers, install kernels together with their modules."
@@ -122,52 +126,44 @@ msgstr ""
 "Drivere și nuclee pentru BigLinux și BigCommunity: detectează hardware-ul, "
 "instalează driverele grafice, instalează nuclee împreună cu modulele lor."
 
-#: usr/bin/big-driver-manager-cli:94
+#: usr/bin/big-driver-manager-cli:95
 msgid "show the version and exit"
 msgstr "afișează versiunea și ieși"
 
-#: usr/bin/big-driver-manager-cli:100
+#: usr/bin/big-driver-manager-cli:101
 msgid "colors: auto (terminal only), always or never; also --no-color"
 msgstr ""
 "culori: auto (doar în terminal), always sau never; de asemenea --no-color"
 
-#: usr/bin/big-driver-manager-cli:102
+#: usr/bin/big-driver-manager-cli:103
 msgid "COMMAND"
 msgstr "COMANDĂ"
 
-#: usr/bin/big-driver-manager-cli:108
+#: usr/bin/big-driver-manager-cli:110
 msgid "install packages from the repositories"
 msgstr "instalează pachete din depozite"
 
-#: usr/bin/big-driver-manager-cli:114
+#: usr/bin/big-driver-manager-cli:115
 msgid "reinstall packages that are already installed"
 msgstr "reinstalează pachetele deja instalate"
 
-#: usr/bin/big-driver-manager-cli:119
-msgid "overwrite conflicting files (Mesa variant switch)"
-msgstr "suprascrie fișierele în conflict (schimbarea variantei Mesa)"
-
-#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+#: usr/bin/big-driver-manager-cli:117 usr/bin/big-driver-manager-cli:125
 msgid "PACKAGE"
 msgstr "PACHET"
 
-#: usr/bin/big-driver-manager-cli:123
+#: usr/bin/big-driver-manager-cli:119
 msgid "remove packages"
 msgstr "elimină pachete"
 
-#: usr/bin/big-driver-manager-cli:128
+#: usr/bin/big-driver-manager-cli:123
 msgid "also remove dependencies nothing else needs"
 msgstr "elimină și dependențele de care nu mai are nevoie nimic altceva"
 
-#: usr/bin/big-driver-manager-cli:133
-msgid "also remove packages that depend on them"
-msgstr "elimină și pachetele care depind de ele"
-
-#: usr/bin/big-driver-manager-cli:137
+#: usr/bin/big-driver-manager-cli:127
 msgid "install or remove an mhwd configuration"
 msgstr "instalează sau elimină o configurație mhwd"
 
-#: usr/bin/big-driver-manager-cli:142
+#: usr/bin/big-driver-manager-cli:132
 msgid "replace a conflicting configuration"
 msgstr "înlocuiește o configurație în conflict"
 
@@ -177,6 +173,7 @@ msgstr "drivere grafice (înlocuiește mhwd)"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:37
 msgid "ACTION"
 msgstr "ACȚIUNE"
 
@@ -206,6 +203,8 @@ msgstr "afișează hardware-ul"
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:40
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:44
 msgid "JSON output"
 msgstr "ieșire JSON"
 
@@ -312,6 +311,7 @@ msgid "Hybrid"
 msgstr "Hibrid"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:89
 msgid "Install"
 msgstr "Instalați"
 
@@ -553,6 +553,7 @@ msgid "KERNEL"
 msgstr "NUCLEU"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:49
 msgid "do not ask for confirmation"
 msgstr "nu cere confirmare"
 
@@ -722,6 +723,8 @@ msgstr "Instalați aceste pachete?"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:179
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:183
 msgid "Nothing was changed."
 msgstr "Nu s-a modificat nimic."
 
@@ -815,3 +818,138 @@ msgstr ""
 #: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
 msgid "pacman reported:"
 msgstr "pacman a raportat:"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:30
+msgid "switch between the Mesa variants (stable, tkg, amber)"
+msgstr "comutare între variantele Mesa (stable, tkg, amber)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:32
+msgid ""
+"Switch the Mesa graphics stack between its variants. The old variant is "
+"replaced in a single transaction: nothing that depends on Mesa is removed."
+msgstr ""
+"Comută stiva grafică Mesa între variantele sale. Varianta veche este "
+"înlocuită într-o singură tranzacție: nimic din ce depinde de Mesa nu este "
+"eliminat."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:39
+msgid "the variants, the one in use marked"
+msgstr "variantele, cu cea în uz marcată"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:42
+msgid "show what switching would do"
+msgstr "arată ce ar face comutarea"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:43
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:47
+msgid "VARIANT"
+msgstr "VARIANTĂ"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:46
+msgid "switch to a variant"
+msgstr "comută la o variantă"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:67
+msgid "Variant"
+msgstr "Variantă"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:68
+msgid "Package"
+msgstr "Pachet"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:79
+msgid "in use"
+msgstr "în uz"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:87
+#, python-brace-format
+msgid "Switch Mesa to {}"
+msgstr "Comută Mesa la {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:90
+msgid "Replaced"
+msgstr "Înlocuite"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:91
+msgid "Removed first, put back if the switch fails"
+msgstr "Eliminate înainte, puse înapoi dacă comutarea eșuează"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:92
+msgid "Skipped (no 32-bit Mesa installed)"
+msgstr "Omise (nu este instalat Mesa pe 32 de biți)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:128
+msgid "Downloading the packages failed. Nothing was changed."
+msgstr "Descărcarea pachetelor a eșuat. Nu s-a schimbat nimic."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:138
+msgid "Removing the old packages failed. Nothing was changed."
+msgstr "Eliminarea pachetelor vechi a eșuat. Nu s-a schimbat nimic."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:147
+#, python-brace-format
+msgid "Installing {} failed."
+msgstr "Instalarea {} a eșuat."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:149
+msgid "Putting back the packages removed for the switch"
+msgstr "Se pun înapoi pachetele eliminate pentru comutare"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:156
+#, python-brace-format
+msgid "Could not put back: {}. Install them again with pacman -S."
+msgstr "Nu s-au putut pune înapoi: {}. Instalați-le din nou cu pacman -S."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:167
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:304
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:341
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "Driverul nu a fost găsit: {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:170
+msgid "See the variants with: "
+msgstr "Vedeți variantele cu: "
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:182
+msgid "Switch Mesa?"
+msgstr "Comutați Mesa?"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:192
+#, python-brace-format
+msgid "{} is not the Mesa in use after the switch."
+msgstr "{} nu este Mesa în uz după comutare."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:196
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Driverul {} a fost aplicat cu succes!"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:197
+msgid "Restart the computer to use it."
+msgstr "Reporniți calculatorul pentru a-l folosi."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:180
+#, python-brace-format
+msgid "{} is not in the configured repositories."
+msgstr "{} nu este în depozitele configurate."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:183
+msgid "No packages available to install."
+msgstr "Nu există pachete de instalat."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:227
+#, python-brace-format
+msgid "{package} is needed by {users}, which would stop working."
+msgstr "{package} este necesar pentru {users}, care ar înceta să funcționeze."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:352
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Se instalează driverul {}"
+
+#~ msgid "overwrite conflicting files (Mesa variant switch)"
+#~ msgstr "suprascrie fișierele în conflict (schimbarea variantei Mesa)"
+
+#~ msgid "also remove packages that depend on them"
+#~ msgstr "elimină și pachetele care depind de ele"

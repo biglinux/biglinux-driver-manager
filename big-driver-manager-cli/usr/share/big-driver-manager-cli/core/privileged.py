@@ -29,16 +29,11 @@ MHWD_BUSES = ("pci", "usb")
 _PACMAN_FORMS: dict[tuple[str, tuple[str, ...]], tuple[str, ...]] = {
     ("install", ()): ("-S", "--noconfirm", "--needed"),
     ("install", ("--reinstall",)): ("-S", "--noconfirm"),
-    ("install", ("--overwrite-all",)): (
-        "-S",
-        "--noconfirm",
-        "--needed",
-        "--overwrite",
-        "*",
-    ),
     ("remove", ()): ("-R", "--noconfirm"),
     ("remove", ("--recursive",)): ("-Rns", "--noconfirm"),
-    ("remove", ("--cascade",)): ("-Rnc", "--noconfirm"),
+    # No cascade (-Rc) form: with --noconfirm it removes everything that
+    # depends on the packages, the whole desktop for mesa. Mesa variants
+    # are switched by ``mesa apply``.
 }
 
 
@@ -57,8 +52,8 @@ def validate_packages(packages: list[str]) -> list[str]:
 
 def pacman_to_cli(args: list[str]) -> list[str]:
     """Verb for a pacman invocation the managers make, for pkexec."""
-    # Longest first: "-S --noconfirm --needed" is a prefix of the
-    # "--overwrite *" form and must not claim it.
+    # Longest first: a shorter form that is a prefix of a longer one must
+    # not claim it.
     forms = sorted(_PACMAN_FORMS.items(), key=lambda item: -len(item[1]))
     for (verb, flags), options in forms:
         count = len(options)

@@ -34,20 +34,21 @@ sys.path.insert(0, str(APP_SRC))
 
 
 class TestMesaApplyIsSafe(unittest.TestCase):
-    """C1 + C2: Mesa apply never uses ``-Rdd``/``--ask 4`` and is cancellable."""
+    """C1 + C2: a Mesa switch never removes what depends on Mesa.
 
-    def _make_manager(self, installed: list[str], available: set[str]):
+    The interface hands the whole switch to ``big-driver-manager-cli mesa
+    apply`` (one pkexec request); it never runs a removal itself. The old
+    flow's ``pacman -Rnc --noconfirm mesa`` (-c = cascade) removed the whole
+    Plasma desktop.
+    """
+
+    def _make_manager(self):
         with patch("core.mesa_manager.get_logger"):
             from core.mesa_manager import MesaManager
 
             mgr = MesaManager()
             mgr.drivers = [
-                {
-                    "id": "stable",
-                    "name": "mesa",
-                    "packages": ["mesa"],
-                    "conflicts": [],
-                },
+                {"id": "stable", "name": "mesa", "packages": ["mesa"], "conflicts": []},
                 {
                     "id": "tkg-stable",
                     "name": "mesa-tkg-stable",
@@ -56,100 +57,35 @@ class TestMesaApplyIsSafe(unittest.TestCase):
                     "conflicts": ["mesa"],
                 },
             ]
-            installed_set = set(installed)
-            mgr._is_real_package_installed = lambda p: p in installed_set
-            mgr._packages_available = lambda pkgs: set(pkgs) & available
             return mgr
 
-    def _capture_calls(self, mgr, complete_success_sequence):
-        calls: list[list[str]] = []
-        seq = iter(complete_success_sequence)
-
-        def fake_run_pacman(**kwargs):
-            calls.append(list(kwargs["args"]))
-            cb = kwargs.get("complete_callback")
-            if cb:
-                try:
-                    cb(next(seq))
-                except StopIteration:
-                    cb(True)
-
-        mgr.run_pacman_command = fake_run_pacman
-        return calls
-
-    def test_apply_never_uses_Rdd(self):
-        mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
-        calls = self._capture_calls(mgr, [True, True])
-        completed: list[bool] = []
-        mgr._apply_driver_thread(
-            mgr.drivers[1], None, lambda _l: None, completed.append
+    def test_apply_is_one_cli_request(self):
+        mgr = self._make_manager()
+        mgr.run_cli_command = MagicMock()
+        mgr.run_pacman_command = MagicMock()
+        mgr.apply_driver("tkg-stable")
+        mgr.run_cli_command.assert_called_once()
+        self.assertEqual(
+            mgr.run_cli_command.call_args.args[0],
+            ["mesa", "apply", "tkg-stable", "--confirmed"],
         )
-        for call in calls:
-            self.assertNotIn("-Rdd", call)
-        self.assertEqual(completed, [True])
+        mgr.run_pacman_command.assert_not_called()
 
-    def test_apply_never_uses_ask_4(self):
-        mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
-        calls = self._capture_calls(mgr, [True, True])
-        mgr._apply_driver_thread(mgr.drivers[1], None, lambda _l: None, lambda _s: None)
-        for call in calls:
-            self.assertNotIn("--ask", call)
-
-    def test_apply_uses_Rnc_for_conflict_removal(self):
-        mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
-        calls = self._capture_calls(mgr, [True, True])
-        mgr._apply_driver_thread(mgr.drivers[1], None, lambda _l: None, lambda _s: None)
-        self.assertIn("-Rnc", calls[0])
-
-    def test_apply_uses_needed_and_overwrite_on_install(self):
-        mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
-        calls = self._capture_calls(mgr, [True, True])
-        mgr._apply_driver_thread(mgr.drivers[1], None, lambda _l: None, lambda _s: None)
-        # The install call is the second one (first is the remove).
-        self.assertIn("-S", calls[1])
-        self.assertIn("--needed", calls[1])
-        self.assertIn("--overwrite", calls[1])
-        # Followed immediately by the glob pattern "*".
-        overwrite_idx = calls[1].index("--overwrite")
-        self.assertEqual(calls[1][overwrite_idx + 1], "*")
-
-    def test_apply_aborts_install_when_remove_fails(self):
-        mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
-        calls = self._capture_calls(mgr, [False])
+    def test_unknown_driver_fails_without_running_anything(self):
+        mgr = self._make_manager()
+        mgr.run_cli_command = MagicMock()
         completed: list[bool] = []
-        mgr._apply_driver_thread(
-            mgr.drivers[1], None, lambda _l: None, completed.append
-        )
-        # Only the remove call should have been issued; install must not run.
-        self.assertEqual(len(calls), 1)
+        mgr.apply_driver("nope", complete_callback=completed.append)
         self.assertEqual(completed, [False])
+        mgr.run_cli_command.assert_not_called()
 
-    def test_apply_skips_remove_phase_when_no_conflicts(self):
-        mgr = self._make_manager([], {"mesa-tkg-stable"})
-        calls = self._capture_calls(mgr, [True])
-        mgr._apply_driver_thread(mgr.drivers[1], None, lambda _l: None, lambda _s: None)
-        self.assertEqual(len(calls), 1)
-        self.assertIn("-S", calls[0])
+    def test_no_cascade_removal_anywhere_in_the_core(self):
+        from core import mesa_cli, mesa_manager, privileged
 
-    def test_apply_respects_cancelled_flag(self):
-        """When the user cancels during remove, install must not fire."""
-        mgr = self._make_manager(["mesa"], {"mesa-tkg-stable"})
-        calls: list[list[str]] = []
-
-        def fake_run_pacman(**kwargs):
-            calls.append(list(kwargs["args"]))
-            mgr._cancelled = True  # Simulate the user clicking Cancel.
-            cb = kwargs.get("complete_callback")
-            if cb:
-                cb(True)  # remove succeeded but user already cancelled
-
-        mgr.run_pacman_command = fake_run_pacman
-        completed: list[bool] = []
-        mgr._apply_driver_thread(
-            mgr.drivers[1], None, lambda _l: None, completed.append
-        )
-        self.assertEqual(len(calls), 1)
-        self.assertEqual(completed, [False])
+        for module in (mesa_cli, mesa_manager, privileged):
+            source = Path(module.__file__).read_text(encoding="utf-8")
+            with self.subTest(module=module.__name__):
+                self.assertNotRegex(source, r'"-R[a-z]*c[a-z]*"')
 
 
 class TestMesaPackagesAvailable(unittest.TestCase):

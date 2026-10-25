@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager-cli\n"
 "Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
-"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"POT-Creation-Date: 2026-10-24 23:46-0300\n"
 "PO-Revision-Date: 2026-10-20 00:31-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -108,11 +108,15 @@ msgstr "reklarnir sem þessi vél þarfnast"
 msgid "which GPU draws the screen"
 msgstr "hvaða GPU teiknar skjáinn"
 
-#: usr/bin/big-driver-manager-cli:65
+#: usr/bin/big-driver-manager-cli:59
+msgid "switch the Mesa variant"
+msgstr "skipta um Mesa-útgáfu"
+
+#: usr/bin/big-driver-manager-cli:66
 msgid "examples:"
 msgstr "dæmi:"
 
-#: usr/bin/big-driver-manager-cli:82
+#: usr/bin/big-driver-manager-cli:83
 msgid ""
 "Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
 "install the graphics drivers, install kernels together with their modules."
@@ -120,51 +124,43 @@ msgstr ""
 "Reklar og kjarnar fyrir BigLinux og BigCommunity: greina vélbúnaðinn, setja "
 "upp skjákortsreklana, setja upp kjarna ásamt einingum þeirra."
 
-#: usr/bin/big-driver-manager-cli:94
+#: usr/bin/big-driver-manager-cli:95
 msgid "show the version and exit"
 msgstr "birta útgáfuna og hætta"
 
-#: usr/bin/big-driver-manager-cli:100
+#: usr/bin/big-driver-manager-cli:101
 msgid "colors: auto (terminal only), always or never; also --no-color"
 msgstr "litir: auto (aðeins útstöð), always eða never; einnig --no-color"
 
-#: usr/bin/big-driver-manager-cli:102
+#: usr/bin/big-driver-manager-cli:103
 msgid "COMMAND"
 msgstr "SKIPUN"
 
-#: usr/bin/big-driver-manager-cli:108
+#: usr/bin/big-driver-manager-cli:110
 msgid "install packages from the repositories"
 msgstr "setja upp pakka úr hugbúnaðarsöfnunum"
 
-#: usr/bin/big-driver-manager-cli:114
+#: usr/bin/big-driver-manager-cli:115
 msgid "reinstall packages that are already installed"
 msgstr "setja aftur upp pakka sem þegar eru uppsettir"
 
-#: usr/bin/big-driver-manager-cli:119
-msgid "overwrite conflicting files (Mesa variant switch)"
-msgstr "skrifa yfir skrár sem stangast á (skipt um Mesa-útgáfu)"
-
-#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+#: usr/bin/big-driver-manager-cli:117 usr/bin/big-driver-manager-cli:125
 msgid "PACKAGE"
 msgstr "PAKKI"
 
-#: usr/bin/big-driver-manager-cli:123
+#: usr/bin/big-driver-manager-cli:119
 msgid "remove packages"
 msgstr "fjarlægja pakka"
 
-#: usr/bin/big-driver-manager-cli:128
+#: usr/bin/big-driver-manager-cli:123
 msgid "also remove dependencies nothing else needs"
 msgstr "fjarlægja einnig kvaðir sem ekkert annað þarfnast"
 
-#: usr/bin/big-driver-manager-cli:133
-msgid "also remove packages that depend on them"
-msgstr "fjarlægja einnig pakka sem eru háðir þeim"
-
-#: usr/bin/big-driver-manager-cli:137
+#: usr/bin/big-driver-manager-cli:127
 msgid "install or remove an mhwd configuration"
 msgstr "setja upp eða fjarlægja mhwd-stillingu"
 
-#: usr/bin/big-driver-manager-cli:142
+#: usr/bin/big-driver-manager-cli:132
 msgid "replace a conflicting configuration"
 msgstr "skipta út stillingu sem stangast á"
 
@@ -174,6 +170,7 @@ msgstr "skjákortsreklar (kemur í stað mhwd)"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:37
 msgid "ACTION"
 msgstr "AÐGERÐ"
 
@@ -203,6 +200,8 @@ msgstr "birta vélbúnaðinn"
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:40
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:44
 msgid "JSON output"
 msgstr "JSON-úttak"
 
@@ -309,6 +308,7 @@ msgid "Hybrid"
 msgstr "Blendingur"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:89
 msgid "Install"
 msgstr "Setja upp"
 
@@ -548,6 +548,7 @@ msgid "KERNEL"
 msgstr "KJARNI"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:49
 msgid "do not ask for confirmation"
 msgstr "ekki biðja um staðfestingu"
 
@@ -718,6 +719,8 @@ msgstr "Setja upp þessa pakka?"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:179
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:183
 msgid "Nothing was changed."
 msgstr "Engu var breytt."
 
@@ -811,3 +814,137 @@ msgstr ""
 #: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
 msgid "pacman reported:"
 msgstr "pacman skilaði:"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:30
+msgid "switch between the Mesa variants (stable, tkg, amber)"
+msgstr "skipta á milli Mesa-útgáfna (stable, tkg, amber)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:32
+msgid ""
+"Switch the Mesa graphics stack between its variants. The old variant is "
+"replaced in a single transaction: nothing that depends on Mesa is removed."
+msgstr ""
+"Skiptir Mesa-grafíkstaflanum á milli útgáfna. Gamla útgáfan er leyst af "
+"hólmi í einni færslu: ekkert sem er háð Mesa er fjarlægt."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:39
+msgid "the variants, the one in use marked"
+msgstr "útgáfurnar, sú sem er í notkun merkt"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:42
+msgid "show what switching would do"
+msgstr "sýna hvað skiptin myndu gera"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:43
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:47
+msgid "VARIANT"
+msgstr "ÚTGÁFA"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:46
+msgid "switch to a variant"
+msgstr "skipta yfir í útgáfu"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:67
+msgid "Variant"
+msgstr "Útgáfa"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:68
+msgid "Package"
+msgstr "Pakki"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:79
+msgid "in use"
+msgstr "í notkun"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:87
+#, python-brace-format
+msgid "Switch Mesa to {}"
+msgstr "Skipta Mesa yfir í {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:90
+msgid "Replaced"
+msgstr "Leystir af hólmi"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:91
+msgid "Removed first, put back if the switch fails"
+msgstr "Fjarlægðir fyrst, settir aftur ef skiptin mistakast"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:92
+msgid "Skipped (no 32-bit Mesa installed)"
+msgstr "Sleppt (ekkert 32-bita Mesa uppsett)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:128
+msgid "Downloading the packages failed. Nothing was changed."
+msgstr "Niðurhal pakkanna mistókst. Engu var breytt."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:138
+msgid "Removing the old packages failed. Nothing was changed."
+msgstr "Fjarlæging gömlu pakkanna mistókst. Engu var breytt."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:147
+#, python-brace-format
+msgid "Installing {} failed."
+msgstr "Uppsetning {} mistókst."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:149
+msgid "Putting back the packages removed for the switch"
+msgstr "Set aftur pakkana sem voru fjarlægðir fyrir skiptin"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:156
+#, python-brace-format
+msgid "Could not put back: {}. Install them again with pacman -S."
+msgstr "Gat ekki sett aftur: {}. Settu þá upp aftur með pacman -S."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:167
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:304
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:341
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "Rekill fannst ekki: {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:170
+msgid "See the variants with: "
+msgstr "Sjá útgáfurnar með: "
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:182
+msgid "Switch Mesa?"
+msgstr "Skipta um Mesa?"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:192
+#, python-brace-format
+msgid "{} is not the Mesa in use after the switch."
+msgstr "{} er ekki Mesa-útgáfan í notkun eftir skiptin."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:196
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Rekillinn {} var tekinn í notkun!"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:197
+msgid "Restart the computer to use it."
+msgstr "Endurræstu tölvuna til að nota hann."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:180
+#, python-brace-format
+msgid "{} is not in the configured repositories."
+msgstr "{} er ekki í stilltu hugbúnaðarsöfnunum."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:183
+msgid "No packages available to install."
+msgstr "Engir pakkar tiltækir til uppsetningar."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:227
+#, python-brace-format
+msgid "{package} is needed by {users}, which would stop working."
+msgstr "{package} er nauðsynlegur fyrir {users}, sem myndi hætta að virka."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:352
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Set upp rekilinn {}"
+
+#~ msgid "overwrite conflicting files (Mesa variant switch)"
+#~ msgstr "skrifa yfir skrár sem stangast á (skipt um Mesa-útgáfu)"
+
+#~ msgid "also remove packages that depend on them"
+#~ msgstr "fjarlægja einnig pakka sem eru háðir þeim"

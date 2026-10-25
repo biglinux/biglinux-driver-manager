@@ -57,8 +57,8 @@ big-drivers gpu install                 # the drivers this machine needs
 ## Usage
 
 ```bash
-big-driver-manager-cli install [--reinstall | --overwrite-all] -- PACKAGE...
-big-driver-manager-cli remove  [--recursive | --cascade]       -- PACKAGE...
+big-driver-manager-cli install [--reinstall] -- PACKAGE...
+big-driver-manager-cli remove  [--recursive] -- PACKAGE...
 big-driver-manager-cli mhwd install|remove pci|usb CONFIG [--force]
 ```
 
@@ -66,12 +66,35 @@ big-driver-manager-cli mhwd install|remove pci|usb CONFIG [--force]
 |---|---|
 | `install` | `-S --noconfirm --needed` |
 | `install --reinstall` | `-S --noconfirm` |
-| `install --overwrite-all` | `-S --noconfirm --needed --overwrite '*'` (Mesa variant switch) |
 | `remove` | `-R --noconfirm` |
 | `remove --recursive` | `-Rns --noconfirm` |
-| `remove --cascade` | `-Rnc --noconfirm` |
+
+There is no cascade form (`-Rc`): with `--noconfirm` it removes everything
+that depends on the packages, the whole desktop when the package is `mesa`.
 
 Exit codes: `2` invalid request, `77` not running as root.
+
+## Mesa variants
+
+```bash
+big-driver-manager-cli mesa list [--json]              # the variants, the one in use marked
+big-driver-manager-cli mesa plan VARIANT [--json]      # what switching would do
+big-driver-manager-cli mesa apply VARIANT [--yes]      # stable | tkg-stable | tkg-git | amber
+```
+
+The variants are described in `assets/mesa_drivers.json`. `apply` replaces the
+old variant without removing anything that depends on Mesa:
+
+1. `pacman -Sw --ask 4` downloads the new packages first.
+2. Old packages the new ones do not declare a conflict with (e.g.
+   `vulkan-mesa-implicit-layers`, whose files `mesa-tkg` also ships) are
+   removed with `-Rdd`, only when everything that needs them leaves in the
+   same switch; the plan refuses otherwise.
+3. `pacman -S --needed --ask 4` installs the new variant in one transaction:
+   pacman removes what it conflicts with, and the provides (`mesa`,
+   `vulkan-intel`…) keep every dependent satisfied. pacman refuses the whole
+   transaction, changing nothing, if a dependency would break.
+4. If that transaction fails, the packages removed in step 2 are put back.
 
 ## Graphics drivers (replaces mhwd and mhwd-biglinux)
 

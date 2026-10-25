@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: big-driver-manager-cli\n"
 "Report-Msgid-Bugs-To: https://github.com/biglinux/big-driver-manager-cli\n"
-"POT-Creation-Date: 2026-10-20 00:32-0300\n"
+"POT-Creation-Date: 2026-10-24 23:46-0300\n"
 "PO-Revision-Date: 2026-10-20 00:31-0300\n"
 "Last-Translator: AI-assisted translation\n"
 "Language-Team: none\n"
@@ -109,11 +109,15 @@ msgstr "οι οδηγοί που χρειάζεται αυτό το μηχάνη
 msgid "which GPU draws the screen"
 msgstr "ποια GPU σχεδιάζει την οθόνη"
 
-#: usr/bin/big-driver-manager-cli:65
+#: usr/bin/big-driver-manager-cli:59
+msgid "switch the Mesa variant"
+msgstr "αλλαγή παραλλαγής Mesa"
+
+#: usr/bin/big-driver-manager-cli:66
 msgid "examples:"
 msgstr "παραδείγματα:"
 
-#: usr/bin/big-driver-manager-cli:82
+#: usr/bin/big-driver-manager-cli:83
 msgid ""
 "Drivers and kernels for BigLinux and BigCommunity: detect the hardware, "
 "install the graphics drivers, install kernels together with their modules."
@@ -122,51 +126,43 @@ msgstr ""
 "εγκατάσταση των οδηγών γραφικών, εγκατάσταση πυρήνων μαζί με τις μονάδες "
 "τους."
 
-#: usr/bin/big-driver-manager-cli:94
+#: usr/bin/big-driver-manager-cli:95
 msgid "show the version and exit"
 msgstr "εμφάνιση της έκδοσης και έξοδος"
 
-#: usr/bin/big-driver-manager-cli:100
+#: usr/bin/big-driver-manager-cli:101
 msgid "colors: auto (terminal only), always or never; also --no-color"
 msgstr "χρώματα: auto (μόνο σε τερματικό), always ή never· επίσης --no-color"
 
-#: usr/bin/big-driver-manager-cli:102
+#: usr/bin/big-driver-manager-cli:103
 msgid "COMMAND"
 msgstr "ΕΝΤΟΛΗ"
 
-#: usr/bin/big-driver-manager-cli:108
+#: usr/bin/big-driver-manager-cli:110
 msgid "install packages from the repositories"
 msgstr "εγκατάσταση πακέτων από τα αποθετήρια"
 
-#: usr/bin/big-driver-manager-cli:114
+#: usr/bin/big-driver-manager-cli:115
 msgid "reinstall packages that are already installed"
 msgstr "επανεγκατάσταση πακέτων που είναι ήδη εγκατεστημένα"
 
-#: usr/bin/big-driver-manager-cli:119
-msgid "overwrite conflicting files (Mesa variant switch)"
-msgstr "αντικατάσταση αρχείων σε σύγκρουση (αλλαγή παραλλαγής Mesa)"
-
-#: usr/bin/big-driver-manager-cli:121 usr/bin/big-driver-manager-cli:135
+#: usr/bin/big-driver-manager-cli:117 usr/bin/big-driver-manager-cli:125
 msgid "PACKAGE"
 msgstr "ΠΑΚΕΤΟ"
 
-#: usr/bin/big-driver-manager-cli:123
+#: usr/bin/big-driver-manager-cli:119
 msgid "remove packages"
 msgstr "αφαίρεση πακέτων"
 
-#: usr/bin/big-driver-manager-cli:128
+#: usr/bin/big-driver-manager-cli:123
 msgid "also remove dependencies nothing else needs"
 msgstr "αφαίρεση και των εξαρτήσεων που δεν χρειάζεται τίποτε άλλο"
 
-#: usr/bin/big-driver-manager-cli:133
-msgid "also remove packages that depend on them"
-msgstr "αφαίρεση και των πακέτων που εξαρτώνται από αυτά"
-
-#: usr/bin/big-driver-manager-cli:137
+#: usr/bin/big-driver-manager-cli:127
 msgid "install or remove an mhwd configuration"
 msgstr "εγκατάσταση ή αφαίρεση μιας διαμόρφωσης mhwd"
 
-#: usr/bin/big-driver-manager-cli:142
+#: usr/bin/big-driver-manager-cli:132
 msgid "replace a conflicting configuration"
 msgstr "αντικατάσταση μιας διαμόρφωσης σε σύγκρουση"
 
@@ -176,6 +172,7 @@ msgstr "οδηγοί γραφικών (αντικαθιστά το mhwd)"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:39
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:50
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:37
 msgid "ACTION"
 msgstr "ΕΝΕΡΓΕΙΑ"
 
@@ -206,6 +203,8 @@ msgstr "εμφάνιση του υλικού"
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:89
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:58
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:75
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:40
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:44
 msgid "JSON output"
 msgstr "έξοδος JSON"
 
@@ -313,6 +312,7 @@ msgid "Hybrid"
 msgstr "Υβριδικό"
 
 #: usr/share/big-driver-manager-cli/core/gpu_cli.py:352
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:89
 msgid "Install"
 msgstr "Εγκατάσταση"
 
@@ -559,6 +559,7 @@ msgid "KERNEL"
 msgstr "ΠΥΡΗΝΑΣ"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:67
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:49
 msgid "do not ask for confirmation"
 msgstr "χωρίς αίτημα επιβεβαίωσης"
 
@@ -730,6 +731,8 @@ msgstr "Να εγκατασταθούν αυτά τα πακέτα;"
 
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:430
 #: usr/share/big-driver-manager-cli/core/kernel_cli.py:490
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:179
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:183
 msgid "Nothing was changed."
 msgstr "Δεν έγινε καμία αλλαγή."
 
@@ -824,3 +827,139 @@ msgstr ""
 #: usr/share/big-driver-manager-cli/core/kernel_manager.py:728
 msgid "pacman reported:"
 msgstr "Το pacman ανέφερε:"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:30
+msgid "switch between the Mesa variants (stable, tkg, amber)"
+msgstr "εναλλαγή μεταξύ των παραλλαγών Mesa (stable, tkg, amber)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:32
+msgid ""
+"Switch the Mesa graphics stack between its variants. The old variant is "
+"replaced in a single transaction: nothing that depends on Mesa is removed."
+msgstr ""
+"Αλλάζει τη στοίβα γραφικών Mesa μεταξύ των παραλλαγών της. Η παλιά παραλλαγή "
+"αντικαθίσταται σε μία συναλλαγή: τίποτα που εξαρτάται από το Mesa δεν "
+"αφαιρείται."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:39
+msgid "the variants, the one in use marked"
+msgstr "οι παραλλαγές, με σημειωμένη αυτή σε χρήση"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:42
+msgid "show what switching would do"
+msgstr "εμφάνιση του τι θα έκανε η αλλαγή"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:43
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:47
+msgid "VARIANT"
+msgstr "ΠΑΡΑΛΛΑΓΗ"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:46
+msgid "switch to a variant"
+msgstr "αλλαγή σε παραλλαγή"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:67
+msgid "Variant"
+msgstr "Παραλλαγή"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:68
+msgid "Package"
+msgstr "Πακέτο"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:79
+msgid "in use"
+msgstr "σε χρήση"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:87
+#, python-brace-format
+msgid "Switch Mesa to {}"
+msgstr "Αλλαγή του Mesa σε {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:90
+msgid "Replaced"
+msgstr "Αντικαθίστανται"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:91
+msgid "Removed first, put back if the switch fails"
+msgstr "Αφαιρούνται πρώτα, επανέρχονται αν η αλλαγή αποτύχει"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:92
+msgid "Skipped (no 32-bit Mesa installed)"
+msgstr "Παραλείφθηκαν (δεν υπάρχει εγκατεστημένο Mesa 32-bit)"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:128
+msgid "Downloading the packages failed. Nothing was changed."
+msgstr "Η λήψη των πακέτων απέτυχε. Δεν άλλαξε τίποτα."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:138
+msgid "Removing the old packages failed. Nothing was changed."
+msgstr "Η αφαίρεση των παλιών πακέτων απέτυχε. Δεν άλλαξε τίποτα."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:147
+#, python-brace-format
+msgid "Installing {} failed."
+msgstr "Η εγκατάσταση του {} απέτυχε."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:149
+msgid "Putting back the packages removed for the switch"
+msgstr "Επαναφορά των πακέτων που αφαιρέθηκαν για την αλλαγή"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:156
+#, python-brace-format
+msgid "Could not put back: {}. Install them again with pacman -S."
+msgstr "Δεν ήταν δυνατή η επαναφορά: {}. Εγκαταστήστε τα ξανά με pacman -S."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:167
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:304
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:341
+#, python-brace-format
+msgid "Driver not found: {}"
+msgstr "Το πρόγραμμα οδήγησης δεν βρέθηκε: {}"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:170
+msgid "See the variants with: "
+msgstr "Δείτε τις παραλλαγές με: "
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:182
+msgid "Switch Mesa?"
+msgstr "Αλλαγή του Mesa;"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:192
+#, python-brace-format
+msgid "{} is not the Mesa in use after the switch."
+msgstr "Το {} δεν είναι το Mesa σε χρήση μετά την αλλαγή."
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:196
+#, python-brace-format
+msgid "✅ {} driver applied successfully!"
+msgstr "✅ Το πρόγραμμα οδήγησης {} εφαρμόστηκε με επιτυχία!"
+
+#: usr/share/big-driver-manager-cli/core/mesa_cli.py:197
+msgid "Restart the computer to use it."
+msgstr "Επανεκκινήστε τον υπολογιστή για να το χρησιμοποιήσετε."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:180
+#, python-brace-format
+msgid "{} is not in the configured repositories."
+msgstr "Το {} δεν βρίσκεται στα ρυθμισμένα αποθετήρια."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:183
+msgid "No packages available to install."
+msgstr "Δεν υπάρχουν πακέτα για εγκατάσταση."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:227
+#, python-brace-format
+msgid "{package} is needed by {users}, which would stop working."
+msgstr ""
+"Το {package} χρειάζεται για το {users}, που θα σταματούσε να λειτουργεί."
+
+#: usr/share/big-driver-manager-cli/core/mesa_manager.py:352
+#, python-brace-format
+msgid "Installing {} driver"
+msgstr "Εγκατάσταση του προγράμματος οδήγησης {}"
+
+#~ msgid "overwrite conflicting files (Mesa variant switch)"
+#~ msgstr "αντικατάσταση αρχείων σε σύγκρουση (αλλαγή παραλλαγής Mesa)"
+
+#~ msgid "also remove packages that depend on them"
+#~ msgstr "αφαίρεση και των πακέτων που εξαρτώνται από αυτά"

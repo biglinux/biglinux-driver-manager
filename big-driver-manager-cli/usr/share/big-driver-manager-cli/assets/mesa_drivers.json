@@ -3,13 +3,11 @@
     "id": "amber",
     "name": "Amber",
     "detect_package": "mesa-amber",
-    "packages": ["mesa-amber"],
+    "packages": ["mesa-amber", "lib32-mesa-amber"],
     "conflicts": [
-      "mesa", "lib32-mesa", "mesa-git", "mesa-tkg-stable", "mesa-tkg-git",
-      "vulkan-intel", "lib32-vulkan-intel", "vulkan-radeon", "lib32-vulkan-radeon",
-      "vulkan-swrast", "lib32-vulkan-swrast",
-      "vulkan-mesa-implicit-layers", "lib32-vulkan-mesa-implicit-layers",
-      "mesa-utils"
+      "mesa", "lib32-mesa", "mesa-git",
+      "mesa-tkg-stable", "lib32-mesa-tkg-stable",
+      "mesa-tkg-git", "lib32-mesa-tkg-git"
     ],
     "description": "Stable and well-tested version of Mesa"
   },
@@ -21,23 +19,30 @@
       "mesa", "lib32-mesa",
       "vulkan-radeon", "lib32-vulkan-radeon",
       "vulkan-intel", "lib32-vulkan-intel",
+      "vulkan-nouveau", "lib32-vulkan-nouveau",
       "vulkan-swrast", "lib32-vulkan-swrast",
       "mesa-utils"
     ],
-    "conflicts": ["mesa-amber", "mesa-git", "mesa-tkg-stable", "mesa-tkg-git"],
+    "conflicts": [
+      "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa-tkg-stable", "lib32-mesa-tkg-stable",
+      "mesa-tkg-git", "lib32-mesa-tkg-git"
+    ],
     "description": "Regular Mesa release (recommended)"
   },
   {
     "id": "tkg-stable",
     "name": "Tkg-Stable",
     "detect_package": "mesa-tkg-stable",
-    "packages": ["mesa-tkg-stable"],
+    "packages": ["mesa-tkg-stable", "lib32-mesa-tkg-stable"],
     "conflicts": [
-      "mesa", "lib32-mesa", "mesa-amber", "mesa-git", "mesa-tkg-git",
+      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa-tkg-git", "lib32-mesa-tkg-git",
       "vulkan-intel", "lib32-vulkan-intel", "vulkan-radeon", "lib32-vulkan-radeon",
+      "vulkan-nouveau", "lib32-vulkan-nouveau",
       "vulkan-swrast", "lib32-vulkan-swrast",
-      "vulkan-mesa-implicit-layers", "lib32-vulkan-mesa-implicit-layers",
-      "mesa-utils"
+      "vulkan-mesa-layers", "lib32-vulkan-mesa-layers",
+      "vulkan-mesa-implicit-layers", "lib32-vulkan-mesa-implicit-layers"
     ],
     "description": "Enhanced performance build of stable Mesa"
   },
@@ -45,13 +50,15 @@
     "id": "tkg-git",
     "name": "Tkg-git",
     "detect_package": "mesa-tkg-git",
-    "packages": ["mesa-tkg-git"],
+    "packages": ["mesa-tkg-git", "lib32-mesa-tkg-git"],
     "conflicts": [
-      "mesa", "lib32-mesa", "mesa-amber", "mesa-tkg-stable",
+      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa-tkg-stable", "lib32-mesa-tkg-stable",
       "vulkan-intel", "lib32-vulkan-intel", "vulkan-radeon", "lib32-vulkan-radeon",
+      "vulkan-nouveau", "lib32-vulkan-nouveau",
       "vulkan-swrast", "lib32-vulkan-swrast",
-      "vulkan-mesa-implicit-layers", "lib32-vulkan-mesa-implicit-layers",
-      "mesa-utils"
+      "vulkan-mesa-layers", "lib32-vulkan-mesa-layers",
+      "vulkan-mesa-implicit-layers", "lib32-vulkan-mesa-implicit-layers"
     ],
     "description": "Latest development version with cutting-edge features"
   }
