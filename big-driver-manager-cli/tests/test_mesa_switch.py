@@ -171,6 +171,52 @@ class TestPlan(unittest.TestCase):
         self.assertEqual(plan.replaced, ["mesa-tkg-stable"])
         self.assertEqual(plan.remove_first, [])
 
+    def test_big_replaces_both_halves_of_mesa(self):
+        # mesa-big and lib32-mesa-big declare what they replace, so pacman
+        # swaps the 64-bit and 32-bit stacks in one transaction.
+        big = next(d for d in MESA_DRIVERS if d["id"] == "big")
+        names = ("mesa", "vulkan-intel", "vulkan-mesa-implicit-layers")
+        lib32 = tuple("lib32-" + n for n in names)
+        big_info = {
+            "mesa-big": {
+                "Provides": [f"{n}=1:26.2.5-1" for n in names] + ["vulkan-driver"],
+                "Conflicts With": list(names),
+            },
+            "lib32-mesa-big": {
+                "Provides": [f"{n}=1:26.2.5-1" for n in lib32],
+                "Conflicts With": list(lib32),
+            },
+        }
+        info = dict(INSTALLED_INFO)
+        info["lib32-vulkan-intel"] = {"Depends On": ["vulkan-intel"]}
+        info["lib32-vulkan-mesa-implicit-layers"] = {}
+        info["vulkan-swrast"] = {"Depends On": ["vulkan-mesa-implicit-layers"]}
+        info["steam"] = {"Depends On": ["lib32-vulkan-driver", "lib32-mesa"]}
+        info["lib32-vulkan-swrast"] = {
+            "Provides": ["lib32-vulkan-driver"],
+            "Depends On": ["lib32-vulkan-mesa-implicit-layers"],
+        }
+        plan = plan_mesa_switch(
+            big, set(info), {"mesa-big", "lib32-mesa-big"}, big_info, info
+        )
+        self.assertTrue(plan.allowed, plan.problems)
+        self.assertEqual(plan.install, ["mesa-big", "lib32-mesa-big"])
+        self.assertEqual(sorted(plan.replaced), sorted(names + lib32))
+        self.assertEqual(plan.remove_first, [])
+
+    def test_big_without_multilib_skips_the_32_bit_package(self):
+        big = next(d for d in MESA_DRIVERS if d["id"] == "big")
+        installed = {p for p in INSTALLED if not p.startswith("lib32-")}
+        info = {p: INSTALLED_INFO[p] for p in installed}
+        plan = plan_mesa_switch(
+            big,
+            installed,
+            {"mesa-big"},
+            {"mesa-big": {"Provides": ["mesa=1:26.2.5-1"], "Conflicts With": ["mesa"]}},
+            info,
+        )
+        self.assertEqual(plan.skipped, ["lib32-mesa-big"])
+
     def test_unknown_driver(self):
         mgr = MesaManager()
         plan = mgr.plan_switch("nope")
@@ -208,6 +254,10 @@ class TestDriversJson(unittest.TestCase):
             with self.subTest(variant=variant):
                 packages = drivers[variant]["packages"]
                 self.assertIn("lib32-mesa-" + variant, packages)
+
+    def test_big_brings_its_32_bit_package(self):
+        drivers = {d["id"]: d for d in MESA_DRIVERS}
+        self.assertEqual(drivers["big"]["packages"], ["mesa-big", "lib32-mesa-big"])
 
     def test_every_variant_conflicts_with_the_32_bit_packages_of_the_others(self):
         drivers = {d["id"]: d for d in MESA_DRIVERS}

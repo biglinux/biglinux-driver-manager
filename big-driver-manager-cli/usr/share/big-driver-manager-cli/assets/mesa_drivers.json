@@ -5,7 +5,7 @@
     "detect_package": "mesa-amber",
     "packages": ["mesa-amber", "lib32-mesa-amber"],
     "conflicts": [
-      "mesa", "lib32-mesa", "mesa-git",
+      "mesa", "lib32-mesa", "mesa-git", "mesa-big", "lib32-mesa-big",
       "mesa-tkg-stable", "lib32-mesa-tkg-stable",
       "mesa-tkg-git", "lib32-mesa-tkg-git"
     ],
@@ -24,11 +24,27 @@
       "mesa-utils"
     ],
     "conflicts": [
-      "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa-amber", "lib32-mesa-amber", "mesa-git", "mesa-big", "lib32-mesa-big",
       "mesa-tkg-stable", "lib32-mesa-tkg-stable",
       "mesa-tkg-git", "lib32-mesa-tkg-git"
     ],
     "description": "Regular Mesa release (recommended)"
+  },
+  {
+    "id": "big",
+    "name": "Big",
+    "detect_package": "mesa-big",
+    "packages": ["mesa-big", "lib32-mesa-big"],
+    "conflicts": [
+      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa-tkg-stable", "lib32-mesa-tkg-stable",
+      "mesa-tkg-git", "lib32-mesa-tkg-git",
+      "vulkan-intel", "lib32-vulkan-intel", "vulkan-radeon", "lib32-vulkan-radeon",
+      "vulkan-nouveau", "lib32-vulkan-nouveau", "vulkan-virtio", "lib32-vulkan-virtio",
+      "vulkan-mesa-layers", "lib32-vulkan-mesa-layers",
+      "vulkan-mesa-implicit-layers", "lib32-vulkan-mesa-implicit-layers"
+    ],
+    "description": "BigCommunity build of the latest Mesa release, with its own LLVM"
   },
   {
     "id": "tkg-stable",
@@ -36,7 +52,7 @@
     "detect_package": "mesa-tkg-stable",
     "packages": ["mesa-tkg-stable", "lib32-mesa-tkg-stable"],
     "conflicts": [
-      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git", "mesa-big", "lib32-mesa-big",
       "mesa-tkg-git", "lib32-mesa-tkg-git",
       "vulkan-intel", "lib32-vulkan-intel", "vulkan-radeon", "lib32-vulkan-radeon",
       "vulkan-nouveau", "lib32-vulkan-nouveau",
@@ -52,7 +68,7 @@
     "detect_package": "mesa-tkg-git",
     "packages": ["mesa-tkg-git", "lib32-mesa-tkg-git"],
     "conflicts": [
-      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git",
+      "mesa", "lib32-mesa", "mesa-amber", "lib32-mesa-amber", "mesa-git", "mesa-big", "lib32-mesa-big",
       "mesa-tkg-stable", "lib32-mesa-tkg-stable",
       "vulkan-intel", "lib32-vulkan-intel", "vulkan-radeon", "lib32-vulkan-radeon",
       "vulkan-nouveau", "lib32-vulkan-nouveau",

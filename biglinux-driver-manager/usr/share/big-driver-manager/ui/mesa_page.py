@@ -39,6 +39,7 @@ from ui.mesa_data import (
     _init_driver_notes,
     _init_mesa_names,
     _init_purpose_sections,
+    _visible_mesa_variants,
 )
 from utils.i18n import _
 
@@ -484,6 +485,7 @@ class MesaSection(PackageOperationMixin, BaseSection):
                 break
             self._mesa_card_inner.remove(child)
 
+        drivers = _visible_mesa_variants(drivers, self._repo_set)
         if not drivers:
             self._mesa_card.set_visible(False)
             return
