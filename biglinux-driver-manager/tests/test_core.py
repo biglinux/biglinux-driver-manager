@@ -1128,7 +1128,7 @@ class TestMesaDriversJson(unittest.TestCase):
         from core.mesa_manager import MESA_DRIVERS
 
         ids = {d["id"] for d in MESA_DRIVERS}
-        self.assertEqual(ids, {"amber", "stable", "tkg-stable", "tkg-git"})
+        self.assertEqual(ids, {"amber", "stable", "big", "tkg-stable", "tkg-git"})
 
     def test_each_has_required_keys(self):
         from core.mesa_manager import MESA_DRIVERS

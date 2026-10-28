@@ -179,12 +179,46 @@ class TestMesaHumanNames(unittest.TestCase):
     def test_amber_present(self):
         self.assertIn("amber", self._names)
 
+    def test_big_present(self):
+        self.assertIn("big", self._names)
+
     def test_all_have_title_and_desc(self):
         for key, val in self._names.items():
             self.assertIn("title", val, f"Missing 'title' for {key}")
             self.assertIn("desc", val, f"Missing 'desc' for {key}")
             self.assertTrue(len(val["title"]) > 0)
             self.assertTrue(len(val["desc"]) > 0)
+
+
+class TestVisibleMesaVariants(unittest.TestCase):
+    """Only the variants that can be installed, plus the installed one."""
+
+    @classmethod
+    def setUpClass(cls):
+        from core.mesa_manager import MESA_DRIVERS
+        from ui.mesa_data import _visible_mesa_variants
+
+        cls.visible = staticmethod(_visible_mesa_variants)
+        cls.drivers = [dict(d, active=d["id"] == "stable") for d in MESA_DRIVERS]
+
+    def ids(self, drivers, repo_set):
+        return [d["id"] for d in self.visible(drivers, repo_set)]
+
+    def test_tkg_hidden_when_no_repository_has_it(self):
+        repo = {"mesa", "mesa-amber", "mesa-big", "lib32-mesa"}
+        self.assertEqual(self.ids(self.drivers, repo), ["amber", "stable", "big"])
+
+    def test_tkg_listed_when_a_repository_has_it(self):
+        repo = {"mesa", "mesa-tkg-stable"}
+        self.assertEqual(self.ids(self.drivers, repo), ["stable", "tkg-stable"])
+
+    def test_installed_tkg_stays_listed_without_a_repository(self):
+        drivers = [dict(d, active=d["id"] == "tkg-git") for d in self.drivers]
+        self.assertIn("tkg-git", self.ids(drivers, {"mesa"}))
+        self.assertNotIn("tkg-stable", self.ids(drivers, {"mesa"}))
+
+    def test_everything_listed_when_the_repositories_are_unknown(self):
+        self.assertEqual(len(self.visible(self.drivers, None)), len(self.drivers))
 
 
 # ------------------------------------------------------------------
