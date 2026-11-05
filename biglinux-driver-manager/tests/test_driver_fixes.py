@@ -637,21 +637,21 @@ class TestBigKernel(unittest.TestCase):
             km = self._km(Path(t), {}, {})
             km._search_kernel_packages = lambda _p: [
                 {
-                    "name": "linux-big",
-                    "version": "7.2.7-2",
+                    "name": "linux-big73",
+                    "version": "7.3.1-2",
                     "repository": "community-testing",
                 },
                 {"name": "linux612", "version": "6.12.1-1", "repository": "core"},
             ]
-            big = [k for k in km.get_available_kernels() if k["name"] == "linux-big"]
-            self.assertEqual(big[0]["version"], "7.2.7-2")
+            big = [k for k in km.get_available_kernels() if k["name"] == "linux-big73"]
+            self.assertEqual(big[0]["version"], "7.3.1-2")
             self.assertTrue(big[0]["big"])
 
             km._search_kernel_packages = lambda _p: [
                 {"name": "linux612", "version": "6.12.1-1", "repository": "core"}
             ]
             names = {k["name"] for k in km.get_available_kernels()}
-            self.assertNotIn("linux-big", names)
+            self.assertNotIn("linux-big73", names)
 
     def test_same_package_in_two_repos_listed_once(self):
         """testing + stable: only the one pacman -S would install (first)."""
@@ -659,31 +659,34 @@ class TestBigKernel(unittest.TestCase):
             km = self._km(Path(t), {}, {})
             km._search_kernel_packages = lambda _p: [
                 {
-                    "name": "linux-big",
-                    "version": "7.2.9-1",
+                    "name": "linux-big73",
+                    "version": "7.3.2-1",
                     "repository": "community-testing",
                 },
                 {
-                    "name": "linux-big",
-                    "version": "7.2.8-1",
+                    "name": "linux-big73",
+                    "version": "7.3.1-1",
                     "repository": "community-stable",
                 },
             ]
-            big = [k for k in km.get_available_kernels() if k["name"] == "linux-big"]
+            big = [k for k in km.get_available_kernels() if k["name"] == "linux-big73"]
         self.assertEqual(len(big), 1)
-        self.assertEqual(big[0]["version"], "7.2.9-1")
+        self.assertEqual(big[0]["version"], "7.3.2-1")
 
     def test_search_recognizes_linux_big_name(self):
         from core.kernel_manager import KernelManager
 
         km = KernelManager(package_manager=MagicMock())
-        self.assertTrue(km._is_kernel_package("linux-big"))
-        for module in (
+        for kernel in ("linux-big72", "linux-big73"):
+            self.assertTrue(km._is_kernel_package(kernel))
+        for not_a_kernel in (
+            "linux-big",  # the metapackage that follows the current series
             "linux-big-headers",
-            "linux-big-nvidia-open",
+            "linux-big73-headers",
+            "linux-big73-nvidia-open",
             "linux-big-bbswitch",
         ):
-            self.assertFalse(km._is_kernel_package(module))
+            self.assertFalse(km._is_kernel_package(not_a_kernel))
 
     def test_running_detected_by_pkgbase_and_suffix(self):
         with TemporaryDirectory() as t:
@@ -697,10 +700,56 @@ class TestBigKernel(unittest.TestCase):
 
         with TemporaryDirectory() as t:
             # No pkgbase for it: the "-big" suffix still wins over the version
-            # match that would otherwise answer linux72 (same 7.2.7 version)
-            km = self._km(Path(t), {"linux-big": "7.2.7-2", "linux72": "7.2.7-1"}, {})
-            km.get_running_kernel = lambda: "7.2.7-2-big"
-            self.assertEqual(km.get_running_kernel_package(), "linux-big")
+            # match that would otherwise answer linux73 (same 7.3.1 version)
+            km = self._km(Path(t), {"linux-big73": "7.3.1-1", "linux73": "7.3.1-1"}, {})
+            km.get_running_kernel = lambda: "7.3.1-1-big"
+            self.assertEqual(km.get_running_kernel_package(), "linux-big73")
+
+    def test_two_series_side_by_side(self):
+        """linux-big72 and linux-big73 installed: each answers for its own."""
+        installed = {
+            "linux-big": "1:7.3-1",  # the metapackage
+            "linux-big72": "7.2.15-1",
+            "linux-big73": "7.3.1-1",
+        }
+        modules = {"7.2.15-1-big": "linux-big72", "7.3.1-1-big": "linux-big73"}
+        for running, package in (("7.3.1-1-big", "linux-big73"), ("7.2.15-1-big", "linux-big72")):
+            with TemporaryDirectory() as t:
+                km = self._km(Path(t), installed, modules)
+                km.get_running_kernel = lambda running=running: running
+                self.assertEqual(km.get_running_kernel_package(), package)
+                kernels = {k["name"]: k for k in km.get_installed_kernels()}
+                # The metapackage is not a kernel; both series are, flagged big.
+                self.assertEqual(sorted(kernels), ["linux-big72", "linux-big73"])
+                self.assertTrue(all(k.get("big") for k in kernels.values()))
+        with TemporaryDirectory() as t:
+            # No pkgbase files: the series is told by its version.
+            km = self._km(Path(t), installed, {})
+            km.get_running_kernel = lambda: "7.2.15-1-big"
+            self.assertEqual(km.get_running_kernel_package(), "linux-big72")
+
+    def test_a_series_is_planned_with_its_own_modules(self):
+        """Installing linux-big73 from linux-big72 maps the modules across."""
+        from core import kernel_manager
+
+        installed = {
+            "linux-big72": "7.2.15-1",
+            "linux-big72-headers": "7.2.15-1",
+            "linux-big72-nvidia-open": "615.71.09-7021501",
+            "linux-big72-zfs": "2.4.4-7021501",
+        }
+        with TemporaryDirectory() as t:
+            km = self._km(Path(t), installed, {"7.2.15-1-big": "linux-big72"})
+            km.get_running_kernel = lambda: "7.2.15-1-big"
+            km._pacman_resolve_error = staticmethod(lambda _p: None)
+            repo = {"linux-big73", "linux-big73-headers", "linux-big73-nvidia-open", "linux-big73-zfs"}
+            with patch.object(kernel_manager, "fetch_repo_package_set", return_value=repo):
+                plan = km.plan_kernel_install("linux-big73")
+        self.assertTrue(plan.allowed)
+        self.assertEqual(
+            plan.packages,
+            ["linux-big73", "linux-big73-headers", "linux-big73-nvidia-open", "linux-big73-zfs"],
+        )
 
     def test_installed_outside_repos_is_local_not_obsolete(self):
         from core.kernel_manager import KernelManager

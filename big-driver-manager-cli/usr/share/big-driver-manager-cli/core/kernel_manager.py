@@ -25,6 +25,7 @@ from core.subprocess_env import subprocess_env
 from core.constants import (
     BIG_KERNEL,
     BIG_KERNEL_RELEASE_SUFFIX,
+    is_big_kernel,
     REQUIRED_MODULE_SUFFIX_RE,
     KERNEL_PATTERNS,
     EXCLUDED_PATTERNS,
@@ -161,10 +162,16 @@ class KernelManager(BaseManager):
 
         installed = self.get_installed_kernels()
 
-        # linux-big has a fixed name: identify it by package + "-big" release
-        # suffix, never by version (7.2.7-2-big would otherwise match linux72)
+        # A BigCommunity kernel: identify it by package + "-big" release
+        # suffix, never by version alone (7.3.1-1-big would otherwise match
+        # linux73): the linux-bigNN whose version the release starts with.
         if running_version.endswith(BIG_KERNEL_RELEASE_SUFFIX):
-            return BIG_KERNEL if any(k["name"] == BIG_KERNEL for k in installed) else ""
+            big = [k for k in installed if is_big_kernel(k["name"])]
+            for kernel in big:
+                version = kernel.get("version", "")
+                if version and running_version.startswith(f"{version}-"):
+                    return kernel["name"]
+            return big[0]["name"] if len(big) == 1 else ""
 
         # Match by version
         for kernel in installed:
@@ -345,9 +352,8 @@ class KernelManager(BaseManager):
             if kernel["name"] in repo_names:
                 continue
             if kernel.get("source") != "manual":
-                if (
-                    self._is_kernel_package(kernel["name"])
-                    and kernel["name"] != BIG_KERNEL
+                if self._is_kernel_package(kernel["name"]) and not is_big_kernel(
+                    kernel["name"]
                 ):
                     continue  # EOL official kernel -> obsolete alert
                 # Third-party/self-built, or linux-big with its repo disabled
@@ -441,7 +447,7 @@ class KernelManager(BaseManager):
             kernel["cachyos"] = True
 
         # BigCommunity kernel (big-kernel)
-        if kernel_name == BIG_KERNEL:
+        if is_big_kernel(kernel_name):
             kernel["big"] = True
 
         # Optimized build flags
@@ -567,6 +573,8 @@ class KernelManager(BaseManager):
                 continue
             # Not from the repos is not the same as end-of-life: third-party
             # and manual kernels are listed with their origin instead.
+            # BigCommunity's own: a series that left the repositories is
+            # still flagged (as Manjaro's linuxNN), the pre-split linux-big not.
             if kernel.get("source") in ("local", "manual") or name == BIG_KERNEL:
                 continue
             if name not in available_names:
@@ -657,55 +665,56 @@ class KernelManager(BaseManager):
     def plan_kernel_install(self, kernel_name: str) -> KernelInstallPlan:
         """Return the packages to install with *kernel_name*.
 
-        linux-big gets stricter rules (see _plan_big_kernel); other kernels
-        keep the historical best-effort module mapping.
+        BigCommunity kernels get stricter rules (see _plan_big_kernel); other
+        kernels keep the historical best-effort module mapping.
         """
-        if kernel_name == BIG_KERNEL:
-            return self._plan_big_kernel()
+        if is_big_kernel(kernel_name):
+            return self._plan_big_kernel(kernel_name)
         return KernelInstallPlan(
             kernel_name, [kernel_name] + self._get_kernel_modules(kernel_name)
         )
 
-    def _plan_big_kernel(self) -> KernelInstallPlan:
-        """linux-big + linux-big-headers + the running kernel's modules.
+    def _plan_big_kernel(self, kernel_name: str = BIG_KERNEL) -> KernelInstallPlan:
+        """A BigCommunity kernel + its headers + the running kernel's modules.
 
-        Modules the machine depends on (NVIDIA, broadcom-wl, bbswitch) must
-        exist for linux-big, otherwise it would boot without the driver: in
+        kernel_name is a series (linux-big73) or the linux-big metapackage,
+        which has a metapackage per module too. Modules the machine depends
+        on (NVIDIA, broadcom-wl, bbswitch) must exist for it, otherwise it would boot without the driver: in
         that case installation is not offered. NVIDIA modules also require
         the exact installed nvidia-utils version.
         """
         repo = fetch_repo_package_set()
-        headers = f"{BIG_KERNEL}-headers"
-        for pkg in (BIG_KERNEL, headers):
+        headers = f"{kernel_name}-headers"
+        for pkg in (kernel_name, headers):
             if pkg not in repo:
                 return KernelInstallPlan(
-                    BIG_KERNEL,
+                    kernel_name,
                     blocked_reason=_(
                         "{} is not available in the configured repositories."
                     ).format(pkg),
                 )
 
-        packages = [BIG_KERNEL, headers]
+        packages = [kernel_name, headers]
         missing: list[str] = []
         running = self.get_running_kernel_package()
-        if running and running != BIG_KERNEL:
+        if running and running != kernel_name:
             for module in self._kernel_module_packages(running):
                 suffix = module[len(running) :]
                 if suffix == "-headers":
                     continue
-                target = f"{BIG_KERNEL}{suffix}"
+                target = f"{kernel_name}{suffix}"
                 if target in repo:
                     packages.append(target)
                 elif re.fullmatch(REQUIRED_MODULE_SUFFIX_RE, suffix):
                     missing.append(f"{module} → {target}")
         elif not running:
             self._logger.warning(
-                "Running kernel unknown; linux-big without extra modules"
+                "Running kernel unknown; %s without extra modules", kernel_name
             )
 
         if missing:
             return KernelInstallPlan(
-                BIG_KERNEL,
+                kernel_name,
                 packages,
                 _(
                     "Your current kernel uses driver modules that are not "
@@ -715,7 +724,7 @@ class KernelManager(BaseManager):
                 ).format("\n".join(missing)),
             )
 
-        # Each module pins an exact linux-big (and nvidia-utils) version. Right
+        # Each module pins an exact kernel (and nvidia-utils) version. Right
         # after a new kernel is published its modules may lag behind, so let
         # pacman resolve the whole set without installing anything.
         details = self._pacman_resolve_error(packages)
@@ -726,8 +735,8 @@ class KernelManager(BaseManager):
             )
             if details:
                 reason += "\n\n" + _("pacman reported:") + "\n" + details
-            return KernelInstallPlan(BIG_KERNEL, packages, reason)
-        return KernelInstallPlan(BIG_KERNEL, packages)
+            return KernelInstallPlan(kernel_name, packages, reason)
+        return KernelInstallPlan(kernel_name, packages)
 
     @staticmethod
     def _pacman_resolve_error(packages: list[str]) -> str | None:

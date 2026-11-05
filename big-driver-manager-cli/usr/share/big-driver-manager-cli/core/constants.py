@@ -9,6 +9,7 @@ and configuration values.
 """
 
 import os
+import re
 
 # Application Metadata
 APP_NAME = "Big Driver Manager"
@@ -43,14 +44,24 @@ KERNEL_PATTERNS = [
     r"^linux-xanmod-lts-x64v\d$",  # Xanmod LTS optimized builds
     r"^linux-cachyos$",  # CachyOS kernel
     r"^linux-cachyos-lts$",  # CachyOS LTS kernel
-    r"^linux-big$",  # BigCommunity kernel (big-kernel), see BIG_KERNEL
+    r"^linux-big\d+$",  # BigCommunity kernels, one per series, see is_big_kernel
 ]
 
-# BigCommunity kernel (big-kernel project). Unlike Manjaro's linuxNN it has a
-# fixed name, modules are "linux-big-<module>" and ``uname -r`` ends with
-# "-big" (7.2.7-2-big).
+# BigCommunity kernels (big-kernel project). One package per series, as
+# Manjaro's linuxNN: linux-big72, linux-big73, with modules named
+# "linux-big73-<module>" and ``uname -r`` ending in "-big" (7.3.1-1-big).
+# BIG_KERNEL, "linux-big", is a metapackage that depends on the current
+# series; before the series were split it was the 7.2 kernel itself, and a
+# machine not yet updated may still have it as one.
 BIG_KERNEL = "linux-big"
+BIG_KERNEL_RE = r"linux-big\d+"
 BIG_KERNEL_RELEASE_SUFFIX = "-big"
+
+
+def is_big_kernel(name: str) -> bool:
+    """A BigCommunity kernel package: linux-big73, or the pre-split linux-big."""
+    return name == BIG_KERNEL or re.fullmatch(BIG_KERNEL_RE, name) is not None
+
 
 # Kernel module packages a machine can't boot/work without when the running
 # kernel uses them (display, Wi-Fi, power). A kernel whose repo lacks the
