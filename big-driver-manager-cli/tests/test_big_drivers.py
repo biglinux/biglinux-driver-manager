@@ -66,6 +66,10 @@ class FakeKernels:
     def get_running_kernel_package(self):
         return "linux-big"
 
+    def running_kernel_in(self, packages):
+        running = self.get_running_kernel_package()
+        return running if running in packages else ""
+
     def get_installed_kernels(self):
         return [dict(k) for k in self.installed]
 

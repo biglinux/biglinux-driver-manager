@@ -467,11 +467,15 @@ def _remove(args: argparse.Namespace) -> int:
         )
         return EXIT_FAILED
     running = manager.get_running_kernel_package()
-    if name == running:
+    packages = list(dict.fromkeys([name, *manager.get_modules_for_remove(name)]))
+    # By the package that owns the running image as well as by name: the
+    # running kernel is never removed, as mhwd-kernel does.
+    in_use = manager.running_kernel_in(packages)
+    if in_use:
         _error(
             _(
                 "{} is the running kernel. Start the computer with another kernel to remove it."
-            ).format(name)
+            ).format(in_use)
         )
         return EXIT_FAILED
     others = [
@@ -483,7 +487,6 @@ def _remove(args: argparse.Namespace) -> int:
         _error(_("{} is the only installed kernel.").format(name))
         return EXIT_FAILED
 
-    packages = list(dict.fromkeys([name, *manager.get_modules_for_remove(name)]))
     if not args.confirmed:
         _summary(_("Remove a kernel"), kernel, packages, running)
         if not _confirm(_("Remove these packages?"), False, args):

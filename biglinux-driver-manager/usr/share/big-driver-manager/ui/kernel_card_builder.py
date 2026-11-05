@@ -34,7 +34,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
     is_rt = kernel.get("rt", False) or "-rt" in name
     is_xanmod = kernel.get("xanmod", False) or "xanmod" in name
     is_cachyos = kernel.get("cachyos", False) or "cachyos" in name
-    is_big = kernel.get("big", False) or name == "linux-big"
+    is_big = kernel.get("big", False) or re.fullmatch(r"linux-big[0-9]*", name) is not None
 
     type_parts: list[str] = []
     full_parts: list[str] = []

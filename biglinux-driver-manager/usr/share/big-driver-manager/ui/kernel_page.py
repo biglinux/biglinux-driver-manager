@@ -784,7 +784,15 @@ class KernelSection(BaseSection):
     # ------------------------------------------------------------------
 
     def _on_remove_clicked(self, button: Gtk.Button, kernel: dict) -> None:
-        if kernel["name"] == self._running_kernel_package:
+        kernel_name = kernel["name"]
+        modules = self.kernel_manager.get_modules_for_remove(kernel_name)
+        packages = [kernel_name] + modules
+
+        # By name and by the package that owns the running image: the
+        # running kernel is never removed (remove_kernel() refuses it too).
+        if kernel_name == self._running_kernel_package or (
+            self.kernel_manager.running_kernel_in(packages)
+        ):
             self._show_completion_dialog(
                 _("Cannot Remove Running Kernel"),
                 _(
@@ -793,10 +801,6 @@ class KernelSection(BaseSection):
                 status="warning",
             )
             return
-
-        kernel_name = kernel["name"]
-        modules = self.kernel_manager.get_modules_for_remove(kernel_name)
-        packages = [kernel_name] + modules
 
         # Check if this is the last backup kernel
         installed_others = [
