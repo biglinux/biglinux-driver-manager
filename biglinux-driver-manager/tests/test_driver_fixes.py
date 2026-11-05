@@ -599,6 +599,112 @@ class TestKernelDetectionByModules(unittest.TestCase):
         self.assertIn("warning", [style for _t, style in manual.badge_entries])
 
 
+class TestRunningKernelNeverRemoved(unittest.TestCase):
+    """As mhwd-kernel: the running kernel is never removed, however it is named.
+
+    pacman itself would remove it without a word. The check asks pacman which
+    package owns /usr/lib/modules/$(uname -r)/vmlinuz, and also uses the
+    name the kernel list gives the running kernel: either one is enough.
+    """
+
+    def _km(self, owner: str, running_name: str):
+        from core.kernel_manager import KernelManager
+
+        km = KernelManager(package_manager=MagicMock())
+        km.get_running_kernel = lambda: "7.2.15-2-big"
+        km.get_running_kernel_package = lambda: running_name
+        km.running_kernel_owner = lambda: owner
+        return km
+
+    def test_owner_is_asked_for_the_running_image(self):
+        from core.kernel_manager import KernelManager
+
+        km = KernelManager(package_manager=MagicMock())
+        km.get_running_kernel = lambda: "7.2.15-2-big"
+        result = MagicMock(returncode=0, stdout="linux-big72\n")
+        with patch("core.kernel_manager.subprocess.run", return_value=result) as run:
+            self.assertEqual(km.running_kernel_owner(), "linux-big72")
+        command = run.call_args.args[0]
+        self.assertEqual(command[:2], ["pacman", "-Qqo"])
+        self.assertTrue(command[2].endswith("/7.2.15-2-big/vmlinuz"), command)
+
+        with patch(
+            "core.kernel_manager.subprocess.run",
+            return_value=MagicMock(returncode=1, stdout=""),
+        ):
+            self.assertEqual(km.running_kernel_owner(), "")
+        with patch("core.kernel_manager.subprocess.run", side_effect=OSError):
+            self.assertEqual(km.running_kernel_owner(), "")
+
+    def test_either_answer_is_enough(self):
+        packages = ["linux-big72", "linux-big72-headers", "linux-big72-nvidia"]
+        # The name went wrong (a series the list does not know): the owner
+        # still finds it.
+        self.assertEqual(
+            self._km("linux-big72", "").running_kernel_in(packages), "linux-big72"
+        )
+        # pacman could not answer: the name still finds it.
+        self.assertEqual(
+            self._km("", "linux-big72").running_kernel_in(packages), "linux-big72"
+        )
+        # Another kernel: nothing in the way.
+        self.assertEqual(
+            self._km("linux-big73", "linux-big73").running_kernel_in(packages), ""
+        )
+
+    def test_remove_kernel_refuses_before_running_pacman(self):
+        km = self._km("linux-big72", "")
+        km.run_pacman_command = MagicMock()
+        output, done = [], []
+        km.remove_kernel(
+            {"name": "linux-big72"},
+            packages=["linux-big72", "linux-big72-headers"],
+            output_callback=output.append,
+            complete_callback=done.append,
+        )
+        km.run_pacman_command.assert_not_called()
+        self.assertEqual(done, [False])
+        self.assertTrue(any("running kernel" in line for line in output), output)
+
+    def test_remove_kernel_goes_on_for_another_kernel(self):
+        km = self._km("linux-big73", "linux-big73")
+        km.run_pacman_command = MagicMock()
+        km.remove_kernel({"name": "linux-big72"}, packages=["linux-big72"])
+        km.run_pacman_command.assert_called_once()
+        self.assertEqual(
+            km.run_pacman_command.call_args.kwargs["args"],
+            ["-R", "--noconfirm", "linux-big72"],
+        )
+
+    def test_the_command_line_refuses_it_too(self):
+        import argparse
+        import io
+        from contextlib import redirect_stderr, redirect_stdout
+
+        from core import kernel_cli
+
+        km = self._km("linux-big72", "")
+        km.get_installed_kernels = lambda: [
+            {"name": "linux-big72", "version": "7.2.15-2", "installed": True},
+            {"name": "linux-big73", "version": "7.3.1-1", "installed": True},
+        ]
+        km.get_modules_for_remove = lambda name: [f"{name}-headers"]
+        args = argparse.Namespace(
+            name="linux-big72", yes=True, confirmed=True, json=False
+        )
+        err = io.StringIO()
+        with (
+            patch.object(kernel_cli, "KernelManager", return_value=km),
+            patch.object(kernel_cli, "_pacman") as pacman,
+            redirect_stdout(io.StringIO()),
+            redirect_stderr(err),
+        ):
+            code = kernel_cli._remove(args)
+        self.assertNotEqual(code, 0)
+        pacman.assert_not_called()
+        self.assertIn("running kernel", err.getvalue())
+
+
 class TestBigKernel(unittest.TestCase):
     """linux-big: fixed name, "-big" release suffix, strict module plan."""
 
@@ -713,7 +819,10 @@ class TestBigKernel(unittest.TestCase):
             "linux-big73": "7.3.1-1",
         }
         modules = {"7.2.15-1-big": "linux-big72", "7.3.1-1-big": "linux-big73"}
-        for running, package in (("7.3.1-1-big", "linux-big73"), ("7.2.15-1-big", "linux-big72")):
+        for running, package in (
+            ("7.3.1-1-big", "linux-big73"),
+            ("7.2.15-1-big", "linux-big72"),
+        ):
             with TemporaryDirectory() as t:
                 km = self._km(Path(t), installed, modules)
                 km.get_running_kernel = lambda running=running: running
@@ -742,13 +851,25 @@ class TestBigKernel(unittest.TestCase):
             km = self._km(Path(t), installed, {"7.2.15-1-big": "linux-big72"})
             km.get_running_kernel = lambda: "7.2.15-1-big"
             km._pacman_resolve_error = staticmethod(lambda _p: None)
-            repo = {"linux-big73", "linux-big73-headers", "linux-big73-nvidia-open", "linux-big73-zfs"}
-            with patch.object(kernel_manager, "fetch_repo_package_set", return_value=repo):
+            repo = {
+                "linux-big73",
+                "linux-big73-headers",
+                "linux-big73-nvidia-open",
+                "linux-big73-zfs",
+            }
+            with patch.object(
+                kernel_manager, "fetch_repo_package_set", return_value=repo
+            ):
                 plan = km.plan_kernel_install("linux-big73")
         self.assertTrue(plan.allowed)
         self.assertEqual(
             plan.packages,
-            ["linux-big73", "linux-big73-headers", "linux-big73-nvidia-open", "linux-big73-zfs"],
+            [
+                "linux-big73",
+                "linux-big73-headers",
+                "linux-big73-nvidia-open",
+                "linux-big73-zfs",
+            ],
         )
 
     def test_installed_outside_repos_is_local_not_obsolete(self):

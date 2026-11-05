@@ -145,6 +145,43 @@ class KernelManager(BaseManager):
         """
         return platform.release()
 
+    def running_kernel_owner(self) -> str:
+        """The package that owns the running kernel's image, as pacman knows it.
+
+        /usr/lib/modules/$(uname -r)/vmlinuz is installed by exactly one
+        kernel package, whatever its name (linux618, linux-big72, a
+        self-built one), so this does not depend on any naming rule. "" when
+        no package owns it (a kernel installed by hand) or pacman fails.
+        """
+        image = Path(self._modules_dir) / self.get_running_kernel() / "vmlinuz"
+        try:
+            result = subprocess.run(
+                ["pacman", "-Qqo", str(image)],
+                capture_output=True,
+                text=True,
+                check=False,
+                env=subprocess_env(),
+            )
+        except OSError:
+            return ""
+        if result.returncode != 0:
+            return ""
+        return result.stdout.strip().splitlines()[0] if result.stdout.strip() else ""
+
+    def running_kernel_in(self, packages: list[str]) -> str:
+        """The running kernel's package if *packages* would remove it, else "".
+
+        Asked two ways, so that one going wrong is not enough to remove it:
+        the package that owns the running image, and the name the kernel
+        list gives the running kernel. Like mhwd-kernel, which refuses to
+        remove the current kernel: pacman itself would do it without a word.
+        """
+        wanted = set(packages)
+        for name in (self.running_kernel_owner(), self.get_running_kernel_package()):
+            if name and name in wanted:
+                return name
+        return ""
+
     def get_running_kernel_package(self) -> str:
         """
         Get the package name of the currently running kernel.
@@ -789,6 +826,22 @@ class KernelManager(BaseManager):
         if packages is None:
             modules = self._get_installed_kernel_modules(kernel_name)
             packages = [kernel_name] + modules
+
+        # Checked here, where pacman is run, and not only by the callers: the
+        # CLI, the kernel page and the bulk removal of obsolete kernels all
+        # end up here.
+        running = self.running_kernel_in(packages)
+        if running:
+            self._logger.warning("Refusing to remove the running kernel: %s", running)
+            self._output(
+                output_callback,
+                _(
+                    "{} is the running kernel. Start the computer with another kernel to remove it."
+                ).format(running),
+            )
+            if complete_callback:
+                complete_callback(False)
+            return
 
         if not packages:
             self._output(output_callback, "No packages to remove.")
