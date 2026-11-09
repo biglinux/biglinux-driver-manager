@@ -2620,26 +2620,34 @@ msgstr "Configuración de Secure Boot eliminada."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Active Secure Boot en la configuración del firmware del equipo (UEFI), si está desactivado."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot y anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Iniciar con Secure Boot usando la clave de BigCommunity, como requieren los juegos que usan Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot está activado con la clave de BigCommunity, como requieren los juegos con Easy Anti-Cheat. Solo se cargan módulos del kernel firmados."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Esto elimina los cargadores de arranque de BigCommunity.\n\nSi Secure Boot está activado, desactívelo en la configuración del firmware antes de reiniciar, o el equipo no arrancará."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Con Secure Boot activado, el sistema solo carga módulos del kernel firmados, como requiere Easy Anti-Cheat: los de BigCommunity están firmados, los módulos compilados localmente con DKMS no. La hibernación tampoco está disponible."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Esto instala los cargadores de arranque firmados con la clave de BigCommunity. Su menú de arranque se mantiene como está."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Iniciar con Secure Boot usando la clave de BigCommunity: el equipo solo iniciará cargadores de arranque y kernels con una firma de confianza."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "El firmware de este equipo no acepta cargadores de arranque firmados por Microsoft para otros sistemas, algo que Secure Boot con la clave de BigCommunity necesita. Active “Allow Microsoft 3rd Party UEFI CA” en la configuración del firmware y vuelva a abrir esta página."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "El firmware no tiene suficiente espacio libre para añadir la clave de BigCommunity. Normalmente lo llenan informes de fallos antiguos que guarda."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot está activado con la clave de BigCommunity. Solo se cargan módulos del kernel firmados."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Con Secure Boot activado, el sistema solo carga módulos del kernel firmados: los de BigCommunity están firmados, los módulos compilados localmente con DKMS no. La hibernación tampoco está disponible."

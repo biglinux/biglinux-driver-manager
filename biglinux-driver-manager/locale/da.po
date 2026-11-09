@@ -2583,26 +2583,34 @@ msgstr "Opsætningen af Secure Boot er fjernet."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Slå Secure Boot til i computerens firmwareindstillinger (UEFI), hvis det er slået fra."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot og anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Start med Secure Boot ved hjælp af BigCommunity-nøglen, som spil, der bruger Easy Anti-Cheat, kræver."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot er slået til med BigCommunity-nøglen, som spil med Easy Anti-Cheat kræver. Kun signerede kernemoduler indlæses."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Dette fjerner BigCommunity-bootloaderne.\n\nHvis Secure Boot er slået til, skal du slå det fra i firmwareindstillingerne, før du genstarter, ellers vil computeren ikke starte."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Med Secure Boot slået til indlæser systemet kun signerede kernemoduler, som Easy Anti-Cheat kræver: BigCommunitys moduler er signerede, moduler bygget lokalt med DKMS er ikke. Dvale er heller ikke tilgængelig."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Dette installerer bootloadere signeret med BigCommunity-nøglen. Din startmenu forbliver uændret."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Start med Secure Boot ved hjælp af BigCommunity-nøglen: computeren starter derefter kun bootloadere og kerner med en betroet signatur."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Denne computers firmware accepterer ikke bootloadere signeret af Microsoft til andre systemer, hvilket Secure Boot med BigCommunity-nøglen kræver. Slå “Allow Microsoft 3rd Party UEFI CA” til i firmwareindstillingerne, og åbn derefter denne side igen."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "Firmwaren har ikke nok ledig plads til at tilføje BigCommunity-nøglen. Den fyldes normalt op af gamle nedbrudsrapporter, som den gemmer."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot er slået til med BigCommunity-nøglen. Kun signerede kernemoduler indlæses."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Med Secure Boot slået til indlæser systemet kun signerede kernemoduler: BigCommunitys moduler er signerede, moduler bygget lokalt med DKMS er ikke. Dvale er heller ikke tilgængelig."

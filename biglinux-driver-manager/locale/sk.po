@@ -2595,26 +2595,34 @@ msgstr "Nastavenie Secure Boot bolo odstránené."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Zapnite Secure Boot v nastaveniach firmvéru počítača (UEFI), ak je vypnutý."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot a anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Spúšťajte so Secure Boot pomocou kľúča BigCommunity, ako to vyžadujú hry, ktoré používajú Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot je zapnutý s kľúčom BigCommunity, ako to vyžadujú hry s Easy Anti-Cheat. Načítavajú sa iba podpísané moduly jadra."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Týmto sa odstránia zavádzače BigCommunity.\n\nAk je Secure Boot zapnutý, pred reštartom ho vypnite v nastaveniach firmvéru, inak sa počítač nespustí."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "So zapnutým Secure Boot systém načítava iba podpísané moduly jadra, ako to vyžaduje Easy Anti-Cheat: moduly BigCommunity sú podpísané, moduly zostavené lokálne pomocou DKMS nie. Hibernácia tiež nie je dostupná."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Týmto sa nainštalujú zavádzače podpísané kľúčom BigCommunity. Vaša ponuka zavádzania zostane nezmenená."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Spúšťajte so Secure Boot pomocou kľúča BigCommunity: počítač potom spustí iba zavádzače a jadrá s dôveryhodným podpisom."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Firmvér tohto počítača neprijíma zavádzače podpísané spoločnosťou Microsoft pre iné systémy, ktoré Secure Boot s kľúčom BigCommunity potrebuje. Zapnite “Allow Microsoft 3rd Party UEFI CA” v nastaveniach firmvéru a potom znova otvorte túto stránku."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "Firmvér nemá dostatok voľného miesta na pridanie kľúča BigCommunity. Zvyčajne ho zapĺňajú staré hlásenia o zlyhaniach, ktoré uchováva."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot je zapnutý s kľúčom BigCommunity. Načítavajú sa iba podpísané moduly jadra."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "So zapnutým Secure Boot systém načítava iba podpísané moduly jadra: moduly BigCommunity sú podpísané, moduly zostavené lokálne pomocou DKMS nie. Hibernácia tiež nie je dostupná."

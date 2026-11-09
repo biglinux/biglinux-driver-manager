@@ -2598,26 +2598,34 @@ msgstr "Secure Boot -määritys poistettu."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Kytke Secure Boot päälle tietokoneen laiteohjelmiston asetuksista (UEFI), jos se on pois päältä."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot ja anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Käynnistä Secure Bootilla BigCommunity-avaimella, kuten Easy Anti-Cheatia käyttävät pelit vaativat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot on käytössä BigCommunity-avaimella, kuten Easy Anti-Cheatia käyttävät pelit vaativat. Vain allekirjoitetut ytimen moduulit ladataan."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Tämä poistaa BigCommunityn käynnistyslataimet.\n\nJos Secure Boot on päällä, kytke se pois laiteohjelmiston asetuksista ennen uudelleenkäynnistystä, tai tietokone ei käynnisty."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Kun Secure Boot on käytössä, järjestelmä lataa vain allekirjoitettuja ytimen moduuleja, kuten Easy Anti-Cheat vaatii: BigCommunityn moduulit on allekirjoitettu, paikallisesti DKMS:llä käännetyt moduulit eivät ole. Myöskään horrostila ei ole käytettävissä."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Tämä asentaa BigCommunity-avaimella allekirjoitetut käynnistyslataimet. Käynnistysvalikkosi pysyy ennallaan."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Käynnistä Secure Bootilla BigCommunity-avaimella: tietokone käynnistää silloin vain käynnistyslataimet ja ytimet, joilla on luotettu allekirjoitus."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Tämän tietokoneen laiteohjelmisto ei hyväksy Microsoftin muille järjestelmille allekirjoittamia käynnistyslataimia, joita Secure Boot BigCommunity-avaimella tarvitsee. Ota “Allow Microsoft 3rd Party UEFI CA” käyttöön laiteohjelmiston asetuksista ja avaa sitten tämä sivu uudelleen."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "Laiteohjelmistossa ei ole tarpeeksi vapaata tilaa BigCommunity-avaimen lisäämiseen. Tavallisesti tilan täyttävät sen säilyttämät vanhat kaatumisraportit."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot on käytössä BigCommunity-avaimella. Vain allekirjoitetut ytimen moduulit ladataan."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Kun Secure Boot on käytössä, järjestelmä lataa vain allekirjoitettuja ytimen moduuleja: BigCommunityn moduulit on allekirjoitettu, paikallisesti DKMS:llä käännetyt moduulit eivät ole. Myöskään horrostila ei ole käytettävissä."

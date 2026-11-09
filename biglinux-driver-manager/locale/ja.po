@@ -2487,26 +2487,34 @@ msgstr "Secure Boot の設定を削除しました。"
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Secure Boot が無効な場合は、コンピューターのファームウェア設定 (UEFI) で有効にしてください。"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot とアンチチート"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Easy Anti-Cheat を使うゲームが必要とするとおり、BigCommunity の鍵を使って Secure Boot で起動します。"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Easy Anti-Cheat を使うゲームが必要とするとおり、BigCommunity の鍵で Secure Boot が有効になっています。署名されたカーネルモジュールのみが読み込まれます。"
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "BigCommunity のブートローダーを削除します。\n\nSecure Boot が有効な場合は、再起動する前にファームウェア設定で無効にしてください。そうしないとコンピューターが起動しなくなります。"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Secure Boot が有効な場合、Easy Anti-Cheat が必要とするとおり、システムは署名されたカーネルモジュールのみを読み込みます。BigCommunity のモジュールは署名されていますが、DKMS でローカルにビルドしたモジュールは署名されていません。また、ハイバネーションも利用できません。"
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "BigCommunity の鍵で署名されたブートローダーをインストールします。ブートメニューはそのまま残ります。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "BigCommunity の鍵を使って Secure Boot で起動します。コンピューターは信頼できる署名のあるブートローダーとカーネルのみを起動するようになります。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "このコンピューターのファームウェアは、Microsoft が他のシステム向けに署名したブートローダーを受け付けません。これは BigCommunity の鍵による Secure Boot に必要です。ファームウェア設定で “Allow Microsoft 3rd Party UEFI CA” を有効にしてから、このページを開き直してください。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "ファームウェアに BigCommunity の鍵を追加するための空き容量が足りません。通常、ファームウェアに保存された古いクラッシュレポートで埋まっています。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "BigCommunity の鍵で Secure Boot が有効になっています。署名されたカーネルモジュールのみが読み込まれます。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Secure Boot が有効な場合、システムは署名されたカーネルモジュールのみを読み込みます。BigCommunity のモジュールは署名されていますが、DKMS でローカルにビルドしたモジュールは署名されていません。また、ハイバネーションも利用できません。"

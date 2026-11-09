@@ -2500,26 +2500,34 @@ msgstr "Secure Boot 설정이 제거되었습니다."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Secure Boot가 꺼져 있다면 컴퓨터의 펌웨어 설정(UEFI)에서 켜세요."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot 및 안티치트"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Easy Anti-Cheat를 사용하는 게임에 필요한 대로 BigCommunity 키로 Secure Boot를 사용해 시작합니다."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Easy Anti-Cheat가 있는 게임에 필요한 대로 BigCommunity 키로 Secure Boot가 켜져 있습니다. 서명된 커널 모듈만 로드됩니다."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "BigCommunity 부트 로더를 제거합니다.\n\nSecure Boot가 켜져 있다면 재부팅하기 전에 펌웨어 설정에서 끄세요. 그렇지 않으면 컴퓨터가 시작되지 않습니다."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Secure Boot가 켜져 있으면 Easy Anti-Cheat의 요구에 따라 시스템은 서명된 커널 모듈만 로드합니다. BigCommunity 모듈은 서명되어 있지만, DKMS로 로컬에서 빌드한 모듈은 서명되어 있지 않습니다. 최대 절전 모드도 사용할 수 없습니다."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "BigCommunity 키로 서명된 부트 로더를 설치합니다. 부팅 메뉴는 그대로 유지됩니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "BigCommunity 키로 Secure Boot를 사용해 시작합니다. 그러면 컴퓨터는 신뢰할 수 있는 서명이 있는 부트 로더와 커널만 시작합니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "이 컴퓨터의 펌웨어는 다른 시스템용으로 Microsoft가 서명한 부트 로더를 허용하지 않습니다. BigCommunity 키로 Secure Boot를 사용하려면 이것이 필요합니다. 펌웨어 설정에서 “Allow Microsoft 3rd Party UEFI CA”을(를) 켠 다음 이 페이지를 다시 여세요."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "펌웨어에 BigCommunity 키를 추가할 여유 공간이 부족합니다. 보통 펌웨어에 보관된 오래된 충돌 보고서가 공간을 채우고 있습니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "BigCommunity 키로 Secure Boot가 켜져 있습니다. 서명된 커널 모듈만 로드됩니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Secure Boot가 켜져 있으면 시스템은 서명된 커널 모듈만 로드합니다. BigCommunity 모듈은 서명되어 있지만, DKMS로 로컬에서 빌드한 모듈은 서명되어 있지 않습니다. 최대 절전 모드도 사용할 수 없습니다."

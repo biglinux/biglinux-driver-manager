@@ -2467,26 +2467,34 @@ msgstr "已移除 Secure Boot 設定。"
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "如果 Secure Boot 為關閉狀態，請在電腦的韌體設定（UEFI）中將其開啟。"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot 與反作弊"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "依照使用 Easy Anti-Cheat 的遊戲要求，使用 BigCommunity 金鑰以 Secure Boot 開機。"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot 已使用 BigCommunity 金鑰開啟，符合含 Easy Anti-Cheat 的遊戲要求。僅會載入已簽署的核心模組。"
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "這會移除 BigCommunity 開機載入程式。\n\n如果 Secure Boot 已開啟，請在重新啟動前於韌體設定中將其關閉，否則電腦將無法開機。"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "開啟 Secure Boot 後，系統僅會載入已簽署的核心模組，這是 Easy Anti-Cheat 的要求：BigCommunity 的模組已簽署，而使用 DKMS 在本機建置的模組則未簽署。休眠功能也無法使用。"
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "這會安裝以 BigCommunity 金鑰簽署的開機載入程式。您的開機選單會維持不變。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "使用 BigCommunity 金鑰以 Secure Boot 開機：電腦將只會啟動具有受信任簽章的開機載入程式與核心。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "這部電腦的韌體不接受 Microsoft 為其他系統簽署的開機載入程式，而使用 BigCommunity 金鑰的 Secure Boot 需要它。請在韌體設定中開啟 “Allow Microsoft 3rd Party UEFI CA”，然後重新開啟此頁面。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "韌體沒有足夠的可用空間來新增 BigCommunity 金鑰。通常是韌體保存的舊當機報告佔滿了空間。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot 已使用 BigCommunity 金鑰開啟。僅會載入已簽署的核心模組。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "開啟 Secure Boot 後，系統僅會載入已簽署的核心模組：BigCommunity 的模組已簽署，而使用 DKMS 在本機建置的模組則未簽署。休眠功能也無法使用。"

@@ -4,9 +4,8 @@
 """
 Big Driver Manager - Secure Boot card (kernel page)
 
-Secure Boot with the BigCommunity key, set up as games that use Easy
-Anti-Cheat require. Enabling installs big-secureboot, disabling
-removes it (core/secureboot.py). The card says where the machine is and what
+Secure Boot with the BigCommunity key. Enabling installs big-secureboot,
+disabling removes it (core/secureboot.py). The card says where the machine is and what
 is left to do; it is hidden where big-secureboot does not exist (outside
 BigCommunity) or the machine did not boot in UEFI mode.
 """
@@ -24,6 +23,8 @@ from core.package_manager import PackageManager, fetch_repo_package_set
 from core.secureboot import (
     ACTIVE,
     MOK_PASSWORD,
+    NO_CA,
+    NO_SPACE,
     OFF,
     PENDING,
     UNAVAILABLE,
@@ -46,8 +47,21 @@ def state_text(state: str) -> str:
     """What the card says in each state."""
     if state == OFF:
         return _(
-            "Start with Secure Boot using the BigCommunity key, as games that "
-            "use Easy Anti-Cheat require."
+            "Start with Secure Boot using the BigCommunity key: the computer "
+            "then only starts boot loaders and kernels with a trusted "
+            "signature."
+        )
+    if state == NO_CA:
+        return _(
+            "This computer's firmware does not accept boot loaders signed by "
+            "Microsoft for other systems, which Secure Boot with the "
+            "BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI "
+            "CA” in the firmware settings, then open this page again."
+        )
+    if state == NO_SPACE:
+        return _(
+            "The firmware does not have enough free space to add the "
+            "BigCommunity key. Old crash reports it keeps usually fill it."
         )
     if state == PENDING:
         return "\n".join(
@@ -63,8 +77,8 @@ def state_text(state: str) -> str:
         )
     if state == ACTIVE:
         return _(
-            "Secure Boot is on with the BigCommunity key, as games with "
-            "Easy Anti-Cheat require. Only signed kernel modules load."
+            "Secure Boot is on with the BigCommunity key. Only signed kernel "
+            "modules load."
         )
     return ""
 
@@ -95,7 +109,7 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
         icon.set_valign(Gtk.Align.CENTER)
         header.append(icon)
         title = Gtk.Label()
-        title.set_markup("<b>" + _("Secure Boot and anti-cheat") + "</b>")
+        title.set_markup("<b>" + _("Secure Boot") + "</b>")
         title.set_halign(Gtk.Align.START)
         title.set_hexpand(True)
         title.add_css_class("kernel-group-header")
@@ -138,6 +152,8 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
         self.set_visible(state != UNAVAILABLE)
         self._text.set_text(state_text(state))
         enabling = state == OFF
+        # Enabling would not work here: nothing to click until it is fixed.
+        self._button.set_visible(state not in (NO_CA, NO_SPACE))
         self._button.set_label(_("Enable") if enabling else _("Disable"))
         self._button.remove_css_class(
             "destructive-action" if enabling else "suggested-action"
@@ -161,9 +177,9 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
                 + "\n\n"
                 + _(
                     "With Secure Boot on, the system only loads signed kernel "
-                    "modules, as Easy Anti-Cheat requires: the BigCommunity "
-                    "ones are signed, modules built locally with DKMS are "
-                    "not. Hibernation is not available either."
+                    "modules: the BigCommunity ones are signed, modules built "
+                    "locally with DKMS are not. Hibernation is not available "
+                    "either."
                 )
                 + "\n\n"
                 + confirm_steps()

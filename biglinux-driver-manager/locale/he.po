@@ -2545,26 +2545,34 @@ msgstr "הגדרת Secure Boot הוסרה."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "הפעל את Secure Boot בהגדרות הקושחה של המחשב (UEFI), אם הוא כבוי."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot ו-anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "אתחול עם Secure Boot באמצעות המפתח של BigCommunity, כפי שדורשים משחקים שמשתמשים ב-Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot פעיל עם המפתח של BigCommunity, כפי שדורשים משחקים עם Easy Anti-Cheat. נטענים רק מודולי ליבה חתומים."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "פעולה זו מסירה את מנהלי האתחול של BigCommunity.\n\nאם Secure Boot פעיל, כבה אותו בהגדרות הקושחה לפני ההפעלה מחדש, אחרת המחשב לא יאותחל."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "כאשר Secure Boot פעיל, המערכת טוענת רק מודולי ליבה חתומים, כפי ש-Easy Anti-Cheat דורש: המודולים של BigCommunity חתומים, ומודולים שנבנו מקומית עם DKMS אינם חתומים. גם מצב תרדמה אינו זמין."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "פעולה זו מתקינה את מנהלי האתחול החתומים במפתח של BigCommunity. תפריט האתחול שלך יישאר כפי שהוא."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "אתחול עם Secure Boot באמצעות המפתח של BigCommunity: המחשב יאתחל אז רק מנהלי אתחול וליבות עם חתימה מהימנה."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "הקושחה של מחשב זה אינה מקבלת מנהלי אתחול שנחתמו על ידי Microsoft עבור מערכות אחרות, ש-Secure Boot עם המפתח של BigCommunity זקוק להם. הפעל את “Allow Microsoft 3rd Party UEFI CA” בהגדרות הקושחה, ולאחר מכן פתח דף זה שוב."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "אין בקושחה מספיק מקום פנוי להוספת המפתח של BigCommunity. בדרך כלל הוא מתמלא בדוחות קריסה ישנים שהיא שומרת."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot פעיל עם המפתח של BigCommunity. נטענים רק מודולי ליבה חתומים."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "כאשר Secure Boot פעיל, המערכת טוענת רק מודולי ליבה חתומים: המודולים של BigCommunity חתומים, ומודולים שנבנו מקומית עם DKMS אינם חתומים. גם מצב תרדמה אינו זמין."

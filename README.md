@@ -92,12 +92,13 @@ the same version.
   boots without its drivers.
 - Never removes the running kernel; reports installed kernels that left the
   repositories.
-- **Secure Boot and anti-cheat** (BigCommunity, UEFI) — enables Secure Boot
-  with the BigCommunity key by installing `big-secureboot`, set up as games
-  that use Easy Anti-Cheat require. The card explains what changes (only
-  signed kernel modules load, no hibernation) and what is left to do:
-  confirming the key once on the blue screen after restarting, then turning
-  Secure Boot on in the firmware settings. The boot menu stays as it is.
+- **Secure Boot** (BigCommunity, UEFI) — enables Secure Boot with the
+  BigCommunity key by installing `big-secureboot`. The card explains what
+  changes (only signed kernel modules load, no hibernation) and what is left
+  to do: confirming the key once on the blue screen after restarting, then
+  turning Secure Boot on in the firmware settings. It does not offer to
+  enable it where it could not work: a firmware that does not accept
+  Microsoft's third-party CA, or without room left for the key.
 
 ### Devices
 - Wi-Fi, Ethernet, Bluetooth, DVB/TV, audio, webcams, touchscreens, printers,

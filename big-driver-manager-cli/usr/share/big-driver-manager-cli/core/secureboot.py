@@ -22,6 +22,7 @@ The state is read without root, too:
   shim and GRUB once the key is enrolled.
 """
 
+import os
 from pathlib import Path
 
 from core.base_manager import BaseManager
@@ -32,9 +33,20 @@ MOK_PASSWORD = "bigcommunity"
 
 _EFI_DIR = Path("/sys/firmware/efi")
 _SECURE_BOOT_VAR = _EFI_DIR / "efivars/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c"
+_DB_VAR = _EFI_DIR / "efivars/db-d719b2cb-3d3a-4596-a3bc-dad00e67656f"
+_EFIVARS = _EFI_DIR / "efivars"
+# shim is signed with Microsoft's CAs for other systems. "Secured-core" PCs
+# leave both out of db until "Allow Microsoft 3rd Party UEFI CA" is turned
+# on in the firmware settings: shim would never start there.
+_THIRD_PARTY_CAS = (b"Microsoft Corporation UEFI CA 2011", b"Microsoft UEFI CA 2023")
+# Room the key and the request take in the firmware's variable storage,
+# with margin (the same figure big-secureboot checks).
+NVRAM_NEEDED = 8192
 
 # States, in the order a user goes through them.
 UNAVAILABLE = "unavailable"  # not BigCommunity, or not UEFI: nothing to show
+NO_CA = "no_ca"  # the firmware does not accept shim: an option to turn on first
+NO_SPACE = "no_space"  # no room in the firmware for the key
 OFF = "off"  # can be enabled
 PENDING = "pending"  # installed; key to confirm and/or Secure Boot to turn on
 ACTIVE = "active"  # Secure Boot on with the BigCommunity key: locked down
@@ -49,17 +61,45 @@ def secure_boot_enabled(var: Path = _SECURE_BOOT_VAR) -> bool:
     return len(data) >= 5 and data[4] == 1
 
 
+def firmware_trusts_shim(var: Path = _DB_VAR) -> bool:
+    """db holds one of the CAs shim is signed with. No db (setup mode, or
+    not readable) tells nothing yet, so it does not block."""
+    try:
+        data = var.read_bytes()
+    except OSError:
+        return True
+    return any(ca in data for ca in _THIRD_PARTY_CAS)
+
+
+def nvram_free(path: Path = _EFIVARS) -> int | None:
+    """Free bytes in the firmware's variable storage, as efivarfs reports
+    it; None when the kernel does not."""
+    try:
+        info = os.statvfs(path)
+    except OSError:
+        return None
+    if not info.f_blocks:
+        return None
+    return info.f_bavail * info.f_frsize
+
+
 def state(
     *,
     uefi: bool,
     available: bool,
     installed: bool,
     secure_boot: bool,
+    trusts_shim: bool = True,
+    free: int | None = None,
 ) -> str:
     """Where a machine is on the way to the anti-cheat boot."""
     if not uefi or not (available or installed):
         return UNAVAILABLE
     if not installed:
+        if not trusts_shim:
+            return NO_CA
+        if free is not None and free < NVRAM_NEEDED:
+            return NO_SPACE
         return OFF
     if not secure_boot:
         return PENDING
@@ -82,6 +122,8 @@ class SecureBootManager(BaseManager):
             available=PACKAGE in self._repo_packages(),
             installed=self._packages.is_package_installed(PACKAGE),
             secure_boot=secure_boot_enabled(_SECURE_BOOT_VAR),
+            trusts_shim=firmware_trusts_shim(_DB_VAR),
+            free=nvram_free(_EFIVARS),
         )
 
     def enable(self, operation_name: str, **callbacks) -> None:

@@ -2595,26 +2595,34 @@ msgstr "Secure Boot yapılandırması kaldırıldı."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Kapalıysa, bilgisayarın firmware ayarlarından (UEFI) Secure Boot'u açın."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot ve anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Easy Anti-Cheat kullanan oyunların gerektirdiği gibi, BigCommunity anahtarıyla Secure Boot ile başlatın."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot, Easy Anti-Cheat kullanan oyunların gerektirdiği gibi BigCommunity anahtarıyla açık. Yalnızca imzalı çekirdek modülleri yüklenir."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Bu işlem BigCommunity önyükleyicilerini kaldırır.\n\nSecure Boot açıksa, yeniden başlatmadan önce firmware ayarlarından kapatın, aksi halde bilgisayar başlamaz."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Secure Boot açıkken sistem, Easy Anti-Cheat'in gerektirdiği gibi yalnızca imzalı çekirdek modüllerini yükler: BigCommunity modülleri imzalıdır, DKMS ile yerel olarak derlenen modüller değildir. Hazırda bekletme de kullanılamaz."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Bu işlem, BigCommunity anahtarıyla imzalanmış önyükleyicileri yükler. Önyükleme menünüz olduğu gibi kalır."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "BigCommunity anahtarıyla Secure Boot ile başlatın: bilgisayar bundan sonra yalnızca güvenilir imzaya sahip önyükleyicileri ve çekirdekleri başlatır."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Bu bilgisayarın firmware'i, Microsoft tarafından diğer sistemler için imzalanmış önyükleyicileri kabul etmiyor; BigCommunity anahtarıyla Secure Boot için bu gereklidir. Firmware ayarlarından “Allow Microsoft 3rd Party UEFI CA” seçeneğini açın, ardından bu sayfayı yeniden açın."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "Firmware'de BigCommunity anahtarını eklemek için yeterli boş alan yok. Bu alanı genellikle firmware'in sakladığı eski çökme raporları doldurur."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot, BigCommunity anahtarıyla açık. Yalnızca imzalı çekirdek modülleri yüklenir."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Secure Boot açıkken sistem yalnızca imzalı çekirdek modüllerini yükler: BigCommunity modülleri imzalıdır, DKMS ile yerel olarak derlenen modüller değildir. Hazırda bekletme de kullanılamaz."

@@ -2596,26 +2596,34 @@ msgstr "Налаштування Secure Boot видалено."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Увімкніть Secure Boot у налаштуваннях прошивки комп'ютера (UEFI), якщо його вимкнено."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot і античит"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Запуск із Secure Boot з ключем BigCommunity, як того вимагають ігри, що використовують Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot увімкнено з ключем BigCommunity, як того вимагають ігри з Easy Anti-Cheat. Завантажуються лише підписані модулі ядра."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Буде видалено завантажувачі BigCommunity.\n\nЯкщо Secure Boot увімкнено, вимкніть його в налаштуваннях прошивки перед перезавантаженням, інакше комп'ютер не запуститься."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "З увімкненим Secure Boot система завантажує лише підписані модулі ядра, як того вимагає Easy Anti-Cheat: модулі BigCommunity підписані, а зібрані локально за допомогою DKMS — ні. Гібернація також недоступна."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Буде встановлено завантажувачі, підписані ключем BigCommunity. Ваше меню завантаження залишиться без змін."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Запуск із Secure Boot з ключем BigCommunity: комп'ютер запускатиме лише завантажувачі та ядра з довіреним підписом."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Прошивка цього комп'ютера не приймає завантажувачі, підписані Microsoft для інших систем, а вони потрібні для Secure Boot з ключем BigCommunity. Увімкніть “Allow Microsoft 3rd Party UEFI CA” у налаштуваннях прошивки, а потім знову відкрийте цю сторінку."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "У прошивці недостатньо вільного місця, щоб додати ключ BigCommunity. Зазвичай його займають старі звіти про збої, які вона зберігає."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot увімкнено з ключем BigCommunity. Завантажуються лише підписані модулі ядра."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "З увімкненим Secure Boot система завантажує лише підписані модулі ядра: модулі BigCommunity підписані, а зібрані локально за допомогою DKMS — ні. Гібернація також недоступна."

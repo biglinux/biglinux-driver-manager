@@ -63,6 +63,16 @@ class TestSecureBootCard(unittest.TestCase):
                 self.assertTrue(self.mod.state_text(state))
                 self.assertEqual(self.card._button.get_label(), label)
 
+    def test_no_button_where_enabling_would_not_work(self):
+        for state in (self.sb.NO_CA, self.sb.NO_SPACE):
+            with self.subTest(state=state):
+                self.card._show_state(state)
+                self.assertTrue(self.card.get_visible())
+                self.assertTrue(self.mod.state_text(state))
+                self.assertFalse(self.card._button.get_visible())
+        self.card._show_state(self.sb.OFF)
+        self.assertTrue(self.card._button.get_visible())
+
     def test_the_steps_give_the_password(self):
         self.assertIn(self.sb.MOK_PASSWORD, self.mod.confirm_steps())
         self.assertIn(self.sb.MOK_PASSWORD, self.mod.state_text(self.sb.PENDING))

@@ -2625,26 +2625,34 @@ msgstr "Η ρύθμιση του Secure Boot αφαιρέθηκε."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Ενεργοποιήστε το Secure Boot στις ρυθμίσεις υλικολογισμικού του υπολογιστή (UEFI), αν είναι απενεργοποιημένο."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot και anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Εκκίνηση με Secure Boot χρησιμοποιώντας το κλειδί BigCommunity, όπως απαιτούν τα παιχνίδια που χρησιμοποιούν Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Το Secure Boot είναι ενεργό με το κλειδί BigCommunity, όπως απαιτούν τα παιχνίδια με Easy Anti-Cheat. Φορτώνονται μόνο υπογεγραμμένες μονάδες πυρήνα."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Αυτό αφαιρεί τους φορτωτές εκκίνησης του BigCommunity.\n\nΑν το Secure Boot είναι ενεργό, απενεργοποιήστε το στις ρυθμίσεις υλικολογισμικού πριν από την επανεκκίνηση, αλλιώς ο υπολογιστής δεν θα ξεκινήσει."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Με ενεργό το Secure Boot, το σύστημα φορτώνει μόνο υπογεγραμμένες μονάδες πυρήνα, όπως απαιτεί το Easy Anti-Cheat: οι μονάδες του BigCommunity είναι υπογεγραμμένες, ενώ όσες έχουν μεταγλωττιστεί τοπικά με DKMS όχι. Επίσης, η αδρανοποίηση δεν είναι διαθέσιμη."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Αυτό εγκαθιστά τους φορτωτές εκκίνησης που είναι υπογεγραμμένοι με το κλειδί BigCommunity. Το μενού εκκίνησης παραμένει ως έχει."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Εκκίνηση με Secure Boot χρησιμοποιώντας το κλειδί BigCommunity: ο υπολογιστής θα εκκινεί τότε μόνο φορτωτές εκκίνησης και πυρήνες με αξιόπιστη υπογραφή."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Το υλικολογισμικό αυτού του υπολογιστή δεν δέχεται φορτωτές εκκίνησης υπογεγραμμένους από τη Microsoft για άλλα συστήματα, κάτι που χρειάζεται το Secure Boot με το κλειδί BigCommunity. Ενεργοποιήστε το “Allow Microsoft 3rd Party UEFI CA” στις ρυθμίσεις υλικολογισμικού και, στη συνέχεια, ανοίξτε ξανά αυτή τη σελίδα."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "Το υλικολογισμικό δεν έχει αρκετό ελεύθερο χώρο για να προστεθεί το κλειδί BigCommunity. Συνήθως τον γεμίζουν παλιές αναφορές σφαλμάτων που διατηρεί."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Το Secure Boot είναι ενεργό με το κλειδί BigCommunity. Φορτώνονται μόνο υπογεγραμμένες μονάδες πυρήνα."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Με ενεργό το Secure Boot, το σύστημα φορτώνει μόνο υπογεγραμμένες μονάδες πυρήνα: οι μονάδες του BigCommunity είναι υπογεγραμμένες, ενώ όσες έχουν μεταγλωττιστεί τοπικά με DKMS όχι. Επίσης, η αδρανοποίηση δεν είναι διαθέσιμη."

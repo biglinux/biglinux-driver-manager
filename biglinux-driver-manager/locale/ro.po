@@ -2615,26 +2615,34 @@ msgstr "Configurarea Secure Boot a fost eliminată."
 msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
 msgstr "Activați Secure Boot din setările firmware-ului computerului (UEFI), dacă este dezactivat."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:104
-msgid "Secure Boot and anti-cheat"
-msgstr "Secure Boot și anti-cheat"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:48
-msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
-msgstr "Pornire cu Secure Boot folosind cheia BigCommunity, așa cum cer jocurile care folosesc Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:65
-msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
-msgstr "Secure Boot este activat cu cheia BigCommunity, așa cum cer jocurile cu Easy Anti-Cheat. Se încarcă doar modulele de kernel semnate."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
 msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
 msgstr "Aceasta elimină încărcătoarele de pornire BigCommunity.\n\nDacă Secure Boot este activat, dezactivați-l din setările firmware-ului înainte de repornire, altfel computerul nu va porni."
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:162
-msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Cu Secure Boot activat, sistemul încarcă doar module de kernel semnate, așa cum cere Easy Anti-Cheat: cele de la BigCommunity sunt semnate, modulele compilate local cu DKMS nu sunt. Nici hibernarea nu este disponibilă."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
 msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
 msgstr "Aceasta instalează încărcătoarele de pornire semnate cu cheia BigCommunity. Meniul de pornire rămâne neschimbat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Pornire cu Secure Boot folosind cheia BigCommunity: computerul va porni apoi doar încărcătoare de pornire și kerneluri cu o semnătură de încredere."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Firmware-ul acestui computer nu acceptă încărcătoare de pornire semnate de Microsoft pentru alte sisteme, de care Secure Boot cu cheia BigCommunity are nevoie. Activați “Allow Microsoft 3rd Party UEFI CA” din setările firmware-ului, apoi deschideți din nou această pagină."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
+msgstr "Firmware-ul nu are suficient spațiu liber pentru a adăuga cheia BigCommunity. De obicei, acesta este ocupat de rapoarte de erori vechi pe care le păstrează."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
+msgstr "Secure Boot este activat cu cheia BigCommunity. Se încarcă doar modulele de kernel semnate."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Cu Secure Boot activat, sistemul încarcă doar module de kernel semnate: cele de la BigCommunity sunt semnate, modulele compilate local cu DKMS nu sunt. Nici hibernarea nu este disponibilă."

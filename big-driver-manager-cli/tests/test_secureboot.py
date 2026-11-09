@@ -10,11 +10,16 @@ from core import secureboot
 from core.privileged import pacman_to_cli
 from core.secureboot import (
     ACTIVE,
+    NO_CA,
+    NO_SPACE,
+    NVRAM_NEEDED,
     OFF,
     PACKAGE,
     PENDING,
     UNAVAILABLE,
     SecureBootManager,
+    firmware_trusts_shim,
+    nvram_free,
     secure_boot_enabled,
     state,
 )
@@ -41,6 +46,15 @@ class TestState(unittest.TestCase):
         self.assertEqual(_state(installed=True), PENDING)
         self.assertEqual(_state(installed=True, secure_boot=True), ACTIVE)
 
+    def test_firmware_that_would_refuse_shim_blocks_enabling(self):
+        self.assertEqual(_state(trusts_shim=False), NO_CA)
+        self.assertEqual(_state(free=NVRAM_NEEDED - 1), NO_SPACE)
+        self.assertEqual(_state(free=NVRAM_NEEDED), OFF)
+        self.assertEqual(_state(free=None), OFF)  # not reported: no block
+
+    def test_once_installed_the_checks_no_longer_matter(self):
+        self.assertEqual(_state(installed=True, trusts_shim=False, free=0), PENDING)
+
     def test_secure_boot_alone_is_not_ours(self):
         # Secure Boot on with another distribution's chain: still to enable.
         self.assertEqual(_state(secure_boot=True), OFF)
@@ -61,6 +75,29 @@ class TestReading(unittest.TestCase):
         self.assertFalse(secure_boot_enabled(self.file("off", attributes + b"\x00")))
         self.assertFalse(secure_boot_enabled(self.file("short", b"\x06")))
         self.assertFalse(secure_boot_enabled(self.dir / "missing"))
+
+
+class TestFirmware(unittest.TestCase):
+    def setUp(self):
+        self.dir = Path(tempfile.mkdtemp())
+
+    def test_db_with_either_third_party_ca(self):
+        for ca in (b"Microsoft Corporation UEFI CA 2011", b"Microsoft UEFI CA 2023"):
+            db = self.dir / "db"
+            db.write_bytes(b"\x00junk" + ca + b"junk")
+            self.assertTrue(firmware_trusts_shim(db))
+
+    def test_db_with_only_windows_cas(self):
+        db = self.dir / "db"
+        db.write_bytes(b"Microsoft Windows Production PCA 2011 Windows UEFI CA 2023")
+        self.assertFalse(firmware_trusts_shim(db))
+
+    def test_no_db_does_not_block(self):
+        self.assertTrue(firmware_trusts_shim(self.dir / "missing"))
+
+    def test_free_space_of_a_real_file_system_and_of_none(self):
+        self.assertIsInstance(nvram_free(self.dir), int)
+        self.assertIsNone(nvram_free(self.dir / "missing"))
 
 
 class _Installed:
