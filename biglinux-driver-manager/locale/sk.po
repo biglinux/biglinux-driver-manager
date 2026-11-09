@@ -2547,18 +2547,6 @@ msgstr "Najnovšie oficiálne vydanie Mesa, zostavené BigCommunity s vlastným 
 msgid "New"
 msgstr "Nové"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Spúšťajte so Secure Boot pomocou kľúča BigCommunity, s položkou v ponuke zavádzania pre hry, ktoré používajú Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot je zapnutý s kľúčom BigCommunity. Pre hry s anti-cheatom spustite systém z položky “anti-cheat” v ponuke zavádzania."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Pripravené na anti-cheat: Secure Boot je zapnutý a systém sa spustil z položky “anti-cheat”."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Reštartujte. Na modrej obrazovke stlačte ľubovoľný kláves, zvoľte “Enroll MOK”, “Continue” a “Yes”, zadajte heslo {} a zvoľte “Reboot”."
@@ -2595,10 +2583,6 @@ msgstr "Zapnúť Secure Boot?"
 msgid "Disable Secure Boot?"
 msgstr "Vypnúť Secure Boot?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Týmto sa odstránia zavádzače BigCommunity a položka zavádzania “anti-cheat”.\n\nAk je Secure Boot zapnutý, pred reštartom ho vypnite v nastaveniach firmvéru, inak sa počítač nespustí."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot je nastavený. Reštartujte na potvrdenie kľúča."
@@ -2615,6 +2599,22 @@ msgstr "Zapnite Secure Boot v nastaveniach firmvéru počítača (UEFI), ak je v
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot a anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Týmto sa nainštalujú zavádzače podpísané kľúčom BigCommunity a položka “anti-cheat” v ponuke zavádzania. Vaše súčasné položky zavádzania zostanú nezmenené."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Spúšťajte so Secure Boot pomocou kľúča BigCommunity, ako to vyžadujú hry, ktoré používajú Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot je zapnutý s kľúčom BigCommunity, ako to vyžadujú hry s Easy Anti-Cheat. Načítavajú sa iba podpísané moduly jadra."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Týmto sa odstránia zavádzače BigCommunity.\n\nAk je Secure Boot zapnutý, pred reštartom ho vypnite v nastaveniach firmvéru, inak sa počítač nespustí."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "So zapnutým Secure Boot systém načítava iba podpísané moduly jadra, ako to vyžaduje Easy Anti-Cheat: moduly BigCommunity sú podpísané, moduly zostavené lokálne pomocou DKMS nie. Hibernácia tiež nie je dostupná."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Týmto sa nainštalujú zavádzače podpísané kľúčom BigCommunity. Vaša ponuka zavádzania zostane nezmenená."

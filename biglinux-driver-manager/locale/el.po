@@ -2577,18 +2577,6 @@ msgstr "Η πιο πρόσφατη επίσημη έκδοση του Mesa, με
 msgid "New"
 msgstr "Νέο"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Εκκίνηση με Secure Boot χρησιμοποιώντας το κλειδί BigCommunity, με μια καταχώριση στο μενού εκκίνησης για παιχνίδια που χρησιμοποιούν Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Το Secure Boot είναι ενεργό με το κλειδί BigCommunity. Για παιχνίδια με anti-cheat, εκκινήστε από την καταχώριση “anti-cheat” του μενού εκκίνησης."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Έτοιμο για anti-cheat: το Secure Boot είναι ενεργό και το σύστημα εκκινήθηκε από την καταχώριση “anti-cheat”."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Κάντε επανεκκίνηση. Στη μπλε οθόνη, πατήστε ένα πλήκτρο, επιλέξτε “Enroll MOK”, “Continue” και “Yes”, πληκτρολογήστε τον κωδικό πρόσβασης {} και επιλέξτε “Reboot”."
@@ -2625,10 +2613,6 @@ msgstr "Ενεργοποίηση του Secure Boot;"
 msgid "Disable Secure Boot?"
 msgstr "Απενεργοποίηση του Secure Boot;"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Αυτό αφαιρεί τους φορτωτές εκκίνησης του BigCommunity και την καταχώριση εκκίνησης “anti-cheat”.\n\nΑν το Secure Boot είναι ενεργό, απενεργοποιήστε το στις ρυθμίσεις υλικολογισμικού πριν από την επανεκκίνηση, αλλιώς ο υπολογιστής δεν θα ξεκινήσει."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Το Secure Boot ρυθμίστηκε. Κάντε επανεκκίνηση για να επιβεβαιώσετε το κλειδί."
@@ -2645,6 +2629,22 @@ msgstr "Ενεργοποιήστε το Secure Boot στις ρυθμίσεις 
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot και anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Αυτό εγκαθιστά τους φορτωτές εκκίνησης που είναι υπογεγραμμένοι με το κλειδί BigCommunity και μια καταχώριση “anti-cheat” στο μενού εκκίνησης. Οι τρέχουσες καταχωρίσεις εκκίνησης παραμένουν ως έχουν."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Εκκίνηση με Secure Boot χρησιμοποιώντας το κλειδί BigCommunity, όπως απαιτούν τα παιχνίδια που χρησιμοποιούν Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Το Secure Boot είναι ενεργό με το κλειδί BigCommunity, όπως απαιτούν τα παιχνίδια με Easy Anti-Cheat. Φορτώνονται μόνο υπογεγραμμένες μονάδες πυρήνα."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Αυτό αφαιρεί τους φορτωτές εκκίνησης του BigCommunity.\n\nΑν το Secure Boot είναι ενεργό, απενεργοποιήστε το στις ρυθμίσεις υλικολογισμικού πριν από την επανεκκίνηση, αλλιώς ο υπολογιστής δεν θα ξεκινήσει."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Με ενεργό το Secure Boot, το σύστημα φορτώνει μόνο υπογεγραμμένες μονάδες πυρήνα, όπως απαιτεί το Easy Anti-Cheat: οι μονάδες του BigCommunity είναι υπογεγραμμένες, ενώ όσες έχουν μεταγλωττιστεί τοπικά με DKMS όχι. Επίσης, η αδρανοποίηση δεν είναι διαθέσιμη."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Αυτό εγκαθιστά τους φορτωτές εκκίνησης που είναι υπογεγραμμένοι με το κλειδί BigCommunity. Το μενού εκκίνησης παραμένει ως έχει."

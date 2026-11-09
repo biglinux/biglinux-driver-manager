@@ -10,22 +10,18 @@ from core import secureboot
 from core.privileged import pacman_to_cli
 from core.secureboot import (
     ACTIVE,
-    GAMES,
     OFF,
     PACKAGE,
     PENDING,
     UNAVAILABLE,
     SecureBootManager,
-    games_boot,
     secure_boot_enabled,
     state,
 )
 
 
 def _state(**overrides):
-    values = dict(
-        uefi=True, available=True, installed=False, secure_boot=False, games=False
-    )
+    values = dict(uefi=True, available=True, installed=False, secure_boot=False)
     values.update(overrides)
     return state(**values)
 
@@ -44,7 +40,6 @@ class TestState(unittest.TestCase):
         self.assertEqual(_state(), OFF)
         self.assertEqual(_state(installed=True), PENDING)
         self.assertEqual(_state(installed=True, secure_boot=True), ACTIVE)
-        self.assertEqual(_state(installed=True, secure_boot=True, games=True), GAMES)
 
     def test_secure_boot_alone_is_not_ours(self):
         # Secure Boot on with another distribution's chain: still to enable.
@@ -66,15 +61,6 @@ class TestReading(unittest.TestCase):
         self.assertFalse(secure_boot_enabled(self.file("off", attributes + b"\x00")))
         self.assertFalse(secure_boot_enabled(self.file("short", b"\x06")))
         self.assertFalse(secure_boot_enabled(self.dir / "missing"))
-
-    def test_games_entry_from_the_command_line(self):
-        on = self.file(
-            "on", b"BOOT_IMAGE=/boot/vmlinuz root=UUID=x lockdown=integrity quiet\n"
-        )
-        off = self.file("off", b"BOOT_IMAGE=/boot/vmlinuz root=UUID=x quiet\n")
-        self.assertTrue(games_boot(on))
-        self.assertFalse(games_boot(off))
-        self.assertFalse(games_boot(self.dir / "missing"))
 
 
 class _Installed:
@@ -115,16 +101,13 @@ class TestManager(unittest.TestCase):
         root = Path(tempfile.mkdtemp())
         variable = root / "SecureBoot"
         variable.write_bytes(b"\x06\x00\x00\x00\x01")
-        cmdline = root / "cmdline"
-        cmdline.write_text("root=UUID=x lockdown=integrity\n")
         with (
             patch.object(secureboot, "_EFI_DIR", root),
             patch.object(secureboot, "_SECURE_BOOT_VAR", variable),
-            patch.object(secureboot, "_CMDLINE", cmdline),
         ):
-            self.assertEqual(manager.current_state(), GAMES)
-            cmdline.write_text("root=UUID=x\n")
             self.assertEqual(manager.current_state(), ACTIVE)
+            variable.write_bytes(b"\x06\x00\x00\x00\x00")
+            self.assertEqual(manager.current_state(), PENDING)
         with patch.object(secureboot, "_EFI_DIR", root / "missing"):
             self.assertEqual(manager.current_state(), UNAVAILABLE)
 

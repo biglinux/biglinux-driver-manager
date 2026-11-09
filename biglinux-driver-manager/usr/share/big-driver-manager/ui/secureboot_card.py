@@ -4,8 +4,8 @@
 """
 Big Driver Manager - Secure Boot card (kernel page)
 
-Secure Boot with the BigCommunity key and the "anti-cheat" boot entry, for
-games that use Easy Anti-Cheat. Enabling installs big-secureboot, disabling
+Secure Boot with the BigCommunity key, set up as games that use Easy
+Anti-Cheat require. Enabling installs big-secureboot, disabling
 removes it (core/secureboot.py). The card says where the machine is and what
 is left to do; it is hidden where big-secureboot does not exist (outside
 BigCommunity) or the machine did not boot in UEFI mode.
@@ -23,7 +23,6 @@ from gi.repository import Gtk, Adw, GLib
 from core.package_manager import PackageManager, fetch_repo_package_set
 from core.secureboot import (
     ACTIVE,
-    GAMES,
     MOK_PASSWORD,
     OFF,
     PENDING,
@@ -47,8 +46,8 @@ def state_text(state: str) -> str:
     """What the card says in each state."""
     if state == OFF:
         return _(
-            "Start with Secure Boot using the BigCommunity key, with a boot "
-            "menu entry for games that use Easy Anti-Cheat."
+            "Start with Secure Boot using the BigCommunity key, as games that "
+            "use Easy Anti-Cheat require."
         )
     if state == PENDING:
         return "\n".join(
@@ -64,13 +63,8 @@ def state_text(state: str) -> str:
         )
     if state == ACTIVE:
         return _(
-            "Secure Boot is on with the BigCommunity key. For games with "
-            "anti-cheat, start from the “anti-cheat” entry of the boot menu."
-        )
-    if state == GAMES:
-        return _(
-            "Ready for anti-cheat: Secure Boot is on and the system started "
-            "from the “anti-cheat” entry."
+            "Secure Boot is on with the BigCommunity key, as games with "
+            "Easy Anti-Cheat require. Only signed kernel modules load."
         )
     return ""
 
@@ -162,8 +156,14 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
             dialog.set_body(
                 _(
                     "This installs the boot loaders signed with the "
-                    "BigCommunity key and an “anti-cheat” entry in the boot "
-                    "menu. Your current boot entries stay as they are."
+                    "BigCommunity key. Your boot menu stays as it is."
+                )
+                + "\n\n"
+                + _(
+                    "With Secure Boot on, the system only loads signed kernel "
+                    "modules, as Easy Anti-Cheat requires: the BigCommunity "
+                    "ones are signed, modules built locally with DKMS are "
+                    "not. Hibernation is not available either."
                 )
                 + "\n\n"
                 + confirm_steps()
@@ -175,8 +175,7 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
             dialog.set_heading(_("Disable Secure Boot?"))
             dialog.set_body(
                 _(
-                    "This removes the BigCommunity boot loaders and the "
-                    "“anti-cheat” boot entry.\n\n"
+                    "This removes the BigCommunity boot loaders.\n\n"
                     "If Secure Boot is on, turn it off in the firmware "
                     "settings before restarting, or the computer will not "
                     "start."

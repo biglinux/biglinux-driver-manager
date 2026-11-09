@@ -2560,18 +2560,6 @@ msgstr "Najnovije službeno izdanje Mese, koje je BigCommunity izgradio s vlasti
 msgid "New"
 msgstr "Novo"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Pokretanje sa Secure Bootom pomoću BigCommunity ključa, uz unos u izborniku pokretanja za igre koje koriste Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot je uključen s BigCommunity ključem. Za igre s anti-cheatom pokrenite sustav s unosa “anti-cheat” u izborniku pokretanja."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Spremno za anti-cheat: Secure Boot je uključen i sustav je pokrenut s unosa “anti-cheat”."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Ponovno pokrenite računalo. Na plavom zaslonu pritisnite bilo koju tipku, odaberite “Enroll MOK”, “Continue” i “Yes”, upišite lozinku {} i odaberite “Reboot”."
@@ -2608,10 +2596,6 @@ msgstr "Uključiti Secure Boot?"
 msgid "Disable Secure Boot?"
 msgstr "Isključiti Secure Boot?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Ovo uklanja BigCommunity programe za pokretanje i unos za pokretanje “anti-cheat”.\n\nAko je Secure Boot uključen, isključite ga u postavkama firmwarea prije ponovnog pokretanja, inače se računalo neće pokrenuti."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot je postavljen. Ponovno pokrenite računalo da biste potvrdili ključ."
@@ -2628,6 +2612,22 @@ msgstr "Uključite Secure Boot u postavkama firmwarea računala (UEFI), ako je i
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot i anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Ovo instalira programe za pokretanje potpisane BigCommunity ključem i unos “anti-cheat” u izborniku pokretanja. Vaši trenutni unosi za pokretanje ostaju nepromijenjeni."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Pokretanje sa Secure Bootom pomoću BigCommunity ključa, kako zahtijevaju igre koje koriste Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot je uključen s BigCommunity ključem, kako zahtijevaju igre s Easy Anti-Cheatom. Učitavaju se samo potpisani moduli jezgre."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Ovo uklanja BigCommunity programe za pokretanje.\n\nAko je Secure Boot uključen, isključite ga u postavkama firmwarea prije ponovnog pokretanja, inače se računalo neće pokrenuti."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Kad je Secure Boot uključen, sustav učitava samo potpisane module jezgre, kako zahtijeva Easy Anti-Cheat: BigCommunity moduli su potpisani, a moduli lokalno izgrađeni pomoću DKMS-a nisu. Hibernacija također nije dostupna."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Ovo instalira programe za pokretanje potpisane BigCommunity ključem. Vaš izbornik pokretanja ostaje nepromijenjen."

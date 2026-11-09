@@ -2557,18 +2557,6 @@ msgstr "L'ultima versione ufficiale di Mesa, compilata da BigCommunity con il pr
 msgid "New"
 msgstr "Nuovo"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Avvia con Secure Boot usando la chiave BigCommunity, con una voce nel menu di avvio per i giochi che usano Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot è attivo con la chiave BigCommunity. Per i giochi con anti-cheat, avvia dalla voce “anti-cheat” del menu di avvio."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Pronto per l'anti-cheat: Secure Boot è attivo e il sistema è stato avviato dalla voce “anti-cheat”."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Riavvia. Nella schermata blu, premi un tasto, scegli “Enroll MOK”, “Continue” e “Yes”, digita la password {} e scegli “Reboot”."
@@ -2605,10 +2593,6 @@ msgstr "Attivare Secure Boot?"
 msgid "Disable Secure Boot?"
 msgstr "Disattivare Secure Boot?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Questo rimuove i boot loader BigCommunity e la voce di avvio “anti-cheat”.\n\nSe Secure Boot è attivo, disattivalo nelle impostazioni del firmware prima di riavviare, altrimenti il computer non si avvierà."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot è configurato. Riavvia per confermare la chiave."
@@ -2625,6 +2609,22 @@ msgstr "Attiva Secure Boot nelle impostazioni del firmware del computer (UEFI), 
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot e anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Questo installa i boot loader firmati con la chiave BigCommunity e una voce “anti-cheat” nel menu di avvio. Le voci di avvio attuali restano invariate."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Avvia con Secure Boot usando la chiave BigCommunity, come richiesto dai giochi che usano Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot è attivo con la chiave BigCommunity, come richiesto dai giochi con Easy Anti-Cheat. Vengono caricati solo moduli del kernel firmati."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Questo rimuove i boot loader BigCommunity.\n\nSe Secure Boot è attivo, disattivalo nelle impostazioni del firmware prima di riavviare, altrimenti il computer non si avvierà."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Con Secure Boot attivo, il sistema carica solo moduli del kernel firmati, come richiesto da Easy Anti-Cheat: quelli di BigCommunity sono firmati, i moduli compilati localmente con DKMS no. Anche l'ibernazione non è disponibile."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Questo installa i boot loader firmati con la chiave BigCommunity. Il menu di avvio resta invariato."

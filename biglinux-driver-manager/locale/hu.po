@@ -2574,18 +2574,6 @@ msgstr "A legújabb hivatalos Mesa-kiadás, amelyet a BigCommunity saját LLVM-m
 msgid "New"
 msgstr "Új"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Indítás Secure Boottal a BigCommunity kulccsal, rendszerindító menübejegyzéssel az Easy Anti-Cheatet használó játékokhoz."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "A Secure Boot be van kapcsolva a BigCommunity kulccsal. Az anti-cheatet használó játékokhoz a rendszerindító menü “anti-cheat” bejegyzéséből indítsa a rendszert."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Kész az anti-cheatre: a Secure Boot be van kapcsolva, és a rendszer az “anti-cheat” bejegyzésből indult."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Indítsa újra a gépet. A kék képernyőn nyomjon meg egy billentyűt, válassza az “Enroll MOK”, “Continue” és “Yes” lehetőséget, írja be a(z) {} jelszót, majd válassza a “Reboot” lehetőséget."
@@ -2622,10 +2610,6 @@ msgstr "Bekapcsolja a Secure Bootot?"
 msgid "Disable Secure Boot?"
 msgstr "Kikapcsolja a Secure Bootot?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Ez eltávolítja a BigCommunity rendszerbetöltőit és az “anti-cheat” rendszerindító bejegyzést.\n\nHa a Secure Boot be van kapcsolva, kapcsolja ki a firmware beállításaiban az újraindítás előtt, különben a számítógép nem fog elindulni."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "A Secure Boot be van állítva. Indítsa újra a gépet a kulcs megerősítéséhez."
@@ -2642,6 +2626,22 @@ msgstr "Kapcsolja be a Secure Bootot a számítógép firmware-beállításaiban
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot és anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Ez telepíti a BigCommunity kulccsal aláírt rendszerbetöltőket és egy “anti-cheat” bejegyzést a rendszerindító menübe. A jelenlegi rendszerindító bejegyzések változatlanok maradnak."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Indítás Secure Boottal a BigCommunity kulccsal, ahogy az Easy Anti-Cheatet használó játékok megkövetelik."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "A Secure Boot be van kapcsolva a BigCommunity kulccsal, ahogy az Easy Anti-Cheatet használó játékok megkövetelik. Csak aláírt kernelmodulok töltődnek be."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Ez eltávolítja a BigCommunity rendszerbetöltőit.\n\nHa a Secure Boot be van kapcsolva, kapcsolja ki a firmware beállításaiban az újraindítás előtt, különben a számítógép nem fog elindulni."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Bekapcsolt Secure Boot mellett a rendszer csak aláírt kernelmodulokat tölt be, ahogy az Easy Anti-Cheat megköveteli: a BigCommunity moduljai alá vannak írva, a DKMS-sel helyben fordított modulok nem. A hibernálás sem érhető el."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Ez telepíti a BigCommunity kulccsal aláírt rendszerbetöltőket. A rendszerindító menü változatlan marad."

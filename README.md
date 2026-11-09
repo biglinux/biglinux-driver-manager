@@ -93,10 +93,11 @@ the same version.
 - Never removes the running kernel; reports installed kernels that left the
   repositories.
 - **Secure Boot and anti-cheat** (BigCommunity, UEFI) — enables Secure Boot
-  with the BigCommunity key by installing `big-secureboot`, which adds an
-  "anti-cheat" boot entry for games that use Easy Anti-Cheat. The card shows
-  what is left to do: confirming the key once on the blue screen after
-  restarting, then turning Secure Boot on in the firmware settings.
+  with the BigCommunity key by installing `big-secureboot`, set up as games
+  that use Easy Anti-Cheat require. The card explains what changes (only
+  signed kernel modules load, no hibernation) and what is left to do:
+  confirming the key once on the blue screen after restarting, then turning
+  Secure Boot on in the firmware settings. The boot menu stays as it is.
 
 ### Devices
 - Wi-Fi, Ethernet, Bluetooth, DVB/TV, audio, webcams, touchscreens, printers,

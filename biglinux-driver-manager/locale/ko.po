@@ -2452,18 +2452,6 @@ msgstr "BigCommunity가 자체 LLVM으로 빌드한 최신 공식 Mesa 릴리스
 msgid "New"
 msgstr "새로움"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "BigCommunity 키로 Secure Boot를 사용해 시작하며, Easy Anti-Cheat를 사용하는 게임을 위한 부팅 메뉴 항목을 추가합니다."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "BigCommunity 키로 Secure Boot가 켜져 있습니다. 안티치트가 있는 게임은 부팅 메뉴의 “anti-cheat” 항목으로 시작하세요."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "안티치트 준비 완료: Secure Boot가 켜져 있으며 시스템이 “anti-cheat” 항목으로 시작되었습니다."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "재부팅하세요. 파란 화면에서 아무 키나 누르고 “Enroll MOK”, “Continue”, “Yes”를 차례로 선택한 다음, 비밀번호 {}를 입력하고 “Reboot”를 선택하세요."
@@ -2500,10 +2488,6 @@ msgstr "Secure Boot를 활성화할까요?"
 msgid "Disable Secure Boot?"
 msgstr "Secure Boot를 비활성화할까요?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "BigCommunity 부트 로더와 “anti-cheat” 부팅 항목을 제거합니다.\n\nSecure Boot가 켜져 있다면 재부팅하기 전에 펌웨어 설정에서 끄세요. 그렇지 않으면 컴퓨터가 시작되지 않습니다."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot가 설정되었습니다. 키를 확인하려면 재부팅하세요."
@@ -2520,6 +2504,22 @@ msgstr "Secure Boot가 꺼져 있다면 컴퓨터의 펌웨어 설정(UEFI)에�
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot 및 안티치트"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "BigCommunity 키로 서명된 부트 로더와 부팅 메뉴의 “anti-cheat” 항목을 설치합니다. 현재 부팅 항목은 그대로 유지됩니다."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Easy Anti-Cheat를 사용하는 게임에 필요한 대로 BigCommunity 키로 Secure Boot를 사용해 시작합니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Easy Anti-Cheat가 있는 게임에 필요한 대로 BigCommunity 키로 Secure Boot가 켜져 있습니다. 서명된 커널 모듈만 로드됩니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "BigCommunity 부트 로더를 제거합니다.\n\nSecure Boot가 켜져 있다면 재부팅하기 전에 펌웨어 설정에서 끄세요. 그렇지 않으면 컴퓨터가 시작되지 않습니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Secure Boot가 켜져 있으면 Easy Anti-Cheat의 요구에 따라 시스템은 서명된 커널 모듈만 로드합니다. BigCommunity 모듈은 서명되어 있지만, DKMS로 로컬에서 빌드한 모듈은 서명되어 있지 않습니다. 최대 절전 모드도 사용할 수 없습니다."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "BigCommunity 키로 서명된 부트 로더를 설치합니다. 부팅 메뉴는 그대로 유지됩니다."

@@ -7,9 +7,10 @@ Big Driver Manager - Secure Boot (BigCommunity)
 Secure Boot with the BigCommunity key comes from one package, big-secureboot
 (big-comm/big-kernel). Installing it enables it: it puts Fedora's shim and a
 GRUB signed with the BigCommunity key in the ESP, adds their boot entry and
-the "modo jogos" GRUB entries, and schedules the key, which the user confirms
-once on the blue screen of the next boot (MokManager). Removing it takes all
-that out again. So enabling is installing, disabling is removing, both through
+the kexec and IOMMU settings Easy Anti-Cheat checks, and schedules the key,
+which the user confirms once on the blue screen of the next boot
+(MokManager). Booted with Secure Boot, linux-big locks itself down. Removing
+the package takes all that out again. So enabling is installing, disabling is removing, both through
 the command line's usual pacman verbs; nothing here needs root.
 
 The state is read without root, too:
@@ -19,7 +20,6 @@ The state is read without root, too:
 - The key enrolled: not readable by a user (MokListRT is root's), but implied:
   with Secure Boot on, a system with big-secureboot only boots through its
   shim and GRUB once the key is enrolled.
-- The "modo jogos" entry: its options are on the kernel command line.
 """
 
 from pathlib import Path
@@ -27,21 +27,17 @@ from pathlib import Path
 from core.base_manager import BaseManager
 
 PACKAGE = "big-secureboot"
-# What the "modo jogos" entry adds, and what Easy Anti-Cheat Linux v2 checks.
-GAMES_OPTION = "lockdown=integrity"
 # The password the package sets for the blue screen (big-secureboot enable).
 MOK_PASSWORD = "bigcommunity"
 
 _EFI_DIR = Path("/sys/firmware/efi")
 _SECURE_BOOT_VAR = _EFI_DIR / "efivars/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c"
-_CMDLINE = Path("/proc/cmdline")
 
 # States, in the order a user goes through them.
 UNAVAILABLE = "unavailable"  # not BigCommunity, or not UEFI: nothing to show
 OFF = "off"  # can be enabled
 PENDING = "pending"  # installed; key to confirm and/or Secure Boot to turn on
-ACTIVE = "active"  # Secure Boot on with the BigCommunity key
-GAMES = "games"  # and booted from the "modo jogos" entry
+ACTIVE = "active"  # Secure Boot on with the BigCommunity key: locked down
 
 
 def secure_boot_enabled(var: Path = _SECURE_BOOT_VAR) -> bool:
@@ -53,20 +49,12 @@ def secure_boot_enabled(var: Path = _SECURE_BOOT_VAR) -> bool:
     return len(data) >= 5 and data[4] == 1
 
 
-def games_boot(cmdline: Path = _CMDLINE) -> bool:
-    try:
-        return GAMES_OPTION in cmdline.read_text().split()
-    except OSError:
-        return False
-
-
 def state(
     *,
     uefi: bool,
     available: bool,
     installed: bool,
     secure_boot: bool,
-    games: bool,
 ) -> str:
     """Where a machine is on the way to the anti-cheat boot."""
     if not uefi or not (available or installed):
@@ -75,7 +63,7 @@ def state(
         return OFF
     if not secure_boot:
         return PENDING
-    return GAMES if games else ACTIVE
+    return ACTIVE
 
 
 class SecureBootManager(BaseManager):
@@ -94,7 +82,6 @@ class SecureBootManager(BaseManager):
             available=PACKAGE in self._repo_packages(),
             installed=self._packages.is_package_installed(PACKAGE),
             secure_boot=secure_boot_enabled(_SECURE_BOOT_VAR),
-            games=games_boot(_CMDLINE),
         )
 
     def enable(self, operation_name: str, **callbacks) -> None:

@@ -2547,18 +2547,6 @@ msgstr "BigCommunity tarafından kendi LLVM'siyle derlenen en son resmi Mesa sü
 msgid "New"
 msgstr "Yeni"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "BigCommunity anahtarıyla Secure Boot ile başlatın; Easy Anti-Cheat kullanan oyunlar için önyükleme menüsünde bir giriş eklenir."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot, BigCommunity anahtarıyla açık. Anti-cheat kullanan oyunlar için önyükleme menüsündeki “anti-cheat” girişinden başlatın."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Anti-cheat için hazır: Secure Boot açık ve sistem “anti-cheat” girişinden başlatıldı."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Yeniden başlatın. Mavi ekranda bir tuşa basın, “Enroll MOK”, “Continue” ve “Yes” seçeneklerini seçin, {} parolasını yazın ve “Reboot” seçeneğini seçin."
@@ -2595,10 +2583,6 @@ msgstr "Secure Boot etkinleştirilsin mi?"
 msgid "Disable Secure Boot?"
 msgstr "Secure Boot devre dışı bırakılsın mı?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Bu işlem BigCommunity önyükleyicilerini ve “anti-cheat” önyükleme girişini kaldırır.\n\nSecure Boot açıksa, yeniden başlatmadan önce firmware ayarlarından kapatın, aksi halde bilgisayar başlamaz."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot yapılandırıldı. Anahtarı onaylamak için yeniden başlatın."
@@ -2615,6 +2599,22 @@ msgstr "Kapalıysa, bilgisayarın firmware ayarlarından (UEFI) Secure Boot'u a�
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot ve anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Bu işlem, BigCommunity anahtarıyla imzalanmış önyükleyicileri ve önyükleme menüsüne bir “anti-cheat” girişi yükler. Mevcut önyükleme girişleriniz olduğu gibi kalır."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Easy Anti-Cheat kullanan oyunların gerektirdiği gibi, BigCommunity anahtarıyla Secure Boot ile başlatın."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot, Easy Anti-Cheat kullanan oyunların gerektirdiği gibi BigCommunity anahtarıyla açık. Yalnızca imzalı çekirdek modülleri yüklenir."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Bu işlem BigCommunity önyükleyicilerini kaldırır.\n\nSecure Boot açıksa, yeniden başlatmadan önce firmware ayarlarından kapatın, aksi halde bilgisayar başlamaz."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Secure Boot açıkken sistem, Easy Anti-Cheat'in gerektirdiği gibi yalnızca imzalı çekirdek modüllerini yükler: BigCommunity modülleri imzalıdır, DKMS ile yerel olarak derlenen modüller değildir. Hazırda bekletme de kullanılamaz."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Bu işlem, BigCommunity anahtarıyla imzalanmış önyükleyicileri yükler. Önyükleme menünüz olduğu gibi kalır."

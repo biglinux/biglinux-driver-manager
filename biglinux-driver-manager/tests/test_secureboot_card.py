@@ -56,7 +56,6 @@ class TestSecureBootCard(unittest.TestCase):
             (self.sb.OFF, "Enable"),
             (self.sb.PENDING, "Disable"),
             (self.sb.ACTIVE, "Disable"),
-            (self.sb.GAMES, "Disable"),
         ):
             with self.subTest(state=state):
                 self.card._show_state(state)

@@ -2535,18 +2535,6 @@ msgstr "Den nyeste officielle Mesa-udgivelse, bygget af BigCommunity med sin ege
 msgid "New"
 msgstr "Ny"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Start med Secure Boot ved hjælp af BigCommunity-nøglen, med en post i startmenuen til spil, der bruger Easy Anti-Cheat."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot er slået til med BigCommunity-nøglen. Til spil med anti-cheat skal du starte fra posten “anti-cheat” i startmenuen."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Klar til anti-cheat: Secure Boot er slået til, og systemet blev startet fra posten “anti-cheat”."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Genstart. På den blå skærm skal du trykke på en tast, vælge “Enroll MOK”, “Continue” og “Yes”, skrive adgangskoden {} og vælge “Reboot”."
@@ -2583,10 +2571,6 @@ msgstr "Slå Secure Boot til?"
 msgid "Disable Secure Boot?"
 msgstr "Slå Secure Boot fra?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Dette fjerner BigCommunity-bootloaderne og startposten “anti-cheat”.\n\nHvis Secure Boot er slået til, skal du slå det fra i firmwareindstillingerne, før du genstarter, ellers vil computeren ikke starte."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot er sat op. Genstart for at bekræfte nøglen."
@@ -2603,6 +2587,22 @@ msgstr "Slå Secure Boot til i computerens firmwareindstillinger (UEFI), hvis de
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot og anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Dette installerer bootloadere signeret med BigCommunity-nøglen og en post “anti-cheat” i startmenuen. Dine nuværende startposter forbliver uændrede."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Start med Secure Boot ved hjælp af BigCommunity-nøglen, som spil, der bruger Easy Anti-Cheat, kræver."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot er slået til med BigCommunity-nøglen, som spil med Easy Anti-Cheat kræver. Kun signerede kernemoduler indlæses."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Dette fjerner BigCommunity-bootloaderne.\n\nHvis Secure Boot er slået til, skal du slå det fra i firmwareindstillingerne, før du genstarter, ellers vil computeren ikke starte."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Med Secure Boot slået til indlæser systemet kun signerede kernemoduler, som Easy Anti-Cheat kræver: BigCommunitys moduler er signerede, moduler bygget lokalt med DKMS er ikke. Dvale er heller ikke tilgængelig."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Dette installerer bootloadere signeret med BigCommunity-nøglen. Din startmenu forbliver uændret."

@@ -2550,18 +2550,6 @@ msgstr "Uusin virallinen Mesa-julkaisu, jonka BigCommunity on koostanut omalla L
 msgid "New"
 msgstr "Uusi"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "Käynnistä Secure Bootilla BigCommunity-avaimella ja lisää käynnistysvalikkoon merkintä peleille, jotka käyttävät Easy Anti-Cheatia."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot on käytössä BigCommunity-avaimella. Anti-cheatia käyttäviä pelejä varten käynnistä käynnistysvalikon “anti-cheat”-merkinnästä."
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "Valmis anti-cheatille: Secure Boot on käytössä ja järjestelmä käynnistettiin “anti-cheat”-merkinnästä."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "Käynnistä uudelleen. Paina sinisellä näytöllä jotain näppäintä, valitse “Enroll MOK”, “Continue” ja “Yes”, kirjoita salasana {} ja valitse “Reboot”."
@@ -2598,10 +2586,6 @@ msgstr "Otetaanko Secure Boot käyttöön?"
 msgid "Disable Secure Boot?"
 msgstr "Poistetaanko Secure Boot käytöstä?"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Tämä poistaa BigCommunityn käynnistyslataimet ja “anti-cheat”-käynnistysmerkinnän.\n\nJos Secure Boot on päällä, kytke se pois laiteohjelmiston asetuksista ennen uudelleenkäynnistystä, tai tietokone ei käynnisty."
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot on määritetty. Käynnistä uudelleen vahvistaaksesi avaimen."
@@ -2618,6 +2602,22 @@ msgstr "Kytke Secure Boot päälle tietokoneen laiteohjelmiston asetuksista (UEF
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot ja anti-cheat"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "Tämä asentaa BigCommunity-avaimella allekirjoitetut käynnistyslataimet ja “anti-cheat”-merkinnän käynnistysvalikkoon. Nykyiset käynnistysmerkintäsi pysyvät ennallaan."
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "Käynnistä Secure Bootilla BigCommunity-avaimella, kuten Easy Anti-Cheatia käyttävät pelit vaativat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot on käytössä BigCommunity-avaimella, kuten Easy Anti-Cheatia käyttävät pelit vaativat. Vain allekirjoitetut ytimen moduulit ladataan."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Tämä poistaa BigCommunityn käynnistyslataimet.\n\nJos Secure Boot on päällä, kytke se pois laiteohjelmiston asetuksista ennen uudelleenkäynnistystä, tai tietokone ei käynnisty."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Kun Secure Boot on käytössä, järjestelmä lataa vain allekirjoitettuja ytimen moduuleja, kuten Easy Anti-Cheat vaatii: BigCommunityn moduulit on allekirjoitettu, paikallisesti DKMS:llä käännetyt moduulit eivät ole. Myöskään horrostila ei ole käytettävissä."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "Tämä asentaa BigCommunity-avaimella allekirjoitetut käynnistyslataimet. Käynnistysvalikkosi pysyy ennallaan."

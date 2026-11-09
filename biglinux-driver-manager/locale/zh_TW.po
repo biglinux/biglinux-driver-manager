@@ -2419,18 +2419,6 @@ msgstr "最新的 Mesa 官方版本，由 BigCommunity 使用自帶的 LLVM 建�
 msgid "New"
 msgstr "新"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
-msgstr "使用 BigCommunity 金鑰以 Secure Boot 開機，並為使用 Easy Anti-Cheat 的遊戲提供一個開機選單項目。"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:66
-msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
-msgstr "Secure Boot 已使用 BigCommunity 金鑰開啟。若是有反作弊的遊戲，請從開機選單的“anti-cheat”項目開機。"
-
-#: usr/share/big-driver-manager/ui/secureboot_card.py:71
-msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
-msgstr "已可使用反作弊：Secure Boot 已開啟，且系統是從“anti-cheat”項目開機。"
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:40
 msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
 msgstr "重新啟動。在藍色畫面上按任意鍵，選擇“Enroll MOK”、“Continue”和“Yes”，輸入密碼 {}，然後選擇“Reboot”。"
@@ -2467,10 +2455,6 @@ msgstr "啟用 Secure Boot？"
 msgid "Disable Secure Boot?"
 msgstr "停用 Secure Boot？"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "這會移除 BigCommunity 開機載入程式和“anti-cheat”開機項目。\n\n如果 Secure Boot 已開啟，請在重新啟動前於韌體設定中將其關閉，否則電腦將無法開機。"
-
 #: usr/share/big-driver-manager/ui/secureboot_card.py:212
 msgid "Secure Boot is set up. Restart to confirm the key."
 msgstr "Secure Boot 已設定完成。請重新啟動以確認金鑰。"
@@ -2487,6 +2471,22 @@ msgstr "如果 Secure Boot 為關閉狀態，請在電腦的韌體設定（UEFI�
 msgid "Secure Boot and anti-cheat"
 msgstr "Secure Boot 與反作弊"
 
-#: usr/share/big-driver-manager/ui/secureboot_card.py:163
-msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
-msgstr "這會安裝以 BigCommunity 金鑰簽署的開機載入程式，並在開機選單中新增“anti-cheat”項目。您目前的開機項目會維持不變。"
+#: usr/share/big-driver-manager/ui/secureboot_card.py:48
+msgid "Start with Secure Boot using the BigCommunity key, as games that use Easy Anti-Cheat require."
+msgstr "依照使用 Easy Anti-Cheat 的遊戲要求，使用 BigCommunity 金鑰以 Secure Boot 開機。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:65
+msgid "Secure Boot is on with the BigCommunity key, as games with Easy Anti-Cheat require. Only signed kernel modules load."
+msgstr "Secure Boot 已使用 BigCommunity 金鑰開啟，符合含 Easy Anti-Cheat 的遊戲要求。僅會載入已簽署的核心模組。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "這會移除 BigCommunity 開機載入程式。\n\n如果 Secure Boot 已開啟，請在重新啟動前於韌體設定中將其關閉，否則電腦將無法開機。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:162
+msgid "With Secure Boot on, the system only loads signed kernel modules, as Easy Anti-Cheat requires: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "開啟 Secure Boot 後，系統僅會載入已簽署的核心模組，這是 Easy Anti-Cheat 的要求：BigCommunity 的模組已簽署，而使用 DKMS 在本機建置的模組則未簽署。休眠功能也無法使用。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
+msgstr "這會安裝以 BigCommunity 金鑰簽署的開機載入程式。您的開機選單會維持不變。"
