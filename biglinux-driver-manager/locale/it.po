@@ -2556,3 +2556,75 @@ msgstr "L'ultima versione ufficiale di Mesa, compilata da BigCommunity con il pr
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nuovo"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Avvia con Secure Boot usando la chiave BigCommunity, con una voce nel menu di avvio per i giochi che usano Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot è attivo con la chiave BigCommunity. Per i giochi con anti-cheat, avvia dalla voce “anti-cheat” del menu di avvio."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Pronto per l'anti-cheat: Secure Boot è attivo e il sistema è stato avviato dalla voce “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Riavvia. Nella schermata blu, premi un tasto, scegli “Enroll MOK”, “Continue” e “Yes”, digita la password {} e scegli “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Attivazione di Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Disattivazione di Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Impossibile modificare la configurazione di Secure Boot. Controlla l'output del terminale per i dettagli."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Restano due passaggi, ognuno da fare una sola volta:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Attiva"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Disattiva"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Attivare Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Disattivare Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Questo rimuove i boot loader BigCommunity e la voce di avvio “anti-cheat”.\n\nSe Secure Boot è attivo, disattivalo nelle impostazioni del firmware prima di riavviare, altrimenti il computer non si avvierà."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot è configurato. Riavvia per confermare la chiave."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Configurazione di Secure Boot rimossa."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Attiva Secure Boot nelle impostazioni del firmware del computer (UEFI), se è disattivato."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot e anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Questo installa i boot loader firmati con la chiave BigCommunity e una voce “anti-cheat” nel menu di avvio. Le voci di avvio attuali restano invariate."

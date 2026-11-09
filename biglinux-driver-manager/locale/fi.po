@@ -2549,3 +2549,75 @@ msgstr "Uusin virallinen Mesa-julkaisu, jonka BigCommunity on koostanut omalla L
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Uusi"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Käynnistä Secure Bootilla BigCommunity-avaimella ja lisää käynnistysvalikkoon merkintä peleille, jotka käyttävät Easy Anti-Cheatia."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot on käytössä BigCommunity-avaimella. Anti-cheatia käyttäviä pelejä varten käynnistä käynnistysvalikon “anti-cheat”-merkinnästä."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Valmis anti-cheatille: Secure Boot on käytössä ja järjestelmä käynnistettiin “anti-cheat”-merkinnästä."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Käynnistä uudelleen. Paina sinisellä näytöllä jotain näppäintä, valitse “Enroll MOK”, “Continue” ja “Yes”, kirjoita salasana {} ja valitse “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Otetaan Secure Boot käyttöön"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Poistetaan Secure Boot käytöstä"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Secure Boot -asetuksia ei voitu muuttaa. Tarkista pääteulostulo yksityiskohtia varten."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Jäljellä on kaksi vaihetta, kumpikin tehdään vain kerran:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Ota käyttöön"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Poista käytöstä"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Otetaanko Secure Boot käyttöön?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Poistetaanko Secure Boot käytöstä?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Tämä poistaa BigCommunityn käynnistyslataimet ja “anti-cheat”-käynnistysmerkinnän.\n\nJos Secure Boot on päällä, kytke se pois laiteohjelmiston asetuksista ennen uudelleenkäynnistystä, tai tietokone ei käynnisty."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot on määritetty. Käynnistä uudelleen vahvistaaksesi avaimen."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Secure Boot -määritys poistettu."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Kytke Secure Boot päälle tietokoneen laiteohjelmiston asetuksista (UEFI), jos se on pois päältä."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot ja anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Tämä asentaa BigCommunity-avaimella allekirjoitetut käynnistyslataimet ja “anti-cheat”-merkinnän käynnistysvalikkoon. Nykyiset käynnistysmerkintäsi pysyvät ennallaan."

@@ -2566,3 +2566,75 @@ msgstr "Cea mai recentă versiune oficială Mesa, compilată de BigCommunity cu 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nou"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Pornire cu Secure Boot folosind cheia BigCommunity, cu o intrare în meniul de pornire pentru jocurile care folosesc Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot este activat cu cheia BigCommunity. Pentru jocurile cu anti-cheat, porniți din intrarea “anti-cheat” a meniului de pornire."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Pregătit pentru anti-cheat: Secure Boot este activat și sistemul a pornit din intrarea “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Reporniți. Pe ecranul albastru, apăsați o tastă, alegeți “Enroll MOK”, “Continue” și “Yes”, introduceți parola {} și alegeți “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Se activează Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Se dezactivează Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Nu s-a putut modifica configurarea Secure Boot. Verificați ieșirea terminalului pentru detalii."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Mai rămân doi pași, fiecare efectuat o singură dată:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Activează"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Dezactivează"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Activați Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Dezactivați Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Aceasta elimină încărcătoarele de pornire BigCommunity și intrarea de pornire “anti-cheat”.\n\nDacă Secure Boot este activat, dezactivați-l din setările firmware-ului înainte de repornire, altfel computerul nu va porni."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot este configurat. Reporniți pentru a confirma cheia."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Configurarea Secure Boot a fost eliminată."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Activați Secure Boot din setările firmware-ului computerului (UEFI), dacă este dezactivat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot și anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Aceasta instalează încărcătoarele de pornire semnate cu cheia BigCommunity și o intrare “anti-cheat” în meniul de pornire. Intrările de pornire actuale rămân neschimbate."

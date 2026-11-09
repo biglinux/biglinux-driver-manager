@@ -2546,3 +2546,75 @@ msgstr "BigCommunity tarafından kendi LLVM'siyle derlenen en son resmi Mesa sü
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Yeni"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "BigCommunity anahtarıyla Secure Boot ile başlatın; Easy Anti-Cheat kullanan oyunlar için önyükleme menüsünde bir giriş eklenir."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot, BigCommunity anahtarıyla açık. Anti-cheat kullanan oyunlar için önyükleme menüsündeki “anti-cheat” girişinden başlatın."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Anti-cheat için hazır: Secure Boot açık ve sistem “anti-cheat” girişinden başlatıldı."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Yeniden başlatın. Mavi ekranda bir tuşa basın, “Enroll MOK”, “Continue” ve “Yes” seçeneklerini seçin, {} parolasını yazın ve “Reboot” seçeneğini seçin."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Secure Boot etkinleştiriliyor"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Secure Boot devre dışı bırakılıyor"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Secure Boot yapılandırması değiştirilemedi. Detaylar için terminal çıktısını kontrol edin."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Her biri yalnızca bir kez yapılacak iki adım kaldı:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Devre dışı bırak"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Secure Boot etkinleştirilsin mi?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Secure Boot devre dışı bırakılsın mı?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Bu işlem BigCommunity önyükleyicilerini ve “anti-cheat” önyükleme girişini kaldırır.\n\nSecure Boot açıksa, yeniden başlatmadan önce firmware ayarlarından kapatın, aksi halde bilgisayar başlamaz."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot yapılandırıldı. Anahtarı onaylamak için yeniden başlatın."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Secure Boot yapılandırması kaldırıldı."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Kapalıysa, bilgisayarın firmware ayarlarından (UEFI) Secure Boot'u açın."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot ve anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Bu işlem, BigCommunity anahtarıyla imzalanmış önyükleyicileri ve önyükleme menüsüne bir “anti-cheat” girişi yükler. Mevcut önyükleme girişleriniz olduğu gibi kalır."

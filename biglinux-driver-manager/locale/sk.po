@@ -2546,3 +2546,75 @@ msgstr "Najnovšie oficiálne vydanie Mesa, zostavené BigCommunity s vlastným 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nové"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Spúšťajte so Secure Boot pomocou kľúča BigCommunity, s položkou v ponuke zavádzania pre hry, ktoré používajú Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot je zapnutý s kľúčom BigCommunity. Pre hry s anti-cheatom spustite systém z položky “anti-cheat” v ponuke zavádzania."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Pripravené na anti-cheat: Secure Boot je zapnutý a systém sa spustil z položky “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Reštartujte. Na modrej obrazovke stlačte ľubovoľný kláves, zvoľte “Enroll MOK”, “Continue” a “Yes”, zadajte heslo {} a zvoľte “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Zapína sa Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Vypína sa Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Nastavenie Secure Boot sa nepodarilo zmeniť. Skontrolujte výstup terminálu pre podrobnosti."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Zostávajú dva kroky, každý sa vykoná iba raz:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Zapnúť"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Vypnúť"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Zapnúť Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Vypnúť Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Týmto sa odstránia zavádzače BigCommunity a položka zavádzania “anti-cheat”.\n\nAk je Secure Boot zapnutý, pred reštartom ho vypnite v nastaveniach firmvéru, inak sa počítač nespustí."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot je nastavený. Reštartujte na potvrdenie kľúča."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Nastavenie Secure Boot bolo odstránené."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Zapnite Secure Boot v nastaveniach firmvéru počítača (UEFI), ak je vypnutý."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot a anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Týmto sa nainštalujú zavádzače podpísané kľúčom BigCommunity a položka “anti-cheat” v ponuke zavádzania. Vaše súčasné položky zavádzania zostanú nezmenené."

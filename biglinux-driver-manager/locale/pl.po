@@ -2558,3 +2558,75 @@ msgstr "Najnowsze oficjalne wydanie Mesy, zbudowane przez BigCommunity z własny
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nowość"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Uruchamiaj z Secure Boot przy użyciu klucza BigCommunity, z pozycją w menu rozruchu dla gier korzystających z Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot jest włączony z kluczem BigCommunity. W przypadku gier z anti-cheatem uruchamiaj system z pozycji “anti-cheat” w menu rozruchu."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Gotowe na anti-cheat: Secure Boot jest włączony, a system uruchomiono z pozycji “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Uruchom ponownie. Na niebieskim ekranie naciśnij dowolny klawisz, wybierz “Enroll MOK”, “Continue” i “Yes”, wpisz hasło {} i wybierz “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Włączanie Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Wyłączanie Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Nie udało się zmienić konfiguracji Secure Boot. Sprawdź wynik terminala, aby uzyskać szczegóły."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Pozostały dwa kroki, każdy wykonywany tylko raz:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Włącz"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Wyłącz"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Włączyć Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Wyłączyć Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Spowoduje to usunięcie programów rozruchowych BigCommunity oraz pozycji rozruchowej “anti-cheat”.\n\nJeśli Secure Boot jest włączony, wyłącz go w ustawieniach oprogramowania układowego przed ponownym uruchomieniem, w przeciwnym razie komputer się nie uruchomi."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot został skonfigurowany. Uruchom ponownie, aby potwierdzić klucz."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Usunięto konfigurację Secure Boot."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Włącz Secure Boot w ustawieniach oprogramowania układowego komputera (UEFI), jeśli jest wyłączony."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot i anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Spowoduje to zainstalowanie programów rozruchowych podpisanych kluczem BigCommunity oraz pozycji “anti-cheat” w menu rozruchu. Obecne pozycje rozruchowe pozostaną bez zmian."

@@ -2575,3 +2575,75 @@ msgstr "La dernière version officielle de Mesa, compilée par BigCommunity avec
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nouveau"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Démarrer avec Secure Boot à l'aide de la clé BigCommunity, avec une entrée du menu de démarrage pour les jeux utilisant Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot est activé avec la clé BigCommunity. Pour les jeux avec anti-cheat, démarrez depuis l'entrée “anti-cheat” du menu de démarrage."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Prêt pour l'anti-cheat : Secure Boot est activé et le système a démarré depuis l'entrée “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Redémarrez. Sur l'écran bleu, appuyez sur une touche, choisissez “Enroll MOK”, “Continue” et “Yes”, saisissez le mot de passe {} et choisissez “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Activation de Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Désactivation de Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Impossible de modifier la configuration de Secure Boot. Consultez la sortie du terminal pour plus de détails."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Il reste deux étapes, à faire une seule fois :"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Activer"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Désactiver"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Activer Secure Boot ?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Désactiver Secure Boot ?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Cela supprime les chargeurs d'amorçage BigCommunity et l'entrée de démarrage “anti-cheat”.\n\nSi Secure Boot est activé, désactivez-le dans les paramètres du firmware avant de redémarrer, sinon l'ordinateur ne démarrera pas."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot est configuré. Redémarrez pour confirmer la clé."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Configuration de Secure Boot supprimée."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Activez Secure Boot dans les paramètres du firmware de l'ordinateur (UEFI), s'il est désactivé."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot et anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Cela installe les chargeurs d'amorçage signés avec la clé BigCommunity et une entrée “anti-cheat” dans le menu de démarrage. Vos entrées de démarrage actuelles restent inchangées."

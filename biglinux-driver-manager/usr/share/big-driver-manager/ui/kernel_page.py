@@ -6,6 +6,7 @@ Big Driver Manager - Kernel Management Page
 
 List-based layout with:
   - Running kernel card at top
+  - Secure Boot card (BigCommunity, UEFI only)
   - Obsolete kernel alerts
   - Installed kernels in boxed-list
   - Available kernels grouped by type (LTS / Standard / Performance)
@@ -23,6 +24,7 @@ from utils.ui_constants import ICON_SIZE_HEADER, ICON_SIZE_ITEM
 from core.kernel_manager import KernelManager
 from ui.base_page import BaseSection
 from ui.kernel_card_builder import KernelTypeInfo, classify_kernel, version_sort_key
+from ui.secureboot_card import SecureBootCard
 from utils.accessibility import animations_enabled
 from utils.i18n import _
 
@@ -55,6 +57,10 @@ class KernelSection(BaseSection):
         self._build_page()
         self._show_loading()
 
+    def set_progress_dialog(self, dialog) -> None:
+        super().set_progress_dialog(dialog)
+        self._secureboot_card.set_progress_dialog(dialog)
+
     def set_preloaded_data(
         self,
         kernels: list,
@@ -75,6 +81,10 @@ class KernelSection(BaseSection):
         self._running_box.set_margin_bottom(20)
         self._running_box.set_visible(False)
         self.append(self._running_box)
+
+        # Secure Boot and the anti-cheat boot entry (hidden where unavailable)
+        self._secureboot_card = SecureBootCard()
+        self.append(self._secureboot_card)
 
         # Obsolete alerts container
         self._obsolete_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
@@ -214,6 +224,7 @@ class KernelSection(BaseSection):
 
         # Running kernel card
         self._build_running_card(running)
+        self._secureboot_card.refresh()
 
         # Obsolete alerts
         self._build_obsolete_alerts()

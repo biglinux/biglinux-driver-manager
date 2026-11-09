@@ -2556,3 +2556,75 @@ msgstr "Апошні афіцыйны выпуск Mesa, сабраны BigCommu
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Новы"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Запуск з Secure Boot з ключом BigCommunity і пунктам у меню загрузкі для гульняў, якія выкарыстоўваюць Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Secure Boot уключаны з ключом BigCommunity. Для гульняў з anti-cheat запускайце сістэму з пункта “anti-cheat” у меню загрузкі."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Гатова для anti-cheat: Secure Boot уключаны, і сістэма запушчана з пункта “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Перазапусціце камп'ютар. На сінім экране націсніце любую клавішу, выберыце “Enroll MOK”, “Continue” і “Yes”, увядзіце пароль {} і выберыце “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Уключэнне Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Выключэнне Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Не ўдалося змяніць наладу Secure Boot. Падрабязнасці глядзіце ў вывадзе тэрмінала."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Засталося два крокі, кожны выконваецца толькі адзін раз:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Уключыць"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Выключыць"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Уключыць Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Выключыць Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Гэта выдаліць загрузчыкі BigCommunity і пункт загрузкі “anti-cheat”.\n\nКалі Secure Boot уключаны, выключыце яго ў наладах мікрапраграмы перад перазапускам, інакш камп'ютар не запусціцца."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot наладжаны. Перазапусціце камп'ютар, каб пацвердзіць ключ."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Наладу Secure Boot выдалена."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Уключыце Secure Boot у наладах мікрапраграмы камп'ютара (UEFI), калі ён выключаны."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot і anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Гэта ўсталюе загрузчыкі, падпісаныя ключом BigCommunity, і пункт “anti-cheat” у меню загрузкі. Вашы бягучыя пункты загрузкі застануцца без змен."

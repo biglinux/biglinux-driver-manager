@@ -2576,3 +2576,75 @@ msgstr "Η πιο πρόσφατη επίσημη έκδοση του Mesa, με
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Νέο"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigCommunity key, with a boot menu entry for games that use Easy Anti-Cheat."
+msgstr "Εκκίνηση με Secure Boot χρησιμοποιώντας το κλειδί BigCommunity, με μια καταχώριση στο μενού εκκίνησης για παιχνίδια που χρησιμοποιούν Easy Anti-Cheat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:66
+msgid "Secure Boot is on with the BigCommunity key. For games with anti-cheat, start from the “anti-cheat” entry of the boot menu."
+msgstr "Το Secure Boot είναι ενεργό με το κλειδί BigCommunity. Για παιχνίδια με anti-cheat, εκκινήστε από την καταχώριση “anti-cheat” του μενού εκκίνησης."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:71
+msgid "Ready for anti-cheat: Secure Boot is on and the system started from the “anti-cheat” entry."
+msgstr "Έτοιμο για anti-cheat: το Secure Boot είναι ενεργό και το σύστημα εκκινήθηκε από την καταχώριση “anti-cheat”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Κάντε επανεκκίνηση. Στη μπλε οθόνη, πατήστε ένα πλήκτρο, επιλέξτε “Enroll MOK”, “Continue” και “Yes”, πληκτρολογήστε τον κωδικό πρόσβασης {} και επιλέξτε “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Ενεργοποίηση Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Απενεργοποίηση Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Δεν ήταν δυνατή η αλλαγή της ρύθμισης του Secure Boot. Ελέγξτε την έξοδο του τερματικού για λεπτομέρειες."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Απομένουν δύο βήματα, το καθένα γίνεται μόνο μία φορά:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Ενεργοποίηση"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Απενεργοποίηση"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Ενεργοποίηση του Secure Boot;"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Απενεργοποίηση του Secure Boot;"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigCommunity boot loaders and the “anti-cheat” boot entry.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Αυτό αφαιρεί τους φορτωτές εκκίνησης του BigCommunity και την καταχώριση εκκίνησης “anti-cheat”.\n\nΑν το Secure Boot είναι ενεργό, απενεργοποιήστε το στις ρυθμίσεις υλικολογισμικού πριν από την επανεκκίνηση, αλλιώς ο υπολογιστής δεν θα ξεκινήσει."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Το Secure Boot ρυθμίστηκε. Κάντε επανεκκίνηση για να επιβεβαιώσετε το κλειδί."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Η ρύθμιση του Secure Boot αφαιρέθηκε."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Ενεργοποιήστε το Secure Boot στις ρυθμίσεις υλικολογισμικού του υπολογιστή (UEFI), αν είναι απενεργοποιημένο."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:104
+msgid "Secure Boot and anti-cheat"
+msgstr "Secure Boot και anti-cheat"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:163
+msgid "This installs the boot loaders signed with the BigCommunity key and an “anti-cheat” entry in the boot menu. Your current boot entries stay as they are."
+msgstr "Αυτό εγκαθιστά τους φορτωτές εκκίνησης που είναι υπογεγραμμένοι με το κλειδί BigCommunity και μια καταχώριση “anti-cheat” στο μενού εκκίνησης. Οι τρέχουσες καταχωρίσεις εκκίνησης παραμένουν ως έχουν."
