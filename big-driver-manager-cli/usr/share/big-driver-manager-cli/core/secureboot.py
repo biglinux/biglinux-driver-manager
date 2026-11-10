@@ -29,7 +29,7 @@ from core.base_manager import BaseManager
 
 PACKAGE = "big-secureboot"
 # The password the package sets for the blue screen (big-secureboot enable).
-MOK_PASSWORD = "bigcommunity"
+MOK_PASSWORD = "big"
 
 _EFI_DIR = Path("/sys/firmware/efi")
 _SECURE_BOOT_VAR = _EFI_DIR / "efivars/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c"
