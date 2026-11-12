@@ -1017,10 +1017,10 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"Kernel BigCommunity (big-kernel), optimalizovaný pro hraní her a běžné "
+"Kernel BigLinux (big-kernel), optimalizovaný pro hraní her a běžné "
 "použití (BORE, Clang ThinLTO, opravy pro Intel)"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
@@ -1128,11 +1128,11 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"Kernel BigCommunity (big-kernel), optimalizovaný pro hraní her a běžné "
+"Kernel BigLinux (big-kernel), optimalizovaný pro hraní her a běžné "
 "použití (BORE, Clang ThinLTO, opravy pro Intel). Nainstaluje se vedle vašeho"
 " aktuálního kernelu."
 
@@ -2528,13 +2528,93 @@ msgid "Virtual machine guest tools"
 msgstr "Nástroje hosta virtuálního počítače"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "Nejnovější oficiální vydání Mesa, sestavené BigCommunity s vlastním LLVM. Nové ovladače dříve než v běžném vydání, bez dalších záplat."
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "Nejnovější oficiální vydání Mesa, sestavené BigLinux s vlastním LLVM. Nové ovladače dříve než v běžném vydání, bez dalších záplat."
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nové"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Restartujte. Na modré obrazovce stiskněte libovolnou klávesu, zvolte “Enroll MOK”, “Continue” a “Yes”, zadejte heslo {} a zvolte “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Zapínání Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Vypínání Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Nastavení Secure Boot se nepodařilo změnit. Podívejte se na výstup terminálu pro podrobnosti."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Zbývají dva kroky, každý se provádí jen jednou:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Zapnout"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Vypnout"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Zapnout Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Vypnout Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot je nastaven. Restartujte pro potvrzení klíče."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Nastavení Secure Boot bylo odstraněno."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Zapněte Secure Boot v nastavení firmwaru počítače (UEFI), pokud je vypnutý."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Tímto se odstraní zavaděče BigLinux.\n\nPokud je Secure Boot zapnutý, vypněte jej před restartem v nastavení firmwaru, jinak se počítač nespustí."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "Tímto se nainstalují zavaděče podepsané klíčem BigLinux. Vaše spouštěcí nabídka zůstane beze změny."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Spustit se Secure Boot pomocí klíče BigLinux: počítač pak spustí jen zavaděče a jádra s důvěryhodným podpisem."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Firmware tohoto počítače nepřijímá zavaděče podepsané společností Microsoft pro jiné systémy, které Secure Boot s klíčem BigLinux potřebuje. Zapněte “Allow Microsoft 3rd Party UEFI CA” v nastavení firmwaru a pak tuto stránku otevřete znovu."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "Firmware nemá dost volného místa pro přidání klíče BigLinux. Obvykle ho zaplňují staré zprávy o pádech, které uchovává."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot je zapnutý s klíčem BigLinux. Načítají se pouze podepsané moduly jádra."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Se zapnutým Secure Boot systém načítá pouze podepsané moduly jádra: moduly BigLinux jsou podepsané, moduly sestavené lokálně pomocí DKMS nikoli. Hibernace také není k dispozici."

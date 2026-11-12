@@ -199,7 +199,7 @@ class KernelManager(BaseManager):
 
         installed = self.get_installed_kernels()
 
-        # A BigCommunity kernel: identify it by package + "-big" release
+        # A BigLinux kernel: identify it by package + "-big" release
         # suffix, never by version alone (7.3.1-1-big would otherwise match
         # linux73): the linux-bigNN whose version the release starts with.
         if running_version.endswith(BIG_KERNEL_RELEASE_SUFFIX):
@@ -483,7 +483,7 @@ class KernelManager(BaseManager):
         if any(re.match(p, kernel_name) for p in CACHYOS_PATTERNS):
             kernel["cachyos"] = True
 
-        # BigCommunity kernel (big-kernel)
+        # BigLinux kernel (big-kernel)
         if is_big_kernel(kernel_name):
             kernel["big"] = True
 
@@ -702,7 +702,7 @@ class KernelManager(BaseManager):
     def plan_kernel_install(self, kernel_name: str) -> KernelInstallPlan:
         """Return the packages to install with *kernel_name*.
 
-        BigCommunity kernels get stricter rules (see _plan_big_kernel); other
+        BigLinux kernels get stricter rules (see _plan_big_kernel); other
         kernels keep the historical best-effort module mapping.
         """
         if is_big_kernel(kernel_name):
@@ -712,7 +712,7 @@ class KernelManager(BaseManager):
         )
 
     def _plan_big_kernel(self, kernel_name: str = BIG_KERNEL) -> KernelInstallPlan:
-        """A BigCommunity kernel + its headers + the running kernel's modules.
+        """A BigLinux kernel + its headers + the running kernel's modules.
 
         kernel_name is a series (linux-big73) or the linux-big metapackage,
         which has a metapackage per module too. Modules the machine depends

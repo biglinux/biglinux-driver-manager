@@ -81,7 +81,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
     if is_big:
         type_parts.append(
             _(
-                "BigCommunity kernel (big-kernel), optimized for gaming and general "
+                "BigLinux kernel (big-kernel), optimized for gaming and general "
                 "use (BORE, Clang ThinLTO, Intel fixes)"
             )
         )
@@ -92,7 +92,7 @@ def classify_kernel(kernel: dict) -> KernelTypeInfo:
                 "fixes for recent Intel GPUs (Arrow Lake / Meteor Lake)."
             )
         )
-        badges.append(("BigCommunity", "accent"))
+        badges.append(("BigLinux", "accent"))
 
     # Origin: kernels that don't come from the enabled repositories
     source = kernel.get("source", "")

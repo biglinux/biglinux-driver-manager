@@ -1024,10 +1024,10 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"Kernel BigCommunity (big-kernel), optimizat pentru jocuri și uz general "
+"Kernel BigLinux (big-kernel), optimizat pentru jocuri și uz general "
 "(BORE, Clang ThinLTO, corecții Intel)"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
@@ -1135,11 +1135,11 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"Kernelul BigCommunity (big-kernel), optimizat pentru jocuri și uz general "
+"Kernelul BigLinux (big-kernel), optimizat pentru jocuri și uz general "
 "(BORE, Clang ThinLTO, corecții Intel). Este instalat alături de kernelul "
 "dvs. actual."
 
@@ -2556,13 +2556,93 @@ msgid "Virtual machine guest tools"
 msgstr "Instrumente pentru oaspete al mașinii virtuale"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "Cea mai recentă versiune oficială Mesa, compilată de BigCommunity cu propriul LLVM. Drivere noi mai devreme decât în versiunea obișnuită, fără patch-uri suplimentare."
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "Cea mai recentă versiune oficială Mesa, compilată de BigLinux cu propriul LLVM. Drivere noi mai devreme decât în versiunea obișnuită, fără patch-uri suplimentare."
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Nou"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Reporniți. Pe ecranul albastru, apăsați o tastă, alegeți “Enroll MOK”, “Continue” și “Yes”, introduceți parola {} și alegeți “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Se activează Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Se dezactivează Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Nu s-a putut modifica configurarea Secure Boot. Verificați ieșirea terminalului pentru detalii."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Mai rămân doi pași, fiecare efectuat o singură dată:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Activează"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Dezactivează"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Activați Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Dezactivați Secure Boot?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot este configurat. Reporniți pentru a confirma cheia."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Configurarea Secure Boot a fost eliminată."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Activați Secure Boot din setările firmware-ului computerului (UEFI), dacă este dezactivat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Aceasta elimină încărcătoarele de pornire BigLinux.\n\nDacă Secure Boot este activat, dezactivați-l din setările firmware-ului înainte de repornire, altfel computerul nu va porni."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "Aceasta instalează încărcătoarele de pornire semnate cu cheia BigLinux. Meniul de pornire rămâne neschimbat."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Pornire cu Secure Boot folosind cheia BigLinux: computerul va porni apoi doar încărcătoare de pornire și kerneluri cu o semnătură de încredere."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Firmware-ul acestui computer nu acceptă încărcătoare de pornire semnate de Microsoft pentru alte sisteme, de care Secure Boot cu cheia BigLinux are nevoie. Activați “Allow Microsoft 3rd Party UEFI CA” din setările firmware-ului, apoi deschideți din nou această pagină."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "Firmware-ul nu are suficient spațiu liber pentru a adăuga cheia BigLinux. De obicei, acesta este ocupat de rapoarte de erori vechi pe care le păstrează."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot este activat cu cheia BigLinux. Se încarcă doar modulele de kernel semnate."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Cu Secure Boot activat, sistemul încarcă doar module de kernel semnate: cele de la BigLinux sunt semnate, modulele compilate local cu DKMS nu sunt. Nici hibernarea nu este disponibilă."

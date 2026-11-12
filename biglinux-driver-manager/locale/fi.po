@@ -1017,10 +1017,10 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"BigCommunity-ydin (big-kernel), optimoitu pelaamiseen ja yleiskäyttöön "
+"BigLinux-ydin (big-kernel), optimoitu pelaamiseen ja yleiskäyttöön "
 "(BORE, Clang ThinLTO, Intel-korjaukset)"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
@@ -1127,11 +1127,11 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"BigCommunity-ydin (big-kernel), optimoitu pelaamiseen ja yleiskäyttöön "
+"BigLinux-ydin (big-kernel), optimoitu pelaamiseen ja yleiskäyttöön "
 "(BORE, Clang ThinLTO, Intel-korjaukset). Se asennetaan nykyisen ytimesi "
 "rinnalle."
 
@@ -2539,13 +2539,93 @@ msgid "Virtual machine guest tools"
 msgstr "Virtuaalikoneen vierastyökalut"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "Uusin virallinen Mesa-julkaisu, jonka BigCommunity on koostanut omalla LLVM:llään. Uudet ajurit tavallista julkaisua aiemmin, ilman lisäkorjauksia."
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "Uusin virallinen Mesa-julkaisu, jonka BigLinux on koostanut omalla LLVM:llään. Uudet ajurit tavallista julkaisua aiemmin, ilman lisäkorjauksia."
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "Uusi"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "Käynnistä uudelleen. Paina sinisellä näytöllä jotain näppäintä, valitse “Enroll MOK”, “Continue” ja “Yes”, kirjoita salasana {} ja valitse “Reboot”."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "Otetaan Secure Boot käyttöön"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "Poistetaan Secure Boot käytöstä"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "Secure Boot -asetuksia ei voitu muuttaa. Tarkista pääteulostulo yksityiskohtia varten."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "Jäljellä on kaksi vaihetta, kumpikin tehdään vain kerran:"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "Ota käyttöön"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "Poista käytöstä"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "Otetaanko Secure Boot käyttöön?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "Poistetaanko Secure Boot käytöstä?"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot on määritetty. Käynnistä uudelleen vahvistaaksesi avaimen."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Secure Boot -määritys poistettu."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "Kytke Secure Boot päälle tietokoneen laiteohjelmiston asetuksista (UEFI), jos se on pois päältä."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Tämä poistaa BigLinuxn käynnistyslataimet.\n\nJos Secure Boot on päällä, kytke se pois laiteohjelmiston asetuksista ennen uudelleenkäynnistystä, tai tietokone ei käynnisty."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "Tämä asentaa BigLinux-avaimella allekirjoitetut käynnistyslataimet. Käynnistysvalikkosi pysyy ennallaan."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Käynnistä Secure Bootilla BigLinux-avaimella: tietokone käynnistää silloin vain käynnistyslataimet ja ytimet, joilla on luotettu allekirjoitus."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Tämän tietokoneen laiteohjelmisto ei hyväksy Microsoftin muille järjestelmille allekirjoittamia käynnistyslataimia, joita Secure Boot BigLinux-avaimella tarvitsee. Ota “Allow Microsoft 3rd Party UEFI CA” käyttöön laiteohjelmiston asetuksista ja avaa sitten tämä sivu uudelleen."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "Laiteohjelmistossa ei ole tarpeeksi vapaata tilaa BigLinux-avaimen lisäämiseen. Tavallisesti tilan täyttävät sen säilyttämät vanhat kaatumisraportit."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot on käytössä BigLinux-avaimella. Vain allekirjoitetut ytimen moduulit ladataan."
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Kun Secure Boot on käytössä, järjestelmä lataa vain allekirjoitettuja ytimen moduuleja: BigLinuxn moduulit on allekirjoitettu, paikallisesti DKMS:llä käännetyt moduulit eivät ole. Myöskään horrostila ei ole käytettävissä."

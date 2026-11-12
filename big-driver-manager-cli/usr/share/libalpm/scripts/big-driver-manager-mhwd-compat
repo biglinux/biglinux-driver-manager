@@ -20,7 +20,7 @@ fi
 
 # Kernels mhwd installs driver modules for: each one becomes <kernel>-<module>
 # (linux-big-nvidia-open, linux-xanmod-nvidia, ...). Upstream mhwd only knows
-# the Manjaro linuxNN kernels; add xanmod and the BigCommunity kernel, linux-big.
+# the Manjaro linuxNN kernels; add xanmod and the BigLinux kernel, linux-big.
 # Each edit rewrites the whole expression, so it is idempotent and also repairs
 # a file an older version of this hook patched with a shorter list.
 kernel_regex='^linux[0-9][0-9]?([0-9])$|^linux-xanmod$|^linux-xanmod-lts$|^linux-big$'

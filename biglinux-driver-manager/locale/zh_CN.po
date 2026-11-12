@@ -983,10 +983,10 @@ msgstr "EEVDF调度器，集成LTO、AutoFDO和Propeller优化。非常适合游
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"BigCommunity 内核（big-kernel），针对游戏和日常使用进行了优化（BORE、Clang ThinLTO、Intel 修复）"
+"BigLinux 内核（big-kernel），针对游戏和日常使用进行了优化（BORE、Clang ThinLTO、Intel 修复）"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
 msgid ""
@@ -1084,11 +1084,11 @@ msgstr "未通过包管理器安装。请按照安装时的方式，从 /boot �
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"BigCommunity 内核（big-kernel），针对游戏和日常使用进行了优化（BORE、Clang ThinLTO、Intel "
+"BigLinux 内核（big-kernel），针对游戏和日常使用进行了优化（BORE、Clang ThinLTO、Intel "
 "修复）。它将与您当前的内核一起安装。"
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:465
@@ -2407,13 +2407,93 @@ msgid "Virtual machine guest tools"
 msgstr "虚拟机客户机工具"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "最新的 Mesa 官方版本，由 BigCommunity 使用自带的 LLVM 构建。比常规版本更早获得新驱动，且不含额外补丁。"
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "最新的 Mesa 官方版本，由 BigLinux 使用自带的 LLVM 构建。比常规版本更早获得新驱动，且不含额外补丁。"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
 msgstr "新"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:40
+msgid "Restart. On the blue screen, press a key, choose “Enroll MOK”, “Continue” and “Yes”, type the password {} and choose “Reboot”."
+msgstr "重新启动。在蓝色屏幕上按任意键，选择“Enroll MOK”、“Continue”和“Yes”，输入密码 {}，然后选择“Reboot”。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Enabling Secure Boot"
+msgstr "正在启用 Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:197
+msgid "Disabling Secure Boot"
+msgstr "正在禁用 Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:215
+msgid "Could not change the Secure Boot setup. Check the terminal output for details."
+msgstr "无法更改 Secure Boot 设置。请检查终端输出以获取详细信息。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:56
+msgid "Two steps are left, each done only once:"
+msgstr "还剩两个步骤，每个只需执行一次："
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Enable"
+msgstr "启用"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:147
+msgid "Disable"
+msgstr "禁用"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:161
+msgid "Enable Secure Boot?"
+msgstr "启用 Secure Boot？"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:175
+msgid "Disable Secure Boot?"
+msgstr "禁用 Secure Boot？"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:212
+msgid "Secure Boot is set up. Restart to confirm the key."
+msgstr "Secure Boot 已设置。请重新启动以确认密钥。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:214
+msgid "Secure Boot setup removed."
+msgstr "Secure Boot 设置已移除。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:59
+msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is off."
+msgstr "如果 Secure Boot 处于关闭状态，请在计算机的固件设置（UEFI）中将其开启。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:177
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "这将移除 BigLinux 引导加载程序。\n\n如果 Secure Boot 已开启，请在重新启动前于固件设置中将其关闭，否则计算机将无法启动。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:157
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "这将安装使用 BigLinux 密钥签名的引导加载程序。您的启动菜单将保持不变。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:49
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "使用 BigLinux 密钥以 Secure Boot 启动：计算机将只启动带有可信签名的引导加载程序和内核。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:55
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "此计算机的固件不接受 Microsoft 为其他系统签名的引导加载程序，而使用 BigLinux 密钥的 Secure Boot 需要它。请在固件设置中开启 “Allow Microsoft 3rd Party UEFI CA”，然后重新打开此页面。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:62
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "固件没有足够的可用空间来添加 BigLinux 密钥。通常是固件保存的旧崩溃报告占满了空间。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:79
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot 已使用 BigLinux 密钥开启。仅加载已签名的内核模块。"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:112
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: usr/share/big-driver-manager/ui/secureboot_card.py:178
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "开启 Secure Boot 后，系统仅加载已签名的内核模块：BigLinux 的模块已签名，而使用 DKMS 在本地构建的模块未签名。休眠功能也不可用。"
