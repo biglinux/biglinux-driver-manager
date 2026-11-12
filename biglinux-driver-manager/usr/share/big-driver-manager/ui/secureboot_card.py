@@ -4,7 +4,7 @@
 """
 Big Driver Manager - Secure Boot card (kernel page)
 
-Secure Boot with the BigCommunity key. Enabling installs big-secureboot,
+Secure Boot with the BigLinux key. Enabling installs big-secureboot,
 disabling removes it (core/secureboot.py). The card says where the machine is and what
 is left to do; it is hidden where big-secureboot does not exist (outside
 BigCommunity) or the machine did not boot in UEFI mode.
@@ -47,7 +47,7 @@ def state_text(state: str) -> str:
     """What the card says in each state."""
     if state == OFF:
         return _(
-            "Start with Secure Boot using the BigCommunity key: the computer "
+            "Start with Secure Boot using the BigLinux key: the computer "
             "then only starts boot loaders and kernels with a trusted "
             "signature."
         )
@@ -55,13 +55,13 @@ def state_text(state: str) -> str:
         return _(
             "This computer's firmware does not accept boot loaders signed by "
             "Microsoft for other systems, which Secure Boot with the "
-            "BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI "
+            "BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI "
             "CA” in the firmware settings, then open this page again."
         )
     if state == NO_SPACE:
         return _(
             "The firmware does not have enough free space to add the "
-            "BigCommunity key. Old crash reports it keeps usually fill it."
+            "BigLinux key. Old crash reports it keeps usually fill it."
         )
     if state == PENDING:
         return "\n".join(
@@ -77,7 +77,7 @@ def state_text(state: str) -> str:
         )
     if state == ACTIVE:
         return _(
-            "Secure Boot is on with the BigCommunity key. Only signed kernel "
+            "Secure Boot is on with the BigLinux key. Only signed kernel "
             "modules load."
         )
     return ""
@@ -172,12 +172,12 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
             dialog.set_body(
                 _(
                     "This installs the boot loaders signed with the "
-                    "BigCommunity key. Your boot menu stays as it is."
+                    "BigLinux key. Your boot menu stays as it is."
                 )
                 + "\n\n"
                 + _(
                     "With Secure Boot on, the system only loads signed kernel "
-                    "modules: the BigCommunity ones are signed, modules built "
+                    "modules: the BigLinux ones are signed, modules built "
                     "locally with DKMS are not. Hibernation is not available "
                     "either."
                 )
@@ -191,7 +191,7 @@ class SecureBootCard(PackageOperationMixin, Gtk.Box):
             dialog.set_heading(_("Disable Secure Boot?"))
             dialog.set_body(
                 _(
-                    "This removes the BigCommunity boot loaders.\n\n"
+                    "This removes the BigLinux boot loaders.\n\n"
                     "If Secure Boot is on, turn it off in the firmware "
                     "settings before restarting, or the computer will not "
                     "start."

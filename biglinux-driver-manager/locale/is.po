@@ -1017,10 +1017,10 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"BigCommunity kjarni (big-kernel), fínstilltur fyrir leiki og almenna notkun "
+"BigLinux kjarni (big-kernel), fínstilltur fyrir leiki og almenna notkun "
 "(BORE, Clang ThinLTO, Intel lagfæringar)"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
@@ -1127,11 +1127,11 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"BigCommunity kjarninn (big-kernel), fínstilltur fyrir leiki og almenna "
+"BigLinux kjarninn (big-kernel), fínstilltur fyrir leiki og almenna "
 "notkun (BORE, Clang ThinLTO, Intel lagfæringar). Hann er settur upp samhliða"
 " núverandi kjarna."
 
@@ -2527,12 +2527,12 @@ msgid "Virtual machine guest tools"
 msgstr "Gestatól sýndarvélar"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "Nýjasta opinbera útgáfa Mesa, smíðuð af BigCommunity með eigin LLVM. Nýir reklar fyrr en í venjulegu útgáfunni, án aukaplástra."
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "Nýjasta opinbera útgáfa Mesa, smíðuð af BigLinux með eigin LLVM. Nýir reklar fyrr en í venjulegu útgáfunni, án aukaplástra."
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
@@ -2587,33 +2587,33 @@ msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is 
 msgstr "Kveiktu á Secure Boot í stillingum fastbúnaðar tölvunnar (UEFI), ef slökkt er á því."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Þetta fjarlægir ræsistjóra BigCommunity.\n\nEf Secure Boot er virkt skaltu slökkva á því í stillingum fastbúnaðarins áður en þú endurræsir, annars ræsist tölvan ekki."
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Þetta fjarlægir ræsistjóra BigLinux.\n\nEf Secure Boot er virkt skaltu slökkva á því í stillingum fastbúnaðarins áður en þú endurræsir, annars ræsist tölvan ekki."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
-msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
-msgstr "Þetta setur upp ræsistjóra undirritaða með BigCommunity-lyklinum. Ræsivalmyndin þín helst óbreytt."
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "Þetta setur upp ræsistjóra undirritaða með BigLinux-lyklinum. Ræsivalmyndin þín helst óbreytt."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
-msgstr "Ræsa með Secure Boot með BigCommunity-lyklinum: tölvan ræsir þá aðeins ræsistjóra og kjarna með traustri undirritun."
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Ræsa með Secure Boot með BigLinux-lyklinum: tölvan ræsir þá aðeins ræsistjóra og kjarna með traustri undirritun."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:55
-msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
-msgstr "Fastbúnaður þessarar tölvu samþykkir ekki ræsistjóra sem Microsoft hefur undirritað fyrir önnur kerfi, sem Secure Boot með BigCommunity-lyklinum þarfnast. Kveiktu á “Allow Microsoft 3rd Party UEFI CA” í stillingum fastbúnaðarins og opnaðu svo þessa síðu aftur."
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Fastbúnaður þessarar tölvu samþykkir ekki ræsistjóra sem Microsoft hefur undirritað fyrir önnur kerfi, sem Secure Boot með BigLinux-lyklinum þarfnast. Kveiktu á “Allow Microsoft 3rd Party UEFI CA” í stillingum fastbúnaðarins og opnaðu svo þessa síðu aftur."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:62
-msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
-msgstr "Fastbúnaðurinn hefur ekki nóg laust pláss til að bæta við BigCommunity-lyklinum. Yfirleitt fylla gamlar hrunskýrslur sem hann geymir plássið."
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "Fastbúnaðurinn hefur ekki nóg laust pláss til að bæta við BigLinux-lyklinum. Yfirleitt fylla gamlar hrunskýrslur sem hann geymir plássið."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:79
-msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
-msgstr "Secure Boot er virkt með BigCommunity-lyklinum. Aðeins undirritaðar kjarnaeiningar eru hlaðnar."
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot er virkt með BigLinux-lyklinum. Aðeins undirritaðar kjarnaeiningar eru hlaðnar."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:112
 msgid "Secure Boot"
 msgstr "Secure Boot"
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:178
-msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "Þegar Secure Boot er virkt hleður kerfið aðeins undirrituðum kjarnaeiningum: einingar BigCommunity eru undirritaðar, einingar sem eru byggðar staðbundið með DKMS eru það ekki. Dvali er heldur ekki í boði."
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "Þegar Secure Boot er virkt hleður kerfið aðeins undirrituðum kjarnaeiningum: einingar BigLinux eru undirritaðar, einingar sem eru byggðar staðbundið með DKMS eru það ekki. Dvali er heldur ekki í boði."

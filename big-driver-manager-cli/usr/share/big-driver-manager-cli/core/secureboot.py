@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-Big Driver Manager - Secure Boot (BigCommunity)
+Big Driver Manager - Secure Boot (BigLinux)
 
-Secure Boot with the BigCommunity key comes from one package, big-secureboot
+Secure Boot with the BigLinux key comes from one package, big-secureboot
 (big-comm/big-kernel). Installing it enables it: it puts Fedora's shim and a
-GRUB signed with the BigCommunity key in the ESP, adds their boot entry and
+GRUB signed with the BigLinux key in the ESP, adds their boot entry and
 the kexec and IOMMU settings Easy Anti-Cheat checks, and schedules the key,
 which the user confirms once on the blue screen of the next boot
 (MokManager). Booted with Secure Boot, linux-big locks itself down. Removing
@@ -49,7 +49,7 @@ NO_CA = "no_ca"  # the firmware does not accept shim: an option to turn on first
 NO_SPACE = "no_space"  # no room in the firmware for the key
 OFF = "off"  # can be enabled
 PENDING = "pending"  # installed; key to confirm and/or Secure Boot to turn on
-ACTIVE = "active"  # Secure Boot on with the BigCommunity key: locked down
+ACTIVE = "active"  # Secure Boot on with the BigLinux key: locked down
 
 
 def secure_boot_enabled(var: Path = _SECURE_BOOT_VAR) -> bool:

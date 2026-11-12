@@ -44,10 +44,10 @@ KERNEL_PATTERNS = [
     r"^linux-xanmod-lts-x64v\d$",  # Xanmod LTS optimized builds
     r"^linux-cachyos$",  # CachyOS kernel
     r"^linux-cachyos-lts$",  # CachyOS LTS kernel
-    r"^linux-big\d+$",  # BigCommunity kernels, one per series, see is_big_kernel
+    r"^linux-big\d+$",  # BigLinux kernels, one per series, see is_big_kernel
 ]
 
-# BigCommunity kernels (big-kernel project). One package per series, as
+# BigLinux kernels (big-kernel project). One package per series, as
 # Manjaro's linuxNN: linux-big72, linux-big73, with modules named
 # "linux-big73-<module>" and ``uname -r`` ending in "-big" (7.3.1-1-big).
 # BIG_KERNEL, "linux-big", is a metapackage that depends on the current
@@ -59,7 +59,7 @@ BIG_KERNEL_RELEASE_SUFFIX = "-big"
 
 
 def is_big_kernel(name: str) -> bool:
-    """A BigCommunity kernel package: linux-big73, or the pre-split linux-big."""
+    """A BigLinux kernel package: linux-big73, or the pre-split linux-big."""
     return name == BIG_KERNEL or re.fullmatch(BIG_KERNEL_RE, name) is not None
 
 

@@ -92,8 +92,8 @@ the same version.
   boots without its drivers.
 - Never removes the running kernel; reports installed kernels that left the
   repositories.
-- **Secure Boot** (BigCommunity, UEFI) — enables Secure Boot with the
-  BigCommunity key by installing `big-secureboot`. The card explains what
+- **Secure Boot** (BigLinux, UEFI) — enables Secure Boot with the
+  BigLinux key by installing `big-secureboot`. The card explains what
   changes (only signed kernel modules load, no hibernation) and what is left
   to do: confirming the key once on the blue screen after restarting, then
   turning Secure Boot on in the firmware settings. It does not offer to

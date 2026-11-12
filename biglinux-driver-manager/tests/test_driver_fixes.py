@@ -1031,7 +1031,7 @@ class TestBigKernel(unittest.TestCase):
 
         info = classify_kernel({"name": "linux-big", "big": True})
         self.assertTrue(info.is_big)
-        self.assertIn(("BigCommunity", "accent"), info.badge_entries)
+        self.assertIn(("BigLinux", "accent"), info.badge_entries)
 
 
 if __name__ == "__main__":

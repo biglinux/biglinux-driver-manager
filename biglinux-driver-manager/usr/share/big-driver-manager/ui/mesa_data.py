@@ -307,9 +307,9 @@ def _init_mesa_names() -> None:
                 "badge_color": "success",
             },
             "big": {
-                "title": _("BigCommunity"),
+                "title": _("BigLinux"),
                 "desc": _(
-                    "The latest official Mesa release, built by BigCommunity "
+                    "The latest official Mesa release, built by BigLinux "
                     "with its own LLVM. New drivers sooner than the regular "
                     "release, without extra patches."
                 ),

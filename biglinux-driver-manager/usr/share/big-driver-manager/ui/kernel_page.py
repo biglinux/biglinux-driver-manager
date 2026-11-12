@@ -6,7 +6,7 @@ Big Driver Manager - Kernel Management Page
 
 List-based layout with:
   - Running kernel card at top
-  - Secure Boot card (BigCommunity, UEFI only)
+  - Secure Boot card (BigLinux, UEFI only)
   - Obsolete kernel alerts
   - Installed kernels in boxed-list
   - Available kernels grouped by type (LTS / Standard / Performance)
@@ -468,7 +468,7 @@ class KernelSection(BaseSection):
 
     _GROUP_DESCRIPTIONS = {
         "kernel-group-big": _(
-            "The BigCommunity kernel (big-kernel), optimized for gaming and general "
+            "The BigLinux kernel (big-kernel), optimized for gaming and general "
             "use (BORE, Clang ThinLTO, Intel fixes). It is installed alongside "
             "your current kernel."
         ),
@@ -530,7 +530,7 @@ class KernelSection(BaseSection):
                 buckets["kernel-group-standard"].append(k)
 
         groups = [
-            ("BigCommunity", "kernel-group-big"),
+            ("BigLinux", "kernel-group-big"),
             (_("LTS — Long Term Support (Recommended)"), "kernel-group-lts"),
             (_("Standard"), "kernel-group-standard"),
             (_("Xanmod (Performance)"), "kernel-group-xanmod"),

@@ -1023,10 +1023,10 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"Ядро BigCommunity (big-kernel), оптимизированное для игр и общего "
+"Ядро BigLinux (big-kernel), оптимизированное для игр и общего "
 "использования (BORE, Clang ThinLTO, исправления для Intel)"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
@@ -1133,11 +1133,11 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"Ядро BigCommunity (big-kernel), оптимизированное для игр и общего "
+"Ядро BigLinux (big-kernel), оптимизированное для игр и общего "
 "использования (BORE, Clang ThinLTO, исправления для Intel). Устанавливается "
 "вместе с вашим текущим ядром."
 
@@ -2551,12 +2551,12 @@ msgid "Virtual machine guest tools"
 msgstr "Гостевые инструменты виртуальной машины"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "Последний официальный выпуск Mesa, собранный BigCommunity с собственным LLVM. Новые драйверы раньше, чем в обычном выпуске, без дополнительных патчей."
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "Последний официальный выпуск Mesa, собранный BigLinux с собственным LLVM. Новые драйверы раньше, чем в обычном выпуске, без дополнительных патчей."
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
@@ -2611,33 +2611,33 @@ msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is 
 msgstr "Включите Secure Boot в настройках прошивки компьютера (UEFI), если он отключён."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "Будут удалены загрузчики BigCommunity.\n\nЕсли Secure Boot включён, отключите его в настройках прошивки перед перезагрузкой, иначе компьютер не запустится."
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "Будут удалены загрузчики BigLinux.\n\nЕсли Secure Boot включён, отключите его в настройках прошивки перед перезагрузкой, иначе компьютер не запустится."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
-msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
-msgstr "Будут установлены загрузчики, подписанные ключом BigCommunity. Меню загрузки останется без изменений."
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "Будут установлены загрузчики, подписанные ключом BigLinux. Меню загрузки останется без изменений."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
-msgstr "Запуск с Secure Boot на ключе BigCommunity: компьютер будет запускать только загрузчики и ядра с доверенной подписью."
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "Запуск с Secure Boot на ключе BigLinux: компьютер будет запускать только загрузчики и ядра с доверенной подписью."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:55
-msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
-msgstr "Прошивка этого компьютера не принимает загрузчики, подписанные Microsoft для других систем, а они нужны для Secure Boot с ключом BigCommunity. Включите “Allow Microsoft 3rd Party UEFI CA” в настройках прошивки, затем снова откройте эту страницу."
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "Прошивка этого компьютера не принимает загрузчики, подписанные Microsoft для других систем, а они нужны для Secure Boot с ключом BigLinux. Включите “Allow Microsoft 3rd Party UEFI CA” в настройках прошивки, затем снова откройте эту страницу."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:62
-msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
-msgstr "В прошивке недостаточно свободного места, чтобы добавить ключ BigCommunity. Обычно его занимают старые отчёты о сбоях, которые она хранит."
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "В прошивке недостаточно свободного места, чтобы добавить ключ BigLinux. Обычно его занимают старые отчёты о сбоях, которые она хранит."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:79
-msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
-msgstr "Secure Boot включён с ключом BigCommunity. Загружаются только подписанные модули ядра."
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot включён с ключом BigLinux. Загружаются только подписанные модули ядра."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:112
 msgid "Secure Boot"
 msgstr "Secure Boot"
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:178
-msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "При включённом Secure Boot система загружает только подписанные модули ядра: модули BigCommunity подписаны, а собранные локально с помощью DKMS — нет. Гибернация также недоступна."
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "При включённом Secure Boot система загружает только подписанные модули ядра: модули BigLinux подписаны, а собранные локально с помощью DKMS — нет. Гибернация также недоступна."

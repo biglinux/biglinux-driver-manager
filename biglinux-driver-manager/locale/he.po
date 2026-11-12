@@ -1002,10 +1002,10 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:84
 msgid ""
-"BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes)"
 msgstr ""
-"ליבה BigCommunity (big-kernel), מותאם למשחקים ולשימוש כללי (BORE, Clang "
+"ליבה BigLinux (big-kernel), מותאם למשחקים ולשימוש כללי (BORE, Clang "
 "ThinLTO, תיקוני Intel)"
 
 #: usr/share/big-driver-manager/ui/kernel_card_builder.py:90
@@ -1111,11 +1111,11 @@ msgstr ""
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:460
 msgid ""
-"The BigCommunity kernel (big-kernel), optimized for gaming and general use "
+"The BigLinux kernel (big-kernel), optimized for gaming and general use "
 "(BORE, Clang ThinLTO, Intel fixes). It is installed alongside your current "
 "kernel."
 msgstr ""
-"ליבה BigCommunity (big-kernel), מותאם למשחקים ולשימוש כללי (BORE, Clang "
+"ליבה BigLinux (big-kernel), מותאם למשחקים ולשימוש כללי (BORE, Clang "
 "ThinLTO, תיקוני Intel). הוא מותקן לצד הליבה הנוכחי שלך."
 
 #: usr/share/big-driver-manager/ui/kernel_page.py:465
@@ -2486,12 +2486,12 @@ msgid "Virtual machine guest tools"
 msgstr "כלי אורח למכונה וירטואלית"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:310
-msgid "BigCommunity"
-msgstr "BigCommunity"
+msgid "BigLinux"
+msgstr "BigLinux"
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:311
-msgid "The latest official Mesa release, built by BigCommunity with its own LLVM. New drivers sooner than the regular release, without extra patches."
-msgstr "הגרסה הרשמית העדכנית ביותר של Mesa, שנבנתה על ידי BigCommunity עם LLVM משלה. מנהלי התקנים חדשים מוקדם יותר מהגרסה הרגילה, ללא תיקונים נוספים."
+msgid "The latest official Mesa release, built by BigLinux with its own LLVM. New drivers sooner than the regular release, without extra patches."
+msgstr "הגרסה הרשמית העדכנית ביותר של Mesa, שנבנתה על ידי BigLinux עם LLVM משלה. מנהלי התקנים חדשים מוקדם יותר מהגרסה הרגילה, ללא תיקונים נוספים."
 
 #: usr/share/big-driver-manager/ui/mesa_data.py:316
 msgid "New"
@@ -2546,33 +2546,33 @@ msgid "Turn on Secure Boot in the computer's firmware settings (UEFI), if it is 
 msgstr "הפעל את Secure Boot בהגדרות הקושחה של המחשב (UEFI), אם הוא כבוי."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:177
-msgid "This removes the BigCommunity boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
-msgstr "פעולה זו מסירה את מנהלי האתחול של BigCommunity.\n\nאם Secure Boot פעיל, כבה אותו בהגדרות הקושחה לפני ההפעלה מחדש, אחרת המחשב לא יאותחל."
+msgid "This removes the BigLinux boot loaders.\n\nIf Secure Boot is on, turn it off in the firmware settings before restarting, or the computer will not start."
+msgstr "פעולה זו מסירה את מנהלי האתחול של BigLinux.\n\nאם Secure Boot פעיל, כבה אותו בהגדרות הקושחה לפני ההפעלה מחדש, אחרת המחשב לא יאותחל."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:157
-msgid "This installs the boot loaders signed with the BigCommunity key. Your boot menu stays as it is."
-msgstr "פעולה זו מתקינה את מנהלי האתחול החתומים במפתח של BigCommunity. תפריט האתחול שלך יישאר כפי שהוא."
+msgid "This installs the boot loaders signed with the BigLinux key. Your boot menu stays as it is."
+msgstr "פעולה זו מתקינה את מנהלי האתחול החתומים במפתח של BigLinux. תפריט האתחול שלך יישאר כפי שהוא."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:49
-msgid "Start with Secure Boot using the BigCommunity key: the computer then only starts boot loaders and kernels with a trusted signature."
-msgstr "אתחול עם Secure Boot באמצעות המפתח של BigCommunity: המחשב יאתחל אז רק מנהלי אתחול וליבות עם חתימה מהימנה."
+msgid "Start with Secure Boot using the BigLinux key: the computer then only starts boot loaders and kernels with a trusted signature."
+msgstr "אתחול עם Secure Boot באמצעות המפתח של BigLinux: המחשב יאתחל אז רק מנהלי אתחול וליבות עם חתימה מהימנה."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:55
-msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigCommunity key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
-msgstr "הקושחה של מחשב זה אינה מקבלת מנהלי אתחול שנחתמו על ידי Microsoft עבור מערכות אחרות, ש-Secure Boot עם המפתח של BigCommunity זקוק להם. הפעל את “Allow Microsoft 3rd Party UEFI CA” בהגדרות הקושחה, ולאחר מכן פתח דף זה שוב."
+msgid "This computer's firmware does not accept boot loaders signed by Microsoft for other systems, which Secure Boot with the BigLinux key needs. Turn on “Allow Microsoft 3rd Party UEFI CA” in the firmware settings, then open this page again."
+msgstr "הקושחה של מחשב זה אינה מקבלת מנהלי אתחול שנחתמו על ידי Microsoft עבור מערכות אחרות, ש-Secure Boot עם המפתח של BigLinux זקוק להם. הפעל את “Allow Microsoft 3rd Party UEFI CA” בהגדרות הקושחה, ולאחר מכן פתח דף זה שוב."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:62
-msgid "The firmware does not have enough free space to add the BigCommunity key. Old crash reports it keeps usually fill it."
-msgstr "אין בקושחה מספיק מקום פנוי להוספת המפתח של BigCommunity. בדרך כלל הוא מתמלא בדוחות קריסה ישנים שהיא שומרת."
+msgid "The firmware does not have enough free space to add the BigLinux key. Old crash reports it keeps usually fill it."
+msgstr "אין בקושחה מספיק מקום פנוי להוספת המפתח של BigLinux. בדרך כלל הוא מתמלא בדוחות קריסה ישנים שהיא שומרת."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:79
-msgid "Secure Boot is on with the BigCommunity key. Only signed kernel modules load."
-msgstr "Secure Boot פעיל עם המפתח של BigCommunity. נטענים רק מודולי ליבה חתומים."
+msgid "Secure Boot is on with the BigLinux key. Only signed kernel modules load."
+msgstr "Secure Boot פעיל עם המפתח של BigLinux. נטענים רק מודולי ליבה חתומים."
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:112
 msgid "Secure Boot"
 msgstr "Secure Boot"
 
 #: usr/share/big-driver-manager/ui/secureboot_card.py:178
-msgid "With Secure Boot on, the system only loads signed kernel modules: the BigCommunity ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
-msgstr "כאשר Secure Boot פעיל, המערכת טוענת רק מודולי ליבה חתומים: המודולים של BigCommunity חתומים, ומודולים שנבנו מקומית עם DKMS אינם חתומים. גם מצב תרדמה אינו זמין."
+msgid "With Secure Boot on, the system only loads signed kernel modules: the BigLinux ones are signed, modules built locally with DKMS are not. Hibernation is not available either."
+msgstr "כאשר Secure Boot פעיל, המערכת טוענת רק מודולי ליבה חתומים: המודולים של BigLinux חתומים, ומודולים שנבנו מקומית עם DKMS אינם חתומים. גם מצב תרדמה אינו זמין."
