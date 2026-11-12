@@ -778,12 +778,17 @@ def _boot() -> int:
                 pass
     # The proprietary driver is installed and allowed: it must have taken the
     # card by now (modules-load.d, udev), or the display manager would start
-    # on a card nobody drives.
+    # on a card nobody drives. The display manager waits for this unit and
+    # `pacman -Qq` reads every installed package's entry, so the package list
+    # is read only for an NVIDIA card left without a driver.
     integrated = gpu_mode.read_mode() == "integrated"
-    if gpu.installed_branch(gpu.installed_packages()) and not integrated:
-        if gpu_fallback.driverless_nvidia(devices):
-            _verify_nvidia()
-            devices = gpu.scan_pci()
+    if (
+        not integrated
+        and gpu_fallback.driverless_nvidia(devices)
+        and gpu.installed_branch(gpu.installed_packages())
+    ):
+        _verify_nvidia()
+        devices = gpu.scan_pci()
     if not gpu_mode.is_hybrid(devices):
         return EXIT_OK
     requested = requested_mode(_cmdline_args())
