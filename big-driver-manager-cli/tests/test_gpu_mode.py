@@ -521,6 +521,23 @@ class TestFallback(unittest.TestCase):
             with self.subTest(mode=mode):
                 self.assertEqual(verify.call_count, expected)
 
+    def test_boot_skips_pacman_without_driverless_nvidia(self):
+        for driver in (None, "nvidia", "nouveau"):
+            devices = [INTEL]
+            if driver:
+                devices.append(
+                    PciDevice("0000:01:00.0", "10de", "28a0", VGA, driver=driver)
+                )
+            with (
+                patch.object(gpu_cli, "LIVE_MARKER", Path("/nonexistent")),
+                patch.object(gpu_cli.gpu, "scan_pci", return_value=devices),
+                patch.object(gpu_cli.gpu, "installed_packages") as installed,
+                patch.object(gpu_cli.gpu_mode, "read_mode", return_value="hybrid"),
+            ):
+                gpu_cli._boot()
+            with self.subTest(driver=driver):
+                installed.assert_not_called()
+
 
 class TestPrimeScripts(unittest.TestCase):
     PROVIDERS = (

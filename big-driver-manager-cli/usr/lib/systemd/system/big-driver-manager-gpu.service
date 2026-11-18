@@ -7,6 +7,11 @@ Before=display-manager.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+# Everything `gpu boot` does needs an NVIDIA card, apart from the render nodes
+# of the live media. Elsewhere the display manager would only wait for Python
+# to start. The vendor match also counts a card's audio function; `gpu boot`
+# still decides from the display controllers.
+ExecCondition=/bin/sh -c 'test -e /livefs-pkgs.txt || grep -qsx 0x10de /sys/bus/pci/devices/*/vendor'
 ExecStart=/usr/bin/big-driver-manager-cli gpu boot
 TimeoutStartSec=30s
 
